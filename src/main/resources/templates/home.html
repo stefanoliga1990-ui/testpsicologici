@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test brevi per esplorare il tuo modo di essere, una domanda alla volta.">
+    <title>Spazio Test · Piccoli test, con calma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='home-responsive-6')}">
+</head>
+<body>
+<main class="shell home-shell">
+    <section class="home-panel">
+    <nav class="site-nav" aria-label="Navigazione principale">
+        <a class="brand" th:href="@{/}"><span class="brand-mark">✦</span> Spazio Test</a>
+        <span class="nav-note">Un momento per te</span>
+    </nav>
+
+    <div class="home-feature-layout">
+    <div class="home-feature-stage">
+    <div class="hero-clip">
+    <section class="hero">
+        <div class="hero-copy">
+            <p class="eyebrow">Test brevi · senza account</p>
+            <h1>Fatti Spazio.<br><em>conosciti meglio, coi nostri test</em></h1>
+            <p class="lead">Rispondi con spontaneità. Alla fine troverai un risultato semplice da leggere, tutto qui.</p>
+            <a class="text-link" href="#test-disponibili">Esplora i test <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-orbit" aria-hidden="true">
+            <div class="orbit-ring orbit-ring-one"></div>
+            <div class="orbit-ring orbit-ring-two"></div>
+            <div class="orbit-core">24<br><span>domande</span></div>
+            <span class="spark spark-one">✦</span><span class="spark spark-two">✦</span>
+        </div>
+    </section>
+    </div>
+        <div class="home-tests-cta">
+            <a class="tests-circle-link" href="#test-disponibili">
+                <span>I nostri</span>
+                <strong>test</strong>
+                <span class="tests-circle-arrow" aria-hidden="true">&darr;</span>
+            </a>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <section id="test-disponibili" class="tests-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">Inizia da qui</p>
+                <h2>Test disponibili</h2>
+            </div>
+            <span class="test-count" th:text="|${#lists.size(tests)} test|">1 test</span>
+        </div>
+        <div class="test-grid">
+            <article class="test-card" th:each="test : ${tests}">
+                <div class="card-topline"><span class="card-icon">⌘</span><span th:text="${test.eyebrow}">Autovalutazione informativa</span></div>
+                <h3 th:text="${test.title}">Tratti associati all'ADHD nell'adulto</h3>
+                <p th:text="${test.description}">Un questionario informativo per adulti.</p>
+                <div class="card-footer">
+                    <span th:text="${test.duration}">6 min · 24 domande</span>
+                    <a class="round-link" th:href="@{/test/{id}(id=${test.id})}" th:aria-label="|Inizia ${test.title}|">→</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <p class="disclaimer">Questi test hanno finalità puramente informative e non costituiscono una valutazione psicologica o clinica.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,245 @@
+{
+  "test": {
+    "id": "tratti-autistici-adulti",
+    "titolo": "Tratti autistici nell'adulto",
+    "versione": "2.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "disclaimer": "Questo questionario è informativo e non clinicamente validato: non conferma né esclude una diagnosi e non sostituisce una valutazione professionale.",
+    "punteggio_numerico_visibile": false
+  },
+  "struttura_risultato_mostrata_all_utente": [
+    {
+      "ordine": 1,
+      "sezione": "intestazione",
+      "contenuto": "Il tuo risultato"
+    },
+    {
+      "ordine": 2,
+      "sezione": "analisi_generale",
+      "contenuto": "Titolo, sottotitolo e descrizione dell'analisi generale selezionata"
+    },
+    {
+      "ordine": 3,
+      "sezione": "lettura_specifica",
+      "contenuto": "Quattro schede specifiche ordinate dall'area con media più alta a quella con media più bassa. Ogni scheda mostra nome dell'area, testo interpretativo e barra di presenza senza valore numerico."
+    },
+    {
+      "ordine": 4,
+      "sezione": "disclaimer",
+      "contenuto": "Avvertenza sulla natura informativa e non diagnostica del questionario"
+    }
+  ],
+  "modello_di_calcolo": {
+    "valori_risposta": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Sempre": 5
+    },
+    "numero_domande": 24,
+    "numero_aree": 4,
+    "domande_per_area": 6,
+    "media_generale": "Somma delle 24 risposte divisa per 24",
+    "media_area": "Somma delle 6 risposte dell'area divisa per 6",
+    "barra_area": "Percentuale arrotondata calcolata come (media_area - 1) / 4 * 100; il valore non viene mostrato come numero",
+    "livelli_area": [
+      {
+        "codice": "LOW",
+        "condizione": "media_area < 2.4"
+      },
+      {
+        "codice": "MEDIUM",
+        "condizione": "2.4 <= media_area < 3.75"
+      },
+      {
+        "codice": "HIGH",
+        "condizione": "media_area >= 3.75"
+      }
+    ],
+    "nota_soglie": "Le soglie sono regole editoriali usate per comporre una restituzione leggibile; non sono cut-off clinici."
+  },
+  "regole_analisi_generale": {
+    "ordine_di_precedenza": [
+      {
+        "priorita": 1,
+        "assegna": "BROAD",
+        "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"
+      },
+      {
+        "priorita": 2,
+        "assegna": "FOCUSED",
+        "condizione": "numero_aree_HIGH >= 1"
+      },
+      {
+        "priorita": 3,
+        "assegna": "LOW",
+        "condizione": "media_generale < 2.4"
+      },
+      {
+        "priorita": 4,
+        "assegna": "MIXED",
+        "condizione": "tutti gli altri casi"
+      }
+    ],
+    "motivazione": "La selezione non dipende soltanto dalla media complessiva: considera anche quante aree presentano risposte ricorrenti."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Poche esperienze ricorrenti",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta delle esperienze esplorate dal questionario.",
+      "descrizione": "Questo risultato non esclude né conferma l'autismo: un questionario non validato non può sostituire una valutazione della storia personale, dello sviluppo e del funzionamento nei diversi contesti."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un profilo variabile",
+      "sottotitolo": "Le tue risposte descrivono esperienze presenti in modo diverso a seconda dell'ambito o della situazione.",
+      "descrizione": "Il quadro non è uniforme: alcune modalità possono essere occasionali, legate al contesto o condivise con condizioni ed esperienze diverse dall'autismo."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Alcuni aspetti emergono più chiaramente",
+      "sottotitolo": "Le tue risposte mettono in evidenza alcune esperienze ricorrenti, mentre altre sembrano meno presenti.",
+      "descrizione": "Può essere utile osservare quando questi aspetti compaiono, da quanto tempo sono presenti e quanto incidono sulla vita quotidiana. Da soli non permettono di formulare una diagnosi."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Esperienze presenti in più ambiti",
+      "sottotitolo": "Le tue risposte indicano che molte delle esperienze esplorate compaiono con una certa continuità in più aspetti della vita quotidiana.",
+      "descrizione": "Se queste esperienze sono presenti fin dall'infanzia, causano fatica o limitano relazioni, studio, lavoro o benessere, puoi valutare di parlarne con un professionista esperto di autismo nell'adulto. Il risultato resta informativo e non diagnostico."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "sociale",
+      "nome_interno": "Interazione sociale e reciprocità emotiva",
+      "nome_area_visibile_all_utente": true,
+      "analisi": [
+        {
+          "livello": "LOW",
+          "titolo_interno": "Presenza contenuta nell'interazione sociale",
+          "sottotitolo_interno": "Media dell'area inferiore a 2.4",
+          "descrizione_mostrata": "Nelle situazioni sociali riferisci generalmente poca difficoltà nel seguire lo scambio e comprendere cosa ci si aspetta reciprocamente."
+        },
+        {
+          "livello": "MEDIUM",
+          "titolo_interno": "Esperienze sociali variabili",
+          "sottotitolo_interno": "Media dell'area compresa tra 2.4 e 3.75",
+          "descrizione_mostrata": "Le interazioni sociali sembrano richiederti uno sforzo variabile: alcune risultano naturali, mentre altre possono portarti ad analizzare consapevolmente ciò che accade o a recuperare energie dopo."
+        },
+        {
+          "livello": "HIGH",
+          "titolo_interno": "Esperienze sociali ricorrenti",
+          "sottotitolo_interno": "Media dell'area almeno pari a 3.75",
+          "descrizione_mostrata": "Le tue risposte indicano che comprendere le aspettative reciproche, trovare il proprio spazio nella conversazione o sostenere interazioni prolungate può richiederti uno sforzo significativo."
+        }
+      ]
+    },
+    {
+      "area_code": "non_verbale",
+      "nome_interno": "Comunicazione non verbale e comprensione implicita",
+      "nome_area_visibile_all_utente": true,
+      "analisi": [
+        {
+          "livello": "LOW",
+          "titolo_interno": "Comprensione implicita generalmente agevole",
+          "sottotitolo_interno": "Media dell'area inferiore a 2.4",
+          "descrizione_mostrata": "Tono di voce, espressioni, gesti e significati impliciti sembrano esserti in genere accessibili senza un particolare sforzo consapevole."
+        },
+        {
+          "livello": "MEDIUM",
+          "titolo_interno": "Comprensione implicita dipendente dal contesto",
+          "sottotitolo_interno": "Media dell'area compresa tra 2.4 e 3.75",
+          "descrizione_mostrata": "In alcune situazioni potresti dover prestare attenzione in modo intenzionale a segnali non verbali, ironia, allusioni o regole sociali non espresse."
+        },
+        {
+          "livello": "HIGH",
+          "titolo_interno": "Comprensione implicita spesso impegnativa",
+          "sottotitolo_interno": "Media dell'area almeno pari a 3.75",
+          "descrizione_mostrata": "Le risposte suggeriscono che interpretare segnali non verbali o impliciti e coordinare consapevolmente il tuo modo di comunicare può essere spesso impegnativo."
+        }
+      ]
+    },
+    {
+      "area_code": "routine",
+      "nome_interno": "Routine, flessibilità e comportamenti ripetitivi",
+      "nome_area_visibile_all_utente": true,
+      "analisi": [
+        {
+          "livello": "LOW",
+          "titolo_interno": "Flessibilità generalmente presente",
+          "sottotitolo_interno": "Media dell'area inferiore a 2.4",
+          "descrizione_mostrata": "Cambiamenti, transizioni e modi diversi di svolgere le attività sembrano generalmente gestibili senza un forte bisogno di preparazione o ripetizione."
+        },
+        {
+          "livello": "MEDIUM",
+          "titolo_interno": "Bisogno variabile di prevedibilità",
+          "sottotitolo_interno": "Media dell'area compresa tra 2.4 e 3.75",
+          "descrizione_mostrata": "Prevedibilità e continuità possono aiutarti in alcune circostanze, soprattutto quando cambiamenti o passaggi rapidi richiedono più tempo per essere elaborati."
+        },
+        {
+          "livello": "HIGH",
+          "titolo_interno": "Bisogno ricorrente di prevedibilità",
+          "sottotitolo_interno": "Media dell'area almeno pari a 3.75",
+          "descrizione_mostrata": "Le tue risposte mostrano un bisogno marcato di prevedibilità o continuità; routine e azioni ripetitive possono avere un ruolo importante nel ritrovare calma, concentrazione o stabilità."
+        }
+      ]
+    },
+    {
+      "area_code": "sensoriale",
+      "nome_interno": "Interessi focalizzati e sensibilità sensoriale",
+      "nome_area_visibile_all_utente": true,
+      "analisi": [
+        {
+          "livello": "LOW",
+          "titolo_interno": "Impatto sensoriale e degli interessi contenuto",
+          "sottotitolo_interno": "Media dell'area inferiore a 2.4",
+          "descrizione_mostrata": "Stimoli sensoriali e interessi personali sembrano incidere in modo contenuto sulla tua attenzione e sull'organizzazione della giornata."
+        },
+        {
+          "livello": "MEDIUM",
+          "titolo_interno": "Impatto sensoriale o degli interessi variabile",
+          "sottotitolo_interno": "Media dell'area compresa tra 2.4 e 3.75",
+          "descrizione_mostrata": "Alcuni stimoli o interessi possono assumere per te una particolare intensità, offrendo benessere oppure richiedendo adattamenti in determinati contesti."
+        },
+        {
+          "livello": "HIGH",
+          "titolo_interno": "Impatto sensoriale o degli interessi ricorrente",
+          "sottotitolo_interno": "Media dell'area almeno pari a 3.75",
+          "descrizione_mostrata": "Le risposte indicano interessi molto assorbenti e/o una sensibilità sensoriale significativa; questi aspetti possono essere fonti di benessere e competenza, ma anche richiedere protezione da sovraccarico e interruzioni."
+        }
+      ]
+    }
+  ],
+  "esempi_di_assegnazione": [
+    {
+      "scenario": "Risposte quasi sempre Mai o Raramente in tutte le aree",
+      "media_generale_esempio": 1.8,
+      "numero_aree_HIGH": 0,
+      "analisi_generale": "LOW",
+      "analisi_aree": "Per ogni area viene selezionato normalmente il testo LOW"
+    },
+    {
+      "scenario": "Risposte A volte nelle quattro aree",
+      "media_generale_esempio": 3.0,
+      "numero_aree_HIGH": 0,
+      "analisi_generale": "MIXED",
+      "analisi_aree": "Per ogni area viene selezionato normalmente il testo MEDIUM"
+    },
+    {
+      "scenario": "Spesso o Sempre nell'area sociale, Mai o Raramente nelle altre",
+      "media_generale_esempio": 2.2,
+      "numero_aree_HIGH": 1,
+      "analisi_generale": "FOCUSED",
+      "analisi_aree": "Testo HIGH per l'area sociale e testi LOW o MEDIUM per le altre"
+    },
+    {
+      "scenario": "Spesso o Sempre in almeno tre aree",
+      "media_generale_esempio": 4.1,
+      "numero_aree_HIGH": 3,
+      "analisi_generale": "BROAD",
+      "analisi_aree": "Testi HIGH per le aree interessate; tutti i paragrafi sono ordinati per media decrescente"
+    }
+  ]
+}

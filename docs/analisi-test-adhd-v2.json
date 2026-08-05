@@ -1,0 +1,102 @@
+{
+  "test": {
+    "id": "tratti-adhd-adulti",
+    "titolo": "Tratti associati all'ADHD nell'adulto",
+    "versione": "2.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il questionario non è clinicamente validato e non conferma né esclude una diagnosi. Una valutazione dell'ADHD considera anche storia dello sviluppo, impatto, presenza in più contesti e spiegazioni alternative."
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "barra_area": "Percentuale arrotondata calcolata come (media_area - 1) / 4 * 100; il valore non viene mostrato come numero",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Poche difficoltà ricorrenti",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta delle esperienze esplorate dal questionario.",
+      "descrizione": "Questo risultato non esclude né conferma l'ADHD. La frequenza percepita può cambiare nel tempo e un questionario non validato non valuta esordio nell'infanzia, impatto funzionale, presenza in più contesti o possibili spiegazioni alternative."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un andamento variabile",
+      "sottotitolo": "Le tue risposte descrivono difficoltà presenti in modo diverso secondo il tipo di attività o la situazione.",
+      "descrizione": "Il quadro non è uniforme: sonno, stress, carico mentale, interesse e ambiente possono incidere molto su attenzione e autoregolazione. Le risposte, da sole, non permettono di formulare una diagnosi."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Alcuni aspetti emergono con chiarezza",
+      "sottotitolo": "Le tue risposte mettono in evidenza difficoltà ricorrenti in alcuni ambiti, mentre altri sembrano meno coinvolti.",
+      "descrizione": "Può essere utile osservare da quanto tempo sono presenti, in quali contesti compaiono e quanto incidono su lavoro, studio, relazioni o gestione quotidiana. Un profilo circoscritto non conferma né esclude l'ADHD."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Difficoltà presenti in più ambiti",
+      "sottotitolo": "Le tue risposte indicano che molte delle esperienze esplorate ricorrono in diversi aspetti della vita quotidiana.",
+      "descrizione": "Se queste difficoltà erano presenti già nell'infanzia, compaiono in più contesti e interferiscono con lavoro, studio, relazioni o benessere, puoi valutare una consulenza con un professionista esperto di ADHD nell'adulto. Il risultato resta informativo e non diagnostico."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "attenzione",
+      "nome_interno": "Attenzione sostenuta e distraibilità",
+      "nome_area_visibile_all_utente": true,
+      "analisi": [
+        {"livello": "LOW", "descrizione_mostrata": "Riferisci generalmente una buona continuità dell'attenzione, con distrazioni o cali di concentrazione piuttosto occasionali."},
+        {"livello": "MEDIUM", "descrizione_mostrata": "La tua capacità di mantenere l'attenzione sembra variare in base a durata, interesse, complessità e quantità di stimoli presenti."},
+        {"livello": "HIGH", "descrizione_mostrata": "Le risposte indicano una distraibilità frequente o una marcata difficoltà nel mantenere l'attenzione, soprattutto in attività lunghe, ripetitive o ricche di dettagli."}
+      ]
+    },
+    {
+      "area_code": "organizzazione",
+      "nome_interno": "Organizzazione, memoria operativa e gestione del tempo",
+      "nome_area_visibile_all_utente": true,
+      "analisi": [
+        {"livello": "LOW", "descrizione_mostrata": "Organizzare passaggi, ricordare impegni e stimare i tempi sembra crearti difficoltà solo occasionalmente."},
+        {"livello": "MEDIUM", "descrizione_mostrata": "Gestione del tempo, memoria degli impegni e avvio dei compiti possono richiederti strategie o strumenti esterni in alcune situazioni."},
+        {"livello": "HIGH", "descrizione_mostrata": "Le tue risposte mostrano difficoltà ricorrenti nell'organizzare attività, stimare i tempi, ricordare impegni o iniziare compiti che richiedono uno sforzo mentale prolungato."}
+      ]
+    },
+    {
+      "area_code": "impulsivita",
+      "nome_interno": "Impulsività e controllo della risposta",
+      "nome_area_visibile_all_utente": true,
+      "analisi": [
+        {"livello": "LOW", "descrizione_mostrata": "Nelle tue risposte emerge generalmente la capacità di attendere e valutare prima di parlare, agire o cambiare programma."},
+        {"livello": "MEDIUM", "descrizione_mostrata": "In alcune circostanze potresti rispondere o decidere rapidamente, soprattutto quando sei coinvolto, impaziente o sotto pressione."},
+        {"livello": "HIGH", "descrizione_mostrata": "Le risposte suggeriscono che trattenere una risposta, attendere il proprio turno o considerare le conseguenze prima di agire può richiederti spesso uno sforzo significativo."}
+      ]
+    },
+    {
+      "area_code": "irrequietezza",
+      "nome_interno": "Irrequietezza e bisogno di stimolazione",
+      "nome_area_visibile_all_utente": true,
+      "analisi": [
+        {"livello": "LOW", "descrizione_mostrata": "Irrequietezza e bisogno di nuovi stimoli sembrano comparire in modo contenuto e generalmente gestibile."},
+        {"livello": "MEDIUM", "descrizione_mostrata": "Il bisogno di movimento o stimolazione può aumentare durante attese, attività lente o momenti poco coinvolgenti."},
+        {"livello": "HIGH", "descrizione_mostrata": "Le tue risposte indicano una sensazione frequente di irrequietezza o un forte bisogno di movimento, attività e stimolazione, anche nei momenti destinati alla pausa."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_paragrafi": "Le aree sono ordinate dalla media più alta alla più bassa; sono mostrati nome, testo e barra, ma non livelli, soglie o punteggi numerici.",
+    "nota": "Le soglie sono editoriali e non costituiscono cut-off clinici."
+  }
+}
