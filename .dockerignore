@@ -1,0 +1,10 @@
+.git
+.idea
+.settings
+.vscode
+data
+docs
+target
+settings.xml
+*.iml
+HELP.md
