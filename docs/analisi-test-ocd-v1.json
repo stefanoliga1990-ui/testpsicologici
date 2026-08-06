@@ -1,0 +1,104 @@
+{
+  "test": {
+    "id": "tratti-ossessivo-compulsivi",
+    "titolo": "Tratti ossessivo-compulsivi",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il questionario non è clinicamente validato e non conferma né esclude un disturbo ossessivo-compulsivo. I pensieri indesiderati non indicano intenzione di agire; una valutazione considera anche disagio, tempo occupato, interferenza e spiegazioni alternative."
+  },
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra_area": "Percentuale arrotondata calcolata come (media_area - 1) / 4 * 100; il valore non viene mostrato come numero",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ],
+    "nota": "Le soglie sono regole editoriali e non cut-off diagnostici."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Poche esperienze ricorrenti",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta dei pensieri, dubbi e comportamenti ripetitivi esplorati dal questionario.",
+      "descrizione": "Questo risultato non conferma né esclude un disturbo ossessivo-compulsivo. Pensieri indesiderati e controlli occasionali sono comuni; per una valutazione contano soprattutto disagio, tempo occupato, difficoltà a interromperli e impatto sulla vita quotidiana."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un andamento variabile",
+      "sottotitolo": "Le tue risposte descrivono esperienze presenti in modo diverso secondo il contenuto, la situazione o il momento.",
+      "descrizione": "Il quadro non è uniforme: stress, ansia, responsabilità percepita e bisogno di certezza possono influenzare dubbi e rituali. Le risposte, da sole, non permettono di formulare una diagnosi."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Alcuni aspetti emergono con chiarezza",
+      "sottotitolo": "Le tue risposte mettono in evidenza pensieri o comportamenti ricorrenti in alcuni ambiti, mentre altri sembrano meno coinvolti.",
+      "descrizione": "Può essere utile osservare quanto tempo richiedono, quanto disagio provocano e se portano a evitamenti o rallentamenti. Un profilo circoscritto non conferma né esclude un disturbo ossessivo-compulsivo."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Esperienze ricorrenti in più ambiti",
+      "sottotitolo": "Le tue risposte indicano che molte delle esperienze esplorate compaiono con continuità in diversi aspetti della vita quotidiana.",
+      "descrizione": "Se pensieri intrusivi, controlli o rituali occupano molto tempo, provocano forte disagio o interferiscono con relazioni, studio, lavoro o autonomia, puoi valutare di parlarne con un professionista qualificato. Il risultato resta informativo e non diagnostico."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "intrusioni",
+      "nome_area": "Pensieri intrusivi, dubbio e bisogno di certezza",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Pensieri indesiderati e dubbi sembrano generalmente passare senza occupare a lungo la tua attenzione o richiedere particolari rassicurazioni."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni pensieri intrusivi, dubbi o bisogno di certezza possono tornare e richiederti uno sforzo per lasciarli andare."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano pensieri intrusivi o dubbi ricorrenti e un forte bisogno di certezza, rassicurazione o evitamento per ridurre il disagio."}
+      ]
+    },
+    {
+      "area_code": "contaminazione",
+      "nome_area": "Contaminazione, pulizia ed evitamento",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Timori di contaminazione e attività di pulizia sembrano comparire in modo contenuto e generalmente proporzionato alla situazione."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni contesti il timore di sporco o contaminazione può portarti a lavare, pulire, separare oggetti o evitare contatti più del previsto."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano timori di contaminazione ricorrenti e rituali di pulizia o evitamento che possono richiedere tempo e limitare alcune attività."}
+      ]
+    },
+    {
+      "area_code": "controllo",
+      "nome_area": "Controllo, responsabilità e prevenzione del danno",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Controlli e preoccupazioni di aver causato errori o danni sembrano generalmente limitati e facili da concludere."},
+        {"livello": "MEDIUM", "descrizione": "In determinate situazioni potresti ripetere verifiche o ripercorrere mentalmente le tue azioni per raggiungere una sensazione sufficiente di sicurezza."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano controlli ripetuti e un forte senso di responsabilità nel prevenire errori o danni, anche dopo aver già verificato la situazione."}
+      ]
+    },
+    {
+      "area_code": "rituali",
+      "nome_area": "Ordine, simmetria, ripetizione e rituali mentali",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Ordine, simmetria e piccole abitudini ripetitive sembrano incidere poco sul tuo tempo e sulla possibilità di cambiare sequenza."},
+        {"livello": "MEDIUM", "descrizione": "In alcune circostanze potresti cercare una sensazione di completezza attraverso ordine, conteggi, ripetizioni o rituali mentali."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano un bisogno ricorrente di ordine, simmetria o ripetizione; sequenze e rituali mentali possono essere difficili da interrompere finché non sembrano eseguiti nel modo giusto."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; sono mostrati nome, testo e barra, ma non livelli, soglie o punteggi numerici."
+  }
+}

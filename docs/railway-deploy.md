@@ -6,7 +6,7 @@
 - Database H2 in modalità file.
 - Un solo servizio e una sola replica.
 - Volume Railway montato a `/data` per rendere persistente il file H2.
-- Dati editoriali inizializzati dal `ContentDataInitializer`: un database vuoto riceve automaticamente gli stessi test e le stesse analisi presenti in locale.
+- Dati editoriali inizializzati dal `ContentDataInitializer`: un database vuoto riceve automaticamente gli stessi test e le stesse analisi presenti nel codice.
 
 Il file locale `data/testpsicologici.mv.db` non deve essere pubblicato su GitHub né copiato nel container. Il codice di inizializzazione è la fonte riproducibile dei contenuti; il volume conserva poi il database tra riavvii e nuovi deploy.
 
