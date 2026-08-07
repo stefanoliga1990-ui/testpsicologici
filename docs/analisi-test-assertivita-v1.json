@@ -1,0 +1,140 @@
+{
+  "test": {
+    "id": "assertivita",
+    "titolo": "Assertività",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza dei comportamenti assertivi esplorati dal questionario",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il questionario non è clinicamente validato, non formula diagnosi e non misura il valore, la forza o il coraggio della persona. Le soglie hanno esclusivamente una funzione editoriale."
+  },
+  "istruzioni": "Rispondere pensando a quanto spesso il comportamento viene realmente messo in pratica in contesti diversi, non a quanto lo si considera desiderabile.",
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono scale validate. L'assertività è trattata come un insieme di comportamenti contestuali: esprimersi e tutelarsi senza negare i diritti altrui. Non esporsi in un contesto minaccioso o con un forte squilibrio di potere può essere una scelta protettiva e non una carenza personale.",
+    "fonti_consultate": [
+      {
+        "titolo": "A 30-Item Schedule for Assessing Assertive Behavior",
+        "url": "https://doi.org/10.1016/S0005-7894(73)80120-0",
+        "apporto": "Riferimento storico per la misurazione comportamentale e situazionale dell'assertività."
+      },
+      {
+        "titolo": "Normative studies with the Scale for Interpersonal Behaviour",
+        "url": "https://doi.org/10.1016/S0191-8869(98)00252-9",
+        "apporto": "Riferimento per la struttura multidimensionale: espressione di sentimenti e limiti, iniziativa e assertività positiva."
+      },
+      {
+        "titolo": "Cross-sample invariance of the structure of self-reported distress and difficulty in assertiveness",
+        "url": "https://doi.org/10.1016/0146-6402(85)90013-X",
+        "apporto": "Riferimento per la replicabilità delle diverse dimensioni assertive in campioni clinici e non clinici."
+      },
+      {
+        "titolo": "Measurement of assertive behavior: construct and predictive validity of self-report, role-playing, and in-vivo measures",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/457902/",
+        "apporto": "Riferimento per la dipendenza dell'assertività dal compito e per i limiti delle sole autovalutazioni."
+      },
+      {
+        "titolo": "Short version of the Scale for Interpersonal Behavior: psychometric analysis",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9792610/",
+        "apporto": "Riferimento recente per le quattro dimensioni di assertività negativa, positiva, iniziativa e gestione dei limiti personali."
+      },
+      {
+        "titolo": "Efficacy of transdiagnostic cognitive-behavioral therapy for assertiveness: a randomized controlled trial",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10235435/",
+        "apporto": "Riferimento per considerare l'assertività come un insieme di abilità allenabili e non come una qualità immutabile."
+      },
+      {
+        "titolo": "The effectiveness of assertiveness communication training programs: a systematic review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28964979/",
+        "apporto": "Riferimento per il ruolo dell'allenamento e del contesto nell'espressione assertiva."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "orientamento": "Tutte le domande sono positive: Mai corrisponde al minimo e Sempre al massimo della competenza assertiva descritta.",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "La tua voce trova ancora poco spazio",
+      "sottotitolo": "Nel complesso hai indicato una frequenza contenuta dei comportamenti assertivi esplorati.",
+      "descrizione": "Potresti tendere a trattenere opinioni, bisogni o richieste, soprattutto quando temi conflitti, giudizi o conseguenze relazionali. L'assertività è un insieme di abilità che può essere allenato gradualmente e il risultato non dice nulla sul tuo valore o sul tuo coraggio."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un'assertività che cambia con il contesto",
+      "sottotitolo": "Le tue risposte descrivono comportamenti assertivi presenti in alcune situazioni e più difficili in altre.",
+      "descrizione": "Potresti sentirti libero di esprimerti con alcune persone ma faticare davanti a conflitti, autorità, richieste o legami importanti. Individuare i contesti in cui la tua voce si riduce può offrire indicazioni più utili di un'etichetta generale."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Una risorsa assertiva emerge con chiarezza",
+      "sottotitolo": "Una o due aree risultano particolarmente solide, mentre altre sembrano richiedere più intenzionalità o allenamento.",
+      "descrizione": "Le competenze già presenti possono diventare un punto di partenza: osservare che cosa ti aiuta in quei contesti può facilitare il trasferimento dello stesso equilibrio alle situazioni in cui esprimerti è più difficile."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Competenze assertive diffuse",
+      "sottotitolo": "Le tue risposte indicano che esprimi con frequenza opinioni, bisogni e limiti mantenendo attenzione anche ai diritti altrui.",
+      "descrizione": "Un profilo ampio non significa dover parlare sempre o ottenere sempre ciò che chiedi: essere assertivi comprende anche ascoltare, negoziare e scegliere consapevolmente quando intervenire. Situazione, sicurezza e conseguenze concrete restano importanti. Il risultato è informativo e non costituisce una valutazione clinica."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "espressione",
+      "nome_area": "Espressione di opinioni, bisogni ed emozioni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Potresti trattenere spesso opinioni, emozioni o bisogni e adattarti alle preferenze altrui anche quando per te sarebbe importante esprimerti."},
+        {"livello": "MEDIUM", "descrizione": "Riesci a esprimere ciò che pensi e senti in diversi contesti, ma alcune persone o situazioni possono renderti più difficile parlare in modo diretto."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una buona capacità di rendere visibili opinioni, preferenze, bisogni ed emozioni senza trasformarli in accuse verso gli altri."}
+      ]
+    },
+    {
+      "area_code": "confini",
+      "nome_area": "Confini, rifiuto e tutela dei propri diritti",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Dire di no, segnalare un disagio o mantenere un limite sembra spesso difficile, soprattutto quando temi di deludere o creare tensione."},
+        {"livello": "MEDIUM", "descrizione": "Sai proteggere alcuni limiti, mentre in altre circostanze insistenza, senso di colpa o timore delle reazioni possono portarti a cedere."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano una capacità frequente di rifiutare richieste, tutelare tempo e diritti e chiedere cambiamenti in modo diretto e rispettoso."}
+      ]
+    },
+    {
+      "area_code": "confronto",
+      "nome_area": "Confronto, critiche e gestione del disaccordo",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Critiche e disaccordi possono portarti a evitare il confronto, chiuderti, cedere oppure accumulare tensione prima di affrontare il problema."},
+        {"livello": "MEDIUM", "descrizione": "In molti confronti riesci a restare presente e rispettoso, ma autorità, critiche o temi emotivamente importanti possono rendere più difficile mantenere la tua posizione."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una buona capacità di affrontare disaccordi e feedback restando sul problema, ascoltando l'altro e conservando il diritto alla tua posizione."}
+      ]
+    },
+    {
+      "area_code": "iniziativa",
+      "nome_area": "Iniziativa, richieste e riconoscimento reciproco",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Prendere l'iniziativa, chiedere aiuto o riconoscimento ed esprimere apprezzamento può risultarti difficile quando non conosci in anticipo la risposta altrui."},
+        {"livello": "MEDIUM", "descrizione": "Ti attivi con una certa facilità in situazioni familiari, mentre richieste, nuove interazioni o la possibilità di ricevere un rifiuto possono frenarti."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano una buona disponibilità a iniziare scambi, formulare richieste, chiedere aiuto e dare o ricevere riconoscimenti in modo aperto."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; per questo test vengono mostrate prima le competenze più frequenti. Sono visibili nome, testo e barra, ma non livelli, soglie o punteggi numerici."
+  }
+}

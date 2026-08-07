@@ -204,10 +204,47 @@ class TestResultServiceTest {
     }
 
     @Test
+    void assertivenessTestIsLoadedWithTwentyFourQuestionsAndPositiveLabels() {
+        PsychologicalTest test = catalogue.findById("assertivita");
+
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva dei comportamenti assertivi");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza dei comportamenti assertivi");
+    }
+
+    @Test
+    void assertivenessFocusedProfileShowsTheStrongestAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("assertivita", 5, 1, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Una risorsa assertiva emerge con chiarezza");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Espressione di opinioni, bisogni ed emozioni");
+        assertThat(result.areaResults().get(0).description()).contains("buona capacità di rendere visibili");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+    }
+
+    @Test
+    void assertivenessLowAndBroadProfilesFollowThePositiveScoringDirection() {
+        TestResult low = analyzeWithAnswersForTest("assertivita", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("assertivita", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("La tua voce trova ancora poco spazio");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("Competenze assertive diffuse");
+        assertThat(broad.general().detail()).contains("ascoltare, negoziare");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

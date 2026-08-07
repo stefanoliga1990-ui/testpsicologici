@@ -42,6 +42,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedObsessiveCompulsiveInformationTest();
         seedSelfEsteemInformationTest();
         seedEmotionalDependenceInformationTest();
+        seedAssertivenessInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -433,6 +434,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Il tuo equilibrio emotivo e la tua attenzione sembrano dipendere in modo contenuto dall'andamento della relazione o dalla disponibilità dell'altra persona.",
                 "Pensieri, umore e bisogno di contatto possono diventare più intensi in momenti di incertezza, distanza o rottura, pur lasciando spazio anche ad altri aspetti della vita.",
                 "Le risposte indicano che relazione, contatto e disponibilità dell'altra persona possono assorbire spesso pensieri ed emozioni, rendendo difficile ritrovare stabilità in modo autonomo.");
+    }
+
+    private void seedAssertivenessInformationTest() {
+        String id = "assertivita";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Assertività",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere su come esprimi opinioni e bisogni, proteggi i tuoi confini e affronti richieste o disaccordi.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non misura il tuo valore, la tua forza o il tuo coraggio. Rispondi pensando a quanto spesso riesci davvero a mettere in pratica ciascun comportamento nei diversi contesti, non a quanto lo ritieni desiderabile. L'assertività può cambiare in base alla situazione, alla relazione, alla cultura e alla sicurezza percepita; non esporsi in un contesto minaccioso o con un forte squilibrio di potere può essere una scelta protettiva, non una carenza personale.",
+                version, false,
+                "Frequenza complessiva dei comportamenti assertivi",
+                "Frequenza dei comportamenti assertivi",
+                true, 6));
+
+        saveArea(id, "espressione", "Espressione di opinioni, bisogni ed emozioni", 1);
+        saveArea(id, "confini", "Confini, rifiuto e tutela dei propri diritti", 2);
+        saveArea(id, "confronto", "Confronto, critiche e gestione del disaccordo", 3);
+        saveArea(id, "iniziativa", "Iniziativa, richieste e riconoscimento reciproco", 4);
+
+        saveQuestions(id, List.of(
+                q("espressione", "Esprimo la mia opinione anche quando è diversa da quella delle persone presenti."),
+                q("espressione", "Comunico ciò di cui ho bisogno prima che il disagio si trasformi in frustrazione o risentimento."),
+                q("espressione", "Riesco a dire come mi sento parlando della mia esperienza senza accusare l'altra persona."),
+                q("espressione", "Quando una mia preferenza conta, la esprimo invece di adeguarmi automaticamente alle scelte altrui."),
+                q("espressione", "Intervengo quando una mia idea, un contributo o un merito non vengono riconosciuti correttamente."),
+                q("espressione", "Se vengo frainteso, chiarisco con calma ciò che intendevo dire o chiedere."),
+                q("confini", "Dico di no a una richiesta quando non posso o non voglio accettarla, senza inventare scuse."),
+                q("confini", "Segnalo in modo diretto quando un comportamento mi mette a disagio o supera un mio limite."),
+                q("confini", "Proteggo il tempo e le energie necessari ai miei impegni anche quando qualcuno vorrebbe che fossi sempre disponibile."),
+                q("confini", "Chiedo un trattamento corretto quando un accordo, un servizio o un mio diritto non vengono rispettati."),
+                q("confini", "Mantengo un limite importante anche se l'altra persona mostra delusione o insiste perché lo cambi."),
+                q("confini", "Chiedo con calma e precisione di modificare un comportamento che continua a crearmi difficoltà."),
+                q("confronto", "Durante un disaccordo rimango sul problema concreto senza attaccare la persona o svalutarla."),
+                q("confronto", "Ascolto il punto di vista altrui senza sentirmi obbligato ad abbandonare il mio."),
+                q("confronto", "Quando ricevo una critica, cerco di valutarne la parte utile prima di difendermi o chiudermi."),
+                q("confronto", "Riconosco un mio errore senza lasciare che questo annulli il valore della mia posizione o della mia persona."),
+                q("confronto", "Esprimo un disaccordo rispettoso anche con una persona autorevole o importante per me."),
+                q("confronto", "Affronto una tensione significativa invece di evitarla a lungo o accumulare risentimento."),
+                q("iniziativa", "Formulo richieste chiare anche quando esiste la possibilità che l'altra persona risponda di no."),
+                q("iniziativa", "Chiedo aiuto, informazioni o chiarimenti quando ne ho bisogno."),
+                q("iniziativa", "Prendo l'iniziativa per iniziare una conversazione o presentarmi in un contesto poco familiare."),
+                q("iniziativa", "Esprimo apprezzamento o affetto in modo diretto quando lo provo."),
+                q("iniziativa", "Accolgo un complimento o un riconoscimento senza sminuirlo o respingerlo automaticamente."),
+                q("iniziativa", "Nelle decisioni condivise propongo una soluzione negoziabile spiegando quali priorità sono importanti per me.")));
+
+        saveGlobal(id, "LOW", "La tua voce trova ancora poco spazio",
+                "Nel complesso hai indicato una frequenza contenuta dei comportamenti assertivi esplorati.",
+                "Potresti tendere a trattenere opinioni, bisogni o richieste, soprattutto quando temi conflitti, giudizi o conseguenze relazionali. L'assertività è un insieme di abilità che può essere allenato gradualmente e il risultato non dice nulla sul tuo valore o sul tuo coraggio.");
+        saveGlobal(id, "MIXED", "Un'assertività che cambia con il contesto",
+                "Le tue risposte descrivono comportamenti assertivi presenti in alcune situazioni e più difficili in altre.",
+                "Potresti sentirti libero di esprimerti con alcune persone ma faticare davanti a conflitti, autorità, richieste o legami importanti. Individuare i contesti in cui la tua voce si riduce può offrire indicazioni più utili di un'etichetta generale.");
+        saveGlobal(id, "FOCUSED", "Una risorsa assertiva emerge con chiarezza",
+                "Una o due aree risultano particolarmente solide, mentre altre sembrano richiedere più intenzionalità o allenamento.",
+                "Le competenze già presenti possono diventare un punto di partenza: osservare che cosa ti aiuta in quei contesti può facilitare il trasferimento dello stesso equilibrio alle situazioni in cui esprimerti è più difficile.");
+        saveGlobal(id, "BROAD", "Competenze assertive diffuse",
+                "Le tue risposte indicano che esprimi con frequenza opinioni, bisogni e limiti mantenendo attenzione anche ai diritti altrui.",
+                "Un profilo ampio non significa dover parlare sempre o ottenere sempre ciò che chiedi: essere assertivi comprende anche ascoltare, negoziare e scegliere consapevolmente quando intervenire. Situazione, sicurezza e conseguenze concrete restano importanti. Il risultato è informativo e non costituisce una valutazione clinica.");
+
+        saveAreaInsights(id, "espressione",
+                "Potresti trattenere spesso opinioni, emozioni o bisogni e adattarti alle preferenze altrui anche quando per te sarebbe importante esprimerti.",
+                "Riesci a esprimere ciò che pensi e senti in diversi contesti, ma alcune persone o situazioni possono renderti più difficile parlare in modo diretto.",
+                "Le risposte mostrano una buona capacità di rendere visibili opinioni, preferenze, bisogni ed emozioni senza trasformarli in accuse verso gli altri.");
+        saveAreaInsights(id, "confini",
+                "Dire di no, segnalare un disagio o mantenere un limite sembra spesso difficile, soprattutto quando temi di deludere o creare tensione.",
+                "Sai proteggere alcuni limiti, mentre in altre circostanze insistenza, senso di colpa o timore delle reazioni possono portarti a cedere.",
+                "Le risposte indicano una capacità frequente di rifiutare richieste, tutelare tempo e diritti e chiedere cambiamenti in modo diretto e rispettoso.");
+        saveAreaInsights(id, "confronto",
+                "Critiche e disaccordi possono portarti a evitare il confronto, chiuderti, cedere oppure accumulare tensione prima di affrontare il problema.",
+                "In molti confronti riesci a restare presente e rispettoso, ma autorità, critiche o temi emotivamente importanti possono rendere più difficile mantenere la tua posizione.",
+                "Le risposte mostrano una buona capacità di affrontare disaccordi e feedback restando sul problema, ascoltando l'altro e conservando il diritto alla tua posizione.");
+        saveAreaInsights(id, "iniziativa",
+                "Prendere l'iniziativa, chiedere aiuto o riconoscimento ed esprimere apprezzamento può risultarti difficile quando non conosci in anticipo la risposta altrui.",
+                "Ti attivi con una certa facilità in situazioni familiari, mentre richieste, nuove interazioni o la possibilità di ricevere un rifiuto possono frenarti.",
+                "Le risposte indicano una buona disponibilità a iniziare scambi, formulare richieste, chiedere aiuto e dare o ricevere riconoscimenti in modo aperto.");
     }
 
     private boolean requiresSeed(String testId, String version) {
