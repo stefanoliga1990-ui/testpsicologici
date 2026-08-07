@@ -73,14 +73,14 @@ class PageRenderingTest {
 
     @Test
     void completedResultCanBeDownloadedAsAReadablePdf() throws Exception {
-        String testId = "tratti-adhd-adulti";
+        String testId = "autostima";
         MockHttpSession session = completedAttempt(testId, 3);
 
         MvcResult mvcResult = mockMvc.perform(get("/test/{testId}/risultato/pdf", testId).session(session))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/pdf"))
                 .andExpect(header().string("Content-Disposition", containsString(
-                        "analisi-tratti-adhd-adulti.pdf")))
+                        "analisi-autostima.pdf")))
                 .andExpect(header().string("Cache-Control", containsString("no-store")))
                 .andReturn();
 
@@ -99,9 +99,9 @@ class PageRenderingTest {
             assertThat(document.getNumberOfPages()).isGreaterThanOrEqualTo(1);
             assertThat(text)
                     .contains("Spazio Test")
-                    .contains("Tratti associati all'ADHD nell'adulto")
-                    .contains("PRESENZA COMPLESSIVA DEL TRATTO")
-                    .contains("Attenzione sostenuta e distraibilità")
+                    .contains("Autostima")
+                    .contains("DIFFICOLTÀ COMPLESSIVE RELATIVE ALL'AUTOSTIMA")
+                    .contains("Valore personale e autoaccettazione")
                     .contains("finalità esclusivamente informative");
         }
     }

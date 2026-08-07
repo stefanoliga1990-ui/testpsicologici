@@ -21,6 +21,10 @@ public class TestDefinitionEntity {
     private String version;
     @Column(name = "score_visible")
     private boolean scoreVisible;
+    @Column(name = "overall_metric_label")
+    private String overallMetricLabel;
+    @Column(name = "area_metric_label")
+    private String areaMetricLabel;
     private boolean active;
     @Column(name = "display_order")
     private int displayOrder;
@@ -31,6 +35,14 @@ public class TestDefinitionEntity {
     public TestDefinitionEntity(String id, String title, String eyebrow, String description, String duration,
                                 String introductoryText, String version, boolean scoreVisible, boolean active,
                                 int displayOrder) {
+        this(id, title, eyebrow, description, duration, introductoryText, version, scoreVisible,
+                "Presenza complessiva del tratto", "Presenza del tratto", active, displayOrder);
+    }
+
+    public TestDefinitionEntity(String id, String title, String eyebrow, String description, String duration,
+                                String introductoryText, String version, boolean scoreVisible,
+                                String overallMetricLabel, String areaMetricLabel, boolean active,
+                                int displayOrder) {
         this.id = id;
         this.title = title;
         this.eyebrow = eyebrow;
@@ -39,6 +51,8 @@ public class TestDefinitionEntity {
         this.introductoryText = introductoryText;
         this.version = version;
         this.scoreVisible = scoreVisible;
+        this.overallMetricLabel = overallMetricLabel;
+        this.areaMetricLabel = areaMetricLabel;
         this.active = active;
         this.displayOrder = displayOrder;
     }
@@ -51,6 +65,12 @@ public class TestDefinitionEntity {
     public String getIntroductoryText() { return introductoryText; }
     public String getVersion() { return version; }
     public boolean isScoreVisible() { return scoreVisible; }
+    public String getOverallMetricLabel() {
+        return overallMetricLabel == null ? "Presenza complessiva del tratto" : overallMetricLabel;
+    }
+    public String getAreaMetricLabel() {
+        return areaMetricLabel == null ? "Presenza del tratto" : areaMetricLabel;
+    }
     public boolean isActive() { return active; }
     public int getDisplayOrder() { return displayOrder; }
 }

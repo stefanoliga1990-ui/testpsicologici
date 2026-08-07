@@ -24,7 +24,7 @@
 </div>
 
 <div class="overall-block">
-    <p class="bar-label">Presenza complessiva del tratto</p>
+    <p class="bar-label" th:text="${test.overallMetricLabel}">Presenza complessiva del tratto</p>
     <div class="bar-track overall-track">
         <span th:style="|width: ${percentage}%|"></span>
     </div>
@@ -39,7 +39,7 @@
 
 <div class="area-card" th:each="area : ${areaResults}">
     <h3 th:text="${area.title}">Nome dell'area</h3>
-    <p class="bar-label">Presenza del tratto</p>
+    <p class="bar-label" th:text="${test.areaMetricLabel}">Presenza del tratto</p>
     <div class="bar-track">
         <span th:style="|width: ${area.percentage}%|"></span>
     </div>

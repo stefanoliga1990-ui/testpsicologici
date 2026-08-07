@@ -25,9 +25,9 @@
         <p class="result-description" th:text="${result.description}">Hai l'energia di una vera web app.</p>
         <p class="result-detail" th:text="${result.detail}">Design, ritmo e praticità sono dalla tua parte.</p>
         <div class="overall-presence" th:if="${!#lists.isEmpty(areaResults)}">
-            <div class="overall-presence-label">Presenza complessiva del tratto</div>
+            <div class="overall-presence-label" th:text="${test.overallMetricLabel}">Presenza complessiva del tratto</div>
             <div class="overall-presence-track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                 aria-label="Presenza complessiva del tratto"
+                 th:aria-label="${test.overallMetricLabel}"
                  th:aria-valuenow="${percentage}">
                 <span th:style="|width: ${percentage}%|"></span>
             </div>
@@ -41,9 +41,9 @@
             <div class="area-result-grid">
                 <article class="area-result-card" th:each="area : ${areaResults}">
                     <h3 th:text="${area.title}">Nome dell'area</h3>
-                    <div class="area-presence-label"><span>Presenza del tratto</span></div>
+                    <div class="area-presence-label"><span th:text="${test.areaMetricLabel}">Presenza del tratto</span></div>
                     <div class="area-presence-track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                         th:aria-label="|Presenza del tratto: ${area.title}|"
+                         th:aria-label="|${test.areaMetricLabel}: ${area.title}|"
                          th:aria-valuenow="${area.percentage}">
                         <span th:style="|width: ${area.percentage}%|"></span>
                     </div>

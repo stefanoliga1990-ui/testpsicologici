@@ -62,7 +62,8 @@ public class TestCatalogue {
                 .toList();
         return new PsychologicalTest(
                 entity.getId(), entity.getTitle(), entity.getEyebrow(), entity.getDescription(), entity.getDuration(),
-                entity.getIntroductoryText(), entity.getVersion(), entity.isScoreVisible(), areas, questions);
+                entity.getIntroductoryText(), entity.getVersion(), entity.isScoreVisible(),
+                entity.getOverallMetricLabel(), entity.getAreaMetricLabel(), areas, questions);
     }
 
     private String areaInsight(String testId, String areaCode, String level) {

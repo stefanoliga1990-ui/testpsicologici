@@ -131,10 +131,46 @@ class TestResultServiceTest {
     }
 
     @Test
+    void selfEsteemTestIsLoadedWithTwentyFourQuestionsAndSpecificLabels() {
+        PsychologicalTest test = catalogue.findById("autostima");
+
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.overallMetricLabel()).isEqualTo("Difficoltà complessive relative all'autostima");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle difficoltà");
+    }
+
+    @Test
+    void selfEsteemFocusedProfileShowsTheMostRelevantAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("autostima", 5, 1, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Un'area mette più alla prova la tua autostima");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Valore personale e autoaccettazione");
+        assertThat(result.areaResults().get(0).description()).contains("dignità personale");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+    }
+
+    @Test
+    void selfEsteemLowAndBroadProfilesFollowTheGeneralRules() {
+        TestResult low = analyzeWithAnswersForTest("autostima", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("autostima", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Un senso di valore generalmente solido");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("Un'autostima spesso sotto pressione");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

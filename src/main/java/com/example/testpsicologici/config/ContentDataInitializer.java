@@ -40,6 +40,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedAutismInformationTest();
         seedAdhdInformationTest();
         seedObsessiveCompulsiveInformationTest();
+        seedSelfEsteemInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -271,6 +272,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Ordine, simmetria e piccole abitudini ripetitive sembrano incidere poco sul tuo tempo e sulla possibilità di cambiare sequenza.",
                 "In alcune circostanze potresti cercare una sensazione di completezza attraverso ordine, conteggi, ripetizioni o rituali mentali.",
                 "Le risposte mostrano un bisogno ricorrente di ordine, simmetria o ripetizione; sequenze e rituali mentali possono essere difficili da interrompere finché non sembrano eseguiti nel modo giusto.");
+    }
+
+    private void seedSelfEsteemInformationTest() {
+        String id = "autostima";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Autostima",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere sul valore che riconosci a te stesso, sulla fiducia personale e sul modo in cui reagisci a errori e giudizi.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento clinicamente validato e non misura il tuo valore come persona. L'autostima può cambiare nel tempo e nei diversi contesti; le risposte descrivono soltanto quanto spesso riconosci alcune difficoltà legate al rapporto con te stesso.",
+                version, false,
+                "Difficoltà complessive relative all'autostima",
+                "Frequenza delle difficoltà",
+                true, 4));
+
+        saveArea(id, "valore", "Valore personale e autoaccettazione", 1);
+        saveArea(id, "fiducia", "Fiducia personale ed espressione dei bisogni", 2);
+        saveArea(id, "autocritica", "Autocritica e risposta agli errori", 3);
+        saveArea(id, "approvazione", "Stabilità, confronto e bisogno di approvazione", 4);
+
+        saveQuestions(id, List.of(
+                q("valore", "Mi considero meno degno di rispetto o considerazione rispetto alle altre persone."),
+                q("valore", "Quando penso ai miei difetti, faccio fatica a riconoscere anche le mie qualità."),
+                q("valore", "Mi è difficile accettare parti di me che non corrispondono a come vorrei essere."),
+                q("valore", "Quando ricevo un complimento, tendo a sminuirlo o a pensare che non sia davvero meritato."),
+                q("valore", "Penso di avere poco di cui essere orgoglioso nel mio percorso personale."),
+                q("valore", "Parto da un singolo limite o difetto per giudicare negativamente il mio valore complessivo."),
+                q("fiducia", "Rinuncio a provare qualcosa che mi interessa perché temo di non esserne capace."),
+                q("fiducia", "Dubito delle mie decisioni anche dopo averle valutate con attenzione."),
+                q("fiducia", "Ho bisogno che un'altra persona confermi la mia opinione prima di fidarmi del mio giudizio."),
+                q("fiducia", "Evito di esprimere ciò che penso per paura che la mia opinione abbia poco valore."),
+                q("fiducia", "Faccio fatica a dire di no o a proteggere i miei bisogni perché temo di non avere il diritto di farlo."),
+                q("fiducia", "Attribuisco i miei successi alla fortuna o all'aiuto altrui, mentre considero gli errori una prova della mia incapacità."),
+                q("autocritica", "Dopo un errore mi rivolgo parole più dure di quelle che userei con una persona a cui voglio bene."),
+                q("autocritica", "Ripenso a lungo ai miei sbagli anche quando non posso più modificarli."),
+                q("autocritica", "Un insuccesso in un ambito mi fa sentire incapace anche in aspetti non collegati."),
+                q("autocritica", "Pretendo da me stesso di non sbagliare anche quando sto imparando qualcosa di nuovo."),
+                q("autocritica", "Mi è difficile perdonarmi per decisioni o comportamenti che oggi affronterei diversamente."),
+                q("autocritica", "Se non raggiungo standard molto elevati, tendo a considerare privo di valore ciò che ho fatto."),
+                q("approvazione", "L'opinione che ho di me cambia sensibilmente dopo una critica o un commento negativo."),
+                q("approvazione", "Ho bisogno che i miei risultati vengano riconosciuti per sentirmi adeguato."),
+                q("approvazione", "Cambio il mio modo di comportarmi per evitare la disapprovazione, anche quando non mi rappresenta."),
+                q("approvazione", "Confrontare la mia vita o i miei risultati con quelli degli altri mi fa sentire inadeguato."),
+                q("approvazione", "Cerco rassicurazioni o conferme dagli altri per riuscire a sentirmi a posto con me stesso."),
+                q("approvazione", "Un rifiuto, un'esclusione o un disaccordo mi porta a dubitare del mio valore personale.")));
+
+        saveGlobal(id, "LOW", "Un senso di valore generalmente solido",
+                "Nel complesso hai indicato una presenza contenuta delle difficoltà relative all'autostima esplorate dal questionario.",
+                "Questo non significa sentirsi sempre sicuri: dubbi, confronti ed errori possono influenzare chiunque. Le risposte suggeriscono però che, in genere, riesci a mantenere un'immagine di te abbastanza stabile senza far dipendere tutto da un singolo limite o giudizio.");
+        saveGlobal(id, "MIXED", "Un equilibrio che cambia con il contesto",
+                "Le tue risposte descrivono un rapporto con te stesso che può essere stabile in alcune situazioni e più vulnerabile in altre.",
+                "Autostima e fiducia personale possono risentire del tipo di compito, delle relazioni, dello stress o del confronto con gli altri. Osservare i contesti in cui il giudizio su di te cambia può offrire indicazioni più utili di un punteggio isolato.");
+        saveGlobal(id, "FOCUSED", "Un'area mette più alla prova la tua autostima",
+                "Le risposte evidenziano difficoltà ricorrenti soprattutto in uno o due aspetti, mentre il resto del profilo appare più stabile.",
+                "Può essere utile notare quali eventi attivano maggiormente dubbi, autocritica o bisogno di conferme e quanto a lungo ne risente l'opinione che hai di te. Questo questionario non è una valutazione clinica e non definisce il tuo valore personale.");
+        saveGlobal(id, "BROAD", "Un'autostima spesso sotto pressione",
+                "Le tue risposte indicano difficoltà frequenti nel riconoscere il tuo valore, fidarti di te o mantenere un'immagine stabile dopo errori e giudizi.",
+                "Se questo modo di guardarti provoca sofferenza, limita scelte e relazioni o ti porta a rinunciare spesso a ciò che conta per te, parlarne con uno psicologo o psicoterapeuta può aiutarti a comprenderne le origini e costruire un rapporto più equilibrato con te stesso. Il risultato resta informativo e non diagnostico.");
+
+        saveAreaInsights(id, "valore",
+                "Riesci generalmente a riconoscere il tuo valore personale anche quando noti difetti, limiti o aspetti di te che vorresti cambiare.",
+                "Il senso del tuo valore può indebolirsi in alcune circostanze, soprattutto quando l'attenzione si concentra su difetti, insicurezze o qualità che fai fatica a riconoscere.",
+                "Le risposte mostrano una difficoltà frequente nel riconoscere qualità e dignità personale senza lasciare che limiti o difetti definiscano l'immagine complessiva di te.");
+        saveAreaInsights(id, "fiducia",
+                "Nelle tue risposte emerge generalmente fiducia nel tuo giudizio e la possibilità di esprimere opinioni, decisioni e bisogni anche senza continue conferme.",
+                "La fiducia nelle tue capacità e nel diritto di esprimerti sembra variare: novità, decisioni importanti o timore del conflitto possono aumentare dubbi e bisogno di conferme.",
+                "Le risposte indicano dubbi ricorrenti sulle tue capacità e decisioni, insieme alla difficoltà di dare spazio alle tue opinioni o proteggere i tuoi bisogni.");
+        saveAreaInsights(id, "autocritica",
+                "Errori e insuccessi sembrano generalmente restare eventi specifici, senza trasformarsi in un giudizio globale e duraturo sulla tua persona.",
+                "In alcune situazioni l'autocritica può diventare severa o prolungata, soprattutto quando un risultato è importante o le aspettative verso te stesso sono elevate.",
+                "Le risposte mostrano una risposta spesso dura agli errori: sbagli e insuccessi possono alimentare giudizi globali, rimuginio e difficoltà a perdonarti o riconoscere ciò che hai comunque fatto.");
+        saveAreaInsights(id, "approvazione",
+                "Critiche, risultati e confronti sembrano influenzarti senza determinare stabilmente il valore che attribuisci a te stesso.",
+                "In alcuni contesti l'opinione che hai di te può dipendere maggiormente da risultati, conferme, appartenenza o confronto con le altre persone.",
+                "Le risposte indicano che giudizi, rifiuti, risultati e confronto sociale possono modificare spesso e intensamente il modo in cui valuti te stesso.");
     }
 
     private boolean requiresSeed(String testId, String version) {

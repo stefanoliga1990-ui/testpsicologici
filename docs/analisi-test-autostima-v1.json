@@ -1,0 +1,133 @@
+{
+  "test": {
+    "id": "autostima",
+    "titolo": "Autostima",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza delle difficoltà relative all'autostima esplorate dal questionario",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il questionario non è clinicamente validato, non misura il valore della persona e non sostituisce una valutazione professionale. Le soglie hanno esclusivamente una funzione editoriale."
+  },
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono una scala validata. Le aree sono state costruite per offrire una lettura informativa più articolata dell'autostima globale.",
+    "fonti_consultate": [
+      {
+        "titolo": "Rosenberg Self-Esteem Scale",
+        "url": "https://socy.umd.edu/about-us/rosenberg-self-esteem-scale",
+        "apporto": "Riferimento per il costrutto di autostima globale e per la distinzione tra valutazioni positive e negative di sé."
+      },
+      {
+        "titolo": "The Development of Self-Esteem",
+        "url": "https://doi.org/10.1177/0963721414547414",
+        "apporto": "Riferimento per considerare l'autostima relativamente stabile ma modificabile nel corso della vita."
+      },
+      {
+        "titolo": "Measuring Self-Esteem in Context: The Importance of Stability of Self-Esteem",
+        "url": "https://doi.org/10.1111/j.1467-6494.2005.00359.x",
+        "apporto": "Riferimento per distinguere livello e stabilità dell'autostima."
+      },
+      {
+        "titolo": "Contingencies of Self-Worth",
+        "url": "https://doi.org/10.1037/0033-295X.108.3.593",
+        "apporto": "Riferimento per esplorare quanto il valore personale dipenda da risultati e approvazione."
+      },
+      {
+        "titolo": "Individual differences in social comparison",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/9972558/",
+        "apporto": "Riferimento per l'area del confronto sociale."
+      },
+      {
+        "titolo": "Forms of Self-Criticising/Attacking and Self-Reassuring",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6223807/",
+        "apporto": "Riferimento per esplorare autocritica e capacità di rassicurarsi dopo errori o insuccessi."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Un senso di valore generalmente solido",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta delle difficoltà relative all'autostima esplorate dal questionario.",
+      "descrizione": "Questo non significa sentirsi sempre sicuri: dubbi, confronti ed errori possono influenzare chiunque. Le risposte suggeriscono però che, in genere, riesci a mantenere un'immagine di te abbastanza stabile senza far dipendere tutto da un singolo limite o giudizio."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un equilibrio che cambia con il contesto",
+      "sottotitolo": "Le tue risposte descrivono un rapporto con te stesso che può essere stabile in alcune situazioni e più vulnerabile in altre.",
+      "descrizione": "Autostima e fiducia personale possono risentire del tipo di compito, delle relazioni, dello stress o del confronto con gli altri. Osservare i contesti in cui il giudizio su di te cambia può offrire indicazioni più utili di un punteggio isolato."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Un'area mette più alla prova la tua autostima",
+      "sottotitolo": "Le risposte evidenziano difficoltà ricorrenti soprattutto in uno o due aspetti, mentre il resto del profilo appare più stabile.",
+      "descrizione": "Può essere utile notare quali eventi attivano maggiormente dubbi, autocritica o bisogno di conferme e quanto a lungo ne risente l'opinione che hai di te. Questo questionario non è una valutazione clinica e non definisce il tuo valore personale."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Un'autostima spesso sotto pressione",
+      "sottotitolo": "Le tue risposte indicano difficoltà frequenti nel riconoscere il tuo valore, fidarti di te o mantenere un'immagine stabile dopo errori e giudizi.",
+      "descrizione": "Se questo modo di guardarti provoca sofferenza, limita scelte e relazioni o ti porta a rinunciare spesso a ciò che conta per te, parlarne con uno psicologo o psicoterapeuta può aiutarti a comprenderne le origini e costruire un rapporto più equilibrato con te stesso. Il risultato resta informativo e non diagnostico."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "valore",
+      "nome_area": "Valore personale e autoaccettazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Riesci generalmente a riconoscere il tuo valore personale anche quando noti difetti, limiti o aspetti di te che vorresti cambiare."},
+        {"livello": "MEDIUM", "descrizione": "Il senso del tuo valore può indebolirsi in alcune circostanze, soprattutto quando l'attenzione si concentra su difetti, insicurezze o qualità che fai fatica a riconoscere."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una difficoltà frequente nel riconoscere qualità e dignità personale senza lasciare che limiti o difetti definiscano l'immagine complessiva di te."}
+      ]
+    },
+    {
+      "area_code": "fiducia",
+      "nome_area": "Fiducia personale ed espressione dei bisogni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Nelle tue risposte emerge generalmente fiducia nel tuo giudizio e la possibilità di esprimere opinioni, decisioni e bisogni anche senza continue conferme."},
+        {"livello": "MEDIUM", "descrizione": "La fiducia nelle tue capacità e nel diritto di esprimerti sembra variare: novità, decisioni importanti o timore del conflitto possono aumentare dubbi e bisogno di conferme."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano dubbi ricorrenti sulle tue capacità e decisioni, insieme alla difficoltà di dare spazio alle tue opinioni o proteggere i tuoi bisogni."}
+      ]
+    },
+    {
+      "area_code": "autocritica",
+      "nome_area": "Autocritica e risposta agli errori",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Errori e insuccessi sembrano generalmente restare eventi specifici, senza trasformarsi in un giudizio globale e duraturo sulla tua persona."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni l'autocritica può diventare severa o prolungata, soprattutto quando un risultato è importante o le aspettative verso te stesso sono elevate."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una risposta spesso dura agli errori: sbagli e insuccessi possono alimentare giudizi globali, rimuginio e difficoltà a perdonarti o riconoscere ciò che hai comunque fatto."}
+      ]
+    },
+    {
+      "area_code": "approvazione",
+      "nome_area": "Stabilità, confronto e bisogno di approvazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Critiche, risultati e confronti sembrano influenzarti senza determinare stabilmente il valore che attribuisci a te stesso."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni contesti l'opinione che hai di te può dipendere maggiormente da risultati, conferme, appartenenza o confronto con le altre persone."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano che giudizi, rifiuti, risultati e confronto sociale possono modificare spesso e intensamente il modo in cui valuti te stesso."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; sono mostrati nome, testo e barra, ma non livelli, soglie o punteggi numerici."
+  }
+}
