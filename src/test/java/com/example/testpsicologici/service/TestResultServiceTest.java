@@ -36,6 +36,7 @@ class TestResultServiceTest {
         TestResult result = analyzeWithAnswers(1, 1, 1, 1);
 
         assertThat(result.general().title()).isEqualTo("Poche esperienze ricorrenti");
+        assertThat(result.percentage()).isZero();
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults()).allSatisfy(area -> assertThat(area.percentage()).isZero());
     }
@@ -55,6 +56,7 @@ class TestResultServiceTest {
         TestResult result = analyzeWithAnswers(5, 5, 5, 5);
 
         assertThat(result.general().title()).isEqualTo("Esperienze presenti in più ambiti");
+        assertThat(result.percentage()).isEqualTo(100);
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults()).allSatisfy(area -> assertThat(area.percentage()).isEqualTo(100));
     }
@@ -143,6 +145,13 @@ class TestResultServiceTest {
 
         assertThat(result.areaResults().get(0).percentage()).isEqualTo(50);
         assertThat(result.areaResults().stream().skip(1)).allSatisfy(area -> assertThat(area.percentage()).isZero());
+    }
+
+    @Test
+    void overallBarUsesTheAverageAcrossAllAnswers() {
+        TestResult result = analyzeWithAnswersForTest("tratti-adhd-adulti", 5, 3, 1, 3);
+
+        assertThat(result.percentage()).isEqualTo(50);
     }
 
     private TestResult analyzeWithAnswers(int social, int nonVerbal, int routine, int sensory) {

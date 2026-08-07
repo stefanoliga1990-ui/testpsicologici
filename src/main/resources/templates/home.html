@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/app.css(v='home-responsive-6')}">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='home-search-1')}">
+    <script defer th:src="@{/js/home.js(v='home-search-1')}"></script>
 </head>
 <body>
 <main class="shell home-shell">
@@ -48,24 +49,40 @@
     </section>
 
     <section id="test-disponibili" class="tests-section">
+        <div class="test-search">
+            <label class="test-search-label" for="test-search-input">Cerca un test</label>
+            <div class="test-search-field">
+                <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                    <circle cx="11" cy="11" r="6.5"></circle>
+                    <path d="m16 16 4 4"></path>
+                </svg>
+                <input id="test-search-input" type="search" placeholder="Scrivi il titolo del test..."
+                       autocomplete="off" spellcheck="false">
+            </div>
+        </div>
         <div class="section-heading">
             <div>
                 <p class="eyebrow">Inizia da qui</p>
                 <h2>Test disponibili</h2>
             </div>
-            <span class="test-count" th:text="|${#lists.size(tests)} test|">1 test</span>
+            <span class="test-count" data-test-count aria-live="polite"
+                  th:text="|${#lists.size(tests)} test|">1 test</span>
         </div>
         <div class="test-grid">
-            <article class="test-card" th:each="test : ${tests}">
+            <a class="test-card" th:each="test : ${tests}"
+               th:href="@{/test/{id}(id=${test.id})}"
+               th:aria-label="|Apri il test: ${test.title}|"
+               data-test-card th:attr="data-test-title=${test.title}">
                 <div class="card-topline"><span class="card-icon">⌘</span><span th:text="${test.eyebrow}">Autovalutazione informativa</span></div>
                 <h3 th:text="${test.title}">Tratti associati all'ADHD nell'adulto</h3>
                 <p th:text="${test.description}">Un questionario informativo per adulti.</p>
                 <div class="card-footer">
                     <span th:text="${test.duration}">6 min · 24 domande</span>
-                    <a class="round-link" th:href="@{/test/{id}(id=${test.id})}" th:aria-label="|Inizia ${test.title}|">→</a>
+                    <span class="round-link" aria-hidden="true">→</span>
                 </div>
-            </article>
+            </a>
         </div>
+        <p class="test-search-empty" data-test-empty hidden>Nessun test corrisponde alla ricerca.</p>
     </section>
 
     <p class="disclaimer">Questi test hanno finalità puramente informative e non costituiscono una valutazione psicologica o clinica.</p>
