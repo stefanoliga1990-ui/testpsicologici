@@ -167,10 +167,47 @@ class TestResultServiceTest {
     }
 
     @Test
+    void emotionalDependenceTestIsLoadedWithTwentyFourQuestionsAndSpecificLabels() {
+        PsychologicalTest test = catalogue.findById("dipendenza-affettiva");
+
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche esplorate");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche");
+    }
+
+    @Test
+    void emotionalDependenceFocusedProfileShowsTheMostRelevantAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("dipendenza-affettiva", 5, 1, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Una dinamica relazionale richiede più attenzione");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Paura della separazione e bisogno di rassicurazione");
+        assertThat(result.areaResults().get(0).description()).contains("paura frequente della separazione");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+    }
+
+    @Test
+    void emotionalDependenceLowAndBroadProfilesFollowTheGeneralRules() {
+        TestResult low = analyzeWithAnswersForTest("dipendenza-affettiva", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("dipendenza-affettiva", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Legame e autonomia generalmente in equilibrio");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("La relazione occupa uno spazio molto vincolante");
+        assertThat(broad.general().detail()).contains("Controllo, minacce e violenza non sono colpa tua");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

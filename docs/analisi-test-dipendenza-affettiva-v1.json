@@ -1,0 +1,140 @@
+{
+  "test": {
+    "id": "dipendenza-affettiva",
+    "titolo": "Dipendenza affettiva",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza delle dinamiche di dipendenza affettiva esplorate dal questionario",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il questionario non è clinicamente validato, non formula diagnosi e non stabilisce se una relazione sia sana o patologica. Le soglie hanno esclusivamente una funzione editoriale. Il questionario non rileva gli abusi e la violenza non è mai responsabilità di chi la subisce."
+  },
+  "istruzioni": "Rispondere pensando alla relazione attuale o, in sua assenza, a una relazione affettiva significativa recente.",
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono scale validate. Le aree integrano aspetti ricorrenti nella letteratura su dipendenza emotiva dal partner, attaccamento ansioso e autostima dipendente dalla relazione. Vicinanza, bisogno reciproco e interdipendenza non sono di per sé problematici: il questionario esplora frequenza, rigidità e impatto delle dinamiche.",
+    "fonti_consultate": [
+      {
+        "titolo": "I disturbi da Addiction nelle dipendenze non legate all'uso o abuso di sostanze",
+        "url": "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_3313_allegato.pdf",
+        "apporto": "Documento del Consiglio Superiore di Sanità sul quadro delle dipendenze comportamentali e sulla cosiddetta love addiction."
+      },
+      {
+        "titolo": "Conceptualizing love addiction within the attachment perspective: a systematic review and meta-analysis",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12284683/",
+        "apporto": "Riferimento per il rapporto tra attaccamento insicuro, ansia di separazione e comportamenti relazionali problematici, tenendo conto dell'eterogeneità del costrutto."
+      },
+      {
+        "titolo": "Partner's Emotional Dependency Scale: Psychometrics",
+        "url": "https://actaspsiquiatria.es/index.php/actas/article/download/308/440/452",
+        "apporto": "Riferimento per le manifestazioni della dipendenza emotiva dal partner nella popolazione adulta e per la sua natura dimensionale."
+      },
+      {
+        "titolo": "Development and validation of the Emotional Dependence Scale",
+        "url": "https://doi.org/10.21134/pssa.v10i1.816",
+        "apporto": "Riferimento per la pluralità di aree osservabili, tra cui separazione, solitudine, modifica dei programmi e bisogno di attenzione."
+      },
+      {
+        "titolo": "Relationship-contingent self-esteem and the ups and downs of romantic relationships",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18729698/",
+        "apporto": "Riferimento per esplorare quanto il valore personale e l'umore dipendano dagli eventi della relazione."
+      },
+      {
+        "titolo": "Violence against women",
+        "url": "https://www.who.int/health-topics/violence-against-women",
+        "apporto": "Riferimento per distinguere le dinamiche esplorate da violenza, coercizione, abuso psicologico e comportamenti di controllo."
+      },
+      {
+        "titolo": "Numero Anti Violenza e Stalking 1522",
+        "url": "https://www.1522.eu/cose-1522/",
+        "apporto": "Fonte ufficiale per l'indicazione del servizio pubblico gratuito, attivo 24 ore su 24, rivolto alle donne vittime di violenza e stalking."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Legame e autonomia generalmente in equilibrio",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta delle dinamiche di dipendenza affettiva esplorate.",
+      "descrizione": "Questo non significa vivere ogni relazione senza paure o bisogno di vicinanza. Le risposte suggeriscono però che, in genere, riesci a mantenere bisogni, interessi e valore personale senza farli dipendere interamente dal legame."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un equilibrio sensibile ad alcune situazioni",
+      "sottotitolo": "Le tue risposte descrivono dinamiche che cambiano in base al momento, alla relazione o al grado di incertezza percepito.",
+      "descrizione": "Distanza, conflitti o periodi di maggiore vulnerabilità possono aumentare il bisogno di rassicurazione o rendere più difficile proteggere i tuoi spazi. Osservare quando accade e quale impatto produce può essere più utile di una singola etichetta."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Una dinamica relazionale richiede più attenzione",
+      "sottotitolo": "Una o due aree emergono con maggiore frequenza, mentre negli altri aspetti sembra esserci più equilibrio.",
+      "descrizione": "Può essere utile notare quali situazioni attivano maggiormente paura della perdita, rinunce, difficoltà nei confini o bisogno urgente di contatto. Il risultato è informativo e non definisce te né la tua relazione."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "La relazione occupa uno spazio molto vincolante",
+      "sottotitolo": "Le risposte indicano dinamiche frequenti in più aree, con possibile riduzione dell'autonomia e forte dipendenza dal legame per sentirti stabile.",
+      "descrizione": "Se queste dinamiche causano sofferenza, isolamento, rinunce importanti o rendono difficile interrompere una relazione che ti fa stare male, confrontarti con uno psicologo o psicoterapeuta può aiutarti a comprenderle senza giudizio. Controllo, minacce e violenza non sono colpa tua: in questi casi la priorità è trovare un aiuto sicuro. Il questionario resta informativo e non diagnostico."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "separazione",
+      "nome_area": "Paura della separazione e bisogno di rassicurazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Distanza, silenzi e conflitti sembrano generalmente gestibili senza un bisogno continuo di conferme o il timore immediato di perdere il legame."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni l'incertezza può aumentare il bisogno di rassicurazione e portarti a interpretare segnali ambigui come possibili indizi di allontanamento."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una paura frequente della separazione o del rifiuto, insieme a un bisogno urgente di conferme e ricontatto quando percepisci distanza."}
+      ]
+    },
+    {
+      "area_code": "autonomia",
+      "nome_area": "Autonomia, interessi e rete personale",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "La relazione sembra lasciare generalmente spazio ad amicizie, interessi, decisioni e progetti personali."},
+        {"livello": "MEDIUM", "descrizione": "Il tuo spazio personale può ridursi in alcuni periodi o relazioni, soprattutto quando temi che coltivare interessi e scelte autonome possa creare distanza."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano che la relazione tende spesso a prevalere su amicizie, attività, decisioni o obiettivi personali, limitando il tuo spazio autonomo."}
+      ]
+    },
+    {
+      "area_code": "confini",
+      "nome_area": "Confini, bisogni e reciprocità",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Riesci generalmente a riconoscere i tuoi bisogni, esprimere limiti e distinguere ciò di cui sei responsabile da ciò che appartiene all'altra persona."},
+        {"livello": "MEDIUM", "descrizione": "In alcune circostanze potresti mettere da parte bisogni o limiti per proteggere il legame, soprattutto quando temi conflitti, disapprovazione o distanza."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una difficoltà frequente nel proteggere confini e bisogni, fino ad accettare rinunce o comportamenti dolorosi per evitare di perdere la relazione."}
+      ]
+    },
+    {
+      "area_code": "regolazione",
+      "nome_area": "Regolazione emotiva e centralità della relazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Il tuo equilibrio emotivo e la tua attenzione sembrano dipendere in modo contenuto dall'andamento della relazione o dalla disponibilità dell'altra persona."},
+        {"livello": "MEDIUM", "descrizione": "Pensieri, umore e bisogno di contatto possono diventare più intensi in momenti di incertezza, distanza o rottura, pur lasciando spazio anche ad altri aspetti della vita."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano che relazione, contatto e disponibilità dell'altra persona possono assorbire spesso pensieri ed emozioni, rendendo difficile ritrovare stabilità in modo autonomo."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; sono mostrati nome, testo e barra, ma non livelli, soglie o punteggi numerici.",
+    "nota_sicurezza": "Il risultato non valuta la presenza di abuso. Il richiamo alla sicurezza e al 1522 è mostrato nel testo introduttivo indipendentemente dal profilo assegnato."
+  }
+}

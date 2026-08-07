@@ -41,6 +41,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedAdhdInformationTest();
         seedObsessiveCompulsiveInformationTest();
         seedSelfEsteemInformationTest();
+        seedEmotionalDependenceInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -352,6 +353,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Critiche, risultati e confronti sembrano influenzarti senza determinare stabilmente il valore che attribuisci a te stesso.",
                 "In alcuni contesti l'opinione che hai di te può dipendere maggiormente da risultati, conferme, appartenenza o confronto con le altre persone.",
                 "Le risposte indicano che giudizi, rifiuti, risultati e confronto sociale possono modificare spesso e intensamente il modo in cui valuti te stesso.");
+    }
+
+    private void seedEmotionalDependenceInformationTest() {
+        String id = "dipendenza-affettiva";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Dipendenza affettiva",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere su paura della distanza, bisogno di rassicurazione, autonomia e confini nelle relazioni affettive.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non stabilisce se una relazione sia sana o patologica. Rispondi pensando alla relazione attuale o, se non ne hai una, a una relazione affettiva significativa recente. Il legame e l'interdipendenza fanno parte delle relazioni: qui si esplora soltanto quanto alcune dinamiche diventano frequenti, rigide o limitanti. Il questionario non rileva gli abusi e la violenza non è mai responsabilità di chi la subisce. In presenza di controllo, minacce o violenza, cerca un aiuto sicuro; per le donne vittime di violenza e stalking il 1522 è gratuito e attivo 24 ore su 24.",
+                version, false,
+                "Frequenza complessiva delle dinamiche esplorate",
+                "Frequenza delle dinamiche",
+                true, 5));
+
+        saveArea(id, "separazione", "Paura della separazione e bisogno di rassicurazione", 1);
+        saveArea(id, "autonomia", "Autonomia, interessi e rete personale", 2);
+        saveArea(id, "confini", "Confini, bisogni e reciprocità", 3);
+        saveArea(id, "regolazione", "Regolazione emotiva e centralità della relazione", 4);
+
+        saveQuestions(id, List.of(
+                q("separazione", "Quando la persona a cui sono legato tarda a rispondere, temo che il suo interesse per me sia diminuito."),
+                q("separazione", "Ho bisogno di ricevere conferme frequenti sui sentimenti che l'altra persona prova per me."),
+                q("separazione", "La distanza o il tempo trascorso separati mi provocano un'ansia difficile da calmare."),
+                q("separazione", "Interpreto silenzi, stanchezza o cambiamenti di tono come possibili segnali di rifiuto o abbandono."),
+                q("separazione", "L'idea che la relazione possa finire mi sembra insopportabile anche quando al suo interno sto male."),
+                q("separazione", "Dopo un conflitto sento di dover ristabilire subito il contatto, anche se avrei bisogno di tempo per capire cosa provo."),
+                q("autonomia", "Cambio o cancello programmi personali per essere disponibile ogni volta che l'altra persona lo desidera."),
+                q("autonomia", "Trascuro amicizie, famiglia o interessi per dedicare quasi tutto il mio tempo alla relazione."),
+                q("autonomia", "Faccio fatica a godermi attività o momenti piacevoli quando sono senza la persona a cui sono legato."),
+                q("autonomia", "Organizzo decisioni importanti soprattutto in funzione della relazione, anche quando questo mi penalizza."),
+                q("autonomia", "Quando sono coinvolto in una relazione, obiettivi e progetti personali perdono importanza."),
+                q("autonomia", "Se l'altra persona disapprova una mia scelta, tendo ad abbandonarla anche quando per me conta molto."),
+                q("confini", "Accetto comportamenti che mi feriscono pur di evitare distanza, tensioni o una possibile rottura."),
+                q("confini", "Mi è difficile dire di no all'altra persona quando ciò che chiede supera i miei limiti."),
+                q("confini", "Mi sento responsabile dell'umore e del benessere dell'altra persona anche quando non dipendono da me."),
+                q("confini", "Metto da parte bisogni o emozioni importanti per non rischiare di compromettere il legame."),
+                q("confini", "Giustifico mancanze di rispetto ripetute perché temo di perdere la relazione."),
+                q("confini", "Controllo attentamente parole e comportamenti per evitare che l'altra persona si allontani o ritiri il proprio affetto."),
+                q("regolazione", "Il mio umore dipende molto dall'attenzione o dalla disponibilità che ricevo dall'altra persona."),
+                q("regolazione", "I pensieri sulla relazione occupano così tanto spazio da rendermi difficile concentrarmi su altro."),
+                q("regolazione", "Quando temo un allontanamento, cerco ripetutamente contatto o controllo messaggi e attività online."),
+                q("regolazione", "Dopo una rottura o un allontanamento sento un impulso forte a ristabilire il rapporto, anche sapendo che mi faceva stare male."),
+                q("regolazione", "Idealizzo l'altra persona o minimizzo incompatibilità importanti per proteggere l'immagine della relazione."),
+                q("regolazione", "Senza una relazione o un interesse affettivo mi sento vuoto, incompleto o privo di direzione.")));
+
+        saveGlobal(id, "LOW", "Legame e autonomia generalmente in equilibrio",
+                "Nel complesso hai indicato una presenza contenuta delle dinamiche di dipendenza affettiva esplorate.",
+                "Questo non significa vivere ogni relazione senza paure o bisogno di vicinanza. Le risposte suggeriscono però che, in genere, riesci a mantenere bisogni, interessi e valore personale senza farli dipendere interamente dal legame.");
+        saveGlobal(id, "MIXED", "Un equilibrio sensibile ad alcune situazioni",
+                "Le tue risposte descrivono dinamiche che cambiano in base al momento, alla relazione o al grado di incertezza percepito.",
+                "Distanza, conflitti o periodi di maggiore vulnerabilità possono aumentare il bisogno di rassicurazione o rendere più difficile proteggere i tuoi spazi. Osservare quando accade e quale impatto produce può essere più utile di una singola etichetta.");
+        saveGlobal(id, "FOCUSED", "Una dinamica relazionale richiede più attenzione",
+                "Una o due aree emergono con maggiore frequenza, mentre negli altri aspetti sembra esserci più equilibrio.",
+                "Può essere utile notare quali situazioni attivano maggiormente paura della perdita, rinunce, difficoltà nei confini o bisogno urgente di contatto. Il risultato è informativo e non definisce te né la tua relazione.");
+        saveGlobal(id, "BROAD", "La relazione occupa uno spazio molto vincolante",
+                "Le risposte indicano dinamiche frequenti in più aree, con possibile riduzione dell'autonomia e forte dipendenza dal legame per sentirti stabile.",
+                "Se queste dinamiche causano sofferenza, isolamento, rinunce importanti o rendono difficile interrompere una relazione che ti fa stare male, confrontarti con uno psicologo o psicoterapeuta può aiutarti a comprenderle senza giudizio. Controllo, minacce e violenza non sono colpa tua: in questi casi la priorità è trovare un aiuto sicuro. Il questionario resta informativo e non diagnostico.");
+
+        saveAreaInsights(id, "separazione",
+                "Distanza, silenzi e conflitti sembrano generalmente gestibili senza un bisogno continuo di conferme o il timore immediato di perdere il legame.",
+                "In alcune situazioni l'incertezza può aumentare il bisogno di rassicurazione e portarti a interpretare segnali ambigui come possibili indizi di allontanamento.",
+                "Le risposte mostrano una paura frequente della separazione o del rifiuto, insieme a un bisogno urgente di conferme e ricontatto quando percepisci distanza.");
+        saveAreaInsights(id, "autonomia",
+                "La relazione sembra lasciare generalmente spazio ad amicizie, interessi, decisioni e progetti personali.",
+                "Il tuo spazio personale può ridursi in alcuni periodi o relazioni, soprattutto quando temi che coltivare interessi e scelte autonome possa creare distanza.",
+                "Le risposte indicano che la relazione tende spesso a prevalere su amicizie, attività, decisioni o obiettivi personali, limitando il tuo spazio autonomo.");
+        saveAreaInsights(id, "confini",
+                "Riesci generalmente a riconoscere i tuoi bisogni, esprimere limiti e distinguere ciò di cui sei responsabile da ciò che appartiene all'altra persona.",
+                "In alcune circostanze potresti mettere da parte bisogni o limiti per proteggere il legame, soprattutto quando temi conflitti, disapprovazione o distanza.",
+                "Le risposte mostrano una difficoltà frequente nel proteggere confini e bisogni, fino ad accettare rinunce o comportamenti dolorosi per evitare di perdere la relazione.");
+        saveAreaInsights(id, "regolazione",
+                "Il tuo equilibrio emotivo e la tua attenzione sembrano dipendere in modo contenuto dall'andamento della relazione o dalla disponibilità dell'altra persona.",
+                "Pensieri, umore e bisogno di contatto possono diventare più intensi in momenti di incertezza, distanza o rottura, pur lasciando spazio anche ad altri aspetti della vita.",
+                "Le risposte indicano che relazione, contatto e disponibilità dell'altra persona possono assorbire spesso pensieri ed emozioni, rendendo difficile ritrovare stabilità in modo autonomo.");
     }
 
     private boolean requiresSeed(String testId, String version) {
