@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title th:text="|Analisi - ${test.title}|">Analisi del test</title>
+    <style type="text/css" th:utext="${pdfStylesheet}"></style>
+</head>
+<body>
+<div class="page-header">
+    <table>
+        <tr>
+            <td class="brand-cell"><span class="brand-mark">S</span><strong>Spazio Test</strong></td>
+            <td class="date-cell" th:text="|Generato il ${generatedOn}|">Generato oggi</td>
+        </tr>
+    </table>
+</div>
+
+<div class="intro">
+    <p class="eyebrow">Il tuo risultato</p>
+    <p class="test-title" th:text="${test.title}">Titolo del test</p>
+    <h1 th:text="${result.title}">Titolo dell'analisi</h1>
+    <p class="summary" th:text="${result.description}">Descrizione generale.</p>
+    <p class="detail" th:text="${result.detail}">Approfondimento generale.</p>
+</div>
+
+<div class="overall-block">
+    <p class="bar-label">Presenza complessiva del tratto</p>
+    <div class="bar-track overall-track">
+        <span th:style="|width: ${percentage}%|"></span>
+    </div>
+    <p class="bar-note">La barra sintetizza la media delle risposte date alle 24 domande.</p>
+</div>
+
+<div class="areas-heading">
+    <p class="eyebrow">Le quattro aree</p>
+    <h2>Una lettura più completa</h2>
+    <p>Le barre rappresentano quanto spesso hai riconosciuto le esperienze esplorate in ciascuna area.</p>
+</div>
+
+<div class="area-card" th:each="area : ${areaResults}">
+    <h3 th:text="${area.title}">Nome dell'area</h3>
+    <p class="bar-label">Presenza del tratto</p>
+    <div class="bar-track">
+        <span th:style="|width: ${area.percentage}%|"></span>
+    </div>
+    <p class="area-description" th:text="${area.description}">Descrizione dell'area.</p>
+</div>
+
+<div class="notice">
+    <strong>Nota importante</strong>
+    <p>Questo questionario ha finalità esclusivamente informative. Non conferma né esclude una diagnosi e non sostituisce una valutazione effettuata da uno psicologo, psicoterapeuta o altro professionista qualificato.</p>
+</div>
+</body>
+</html>

@@ -4,9 +4,15 @@ import com.example.testpsicologici.model.PsychologicalTest;
 import com.example.testpsicologici.model.TestAttempt;
 import com.example.testpsicologici.model.TestResult;
 import com.example.testpsicologici.service.TestCatalogue;
+import com.example.testpsicologici.service.PdfResultService;
 import com.example.testpsicologici.service.TestResultService;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.http.CacheControl;
+import org.springframework.http.ContentDisposition;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +21,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Controller
@@ -25,10 +33,13 @@ public class TestController {
 
     private final TestCatalogue catalogue;
     private final TestResultService resultService;
+    private final PdfResultService pdfResultService;
 
-    public TestController(TestCatalogue catalogue, TestResultService resultService) {
+    public TestController(TestCatalogue catalogue, TestResultService resultService,
+                          PdfResultService pdfResultService) {
         this.catalogue = catalogue;
         this.resultService = resultService;
+        this.pdfResultService = pdfResultService;
     }
 
     @GetMapping("/")
@@ -98,6 +109,32 @@ public class TestController {
         model.addAttribute("result", result.general());
         model.addAttribute("areaResults", result.areaResults());
         return "result";
+    }
+
+    @GetMapping(value = "/test/{testId}/risultato/pdf", produces = MediaType.APPLICATION_PDF_VALUE)
+    public ResponseEntity<byte[]> downloadResultPdf(@PathVariable String testId, HttpSession session) {
+        PsychologicalTest test = findTest(testId);
+        TestAttempt attempt = findAttempt(testId, session);
+        if (attempt == null || !attempt.isComplete()) {
+            return ResponseEntity.<byte[]>status(HttpStatus.SEE_OTHER)
+                    .location(URI.create("/test/" + testId))
+                    .build();
+        }
+
+        TestResult result = resultService.analyze(test, attempt);
+        byte[] pdf = pdfResultService.generate(test, result);
+        String filename = "analisi-" + test.id() + ".pdf";
+        String contentDisposition = ContentDisposition.attachment()
+                .filename(filename, StandardCharsets.UTF_8)
+                .build()
+                .toString();
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_PDF)
+                .contentLength(pdf.length)
+                .cacheControl(CacheControl.noStore())
+                .header(HttpHeaders.CONTENT_DISPOSITION, contentDisposition)
+                .body(pdf);
     }
 
     private PsychologicalTest findTest(String testId) {
