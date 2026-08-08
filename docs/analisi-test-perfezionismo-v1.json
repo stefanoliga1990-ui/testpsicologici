@@ -1,0 +1,140 @@
+{
+  "test": {
+    "id": "perfezionismo",
+    "titolo": "Perfezionismo",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza delle dinamiche perfezionistiche potenzialmente rigide o costose esplorate dal questionario",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il questionario non è clinicamente validato, non formula diagnosi e non considera problematici di per sé ambizione, precisione o standard elevati. Le soglie hanno esclusivamente una funzione editoriale."
+  },
+  "istruzioni": "Rispondere pensando alla frequenza reale nei diversi ambiti della vita, non soltanto al lavoro o allo studio.",
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono scale validate. La struttura distingue la ricerca di standard elevati dalle preoccupazioni perfezionistiche, osservando soprattutto rigidità, autocritica, valore personale dipendente dai risultati e conseguenze sul funzionamento quotidiano.",
+    "fonti_consultate": [
+      {
+        "titolo": "The dimensions of perfectionism",
+        "url": "https://doi.org/10.1007/BF01172967",
+        "apporto": "Riferimento per preoccupazione per gli errori, standard personali, dubbi sulle azioni, aspettative percepite e organizzazione."
+      },
+      {
+        "titolo": "Perfectionism in the self and social contexts",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/2027080/",
+        "apporto": "Riferimento per distinguere perfezionismo orientato verso di sé, verso gli altri e socialmente prescritto."
+      },
+      {
+        "titolo": "Clinical perfectionism: a cognitive-behavioural analysis",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12074372/",
+        "apporto": "Riferimento per il ruolo degli standard inflessibili e del valore personale eccessivamente dipendente dal loro raggiungimento."
+      },
+      {
+        "titolo": "The Relationship Between Perfectionism and Psychopathology: A Meta-Analysis",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28026869/",
+        "apporto": "Riferimento per distinguere perfezionistic strivings e perfectionistic concerns e per mantenere un linguaggio non diagnostico."
+      },
+      {
+        "titolo": "Perfectionism and the Five-Factor Model of Personality: A Meta-Analytic Review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30612510/",
+        "apporto": "Riferimento per la diversa relazione di standard elevati e preoccupazioni perfezionistiche con i tratti di personalità."
+      },
+      {
+        "titolo": "Multidimensional Perfectionism and Burnout: A Meta-Analysis",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26231736/",
+        "apporto": "Riferimento per il maggiore costo delle preoccupazioni perfezionistiche rispetto alla sola ricerca di risultati elevati."
+      },
+      {
+        "titolo": "The relationship between perfectionism and self-esteem in adults",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39279628/",
+        "apporto": "Riferimento per il legame tra perfezionismo clinico, autostima e dipendenza del valore personale dagli standard."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "orientamento": "Tutte le domande descrivono dinamiche perfezionistiche potenzialmente rigide: Mai corrisponde al minimo e Sempre al massimo.",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Poche dinamiche perfezionistiche ricorrenti",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta delle pressioni perfezionistiche esplorate.",
+      "descrizione": "Puoi avere standard elevati e attenzione alla qualità senza lasciare che errori, giudizi o dettagli determinino stabilmente il tuo valore e le tue scelte. Questo risultato non esclude momenti di forte esigenza e non rappresenta una valutazione clinica."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un perfezionismo che emerge in alcuni contesti",
+      "sottotitolo": "Le tue risposte descrivono dinamiche variabili, più presenti in determinati ambiti, compiti o relazioni.",
+      "descrizione": "Potresti mantenere flessibilità in molte situazioni ma diventare più rigido quando il risultato è importante, visibile o legato al giudizio altrui. Osservare dove il costo aumenta può essere più utile di definirti semplicemente perfezionista."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Un'area concentra la pressione perfezionistica",
+      "sottotitolo": "Una o due aree emergono con particolare frequenza, mentre negli altri aspetti sembra esserci maggiore flessibilità.",
+      "descrizione": "Può essere utile notare se la pressione nasce soprattutto dagli standard, dalla paura degli errori, dalle aspettative percepite o dal bisogno di controllo. Distinguere il meccanismo prevalente aiuta a capire quando la ricerca della qualità smette di essere funzionale."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Una pressione perfezionistica diffusa",
+      "sottotitolo": "Le risposte indicano dinamiche frequenti in più aree, con possibile difficoltà a riconoscere un risultato come sufficiente e a separare prestazione e valore personale.",
+      "descrizione": "Se questa pressione causa sofferenza, blocchi, procrastinazione, esaurimento o rinunce importanti, confrontarti con uno psicologo o psicoterapeuta può aiutarti a costruire standard più flessibili senza abbandonare ciò che per te conta. Il risultato resta informativo e non diagnostico."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "standard",
+      "nome_area": "Standard elevati e valore legato ai risultati",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "I tuoi obiettivi sembrano generalmente adattabili alla situazione e il valore che riconosci a te stesso non dipende interamente dai risultati."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni ambiti gli standard possono diventare molto esigenti e rendere più difficile riconoscere successi, riposo o risultati sufficientemente buoni."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano standard frequentemente molto elevati e un forte legame tra prestazione e valore personale, con poco spazio per soddisfazione e recupero."}
+      ]
+    },
+    {
+      "area_code": "errori",
+      "nome_area": "Paura degli errori, dubbi e autocritica",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Errori e dubbi sembrano generalmente restare informazioni circoscritte, senza trasformarsi in giudizi globali o controlli prolungati."},
+        {"livello": "MEDIUM", "descrizione": "Alcuni errori o compiti importanti possono attivare autocritica, ripensamenti e bisogno di verificare, soprattutto quando l'esito è incerto."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano una paura frequente degli errori, accompagnata da dubbi persistenti, autocritica severa o evitamento delle situazioni in cui non puoi garantire un risultato elevato."}
+      ]
+    },
+    {
+      "area_code": "giudizio",
+      "nome_area": "Aspettative percepite e giudizio degli altri",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Le aspettative e i feedback degli altri sembrano influenzarti senza definire stabilmente competenza, accettazione o valore personale."},
+        {"livello": "MEDIUM", "descrizione": "In alcune relazioni o situazioni visibili potresti sentire una pressione maggiore a dimostrarti competente e a nascondere limiti o incertezze."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una forte pressione percepita dal giudizio altrui, con il timore che errori e difficoltà riducano rispetto, approvazione o affetto."}
+      ]
+    },
+    {
+      "area_code": "controllo",
+      "nome_area": "Controllo, rigidità e difficoltà a concludere",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Riesci generalmente a calibrare tempo e precisione, delegare e concludere quando il risultato è adeguato allo scopo."},
+        {"livello": "MEDIUM", "descrizione": "Dettagli, alternative o cambiamenti possono rallentarti in alcuni compiti, soprattutto quando non è chiaro quale livello di qualità sia sufficiente."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano un bisogno frequente di controllo e completezza che può portare a ritocchi, indecisione, difficoltà a delegare o rinvio dell'inizio e della conclusione."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; vengono mostrate prima le dinamiche più frequenti. Sono visibili nome, testo e barra, ma non livelli, soglie o punteggi numerici."
+  }
+}

@@ -44,6 +44,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedEmotionalDependenceInformationTest();
         seedAssertivenessInformationTest();
         seedEmotionalIntelligenceInformationTest();
+        seedPerfectionismInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -595,6 +596,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Quando un'emozione diventa intensa potresti agire subito, evitarla o affidarti a una risposta abituale anche quando non è adatta alla situazione.",
                 "Disponi di alcune strategie per esprimere e gestire le emozioni, ma sotto pressione può diventare più difficile scegliere con flessibilità o chiedere sostegno.",
                 "Le risposte mostrano una buona capacità di accogliere le emozioni, esprimerle con rispetto e modificare strategia quando la prima risposta non aiuta te o la relazione.");
+    }
+
+    private void seedPerfectionismInformationTest() {
+        String id = "perfezionismo";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Perfezionismo",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere su standard personali, paura degli errori, pressione del giudizio e bisogno di controllo.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non stabilisce la presenza di un disturbo. Avere obiettivi ambiziosi, cura per i dettagli e desiderio di migliorare non è di per sé problematico: qui si esplora quanto gli standard diventino rigidi, quanto il valore personale dipenda dai risultati e quanto errori, dubbi o controllo producano fatica e limitazioni. Rispondi pensando alla frequenza reale nei diversi ambiti della tua vita, non soltanto al lavoro o allo studio.",
+                version, false,
+                "Frequenza complessiva delle dinamiche perfezionistiche",
+                "Frequenza delle dinamiche perfezionistiche",
+                true, 8));
+
+        saveArea(id, "standard", "Standard elevati e valore legato ai risultati", 1);
+        saveArea(id, "errori", "Paura degli errori, dubbi e autocritica", 2);
+        saveArea(id, "giudizio", "Aspettative percepite e giudizio degli altri", 3);
+        saveArea(id, "controllo", "Controllo, rigidità e difficoltà a concludere", 4);
+
+        saveQuestions(id, List.of(
+                q("standard", "Mi impongo obiettivi molto difficili anche quando un risultato meno ambizioso sarebbe adeguato alla situazione."),
+                q("standard", "Quando raggiungo un buon risultato, lo considero presto il nuovo minimo invece di riconoscerlo come un successo."),
+                q("standard", "Faccio fatica a sentirmi soddisfatto se il risultato presenta anche una piccola imperfezione."),
+                q("standard", "Valuto il mio valore personale soprattutto in base a produttività, risultati o prestazioni."),
+                q("standard", "Alzo continuamente gli standard perché ciò che ho raggiunto non mi sembra mai abbastanza."),
+                q("standard", "Rinuncio a riposo o tempo personale perché penso che potrei ancora migliorare ciò che sto facendo."),
+                q("errori", "Un singolo errore mi porta a considerare fallimentare l'intero lavoro o la mia prestazione."),
+                q("errori", "Ripenso a lungo ai miei errori anche dopo averli corretti o quando non posso più intervenire."),
+                q("errori", "Dubito della qualità di ciò che ho fatto anche dopo averlo controllato più volte."),
+                q("errori", "Rimando la consegna o la condivisione di un lavoro perché non mi sento mai abbastanza sicuro del risultato."),
+                q("errori", "Mi critico per un errore con una durezza che non userei verso un'altra persona nella stessa situazione."),
+                q("errori", "Evito attività nuove quando temo di non riuscire a farle bene fin dall'inizio."),
+                q("giudizio", "Sento che le persone importanti per me si aspettano risultati molto elevati in quasi tutto ciò che faccio."),
+                q("giudizio", "Temo che rispetto, approvazione o affetto possano diminuire se commetto un errore o fallisco."),
+                q("giudizio", "Nascondo difficoltà, incertezze o errori per non apparire meno competente agli occhi degli altri."),
+                q("giudizio", "Confronto i miei risultati con le prestazioni migliori degli altri e finisco per sentirmi inadeguato."),
+                q("giudizio", "Interpreto un feedback correttivo come la prova che non sono stato all'altezza delle aspettative."),
+                q("giudizio", "Sento di dover apparire sempre preparato, efficiente e in controllo anche quando sono in difficoltà."),
+                q("controllo", "Dedico a dettagli secondari molto più tempo di quanto il loro impatto sul risultato richiederebbe."),
+                q("controllo", "Rifaccio o ritocco attività già adeguate perché mi è difficile accettarle come concluse."),
+                q("controllo", "Fatico a delegare perché temo che il compito non venga svolto esattamente come ritengo necessario."),
+                q("controllo", "Un cambiamento imprevisto nel piano mi provoca una frustrazione intensa perché compromette il modo ideale di procedere."),
+                q("controllo", "Rimando l'inizio di un'attività finché non ho trovato il metodo, il momento o le condizioni che considero perfetti."),
+                q("controllo", "Mi è difficile prendere una decisione o chiudere un lavoro quando esistono ancora alternative da valutare o possibili miglioramenti.")));
+
+        saveGlobal(id, "LOW", "Poche dinamiche perfezionistiche ricorrenti",
+                "Nel complesso hai indicato una presenza contenuta delle pressioni perfezionistiche esplorate.",
+                "Puoi avere standard elevati e attenzione alla qualità senza lasciare che errori, giudizi o dettagli determinino stabilmente il tuo valore e le tue scelte. Questo risultato non esclude momenti di forte esigenza e non rappresenta una valutazione clinica.");
+        saveGlobal(id, "MIXED", "Un perfezionismo che emerge in alcuni contesti",
+                "Le tue risposte descrivono dinamiche variabili, più presenti in determinati ambiti, compiti o relazioni.",
+                "Potresti mantenere flessibilità in molte situazioni ma diventare più rigido quando il risultato è importante, visibile o legato al giudizio altrui. Osservare dove il costo aumenta può essere più utile di definirti semplicemente perfezionista.");
+        saveGlobal(id, "FOCUSED", "Un'area concentra la pressione perfezionistica",
+                "Una o due aree emergono con particolare frequenza, mentre negli altri aspetti sembra esserci maggiore flessibilità.",
+                "Può essere utile notare se la pressione nasce soprattutto dagli standard, dalla paura degli errori, dalle aspettative percepite o dal bisogno di controllo. Distinguere il meccanismo prevalente aiuta a capire quando la ricerca della qualità smette di essere funzionale.");
+        saveGlobal(id, "BROAD", "Una pressione perfezionistica diffusa",
+                "Le risposte indicano dinamiche frequenti in più aree, con possibile difficoltà a riconoscere un risultato come sufficiente e a separare prestazione e valore personale.",
+                "Se questa pressione causa sofferenza, blocchi, procrastinazione, esaurimento o rinunce importanti, confrontarti con uno psicologo o psicoterapeuta può aiutarti a costruire standard più flessibili senza abbandonare ciò che per te conta. Il risultato resta informativo e non diagnostico.");
+
+        saveAreaInsights(id, "standard",
+                "I tuoi obiettivi sembrano generalmente adattabili alla situazione e il valore che riconosci a te stesso non dipende interamente dai risultati.",
+                "In alcuni ambiti gli standard possono diventare molto esigenti e rendere più difficile riconoscere successi, riposo o risultati sufficientemente buoni.",
+                "Le risposte mostrano standard frequentemente molto elevati e un forte legame tra prestazione e valore personale, con poco spazio per soddisfazione e recupero.");
+        saveAreaInsights(id, "errori",
+                "Errori e dubbi sembrano generalmente restare informazioni circoscritte, senza trasformarsi in giudizi globali o controlli prolungati.",
+                "Alcuni errori o compiti importanti possono attivare autocritica, ripensamenti e bisogno di verificare, soprattutto quando l'esito è incerto.",
+                "Le risposte indicano una paura frequente degli errori, accompagnata da dubbi persistenti, autocritica severa o evitamento delle situazioni in cui non puoi garantire un risultato elevato.");
+        saveAreaInsights(id, "giudizio",
+                "Le aspettative e i feedback degli altri sembrano influenzarti senza definire stabilmente competenza, accettazione o valore personale.",
+                "In alcune relazioni o situazioni visibili potresti sentire una pressione maggiore a dimostrarti competente e a nascondere limiti o incertezze.",
+                "Le risposte mostrano una forte pressione percepita dal giudizio altrui, con il timore che errori e difficoltà riducano rispetto, approvazione o affetto.");
+        saveAreaInsights(id, "controllo",
+                "Riesci generalmente a calibrare tempo e precisione, delegare e concludere quando il risultato è adeguato allo scopo.",
+                "Dettagli, alternative o cambiamenti possono rallentarti in alcuni compiti, soprattutto quando non è chiaro quale livello di qualità sia sufficiente.",
+                "Le risposte indicano un bisogno frequente di controllo e completezza che può portare a ritocchi, indecisione, difficoltà a delegare o rinvio dell'inizio e della conclusione.");
     }
 
     private boolean requiresSeed(String testId, String version) {

@@ -278,10 +278,47 @@ class TestResultServiceTest {
     }
 
     @Test
+    void perfectionismTestIsLoadedWithTwentyFourQuestionsAndSpecificLabels() {
+        PsychologicalTest test = catalogue.findById("perfezionismo");
+
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche perfezionistiche");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche perfezionistiche");
+    }
+
+    @Test
+    void perfectionismFocusedProfileShowsTheMostRelevantAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("perfezionismo", 5, 1, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Un'area concentra la pressione perfezionistica");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Standard elevati e valore legato ai risultati");
+        assertThat(result.areaResults().get(0).description()).contains("standard frequentemente molto elevati");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+    }
+
+    @Test
+    void perfectionismLowAndBroadProfilesFollowTheGeneralRules() {
+        TestResult low = analyzeWithAnswersForTest("perfezionismo", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("perfezionismo", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Poche dinamiche perfezionistiche ricorrenti");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("Una pressione perfezionistica diffusa");
+        assertThat(broad.general().detail()).contains("procrastinazione, esaurimento");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }
