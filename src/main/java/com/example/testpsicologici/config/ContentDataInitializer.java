@@ -45,6 +45,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedAssertivenessInformationTest();
         seedEmotionalIntelligenceInformationTest();
         seedPerfectionismInformationTest();
+        seedSocialAnxietyInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -676,6 +677,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Riesci generalmente a calibrare tempo e precisione, delegare e concludere quando il risultato è adeguato allo scopo.",
                 "Dettagli, alternative o cambiamenti possono rallentarti in alcuni compiti, soprattutto quando non è chiaro quale livello di qualità sia sufficiente.",
                 "Le risposte indicano un bisogno frequente di controllo e completezza che può portare a ritocchi, indecisione, difficoltà a delegare o rinvio dell'inizio e della conclusione.");
+    }
+
+    private void seedSocialAnxietyInformationTest() {
+        String id = "ansia-sociale";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Ansia sociale",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere su paura del giudizio, interazioni, situazioni sotto osservazione ed evitamento sociale.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non permette di stabilire la presenza di un disturbo d'ansia sociale. Timidezza, riservatezza e disagio occasionale sono esperienze comuni; una valutazione clinica considera durata, intensità, proporzione rispetto al rischio reale e impatto sulla vita. Esperienze simili possono dipendere anche da stress, depressione, trauma, neurodiversità, difficoltà comunicative o contesti realmente ostili e discriminatori. Rispondi pensando alla frequenza delle esperienze negli ultimi mesi e nei diversi contesti. Se ansia o evitamento limitano relazioni, studio, lavoro o attività importanti, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
+                version, false,
+                "Frequenza complessiva delle esperienze di ansia sociale",
+                "Frequenza delle esperienze",
+                true, 9));
+
+        saveArea(id, "valutazione", "Paura del giudizio e dell'imbarazzo", 1);
+        saveArea(id, "interazione", "Conversazioni e interazioni sociali", 2);
+        saveArea(id, "prestazione", "Prestazione e situazioni sotto osservazione", 3);
+        saveArea(id, "evitamento", "Anticipazione, evitamento e ripensamento", 4);
+
+        saveQuestions(id, List.of(
+                q("valutazione", "Prima di parlare con altre persone temo di dire qualcosa di inappropriato, poco interessante o imbarazzante."),
+                q("valutazione", "Interpreto silenzi, espressioni neutre o risposte brevi come segnali che gli altri mi stanno giudicando negativamente."),
+                q("valutazione", "Temo che rossore, tremore, sudorazione, voce incerta o altri segnali d'ansia siano visibili e mi facciano apparire male."),
+                q("valutazione", "La possibilità di essere criticato, respinto o preso in giro mi provoca una forte preoccupazione nelle situazioni sociali."),
+                q("valutazione", "Sento di dover controllare attentamente ciò che dico e faccio per evitare di dare un'impressione negativa."),
+                q("valutazione", "Un piccolo errore sociale mi sembra capace di compromettere a lungo l'opinione che gli altri hanno di me."),
+                q("interazione", "Parlare con persone che conosco poco mi provoca una tensione difficile da ignorare."),
+                q("interazione", "Mi è difficile iniziare una conversazione, presentarmi o trovare qualcosa da dire con persone nuove."),
+                q("interazione", "Quando l'attenzione si sposta su di me durante una conversazione, la mente può diventare vuota o confusa."),
+                q("interazione", "Esprimere un'opinione diversa, fare una richiesta o chiedere aiuto in presenza di altri mi crea forte disagio."),
+                q("interazione", "Nei gruppi controllo così tanto come sto apparendo da faticare a seguire e partecipare spontaneamente alla conversazione."),
+                q("interazione", "Situazioni come conoscere nuove persone, partecipare a eventi o creare un legame affettivo mi mettono in forte soggezione."),
+                q("prestazione", "Parlare, presentare un lavoro o esibirmi davanti a un gruppo mi provoca molta ansia."),
+                q("prestazione", "Rispondere a una domanda o intervenire durante una riunione, una lezione o un incontro mi fa sentire fortemente esposto."),
+                q("prestazione", "Essere osservato mentre scrivo, mangio, lavoro o svolgo un'attività rende più difficile comportarmi con naturalezza."),
+                q("prestazione", "Essere presentato, ricevere un riconoscimento o diventare il centro dell'attenzione mi provoca un disagio intenso."),
+                q("prestazione", "Colloqui, esami orali o valutazioni faccia a faccia mi preoccupano soprattutto per come potrei apparire agli altri."),
+                q("prestazione", "Nelle situazioni di prestazione l'ansia interferisce con la voce, la memoria, la concentrazione o i movimenti."),
+                q("evitamento", "Inizio a preoccuparmi per un evento sociale molto prima che accada, immaginando ciò che potrebbe andare storto."),
+                q("evitamento", "Rifiuto inviti, opportunità o attività perché temo il disagio o il giudizio che potrei provare."),
+                q("evitamento", "Durante le situazioni sociali uso accorgimenti per non farmi notare, come parlare poco, restare al telefono o preparare mentalmente ogni frase."),
+                q("evitamento", "Cerco di lasciare presto una situazione sociale o provo un forte sollievo quando viene annullata."),
+                q("evitamento", "Dopo un'interazione ripenso a lungo a ciò che ho detto o fatto, concentrandomi soprattutto sui possibili errori."),
+                q("evitamento", "L'ansia sociale condiziona scelte importanti relative a relazioni, studio, lavoro o attività che vorrei svolgere.")));
+
+        saveGlobal(id, "LOW", "Poche difficoltà sociali ricorrenti",
+                "Nel complesso hai indicato una presenza contenuta delle esperienze di ansia sociale esplorate.",
+                "Questo non significa sentirsi sempre disinvolti: timidezza, tensione e desiderio di fare una buona impressione possono comparire in chiunque. Le risposte suggeriscono però che giudizio ed esposizione sociale tendono a non limitare in modo costante le tue scelte.");
+        saveGlobal(id, "MIXED", "Un'ansia sociale legata ad alcuni contesti",
+                "Le tue risposte descrivono difficoltà variabili, più evidenti con certe persone, situazioni o livelli di esposizione.",
+                "Potresti sentirti relativamente a tuo agio in contesti familiari ma provare forte tensione quando sei osservato, devi prendere iniziativa o temi una valutazione. Notare quali condizioni fanno aumentare l'ansia può essere più utile di una conclusione generale.");
+        saveGlobal(id, "FOCUSED", "Un ambito sociale emerge con chiarezza",
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore libertà.",
+                "Può essere utile osservare se la difficoltà riguarda soprattutto il giudizio, le conversazioni, la prestazione o il ciclo di anticipazione ed evitamento. Il risultato non stabilisce una diagnosi, ma può aiutarti a descrivere con maggiore precisione ciò che accade.");
+        saveGlobal(id, "BROAD", "Ansia sociale presente in più ambiti",
+                "Le risposte indicano paura, tensione o evitamento frequenti in diversi tipi di situazione sociale o valutativa.",
+                "Se queste esperienze causano sofferenza o limitano relazioni, studio, lavoro e attività importanti, una valutazione con uno psicologo, psicoterapeuta o medico può chiarire il quadro e le possibili forme di aiuto. L'ansia sociale è trattabile, ma questo questionario resta informativo e non diagnostico.");
+
+        saveAreaInsights(id, "valutazione",
+                "Il possibile giudizio degli altri sembra generare una preoccupazione contenuta e gli errori sociali tendono a restare episodi circoscritti.",
+                "In alcune situazioni potresti controllare molto l'impressione che dai o interpretare segnali ambigui come possibili valutazioni negative.",
+                "Le risposte mostrano una paura frequente di essere giudicato, rifiutato o notato per i segnali d'ansia, con forte attenzione a come potresti apparire.");
+        saveAreaInsights(id, "interazione",
+                "Conversazioni, richieste e nuove conoscenze sembrano generalmente affrontabili senza un'eccessiva sorveglianza di te stesso.",
+                "Alcune interazioni, soprattutto con persone nuove, gruppi o interlocutori importanti, possono aumentare tensione e autocontrollo.",
+                "Le risposte indicano una forte tensione nelle interazioni, con difficoltà a iniziare, partecipare o esprimerti quando l'attenzione può concentrarsi su di te.");
+        saveAreaInsights(id, "prestazione",
+                "Situazioni di esposizione o valutazione possono attivare normale tensione senza interferire frequentemente con la tua prestazione.",
+                "Parlare in pubblico, essere osservato o affrontare valutazioni può provocarti ansia significativa in alcuni contesti specifici.",
+                "Le risposte mostrano un'ansia frequente quando devi esibirti, intervenire o svolgere attività sotto osservazione, con possibile interferenza sulla prestazione.");
+        saveAreaInsights(id, "evitamento",
+                "Preoccupazione anticipata, strategie per nasconderti e ripensamenti successivi sembrano avere un ruolo contenuto nelle tue scelte sociali.",
+                "Puoi anticipare o rielaborare alcune situazioni e talvolta ridurre la partecipazione per gestire il disagio, soprattutto quando l'evento è importante.",
+                "Le risposte indicano un ciclo frequente di preoccupazione anticipata, evitamento o comportamenti protettivi e ripensamento negativo dopo gli incontri, con possibile impatto sulle opportunità.");
     }
 
     private boolean requiresSeed(String testId, String version) {

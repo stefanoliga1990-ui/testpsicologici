@@ -1,0 +1,155 @@
+{
+  "test": {
+    "id": "ansia-sociale",
+    "titolo": "Ansia sociale",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza delle esperienze di paura, tensione, autocontrollo ed evitamento sociale esplorate dal questionario",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il questionario non è clinicamente validato, non formula diagnosi e non equipara timidezza o disagio occasionale a un disturbo d'ansia sociale. Le soglie hanno esclusivamente una funzione editoriale."
+  },
+  "istruzioni": "Rispondere pensando alla frequenza delle esperienze negli ultimi mesi e nei diversi contesti sociali o valutativi.",
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono LSAS, SIAS, BFNE o altri strumenti clinici validati. Le aree sono state costruite a partire da fonti istituzionali e letteratura scientifica su paura della valutazione negativa, interazioni, prestazione sotto osservazione, anticipazione, comportamenti protettivi, evitamento e ripensamento successivo.",
+    "fonti_consultate": [
+      {
+        "titolo": "Social Anxiety Disorder: More Than Just Shyness — National Institute of Mental Health",
+        "url": "https://www.nimh.nih.gov/health/publications/social-anxiety-disorder-more-than-just-shyness",
+        "apporto": "Riferimento per paura di essere osservati o giudicati, manifestazioni nelle interazioni e nelle prestazioni, evitamento e impatto sul funzionamento."
+      },
+      {
+        "titolo": "Assessment and diagnosis for adults — NICE CG159",
+        "url": "https://www.nice.org.uk/guidance/cg159/ifp/chapter/assessment-and-diagnosis-for-adults",
+        "apporto": "Riferimento per frequenza delle preoccupazioni, paura dell'imbarazzo o dell'attenzione, evitamento e interferenza nella vita quotidiana."
+      },
+      {
+        "titolo": "Social anxiety disorder: recognition, assessment and treatment — NICE recommendations",
+        "url": "https://www.nice.org.uk/guidance/cg159/chapter/recommendations",
+        "apporto": "Riferimento per l'impatto funzionale, l'elaborazione anticipatoria e successiva agli eventi e la necessità di una valutazione professionale."
+      },
+      {
+        "titolo": "Factor structure of social fears: the Liebowitz Social Anxiety Scale",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10372341/",
+        "apporto": "Riferimento concettuale per distinguere interazione sociale, parlare in pubblico, essere osservati e altre situazioni di esposizione, senza riprodurre gli item della scala."
+      },
+      {
+        "titolo": "Evaluation of the psychometric properties of two short forms of the Social Interaction Anxiety Scale and the Social Phobia Scale",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15738853/",
+        "apporto": "Riferimento per il ruolo della paura della valutazione negativa nelle esperienze di ansia sociale."
+      },
+      {
+        "titolo": "Psychometric properties of the Brief Fear of Negative Evaluation Scale",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21565463/",
+        "apporto": "Riferimento per il nucleo relativo alla valutazione negativa e per mantenere distinta la misurazione editoriale da uno strumento validato."
+      },
+      {
+        "titolo": "Post-event rumination and social anxiety: a systematic review and meta-analysis",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38518572/",
+        "apporto": "Riferimento per il ripensamento negativo dopo le interazioni come processo associato all'ansia sociale."
+      },
+      {
+        "titolo": "Post-event processing in social anxiety: a systematic review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39622110/",
+        "apporto": "Riferimento per l'elaborazione successiva agli eventi e la sua relazione con il mantenimento del disagio."
+      },
+      {
+        "titolo": "The causal role of self-awareness and safety behaviours in anxiety and negative beliefs during social interactions",
+        "url": "https://doi.org/10.1016/j.jbtep.2006.12.002",
+        "apporto": "Riferimento per autocontrollo e comportamenti protettivi impiegati per ridurre la possibilità percepita di fare una cattiva impressione."
+      },
+      {
+        "titolo": "A cognitive-behavioral model of anxiety in social phobia",
+        "url": "https://www.youthaodtoolbox.org.au/sites/default/files/documents_global/Cognitive-Behavioural%20Model%20of%20Anxiety%20in%20Social%20Phobia_Rapee%26Heimberg%201997.pdf",
+        "apporto": "Riferimento teorico per attenzione focalizzata su di sé, rappresentazione della propria immagine e confronto con standard percepiti dell'osservatore."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "orientamento": "Tutte le domande descrivono esperienze di difficoltà: Mai corrisponde al minimo e Sempre al massimo.",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Poche difficoltà sociali ricorrenti",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta delle esperienze di ansia sociale esplorate.",
+      "descrizione": "Questo non significa sentirsi sempre disinvolti: timidezza, tensione e desiderio di fare una buona impressione possono comparire in chiunque. Le risposte suggeriscono però che giudizio ed esposizione sociale tendono a non limitare in modo costante le tue scelte."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un'ansia sociale legata ad alcuni contesti",
+      "sottotitolo": "Le tue risposte descrivono difficoltà variabili, più evidenti con certe persone, situazioni o livelli di esposizione.",
+      "descrizione": "Potresti sentirti relativamente a tuo agio in contesti familiari ma provare forte tensione quando sei osservato, devi prendere iniziativa o temi una valutazione. Notare quali condizioni fanno aumentare l'ansia può essere più utile di una conclusione generale."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Un ambito sociale emerge con chiarezza",
+      "sottotitolo": "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore libertà.",
+      "descrizione": "Può essere utile osservare se la difficoltà riguarda soprattutto il giudizio, le conversazioni, la prestazione o il ciclo di anticipazione ed evitamento. Il risultato non stabilisce una diagnosi, ma può aiutarti a descrivere con maggiore precisione ciò che accade."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Ansia sociale presente in più ambiti",
+      "sottotitolo": "Le risposte indicano paura, tensione o evitamento frequenti in diversi tipi di situazione sociale o valutativa.",
+      "descrizione": "Se queste esperienze causano sofferenza o limitano relazioni, studio, lavoro e attività importanti, una valutazione con uno psicologo, psicoterapeuta o medico può chiarire il quadro e le possibili forme di aiuto. L'ansia sociale è trattabile, ma questo questionario resta informativo e non diagnostico."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "valutazione",
+      "nome_area": "Paura del giudizio e dell'imbarazzo",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Il possibile giudizio degli altri sembra generare una preoccupazione contenuta e gli errori sociali tendono a restare episodi circoscritti."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni potresti controllare molto l'impressione che dai o interpretare segnali ambigui come possibili valutazioni negative."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una paura frequente di essere giudicato, rifiutato o notato per i segnali d'ansia, con forte attenzione a come potresti apparire."}
+      ]
+    },
+    {
+      "area_code": "interazione",
+      "nome_area": "Conversazioni e interazioni sociali",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Conversazioni, richieste e nuove conoscenze sembrano generalmente affrontabili senza un'eccessiva sorveglianza di te stesso."},
+        {"livello": "MEDIUM", "descrizione": "Alcune interazioni, soprattutto con persone nuove, gruppi o interlocutori importanti, possono aumentare tensione e autocontrollo."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano una forte tensione nelle interazioni, con difficoltà a iniziare, partecipare o esprimerti quando l'attenzione può concentrarsi su di te."}
+      ]
+    },
+    {
+      "area_code": "prestazione",
+      "nome_area": "Prestazione e situazioni sotto osservazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Situazioni di esposizione o valutazione possono attivare normale tensione senza interferire frequentemente con la tua prestazione."},
+        {"livello": "MEDIUM", "descrizione": "Parlare in pubblico, essere osservato o affrontare valutazioni può provocarti ansia significativa in alcuni contesti specifici."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano un'ansia frequente quando devi esibirti, intervenire o svolgere attività sotto osservazione, con possibile interferenza sulla prestazione."}
+      ]
+    },
+    {
+      "area_code": "evitamento",
+      "nome_area": "Anticipazione, evitamento e ripensamento",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Preoccupazione anticipata, strategie per nasconderti e ripensamenti successivi sembrano avere un ruolo contenuto nelle tue scelte sociali."},
+        {"livello": "MEDIUM", "descrizione": "Puoi anticipare o rielaborare alcune situazioni e talvolta ridurre la partecipazione per gestire il disagio, soprattutto quando l'evento è importante."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano un ciclo frequente di preoccupazione anticipata, evitamento o comportamenti protettivi e ripensamento negativo dopo gli incontri, con possibile impatto sulle opportunità."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; vengono mostrate prima le esperienze più frequenti. Sono visibili nome, testo e barra, ma non livelli, soglie o punteggi numerici."
+  }
+}

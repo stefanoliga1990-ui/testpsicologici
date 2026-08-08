@@ -315,10 +315,47 @@ class TestResultServiceTest {
     }
 
     @Test
+    void socialAnxietyTestIsLoadedWithTwentyFourQuestionsAndSpecificLabels() {
+        PsychologicalTest test = catalogue.findById("ansia-sociale");
+
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze di ansia sociale");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
+    }
+
+    @Test
+    void socialAnxietyFocusedProfileShowsTheMostRelevantAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("ansia-sociale", 5, 1, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Un ambito sociale emerge con chiarezza");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Paura del giudizio e dell'imbarazzo");
+        assertThat(result.areaResults().get(0).description()).contains("paura frequente di essere giudicato");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+    }
+
+    @Test
+    void socialAnxietyLowAndBroadProfilesFollowTheGeneralRules() {
+        TestResult low = analyzeWithAnswersForTest("ansia-sociale", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("ansia-sociale", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Poche difficoltà sociali ricorrenti");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("Ansia sociale presente in più ambiti");
+        assertThat(broad.general().detail()).contains("L'ansia sociale è trattabile");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }
