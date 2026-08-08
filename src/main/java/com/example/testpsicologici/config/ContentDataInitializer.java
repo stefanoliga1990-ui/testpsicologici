@@ -43,6 +43,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedSelfEsteemInformationTest();
         seedEmotionalDependenceInformationTest();
         seedAssertivenessInformationTest();
+        seedEmotionalIntelligenceInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -514,6 +515,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Prendere l'iniziativa, chiedere aiuto o riconoscimento ed esprimere apprezzamento può risultarti difficile quando non conosci in anticipo la risposta altrui.",
                 "Ti attivi con una certa facilità in situazioni familiari, mentre richieste, nuove interazioni o la possibilità di ricevere un rifiuto possono frenarti.",
                 "Le risposte indicano una buona disponibilità a iniziare scambi, formulare richieste, chiedere aiuto e dare o ricevere riconoscimenti in modo aperto.");
+    }
+
+    private void seedEmotionalIntelligenceInformationTest() {
+        String id = "intelligenza-emotiva";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Intelligenza emotiva",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere su come riconosci, comprendi, utilizzi e regoli le informazioni emotive nella vita quotidiana.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non misura un quoziente di intelligenza emotiva o un'abilità oggettiva. Essendo un'autovalutazione, descrive soprattutto quanto riconosci e metti in pratica alcuni comportamenti legati alle emozioni; è possibile sottovalutarsi o sopravvalutarsi. Rispondi pensando a ciò che fai abitualmente nei diversi contesti. Le emozioni non sono giuste o sbagliate e regolarle non significa reprimerle. Cultura, esperienze personali, neurodiversità e sicurezza del contesto possono influenzare percezione ed espressione emotiva.",
+                version, false,
+                "Frequenza complessiva delle competenze emotive esplorate",
+                "Frequenza delle competenze emotive",
+                true, 7));
+
+        saveArea(id, "percezione", "Percezione e consapevolezza emotiva", 1);
+        saveArea(id, "facilitazione", "Uso delle emozioni nel pensiero e nelle decisioni", 2);
+        saveArea(id, "comprensione", "Comprensione di cause, sfumature e cambiamenti", 3);
+        saveArea(id, "regolazione", "Regolazione ed espressione nelle relazioni", 4);
+
+        saveQuestions(id, List.of(
+                q("percezione", "Mi accorgo dei segnali del corpo che accompagnano un'emozione prima che diventi molto intensa."),
+                q("percezione", "Riesco a dare un nome abbastanza preciso a ciò che provo invece di fermarmi a un generico stare bene o stare male."),
+                q("percezione", "Riconosco quando un'emozione sta aumentando, diminuendo o lasciando spazio a un'altra."),
+                q("percezione", "Noto il tono emotivo nella voce, nel volto o nella postura di una persona senza considerare infallibile la mia impressione."),
+                q("percezione", "Mi accorgo quando il mio stato emotivo sta influenzando il modo in cui parlo, ascolto o mi comporto."),
+                q("percezione", "Quando non sono sicuro di ciò che prova qualcuno, verifico la mia interpretazione con domande rispettose."),
+                q("facilitazione", "Considero ciò che provo come un'informazione utile quando devo prendere una decisione importante."),
+                q("facilitazione", "Uso interesse, entusiasmo o disagio per capire meglio che cosa conta per me in una situazione."),
+                q("facilitazione", "Quando un'emozione intensa riduce la mia lucidità, rimando se possibile le decisioni impulsive finché riesco a valutarle meglio."),
+                q("facilitazione", "Adatto il modo di affrontare un compito al mio livello di energia, tensione o coinvolgimento emotivo."),
+                q("facilitazione", "Se sono bloccato in un unico punto di vista, cerco una prospettiva emotiva diversa per vedere nuove possibilità."),
+                q("facilitazione", "Distinguo l'impulso emotivo del momento dagli obiettivi e dai valori che voglio seguire nel lungo periodo."),
+                q("comprensione", "Collego ciò che provo a eventi, bisogni, aspettative o interpretazioni che possono averlo attivato."),
+                q("comprensione", "Riesco a riconoscere emozioni diverse o contrastanti presenti nello stesso momento."),
+                q("comprensione", "Comprendo come un'emozione possa trasformarsi, per esempio da irritazione a delusione o da timore a sollievo."),
+                q("comprensione", "Prima di una situazione importante considero quali reazioni emotive potrebbe suscitare in me e nelle altre persone."),
+                q("comprensione", "Riesco a capire perché lo stesso evento può provocare emozioni diverse in persone diverse."),
+                q("comprensione", "Rivedo la mia lettura di una reazione emotiva quando emergono informazioni nuove sul contesto."),
+                q("regolazione", "Riesco a restare in contatto con un'emozione intensa senza dover agire subito o fingere che non esista."),
+                q("regolazione", "Scelgo strategie diverse per gestire le emozioni in base alla situazione, invece di usare sempre la stessa risposta."),
+                q("regolazione", "Esprimo ciò che provo e ciò di cui ho bisogno in modo comprensibile e rispettoso."),
+                q("regolazione", "Dopo una reazione emotiva forte riesco a recuperare e riflettere su ciò che è accaduto."),
+                q("regolazione", "Quando qualcuno condivide un'emozione, lo aiuto a sentirsi ascoltato senza minimizzare o cercare subito di risolvere tutto."),
+                q("regolazione", "Se il modo in cui sto gestendo un'emozione non aiuta, provo a cambiare strategia o a cercare sostegno.")));
+
+        saveGlobal(id, "LOW", "Competenze emotive ancora poco accessibili",
+                "Nel complesso hai indicato una frequenza contenuta dei comportamenti emotivi esplorati.",
+                "Potresti trovare difficile riconoscere con precisione ciò che accade dentro di te, usare quelle informazioni o scegliere come rispondere. Queste competenze possono essere sviluppate con osservazione ed esperienza; il risultato riflette la tua percezione attuale e non misura la tua intelligenza o il tuo valore.");
+        saveGlobal(id, "MIXED", "Un profilo emotivo che cambia con le situazioni",
+                "Le tue risposte descrivono competenze accessibili in alcuni momenti e più difficili quando emozioni, relazioni o pressioni diventano intense.",
+                "È comune riconoscere bene alcuni stati ma faticare a comprenderli o regolarli in determinati contesti. Osservare dove il processo si interrompe può essere più utile di cercare un unico punteggio di intelligenza emotiva.");
+        saveGlobal(id, "FOCUSED", "Alcune competenze emotive sono già solide",
+                "Una o due aree emergono con maggiore continuità, mentre le altre sembrano dipendere maggiormente dal contesto o richiedere allenamento.",
+                "Le risorse già presenti possono sostenere le aree meno accessibili: per esempio, riconoscere bene un'emozione può diventare il punto di partenza per comprenderla, usarne le informazioni e scegliere una risposta più flessibile.");
+        saveGlobal(id, "BROAD", "Competenze emotive diffuse e flessibili",
+                "Le tue risposte indicano una presenza frequente delle competenze esplorate in più momenti del processo emotivo.",
+                "Questo non significa comprendere sempre gli altri, non provare emozioni intense o riuscire a regolarle in ogni situazione. Suggerisce piuttosto che disponi di più strumenti per osservare, interpretare e utilizzare le emozioni senza esserne guidato automaticamente. Il risultato resta informativo e non è una misura oggettiva di abilità.");
+
+        saveAreaInsights(id, "percezione",
+                "Può esserti difficile accorgerti tempestivamente dei segnali emotivi, distinguerli con precisione o verificare ciò che percepisci nelle altre persone.",
+                "Riconosci diversi segnali emotivi, ma intensità, fretta o ambiguità possono rendere meno chiaro ciò che provi o ciò che osservi negli altri.",
+                "Le risposte indicano una buona attenzione ai segnali corporei, alle variazioni del tuo stato e agli indizi emotivi degli altri, mantenendo spazio per verificare le interpretazioni.");
+        saveAreaInsights(id, "facilitazione",
+                "Le emozioni possono sembrarti soprattutto qualcosa da seguire o da mettere da parte, rendendo difficile usarle come informazioni nel pensiero e nelle decisioni.",
+                "In alcune situazioni utilizzi ciò che provi per orientarti, mentre emozioni intense o pressioni possono avvicinare impulso immediato e decisione.",
+                "Le risposte mostrano una buona capacità di integrare le informazioni emotive con ragionamento, priorità e obiettivi senza lasciare che decidano automaticamente al tuo posto.");
+        saveAreaInsights(id, "comprensione",
+                "Individuare cause, sfumature, emozioni miste o possibili evoluzioni di ciò che provi può risultarti spesso complesso.",
+                "Comprendi diverse dinamiche emotive, ma reazioni contrastanti, cambiamenti rapidi o prospettive molto diverse dalla tua possono creare incertezza.",
+                "Le risposte indicano una buona capacità di collegare emozioni e contesto, riconoscere stati misti e aggiornare la tua lettura quando emergono nuove informazioni.");
+        saveAreaInsights(id, "regolazione",
+                "Quando un'emozione diventa intensa potresti agire subito, evitarla o affidarti a una risposta abituale anche quando non è adatta alla situazione.",
+                "Disponi di alcune strategie per esprimere e gestire le emozioni, ma sotto pressione può diventare più difficile scegliere con flessibilità o chiedere sostegno.",
+                "Le risposte mostrano una buona capacità di accogliere le emozioni, esprimerle con rispetto e modificare strategia quando la prima risposta non aiuta te o la relazione.");
     }
 
     private boolean requiresSeed(String testId, String version) {

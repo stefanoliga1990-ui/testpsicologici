@@ -241,10 +241,47 @@ class TestResultServiceTest {
     }
 
     @Test
+    void emotionalIntelligenceTestIsLoadedWithTwentyFourQuestionsAndPositiveLabels() {
+        PsychologicalTest test = catalogue.findById("intelligenza-emotiva");
+
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle competenze emotive esplorate");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle competenze emotive");
+    }
+
+    @Test
+    void emotionalIntelligenceFocusedProfileShowsTheStrongestAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("intelligenza-emotiva", 5, 1, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Alcune competenze emotive sono già solide");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Percezione e consapevolezza emotiva");
+        assertThat(result.areaResults().get(0).description()).contains("buona attenzione ai segnali corporei");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+    }
+
+    @Test
+    void emotionalIntelligenceLowAndBroadProfilesFollowThePositiveScoringDirection() {
+        TestResult low = analyzeWithAnswersForTest("intelligenza-emotiva", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("intelligenza-emotiva", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Competenze emotive ancora poco accessibili");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("Competenze emotive diffuse e flessibili");
+        assertThat(broad.general().detail()).contains("non è una misura oggettiva di abilità");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

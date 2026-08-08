@@ -1,0 +1,140 @@
+{
+  "test": {
+    "id": "intelligenza-emotiva",
+    "titolo": "Intelligenza emotiva",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza delle competenze emotive percepite ed esercitate nel quotidiano",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il questionario non è clinicamente validato, non formula diagnosi e non misura un quoziente o un'abilità oggettiva. Le soglie hanno esclusivamente una funzione editoriale."
+  },
+  "istruzioni": "Rispondere pensando a ciò che si fa abitualmente nei diversi contesti, tenendo conto che un'autovalutazione può sottostimare o sovrastimare le competenze effettive.",
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono test validati. Le quattro aree prendono come riferimento il modello di abilità di Mayer, Salovey e Caruso, ma lo strumento rileva soltanto comportamenti e autopercezioni. Cultura, esperienze personali, neurodiversità e sicurezza del contesto possono influenzare percezione ed espressione emotiva.",
+    "fonti_consultate": [
+      {
+        "titolo": "The Ability Model of Emotional Intelligence: Principles and Updates",
+        "url": "https://sites.usnh.edu/jdmayer/wp-content/uploads/sites/261/2024/03/rp2016-mayer-caruso-salovey.pdf",
+        "apporto": "Riferimento per le quattro aree di percezione, facilitazione del pensiero, comprensione e gestione delle emozioni."
+      },
+      {
+        "titolo": "Emotional Intelligence: New Ability or Eclectic Traits?",
+        "url": "https://cdn2.psychologytoday.com/assets/attachments/1575/rp2008-mayersaloveycarusob.pdf",
+        "apporto": "Riferimento per distinguere il modello di abilità dalle concezioni più ampie basate su tratti e competenze."
+      },
+      {
+        "titolo": "The Measurement of Emotional Intelligence: A Critical Review",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6546921/",
+        "apporto": "Riferimento per distinguere test prestazionali, autovalutazioni di tratto e modelli misti."
+      },
+      {
+        "titolo": "Emotional Intelligence Measures: A Systematic Review",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8701889/",
+        "apporto": "Riferimento per la varietà dei modelli e per i limiti psicometrici delle diverse modalità di misurazione."
+      },
+      {
+        "titolo": "Convergent, discriminant, and incremental validity of competing measures of emotional intelligence",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15189610/",
+        "apporto": "Riferimento empirico per non equiparare automaticamente misure di abilità e questionari autodescrittivi."
+      },
+      {
+        "titolo": "Individual differences in two emotion regulation processes",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12916575/",
+        "apporto": "Riferimento per distinguere strategie di regolazione come rivalutazione e soppressione e per considerare i loro effetti relazionali."
+      },
+      {
+        "titolo": "Are emotional clarity and emotion differentiation related?",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23237455/",
+        "apporto": "Riferimento per distinguere chiarezza percepita e capacità di differenziare con precisione le esperienze emotive."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "orientamento": "Tutte le domande sono positive: Mai corrisponde al minimo e Sempre al massimo della competenza emotiva descritta.",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Competenze emotive ancora poco accessibili",
+      "sottotitolo": "Nel complesso hai indicato una frequenza contenuta dei comportamenti emotivi esplorati.",
+      "descrizione": "Potresti trovare difficile riconoscere con precisione ciò che accade dentro di te, usare quelle informazioni o scegliere come rispondere. Queste competenze possono essere sviluppate con osservazione ed esperienza; il risultato riflette la tua percezione attuale e non misura la tua intelligenza o il tuo valore."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un profilo emotivo che cambia con le situazioni",
+      "sottotitolo": "Le tue risposte descrivono competenze accessibili in alcuni momenti e più difficili quando emozioni, relazioni o pressioni diventano intense.",
+      "descrizione": "È comune riconoscere bene alcuni stati ma faticare a comprenderli o regolarli in determinati contesti. Osservare dove il processo si interrompe può essere più utile di cercare un unico punteggio di intelligenza emotiva."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Alcune competenze emotive sono già solide",
+      "sottotitolo": "Una o due aree emergono con maggiore continuità, mentre le altre sembrano dipendere maggiormente dal contesto o richiedere allenamento.",
+      "descrizione": "Le risorse già presenti possono sostenere le aree meno accessibili: per esempio, riconoscere bene un'emozione può diventare il punto di partenza per comprenderla, usarne le informazioni e scegliere una risposta più flessibile."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Competenze emotive diffuse e flessibili",
+      "sottotitolo": "Le tue risposte indicano una presenza frequente delle competenze esplorate in più momenti del processo emotivo.",
+      "descrizione": "Questo non significa comprendere sempre gli altri, non provare emozioni intense o riuscire a regolarle in ogni situazione. Suggerisce piuttosto che disponi di più strumenti per osservare, interpretare e utilizzare le emozioni senza esserne guidato automaticamente. Il risultato resta informativo e non è una misura oggettiva di abilità."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "percezione",
+      "nome_area": "Percezione e consapevolezza emotiva",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Può esserti difficile accorgerti tempestivamente dei segnali emotivi, distinguerli con precisione o verificare ciò che percepisci nelle altre persone."},
+        {"livello": "MEDIUM", "descrizione": "Riconosci diversi segnali emotivi, ma intensità, fretta o ambiguità possono rendere meno chiaro ciò che provi o ciò che osservi negli altri."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano una buona attenzione ai segnali corporei, alle variazioni del tuo stato e agli indizi emotivi degli altri, mantenendo spazio per verificare le interpretazioni."}
+      ]
+    },
+    {
+      "area_code": "facilitazione",
+      "nome_area": "Uso delle emozioni nel pensiero e nelle decisioni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Le emozioni possono sembrarti soprattutto qualcosa da seguire o da mettere da parte, rendendo difficile usarle come informazioni nel pensiero e nelle decisioni."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni utilizzi ciò che provi per orientarti, mentre emozioni intense o pressioni possono avvicinare impulso immediato e decisione."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una buona capacità di integrare le informazioni emotive con ragionamento, priorità e obiettivi senza lasciare che decidano automaticamente al tuo posto."}
+      ]
+    },
+    {
+      "area_code": "comprensione",
+      "nome_area": "Comprensione di cause, sfumature e cambiamenti",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Individuare cause, sfumature, emozioni miste o possibili evoluzioni di ciò che provi può risultarti spesso complesso."},
+        {"livello": "MEDIUM", "descrizione": "Comprendi diverse dinamiche emotive, ma reazioni contrastanti, cambiamenti rapidi o prospettive molto diverse dalla tua possono creare incertezza."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano una buona capacità di collegare emozioni e contesto, riconoscere stati misti e aggiornare la tua lettura quando emergono nuove informazioni."}
+      ]
+    },
+    {
+      "area_code": "regolazione",
+      "nome_area": "Regolazione ed espressione nelle relazioni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Quando un'emozione diventa intensa potresti agire subito, evitarla o affidarti a una risposta abituale anche quando non è adatta alla situazione."},
+        {"livello": "MEDIUM", "descrizione": "Disponi di alcune strategie per esprimere e gestire le emozioni, ma sotto pressione può diventare più difficile scegliere con flessibilità o chiedere sostegno."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una buona capacità di accogliere le emozioni, esprimerle con rispetto e modificare strategia quando la prima risposta non aiuta te o la relazione."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; per questo test vengono mostrate prima le competenze percepite come più frequenti. Sono visibili nome, testo e barra, ma non livelli, soglie o punteggi numerici."
+  }
+}
