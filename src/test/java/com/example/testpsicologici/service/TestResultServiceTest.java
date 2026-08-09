@@ -352,10 +352,49 @@ class TestResultServiceTest {
     }
 
     @Test
+    void perceivedNarcissisticDynamicsTestIsLoadedWithTwentyFourQuestionsAndSafeLabels() {
+        PsychologicalTest test = catalogue.findById("dinamiche-narcisistiche-partner");
+
+        assertThat(test.title()).isEqualTo("Dinamiche narcisistiche percepite nel partner");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.introductoryText()).contains("non può stabilire", "valutazione clinica diretta", "112", "1522");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche osservate");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche osservate");
+    }
+
+    @Test
+    void perceivedNarcissisticDynamicsFocusedProfileShowsTheMostRelevantAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("dinamiche-narcisistiche-partner", 1, 1, 1, 5);
+
+        assertThat(result.general().title()).isEqualTo("Un'area relazionale richiede attenzione");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Confini, controllo e impatto sulla relazione");
+        assertThat(result.areaResults().get(0).description()).contains("indipendentemente da qualsiasi etichetta diagnostica");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+    }
+
+    @Test
+    void perceivedNarcissisticDynamicsLowAndBroadProfilesAvoidDiagnosingThePartner() {
+        TestResult low = analyzeWithAnswersForTest("dinamiche-narcisistiche-partner", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("dinamiche-narcisistiche-partner", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Poche dinamiche relazionali di questo tipo");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("Dinamiche problematiche presenti in più aree");
+        assertThat(broad.general().detail()).contains("non dimostra", "112", "1522");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

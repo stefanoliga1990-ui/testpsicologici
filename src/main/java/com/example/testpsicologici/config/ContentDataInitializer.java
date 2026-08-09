@@ -46,6 +46,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedEmotionalIntelligenceInformationTest();
         seedPerfectionismInformationTest();
         seedSocialAnxietyInformationTest();
+        seedPerceivedNarcissisticRelationshipDynamicsTest();
     }
 
     private void seedAutismInformationTest() {
@@ -757,6 +758,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Preoccupazione anticipata, strategie per nasconderti e ripensamenti successivi sembrano avere un ruolo contenuto nelle tue scelte sociali.",
                 "Puoi anticipare o rielaborare alcune situazioni e talvolta ridurre la partecipazione per gestire il disagio, soprattutto quando l'evento è importante.",
                 "Le risposte indicano un ciclo frequente di preoccupazione anticipata, evitamento o comportamenti protettivi e ripensamento negativo dopo gli incontri, con possibile impatto sulle opportunità.");
+    }
+
+    private void seedPerceivedNarcissisticRelationshipDynamicsTest() {
+        String id = "dinamiche-narcisistiche-partner";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Dinamiche narcisistiche percepite nel partner",
+                "Riflessione sulla relazione",
+                "Un questionario per osservare reciprocità, centralità, gestione del confronto, confini e impatto della relazione.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Descrive la tua percezione di alcune dinamiche nella relazione e non può stabilire se il partner abbia tratti narcisistici o un disturbo narcisistico di personalità. Una diagnosi richiede una valutazione clinica diretta, completa e condotta da un professionista qualificato; singoli comportamenti possono avere spiegazioni diverse. Rispondi pensando a episodi concreti e ricorrenti degli ultimi mesi, non a un singolo litigio. Il risultato serve a riflettere su reciprocità, rispetto e impatto della relazione, non a etichettare il partner. Comportamenti di controllo, umiliazione, minaccia o violenza vanno presi sul serio indipendentemente da qualsiasi diagnosi: se temi per la tua sicurezza, cerca supporto da una persona fidata o da servizi qualificati; in un'emergenza chiama il 112. Se sei una donna vittima di violenza o stalking, il 1522 offre gratuitamente ascolto e orientamento 24 ore su 24.",
+                version, false,
+                "Frequenza complessiva delle dinamiche osservate",
+                "Frequenza delle dinamiche osservate",
+                true, 10));
+
+        saveArea(id, "reciprocita", "Reciprocità, empatia e spazio emotivo", 1);
+        saveArea(id, "centralita", "Centralità, ammirazione e aspettative", 2);
+        saveArea(id, "confronto", "Confronto, critica e responsabilità", 3);
+        saveArea(id, "confini", "Confini, controllo e impatto sulla relazione", 4);
+
+        saveQuestions(id, List.of(
+                q("reciprocita", "Quando racconto un problema, il mio partner riporta presto la conversazione su di sé o sui propri bisogni."),
+                q("reciprocita", "Il mio partner minimizza, mette in dubbio o svaluta ciò che provo quando le mie emozioni sono scomode per lui o lei."),
+                q("reciprocita", "Il mio partner fatica a riconoscere l'effetto che le sue parole o azioni hanno su di me."),
+                q("reciprocita", "Il sostegno del mio partner diminuisce quando ciò di cui ho bisogno entra in conflitto con i suoi programmi o desideri."),
+                q("reciprocita", "Nella relazione, i bisogni e gli interessi del mio partner ricevono più spazio dei miei."),
+                q("reciprocita", "Mi sento ascoltato soprattutto quando ciò che dico conferma il punto di vista o l'immagine che il mio partner ha di sé."),
+                q("centralita", "Il mio partner cerca frequentemente complimenti, rassicurazioni o conferme del proprio valore."),
+                q("centralita", "Il mio partner si irrita o si chiude quando l'attenzione, il riconoscimento o il successo vanno a qualcun altro."),
+                q("centralita", "Il mio partner presenta spesso capacità, risultati o importanza personale in modo esagerato o competitivo."),
+                q("centralita", "Il mio partner si aspetta eccezioni, precedenze o trattamenti speciali che non riconosce agli altri."),
+                q("centralita", "Le decisioni di coppia finiscono frequentemente per ruotare intorno alle priorità e all'immagine del mio partner."),
+                q("centralita", "Quando ottengo un successo, il mio partner tende a ridimensionarlo, competere o spostare il merito e l'attenzione su di sé."),
+                q("confronto", "Il mio partner interpreta osservazioni o richieste ordinarie come attacchi, mancanze di rispetto o umiliazioni."),
+                q("confronto", "Di fronte a una critica, il mio partner reagisce con rabbia, disprezzo, freddezza o ritiro prolungato."),
+                q("confronto", "Durante i conflitti, il mio partner attribuisce a me o ad altri quasi tutta la responsabilità di ciò che è accaduto."),
+                q("confronto", "Il mio partner fatica a scusarsi in modo concreto e a modificare il comportamento che mi ha ferito."),
+                q("confronto", "Quando non sono d'accordo, il mio partner svaluta la mia competenza, sensibilità o credibilità invece di discutere il problema."),
+                q("confronto", "Dopo un conflitto, mi viene richiesto di rassicurare o riavvicinare il mio partner prima che ci sia spazio per il mio punto di vista."),
+                q("confini", "Il mio partner fa pressione perché io modifichi amicizie, attività, abitudini o scelte personali secondo le sue preferenze."),
+                q("confini", "Il mio partner usa colpa, silenzio, minacce di rottura o ritiro dell'affetto per influenzare le mie decisioni."),
+                q("confini", "Il mio partner passa dal valorizzarmi molto allo svalutarmi quando non soddisfo le sue aspettative."),
+                q("confini", "Il mio partner oltrepassa limiti che ho espresso chiaramente, per esempio riguardo privacy, tempo, denaro, corpo o relazioni sociali."),
+                q("confini", "Controllo attentamente ciò che dico o faccio per evitare reazioni sproporzionate del mio partner."),
+                q("confini", "Questa relazione mi lascia frequentemente confuso, sminuito, isolato o meno libero di riconoscere i miei bisogni.")));
+
+        saveGlobal(id, "LOW", "Poche dinamiche relazionali di questo tipo",
+                "Nel complesso hai indicato una presenza contenuta delle dinamiche esplorate dal questionario.",
+                "Ogni relazione attraversa momenti di squilibrio, difesa o scarsa sintonia. Le tue risposte suggeriscono che questi episodi non formano abitualmente un modello esteso. Il risultato non valuta direttamente il partner e non esclude problemi diversi da quelli considerati.");
+        saveGlobal(id, "MIXED", "Alcune dinamiche emergono in determinati contesti",
+                "Le risposte descrivono comportamenti variabili, più evidenti in alcune situazioni o fasi della relazione.",
+                "Può essere utile osservare quando compaiono, quanto durano e se dopo un conflitto esistono ascolto, riparazione e cambiamenti concreti. La loro presenza non permette di attribuire un disturbo di personalità al partner.");
+        saveGlobal(id, "FOCUSED", "Un'area relazionale richiede attenzione",
+                "Una o due aree mostrano dinamiche frequenti, mentre negli altri aspetti la relazione sembra avere un funzionamento diverso.",
+                "Concentrarti sui comportamenti specifici e sul loro effetto può aiutarti più di un'etichetta. Se la dinamica causa sofferenza, confusione o limita la tua autonomia, un confronto individuale con uno psicologo o psicoterapeuta può offrirti uno spazio protetto di valutazione.");
+        saveGlobal(id, "BROAD", "Dinamiche problematiche presenti in più aree",
+                "Le risposte indicano squilibri frequenti nella reciprocità, nel confronto o nel rispetto dei confini, con possibile impatto significativo sul tuo benessere.",
+                "Questo profilo non dimostra che il partner abbia un disturbo narcisistico di personalità. Indica però che diverse dinamiche meritano attenzione per il loro effetto su di te. Cerca sostegno professionale e valuta la tua sicurezza senza attendere una diagnosi: in caso di pericolo immediato chiama il 112; per donne vittime di violenza o stalking è disponibile gratuitamente il 1522, anche via chat.");
+
+        saveAreaInsights(id, "reciprocita",
+                "Le tue emozioni e necessità sembrano trovare generalmente ascolto, considerazione e uno spazio paragonabile a quello del partner.",
+                "In alcune circostanze la reciprocità può ridursi e potresti sentirti ascoltato soprattutto quando i tuoi bisogni non entrano in conflitto con quelli del partner.",
+                "Le risposte descrivono uno squilibrio frequente nello spazio emotivo, con i bisogni del partner spesso centrali e una limitata considerazione dell'effetto dei suoi comportamenti su di te.");
+        saveAreaInsights(id, "centralita",
+                "Ricerca di riconoscimento e desiderio di attenzione sembrano restare entro una dinamica che lascia spazio anche ai risultati e alle priorità altrui.",
+                "In alcuni contesti il bisogno di conferme, attenzione o trattamento speciale del partner può condizionare decisioni e scambi nella coppia.",
+                "Le risposte mostrano una richiesta frequente di centralità, ammirazione o trattamento speciale, con possibile competizione quando riconoscimento e successo riguardano te o altre persone.");
+        saveAreaInsights(id, "confronto",
+                "Disaccordi e osservazioni sembrano poter essere affrontati senza trasformarsi abitualmente in svalutazione, colpevolizzazione o chiusura prolungata.",
+                "Alcuni confronti possono attivare reazioni difensive intense e rendere difficile arrivare a una responsabilità condivisa o a una riparazione concreta.",
+                "Le risposte indicano reazioni frequenti di rabbia, ritiro, svalutazione o spostamento della colpa, con poco spazio per il tuo punto di vista e per cambiamenti successivi al conflitto.");
+        saveAreaInsights(id, "confini",
+                "Autonomia, limiti personali e libertà di scelta sembrano generalmente rispettati senza un impatto ricorrente sul tuo senso di sicurezza o valore.",
+                "In alcune situazioni potresti adattare scelte, parole o confini per prevenire reazioni e mantenere l'equilibrio della relazione.",
+                "Le risposte descrivono pressioni o violazioni dei confini frequenti e un impatto rilevante su libertà, chiarezza o benessere. Questi segnali meritano attenzione indipendentemente da qualsiasi etichetta diagnostica.");
     }
 
     private boolean requiresSeed(String testId, String version) {
