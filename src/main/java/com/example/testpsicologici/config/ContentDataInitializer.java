@@ -48,6 +48,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedSocialAnxietyInformationTest();
         seedPerceivedNarcissisticRelationshipDynamicsTest();
         seedGeneralizedAnxietyInformationTest();
+        seedDepressedMoodInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -919,6 +920,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Sonno, attività e capacità di vivere il presente sembrano generalmente preservati, anche quando attraversi momenti di preoccupazione.",
                 "In alcuni periodi l'ansia può disturbare il riposo, favorire rinvii o rendere più difficile essere presente nelle attività quotidiane.",
                 "Le risposte indicano conseguenze frequenti sul sonno e sul funzionamento quotidiano, con possibili rinunce, rinvii o difficoltà a partecipare pienamente alla tua vita.");
+    }
+
+    private void seedDepressedMoodInformationTest() {
+        String id = "umore-depresso";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Umore depresso",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere su umore, interesse, energia, pensieri su di sé e funzionamento quotidiano.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non permette di stabilire la presenza di un disturbo depressivo. Tristezza, stanchezza e calo della motivazione possono comparire durante stress, lutti o cambiamenti importanti; una valutazione clinica considera durata, intensità, storia personale, funzionamento, eventuali periodi di umore insolitamente elevato e possibili cause mediche, farmacologiche o legate a sostanze. Rispondi pensando alla frequenza delle esperienze nelle ultime due settimane. Questo questionario non valuta il rischio suicidario: se stai pensando di farti del male o non ti senti al sicuro, non attendere il risultato; chiama subito il 112 o vai al Pronto Soccorso. Se le difficoltà persistono o interferiscono con la tua vita, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
+                version, false,
+                "Frequenza complessiva delle esperienze legate all'umore",
+                "Frequenza delle esperienze",
+                true, 12));
+
+        saveArea(id, "umore", "Tono dell'umore e capacità di provare piacere", 1);
+        saveArea(id, "energia", "Energia, motivazione e attivazione", 2);
+        saveArea(id, "pensieri", "Autostima, autocritica e prospettiva futura", 3);
+        saveArea(id, "funzionamento", "Sonno, appetito, concentrazione e funzionamento", 4);
+
+        saveQuestions(id, List.of(
+                q("umore", "Mi sento triste, vuoto o emotivamente abbattuto per gran parte della giornata."),
+                q("umore", "Le attività che di solito mi interessano o mi coinvolgono hanno perso attrattiva."),
+                q("umore", "Faccio fatica a provare piacere o soddisfazione anche quando accade qualcosa di positivo."),
+                q("umore", "Mi sento più irritabile, frustrato o emotivamente sensibile del solito."),
+                q("umore", "Tendo a ritirarmi dalle persone perché mi sento distante, spento o poco partecipe."),
+                q("umore", "Il tono dell'umore rimane basso anche quando ricevo sostegno o vivo un momento favorevole."),
+                q("energia", "Inizio la giornata con poca energia, come se le mie risorse fossero già ridotte."),
+                q("energia", "Attività quotidiane semplici richiedono uno sforzo molto maggiore del solito."),
+                q("energia", "Faccio fatica a iniziare azioni di cura personale, domestiche o lavorative anche quando so che sono necessarie."),
+                q("energia", "Mi sento rallentato nei pensieri, nei movimenti o nel modo di parlare."),
+                q("energia", "Rimango inattivo più a lungo di quanto vorrei perché non riesco a trovare la spinta per muovermi."),
+                q("energia", "Ho ridotto o interrotto attività e responsabilità per mancanza di motivazione o di forze."),
+                q("pensieri", "Giudico me stesso in modo prevalentemente negativo, anche per caratteristiche o difficoltà comuni."),
+                q("pensieri", "Provo un senso di colpa intenso o mi attribuisco responsabilità maggiori di quelle che ho realmente."),
+                q("pensieri", "Interpreto errori o risultati deludenti come prove del mio scarso valore personale."),
+                q("pensieri", "Mi sento inutile, di peso o poco importante per le persone che mi circondano."),
+                q("pensieri", "Immagino il futuro come privo di possibilità positive o di cambiamenti significativi."),
+                q("pensieri", "Faccio fatica a riconoscere le mie capacità, i risultati raggiunti o ciò che di buono porto nelle relazioni."),
+                q("funzionamento", "Faccio fatica ad addormentarmi, mi sveglio spesso o mi sveglio molto prima del previsto."),
+                q("funzionamento", "Dormo molto più del solito o faccio fatica ad alzarmi anche dopo molte ore di sonno."),
+                q("funzionamento", "Il mio appetito è diminuito o aumentato in modo evidente rispetto al mio equilibrio abituale."),
+                q("funzionamento", "Faccio fatica a concentrarmi, ricordare informazioni o seguire un'attività fino alla fine."),
+                q("funzionamento", "Anche decisioni semplici diventano lente, pesanti o difficili da prendere."),
+                q("funzionamento", "Il mio stato emotivo interferisce con lavoro, studio, relazioni, cura personale o gestione della vita quotidiana.")));
+
+        saveGlobal(id, "LOW", "Umore generalmente preservato",
+                "Nel complesso hai indicato una presenza contenuta delle esperienze legate all'umore depresso esplorate.",
+                "Questo non esclude giornate difficili, tristezza o stanchezza, ma suggerisce che al momento non formano un quadro frequente e diffuso nelle aree considerate. Il risultato resta informativo. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
+        saveGlobal(id, "MIXED", "Un calo dell'umore legato ad alcuni periodi o contesti",
+                "Le risposte descrivono esperienze variabili, più evidenti in determinati momenti o aspetti della vita.",
+                "Può essere utile osservare durata, eventi recenti, risorse disponibili e capacità di recuperare quando il contesto cambia. Una media non permette di distinguere stress, lutto, problemi fisici o un disturbo dell'umore. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
+        saveGlobal(id, "FOCUSED", "Un'area del benessere emotivo emerge con chiarezza",
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
+                "L'analisi specifica può aiutarti a descrivere se la difficoltà riguarda soprattutto piacere e partecipazione, energia, pensieri su di te oppure funzionamento quotidiano. Se persiste o causa sofferenza, parlane con un professionista qualificato. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
+        saveGlobal(id, "BROAD", "Umore depresso presente in più aree",
+                "Le risposte indicano esperienze frequenti che coinvolgono diversi aspetti dell'umore, delle energie, dei pensieri o del funzionamento.",
+                "Se queste difficoltà sono presenti per gran parte dei giorni e limitano la tua vita, una valutazione con uno psicologo, psicoterapeuta o medico può chiarire il quadro, considerare altre possibili cause e individuare un aiuto adeguato. I problemi depressivi sono trattabili e chiedere sostegno è appropriato. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
+
+        saveAreaInsights(id, "umore",
+                "Interesse, partecipazione emotiva e capacità di provare piacere sembrano generalmente preservati, anche in presenza di giornate difficili.",
+                "In alcuni momenti puoi avvertire tristezza, irritabilità, distacco o minore piacere, soprattutto durante periodi impegnativi.",
+                "Le risposte descrivono un calo frequente del tono dell'umore e della capacità di interessarti o provare piacere, con possibile ritiro emotivo e sociale.");
+        saveAreaInsights(id, "energia",
+                "Energia e motivazione sembrano generalmente sufficienti per iniziare e portare avanti le attività quotidiane.",
+                "In alcuni periodi compiti e responsabilità possono richiedere più sforzo, con rallentamento o difficoltà a trovare la spinta iniziale.",
+                "Le risposte indicano una riduzione frequente di energia e motivazione, con possibile rallentamento, inattività o rinuncia ad attività importanti.");
+        saveAreaInsights(id, "pensieri",
+                "Il modo in cui valuti te stesso e il futuro sembra generalmente conservare equilibrio, riconoscendo limiti, risorse e possibilità di cambiamento.",
+                "Nei momenti difficili possono aumentare autocritica, colpa o pessimismo, rendendo meno accessibili qualità e prospettive positive.",
+                "Le risposte mostrano pensieri negativi frequenti su valore personale, responsabilità e futuro, con forte autocritica e difficoltà a riconoscere risorse e possibilità.");
+        saveAreaInsights(id, "funzionamento",
+                "Sonno, appetito, concentrazione e gestione delle attività sembrano generalmente vicini al tuo equilibrio abituale.",
+                "Alcuni cambiamenti del riposo, dell'appetito o della concentrazione possono rendere più difficile mantenere ritmo e responsabilità in determinati periodi.",
+                "Le risposte indicano cambiamenti frequenti nel sonno, nell'appetito o nelle capacità cognitive, con un impatto rilevante sulle attività e sulla cura quotidiana.");
     }
 
     private boolean requiresSeed(String testId, String version) {

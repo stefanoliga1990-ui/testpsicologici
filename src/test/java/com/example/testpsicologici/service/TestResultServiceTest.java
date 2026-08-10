@@ -430,10 +430,51 @@ class TestResultServiceTest {
     }
 
     @Test
+    void depressedMoodTestIsLoadedWithTwentyFourQuestionsAndSafetyInformation() {
+        PsychologicalTest test = catalogue.findById("umore-depresso");
+
+        assertThat(test.title()).isEqualTo("Umore depresso");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.introductoryText()).contains("ultime due settimane", "non valuta il rischio suicidario", "112", "Pronto Soccorso");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze legate all'umore");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
+    }
+
+    @Test
+    void depressedMoodFocusedProfileShowsTheMostRelevantAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("umore-depresso", 5, 1, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Un'area del benessere emotivo emerge con chiarezza");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Tono dell'umore e capacità di provare piacere");
+        assertThat(result.areaResults().get(0).description()).contains("calo frequente del tono dell'umore");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+        assertThat(result.general().detail()).contains("non valuta il rischio suicidario", "112");
+    }
+
+    @Test
+    void depressedMoodLowAndBroadProfilesAlwaysIncludeSafetyInformation() {
+        TestResult low = analyzeWithAnswersForTest("umore-depresso", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("umore-depresso", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Umore generalmente preservato");
+        assertThat(low.general().detail()).contains("non valuta il rischio suicidario", "Pronto Soccorso");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("Umore depresso presente in più aree");
+        assertThat(broad.general().detail()).contains("problemi depressivi sono trattabili", "112");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

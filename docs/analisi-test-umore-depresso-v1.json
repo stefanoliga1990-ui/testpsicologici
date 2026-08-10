@@ -1,0 +1,151 @@
+{
+  "test": {
+    "id": "umore-depresso",
+    "titolo": "Umore depresso",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza delle esperienze legate a umore depresso, perdita di interesse e interferenza esplorate dal questionario",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il questionario non è clinicamente validato, non formula diagnosi e non sostituisce una valutazione psicologica o medica. Non valuta il rischio suicidario. Le soglie hanno esclusivamente una funzione editoriale."
+  },
+  "istruzioni": "Rispondere pensando alla frequenza delle esperienze nelle ultime due settimane.",
+  "sicurezza": {
+    "messaggio": "Se stai pensando di farti del male o non ti senti al sicuro, non attendere né usare il risultato del questionario per decidere: chiama subito il 112 o vai al Pronto Soccorso.",
+    "visibilita": "Il messaggio è presente nell'introduzione e in tutte le quattro analisi generali, quindi anche con un profilo LOW.",
+    "scelta_editoriale": "Il test non include una domanda suicidaria perché l'applicazione non dispone di una valutazione clinica o di un intervento umano in tempo reale."
+  },
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono PHQ-9, BDI-II o altri strumenti validati. La struttura considera umore e anedonia, energia e attivazione, cognizioni negative, sintomi neurovegetativi e impatto funzionale. Un risultato elevato non dimostra un disturbo depressivo: una valutazione considera anche durata, storia personale, lutto e stress, condizioni mediche, farmaci, sostanze, altri disturbi e possibili periodi di elevazione dell'umore.",
+    "fonti_consultate": [
+      {
+        "titolo": "Depressive disorder — World Health Organization",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/depression",
+        "apporto": "Riferimento per umore depresso o perdita di interesse, durata, sintomi cognitivi e fisici, funzionamento, distinzione dalle normali variazioni dell'umore, trattabilità e sicurezza."
+      },
+      {
+        "titolo": "Depression — National Institute of Mental Health",
+        "url": "https://www.nimh.nih.gov/health/publications/depression",
+        "apporto": "Riferimento per eterogeneità dei sintomi, perdita di piacere, energia, colpa, concentrazione, sonno, appetito, funzionamento e possibili cause mediche o farmacologiche."
+      },
+      {
+        "titolo": "Depression in adults: treatment and management — NICE NG222",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "apporto": "Riferimento per una valutazione che non dipenda dal solo conteggio dei sintomi e consideri gravità, durata, storia, funzionamento, lutto, trauma, condizioni fisiche, sostanze, elevazione dell'umore e rischio."
+      },
+      {
+        "titolo": "Symptoms of depression in adults — NHS",
+        "url": "https://www.nhs.uk/mental-health/conditions/depression-in-adults/symptoms/",
+        "apporto": "Riferimento per manifestazioni psicologiche, fisiche e sociali e per distinguere, con cautela, lutto e depressione."
+      },
+      {
+        "titolo": "The PHQ-9: validity of a brief depression severity measure",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11556941/",
+        "apporto": "Riferimento metodologico per il legame tra frequenza dei sintomi e funzionamento; gli item dello strumento non sono stati riprodotti."
+      },
+      {
+        "titolo": "PHQ-9 scores do not accurately estimate depression prevalence: individual participant data meta-analysis",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32105798/",
+        "apporto": "Riferimento per non trasformare una soglia di questionario in diagnosi o stima diretta della presenza di depressione."
+      },
+      {
+        "titolo": "Parsing the heterogeneity of depression across commonly used rating scales",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29448238/",
+        "apporto": "Riferimento per la natura multidimensionale delle esperienze depressive, comprendente umore, cognizioni, sonno, appetito, anedonia e motivazione."
+      },
+      {
+        "titolo": "Il numero 118 e il Numero di emergenza unico europeo 112 — Ministero della Salute",
+        "url": "https://www.salute.gov.it/new/it/tema/112-118-e-pronto-soccorso/il-numero-118-e-il-numero-di-emergenza-unico-europeo-112/",
+        "apporto": "Fonte istituzionale italiana per l'indicazione del 112 e del Pronto Soccorso nelle situazioni di pericolo immediato."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "orientamento": "Tutte le domande descrivono esperienze potenzialmente problematiche: Mai corrisponde al minimo e Sempre al massimo.",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero e non rappresenta una probabilità diagnostica",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Umore generalmente preservato",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta delle esperienze legate all'umore depresso esplorate.",
+      "descrizione": "Questo non esclude giornate difficili, tristezza o stanchezza, ma suggerisce che al momento non formano un quadro frequente e diffuso nelle aree considerate. Il risultato resta informativo. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un calo dell'umore legato ad alcuni periodi o contesti",
+      "sottotitolo": "Le risposte descrivono esperienze variabili, più evidenti in determinati momenti o aspetti della vita.",
+      "descrizione": "Può essere utile osservare durata, eventi recenti, risorse disponibili e capacità di recuperare quando il contesto cambia. Una media non permette di distinguere stress, lutto, problemi fisici o un disturbo dell'umore. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Un'area del benessere emotivo emerge con chiarezza",
+      "sottotitolo": "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
+      "descrizione": "L'analisi specifica può aiutarti a descrivere se la difficoltà riguarda soprattutto piacere e partecipazione, energia, pensieri su di te oppure funzionamento quotidiano. Se persiste o causa sofferenza, parlane con un professionista qualificato. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Umore depresso presente in più aree",
+      "sottotitolo": "Le risposte indicano esperienze frequenti che coinvolgono diversi aspetti dell'umore, delle energie, dei pensieri o del funzionamento.",
+      "descrizione": "Se queste difficoltà sono presenti per gran parte dei giorni e limitano la tua vita, una valutazione con uno psicologo, psicoterapeuta o medico può chiarire il quadro, considerare altre possibili cause e individuare un aiuto adeguato. I problemi depressivi sono trattabili e chiedere sostegno è appropriato. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "umore",
+      "nome_area": "Tono dell'umore e capacità di provare piacere",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Interesse, partecipazione emotiva e capacità di provare piacere sembrano generalmente preservati, anche in presenza di giornate difficili."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni momenti puoi avvertire tristezza, irritabilità, distacco o minore piacere, soprattutto durante periodi impegnativi."},
+        {"livello": "HIGH", "descrizione": "Le risposte descrivono un calo frequente del tono dell'umore e della capacità di interessarti o provare piacere, con possibile ritiro emotivo e sociale."}
+      ]
+    },
+    {
+      "area_code": "energia",
+      "nome_area": "Energia, motivazione e attivazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Energia e motivazione sembrano generalmente sufficienti per iniziare e portare avanti le attività quotidiane."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni periodi compiti e responsabilità possono richiedere più sforzo, con rallentamento o difficoltà a trovare la spinta iniziale."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano una riduzione frequente di energia e motivazione, con possibile rallentamento, inattività o rinuncia ad attività importanti."}
+      ]
+    },
+    {
+      "area_code": "pensieri",
+      "nome_area": "Autostima, autocritica e prospettiva futura",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Il modo in cui valuti te stesso e il futuro sembra generalmente conservare equilibrio, riconoscendo limiti, risorse e possibilità di cambiamento."},
+        {"livello": "MEDIUM", "descrizione": "Nei momenti difficili possono aumentare autocritica, colpa o pessimismo, rendendo meno accessibili qualità e prospettive positive."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano pensieri negativi frequenti su valore personale, responsabilità e futuro, con forte autocritica e difficoltà a riconoscere risorse e possibilità."}
+      ]
+    },
+    {
+      "area_code": "funzionamento",
+      "nome_area": "Sonno, appetito, concentrazione e funzionamento",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Sonno, appetito, concentrazione e gestione delle attività sembrano generalmente vicini al tuo equilibrio abituale."},
+        {"livello": "MEDIUM", "descrizione": "Alcuni cambiamenti del riposo, dell'appetito o della concentrazione possono rendere più difficile mantenere ritmo e responsabilità in determinati periodi."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano cambiamenti frequenti nel sonno, nell'appetito o nelle capacità cognitive, con un impatto rilevante sulle attività e sulla cura quotidiana."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; vengono mostrate prima le esperienze più frequenti. Sono visibili nome, testo e barra, ma non livelli, soglie o punteggi numerici.",
+    "limite": "Il risultato non considera da solo diagnosi differenziale, storia clinica o rischio suicidario e non viene presentato come probabilità di depressione."
+  }
+}
