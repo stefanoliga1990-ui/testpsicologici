@@ -47,6 +47,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedPerfectionismInformationTest();
         seedSocialAnxietyInformationTest();
         seedPerceivedNarcissisticRelationshipDynamicsTest();
+        seedGeneralizedAnxietyInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -838,6 +839,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autonomia, limiti personali e libertà di scelta sembrano generalmente rispettati senza un impatto ricorrente sul tuo senso di sicurezza o valore.",
                 "In alcune situazioni potresti adattare scelte, parole o confini per prevenire reazioni e mantenere l'equilibrio della relazione.",
                 "Le risposte descrivono pressioni o violazioni dei confini frequenti e un impatto rilevante su libertà, chiarezza o benessere. Questi segnali meritano attenzione indipendentemente da qualsiasi etichetta diagnostica.");
+    }
+
+    private void seedGeneralizedAnxietyInformationTest() {
+        String id = "ansia-generalizzata";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Ansia generalizzata",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere su preoccupazione diffusa, tensione, affaticamento, sonno e impatto quotidiano.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non permette di stabilire la presenza di un disturbo d'ansia generalizzata. Preoccuparsi in alcuni periodi è una normale risposta alle difficoltà; una valutazione clinica considera invece durata, intensità, difficoltà di controllo, presenza in diversi ambiti e impatto sulla vita. Rispondi pensando alla frequenza delle esperienze negli ultimi sei mesi. Sintomi simili possono dipendere anche da stress, depressione, altri disturbi d'ansia, esperienze traumatiche, problemi del sonno, condizioni mediche, farmaci o sostanze. Se l'ansia limita la tua vita o i sintomi fisici sono nuovi, intensi o preoccupanti, parlane con uno psicologo, psicoterapeuta o medico qualificato.",
+                version, false,
+                "Frequenza complessiva delle esperienze di ansia",
+                "Frequenza delle esperienze",
+                true, 11));
+
+        saveArea(id, "preoccupazione", "Preoccupazione diffusa e difficoltà di controllo", 1);
+        saveArea(id, "attivazione", "Tensione fisica e difficoltà a rilassarsi", 2);
+        saveArea(id, "risorse", "Concentrazione, affaticamento e irritabilità", 3);
+        saveArea(id, "impatto", "Sonno e impatto sulla vita quotidiana", 4);
+
+        saveQuestions(id, List.of(
+                q("preoccupazione", "Mi preoccupo nello stesso periodo per molti ambiti diversi, come salute, lavoro, denaro, famiglia o impegni quotidiani."),
+                q("preoccupazione", "Quando inizio a preoccuparmi, faccio fatica a fermare o spostare il corso dei pensieri."),
+                q("preoccupazione", "Appena una preoccupazione si riduce, la mia mente trova rapidamente un altro possibile problema su cui concentrarsi."),
+                q("preoccupazione", "Anticipo conseguenze negative anche quando ho poche informazioni che facciano pensare che accadranno."),
+                q("preoccupazione", "Sento il bisogno di prevedere e prepararmi a molti possibili problemi prima di riuscire a sentirmi tranquillo."),
+                q("preoccupazione", "Anche quando riconosco che una preoccupazione è sproporzionata, continuo a rimuginarci sopra."),
+                q("attivazione", "Mi sento in allerta, irrequieto o sul punto che possa accadere qualcosa di negativo."),
+                q("attivazione", "Accumulo tensione nei muscoli, per esempio a mandibola, collo, spalle, schiena o mani."),
+                q("attivazione", "Faccio fatica a rilassare davvero il corpo anche quando ho tempo libero e non ci sono problemi immediati."),
+                q("attivazione", "Rumori, imprevisti o richieste improvvise mi fanno sobbalzare o reagire con una forte tensione."),
+                q("attivazione", "Nei periodi di preoccupazione avverto disturbi fisici come mal di testa, fastidi allo stomaco, tremore o sudorazione."),
+                q("attivazione", "Dopo una situazione stressante, il mio corpo rimane attivato a lungo anche quando il problema è terminato."),
+                q("risorse", "Le preoccupazioni interrompono la concentrazione mentre lavoro, studio, leggo o seguo una conversazione."),
+                q("risorse", "Quando devo decidere o risolvere un problema, la mente diventa confusa o sembra bloccarsi."),
+                q("risorse", "Mi sento mentalmente o fisicamente affaticato anche dopo giornate che non richiederebbero uno sforzo eccezionale."),
+                q("risorse", "Le normali richieste quotidiane mi sembrano più faticose perché una parte della mia attenzione resta assorbita dall'ansia."),
+                q("risorse", "Quando sono preoccupato divento facilmente irritabile, impaziente o sensibile alle piccole difficoltà."),
+                q("risorse", "Valutare tutti i possibili rischi rende difficile scegliere, stabilire priorità o iniziare un compito."),
+                q("impatto", "Faccio fatica ad addormentarmi perché la mente continua a esaminare problemi o scenari futuri."),
+                q("impatto", "Mi sveglio durante la notte con pensieri di preoccupazione che rendono difficile riprendere sonno."),
+                q("impatto", "Al risveglio mi sento poco riposato perché tensione o pensieri hanno disturbato il sonno."),
+                q("impatto", "Rimando decisioni, attività o opportunità perché l'incertezza mi fa temere conseguenze negative."),
+                q("impatto", "La preoccupazione interferisce con lavoro, studio, relazioni, cura di me o gestione delle attività quotidiane."),
+                q("impatto", "Fatico a godermi un momento positivo o a essere presente perché sto già pensando a ciò che potrebbe andare storto.")));
+
+        saveGlobal(id, "LOW", "Preoccupazione generalmente circoscritta",
+                "Nel complesso hai indicato una presenza contenuta delle esperienze di ansia esplorate.",
+                "Questo non significa essere sempre tranquilli: preoccupazione e tensione possono aumentare in periodi impegnativi. Le risposte suggeriscono però che tendono a restare circoscritte e a non interferire stabilmente in più aree della vita.");
+        saveGlobal(id, "MIXED", "Un'ansia che varia con periodi e situazioni",
+                "Le tue risposte descrivono esperienze variabili, più evidenti in alcuni momenti, ambiti o condizioni di stress.",
+                "Può essere utile osservare se l'ansia diminuisce quando il problema concreto si risolve oppure continua a spostarsi tra temi diversi. Durata, contesto e impatto sono più informativi di una semplice media e questo risultato non costituisce una diagnosi.");
+        saveGlobal(id, "FOCUSED", "Un'area concentra maggiormente la tensione",
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
+                "L'analisi specifica può aiutarti a riconoscere se emergono soprattutto preoccupazione difficile da controllare, attivazione fisica, affaticamento cognitivo oppure sonno e funzionamento quotidiano. Se la difficoltà persiste o causa sofferenza, puoi confrontarti con un professionista qualificato.");
+        saveGlobal(id, "BROAD", "Ansia frequente in più aspetti della vita",
+                "Le risposte indicano preoccupazione, tensione o conseguenze frequenti in diverse aree esplorate dal questionario.",
+                "Se queste esperienze durano da mesi e limitano sonno, relazioni, studio, lavoro o attività importanti, una valutazione con uno psicologo, psicoterapeuta o medico può chiarire il quadro, escludere altre cause e individuare forme di aiuto efficaci. L'ansia è trattabile, ma questo questionario resta informativo e non diagnostico.");
+
+        saveAreaInsights(id, "preoccupazione",
+                "Le preoccupazioni sembrano generalmente legate a problemi specifici e tendono a ridursi o a diventare gestibili quando la situazione cambia.",
+                "In alcuni periodi i pensieri possono estendersi a più ambiti e risultare difficili da interrompere, soprattutto davanti all'incertezza.",
+                "Le risposte descrivono una preoccupazione frequente, diffusa tra temi diversi e difficile da controllare anche quando ne riconosci l'eccesso.");
+        saveAreaInsights(id, "attivazione",
+                "Il corpo sembra riuscire generalmente a ridurre l'allerta e la tensione una volta terminata una situazione stressante.",
+                "In alcuni momenti puoi sentirti irrequieto, contratto o fisicamente attivato, con una certa difficoltà a rilassarti del tutto.",
+                "Le risposte indicano uno stato frequente di allerta e tensione fisica che può persistere anche senza un pericolo immediato o dopo la fine dello stress.");
+        saveAreaInsights(id, "risorse",
+                "Concentrazione, energia e pazienza sembrano generalmente disponibili e non vengono assorbite in modo ricorrente dalle preoccupazioni.",
+                "L'ansia può ridurre in alcuni contesti concentrazione ed energia, rendendo più faticose decisioni, impegni o piccoli imprevisti.",
+                "Le risposte mostrano un'interferenza frequente su concentrazione, energia e tolleranza alle difficoltà, con possibile blocco decisionale o irritabilità.");
+        saveAreaInsights(id, "impatto",
+                "Sonno, attività e capacità di vivere il presente sembrano generalmente preservati, anche quando attraversi momenti di preoccupazione.",
+                "In alcuni periodi l'ansia può disturbare il riposo, favorire rinvii o rendere più difficile essere presente nelle attività quotidiane.",
+                "Le risposte indicano conseguenze frequenti sul sonno e sul funzionamento quotidiano, con possibili rinunce, rinvii o difficoltà a partecipare pienamente alla tua vita.");
     }
 
     private boolean requiresSeed(String testId, String version) {

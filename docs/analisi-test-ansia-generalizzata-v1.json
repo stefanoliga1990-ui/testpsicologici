@@ -1,0 +1,146 @@
+{
+  "test": {
+    "id": "ansia-generalizzata",
+    "titolo": "Ansia generalizzata",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza delle esperienze di preoccupazione, tensione e interferenza esplorate dal questionario",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il questionario non è clinicamente validato, non formula diagnosi e non sostituisce una valutazione psicologica o medica. Le soglie hanno esclusivamente una funzione editoriale."
+  },
+  "istruzioni": "Rispondere pensando alla frequenza delle esperienze negli ultimi sei mesi e nei diversi ambiti della vita.",
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono GAD-7, GAD-2 o altri strumenti validati. La struttura considera il nucleo della preoccupazione e della sua difficile controllabilità, i sintomi associati e l'impatto funzionale. Un risultato elevato non dimostra un disturbo: durata, diagnosi differenziale, condizioni mediche, farmaci, sostanze e altri problemi psicologici richiedono una valutazione professionale.",
+    "fonti_consultate": [
+      {
+        "titolo": "Generalized Anxiety Disorder: What You Need to Know — National Institute of Mental Health",
+        "url": "https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad",
+        "apporto": "Riferimento per distinguere ansia occasionale e preoccupazione persistente, difficile da controllare e capace di interferire con la vita, oltre che per sintomi fisici e cognitivi associati."
+      },
+      {
+        "titolo": "Assessing generalised anxiety disorder — NICE CG113",
+        "url": "https://www.nice.org.uk/guidance/cg113/chapter/Appendix-Assessing-generalised-anxiety-disorder",
+        "apporto": "Riferimento per preoccupazione eccessiva in più ambiti, difficoltà di controllo, durata, irrequietezza, affaticamento, concentrazione, irritabilità, tensione, sonno e funzionamento."
+      },
+      {
+        "titolo": "Generalised anxiety disorder and panic disorder in adults: recommendations — NICE CG113",
+        "url": "https://www.nice.org.uk/guidance/cg113/chapter/Recommendations",
+        "apporto": "Riferimento per una valutazione completa che non dipenda soltanto da numero, gravità e durata dei sintomi, ma includa impatto, comorbilità, condizioni mediche e sostanze."
+      },
+      {
+        "titolo": "Generalised anxiety disorder — NHS",
+        "url": "https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/",
+        "apporto": "Riferimento informativo per preoccupazione difficile da controllare, sonno, irrequietezza, irritabilità, concentrazione, affaticamento e sintomi fisici."
+      },
+      {
+        "titolo": "A brief measure for assessing generalized anxiety disorder: the GAD-7",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16717171/",
+        "apporto": "Riferimento metodologico per relazione tra frequenza dei sintomi e compromissione funzionale; gli item dello strumento non sono stati riprodotti."
+      },
+      {
+        "titolo": "GAD-7 and GAD-2 scales for detecting anxiety disorders in adults — Cochrane diagnostic accuracy review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40130828/",
+        "apporto": "Riferimento per i limiti degli strumenti di screening: accuratezza variabile tra popolazioni, eterogeneità e necessità di non trattare una soglia come diagnosi."
+      },
+      {
+        "titolo": "A meta-analysis of the relation of intolerance of uncertainty to symptoms of GAD, depression and OCD",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21664339/",
+        "apporto": "Riferimento per il legame tra incertezza e preoccupazione e, soprattutto, per la natura non esclusiva di questo processo rispetto ad altri quadri psicologici."
+      },
+      {
+        "titolo": "Clinical Practice Guidelines for Cognitive-Behavioral Therapies in Anxiety Disorders",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7001348/",
+        "apporto": "Riferimento per processi associati alla preoccupazione, come ricerca di rassicurazioni, preparazione mentale ed evitamento, oltre ai sintomi cognitivi e somatici."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "orientamento": "Tutte le domande descrivono esperienze potenzialmente problematiche: Mai corrisponde al minimo e Sempre al massimo.",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero e non rappresenta una probabilità diagnostica",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Preoccupazione generalmente circoscritta",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta delle esperienze di ansia esplorate.",
+      "descrizione": "Questo non significa essere sempre tranquilli: preoccupazione e tensione possono aumentare in periodi impegnativi. Le risposte suggeriscono però che tendono a restare circoscritte e a non interferire stabilmente in più aree della vita."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un'ansia che varia con periodi e situazioni",
+      "sottotitolo": "Le tue risposte descrivono esperienze variabili, più evidenti in alcuni momenti, ambiti o condizioni di stress.",
+      "descrizione": "Può essere utile osservare se l'ansia diminuisce quando il problema concreto si risolve oppure continua a spostarsi tra temi diversi. Durata, contesto e impatto sono più informativi di una semplice media e questo risultato non costituisce una diagnosi."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Un'area concentra maggiormente la tensione",
+      "sottotitolo": "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
+      "descrizione": "L'analisi specifica può aiutarti a riconoscere se emergono soprattutto preoccupazione difficile da controllare, attivazione fisica, affaticamento cognitivo oppure sonno e funzionamento quotidiano. Se la difficoltà persiste o causa sofferenza, puoi confrontarti con un professionista qualificato."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Ansia frequente in più aspetti della vita",
+      "sottotitolo": "Le risposte indicano preoccupazione, tensione o conseguenze frequenti in diverse aree esplorate dal questionario.",
+      "descrizione": "Se queste esperienze durano da mesi e limitano sonno, relazioni, studio, lavoro o attività importanti, una valutazione con uno psicologo, psicoterapeuta o medico può chiarire il quadro, escludere altre cause e individuare forme di aiuto efficaci. L'ansia è trattabile, ma questo questionario resta informativo e non diagnostico."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "preoccupazione",
+      "nome_area": "Preoccupazione diffusa e difficoltà di controllo",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Le preoccupazioni sembrano generalmente legate a problemi specifici e tendono a ridursi o a diventare gestibili quando la situazione cambia."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni periodi i pensieri possono estendersi a più ambiti e risultare difficili da interrompere, soprattutto davanti all'incertezza."},
+        {"livello": "HIGH", "descrizione": "Le risposte descrivono una preoccupazione frequente, diffusa tra temi diversi e difficile da controllare anche quando ne riconosci l'eccesso."}
+      ]
+    },
+    {
+      "area_code": "attivazione",
+      "nome_area": "Tensione fisica e difficoltà a rilassarsi",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Il corpo sembra riuscire generalmente a ridurre l'allerta e la tensione una volta terminata una situazione stressante."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni momenti puoi sentirti irrequieto, contratto o fisicamente attivato, con una certa difficoltà a rilassarti del tutto."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano uno stato frequente di allerta e tensione fisica che può persistere anche senza un pericolo immediato o dopo la fine dello stress."}
+      ]
+    },
+    {
+      "area_code": "risorse",
+      "nome_area": "Concentrazione, affaticamento e irritabilità",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Concentrazione, energia e pazienza sembrano generalmente disponibili e non vengono assorbite in modo ricorrente dalle preoccupazioni."},
+        {"livello": "MEDIUM", "descrizione": "L'ansia può ridurre in alcuni contesti concentrazione ed energia, rendendo più faticose decisioni, impegni o piccoli imprevisti."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano un'interferenza frequente su concentrazione, energia e tolleranza alle difficoltà, con possibile blocco decisionale o irritabilità."}
+      ]
+    },
+    {
+      "area_code": "impatto",
+      "nome_area": "Sonno e impatto sulla vita quotidiana",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Sonno, attività e capacità di vivere il presente sembrano generalmente preservati, anche quando attraversi momenti di preoccupazione."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni periodi l'ansia può disturbare il riposo, favorire rinvii o rendere più difficile essere presente nelle attività quotidiane."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano conseguenze frequenti sul sonno e sul funzionamento quotidiano, con possibili rinunce, rinvii o difficoltà a partecipare pienamente alla tua vita."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; vengono mostrate prima le esperienze più frequenti. Sono visibili nome, testo e barra, ma non livelli, soglie o punteggi numerici.",
+    "limite": "Il risultato non considera da solo durata clinica, diagnosi differenziale o cause mediche e non viene presentato come probabilità di disturbo."
+  }
+}

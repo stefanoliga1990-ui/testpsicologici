@@ -391,10 +391,49 @@ class TestResultServiceTest {
     }
 
     @Test
+    void generalizedAnxietyTestIsLoadedWithTwentyFourQuestionsAndSpecificLabels() {
+        PsychologicalTest test = catalogue.findById("ansia-generalizzata");
+
+        assertThat(test.title()).isEqualTo("Ansia generalizzata");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.introductoryText()).contains("ultimi sei mesi", "condizioni mediche", "Non è uno strumento diagnostico");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze di ansia");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
+    }
+
+    @Test
+    void generalizedAnxietyFocusedProfileShowsTheMostRelevantAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("ansia-generalizzata", 5, 1, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Un'area concentra maggiormente la tensione");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Preoccupazione diffusa e difficoltà di controllo");
+        assertThat(result.areaResults().get(0).description()).contains("preoccupazione frequente");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+    }
+
+    @Test
+    void generalizedAnxietyLowAndBroadProfilesFollowTheGeneralRules() {
+        TestResult low = analyzeWithAnswersForTest("ansia-generalizzata", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("ansia-generalizzata", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Preoccupazione generalmente circoscritta");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("Ansia frequente in più aspetti della vita");
+        assertThat(broad.general().detail()).contains("escludere altre cause", "non diagnostico");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }
