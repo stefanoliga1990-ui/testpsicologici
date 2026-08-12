@@ -1,0 +1,151 @@
+{
+  "test": {
+    "id": "people-pleasing",
+    "titolo": "Sono un/una people pleaser?",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza delle dinamiche di compiacenza e autosacrificio esplorate dal questionario",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "People pleaser è un'espressione comune, non una diagnosi o categoria clinica. Il questionario non è validato, non misura bontà o altruismo e usa soglie esclusivamente editoriali."
+  },
+  "istruzioni": "Rispondere pensando alla frequenza reale negli ultimi mesi e in relazioni diverse, non a ciò che si ritiene socialmente desiderabile.",
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono Silencing the Self Scale, Unmitigated Communion Scale, Scale for Interpersonal Behaviour o altri strumenti validati. La struttura distingue la cura reciproca, potenzialmente positiva, dall'attenzione agli altri che esclude sistematicamente il sé. Cultura, ruoli di cura, sicurezza e potere possono rendere lo stesso comportamento adattivo o costoso in contesti differenti.",
+    "fonti_consultate": [
+      {
+        "titolo": "Distinctions of unmitigated communion from communion: self-neglect and overinvolvement with others",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/9686454/",
+        "apporto": "Riferimento centrale per distinguere una positiva disposizione alla cura dalla focalizzazione sugli altri associata a dipendenza valutativa, sovracoinvolgimento e trascuratezza di sé."
+      },
+      {
+        "titolo": "A theory of unmitigated communion",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15647153/",
+        "apporto": "Riferimento teorico per la cura degli altri a esclusione del sé e per il legame con disagio psicologico, senza considerare problematica la comunalità in quanto tale."
+      },
+      {
+        "titolo": "Sex differences in self-silencing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10575980/",
+        "apporto": "Riferimento per autosilenziamento, sacrificio e presentazione di un sé esteriore compiacente; mostra inoltre che la dinamica non appartiene a un solo genere."
+      },
+      {
+        "titolo": "Need for approval from others and face concerns as predictors of interpersonal conflict outcome in 29 cultural groups",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36707726/",
+        "apporto": "Riferimento per bisogno di approvazione e gestione del conflitto e per considerare le differenze culturali nell'interpretazione dei comportamenti relazionali."
+      },
+      {
+        "titolo": "Associations between rejection sensitivity and mental health outcomes: a meta-analytic review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28841457/",
+        "apporto": "Riferimento per sensibilità al rifiuto e sue associazioni transdiagnostiche; non viene trattata come prova di uno specifico disturbo."
+      },
+      {
+        "titolo": "Excessive reassurance seeking, depression, and interpersonal rejection: a meta-analytic review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19025224/",
+        "apporto": "Riferimento per la ricerca eccessiva di rassicurazioni e per la complessità delle sue relazioni con disagio e risposta interpersonale."
+      },
+      {
+        "titolo": "Short version of the Scale for Interpersonal Behavior: psychometric analysis",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9792610/",
+        "apporto": "Riferimento per considerare espressione, iniziativa, limiti e assertività come dimensioni comportamentali distinte e contestuali."
+      },
+      {
+        "titolo": "Efficacy of transdiagnostic cognitive-behavioral therapy for assertiveness: a randomized controlled trial",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10235435/",
+        "apporto": "Riferimento per descrivere confini ed espressione come abilità modificabili, non come identità o qualità fisse della persona."
+      },
+      {
+        "titolo": "Exclude me, enjoy us? Unmitigated communion and relationship satisfaction across 7 years",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31829670/",
+        "apporto": "Riferimento longitudinale per evitare conclusioni semplicistiche: autosacrificio e soddisfazione relazionale possono coevolvere in modi complessi e bidirezionali."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "orientamento": "Tutte le domande descrivono dinamiche potenzialmente costose: Mai corrisponde al minimo e Sempre al massimo.",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero e non rappresenta la percentuale di una caratteristica personale",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Disponibilità e bisogni personali in buon equilibrio",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta delle dinamiche di compiacenza esplorate.",
+      "descrizione": "Puoi essere attento e disponibile senza rinunciare abitualmente alla tua voce, ai tuoi limiti o al recupero. Questo non significa essere sempre assertivi né dover rifiutare l'aiuto agli altri: reciprocità, contesto e libertà di scelta restano centrali."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "La compiacenza emerge in alcuni contesti",
+      "sottotitolo": "Le risposte descrivono dinamiche variabili, più frequenti con alcune persone, richieste o situazioni.",
+      "descrizione": "Potresti mantenere un buon equilibrio in molti rapporti ma adattarti maggiormente davanti a autorità, conflitto, bisogno altrui o rischio di disapprovazione. Riconoscere dove accade può essere più utile dell'etichetta “people pleaser”."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Un meccanismo di compiacenza emerge con chiarezza",
+      "sottotitolo": "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore libertà.",
+      "descrizione": "Può essere utile osservare se il costo nasce soprattutto dalla ricerca di approvazione, dai limiti, dal silenziamento o dall'eccessiva responsabilità verso gli altri. Il profilo descrive abitudini modificabili, non un'identità fissa."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "I bisogni altrui occupano spesso il primo posto",
+      "sottotitolo": "Le risposte indicano dinamiche frequenti in più aree, con possibile difficoltà a mantenere visibili bisogni, opinioni, limiti e risorse personali.",
+      "descrizione": "Se questo modo di stare nelle relazioni porta esaurimento, risentimento, ansia o legami poco reciproci, un confronto con uno psicologo o psicoterapeuta può aiutarti a costruire maggiore scelta e confini sostenibili. In situazioni minacciose o con forte squilibrio di potere, valuta prima la sicurezza e cerca un supporto adeguato; il risultato resta informativo e non diagnostico."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "approvazione",
+      "nome_area": "Bisogno di approvazione e paura del rifiuto",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "L'apprezzamento degli altri sembra piacevole ma non indispensabile per mantenere opinioni, scelte e una valutazione stabile di te stesso."},
+        {"livello": "MEDIUM", "descrizione": "In alcune relazioni la disapprovazione può attivare dubbi, scuse o bisogno di rassicurazione, soprattutto quando il legame conta molto."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano un bisogno frequente di approvazione e una forte sensibilità al possibile rifiuto, con tendenza ad adattare scelte o assumerti colpe per proteggere il legame."}
+      ]
+    },
+    {
+      "area_code": "confini",
+      "nome_area": "Dire no, porre limiti e tollerare il dispiacere",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Sembri generalmente capace di valutare richieste e limiti senza considerare automaticamente un rifiuto come egoismo o danno alla relazione."},
+        {"livello": "MEDIUM", "descrizione": "Alcune richieste o reazioni altrui possono rendere più difficile dire no, mantenere un limite o proteggere tempo e riposo."},
+        {"livello": "HIGH", "descrizione": "Le risposte descrivono una difficoltà frequente a rifiutare richieste e mantenere confini davanti a insistenza, colpa o timore di deludere."}
+      ]
+    },
+    {
+      "area_code": "silenzio",
+      "nome_area": "Autosilenziamento e gestione del conflitto",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Opinioni, emozioni e richieste sembrano trovare generalmente espressione anche quando potrebbero creare un confronto gestibile."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni potresti trattenere disaccordo o bisogni per mantenere armonia e una buona immagine nella relazione."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano un autosilenziamento frequente, con emozioni, opinioni o richieste nascoste per evitare conflitto, distanza o disagio altrui."}
+      ]
+    },
+    {
+      "area_code": "sacrificio",
+      "nome_area": "Sovraresponsabilità e trascuratezza di sé",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "La cura degli altri sembra generalmente convivere con attenzione alle tue energie, responsabilità e priorità personali."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni periodi potresti assumerti più responsabilità del necessario e rimandare recupero o obiettivi per occuparti degli altri."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una sovraresponsabilità frequente verso bisogni ed emozioni altrui, con possibile trascuratezza di te, esaurimento o risentimento."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; vengono mostrate prima le dinamiche riferite con maggiore frequenza. Sono visibili nome, testo e barra, ma non livelli, soglie o punteggi numerici.",
+    "limite": "Il risultato non misura gentilezza o valore personale e non può stabilire se un comportamento sia libero, imposto dal contesto o protettivo in una relazione poco sicura."
+  }
+}

@@ -471,10 +471,49 @@ class TestResultServiceTest {
     }
 
     @Test
+    void peoplePleasingTestIsLoadedWithTwentyFourQuestionsAndSpecificLabels() {
+        PsychologicalTest test = catalogue.findById("people-pleasing");
+
+        assertThat(test.title()).isEqualTo("Sono un/una people pleaser?");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.introductoryText()).contains("non una diagnosi", "differenze di potere", "strategia protettiva");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche di compiacenza");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche");
+    }
+
+    @Test
+    void peoplePleasingFocusedProfileShowsTheMostRelevantAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("people-pleasing", 1, 1, 1, 5);
+
+        assertThat(result.general().title()).isEqualTo("Un meccanismo di compiacenza emerge con chiarezza");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Sovraresponsabilità e trascuratezza di sé");
+        assertThat(result.areaResults().get(0).description()).contains("sovraresponsabilità frequente");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+    }
+
+    @Test
+    void peoplePleasingLowAndBroadProfilesFollowTheGeneralRules() {
+        TestResult low = analyzeWithAnswersForTest("people-pleasing", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("people-pleasing", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Disponibilità e bisogni personali in buon equilibrio");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("I bisogni altrui occupano spesso il primo posto");
+        assertThat(broad.general().detail()).contains("forte squilibrio di potere", "non diagnostico");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

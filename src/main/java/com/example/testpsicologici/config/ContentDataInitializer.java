@@ -49,6 +49,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedPerceivedNarcissisticRelationshipDynamicsTest();
         seedGeneralizedAnxietyInformationTest();
         seedDepressedMoodInformationTest();
+        seedPeoplePleasingInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -1000,6 +1001,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Sonno, appetito, concentrazione e gestione delle attività sembrano generalmente vicini al tuo equilibrio abituale.",
                 "Alcuni cambiamenti del riposo, dell'appetito o della concentrazione possono rendere più difficile mantenere ritmo e responsabilità in determinati periodi.",
                 "Le risposte indicano cambiamenti frequenti nel sonno, nell'appetito o nelle capacità cognitive, con un impatto rilevante sulle attività e sulla cura quotidiana.");
+    }
+
+    private void seedPeoplePleasingInformationTest() {
+        String id = "people-pleasing";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Sono un/una people pleaser?",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere su approvazione, confini, conflitto e spazio dedicato ai propri bisogni.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. “People pleaser” è un'espressione comune, non una diagnosi o una categoria clinica. Gentilezza, collaborazione e disponibilità non sono di per sé problematiche: il questionario esplora quanto spesso l'attenzione agli altri comporti silenziare bisogni, superare limiti o dipendere dalla loro approvazione. Rispondi pensando agli ultimi mesi e a relazioni diverse. Cultura, ruoli di cura, ambiente, dipendenza economica e differenze di potere possono influenzare le risposte. In una relazione minacciosa o poco sicura, adattarsi ed evitare il conflitto può essere una strategia protettiva, non una mancanza di assertività. Se questi schemi causano sofferenza, risentimento, esaurimento o relazioni sbilanciate, puoi parlarne con uno psicologo o psicoterapeuta qualificato.",
+                version, false,
+                "Frequenza complessiva delle dinamiche di compiacenza",
+                "Frequenza delle dinamiche",
+                true, 13));
+
+        saveArea(id, "approvazione", "Bisogno di approvazione e paura del rifiuto", 1);
+        saveArea(id, "confini", "Dire no, porre limiti e tollerare il dispiacere", 2);
+        saveArea(id, "silenzio", "Autosilenziamento e gestione del conflitto", 3);
+        saveArea(id, "sacrificio", "Sovraresponsabilità e trascuratezza di sé", 4);
+
+        saveQuestions(id, List.of(
+                q("approvazione", "Cambio opinione o preferenza quando percepisco che potrebbe non piacere alle persone presenti."),
+                q("approvazione", "Cerco conferme che gli altri siano contenti di me prima di sentirmi tranquillo in una relazione."),
+                q("approvazione", "Interpreto il disappunto di una persona come un possibile segnale di rifiuto o allontanamento."),
+                q("approvazione", "Mi scuso o mi assumo la colpa rapidamente, anche prima di capire se la responsabilità sia davvero mia."),
+                q("approvazione", "Il mio umore dipende molto dal sapere che le persone intorno a me sono soddisfatte di ciò che faccio."),
+                q("approvazione", "Cerco di essere apprezzato anche da persone la cui opinione, a mente fredda, non è importante per me."),
+                q("confini", "Accetto richieste quando vorrei dire di no, per evitare di deludere o sembrare egoista."),
+                q("confini", "Fatico a rifiutare una richiesta improvvisa o eccessiva se l'altra persona sembra aver bisogno di me."),
+                q("confini", "Quando pongo un limite, sento di doverlo giustificare a lungo perché sia considerato legittimo."),
+                q("confini", "Modifico programmi, riposo o priorità personali per assecondare gli altri anche quando non è realmente necessario."),
+                q("confini", "Dopo aver detto di no provo colpa o ansia e ripenso a lungo alla possibile reazione dell'altra persona."),
+                q("confini", "Se qualcuno insiste dopo un mio rifiuto, finisco spesso per cedere anche se il mio limite non è cambiato."),
+                q("silenzio", "Evito di esprimere un disaccordo per non creare tensione o cambiare l'immagine positiva che gli altri hanno di me."),
+                q("silenzio", "Nascondo rabbia, delusione o ferite per mantenere un clima sereno nella relazione."),
+                q("silenzio", "Adatto molto il mio modo di parlare, comportarmi o mostrarmi a seconda di ciò che penso gli altri preferiscano."),
+                q("silenzio", "Rinuncio a chiedere aiuto o sostegno perché non voglio pesare sugli altri."),
+                q("silenzio", "Mostro accordo o entusiasmo anche quando dentro di me penso o sento qualcosa di diverso."),
+                q("silenzio", "Dopo un conflitto mi concentro sul ristabilire subito l'armonia prima che il mio problema sia stato davvero ascoltato."),
+                q("sacrificio", "Mi sento responsabile di risolvere l'umore, i problemi o il disagio delle persone a cui tengo."),
+                q("sacrificio", "Cerco di anticipare i bisogni degli altri senza aspettare che vengano espressi, per evitare loro qualsiasi difficoltà."),
+                q("sacrificio", "Continuo ad aiutare anche quando sono stanco, sovraccarico o avrei bisogno di fermarmi."),
+                q("sacrificio", "Rimando cura personale, obiettivi o attività importanti per occuparmi delle priorità altrui."),
+                q("sacrificio", "Mi sento particolarmente utile o degno di affetto quando qualcuno ha bisogno di me."),
+                q("sacrificio", "Dopo essermi reso molto disponibile, provo risentimento o esaurimento perché i miei bisogni sono rimasti in secondo piano.")));
+
+        saveGlobal(id, "LOW", "Disponibilità e bisogni personali in buon equilibrio",
+                "Nel complesso hai indicato una presenza contenuta delle dinamiche di compiacenza esplorate.",
+                "Puoi essere attento e disponibile senza rinunciare abitualmente alla tua voce, ai tuoi limiti o al recupero. Questo non significa essere sempre assertivi né dover rifiutare l'aiuto agli altri: reciprocità, contesto e libertà di scelta restano centrali.");
+        saveGlobal(id, "MIXED", "La compiacenza emerge in alcuni contesti",
+                "Le risposte descrivono dinamiche variabili, più frequenti con alcune persone, richieste o situazioni.",
+                "Potresti mantenere un buon equilibrio in molti rapporti ma adattarti maggiormente davanti a autorità, conflitto, bisogno altrui o rischio di disapprovazione. Riconoscere dove accade può essere più utile dell'etichetta “people pleaser”.");
+        saveGlobal(id, "FOCUSED", "Un meccanismo di compiacenza emerge con chiarezza",
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore libertà.",
+                "Può essere utile osservare se il costo nasce soprattutto dalla ricerca di approvazione, dai limiti, dal silenziamento o dall'eccessiva responsabilità verso gli altri. Il profilo descrive abitudini modificabili, non un'identità fissa.");
+        saveGlobal(id, "BROAD", "I bisogni altrui occupano spesso il primo posto",
+                "Le risposte indicano dinamiche frequenti in più aree, con possibile difficoltà a mantenere visibili bisogni, opinioni, limiti e risorse personali.",
+                "Se questo modo di stare nelle relazioni porta esaurimento, risentimento, ansia o legami poco reciproci, un confronto con uno psicologo o psicoterapeuta può aiutarti a costruire maggiore scelta e confini sostenibili. In situazioni minacciose o con forte squilibrio di potere, valuta prima la sicurezza e cerca un supporto adeguato; il risultato resta informativo e non diagnostico.");
+
+        saveAreaInsights(id, "approvazione",
+                "L'apprezzamento degli altri sembra piacevole ma non indispensabile per mantenere opinioni, scelte e una valutazione stabile di te stesso.",
+                "In alcune relazioni la disapprovazione può attivare dubbi, scuse o bisogno di rassicurazione, soprattutto quando il legame conta molto.",
+                "Le risposte indicano un bisogno frequente di approvazione e una forte sensibilità al possibile rifiuto, con tendenza ad adattare scelte o assumerti colpe per proteggere il legame.");
+        saveAreaInsights(id, "confini",
+                "Sembri generalmente capace di valutare richieste e limiti senza considerare automaticamente un rifiuto come egoismo o danno alla relazione.",
+                "Alcune richieste o reazioni altrui possono rendere più difficile dire no, mantenere un limite o proteggere tempo e riposo.",
+                "Le risposte descrivono una difficoltà frequente a rifiutare richieste e mantenere confini davanti a insistenza, colpa o timore di deludere.");
+        saveAreaInsights(id, "silenzio",
+                "Opinioni, emozioni e richieste sembrano trovare generalmente espressione anche quando potrebbero creare un confronto gestibile.",
+                "In alcune situazioni potresti trattenere disaccordo o bisogni per mantenere armonia e una buona immagine nella relazione.",
+                "Le risposte indicano un autosilenziamento frequente, con emozioni, opinioni o richieste nascoste per evitare conflitto, distanza o disagio altrui.");
+        saveAreaInsights(id, "sacrificio",
+                "La cura degli altri sembra generalmente convivere con attenzione alle tue energie, responsabilità e priorità personali.",
+                "In alcuni periodi potresti assumerti più responsabilità del necessario e rimandare recupero o obiettivi per occuparti degli altri.",
+                "Le risposte mostrano una sovraresponsabilità frequente verso bisogni ed emozioni altrui, con possibile trascuratezza di te, esaurimento o risentimento.");
     }
 
     private boolean requiresSeed(String testId, String version) {
