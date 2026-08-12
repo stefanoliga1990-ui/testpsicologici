@@ -51,6 +51,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedDepressedMoodInformationTest();
         seedPeoplePleasingInformationTest();
         seedImpostorPhenomenonInformationTest();
+        seedSelfSabotageInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -1162,6 +1163,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Confronto e feedback sembrano generalmente lasciarti spazio per partecipare, presentare i risultati e cogliere opportunità compatibili con la tua esperienza.",
                 "In alcuni contesti i dubbi possono rendere più difficile valorizzare feedback positivi, mostrarti o accettare opportunità prima di sentirti del tutto pronto.",
                 "Le risposte mostrano un impatto frequente su partecipazione e opportunità, con confronti sfavorevoli, minimizzazione dei risultati e possibile rinuncia o sovraccarico.");
+    }
+
+    private void seedSelfSabotageInformationTest() {
+        String id = "autosabotaggio";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Tendo all'autosabotaggio?",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere sugli ostacoli che possono crearsi tra intenzioni, scelte e obiettivi importanti.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. “Autosabotaggio” è un'espressione comune, non una diagnosi né un singolo costrutto clinico: qui indica schemi ricorrenti che possono aumentare ostacoli o costi rispetto a obiettivi personalmente importanti. Non implica che tali comportamenti siano deliberati e il questionario non misura volontà, disciplina o valore personale. Rispondi pensando agli ultimi mesi e a obiettivi che hai scelto davvero tu. Rimandare, ridurre l'impegno o abbandonare può essere adattivo quando un obiettivo è irrealistico, non più significativo, imposto, poco sicuro o incompatibile con le risorse disponibili. Carichi di cura, difficoltà economiche o ambientali, problemi di salute, stress, sonno insufficiente, ansia, umore depresso, trauma, ADHD o altre difficoltà esecutive possono produrre esperienze simili e richiedono una lettura distinta, non moralistica. Se questi schemi causano sofferenza o compromettono ripetutamente benessere, relazioni, studio o lavoro, puoi parlarne con uno psicologo o psicoterapeuta qualificato.",
+                version, false,
+                "Frequenza complessiva degli ostacoli autoalimentati",
+                "Frequenza degli ostacoli",
+                true, 15));
+
+        saveArea(id, "azione", "Avvio, pianificazione e procrastinazione", 1);
+        saveArea(id, "protezione", "Paura della valutazione e auto-handicapping", 2);
+        saveArea(id, "emozioni", "Emozioni difficili e sollievo immediato", 3);
+        saveArea(id, "direzione", "Persistenza, flessibilità e scelte coerenti", 4);
+
+        saveQuestions(id, List.of(
+                q("azione", "Rimando l'inizio di attività importanti anche quando avrei tempo e so che il ritardo mi creerà difficoltà."),
+                q("azione", "Aspetto di sentirmi pienamente pronto o motivato prima di compiere il primo passo verso un obiettivo."),
+                q("azione", "Mantengo gli obiettivi vaghi, senza tradurli in passi o tempi concreti, anche quando così è più difficile realizzarli."),
+                q("azione", "Riempio il tempo con compiti secondari o urgenti per non affrontare quello che considero davvero prioritario."),
+                q("azione", "Sottovaluto il tempo necessario e comincio soltanto quando la pressione è già elevata."),
+                q("azione", "Pur sapendo quali promemoria, condizioni o aiuti mi servirebbero, non li preparo e finisco per bloccarmi di nuovo."),
+                q("protezione", "Quando un risultato potrebbe essere giudicato, investo meno impegno di quanto potrei per non mettere davvero alla prova le mie capacità."),
+                q("protezione", "Prima di una prova importante accumulo impegni o condizioni che potranno spiegare un eventuale risultato negativo."),
+                q("protezione", "Evito feedback, chiarimenti o aiuto anche quando potrebbero migliorare il risultato, perché confrontarmi con le mie lacune mi mette a disagio."),
+                q("protezione", "Non provo a cogliere un'opportunità realistica quando comporta il rischio visibile di un rifiuto o di un giudizio."),
+                q("protezione", "Dichiaro in anticipo che un obiettivo non mi interessa molto o che andrà male, per proteggermi da un possibile insuccesso."),
+                q("protezione", "Scelgo obiettivi troppo facili o quasi impossibili invece di una sfida realistica che permetterebbe di valutare il mio progresso."),
+                q("emozioni", "Quando un compito suscita ansia, noia o frustrazione, passo rapidamente a un'attività che mi distrae."),
+                q("emozioni", "Scelgo un sollievo immediato anche quando prevedo che renderà più difficile ciò che conta per me in seguito."),
+                q("emozioni", "Dopo un errore, vergogna o autocritica occupano lo spazio che potrei usare per correggere o riprovare."),
+                q("emozioni", "Rimando conversazioni o decisioni scomode finché le conseguenze diventano più difficili da gestire."),
+                q("emozioni", "Più un obiettivo è importante per me, più le emozioni che suscita mi portano a evitarlo."),
+                q("emozioni", "Quando sono sotto pressione trascuro riposo o routine di base, anche se questo peggiora la mia capacità di proseguire."),
+                q("direzione", "Inizio cambiamenti molto ambiziosi con grande slancio e li abbandono quando non riesco a sostenerne il ritmo."),
+                q("direzione", "Un'interruzione o un passo mancato diventa per me un motivo per considerare compromesso l'intero percorso."),
+                q("direzione", "Continuo a usare una strategia che non funziona invece di modificarla o chiedere un confronto."),
+                q("direzione", "Abbandono obiettivi ancora realistici prima di aver dedicato loro un impegno abbastanza regolare da valutarli."),
+                q("direzione", "Ripeto scelte che entrano prevedibilmente in conflitto con le mie priorità, anche dopo aver riconosciuto lo schema."),
+                q("direzione", "Dopo una pausa faccio fatica a riprendere con un passo più piccolo e rimango fermo più a lungo del necessario.")));
+
+        saveGlobal(id, "LOW", "Scelte generalmente coerenti con i tuoi obiettivi",
+                "Nel complesso hai indicato una presenza contenuta degli ostacoli autoalimentati esplorati dal questionario.",
+                "Sembri generalmente capace di trasformare intenzioni in passi sostenibili, attraversare il disagio e adattare il percorso quando serve. Questo non significa essere sempre produttivo: riposo, cambi di priorità e abbandono di obiettivi non più realistici possono essere forme sane di autoregolazione.");
+        saveGlobal(id, "MIXED", "Gli ostacoli emergono in alcune situazioni",
+                "Le risposte descrivono schemi variabili, più frequenti con alcuni obiettivi, emozioni o condizioni.",
+                "Potresti procedere con continuità in molti ambiti ma bloccarti quando aumentano pressione, giudizio, incertezza o fatica. Individuare quando e a quale costo accade è più utile dell'etichetta “autosabotaggio”, perché lo stesso comportamento può avere funzioni e cause differenti.");
+        saveGlobal(id, "FOCUSED", "Un meccanismo di autosabotaggio emerge con chiarezza",
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
+                "Il profilo suggerisce di osservare il meccanismo prevalente: difficoltà ad avviare, protezione dal giudizio, ricerca di sollievo emotivo oppure scarsa flessibilità nel mantenere il percorso. Non attribuisce intenzioni e va letto insieme a risorse disponibili, salute, carico reale e caratteristiche dell'ambiente.");
+        saveGlobal(id, "BROAD", "Più meccanismi ostacolano i tuoi obiettivi",
+                "Le risposte indicano schemi frequenti in più aree, con una distanza ricorrente tra ciò che per te conta e le azioni che riesci a sostenere.",
+                "Procrastinazione, protezione dal giudizio, sollievo immediato e difficoltà a riprendere possono rinforzarsi a vicenda senza essere scelte consapevoli. Se il costo riguarda più ambiti o genera forte autocritica, un confronto professionale può aiutare a comprenderne funzione e contesto. Il risultato resta informativo e non diagnostico: non distingue da solo abitudini modificabili, ostacoli esterni, condizioni cliniche o difficoltà esecutive e non misura la tua forza di volontà.");
+
+        saveAreaInsights(id, "azione",
+                "Sembri generalmente capace di rendere concreti gli obiettivi e iniziare senza aspettare condizioni perfette, usando supporti quando servono.",
+                "Alcuni compiti possono restare vaghi o slittare finché urgenza e pressione rendono più difficile affrontarli con calma.",
+                "Le risposte indicano difficoltà frequenti nell'avvio e nella pianificazione, con rinvii, priorità secondarie o supporti non predisposti che aumentano pressione e costi.");
+        saveAreaInsights(id, "protezione",
+                "Valutazione e possibilità di fallire sembrano generalmente compatibili con un impegno realistico, la richiesta di feedback e l'accesso a opportunità.",
+                "Quando un risultato tocca molto l'immagine che hai di te, potresti evitare esposizione o lasciare qualche ostacolo che renda meno diretto il giudizio sulle tue capacità.",
+                "Le risposte descrivono un auto-handicapping frequente: riduzione dell'impegno, ostacoli o rinunce possono proteggere temporaneamente dal giudizio, limitando però apprendimento e opportunità.");
+        saveAreaInsights(id, "emozioni",
+                "Sembri generalmente capace di tollerare il disagio legato ai compiti senza sacrificare sistematicamente ciò che conta per ottenere sollievo immediato.",
+                "Ansia, noia, vergogna o frustrazione possono talvolta spostarti verso distrazione e rinvio, soprattutto con obiettivi molto significativi.",
+                "Le risposte indicano che il sollievo emotivo immediato prevale spesso sulle conseguenze future, alimentando evitamento, autocritica o trascuratezza delle risorse necessarie a proseguire.");
+        saveAreaInsights(id, "direzione",
+                "Sembri generalmente capace di mantenere un ritmo sostenibile, riprendere dopo le pause e modificare strategia o obiettivo quando le condizioni cambiano.",
+                "Interruzioni, slancio iniziale o strategie poco efficaci possono rendere discontinuo il percorso, pur lasciando spazio a una ripresa.",
+                "Le risposte mostrano una difficoltà frequente nel mantenere o adattare il percorso, con cicli di slancio e abbandono, rigidità o scelte ripetute poco coerenti con le priorità dichiarate.");
     }
 
     private boolean requiresSeed(String testId, String version) {

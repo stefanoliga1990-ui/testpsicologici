@@ -551,10 +551,51 @@ class TestResultServiceTest {
     }
 
     @Test
+    void selfSabotageTestIsLoadedWithTwentyFourQuestionsAndContextualSafeguards() {
+        PsychologicalTest test = catalogue.findById("autosabotaggio");
+
+        assertThat(test.title()).isEqualTo("Tendo all'autosabotaggio?");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.introductoryText()).contains("non una diagnosi", "Non implica", "può essere adattivo", "difficoltà esecutive", "non moralistica");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva degli ostacoli autoalimentati");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza degli ostacoli");
+    }
+
+    @Test
+    void selfSabotageFocusedProfileShowsTheMostRelevantAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("autosabotaggio", 1, 5, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Un meccanismo di autosabotaggio emerge con chiarezza");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Paura della valutazione e auto-handicapping");
+        assertThat(result.areaResults().get(0).description()).contains("auto-handicapping frequente");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+        assertThat(result.general().detail()).contains("Non attribuisce intenzioni", "carico reale");
+    }
+
+    @Test
+    void selfSabotageLowAndBroadProfilesFollowTheGeneralRules() {
+        TestResult low = analyzeWithAnswersForTest("autosabotaggio", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("autosabotaggio", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Scelte generalmente coerenti con i tuoi obiettivi");
+        assertThat(low.general().detail()).contains("abbandono di obiettivi non più realistici");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("Più meccanismi ostacolano i tuoi obiettivi");
+        assertThat(broad.general().detail()).contains("non diagnostico", "difficoltà esecutive", "non misura la tua forza di volontà");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

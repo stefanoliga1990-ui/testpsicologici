@@ -1,0 +1,151 @@
+{
+  "test": {
+    "id": "autosabotaggio",
+    "titolo": "Tendo all'autosabotaggio?",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza degli ostacoli autoalimentati esplorati dal questionario",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Autosabotaggio è un'espressione comune, non una diagnosi o un singolo costrutto clinico. Il questionario non è validato, non attribuisce intenzioni, non misura forza di volontà o valore personale e usa soglie esclusivamente editoriali."
+  },
+  "istruzioni": "Rispondere pensando alla frequenza reale negli ultimi mesi e a obiettivi personalmente scelti e ancora significativi, non a obiettivi imposti, irrealistici o divenuti irraggiungibili.",
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono Self-Handicapping Scale, General Procrastination Scale, Pure Procrastination Scale, Goal Adjustment Scale o altri strumenti esistenti. Poiché autosabotaggio non identifica un processo scientifico unitario, la struttura integra quattro famiglie di comportamenti osservabili: procrastinazione, auto-handicapping, regolazione emotiva a breve termine e flessibilità nel perseguire obiettivi. L'interpretazione evita di confondere ostacoli autoalimentati con limiti reali, condizioni cliniche o il disimpegno adattivo da un obiettivo non più sostenibile.",
+    "fonti_consultate": [
+      {
+        "titolo": "Self-defeating behavior patterns among normal individuals: review and analysis of common self-destructive tendencies",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/3043527/",
+        "apporto": "Revisione classica che distingue condotte deliberatamente autodistruttive, compromessi con costi prevedibili e strategie controproducenti; sostiene una lettura funzionale e non moralistica."
+      },
+      {
+        "titolo": "The nature of procrastination: a meta-analytic and theoretical review of quintessential self-regulatory failure",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17201571/",
+        "apporto": "Meta-analisi di riferimento per procrastinazione, autoregolazione, avversione al compito, impulsività, tempi e divario tra intenzione e azione."
+      },
+      {
+        "titolo": "Procrastination and the Priority of Short-Term Mood Regulation: Consequences for Future Self",
+        "url": "https://doi.org/10.1111/spc3.12011",
+        "apporto": "Riferimento per comprendere il rinvio come ricerca di sollievo emotivo nel presente, con costi trasferiti al sé futuro."
+      },
+      {
+        "titolo": "Procrastination and Stress: A Conceptual Review of Why Context Matters",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10049005/",
+        "apporto": "Riferimento per il ruolo di stress e contesto e per evitare di ridurre la procrastinazione a scarsa disciplina individuale."
+      },
+      {
+        "titolo": "Control of Attributions about the Self Through Self-handicapping Strategies",
+        "url": "https://doi.org/10.1177/014616727800400205",
+        "apporto": "Lavoro fondativo sull'auto-handicapping come creazione o scelta di ostacoli che proteggono l'immagine di competenza davanti a un possibile insuccesso."
+      },
+      {
+        "titolo": "Self-Handicapping: On the Self-Perpetuating Nature of Defensive Behavior",
+        "url": "https://doi.org/10.1111/j.1751-9004.2008.00117.x",
+        "apporto": "Revisione del carattere difensivo e auto-rinforzante dell'auto-handicapping e delle sue conseguenze su impegno e prestazione."
+      },
+      {
+        "titolo": "Goal Adjustment Capacities, Subjective Well-Being, and Physical Health",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4145404/",
+        "apporto": "Riferimento essenziale per distinguere l'abbandono controproducente dalla capacità adattiva di lasciare obiettivi irraggiungibili e reinvestire in mete realizzabili."
+      },
+      {
+        "titolo": "Goal adjustment capacities and quality of life: A meta-analytic review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31131441/",
+        "apporto": "Meta-analisi che documenta associazioni differenti tra disimpegno, reimpegno e qualità di vita, impedendo di classificare ogni rinuncia come autosabotaggio."
+      },
+      {
+        "titolo": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6125391/",
+        "apporto": "Riferimento per descrivere questi comportamenti come potenzialmente modificabili e per mantenere prudenza sulle conclusioni e sugli interventi."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "orientamento": "Tutte le domande descrivono ostacoli potenzialmente costosi: Mai corrisponde al minimo e Sempre al massimo.",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero e non rappresenta la percentuale di autosabotaggio o di forza di volontà",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Scelte generalmente coerenti con i tuoi obiettivi",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta degli ostacoli autoalimentati esplorati dal questionario.",
+      "descrizione": "Sembri generalmente capace di trasformare intenzioni in passi sostenibili, attraversare il disagio e adattare il percorso quando serve. Questo non significa essere sempre produttivo: riposo, cambi di priorità e abbandono di obiettivi non più realistici possono essere forme sane di autoregolazione."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Gli ostacoli emergono in alcune situazioni",
+      "sottotitolo": "Le risposte descrivono schemi variabili, più frequenti con alcuni obiettivi, emozioni o condizioni.",
+      "descrizione": "Potresti procedere con continuità in molti ambiti ma bloccarti quando aumentano pressione, giudizio, incertezza o fatica. Individuare quando e a quale costo accade è più utile dell'etichetta “autosabotaggio”, perché lo stesso comportamento può avere funzioni e cause differenti."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Un meccanismo di autosabotaggio emerge con chiarezza",
+      "sottotitolo": "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
+      "descrizione": "Il profilo suggerisce di osservare il meccanismo prevalente: difficoltà ad avviare, protezione dal giudizio, ricerca di sollievo emotivo oppure scarsa flessibilità nel mantenere il percorso. Non attribuisce intenzioni e va letto insieme a risorse disponibili, salute, carico reale e caratteristiche dell'ambiente."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Più meccanismi ostacolano i tuoi obiettivi",
+      "sottotitolo": "Le risposte indicano schemi frequenti in più aree, con una distanza ricorrente tra ciò che per te conta e le azioni che riesci a sostenere.",
+      "descrizione": "Procrastinazione, protezione dal giudizio, sollievo immediato e difficoltà a riprendere possono rinforzarsi a vicenda senza essere scelte consapevoli. Se il costo riguarda più ambiti o genera forte autocritica, un confronto professionale può aiutare a comprenderne funzione e contesto. Il risultato resta informativo e non diagnostico: non distingue da solo abitudini modificabili, ostacoli esterni, condizioni cliniche o difficoltà esecutive e non misura la tua forza di volontà."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "azione",
+      "nome_area": "Avvio, pianificazione e procrastinazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Sembri generalmente capace di rendere concreti gli obiettivi e iniziare senza aspettare condizioni perfette, usando supporti quando servono."},
+        {"livello": "MEDIUM", "descrizione": "Alcuni compiti possono restare vaghi o slittare finché urgenza e pressione rendono più difficile affrontarli con calma."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano difficoltà frequenti nell'avvio e nella pianificazione, con rinvii, priorità secondarie o supporti non predisposti che aumentano pressione e costi."}
+      ]
+    },
+    {
+      "area_code": "protezione",
+      "nome_area": "Paura della valutazione e auto-handicapping",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Valutazione e possibilità di fallire sembrano generalmente compatibili con un impegno realistico, la richiesta di feedback e l'accesso a opportunità."},
+        {"livello": "MEDIUM", "descrizione": "Quando un risultato tocca molto l'immagine che hai di te, potresti evitare esposizione o lasciare qualche ostacolo che renda meno diretto il giudizio sulle tue capacità."},
+        {"livello": "HIGH", "descrizione": "Le risposte descrivono un auto-handicapping frequente: riduzione dell'impegno, ostacoli o rinunce possono proteggere temporaneamente dal giudizio, limitando però apprendimento e opportunità."}
+      ]
+    },
+    {
+      "area_code": "emozioni",
+      "nome_area": "Emozioni difficili e sollievo immediato",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Sembri generalmente capace di tollerare il disagio legato ai compiti senza sacrificare sistematicamente ciò che conta per ottenere sollievo immediato."},
+        {"livello": "MEDIUM", "descrizione": "Ansia, noia, vergogna o frustrazione possono talvolta spostarti verso distrazione e rinvio, soprattutto con obiettivi molto significativi."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano che il sollievo emotivo immediato prevale spesso sulle conseguenze future, alimentando evitamento, autocritica o trascuratezza delle risorse necessarie a proseguire."}
+      ]
+    },
+    {
+      "area_code": "direzione",
+      "nome_area": "Persistenza, flessibilità e scelte coerenti",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Sembri generalmente capace di mantenere un ritmo sostenibile, riprendere dopo le pause e modificare strategia o obiettivo quando le condizioni cambiano."},
+        {"livello": "MEDIUM", "descrizione": "Interruzioni, slancio iniziale o strategie poco efficaci possono rendere discontinuo il percorso, pur lasciando spazio a una ripresa."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano una difficoltà frequente nel mantenere o adattare il percorso, con cicli di slancio e abbandono, rigidità o scelte ripetute poco coerenti con le priorità dichiarate."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; vengono mostrati prima gli ostacoli riferiti con maggiore frequenza. Sono visibili nome, testo e barra, ma non livelli, soglie o punteggi numerici.",
+    "limite": "Il risultato non stabilisce se un comportamento sia deliberato, non misura carattere o motivazione e non può distinguere autonomamente abitudini, condizioni cliniche, difficoltà esecutive, ostacoli ambientali o disimpegno adattivo."
+  }
+}
