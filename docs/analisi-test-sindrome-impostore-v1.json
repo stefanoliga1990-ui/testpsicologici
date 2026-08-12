@@ -1,0 +1,141 @@
+{
+  "test": {
+    "id": "sindrome-impostore",
+    "titolo": "Sindrome dell'impostore",
+    "versione": "1.0",
+    "finalita": "Autovalutazione esclusivamente informativa per adulti",
+    "direzione_punteggio": "Valori più alti indicano una maggiore frequenza delle esperienze soggettive associate al fenomeno dell'impostore esplorate dal questionario",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Il fenomeno dell'impostore non è una diagnosi o un disturbo riconosciuto. Il questionario non è validato, non misura la competenza reale e usa soglie esclusivamente editoriali."
+  },
+  "istruzioni": "Rispondere pensando alla frequenza reale negli ultimi mesi e ai contesti di studio, lavoro o responsabilità personalmente significativi.",
+  "fondamenti_editoriali": {
+    "nota": "Le domande sono originali e non riproducono la Clance Impostor Phenomenon Scale, la Harvey Impostor Scale o altri strumenti esistenti. La struttura riprende soltanto costrutti ricorrenti nella letteratura: difficoltà a interiorizzare i risultati, timore di essere scoperti come meno competenti, pressione da prestazione e conseguenze su partecipazione e carriera. L'interpretazione considera esplicitamente apprendimento reale e condizioni sociali o organizzative, evitando di attribuire automaticamente il problema alla persona.",
+    "fonti_consultate": [
+      {
+        "titolo": "The imposter phenomenon in high achieving women: dynamics and therapeutic intervention",
+        "url": "https://doi.org/10.1037/h0086006",
+        "apporto": "Lavoro originario che descrive l'esperienza di presunta fraudolenza, la difficoltà a interiorizzare i successi e l'attribuzione dei risultati a cause esterne."
+      },
+      {
+        "titolo": "Impostor Phenomenon Measurement Scales: A Systematic Review",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6463809/",
+        "apporto": "Revisione delle definizioni e delle proprietà psicometriche delle principali misure; sostiene la cautela sulla dimensionalità del costrutto e precisa che non è una condizione diagnosticabile."
+      },
+      {
+        "titolo": "Prevalence, Predictors, and Treatment of Impostor Syndrome: a Systematic Review",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7174434/",
+        "apporto": "Revisione sistematica su popolazioni, correlati e limiti dell'evidenza, inclusa l'assenza di una definizione diagnostica standard e di trattamenti specificamente validati."
+      },
+      {
+        "titolo": "Contextualizing the Impostor ‘Syndrome’",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7703426/",
+        "apporto": "Riferimento per non individualizzare il fenomeno e considerare stereotipi, sottorappresentazione, trattamento diseguale e contesto organizzativo."
+      },
+      {
+        "titolo": "Impostor Phenomenon in Racially/Ethnically Minoritized Groups: Current Knowledge and Future Directions",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11245362/",
+        "apporto": "Revisione critica sul ruolo di discriminazione, marginalizzazione e appartenenza e sui limiti delle misure tradizionali nelle persone razzializzate."
+      },
+      {
+        "titolo": "An Inner Barrier to Career Development: Preconditions of the Impostor Phenomenon and Consequences for Career Development",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4740363/",
+        "apporto": "Studio sul rapporto con pianificazione, aspirazioni professionali e motivazione alla leadership; informa l'area dedicata all'impatto sulle opportunità."
+      },
+      {
+        "titolo": "Perfectionism, impostor phenomenon, and mental health in medicine: a literature review",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7882132/",
+        "apporto": "Riferimento per il legame, non equivalente né diagnostico, tra fenomeno dell'impostore, perfezionismo, pressione formativa e benessere."
+      }
+    ]
+  },
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "orientamento": "Tutte le domande descrivono esperienze potenzialmente costose: Mai corrisponde al minimo e Sempre al massimo.",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.4"},
+      {"codice": "MEDIUM", "condizione": "2.4 <= media_area < 3.75"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.75"}
+    ],
+    "barra": "Percentuale arrotondata calcolata come (media - 1) / 4 * 100; il valore non viene mostrato come numero e non rappresenta la percentuale di una sindrome o della competenza personale",
+    "regole_generali_in_ordine_di_precedenza": [
+      {"priorita": 1, "assegna": "BROAD", "condizione": "numero_aree_HIGH >= 3 oppure media_generale >= 4.0"},
+      {"priorita": 2, "assegna": "FOCUSED", "condizione": "numero_aree_HIGH >= 1"},
+      {"priorita": 3, "assegna": "LOW", "condizione": "media_generale < 2.4"},
+      {"priorita": 4, "assegna": "MIXED", "condizione": "tutti gli altri casi"}
+    ]
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Successi e competenze generalmente riconosciuti",
+      "sottotitolo": "Nel complesso hai indicato una presenza contenuta delle esperienze associate al fenomeno dell'impostore.",
+      "descrizione": "Sembri riuscire generalmente a integrare risultati e feedback nella valutazione delle tue capacità, mantenendo i dubbi in proporzione al contesto. Questo non dimostra una competenza assoluta né esclude incertezze normali, soprattutto quando stai imparando o affrontando un ruolo nuovo."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Dubbi che emergono in alcuni contesti",
+      "sottotitolo": "Le risposte descrivono esperienze variabili, più frequenti davanti ad alcune persone, compiti o passaggi di ruolo.",
+      "descrizione": "Potresti riconoscere le tue capacità in molte situazioni ma dubitarne quando aumentano visibilità, confronto, novità o ambiguità del feedback. Distinguere i contesti può aiutare a separare ciò che richiede apprendimento da ciò che nasce da standard rigidi, scarsa appartenenza o difficoltà a interiorizzare i risultati."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Un meccanismo dell'impostore emerge con chiarezza",
+      "sottotitolo": "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
+      "descrizione": "Il profilo invita a osservare dove si concentra il costo: attribuzione dei successi, paura di essere smascherati, pressione da prestazione oppure rinuncia a opportunità. Il risultato non misura la competenza effettiva e va letto insieme a esperienza reale, qualità dei feedback e caratteristiche dell'ambiente."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Il vissuto dell'impostore è presente in più aree",
+      "sottotitolo": "Le risposte indicano esperienze frequenti e diffuse nel modo di leggere risultati, competenza, prestazione e opportunità.",
+      "descrizione": "Questo schema può rendere difficile riconoscere prove di capacità, accettare una normale quota di apprendimento e partecipare senza sovraccaricarti. Se alimenta ansia, evitamento, esaurimento o rinunce importanti, un confronto professionale può aiutarti. Considera anche fattori reali come aspettative poco chiare, feedback inadeguati, esclusione o discriminazione: il risultato resta informativo, non diagnostico e non stabilisce quanto sei competente."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "attribuzione",
+      "nome_area": "Attribuzione dei successi e riconoscimento delle capacità",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Sembri generalmente capace di riconoscere il tuo contributo e usare successi e feedback come informazioni credibili sulle tue capacità."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni potresti attribuire risultati a fortuna, circostanze o aiuto altrui, rendendo meno stabile la fiducia costruita con l'esperienza."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano una difficoltà frequente a interiorizzare i successi, con tendenza a ridimensionare capacità e contributo personale anche davanti a riscontri positivi."}
+      ]
+    },
+    {
+      "area_code": "esposizione",
+      "nome_area": "Dubbi di competenza e paura di essere smascherati",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Dubbi e lacune sembrano generalmente compatibili con l'apprendimento, senza trasformarsi nella paura stabile di essere scoperto come inadeguato."},
+        {"livello": "MEDIUM", "descrizione": "Ruoli nuovi, valutazioni o persone considerate molto competenti possono attivare il timore di non meritare il posto o di mostrare limiti."},
+        {"livello": "HIGH", "descrizione": "Le risposte descrivono una paura frequente di essere smascherato come meno competente di quanto gli altri credano, con possibile difficoltà a chiedere chiarimenti o sentirti legittimato nel ruolo."}
+      ]
+    },
+    {
+      "area_code": "prestazione",
+      "nome_area": "Pressione, perfezionismo e sovrapreparazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Sembri generalmente capace di prepararti e correggere gli errori senza richiedere una prestazione impeccabile per sentirti adeguato."},
+        {"livello": "MEDIUM", "descrizione": "Alcuni compiti visibili o importanti possono portarti a controllare molto, rimandare o investire più energie del necessario."},
+        {"livello": "HIGH", "descrizione": "Le risposte indicano pressione frequente verso prestazioni quasi perfette, con sovrapreparazione, controlli ripetuti o evitamento usati per proteggerti dal timore di fallire."}
+      ]
+    },
+    {
+      "area_code": "impatto",
+      "nome_area": "Confronto, feedback e impatto sulle opportunità",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Confronto e feedback sembrano generalmente lasciarti spazio per partecipare, presentare i risultati e cogliere opportunità compatibili con la tua esperienza."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni contesti i dubbi possono rendere più difficile valorizzare feedback positivi, mostrarti o accettare opportunità prima di sentirti del tutto pronto."},
+        {"livello": "HIGH", "descrizione": "Le risposte mostrano un impatto frequente su partecipazione e opportunità, con confronti sfavorevoli, minimizzazione dei risultati e possibile rinuncia o sovraccarico."}
+      ]
+    }
+  ],
+  "composizione_risultato": {
+    "analisi_generale": "Viene selezionato un blocco LOW, MIXED, FOCUSED o BROAD.",
+    "analisi_specifiche": "Viene selezionato un testo LOW, MEDIUM o HIGH per ciascuna delle quattro aree.",
+    "ordine_schede": "Le aree sono ordinate dalla media più alta alla più bassa; vengono mostrate prima le esperienze riferite con maggiore frequenza. Sono visibili nome, testo e barra, ma non livelli, soglie o punteggi numerici.",
+    "limite": "Il risultato non misura la competenza, non distingue automaticamente autovalutazioni distorte da lacune reali e non può stabilire quanto il vissuto dipenda dalla persona oppure da esclusione, discriminazione o caratteristiche dell'ambiente."
+  }
+}

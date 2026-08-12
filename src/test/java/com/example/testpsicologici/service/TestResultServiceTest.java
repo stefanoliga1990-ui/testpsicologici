@@ -510,10 +510,51 @@ class TestResultServiceTest {
     }
 
     @Test
+    void impostorPhenomenonTestIsLoadedWithTwentyFourQuestionsAndSpecificLabels() {
+        PsychologicalTest test = catalogue.findById("sindrome-impostore");
+
+        assertThat(test.title()).isEqualTo("Sindrome dell'impostore");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).hasSize(4);
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.introductoryText()).contains("fenomeno dell'impostore", "non è una diagnosi", "discriminazione", "non misura la tua competenza reale");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze di impostore");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
+    }
+
+    @Test
+    void impostorPhenomenonFocusedProfileShowsTheMostRelevantAreaFirst() {
+        TestResult result = analyzeWithAnswersForTest("sindrome-impostore", 1, 5, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Un meccanismo dell'impostore emerge con chiarezza");
+        assertThat(result.areaResults()).hasSize(4);
+        assertThat(result.areaResults().get(0).title()).isEqualTo("Dubbi di competenza e paura di essere smascherati");
+        assertThat(result.areaResults().get(0).description()).contains("paura frequente di essere smascherato");
+        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+        assertThat(result.general().detail()).contains("non misura la competenza effettiva");
+    }
+
+    @Test
+    void impostorPhenomenonLowAndBroadProfilesFollowTheGeneralRules() {
+        TestResult low = analyzeWithAnswersForTest("sindrome-impostore", 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("sindrome-impostore", 5, 5, 5, 5);
+
+        assertThat(low.general().title()).isEqualTo("Successi e competenze generalmente riconosciuti");
+        assertThat(low.general().detail()).contains("ruolo nuovo");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.general().title()).isEqualTo("Il vissuto dell'impostore è presente in più aree");
+        assertThat(broad.general().detail()).contains("esclusione o discriminazione", "non diagnostico", "non stabilisce quanto sei competente");
+        assertThat(broad.percentage()).isEqualTo(100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

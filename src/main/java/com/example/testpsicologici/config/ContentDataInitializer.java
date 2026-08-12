@@ -50,6 +50,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedGeneralizedAnxietyInformationTest();
         seedDepressedMoodInformationTest();
         seedPeoplePleasingInformationTest();
+        seedImpostorPhenomenonInformationTest();
     }
 
     private void seedAutismInformationTest() {
@@ -1081,6 +1082,86 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "La cura degli altri sembra generalmente convivere con attenzione alle tue energie, responsabilità e priorità personali.",
                 "In alcuni periodi potresti assumerti più responsabilità del necessario e rimandare recupero o obiettivi per occuparti degli altri.",
                 "Le risposte mostrano una sovraresponsabilità frequente verso bisogni ed emozioni altrui, con possibile trascuratezza di te, esaurimento o risentimento.");
+    }
+
+    private void seedImpostorPhenomenonInformationTest() {
+        String id = "sindrome-impostore";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Sindrome dell'impostore",
+                "Autovalutazione informativa",
+                "Un questionario per riflettere su successi, dubbi di competenza, pressione da prestazione e opportunità.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. L'espressione comune “sindrome dell'impostore” indica ciò che nella letteratura scientifica è spesso chiamato fenomeno dell'impostore: non è una diagnosi né un disturbo riconosciuto e questo questionario non è uno strumento clinico o validato. Rispondi pensando agli ultimi mesi e ai contesti di studio, lavoro o responsabilità per te significativi. Il risultato descrive la frequenza di alcune esperienze soggettive, non misura la tua competenza reale. Dubbi e bisogno di preparazione possono essere appropriati quando un ruolo è nuovo, mancano conoscenze o le aspettative non sono chiare. Esclusione, discriminazione, scarsa rappresentazione, feedback ambigui e ambienti molto competitivi possono inoltre creare o amplificare il senso di non appartenenza: non tutto va attribuito alla persona. Se questi vissuti limitano opportunità, riposo o benessere, puoi parlarne con uno psicologo o psicoterapeuta qualificato.",
+                version, false,
+                "Frequenza complessiva delle esperienze di impostore",
+                "Frequenza delle esperienze",
+                true, 14));
+
+        saveArea(id, "attribuzione", "Attribuzione dei successi e riconoscimento delle capacità", 1);
+        saveArea(id, "esposizione", "Dubbi di competenza e paura di essere smascherati", 2);
+        saveArea(id, "prestazione", "Pressione, perfezionismo e sovrapreparazione", 3);
+        saveArea(id, "impatto", "Confronto, feedback e impatto sulle opportunità", 4);
+
+        saveQuestions(id, List.of(
+                q("attribuzione", "Dopo un buon risultato penso di aver avuto fortuna o condizioni favorevoli più che capacità."),
+                q("attribuzione", "Considero complimenti e riconoscimenti più come gentilezza altrui che come riscontri attendibili sul mio lavoro."),
+                q("attribuzione", "Quando valuto la mia competenza, fatico a tenere presenti i risultati positivi già ottenuti."),
+                q("attribuzione", "Un successo mi dà sollievo sul momento, ma non aumenta la fiducia con cui affronto il compito successivo."),
+                q("attribuzione", "Ridimensiono il mio contributo e sottolineo l'aiuto ricevuto anche quando il mio apporto è stato importante."),
+                q("attribuzione", "Quando raggiungo un obiettivo difficile, alzo subito lo standard invece di riconoscere ciò che ho saputo fare."),
+                q("esposizione", "Temo che gli altri scoprano che so o valgo meno di quanto pensano."),
+                q("esposizione", "Ho la sensazione di aver dato un'immagine eccessiva delle mie capacità, anche senza aver cercato di ingannare nessuno."),
+                q("esposizione", "Davanti a una nuova responsabilità mi chiedo se merito davvero il ruolo o l'opportunità ricevuta."),
+                q("esposizione", "Evito di fare domande o chiedere chiarimenti per paura di apparire incompetente."),
+                q("esposizione", "Interpreto una normale incertezza come prova del fatto che non dovrei trovarmi in quel contesto."),
+                q("esposizione", "Mi sento fuori posto tra persone che considero competenti, anche quando ho qualifiche o risultati confrontabili."),
+                q("prestazione", "Mi preparo molto oltre ciò che il compito richiede per ridurre il rischio che emergano mie presunte mancanze."),
+                q("prestazione", "Rimando l'inizio o la consegna di un lavoro perché temo che il risultato non sia abbastanza buono."),
+                q("prestazione", "Un piccolo errore mi sembra una prova generale della mia scarsa competenza."),
+                q("prestazione", "Fatico a considerare concluso un compito perché continuo a controllarlo o perfezionarlo."),
+                q("prestazione", "Solo un risultato quasi impeccabile mi sembra una conferma sufficiente di essere all'altezza."),
+                q("prestazione", "Quando la mia prestazione sarà visibile agli altri, alterno sovraccarico di lavoro ed evitamento."),
+                q("impatto", "Confronto i miei dubbi interiori con la sicurezza che gli altri mostrano all'esterno."),
+                q("impatto", "Svaluto i feedback positivi e resto concentrato soprattutto su quelli negativi o ambigui."),
+                q("impatto", "Rinuncio a candidarmi, espormi o assumere un'opportunità finché non mi sento completamente pronto."),
+                q("impatto", "Quando devo presentare le mie capacità o i miei risultati, tendo a minimizzarli."),
+                q("impatto", "Un successo aumenta soprattutto la pressione a mantenere le aspettative, invece della soddisfazione."),
+                q("impatto", "I dubbi sul mio valore riducono la partecipazione, le decisioni, il riposo o il piacere per ciò che faccio.")));
+
+        saveGlobal(id, "LOW", "Successi e competenze generalmente riconosciuti",
+                "Nel complesso hai indicato una presenza contenuta delle esperienze associate al fenomeno dell'impostore.",
+                "Sembri riuscire generalmente a integrare risultati e feedback nella valutazione delle tue capacità, mantenendo i dubbi in proporzione al contesto. Questo non dimostra una competenza assoluta né esclude incertezze normali, soprattutto quando stai imparando o affrontando un ruolo nuovo.");
+        saveGlobal(id, "MIXED", "Dubbi che emergono in alcuni contesti",
+                "Le risposte descrivono esperienze variabili, più frequenti davanti ad alcune persone, compiti o passaggi di ruolo.",
+                "Potresti riconoscere le tue capacità in molte situazioni ma dubitarne quando aumentano visibilità, confronto, novità o ambiguità del feedback. Distinguere i contesti può aiutare a separare ciò che richiede apprendimento da ciò che nasce da standard rigidi, scarsa appartenenza o difficoltà a interiorizzare i risultati.");
+        saveGlobal(id, "FOCUSED", "Un meccanismo dell'impostore emerge con chiarezza",
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
+                "Il profilo invita a osservare dove si concentra il costo: attribuzione dei successi, paura di essere smascherati, pressione da prestazione oppure rinuncia a opportunità. Il risultato non misura la competenza effettiva e va letto insieme a esperienza reale, qualità dei feedback e caratteristiche dell'ambiente.");
+        saveGlobal(id, "BROAD", "Il vissuto dell'impostore è presente in più aree",
+                "Le risposte indicano esperienze frequenti e diffuse nel modo di leggere risultati, competenza, prestazione e opportunità.",
+                "Questo schema può rendere difficile riconoscere prove di capacità, accettare una normale quota di apprendimento e partecipare senza sovraccaricarti. Se alimenta ansia, evitamento, esaurimento o rinunce importanti, un confronto professionale può aiutarti. Considera anche fattori reali come aspettative poco chiare, feedback inadeguati, esclusione o discriminazione: il risultato resta informativo, non diagnostico e non stabilisce quanto sei competente.");
+
+        saveAreaInsights(id, "attribuzione",
+                "Sembri generalmente capace di riconoscere il tuo contributo e usare successi e feedback come informazioni credibili sulle tue capacità.",
+                "In alcune situazioni potresti attribuire risultati a fortuna, circostanze o aiuto altrui, rendendo meno stabile la fiducia costruita con l'esperienza.",
+                "Le risposte indicano una difficoltà frequente a interiorizzare i successi, con tendenza a ridimensionare capacità e contributo personale anche davanti a riscontri positivi.");
+        saveAreaInsights(id, "esposizione",
+                "Dubbi e lacune sembrano generalmente compatibili con l'apprendimento, senza trasformarsi nella paura stabile di essere scoperto come inadeguato.",
+                "Ruoli nuovi, valutazioni o persone considerate molto competenti possono attivare il timore di non meritare il posto o di mostrare limiti.",
+                "Le risposte descrivono una paura frequente di essere smascherato come meno competente di quanto gli altri credano, con possibile difficoltà a chiedere chiarimenti o sentirti legittimato nel ruolo.");
+        saveAreaInsights(id, "prestazione",
+                "Sembri generalmente capace di prepararti e correggere gli errori senza richiedere una prestazione impeccabile per sentirti adeguato.",
+                "Alcuni compiti visibili o importanti possono portarti a controllare molto, rimandare o investire più energie del necessario.",
+                "Le risposte indicano pressione frequente verso prestazioni quasi perfette, con sovrapreparazione, controlli ripetuti o evitamento usati per proteggerti dal timore di fallire.");
+        saveAreaInsights(id, "impatto",
+                "Confronto e feedback sembrano generalmente lasciarti spazio per partecipare, presentare i risultati e cogliere opportunità compatibili con la tua esperienza.",
+                "In alcuni contesti i dubbi possono rendere più difficile valorizzare feedback positivi, mostrarti o accettare opportunità prima di sentirti del tutto pronto.",
+                "Le risposte mostrano un impatto frequente su partecipazione e opportunità, con confronti sfavorevoli, minimizzazione dei risultati e possibile rinuncia o sovraccarico.");
     }
 
     private boolean requiresSeed(String testId, String version) {
