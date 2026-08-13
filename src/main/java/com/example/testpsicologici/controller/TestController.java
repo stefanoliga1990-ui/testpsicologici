@@ -4,6 +4,7 @@ import com.example.testpsicologici.model.PsychologicalTest;
 import com.example.testpsicologici.model.TestAttempt;
 import com.example.testpsicologici.model.TestResult;
 import com.example.testpsicologici.service.TestCatalogue;
+import com.example.testpsicologici.service.GuideCatalogue;
 import com.example.testpsicologici.service.PdfResultService;
 import com.example.testpsicologici.service.SiteUrlService;
 import com.example.testpsicologici.service.TestResultService;
@@ -38,13 +39,16 @@ public class TestController {
     private final TestResultService resultService;
     private final PdfResultService pdfResultService;
     private final SiteUrlService siteUrlService;
+    private final GuideCatalogue guideCatalogue;
 
     public TestController(TestCatalogue catalogue, TestResultService resultService,
-                          PdfResultService pdfResultService, SiteUrlService siteUrlService) {
+                          PdfResultService pdfResultService, SiteUrlService siteUrlService,
+                          GuideCatalogue guideCatalogue) {
         this.catalogue = catalogue;
         this.resultService = resultService;
         this.pdfResultService = pdfResultService;
         this.siteUrlService = siteUrlService;
+        this.guideCatalogue = guideCatalogue;
     }
 
     @GetMapping("/")
@@ -58,6 +62,7 @@ public class TestController {
     @GetMapping("/test/{testId}")
     public String introduction(@PathVariable String testId, HttpServletRequest request, Model model) {
         model.addAttribute("test", findTest(testId));
+        model.addAttribute("guide", guideCatalogue.findByTestId(testId).orElse(null));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/test/" + testId));
         model.addAttribute("projectUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
         model.addAttribute("methodUrl", siteUrlService.canonicalUrl(request, "/metodo-e-fonti"));

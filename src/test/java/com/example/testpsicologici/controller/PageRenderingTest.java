@@ -53,6 +53,7 @@ class PageRenderingTest {
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("data-test-card")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
                         "href=\"/test/tratti-autistici-adulti\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti\"")))
                 .andExpect(content().string(containsString("href=\"/metodo-e-fonti\"")))
                 .andExpect(content().string(containsString("href=\"/il-progetto\"")));
     }
@@ -79,11 +80,13 @@ class PageRenderingTest {
         mockMvc.perform(get("/metodo-e-fonti"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString(
-                        "<title>Metodo e fonti dei questionari | Spazio Test</title>")))
-                .andExpect(content().string(containsString("Come nasce un questionario")))
+                        "<title>Metodo e fonti di questionari e guide | Spazio Test</title>")))
+                .andExpect(content().string(containsString("Come nasce un contenuto")))
                 .andExpect(content().string(containsString("Fonti per ogni questionario")))
                 .andExpect(content().string(containsString("ADHD nell&#39;adulto: tratti associati")))
                 .andExpect(content().string(containsString("ADHD in adults — NHS")))
+                .andExpect(content().string(containsString("Riferimenti delle guide")))
+                .andExpect(content().string(containsString("Signs of autism in adults — NHS")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -96,6 +99,56 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Uno spazio per osservarti con più chiarezza")))
                 .andExpect(content().string(containsString("A cura di Spazio Test")))
                 .andExpect(content().string(containsString("href=\"/metodo-e-fonti\"")));
+    }
+
+    @Test
+    void guideIndexListsOnlyPublishedGuides() throws Exception {
+        mockMvc.perform(get("/approfondimenti"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Approfondimenti su psicologia e benessere | Spazio Test</title>")))
+                .andExpect(content().string(containsString("Un argomento alla volta")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/autismo-adulti\"")))
+                .andExpect(content().string(containsString("Autismo nell&#39;adulto")));
+    }
+
+    @Test
+    void autismGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/autismo-adulti"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Autismo negli adulti: caratteristiche e segnali | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/autismo-adulti\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è l&#39;autismo")))
+                .andExpect(content().string(containsString("Come può manifestarsi nell&#39;adulto")))
+                .andExpect(content().string(containsString("Singole caratteristiche non bastano per una diagnosi")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Signs of autism in adults — NHS")))
+                .andExpect(content().string(containsString("href=\"/test/tratti-autistici-adulti\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
+    void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
+        mockMvc.perform(get("/test/tratti-autistici-adulti"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/autismo-adulti\"")));
+
+        mockMvc.perform(get("/test/tratti-adhd-adulti"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(org.hamcrest.Matchers.not(
+                        containsString("Approfondisci l'argomento"))));
+    }
+
+    @Test
+    void unknownGuideReturnsNotFound() throws Exception {
+        mockMvc.perform(get("/approfondimenti/non-esiste"))
+                .andExpect(status().isNotFound());
     }
 
     @Test
@@ -127,6 +180,9 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("http://localhost/metodo-e-fonti")))
                 .andExpect(content().string(containsString("http://localhost/il-progetto")))
+                .andExpect(content().string(containsString("http://localhost/approfondimenti")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/autismo-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))

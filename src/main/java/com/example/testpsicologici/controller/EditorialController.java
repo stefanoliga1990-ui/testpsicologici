@@ -2,6 +2,7 @@ package com.example.testpsicologici.controller;
 
 import com.example.testpsicologici.service.SiteUrlService;
 import com.example.testpsicologici.service.TestCatalogue;
+import com.example.testpsicologici.service.GuideCatalogue;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,15 +13,19 @@ public class EditorialController {
 
     private final TestCatalogue catalogue;
     private final SiteUrlService siteUrlService;
+    private final GuideCatalogue guideCatalogue;
 
-    public EditorialController(TestCatalogue catalogue, SiteUrlService siteUrlService) {
+    public EditorialController(TestCatalogue catalogue, SiteUrlService siteUrlService,
+                               GuideCatalogue guideCatalogue) {
         this.catalogue = catalogue;
         this.siteUrlService = siteUrlService;
+        this.guideCatalogue = guideCatalogue;
     }
 
     @GetMapping("/metodo-e-fonti")
     public String methodAndSources(HttpServletRequest request, Model model) {
         model.addAttribute("tests", catalogue.findAll());
+        model.addAttribute("guides", guideCatalogue.findAll());
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/metodo-e-fonti"));
         model.addAttribute("siteUrl", siteUrlService.canonicalUrl(request, "/"));
         model.addAttribute("projectUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
