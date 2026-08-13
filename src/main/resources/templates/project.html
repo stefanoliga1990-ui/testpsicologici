@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scopri il progetto editoriale Spazio Test, i suoi obiettivi e i principi con cui rende l'auto-osservazione più chiara e accessibile.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <title>Il progetto | Spazio Test</title>
+    <link rel="canonical" th:href="${canonicalUrl}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="Spazio Test">
+    <meta property="og:title" content="Il progetto | Spazio Test">
+    <meta property="og:description" content="Obiettivi e principi del progetto editoriale Spazio Test.">
+    <meta property="og:url" th:content="${canonicalUrl}">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='editorial-trust-1')}">
+    <script type="application/ld+json" th:inline="javascript">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Il progetto Spazio Test",
+      "description": "Obiettivi e principi del progetto editoriale Spazio Test.",
+      "url": /*[[${canonicalUrl}]]*/ "https://example.com/il-progetto",
+      "inLanguage": "it-IT",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Spazio Test",
+        "url": /*[[${siteUrl}]]*/ "https://example.com/"
+      }
+    }
+    </script>
+</head>
+<body class="editorial-body">
+<main class="editorial-shell project-shell">
+    <nav class="site-nav" aria-label="Navigazione principale">
+        <a class="brand" th:href="@{/}"><span class="brand-mark">✦</span> Spazio Test</a>
+        <div class="nav-links"><a th:href="@{/metodo-e-fonti}">Metodo e fonti</a><a th:href="@{/}">Tutti i test</a></div>
+    </nav>
+
+    <header class="editorial-hero project-hero">
+        <p class="eyebrow">Il progetto</p>
+        <h1>Uno spazio per osservarti con più chiarezza</h1>
+        <p>Spazio Test è un progetto editoriale indipendente nato per rendere più accessibile l'auto-osservazione attraverso questionari chiari, documentati e rispettosi della complessità delle esperienze personali.</p>
+    </header>
+
+    <section class="project-manifesto">
+        <article class="project-statement">
+            <p class="eyebrow">Perché esiste</p>
+            <h2>Comprendere, senza etichettare</h2>
+            <p>Riconoscere con quale frequenza viviamo alcune esperienze può aiutarci a descriverle meglio. Spazio Test offre un punto di partenza semplice e privato: non assegna identità, non definisce il valore di una persona e non trasforma un risultato in una diagnosi.</p>
+        </article>
+        <div class="project-values">
+            <article><span aria-hidden="true">✦</span><h3>Chiarezza</h3><p>Domande comprensibili, risultati leggibili e limiti dichiarati in modo diretto.</p></article>
+            <article><span aria-hidden="true">✦</span><h3>Documentazione</h3><p>Fonti consultabili per comprendere da dove provengono i temi esplorati.</p></article>
+            <article><span aria-hidden="true">✦</span><h3>Rispetto</h3><p>Un linguaggio non giudicante, attento al contesto e alle differenze individuali.</p></article>
+            <article><span aria-hidden="true">✦</span><h3>Accessibilità</h3><p>Percorsi brevi e gratuiti, disponibili senza creare un account.</p></article>
+        </div>
+    </section>
+
+    <section class="project-method-cta">
+        <div>
+            <p class="eyebrow">Trasparenza</p>
+            <h2>Il metodo è parte del progetto</h2>
+            <p>Per ogni questionario rendiamo disponibili i riferimenti principali e spieghiamo come vengono costruite domande e restituzioni.</p>
+        </div>
+        <a class="button button-light" th:href="@{/metodo-e-fonti}">Scopri metodo e fonti <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="editorial-responsibility">
+        <p class="eyebrow">Responsabilità editoriale</p>
+        <h2>A cura di Spazio Test</h2>
+        <p>I contenuti sono pubblicati sotto la responsabilità editoriale di Spazio Test. Il progetto mantiene distinti i questionari informativi dagli strumenti clinici e invita a rivolgersi a professionisti qualificati quando un'esperienza causa sofferenza, limita la vita quotidiana o richiede una valutazione individuale.</p>
+    </section>
+
+    <div th:replace="~{fragments/site-footer :: siteFooter}"></div>
+</main>
+</body>
+</html>

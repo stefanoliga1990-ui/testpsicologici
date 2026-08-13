@@ -32,6 +32,8 @@ class TestResultServiceTest {
         assertThat(test.seoTitle()).startsWith("Test autismo adulti online");
         assertThat(test.seoDescription()).contains("senza registrazione");
         assertThat(test.references()).hasSize(2);
+        assertThat(test.references()).allSatisfy(reference ->
+                assertThat(reference.contribution()).isNotBlank());
     }
 
     @Test

@@ -51,6 +51,7 @@ public class TestController {
     public String home(HttpServletRequest request, Model model) {
         model.addAttribute("tests", catalogue.findAll());
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/"));
+        model.addAttribute("projectUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
         return "home";
     }
 
@@ -58,6 +59,8 @@ public class TestController {
     public String introduction(@PathVariable String testId, HttpServletRequest request, Model model) {
         model.addAttribute("test", findTest(testId));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/test/" + testId));
+        model.addAttribute("projectUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
+        model.addAttribute("methodUrl", siteUrlService.canonicalUrl(request, "/metodo-e-fonti"));
         return "test-introduction";
     }
 

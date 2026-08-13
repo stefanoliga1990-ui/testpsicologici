@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='editorial-trust-1')}">
     <script type="application/ld+json" th:inline="javascript">
     {
       "@context": "https://schema.org",
@@ -30,6 +30,11 @@
       "isPartOf": {
         "@type": "WebSite",
         "name": "Spazio Test"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Spazio Test",
+        "url": /*[[${projectUrl}]]*/ "https://example.com/il-progetto"
       }
     }
     </script>
@@ -44,6 +49,7 @@
         <p class="eyebrow" th:text="${test.eyebrow}">Autovalutazione informativa</p>
         <h1 th:text="${test.title}">Tratti autistici nell'adulto</h1>
         <p class="intro-description" th:text="${test.description}">Un esercizio di auto-osservazione.</p>
+        <a class="editorial-byline" th:href="@{/il-progetto}">A cura di Spazio Test</a>
         <div class="intro-facts"><span th:text="${test.duration}">6 min · 24 domande</span><span>Nessun account richiesto</span></div>
         <div class="notice-box">
             <span aria-hidden="true">i</span>
@@ -84,7 +90,7 @@
             </div>
             <div>
                 <p>Le domande sono originali e costruite per finalità informative a partire dai temi descritti nelle fonti consultate. Non riproducono né sostituiscono un test psicologico validato o una valutazione condotta da un professionista.</p>
-                <p th:text="|Versione editoriale ${test.version}. Le soglie e i testi del risultato servono esclusivamente a comporre una restituzione comprensibile.|">Versione editoriale del questionario.</p>
+                <p>Le soglie e i testi del risultato servono esclusivamente a comporre una restituzione comprensibile. <a th:href="@{/metodo-e-fonti}">Scopri il metodo editoriale</a>.</p>
             </div>
         </section>
 
@@ -94,11 +100,13 @@
             <ul>
                 <li th:each="reference : ${test.references}">
                     <a th:href="${reference.url}" th:text="${reference.title}" target="_blank" rel="noopener noreferrer">Fonte autorevole</a>
+                    <p th:text="${reference.contribution}">Contributo della fonte alla costruzione editoriale.</p>
                 </li>
             </ul>
-            <p>Le fonti orientano la struttura editoriale e il linguaggio del questionario; non ne costituiscono una validazione psicometrica.</p>
+            <p>Le fonti orientano la struttura editoriale e il linguaggio del questionario; non ne costituiscono una validazione psicometrica. Consulta anche la pagina completa su <a th:href="@{/metodo-e-fonti}">metodo e fonti</a>.</p>
         </section>
     </section>
+    <div th:replace="~{fragments/site-footer :: siteFooter}"></div>
 </main>
 </body>
 </html>

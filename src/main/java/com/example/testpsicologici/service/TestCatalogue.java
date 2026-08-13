@@ -26,15 +26,18 @@ public class TestCatalogue {
     private final TestQuestionRepository questionRepository;
     private final TestReferenceRepository referenceRepository;
     private final InterpretationRepository interpretationRepository;
+    private final ReferenceContributionCatalogue referenceContributionCatalogue;
 
     public TestCatalogue(TestDefinitionRepository testRepository, TestAreaRepository areaRepository,
                          TestQuestionRepository questionRepository, TestReferenceRepository referenceRepository,
-                         InterpretationRepository interpretationRepository) {
+                         InterpretationRepository interpretationRepository,
+                         ReferenceContributionCatalogue referenceContributionCatalogue) {
         this.testRepository = testRepository;
         this.areaRepository = areaRepository;
         this.questionRepository = questionRepository;
         this.referenceRepository = referenceRepository;
         this.interpretationRepository = interpretationRepository;
+        this.referenceContributionCatalogue = referenceContributionCatalogue;
     }
 
     public List<PsychologicalTest> findAll() {
@@ -66,7 +69,8 @@ public class TestCatalogue {
                 .map(question -> new TestQuestion(question.getText(), question.getAreaCode()))
                 .toList();
         List<TestReference> references = referenceRepository.findByTestIdOrderByDisplayOrderAsc(entity.getId()).stream()
-                .map(reference -> new TestReference(reference.getTitle(), reference.getUrl()))
+                .map(reference -> new TestReference(reference.getTitle(), reference.getUrl(),
+                        referenceContributionCatalogue.findByUrl(reference.getUrl())))
                 .toList();
         return new PsychologicalTest(
                 entity.getId(), entity.getTitle(), entity.getSeoTitle(), entity.getEyebrow(),

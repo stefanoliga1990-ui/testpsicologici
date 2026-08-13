@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scopri come vengono realizzati i questionari di Spazio Test, quali fonti istituzionali e scientifiche vengono consultate e come interpretare i risultati.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <title>Metodo e fonti dei questionari | Spazio Test</title>
+    <link rel="canonical" th:href="${canonicalUrl}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="Spazio Test">
+    <meta property="og:title" content="Metodo e fonti dei questionari | Spazio Test">
+    <meta property="og:description" content="Il processo editoriale, i criteri di selezione delle fonti e i limiti dei questionari di Spazio Test.">
+    <meta property="og:url" th:content="${canonicalUrl}">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='editorial-trust-1')}">
+    <script type="application/ld+json" th:inline="javascript">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Metodo e fonti dei questionari",
+      "description": "Il processo editoriale, i criteri di selezione delle fonti e i limiti dei questionari di Spazio Test.",
+      "url": /*[[${canonicalUrl}]]*/ "https://example.com/metodo-e-fonti",
+      "inLanguage": "it-IT",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Spazio Test",
+        "url": /*[[${siteUrl}]]*/ "https://example.com/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Spazio Test",
+        "url": /*[[${projectUrl}]]*/ "https://example.com/il-progetto"
+      }
+    }
+    </script>
+</head>
+<body class="editorial-body">
+<main class="editorial-shell">
+    <nav class="site-nav" aria-label="Navigazione principale">
+        <a class="brand" th:href="@{/}"><span class="brand-mark">✦</span> Spazio Test</a>
+        <div class="nav-links"><a th:href="@{/il-progetto}">Il progetto</a><a th:href="@{/}">Tutti i test</a></div>
+    </nav>
+
+    <header class="editorial-hero">
+        <p class="eyebrow">Trasparenza editoriale</p>
+        <h1>Metodo e fonti</h1>
+        <p>Spazio Test realizza questionari informativi originali dedicati all'auto-osservazione e al benessere psicologico. Per definire i temi esplorati, le aree e il linguaggio vengono consultate fonti istituzionali, linee guida e pubblicazioni scientifiche pertinenti.</p>
+    </header>
+
+    <section class="editorial-process" aria-labelledby="come-nasce">
+        <div class="editorial-section-heading">
+            <p class="eyebrow">Il processo</p>
+            <h2 id="come-nasce">Come nasce un questionario</h2>
+        </div>
+        <ol class="process-grid">
+            <li><span>01</span><h3>Consultazione</h3><p>Vengono raccolte fonti istituzionali e pubblicazioni utili a comprendere il tema e i suoi limiti.</p></li>
+            <li><span>02</span><h3>Struttura</h3><p>I concetti ricorrenti vengono organizzati in aree chiare, evitando di trasformare singole esperienze in etichette.</p></li>
+            <li><span>03</span><h3>Formulazione</h3><p>Le domande sono scritte in forma originale, con un linguaggio accessibile e orientato alla frequenza delle esperienze.</p></li>
+            <li><span>04</span><h3>Restituzione</h3><p>Le risposte compongono una lettura orientativa che descrive tendenze e aree, senza produrre diagnosi.</p></li>
+        </ol>
+    </section>
+
+    <section class="editorial-principles">
+        <article>
+            <p class="eyebrow">Selezione delle fonti</p>
+            <h2>Riferimenti tracciabili</h2>
+            <p>Vengono privilegiate risorse di enti sanitari e istituzionali, linee guida, università e pubblicazioni scientifiche identificabili tramite riviste, DOI, PubMed o PMC. Le fonti sono collegate direttamente per consentire l'approfondimento.</p>
+        </article>
+        <article>
+            <p class="eyebrow">Interpretazione</p>
+            <h2>Una lettura orientativa</h2>
+            <p>Le barre e le soglie servono a organizzare le risposte in una restituzione comprensibile. Non rappresentano percentili, probabilità diagnostiche, misure di gravità clinica o confronti con una popolazione di riferimento.</p>
+        </article>
+        <article>
+            <p class="eyebrow">Limiti</p>
+            <h2>Contenuti editoriali</h2>
+            <p>Le fonti orientano la struttura e il linguaggio, ma non costituiscono una validazione psicometrica. I questionari non riproducono scale cliniche e non sostituiscono una valutazione individuale.</p>
+        </article>
+    </section>
+
+    <section class="source-library" aria-labelledby="fonti-per-test">
+        <div class="editorial-section-heading source-library-heading">
+            <p class="eyebrow">Bibliografia consultabile</p>
+            <h2 id="fonti-per-test">Fonti per ogni questionario</h2>
+            <p>Ogni riferimento è accompagnato da una breve indicazione del contributo dato alla costruzione editoriale del questionario.</p>
+        </div>
+        <div class="source-test-list">
+            <article class="source-test-group" th:each="test : ${tests}">
+                <div class="source-test-heading">
+                    <div><p class="eyebrow">Questionario</p><h3 th:text="${test.title}">Titolo del questionario</h3></div>
+                    <a th:href="@{/test/{id}(id=${test.id})}">Vai al test <span aria-hidden="true">→</span></a>
+                </div>
+                <ul>
+                    <li th:each="reference : ${test.references}">
+                        <a th:href="${reference.url}" target="_blank" rel="noopener noreferrer" th:text="${reference.title}">Fonte</a>
+                        <p th:text="${reference.contribution}">Contributo della fonte.</p>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <div th:replace="~{fragments/site-footer :: siteFooter}"></div>
+</main>
+</body>
+</html>

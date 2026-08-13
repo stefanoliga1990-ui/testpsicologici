@@ -38,7 +38,9 @@ public class SeoController {
     public ResponseEntity<String> sitemap(HttpServletRequest request) {
         StringBuilder xml = new StringBuilder("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
                 .append("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n")
-                .append(urlEntry(siteUrlService.canonicalUrl(request, "/"), "1.0"));
+                .append(urlEntry(siteUrlService.canonicalUrl(request, "/"), "1.0"))
+                .append(urlEntry(siteUrlService.canonicalUrl(request, "/metodo-e-fonti"), "0.7"))
+                .append(urlEntry(siteUrlService.canonicalUrl(request, "/il-progetto"), "0.6"));
         for (PsychologicalTest test : catalogue.findAll()) {
             xml.append(urlEntry(siteUrlService.canonicalUrl(request, "/test/" + test.id()), "0.8"));
         }

@@ -52,7 +52,9 @@ class PageRenderingTest {
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("id=\"test-search-input\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("data-test-card")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
-                        "href=\"/test/tratti-autistici-adulti\"")));
+                        "href=\"/test/tratti-autistici-adulti\"")))
+                .andExpect(content().string(containsString("href=\"/metodo-e-fonti\"")))
+                .andExpect(content().string(containsString("href=\"/il-progetto\"")));
     }
 
     @Test
@@ -66,7 +68,34 @@ class PageRenderingTest {
                         "href=\"http://localhost/test/tratti-adhd-adulti\"")))
                 .andExpect(content().string(containsString("Che cosa esplora questo questionario")))
                 .andExpect(content().string(containsString("Contenuto editoriale, non scala clinica")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Riferimento informativo per attenzione")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione editoriale"))))
                 .andExpect(content().string(containsString("ADHD in adults — NHS")));
+    }
+
+    @Test
+    void methodPageExplainsProcessAndGroupsSourcesByTest() throws Exception {
+        mockMvc.perform(get("/metodo-e-fonti"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Metodo e fonti dei questionari | Spazio Test</title>")))
+                .andExpect(content().string(containsString("Come nasce un questionario")))
+                .andExpect(content().string(containsString("Fonti per ogni questionario")))
+                .andExpect(content().string(containsString("ADHD nell&#39;adulto: tratti associati")))
+                .andExpect(content().string(containsString("ADHD in adults — NHS")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
+    void projectPagePresentsEditorialPurposeAndResponsibility() throws Exception {
+        mockMvc.perform(get("/il-progetto"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("<title>Il progetto | Spazio Test</title>")))
+                .andExpect(content().string(containsString("Uno spazio per osservarti con più chiarezza")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("href=\"/metodo-e-fonti\"")));
     }
 
     @Test
@@ -96,6 +125,8 @@ class PageRenderingTest {
 
         mockMvc.perform(get("/sitemap.xml"))
                 .andExpect(status().isOk())
+                .andExpect(content().string(containsString("http://localhost/metodo-e-fonti")))
+                .andExpect(content().string(containsString("http://localhost/il-progetto")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
