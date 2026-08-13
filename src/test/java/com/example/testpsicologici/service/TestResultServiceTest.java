@@ -105,7 +105,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
     }
 
     @Test

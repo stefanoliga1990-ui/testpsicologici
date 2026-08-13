@@ -23,7 +23,7 @@ public class ReferenceContributionCatalogue {
                     "Riferimento informativo per attenzione, gestione del tempo, organizzazione, irrequietezza, impazienza e impulsività nell'adulto."),
             entry("https://www.nhs.uk/mental-health/conditions/obsessive-compulsive-disorder-ocd/symptoms/",
                     "Riferimento per distinguere pensieri ossessivi e compulsioni, descrivere il loro ciclo e considerare disagio e interferenza nella vita quotidiana."),
-            entry("https://www.nimh.nih.gov/health/publications/obsessive-compulsive-disorder-when-unwanted-thoughts-take-over",
+            entry("https://www.nimh.nih.gov/health/publications/obsessive-compulsive-disorder-when-unwanted-thoughts-or-repetitive-behaviors-take-over",
                     "Riferimento per pensieri indesiderati, rituali ripetitivi, tempo occupato e impatto sul funzionamento, senza equiparare singole esperienze a una diagnosi."),
             entry("https://socy.umd.edu/about-us/rosenberg-self-esteem-scale",
                     "Riferimento per il costrutto di autostima globale e per la distinzione tra valutazioni positive e negative di sé."),

@@ -89,6 +89,8 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Signs of autism in adults — NHS")))
                 .andExpect(content().string(containsString(
                         "Attention-Deficit/Hyperactivity Disorder: What You Need to Know — NIMH")))
+                .andExpect(content().string(containsString(
+                        "Obsessive-Compulsive Disorder: When Unwanted Thoughts or Repetitive Behaviors Take Over — NIMH")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -113,7 +115,10 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/approfondimenti/autismo-adulti\"")))
                 .andExpect(content().string(containsString("Autismo nell&#39;adulto")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/adhd-adulti\"")))
-                .andExpect(content().string(containsString("ADHD nell&#39;adulto")));
+                .andExpect(content().string(containsString("ADHD nell&#39;adulto")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/disturbo-ossessivo-compulsivo\"")))
+                .andExpect(content().string(containsString("Pensieri ossessivi e compulsioni (DOC)")));
     }
 
     @Test
@@ -158,6 +163,30 @@ class PageRenderingTest {
     }
 
     @Test
+    void obsessiveCompulsiveGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/disturbo-ossessivo-compulsivo"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Disturbo ossessivo-compulsivo (DOC): sintomi | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/disturbo-ossessivo-compulsivo\"")))
+                .andExpect(content().string(containsString("Che cosa sono ossessioni e compulsioni")))
+                .andExpect(content().string(containsString(
+                        "Come può mantenersi il ciclo ossessivo-compulsivo")))
+                .andExpect(content().string(containsString(
+                        "Un pensiero intrusivo non è un&#39;intenzione")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "Symptoms – Obsessive compulsive disorder (OCD) — NHS")))
+                .andExpect(content().string(containsString(
+                        "Obsessive-compulsive disorder and body dysmorphic disorder: treatment — NICE CG31")))
+                .andExpect(content().string(containsString("href=\"/test/tratti-ossessivo-compulsivi\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
     void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -172,6 +201,12 @@ class PageRenderingTest {
                         "href=\"/approfondimenti/adhd-adulti\"")));
 
         mockMvc.perform(get("/test/tratti-ossessivo-compulsivi"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/disturbo-ossessivo-compulsivo\"")));
+
+        mockMvc.perform(get("/test/autostima"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.not(
                         containsString("Approfondisci l'argomento"))));
@@ -217,6 +252,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/autismo-adulti")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/adhd-adulti")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/disturbo-ossessivo-compulsivo")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))

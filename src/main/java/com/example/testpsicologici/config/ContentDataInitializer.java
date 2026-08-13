@@ -229,7 +229,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedObsessiveCompulsiveInformationTest() {
         String id = "tratti-ossessivo-compulsivi";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -246,8 +246,8 @@ public class ContentDataInitializer implements ApplicationRunner {
 
         saveReference(id, "Obsessive compulsive disorder (OCD): symptoms — NHS",
                 "https://www.nhs.uk/mental-health/conditions/obsessive-compulsive-disorder-ocd/symptoms/", 1);
-        saveReference(id, "Obsessive-Compulsive Disorder: When Unwanted Thoughts Take Over — NIMH",
-                "https://www.nimh.nih.gov/health/publications/obsessive-compulsive-disorder-when-unwanted-thoughts-take-over", 2);
+        saveReference(id, "Obsessive-Compulsive Disorder: When Unwanted Thoughts or Repetitive Behaviors Take Over — NIMH",
+                "https://www.nimh.nih.gov/health/publications/obsessive-compulsive-disorder-when-unwanted-thoughts-or-repetitive-behaviors-take-over", 2);
 
         saveArea(id, "intrusioni", "Pensieri intrusivi, dubbio e bisogno di certezza", 1);
         saveArea(id, "contaminazione", "Contaminazione, pulizia ed evitamento", 2);
