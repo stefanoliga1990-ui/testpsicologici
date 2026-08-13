@@ -320,6 +320,85 @@ public class GuideCatalogue {
                                     "Riferimento per oscillazioni comuni, possibili influenze, evitamento, autocritica, assertività, obiettivi graduali e possibilità di ricorrere a un supporto professionale."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "dipendenza-affettiva",
+                    "dipendenza-affettiva",
+                    "Dipendenza affettiva",
+                    "Dipendenza affettiva: segnali, confini e autonomia",
+                    "Dipendenza affettiva: segnali e relazioni | Spazio Test",
+                    "Una guida concisa alla dipendenza affettiva: paura dell'abbandono, rassicurazione, autonomia, confini, attaccamento e differenza tra difficoltà relazionali e violenza.",
+                    "L'espressione “dipendenza affettiva” viene usata per descrivere dinamiche in cui la relazione assume una centralità rigida e il bisogno dell'altra persona limita autonomia, benessere o capacità di proteggere i propri confini. Non esiste però una definizione diagnostica condivisa: è più utile osservare esperienze, contesto e conseguenze concrete che applicare un'etichetta.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cosa si intende per dipendenza affettiva",
+                                    List.of(
+                                            "Nella letteratura si incontrano espressioni come dipendenza affettiva, dipendenza emotiva e love addiction. Il costrutto è ancora eterogeneo e non dispone di criteri diagnostici ufficiali condivisi; un questionario online non può quindi stabilire la presenza di un disturbo.",
+                                            "Il termine può comunque aiutare a parlare di pattern relazionali che persistono nonostante sofferenza, rinunce o conseguenze negative, purché non trasformi il normale bisogno di vicinanza in qualcosa di automaticamente patologico."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Relazioni",
+                                    "Legame e interdipendenza non significano perdere sé stessi",
+                                    List.of(
+                                            "Avere bisogno di affetto, sostegno e rassicurazione è parte delle relazioni. In un'interdipendenza equilibrata, vicinanza e reciprocità possono convivere con interessi, amicizie, decisioni e spazi personali.",
+                                            "Una dinamica può diventare limitante quando la paura della separazione domina le scelte, il proprio valore dipende quasi interamente dall'altro o preservare il rapporto richiede rinunce continue e la soppressione dei propri bisogni."
+                                    ),
+                                    List.of(
+                                            "Cercare conferme continue o vivere distanze e ritardi come segnali di abbandono.",
+                                            "Ridurre interessi, amicizie, obiettivi o autonomia per mantenere la relazione.",
+                                            "Faticare a dire no, esprimere bisogni o riconoscere mancanze di reciprocità.",
+                                            "Sentire che umore, stabilità e identità dipendono quasi interamente dalla disponibilità dell'altra persona."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Il ruolo dell'attaccamento",
+                                    List.of(
+                                            "Una revisione sistematica ha rilevato una relazione tra le misure di love addiction e l'attaccamento ansioso, che può comprendere paura dell'abbandono e intenso bisogno di rassicurazione. Si tratta di un'associazione statistica, non di una causa certa né di una diagnosi individuale.",
+                                            "Storia personale, autostima, esperienze relazionali, stress e caratteristiche della relazione attuale possono intrecciarsi in modi diversi. Riconoscere un pattern di attaccamento non significa essere destinati a ripeterlo: nuove esperienze e un percorso di consapevolezza possono modificare il modo di vivere i legami."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Sicurezza",
+                                    "Dipendenza relazionale, controllo e violenza non sono la stessa cosa",
+                                    List.of(
+                                            "Paura della perdita e difficoltà nei confini descrivono l'esperienza di chi risponde; minacce, umiliazioni, isolamento imposto, controllo economico, sessuale o digitale e violenza descrivono invece comportamenti dell'altra persona. Nessuna dinamica di dipendenza rende qualcuno responsabile della violenza che subisce.",
+                                            "Questo questionario non può riconoscere o valutare una situazione abusante. Se temi per la tua sicurezza, cerca supporto senza esporti a ulteriori rischi. In Italia il 1522 offre gratuitamente, ogni giorno e a ogni ora, ascolto e orientamento alle donne vittime di violenza e stalking; in caso di pericolo immediato contatta i servizi di emergenza."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto",
+                                    "Quando può essere utile chiedere un confronto",
+                                    List.of(
+                                            "Può essere utile parlare con uno psicologo o psicoterapeuta se la relazione occupa quasi tutto lo spazio mentale, provoca isolamento o rinunce importanti, rende difficile proteggere bisogni e confini oppure continua a causare sofferenza pur sembrando impossibile allontanarsi.",
+                                            "Un percorso non serve ad assegnare colpe o a imporre una decisione sulla relazione. Può aiutare a comprendere i meccanismi coinvolti, rafforzare autonomia e rete personale, riconoscere i propri bisogni e costruire modi più flessibili e sicuri di stare in relazione."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, paura della separazione e bisogno di rassicurazione, autonomia e interessi personali, confini e reciprocità, regolazione emotiva e centralità della relazione. Non formula diagnosi, non definisce se una relazione sia sana e non rileva abusi o violenza.",
+                    List.of(
+                            new GuideReference(
+                                    "I disturbi da addiction nelle dipendenze non legate a sostanze — Ministero della Salute",
+                                    "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_3313_allegato.pdf",
+                                    "Documento del Consiglio Superiore di Sanità consultato per l'inquadramento della cosiddetta love addiction tra le dipendenze comportamentali emergenti e per le dinamiche di centralità, persistenza e conseguenze negative."
+                            ),
+                            new GuideReference(
+                                    "Conceptualizing love addiction within the attachment perspective — Cavalli e colleghi",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12284683/",
+                                    "Revisione sistematica e meta-analisi consultata per l'assenza di una definizione condivisa, l'eterogeneità del costrutto e l'associazione tra love addiction e dimensioni dell'attaccamento insicuro."
+                            ),
+                            new GuideReference(
+                                    "Il 1522 — Dipartimento per le Pari Opportunità",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Riferimento istituzionale per il servizio pubblico gratuito di ascolto e orientamento dedicato alle donne vittime di violenza e stalking, attivo ogni giorno e a ogni ora."
+                            )
+                    )
             )
     );
 

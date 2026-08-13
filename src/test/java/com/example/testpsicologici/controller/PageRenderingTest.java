@@ -92,6 +92,8 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Obsessive-Compulsive Disorder: When Unwanted Thoughts or Repetitive Behaviors Take Over — NIMH")))
                 .andExpect(content().string(containsString("Raising low self-esteem — NHS")))
+                .andExpect(content().string(containsString(
+                        "Il 1522 — Dipartimento per le Pari Opportunità")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -121,7 +123,10 @@ class PageRenderingTest {
                         "href=\"/approfondimenti/disturbo-ossessivo-compulsivo\"")))
                 .andExpect(content().string(containsString("Pensieri ossessivi e compulsioni (DOC)")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/autostima\"")))
-                .andExpect(content().string(containsString("<h3>Autostima</h3>")));
+                .andExpect(content().string(containsString("<h3>Autostima</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/dipendenza-affettiva\"")))
+                .andExpect(content().string(containsString("<h3>Dipendenza affettiva</h3>")));
     }
 
     @Test
@@ -213,6 +218,32 @@ class PageRenderingTest {
     }
 
     @Test
+    void emotionalDependenceGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/dipendenza-affettiva"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Dipendenza affettiva: segnali e relazioni | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/dipendenza-affettiva\"")))
+                .andExpect(content().string(containsString(
+                        "Che cosa si intende per dipendenza affettiva")))
+                .andExpect(content().string(containsString(
+                        "Legame e interdipendenza non significano perdere sé stessi")))
+                .andExpect(content().string(containsString("Il ruolo dell&#39;attaccamento")))
+                .andExpect(content().string(containsString(
+                        "Dipendenza relazionale, controllo e violenza non sono la stessa cosa")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "I disturbi da addiction nelle dipendenze non legate a sostanze — Ministero della Salute")))
+                .andExpect(content().string(containsString(
+                        "Il 1522 — Dipartimento per le Pari Opportunità")))
+                .andExpect(content().string(containsString("href=\"/test/dipendenza-affettiva\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
     void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -238,6 +269,12 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/approfondimenti/autostima\"")));
 
         mockMvc.perform(get("/test/dipendenza-affettiva"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/dipendenza-affettiva\"")));
+
+        mockMvc.perform(get("/test/assertivita"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.not(
                         containsString("Approfondisci l'argomento"))));
@@ -287,6 +324,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/disturbo-ossessivo-compulsivo")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/autostima")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/dipendenza-affettiva")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
