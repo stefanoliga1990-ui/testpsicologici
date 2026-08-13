@@ -5,8 +5,10 @@ import java.util.List;
 public record PsychologicalTest(
         String id,
         String title,
+        String seoTitle,
         String eyebrow,
         String description,
+        String seoDescription,
         String duration,
         String introductoryText,
         String version,
@@ -14,6 +16,7 @@ public record PsychologicalTest(
         String overallMetricLabel,
         String areaMetricLabel,
         List<TestArea> areas,
-        List<TestQuestion> questions
+        List<TestQuestion> questions,
+        List<TestReference> references
 ) {
 }

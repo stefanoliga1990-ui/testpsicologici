@@ -12,9 +12,13 @@ public class TestDefinitionEntity {
     @Id
     private String id;
     private String title;
+    @Column(name = "seo_title", length = 200)
+    private String seoTitle;
     private String eyebrow;
     @Column(length = 1200)
     private String description;
+    @Column(name = "seo_description", length = 400)
+    private String seoDescription;
     private String duration;
     @Column(name = "introductory_text", length = 2400)
     private String introductoryText;
@@ -57,10 +61,18 @@ public class TestDefinitionEntity {
         this.displayOrder = displayOrder;
     }
 
+    public TestDefinitionEntity withSeo(String seoTitle, String seoDescription) {
+        this.seoTitle = seoTitle;
+        this.seoDescription = seoDescription;
+        return this;
+    }
+
     public String getId() { return id; }
     public String getTitle() { return title; }
+    public String getSeoTitle() { return seoTitle == null || seoTitle.isBlank() ? title + " · Spazio Test" : seoTitle; }
     public String getEyebrow() { return eyebrow; }
     public String getDescription() { return description; }
+    public String getSeoDescription() { return seoDescription == null || seoDescription.isBlank() ? description : seoDescription; }
     public String getDuration() { return duration; }
     public String getIntroductoryText() { return introductoryText; }
     public String getVersion() { return version; }

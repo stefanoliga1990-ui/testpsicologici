@@ -4,12 +4,14 @@ import com.example.testpsicologici.model.PsychologicalTest;
 import com.example.testpsicologici.model.ResultContent;
 import com.example.testpsicologici.model.TestArea;
 import com.example.testpsicologici.model.TestQuestion;
+import com.example.testpsicologici.model.TestReference;
 import com.example.testpsicologici.persistence.InterpretationEntity;
 import com.example.testpsicologici.persistence.InterpretationRepository;
 import com.example.testpsicologici.persistence.TestAreaRepository;
 import com.example.testpsicologici.persistence.TestDefinitionEntity;
 import com.example.testpsicologici.persistence.TestDefinitionRepository;
 import com.example.testpsicologici.persistence.TestQuestionRepository;
+import com.example.testpsicologici.persistence.TestReferenceRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,13 +24,16 @@ public class TestCatalogue {
     private final TestDefinitionRepository testRepository;
     private final TestAreaRepository areaRepository;
     private final TestQuestionRepository questionRepository;
+    private final TestReferenceRepository referenceRepository;
     private final InterpretationRepository interpretationRepository;
 
     public TestCatalogue(TestDefinitionRepository testRepository, TestAreaRepository areaRepository,
-                         TestQuestionRepository questionRepository, InterpretationRepository interpretationRepository) {
+                         TestQuestionRepository questionRepository, TestReferenceRepository referenceRepository,
+                         InterpretationRepository interpretationRepository) {
         this.testRepository = testRepository;
         this.areaRepository = areaRepository;
         this.questionRepository = questionRepository;
+        this.referenceRepository = referenceRepository;
         this.interpretationRepository = interpretationRepository;
     }
 
@@ -60,10 +65,14 @@ public class TestCatalogue {
         List<TestQuestion> questions = questionRepository.findByTestIdOrderByPositionAsc(entity.getId()).stream()
                 .map(question -> new TestQuestion(question.getText(), question.getAreaCode()))
                 .toList();
+        List<TestReference> references = referenceRepository.findByTestIdOrderByDisplayOrderAsc(entity.getId()).stream()
+                .map(reference -> new TestReference(reference.getTitle(), reference.getUrl()))
+                .toList();
         return new PsychologicalTest(
-                entity.getId(), entity.getTitle(), entity.getEyebrow(), entity.getDescription(), entity.getDuration(),
+                entity.getId(), entity.getTitle(), entity.getSeoTitle(), entity.getEyebrow(),
+                entity.getDescription(), entity.getSeoDescription(), entity.getDuration(),
                 entity.getIntroductoryText(), entity.getVersion(), entity.isScoreVisible(),
-                entity.getOverallMetricLabel(), entity.getAreaMetricLabel(), areas, questions);
+                entity.getOverallMetricLabel(), entity.getAreaMetricLabel(), areas, questions, references);
     }
 
     private String areaInsight(String testId, String areaCode, String level) {

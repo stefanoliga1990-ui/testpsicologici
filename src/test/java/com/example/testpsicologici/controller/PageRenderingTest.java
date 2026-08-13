@@ -45,10 +45,61 @@ class PageRenderingTest {
     void homeRendersSearchAndFullyClickableTestCards() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Test psicologici online informativi | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "<link rel=\"canonical\" href=\"http://localhost\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("id=\"test-search-input\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("data-test-card")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
                         "href=\"/test/tratti-autistici-adulti\"")));
+    }
+
+    @Test
+    void introductionRendersUniqueSeoMetadataEditorialContentAndReferences() throws Exception {
+        mockMvc.perform(get("/test/{testId}", "tratti-adhd-adulti"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Test ADHD adulti online: questionario | Spazio Test</title>")))
+                .andExpect(content().string(containsString("name=\"description\"")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/test/tratti-adhd-adulti\"")))
+                .andExpect(content().string(containsString("Che cosa esplora questo questionario")))
+                .andExpect(content().string(containsString("Contenuto editoriale, non scala clinica")))
+                .andExpect(content().string(containsString("ADHD in adults — NHS")));
+    }
+
+    @Test
+    void questionAndResultPagesAreExcludedFromSearchIndexing() throws Exception {
+        String testId = "tratti-adhd-adulti";
+        MockHttpSession inProgress = new MockHttpSession();
+        inProgress.setAttribute("test-attempt-" + testId,
+                new TestAttempt(catalogue.findById(testId).questions().size()));
+
+        mockMvc.perform(get("/test/{testId}/domanda/1", testId).session(inProgress))
+                .andExpect(status().isOk())
+                .andExpect(header().string("X-Robots-Tag", "noindex, follow, noarchive"))
+                .andExpect(content().string(containsString(
+                        "<meta name=\"robots\" content=\"noindex, follow, noarchive\"")));
+
+        mockMvc.perform(get("/test/{testId}/risultato", testId).session(completedAttempt(testId, 3)))
+                .andExpect(status().isOk())
+                .andExpect(header().string("X-Robots-Tag", "noindex, follow, noarchive"));
+    }
+
+    @Test
+    void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
+        mockMvc.perform(get("/robots.txt"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("User-agent: *")))
+                .andExpect(content().string(containsString("Sitemap: http://localhost/sitemap.xml")));
+
+        mockMvc.perform(get("/sitemap.xml"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
+                .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }
 
     @Test
@@ -82,6 +133,7 @@ class PageRenderingTest {
                 .andExpect(header().string("Content-Disposition", containsString(
                         "analisi-autostima.pdf")))
                 .andExpect(header().string("Cache-Control", containsString("no-store")))
+                .andExpect(header().string("X-Robots-Tag", "noindex, nofollow, noarchive"))
                 .andReturn();
 
         byte[] pdf = mvcResult.getResponse().getContentAsByteArray();

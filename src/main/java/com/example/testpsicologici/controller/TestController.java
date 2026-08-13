@@ -5,8 +5,11 @@ import com.example.testpsicologici.model.TestAttempt;
 import com.example.testpsicologici.model.TestResult;
 import com.example.testpsicologici.service.TestCatalogue;
 import com.example.testpsicologici.service.PdfResultService;
+import com.example.testpsicologici.service.SiteUrlService;
 import com.example.testpsicologici.service.TestResultService;
 import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.CacheControl;
 import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
@@ -34,23 +37,27 @@ public class TestController {
     private final TestCatalogue catalogue;
     private final TestResultService resultService;
     private final PdfResultService pdfResultService;
+    private final SiteUrlService siteUrlService;
 
     public TestController(TestCatalogue catalogue, TestResultService resultService,
-                          PdfResultService pdfResultService) {
+                          PdfResultService pdfResultService, SiteUrlService siteUrlService) {
         this.catalogue = catalogue;
         this.resultService = resultService;
         this.pdfResultService = pdfResultService;
+        this.siteUrlService = siteUrlService;
     }
 
     @GetMapping("/")
-    public String home(Model model) {
+    public String home(HttpServletRequest request, Model model) {
         model.addAttribute("tests", catalogue.findAll());
+        model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/"));
         return "home";
     }
 
     @GetMapping("/test/{testId}")
-    public String introduction(@PathVariable String testId, Model model) {
+    public String introduction(@PathVariable String testId, HttpServletRequest request, Model model) {
         model.addAttribute("test", findTest(testId));
+        model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/test/" + testId));
         return "test-introduction";
     }
 
@@ -63,7 +70,8 @@ public class TestController {
 
     @GetMapping("/test/{testId}/domanda/{questionNumber}")
     public String question(@PathVariable String testId, @PathVariable int questionNumber,
-                           HttpSession session, Model model) {
+                           HttpSession session, HttpServletResponse response, Model model) {
+        response.setHeader("X-Robots-Tag", "noindex, follow, noarchive");
         PsychologicalTest test = findTest(testId);
         TestAttempt attempt = findAttempt(testId, session);
         if (attempt == null) return "redirect:/test/" + testId;
@@ -97,7 +105,9 @@ public class TestController {
     }
 
     @GetMapping("/test/{testId}/risultato")
-    public String result(@PathVariable String testId, HttpSession session, Model model) {
+    public String result(@PathVariable String testId, HttpSession session,
+                         HttpServletResponse response, Model model) {
+        response.setHeader("X-Robots-Tag", "noindex, follow, noarchive");
         PsychologicalTest test = findTest(testId);
         TestAttempt attempt = findAttempt(testId, session);
         if (attempt == null || !attempt.isComplete()) return "redirect:/test/" + testId;
@@ -133,6 +143,7 @@ public class TestController {
                 .contentType(MediaType.APPLICATION_PDF)
                 .contentLength(pdf.length)
                 .cacheControl(CacheControl.noStore())
+                .header("X-Robots-Tag", "noindex, nofollow, noarchive")
                 .header(HttpHeaders.CONTENT_DISPOSITION, contentDisposition)
                 .body(pdf);
     }

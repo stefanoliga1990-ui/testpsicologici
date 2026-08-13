@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="|${test.title} · Spazio Test|">Test · Spazio Test</title>
+    <meta name="description" th:content="${test.seoDescription}">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <title th:text="${test.seoTitle}">Test informativo · Spazio Test</title>
+    <link rel="canonical" th:href="${canonicalUrl}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="Spazio Test">
+    <meta property="og:title" th:content="${test.seoTitle}">
+    <meta property="og:description" th:content="${test.seoDescription}">
+    <meta property="og:url" th:content="${canonicalUrl}">
+    <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/app.css}">
+    <script type="application/ld+json" th:inline="javascript">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": /*[[${test.seoTitle}]]*/ "Test informativo",
+      "headline": /*[[${test.title}]]*/ "Test informativo",
+      "description": /*[[${test.seoDescription}]]*/ "Questionario informativo",
+      "url": /*[[${canonicalUrl}]]*/ "https://example.com/test",
+      "inLanguage": "it-IT",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Spazio Test"
+      }
+    }
+    </script>
 </head>
 <body class="intro-body">
 <main class="intro-shell">
@@ -15,7 +40,7 @@
         <a class="brand" th:href="@{/}"><span class="brand-mark">✦</span> Spazio Test</a>
         <a class="back-link" th:href="@{/}">← Tutti i test</a>
     </nav>
-    <section class="intro-card">
+    <article class="intro-card">
         <p class="eyebrow" th:text="${test.eyebrow}">Autovalutazione informativa</p>
         <h1 th:text="${test.title}">Tratti autistici nell'adulto</h1>
         <p class="intro-description" th:text="${test.description}">Un esercizio di auto-osservazione.</p>
@@ -27,6 +52,52 @@
         <form method="post" th:action="@{/test/{id}/inizia(id=${test.id})}">
             <button class="button button-primary" type="submit">Inizia il questionario <span aria-hidden="true">→</span></button>
         </form>
+    </article>
+
+    <section class="intro-editorial" aria-label="Informazioni sul questionario">
+        <div class="editorial-heading">
+            <p class="eyebrow">Prima di rispondere</p>
+            <h2>Che cosa esplora questo questionario</h2>
+            <p>Le affermazioni sono organizzate nelle aree indicate qui sotto. La restituzione aiuta a osservare quali esperienze riconosci più spesso, senza assegnare diagnosi o etichette.</p>
+        </div>
+        <ul class="explored-areas">
+            <li th:each="area : ${test.areas}" th:text="${area.name}">Area esplorata</li>
+        </ul>
+
+        <div class="editorial-grid">
+            <section class="editorial-card">
+                <p class="eyebrow">Come funziona</p>
+                <h2>Una risposta alla volta</h2>
+                <p>Per ogni affermazione indicherai una frequenza da “Mai” a “Sempre”. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.</p>
+            </section>
+            <section class="editorial-card">
+                <p class="eyebrow">Il risultato</p>
+                <h2>Una lettura orientativa</h2>
+                <p>Il risultato riassume l'andamento generale e le aree esplorate. Le barre descrivono la frequenza delle risposte: non sono percentili, probabilità diagnostiche o misure di gravità clinica.</p>
+            </section>
+        </div>
+
+        <section class="method-card">
+            <div>
+                <p class="eyebrow">Metodo e trasparenza</p>
+                <h2>Contenuto editoriale, non scala clinica</h2>
+            </div>
+            <div>
+                <p>Le domande sono originali e costruite per finalità informative a partire dai temi descritti nelle fonti consultate. Non riproducono né sostituiscono un test psicologico validato o una valutazione condotta da un professionista.</p>
+                <p th:text="|Versione editoriale ${test.version}. Le soglie e i testi del risultato servono esclusivamente a comporre una restituzione comprensibile.|">Versione editoriale del questionario.</p>
+            </div>
+        </section>
+
+        <section class="references-card" th:if="${!#lists.isEmpty(test.references)}">
+            <p class="eyebrow">Fonti consultate</p>
+            <h2>Per approfondire</h2>
+            <ul>
+                <li th:each="reference : ${test.references}">
+                    <a th:href="${reference.url}" th:text="${reference.title}" target="_blank" rel="noopener noreferrer">Fonte autorevole</a>
+                </li>
+            </ul>
+            <p>Le fonti orientano la struttura editoriale e il linguaggio del questionario; non ne costituiscono una validazione psicometrica.</p>
+        </section>
     </section>
 </main>
 </body>

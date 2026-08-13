@@ -8,6 +8,8 @@ import com.example.testpsicologici.persistence.TestDefinitionEntity;
 import com.example.testpsicologici.persistence.TestDefinitionRepository;
 import com.example.testpsicologici.persistence.TestQuestionEntity;
 import com.example.testpsicologici.persistence.TestQuestionRepository;
+import com.example.testpsicologici.persistence.TestReferenceEntity;
+import com.example.testpsicologici.persistence.TestReferenceRepository;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -21,14 +23,17 @@ public class ContentDataInitializer implements ApplicationRunner {
     private final TestDefinitionRepository testRepository;
     private final TestAreaRepository areaRepository;
     private final TestQuestionRepository questionRepository;
+    private final TestReferenceRepository referenceRepository;
     private final InterpretationRepository interpretationRepository;
 
     public ContentDataInitializer(TestDefinitionRepository testRepository, TestAreaRepository areaRepository,
                                   TestQuestionRepository questionRepository,
+                                  TestReferenceRepository referenceRepository,
                                   InterpretationRepository interpretationRepository) {
         this.testRepository = testRepository;
         this.areaRepository = areaRepository;
         this.questionRepository = questionRepository;
+        this.referenceRepository = referenceRepository;
         this.interpretationRepository = interpretationRepository;
     }
 
@@ -56,7 +61,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAutismInformationTest() {
         String id = "tratti-autistici-adulti";
-        String version = "2.0";
+        String version = "2.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -64,10 +69,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 id,
                 "Tratti autistici nell'adulto",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su esperienze legate alla comunicazione, alle relazioni, alla prevedibilità e alla sensibilità agli stimoli.",
+                "Questionario informativo per adulti su comunicazione sociale, segnali impliciti, routine, flessibilità, interessi e sensibilità sensoriale.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato: le esperienze descritte possono avere molte spiegazioni diverse. Per una valutazione dell'autismo è necessario rivolgersi a professionisti qualificati.",
-                version, false, true, 1));
+                version, false, true, 1).withSeo(
+                "Test autismo adulti online: questionario | Spazio Test",
+                "Questionario informativo per adulti su comunicazione sociale, routine e sensibilità sensoriale. 24 domande, 6 minuti, senza registrazione; non diagnostico."));
+
+        saveReference(id, "Clinical testing and diagnosis for autism spectrum disorder — CDC",
+                "https://www.cdc.gov/autism/hcp/diagnosis/index.html", 1);
+        saveReference(id, "Autism spectrum disorder in adults: diagnosis and management — NICE CG142",
+                "https://www.nice.org.uk/guidance/cg142/chapter/Recommendations", 2);
 
         saveArea(id, "sociale", "Interazione sociale e reciprocità emotiva", 1);
         saveArea(id, "non_verbale", "Comunicazione non verbale e comprensione implicita", 2);
@@ -133,18 +145,25 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAdhdInformationTest() {
         String id = "tratti-adhd-adulti";
-        String version = "2.0";
+        String version = "2.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Tratti associati all'ADHD nell'adulto",
+                "ADHD nell'adulto: tratti associati",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su attenzione, organizzazione, impulsività e irrequietezza nella vita quotidiana.",
+                "Esplora difficoltà ricorrenti relative ad attenzione, organizzazione, gestione del tempo, impulsività e irrequietezza nell'adulto.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato: difficoltà simili possono dipendere da stress, sonno, ansia, depressione, altre condizioni o circostanze personali. Una diagnosi di ADHD richiede una valutazione specialistica della storia dello sviluppo, dell'impatto quotidiano e della presenza delle difficoltà in più contesti.",
-                version, false, true, 2));
+                version, false, true, 2).withSeo(
+                "Test ADHD adulti online: questionario | Spazio Test",
+                "Questionario informativo per adulti su attenzione, organizzazione, impulsività e irrequietezza. 24 domande, 6 minuti, senza registrazione; non diagnostico."));
+
+        saveReference(id, "Attention deficit hyperactivity disorder: diagnosis and management — NICE NG87",
+                "https://www.nice.org.uk/guidance/ng87/chapter/recommendations", 1);
+        saveReference(id, "ADHD in adults — NHS",
+                "https://www.nhs.uk/conditions/adhd-adults/", 2);
 
         saveArea(id, "attenzione", "Attenzione sostenuta e distraibilità", 1);
         saveArea(id, "organizzazione", "Organizzazione, memoria operativa e gestione del tempo", 2);
@@ -210,18 +229,25 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedObsessiveCompulsiveInformationTest() {
         String id = "tratti-ossessivo-compulsivi";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Tratti ossessivo-compulsivi",
+                "Pensieri ossessivi e compulsioni (DOC)",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su pensieri intrusivi, bisogno di certezza, controlli e rituali nella vita quotidiana.",
+                "Esplora pensieri intrusivi, dubbio, bisogno di certezza, contaminazione, controlli e rituali nella vita quotidiana.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato: pensieri indesiderati, dubbi e abitudini ripetitive possono comparire in molte persone e non indicano l'intenzione di agire su un pensiero. Una valutazione del disturbo ossessivo-compulsivo considera anche disagio, tempo occupato, interferenza con la vita quotidiana e possibili spiegazioni alternative.",
-                version, false, true, 3));
+                version, false, true, 3).withSeo(
+                "Test disturbo ossessivo-compulsivo (DOC) online | Spazio Test",
+                "Questionario informativo su pensieri ossessivi, compulsioni, dubbi, controlli e rituali. 24 domande, circa 6 minuti, senza registrazione; non diagnostico."));
+
+        saveReference(id, "Obsessive compulsive disorder (OCD): symptoms — NHS",
+                "https://www.nhs.uk/mental-health/conditions/obsessive-compulsive-disorder-ocd/symptoms/", 1);
+        saveReference(id, "Obsessive-Compulsive Disorder: When Unwanted Thoughts Take Over — NIMH",
+                "https://www.nimh.nih.gov/health/publications/obsessive-compulsive-disorder-when-unwanted-thoughts-take-over", 2);
 
         saveArea(id, "intrusioni", "Pensieri intrusivi, dubbio e bisogno di certezza", 1);
         saveArea(id, "contaminazione", "Contaminazione, pulizia ed evitamento", 2);
@@ -287,7 +313,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSelfEsteemInformationTest() {
         String id = "autostima";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -295,13 +321,20 @@ public class ContentDataInitializer implements ApplicationRunner {
                 id,
                 "Autostima",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere sul valore che riconosci a te stesso, sulla fiducia personale e sul modo in cui reagisci a errori e giudizi.",
+                "Esplora il rapporto con il valore personale, la fiducia in sé, gli errori, le critiche e il confronto con gli altri.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento clinicamente validato e non misura il tuo valore come persona. L'autostima può cambiare nel tempo e nei diversi contesti; le risposte descrivono soltanto quanto spesso riconosci alcune difficoltà legate al rapporto con te stesso.",
                 version, false,
                 "Difficoltà complessive relative all'autostima",
                 "Frequenza delle difficoltà",
-                true, 4));
+                true, 4).withSeo(
+                "Test autostima online: questionario | Spazio Test",
+                "Questionario su valore personale, fiducia in sé, errori, critiche e confronto. 24 domande, 6 minuti, senza registrazione; non misura il tuo valore."));
+
+        saveReference(id, "Rosenberg Self-Esteem Scale — University of Maryland",
+                "https://socy.umd.edu/about-us/rosenberg-self-esteem-scale", 1);
+        saveReference(id, "The Development of Self-Esteem",
+                "https://doi.org/10.1177/0963721414547414", 2);
 
         saveArea(id, "valore", "Valore personale e autoaccettazione", 1);
         saveArea(id, "fiducia", "Fiducia personale ed espressione dei bisogni", 2);
@@ -367,7 +400,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedEmotionalDependenceInformationTest() {
         String id = "dipendenza-affettiva";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -375,13 +408,20 @@ public class ContentDataInitializer implements ApplicationRunner {
                 id,
                 "Dipendenza affettiva",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su paura della distanza, bisogno di rassicurazione, autonomia e confini nelle relazioni affettive.",
+                "Esplora paura dell'abbandono, bisogno di rassicurazione, rinunce personali, autonomia e confini nelle relazioni affettive.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non stabilisce se una relazione sia sana o patologica. Rispondi pensando alla relazione attuale o, se non ne hai una, a una relazione affettiva significativa recente. Il legame e l'interdipendenza fanno parte delle relazioni: qui si esplora soltanto quanto alcune dinamiche diventano frequenti, rigide o limitanti. Il questionario non rileva gli abusi e la violenza non è mai responsabilità di chi la subisce. In presenza di controllo, minacce o violenza, cerca un aiuto sicuro; per le donne vittime di violenza e stalking il 1522 è gratuito e attivo 24 ore su 24.",
                 version, false,
                 "Frequenza complessiva delle dinamiche esplorate",
                 "Frequenza delle dinamiche",
-                true, 5));
+                true, 5).withSeo(
+                "Test dipendenza affettiva online | Spazio Test",
+                "Questionario su paura dell'abbandono, rassicurazione, autonomia e confini nella relazione. 24 domande, 6 minuti, senza registrazione; non diagnostico."));
+
+        saveReference(id, "I disturbi da addiction nelle dipendenze non legate a sostanze — Ministero della Salute",
+                "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_3313_allegato.pdf", 1);
+        saveReference(id, "Conceptualizing love addiction within the attachment perspective",
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC12284683/", 2);
 
         saveArea(id, "separazione", "Paura della separazione e bisogno di rassicurazione", 1);
         saveArea(id, "autonomia", "Autonomia, interessi e rete personale", 2);
@@ -447,7 +487,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAssertivenessInformationTest() {
         String id = "assertivita";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -455,13 +495,20 @@ public class ContentDataInitializer implements ApplicationRunner {
                 id,
                 "Assertività",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su come esprimi opinioni e bisogni, proteggi i tuoi confini e affronti richieste o disaccordi.",
+                "Esplora quanto riesci a esprimere opinioni e bisogni, dire di no, proteggere i tuoi confini e affrontare i disaccordi.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non misura il tuo valore, la tua forza o il tuo coraggio. Rispondi pensando a quanto spesso riesci davvero a mettere in pratica ciascun comportamento nei diversi contesti, non a quanto lo ritieni desiderabile. L'assertività può cambiare in base alla situazione, alla relazione, alla cultura e alla sicurezza percepita; non esporsi in un contesto minaccioso o con un forte squilibrio di potere può essere una scelta protettiva, non una carenza personale.",
                 version, false,
                 "Frequenza complessiva dei comportamenti assertivi",
                 "Frequenza dei comportamenti assertivi",
-                true, 6));
+                true, 6).withSeo(
+                "Test assertività online: questionario | Spazio Test",
+                "Questionario informativo su opinioni, bisogni, capacità di dire di no, confini e disaccordi. 24 domande, circa 6 minuti e nessuna registrazione."));
+
+        saveReference(id, "A 30-Item Schedule for Assessing Assertive Behavior",
+                "https://doi.org/10.1016/S0005-7894(73)80120-0", 1);
+        saveReference(id, "Normative studies with the Scale for Interpersonal Behaviour",
+                "https://doi.org/10.1016/S0191-8869(98)00252-9", 2);
 
         saveArea(id, "espressione", "Espressione di opinioni, bisogni ed emozioni", 1);
         saveArea(id, "confini", "Confini, rifiuto e tutela dei propri diritti", 2);
@@ -527,7 +574,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedEmotionalIntelligenceInformationTest() {
         String id = "intelligenza-emotiva";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -535,13 +582,20 @@ public class ContentDataInitializer implements ApplicationRunner {
                 id,
                 "Intelligenza emotiva",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su come riconosci, comprendi, utilizzi e regoli le informazioni emotive nella vita quotidiana.",
+                "Esplora come riconosci, comprendi, utilizzi e regoli le emozioni proprie e altrui nella vita quotidiana.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non misura un quoziente di intelligenza emotiva o un'abilità oggettiva. Essendo un'autovalutazione, descrive soprattutto quanto riconosci e metti in pratica alcuni comportamenti legati alle emozioni; è possibile sottovalutarsi o sopravvalutarsi. Rispondi pensando a ciò che fai abitualmente nei diversi contesti. Le emozioni non sono giuste o sbagliate e regolarle non significa reprimerle. Cultura, esperienze personali, neurodiversità e sicurezza del contesto possono influenzare percezione ed espressione emotiva.",
                 version, false,
                 "Frequenza complessiva delle competenze emotive esplorate",
                 "Frequenza delle competenze emotive",
-                true, 7));
+                true, 7).withSeo(
+                "Test intelligenza emotiva online | Spazio Test",
+                "Questionario su consapevolezza, comprensione e regolazione delle emozioni proprie e altrui. 24 domande, circa 6 minuti; non misura un quoziente emotivo."));
+
+        saveReference(id, "The Ability Model of Emotional Intelligence: Principles and Updates",
+                "https://sites.usnh.edu/jdmayer/wp-content/uploads/sites/261/2024/03/rp2016-mayer-caruso-salovey.pdf", 1);
+        saveReference(id, "Emotional Intelligence: New Ability or Eclectic Traits?",
+                "https://cdn2.psychologytoday.com/assets/attachments/1575/rp2008-mayersaloveycarusob.pdf", 2);
 
         saveArea(id, "percezione", "Percezione e consapevolezza emotiva", 1);
         saveArea(id, "facilitazione", "Uso delle emozioni nel pensiero e nelle decisioni", 2);
@@ -607,7 +661,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPerfectionismInformationTest() {
         String id = "perfezionismo";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -615,13 +669,20 @@ public class ContentDataInitializer implements ApplicationRunner {
                 id,
                 "Perfezionismo",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su standard personali, paura degli errori, pressione del giudizio e bisogno di controllo.",
+                "Esplora standard personali, paura degli errori, pressione del giudizio, dubbi e bisogno di controllo.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non stabilisce la presenza di un disturbo. Avere obiettivi ambiziosi, cura per i dettagli e desiderio di migliorare non è di per sé problematico: qui si esplora quanto gli standard diventino rigidi, quanto il valore personale dipenda dai risultati e quanto errori, dubbi o controllo producano fatica e limitazioni. Rispondi pensando alla frequenza reale nei diversi ambiti della tua vita, non soltanto al lavoro o allo studio.",
                 version, false,
                 "Frequenza complessiva delle dinamiche perfezionistiche",
                 "Frequenza delle dinamiche perfezionistiche",
-                true, 8));
+                true, 8).withSeo(
+                "Test perfezionismo online | Spazio Test",
+                "Questionario su standard personali, paura degli errori, giudizio, dubbi e controllo. 24 domande, circa 6 minuti, senza registrazione; non diagnostico."));
+
+        saveReference(id, "The dimensions of perfectionism",
+                "https://doi.org/10.1007/BF01172967", 1);
+        saveReference(id, "Perfectionism in the self and social contexts",
+                "https://pubmed.ncbi.nlm.nih.gov/2027080/", 2);
 
         saveArea(id, "standard", "Standard elevati e valore legato ai risultati", 1);
         saveArea(id, "errori", "Paura degli errori, dubbi e autocritica", 2);
@@ -687,7 +748,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSocialAnxietyInformationTest() {
         String id = "ansia-sociale";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -695,13 +756,20 @@ public class ContentDataInitializer implements ApplicationRunner {
                 id,
                 "Ansia sociale",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su paura del giudizio, interazioni, situazioni sotto osservazione ed evitamento sociale.",
+                "Esplora paura del giudizio, tensione nelle interazioni, autocontrollo, situazioni sotto osservazione ed evitamento sociale.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non permette di stabilire la presenza di un disturbo d'ansia sociale. Timidezza, riservatezza e disagio occasionale sono esperienze comuni; una valutazione clinica considera durata, intensità, proporzione rispetto al rischio reale e impatto sulla vita. Esperienze simili possono dipendere anche da stress, depressione, trauma, neurodiversità, difficoltà comunicative o contesti realmente ostili e discriminatori. Rispondi pensando alla frequenza delle esperienze negli ultimi mesi e nei diversi contesti. Se ansia o evitamento limitano relazioni, studio, lavoro o attività importanti, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
                 version, false,
                 "Frequenza complessiva delle esperienze di ansia sociale",
                 "Frequenza delle esperienze",
-                true, 9));
+                true, 9).withSeo(
+                "Test ansia sociale online | Spazio Test",
+                "Questionario informativo su paura del giudizio, tensione, autocontrollo ed evitamento sociale. 24 domande, circa 6 minuti, senza registrazione; non diagnostico."));
+
+        saveReference(id, "Social Anxiety Disorder: More Than Just Shyness — NIMH",
+                "https://www.nimh.nih.gov/health/publications/social-anxiety-disorder-more-than-just-shyness", 1);
+        saveReference(id, "Social anxiety disorder: assessment and diagnosis for adults — NICE CG159",
+                "https://www.nice.org.uk/guidance/cg159/ifp/chapter/assessment-and-diagnosis-for-adults", 2);
 
         saveArea(id, "valutazione", "Paura del giudizio e dell'imbarazzo", 1);
         saveArea(id, "interazione", "Conversazioni e interazioni sociali", 2);
@@ -767,21 +835,28 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPerceivedNarcissisticRelationshipDynamicsTest() {
         String id = "dinamiche-narcisistiche-partner";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Dinamiche narcisistiche percepite nel partner",
+                "Dinamiche narcisistiche percepite nella relazione di coppia",
                 "Riflessione sulla relazione",
-                "Un questionario per osservare reciprocità, centralità, gestione del confronto, confini e impatto della relazione.",
+                "Osserva la tua percezione di reciprocità, gestione del confronto, confini e impatto emotivo nella relazione, senza diagnosticare il partner.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Descrive la tua percezione di alcune dinamiche nella relazione e non può stabilire se il partner abbia tratti narcisistici o un disturbo narcisistico di personalità. Una diagnosi richiede una valutazione clinica diretta, completa e condotta da un professionista qualificato; singoli comportamenti possono avere spiegazioni diverse. Rispondi pensando a episodi concreti e ricorrenti degli ultimi mesi, non a un singolo litigio. Il risultato serve a riflettere su reciprocità, rispetto e impatto della relazione, non a etichettare il partner. Comportamenti di controllo, umiliazione, minaccia o violenza vanno presi sul serio indipendentemente da qualsiasi diagnosi: se temi per la tua sicurezza, cerca supporto da una persona fidata o da servizi qualificati; in un'emergenza chiama il 112. Se sei una donna vittima di violenza o stalking, il 1522 offre gratuitamente ascolto e orientamento 24 ore su 24.",
                 version, false,
                 "Frequenza complessiva delle dinamiche osservate",
                 "Frequenza delle dinamiche osservate",
-                true, 10));
+                true, 10).withSeo(
+                "Test partner narcisista: dinamiche di coppia | Spazio Test",
+                "Questionario sulle dinamiche percepite nel partner: reciprocità, confronto, confini e impatto emotivo. 24 domande; non etichetta né diagnostica la persona."));
+
+        saveReference(id, "Narcissistic Personality Disorder — Merck Manual Professional Edition",
+                "https://www.merckmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd", 1);
+        saveReference(id, "What Is Narcissistic Personality Disorder? — American Psychiatric Association",
+                "https://www.psychiatry.org/News-room/APA-Blogs/What-Is-Narcissistic-Personality-Disorder", 2);
 
         saveArea(id, "reciprocita", "Reciprocità, empatia e spazio emotivo", 1);
         saveArea(id, "centralita", "Centralità, ammirazione e aspettative", 2);
@@ -847,7 +922,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedGeneralizedAnxietyInformationTest() {
         String id = "ansia-generalizzata";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -855,13 +930,20 @@ public class ContentDataInitializer implements ApplicationRunner {
                 id,
                 "Ansia generalizzata",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su preoccupazione diffusa, tensione, affaticamento, sonno e impatto quotidiano.",
+                "Esplora preoccupazione difficile da controllare, tensione, affaticamento, sonno e interferenza nella vita quotidiana.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non permette di stabilire la presenza di un disturbo d'ansia generalizzata. Preoccuparsi in alcuni periodi è una normale risposta alle difficoltà; una valutazione clinica considera invece durata, intensità, difficoltà di controllo, presenza in diversi ambiti e impatto sulla vita. Rispondi pensando alla frequenza delle esperienze negli ultimi sei mesi. Sintomi simili possono dipendere anche da stress, depressione, altri disturbi d'ansia, esperienze traumatiche, problemi del sonno, condizioni mediche, farmaci o sostanze. Se l'ansia limita la tua vita o i sintomi fisici sono nuovi, intensi o preoccupanti, parlane con uno psicologo, psicoterapeuta o medico qualificato.",
                 version, false,
                 "Frequenza complessiva delle esperienze di ansia",
                 "Frequenza delle esperienze",
-                true, 11));
+                true, 11).withSeo(
+                "Test ansia generalizzata online | Spazio Test",
+                "Questionario informativo su preoccupazione diffusa, tensione, affaticamento, sonno e impatto quotidiano. 24 domande, circa 6 minuti; non diagnostico."));
+
+        saveReference(id, "Generalized Anxiety Disorder: What You Need to Know — NIMH",
+                "https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad", 1);
+        saveReference(id, "Assessing generalised anxiety disorder — NICE CG113",
+                "https://www.nice.org.uk/guidance/cg113/chapter/Appendix-Assessing-generalised-anxiety-disorder", 2);
 
         saveArea(id, "preoccupazione", "Preoccupazione diffusa e difficoltà di controllo", 1);
         saveArea(id, "attivazione", "Tensione fisica e difficoltà a rilassarsi", 2);
@@ -927,21 +1009,28 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedDepressedMoodInformationTest() {
         String id = "umore-depresso";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Umore depresso",
+                "Umore depresso e sintomi depressivi",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su umore, interesse, energia, pensieri su di sé e funzionamento quotidiano.",
+                "Esplora umore, perdita di interesse, energia, pensieri su di sé e funzionamento quotidiano nelle ultime due settimane.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non permette di stabilire la presenza di un disturbo depressivo. Tristezza, stanchezza e calo della motivazione possono comparire durante stress, lutti o cambiamenti importanti; una valutazione clinica considera durata, intensità, storia personale, funzionamento, eventuali periodi di umore insolitamente elevato e possibili cause mediche, farmacologiche o legate a sostanze. Rispondi pensando alla frequenza delle esperienze nelle ultime due settimane. Questo questionario non valuta il rischio suicidario: se stai pensando di farti del male o non ti senti al sicuro, non attendere il risultato; chiama subito il 112 o vai al Pronto Soccorso. Se le difficoltà persistono o interferiscono con la tua vita, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
                 version, false,
                 "Frequenza complessiva delle esperienze legate all'umore",
                 "Frequenza delle esperienze",
-                true, 12));
+                true, 12).withSeo(
+                "Test depressione online: umore e sintomi | Spazio Test",
+                "Questionario su umore, interesse, energia e funzionamento nelle ultime due settimane. 24 domande; non diagnostico e non valuta il rischio suicidario."));
+
+        saveReference(id, "Depressive disorder — World Health Organization",
+                "https://www.who.int/news-room/fact-sheets/detail/depression", 1);
+        saveReference(id, "Depression — National Institute of Mental Health",
+                "https://www.nimh.nih.gov/health/publications/depression", 2);
 
         saveArea(id, "umore", "Tono dell'umore e capacità di provare piacere", 1);
         saveArea(id, "energia", "Energia, motivazione e attivazione", 2);
@@ -1007,21 +1096,28 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPeoplePleasingInformationTest() {
         String id = "people-pleasing";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Sono un/una people pleaser?",
+                "People pleasing e bisogno di approvazione",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su approvazione, confini, conflitto e spazio dedicato ai propri bisogni.",
+                "Esplora bisogno di approvazione, difficoltà a dire di no, paura del conflitto e spazio riservato ai propri bisogni.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. “People pleaser” è un'espressione comune, non una diagnosi o una categoria clinica. Gentilezza, collaborazione e disponibilità non sono di per sé problematiche: il questionario esplora quanto spesso l'attenzione agli altri comporti silenziare bisogni, superare limiti o dipendere dalla loro approvazione. Rispondi pensando agli ultimi mesi e a relazioni diverse. Cultura, ruoli di cura, ambiente, dipendenza economica e differenze di potere possono influenzare le risposte. In una relazione minacciosa o poco sicura, adattarsi ed evitare il conflitto può essere una strategia protettiva, non una mancanza di assertività. Se questi schemi causano sofferenza, risentimento, esaurimento o relazioni sbilanciate, puoi parlarne con uno psicologo o psicoterapeuta qualificato.",
                 version, false,
                 "Frequenza complessiva delle dinamiche di compiacenza",
                 "Frequenza delle dinamiche",
-                true, 13));
+                true, 13).withSeo(
+                "Test people pleaser: approvazione e confini | Spazio Test",
+                "Questionario informativo su people pleasing, bisogno di approvazione, confini e difficoltà a dire di no. 24 domande, circa 6 minuti, senza registrazione."));
+
+        saveReference(id, "Distinctions of unmitigated communion from communion",
+                "https://pubmed.ncbi.nlm.nih.gov/9686454/", 1);
+        saveReference(id, "A theory of unmitigated communion",
+                "https://pubmed.ncbi.nlm.nih.gov/15647153/", 2);
 
         saveArea(id, "approvazione", "Bisogno di approvazione e paura del rifiuto", 1);
         saveArea(id, "confini", "Dire no, porre limiti e tollerare il dispiacere", 2);
@@ -1087,7 +1183,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedImpostorPhenomenonInformationTest() {
         String id = "sindrome-impostore";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1095,13 +1191,20 @@ public class ContentDataInitializer implements ApplicationRunner {
                 id,
                 "Sindrome dell'impostore",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere su successi, dubbi di competenza, pressione da prestazione e opportunità.",
+                "Esplora difficoltà a riconoscere i successi, dubbi sulla propria competenza, perfezionismo e paura di essere smascherati.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. L'espressione comune “sindrome dell'impostore” indica ciò che nella letteratura scientifica è spesso chiamato fenomeno dell'impostore: non è una diagnosi né un disturbo riconosciuto e questo questionario non è uno strumento clinico o validato. Rispondi pensando agli ultimi mesi e ai contesti di studio, lavoro o responsabilità per te significativi. Il risultato descrive la frequenza di alcune esperienze soggettive, non misura la tua competenza reale. Dubbi e bisogno di preparazione possono essere appropriati quando un ruolo è nuovo, mancano conoscenze o le aspettative non sono chiare. Esclusione, discriminazione, scarsa rappresentazione, feedback ambigui e ambienti molto competitivi possono inoltre creare o amplificare il senso di non appartenenza: non tutto va attribuito alla persona. Se questi vissuti limitano opportunità, riposo o benessere, puoi parlarne con uno psicologo o psicoterapeuta qualificato.",
                 version, false,
                 "Frequenza complessiva delle esperienze di impostore",
                 "Frequenza delle esperienze",
-                true, 14));
+                true, 14).withSeo(
+                "Test sindrome dell'impostore online | Spazio Test",
+                "Questionario informativo su successi, dubbi di competenza, perfezionismo e paura di essere smascherati. 24 domande, circa 6 minuti; non diagnostico."));
+
+        saveReference(id, "The imposter phenomenon in high achieving women",
+                "https://doi.org/10.1037/h0086006", 1);
+        saveReference(id, "Impostor Phenomenon Measurement Scales: A Systematic Review",
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC6463809/", 2);
 
         saveArea(id, "attribuzione", "Attribuzione dei successi e riconoscimento delle capacità", 1);
         saveArea(id, "esposizione", "Dubbi di competenza e paura di essere smascherati", 2);
@@ -1167,21 +1270,28 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSelfSabotageInformationTest() {
         String id = "autosabotaggio";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Tendo all'autosabotaggio?",
+                "Autosabotaggio e ostacoli agli obiettivi",
                 "Autovalutazione informativa",
-                "Un questionario per riflettere sugli ostacoli che possono crearsi tra intenzioni, scelte e obiettivi importanti.",
+                "Esplora procrastinazione, evitamento e altri ostacoli ricorrenti tra intenzioni, scelte e obiettivi personalmente importanti.",
                 "6 min · 24 domande",
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. “Autosabotaggio” è un'espressione comune, non una diagnosi né un singolo costrutto clinico: qui indica schemi ricorrenti che possono aumentare ostacoli o costi rispetto a obiettivi personalmente importanti. Non implica che tali comportamenti siano deliberati e il questionario non misura volontà, disciplina o valore personale. Rispondi pensando agli ultimi mesi e a obiettivi che hai scelto davvero tu. Rimandare, ridurre l'impegno o abbandonare può essere adattivo quando un obiettivo è irrealistico, non più significativo, imposto, poco sicuro o incompatibile con le risorse disponibili. Carichi di cura, difficoltà economiche o ambientali, problemi di salute, stress, sonno insufficiente, ansia, umore depresso, trauma, ADHD o altre difficoltà esecutive possono produrre esperienze simili e richiedono una lettura distinta, non moralistica. Se questi schemi causano sofferenza o compromettono ripetutamente benessere, relazioni, studio o lavoro, puoi parlarne con uno psicologo o psicoterapeuta qualificato.",
                 version, false,
                 "Frequenza complessiva degli ostacoli autoalimentati",
                 "Frequenza degli ostacoli",
-                true, 15));
+                true, 15).withSeo(
+                "Test autosabotaggio online | Spazio Test",
+                "Questionario informativo su procrastinazione, evitamento e ostacoli tra intenzioni e obiettivi. 24 domande, circa 6 minuti, senza registrazione."));
+
+        saveReference(id, "Self-defeating behavior patterns among normal individuals",
+                "https://pubmed.ncbi.nlm.nih.gov/3043527/", 1);
+        saveReference(id, "The nature of procrastination: a meta-analytic and theoretical review",
+                "https://pubmed.ncbi.nlm.nih.gov/17201571/", 2);
 
         saveArea(id, "azione", "Avvio, pianificazione e procrastinazione", 1);
         saveArea(id, "protezione", "Paura della valutazione e auto-handicapping", 2);
@@ -1254,6 +1364,7 @@ public class ContentDataInitializer implements ApplicationRunner {
     private void removeTest(String testId) {
         if (!testRepository.existsById(testId)) return;
         interpretationRepository.deleteByTestId(testId);
+        referenceRepository.deleteByTestId(testId);
         questionRepository.deleteByTestId(testId);
         areaRepository.deleteByTestId(testId);
         testRepository.deleteById(testId);
@@ -1261,6 +1372,9 @@ public class ContentDataInitializer implements ApplicationRunner {
     }
 
     private void saveTest(TestDefinitionEntity test) { testRepository.save(test); }
+    private void saveReference(String testId, String title, String url, int order) {
+        referenceRepository.save(new TestReferenceEntity(testId, title, url, order));
+    }
     private void saveArea(String testId, String code, String name, int order) { areaRepository.save(new TestAreaEntity(testId, code, name, order)); }
     private QuestionSeed q(String areaCode, String text) { return new QuestionSeed(areaCode, text); }
     private void saveQuestions(String testId, List<QuestionSeed> questions) {
