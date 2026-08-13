@@ -91,6 +91,7 @@ class PageRenderingTest {
                         "Attention-Deficit/Hyperactivity Disorder: What You Need to Know — NIMH")))
                 .andExpect(content().string(containsString(
                         "Obsessive-Compulsive Disorder: When Unwanted Thoughts or Repetitive Behaviors Take Over — NIMH")))
+                .andExpect(content().string(containsString("Raising low self-esteem — NHS")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -118,7 +119,9 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("ADHD nell&#39;adulto")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/disturbo-ossessivo-compulsivo\"")))
-                .andExpect(content().string(containsString("Pensieri ossessivi e compulsioni (DOC)")));
+                .andExpect(content().string(containsString("Pensieri ossessivi e compulsioni (DOC)")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/autostima\"")))
+                .andExpect(content().string(containsString("<h3>Autostima</h3>")));
     }
 
     @Test
@@ -187,6 +190,29 @@ class PageRenderingTest {
     }
 
     @Test
+    void selfEsteemGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/autostima"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Autostima: cos&#39;è e come migliorarla | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/autostima\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è l&#39;autostima")))
+                .andExpect(content().string(containsString(
+                        "Autostima e fiducia in sé non sono la stessa cosa")))
+                .andExpect(content().string(containsString(
+                        "Come può manifestarsi una bassa autostima")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "Rosenberg Self-Esteem Scale — University of Maryland")))
+                .andExpect(content().string(containsString("Raising low self-esteem — NHS")))
+                .andExpect(content().string(containsString("href=\"/test/autostima\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
     void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -207,6 +233,11 @@ class PageRenderingTest {
                         "href=\"/approfondimenti/disturbo-ossessivo-compulsivo\"")));
 
         mockMvc.perform(get("/test/autostima"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/autostima\"")));
+
+        mockMvc.perform(get("/test/dipendenza-affettiva"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.not(
                         containsString("Approfondisci l'argomento"))));
@@ -254,6 +285,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/adhd-adulti")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/disturbo-ossessivo-compulsivo")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/autostima")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
