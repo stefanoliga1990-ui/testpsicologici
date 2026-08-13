@@ -94,6 +94,84 @@ public class GuideCatalogue {
                                     "Riferimento per le aree della comunicazione e interazione sociale, i comportamenti ripetitivi, gli interessi, la flessibilità e la reattività sensoriale."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "adhd-adulti",
+                    "tratti-adhd-adulti",
+                    "ADHD nell'adulto",
+                    "ADHD nell'adulto: caratteristiche, segnali e valutazione",
+                    "ADHD negli adulti: sintomi e caratteristiche | Spazio Test",
+                    "Una guida concisa all'ADHD nell'adulto: disattenzione, irrequietezza, impulsività, valutazione specialistica e limiti dei test online.",
+                    "L'ADHD è una condizione del neurosviluppo associata a modalità persistenti di disattenzione e/o iperattività-impulsività. Nell'adulto può incidere su organizzazione, gestione del tempo, continuità nelle attività, relazioni e lavoro, ma si presenta in modi diversi da persona a persona.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è l'ADHD",
+                                    List.of(
+                                            "L'ADHD, o disturbo da deficit di attenzione e iperattività, è una condizione del neurosviluppo. Le sue caratteristiche iniziano nell'infanzia, anche quando vengono riconosciute soltanto in età adulta, e possono cambiare nel modo in cui si manifestano nel corso della vita.",
+                                            "Non tutte le persone presentano lo stesso profilo: per alcune prevalgono le difficoltà attentive e organizzative, per altre irrequietezza e impulsività, mentre molte riconoscono aspetti di entrambe le aree."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Esperienze possibili",
+                                    "Come può manifestarsi nell'adulto",
+                                    List.of(
+                                            "Nell'adulto l'iperattività non coincide necessariamente con un movimento evidente e continuo: può essere vissuta come irrequietezza interna o difficoltà a rallentare. Alcune persone sviluppano inoltre strategie di compensazione che rendono le difficoltà meno visibili, pur richiedendo molto impegno."
+                                    ),
+                                    List.of(
+                                            "Attenzione: distrarsi facilmente, perdere il filo, dimenticare informazioni o faticare a mantenere la concentrazione su compiti poco stimolanti.",
+                                            "Organizzazione e tempo: iniziare o completare attività, stabilire priorità, rispettare scadenze e ricordare appuntamenti può richiedere uno sforzo particolare.",
+                                            "Irrequietezza: sentirsi spesso in movimento, cercare stimoli, parlare molto o trovare difficile restare fermi e attendere.",
+                                            "Impulsività: interrompere, rispondere prima del tempo o prendere decisioni rapide senza riuscire a considerare pienamente le conseguenze."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Distrazione e impulsività non indicano sempre ADHD",
+                                    List.of(
+                                            "Dimenticare un appuntamento, rimandare un compito o attraversare un periodo di scarsa concentrazione è comune e non basta per parlare di ADHD. Stress, sonno insufficiente, ansia, depressione, uso di sostanze, condizioni fisiche o altri profili neurodivergenti possono produrre esperienze simili o coesistere con l'ADHD.",
+                                            "In una valutazione contano la persistenza nel tempo, l'esordio nell'infanzia, la presenza in più contesti e l'interferenza con aspetti importanti della vita. Le difficoltà non vengono interpretate come mancanza di volontà o di interesse."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Valutazione",
+                                    "Che cosa considera un percorso specialistico",
+                                    List.of(
+                                            "La diagnosi viene formulata da un professionista qualificato attraverso una valutazione clinica e psicosociale complessiva. Il percorso considera storia dello sviluppo, esperienze scolastiche e lavorative, funzionamento attuale, salute fisica e mentale e manifestazioni nei diversi ambienti di vita.",
+                                            "Questionari e scale possono offrire informazioni aggiuntive, ma non sono sufficienti da soli. È necessario valutare anche possibili spiegazioni alternative e condizioni coesistenti. Il questionario di Spazio Test non può quindi confermare né escludere l'ADHD."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto",
+                                    "Quando può essere utile chiedere un confronto",
+                                    List.of(
+                                            "Può essere utile parlarne con un professionista se queste esperienze erano presenti già nell'infanzia, compaiono in più situazioni e interferiscono con studio, lavoro, relazioni, gestione domestica, sicurezza o benessere. Un primo passo può essere rivolgersi al medico di base o informarsi sui servizi specializzati disponibili nel proprio territorio.",
+                                            "Una valutazione accurata può aiutare a comprendere il proprio profilo, distinguere cause diverse e individuare strategie, adattamenti o forme di supporto appropriate alla situazione individuale."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, attenzione, organizzazione, gestione del tempo, irrequietezza e impulsività. Le risposte aiutano a osservare la frequenza percepita di queste esperienze e non costituiscono uno screening validato o una diagnosi.",
+                    List.of(
+                            new GuideReference(
+                                    "ADHD in adults — NHS",
+                                    "https://www.nhs.uk/conditions/adhd-adults/",
+                                    "Riferimento per disattenzione, organizzazione, irrequietezza, impulsività, variabilità dei profili e possibili condizioni alternative o coesistenti."
+                            ),
+                            new GuideReference(
+                                    "Attention deficit hyperactivity disorder: diagnosis and management — NICE NG87",
+                                    "https://www.nice.org.uk/guidance/ng87/chapter/recommendations",
+                                    "Riferimento per esordio nell'infanzia, presenza in più contesti, impatto sul funzionamento e valutazione clinica e psicosociale specialistica."
+                            ),
+                            new GuideReference(
+                                    "Attention-Deficit/Hyperactivity Disorder: What You Need to Know — NIMH",
+                                    "https://www.nimh.nih.gov/health/publications/attention-deficit-hyperactivity-disorder-what-you-need-to-know",
+                                    "Riferimento per manifestazioni nell'adulto, andamento nel corso della vita, raccolta della storia personale e necessità di considerare sonno, stress, salute mentale e condizioni fisiche."
+                            )
+                    )
             )
     );
 
