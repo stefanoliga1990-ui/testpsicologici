@@ -104,6 +104,8 @@ class PageRenderingTest {
                         "Social anxiety (social phobia) — NHS")))
                 .andExpect(content().string(containsString(
                         "Violence against women — World Health Organization")))
+                .andExpect(content().string(containsString(
+                        "Generalised anxiety disorder (GAD) — NHS")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -149,7 +151,10 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/dinamiche-narcisistiche-coppia\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Dinamiche narcisistiche nella coppia</h3>")));
+                        "<h3>Dinamiche narcisistiche nella coppia</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/ansia-generalizzata\"")))
+                .andExpect(content().string(containsString("<h3>Ansia generalizzata</h3>")));
     }
 
     @Test
@@ -401,6 +406,32 @@ class PageRenderingTest {
     }
 
     @Test
+    void generalizedAnxietyGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/ansia-generalizzata"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Ansia generalizzata: sintomi e cosa fare | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/ansia-generalizzata\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è l&#39;ansia generalizzata")))
+                .andExpect(content().string(containsString(
+                        "Preoccupazione utile e preoccupazione difficile da controllare")))
+                .andExpect(content().string(containsString(
+                        "Pensieri, corpo e risorse quotidiane")))
+                .andExpect(content().string(containsString(
+                        "Come può mantenersi il ciclo della preoccupazione")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "Generalized Anxiety Disorder: What You Need to Know — NIMH")))
+                .andExpect(content().string(containsString(
+                        "Generalised anxiety disorder (GAD) — NHS")))
+                .andExpect(content().string(containsString("href=\"/test/ansia-generalizzata\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
     void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -462,6 +493,12 @@ class PageRenderingTest {
 
         mockMvc.perform(get("/test/ansia-generalizzata"))
                 .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/ansia-generalizzata\"")));
+
+        mockMvc.perform(get("/test/umore-depresso"))
+                .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.not(
                         containsString("Approfondisci l'argomento"))));
     }
@@ -522,6 +559,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/ansia-sociale")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/dinamiche-narcisistiche-coppia")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/ansia-generalizzata")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))

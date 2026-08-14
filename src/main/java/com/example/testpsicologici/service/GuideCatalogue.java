@@ -791,6 +791,84 @@ public class GuideCatalogue {
                                     "Riferimento istituzionale per il servizio pubblico gratuito e anonimo di ascolto e orientamento dedicato alle donne vittime di violenza e stalking, attivo ogni giorno e a ogni ora."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "ansia-generalizzata",
+                    "ansia-generalizzata",
+                    "Ansia generalizzata",
+                    "Ansia generalizzata: comprendere preoccupazione e tensione persistenti",
+                    "Ansia generalizzata: sintomi e cosa fare | Spazio Test",
+                    "Una guida concisa all'ansia generalizzata: differenze dalla normale preoccupazione, sintomi fisici e cognitivi, sonno e possibili forme di aiuto.",
+                    "Preoccuparsi è una risposta comune davanti a problemi e incertezze. Nell'ansia generalizzata, però, la preoccupazione tende a riguardare molti ambiti, a presentarsi con frequenza, a essere difficile da controllare e ad accompagnarsi a tensione, affaticamento o difficoltà quotidiane.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è l'ansia generalizzata",
+                                    List.of(
+                                            "L'ansia generalizzata è caratterizzata da preoccupazione e ansia eccessive su diversi aspetti della vita, come salute, lavoro, relazioni, denaro o responsabilità. I pensieri possono passare rapidamente da un tema all'altro e risultare difficili da interrompere anche quando non esiste un pericolo immediato.",
+                                            "Una diagnosi non dipende da un singolo sintomo o da un questionario online. Un professionista considera nel complesso durata e frequenza — in genere ansia presente per gran parte del tempo per almeno sei mesi — difficoltà di controllo, sintomi associati, impatto sul funzionamento e possibili spiegazioni alternative, comprese condizioni fisiche o altre difficoltà psicologiche."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Preoccupazione utile e preoccupazione difficile da controllare",
+                                    List.of(
+                                            "Una preoccupazione può essere utile quando segnala un problema concreto, porta a individuare un'azione possibile e si riduce dopo averla pianificata. Diventa più problematica quando è sproporzionata, continua a generare scenari ipotetici e ricerca di certezza senza arrivare a una conclusione praticabile.",
+                                            "Nell'ansia generalizzata la mente può tentare di prevenire ogni esito negativo attraverso anticipazione, controllo o preparazione continua. Non è mancanza di volontà: il sollievo cercato tende a essere breve e l'incertezza riapre presto una nuova catena di domande e timori."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Manifestazioni",
+                                    "Pensieri, corpo e risorse quotidiane",
+                                    List.of(
+                                            "L'ansia generalizzata non riguarda soltanto i pensieri. Può coinvolgere attivazione fisica, qualità del sonno, energia e capacità di concentrarsi, con combinazioni e intensità diverse da persona a persona."
+                                    ),
+                                    List.of(
+                                            "Preoccupazione: timori su più ambiti, sequenze di scenari negativi, bisogno di rassicurazioni o difficoltà a tollerare di non sapere.",
+                                            "Attivazione: irrequietezza, sensazione di essere sul chi va là, tensione muscolare, mal di testa o disturbi gastrointestinali.",
+                                            "Risorse: affaticamento, irritabilità, indecisione e difficoltà a mantenere l'attenzione quando molta energia è assorbita dai timori.",
+                                            "Impatto: difficoltà ad addormentarsi o restare addormentati, rinvii, evitamenti e minore presenza nel lavoro, nello studio o nelle relazioni."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Ciclo",
+                                    "Come può mantenersi il ciclo della preoccupazione",
+                                    List.of(
+                                            "Un dubbio può attivare scenari del tipo «e se...?», seguiti da analisi ripetute, controlli, rassicurazioni o evitamento. Queste risposte possono ridurre temporaneamente la tensione, ma anche rendere più credibile l'idea che l'incertezza sia pericolosa e debba essere eliminata prima di agire.",
+                                            "Distinguere un problema attuale da uno ipotetico aiuta a orientarsi: per il primo si può definire un passo concreto, realistico e circoscritto; per il secondo può essere più utile riconoscere che non esiste un'azione risolutiva nel presente e riportare gradualmente l'attenzione a ciò che si sta facendo."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Orientamento",
+                                    "Strategie quotidiane e quando chiedere aiuto",
+                                    List.of(
+                                            "Può essere utile annotare situazione, pensiero, intensità e risposta adottata, separare ciò che è modificabile da ciò che non lo è e trasformare i problemi concreti in passi limitati. Sonno regolare, movimento, tecniche di rilassamento o mindfulness e riduzione dell'eccesso di caffeina possono sostenere la gestione dell'ansia, ma non sostituiscono un trattamento quando la difficoltà è significativa.",
+                                            "Se preoccupazione, tensione o sonno limitano stabilmente la vita quotidiana, è indicato parlarne con il medico o con un professionista della salute mentale. La terapia cognitivo-comportamentale è tra gli interventi più studiati; eventuali farmaci richiedono una valutazione medica individuale. Sintomi fisici nuovi, intensi o insoliti non vanno attribuiti automaticamente all'ansia e meritano un confronto sanitario."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, ampiezza e controllabilità della preoccupazione, tensione e attivazione, concentrazione, affaticamento, irritabilità, sonno e interferenza nella vita quotidiana negli ultimi sei mesi. Non formula una diagnosi e non permette di distinguere da solo ansia generalizzata, stress, altre difficoltà psicologiche o condizioni fisiche.",
+                    List.of(
+                            new GuideReference(
+                                    "Generalized Anxiety Disorder: What You Need to Know — NIMH",
+                                    "https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad",
+                                    "Fonte istituzionale per definizione, differenza dalla normale preoccupazione, sintomi cognitivi e fisici, durata e impatto considerati nella diagnosi e possibilità di trattamento e supporto."
+                            ),
+                            new GuideReference(
+                                    "Generalised anxiety disorder and panic disorder in adults: management — NICE CG113",
+                                    "https://www.nice.org.uk/guidance/cg113",
+                                    "Linea guida clinica consultata per valutazione di gravità, sofferenza e compromissione funzionale e per gli interventi psicologici e sanitari raccomandati negli adulti."
+                            ),
+                            new GuideReference(
+                                    "Generalised anxiety disorder (GAD) — NHS",
+                                    "https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/",
+                                    "Risorsa del servizio sanitario britannico consultata per manifestazioni comuni, criteri considerati nella valutazione, opzioni di aiuto e accorgimenti quotidiani prudenti."
+                            )
+                    )
             )
     );
 
