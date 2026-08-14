@@ -1136,6 +1136,98 @@ public class GuideCatalogue {
                                     "Revisione degli interventi in ambito professionale, consultata per educazione sul fenomeno, supporto di gruppo e limiti ed eterogeneità delle prove disponibili."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "autosabotaggio",
+                    "autosabotaggio",
+                    "Autosabotaggio e ostacoli agli obiettivi",
+                    "Autosabotaggio e ostacoli agli obiettivi: capire i meccanismi",
+                    "Autosabotaggio: segnali e strategie utili | Spazio Test",
+                    "Una guida all'autosabotaggio: procrastinazione, paura del giudizio, sollievo immediato, ostacoli reali e strategie per avvicinarsi ai propri obiettivi.",
+                    "“Autosabotaggio” è un'espressione comune usata quando alcune azioni aumentano ripetutamente la distanza da obiettivi importanti. Non indica necessariamente una scelta consapevole: spesso descrive tentativi di ridurre disagio, proteggersi dal giudizio o procedere con strategie che funzionano nel breve periodo ma presentano costi successivi.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cosa si intende per autosabotaggio",
+                                    List.of(
+                                            "Il termine può comprendere procrastinare, evitare feedback o opportunità, ridurre l'impegno quando si teme una valutazione, iniziare con ritmi insostenibili o continuare a usare una strategia inefficace. Questi comportamenti non formano un'unica diagnosi e possono avere funzioni e cause differenti.",
+                                            "La ricerca sui comportamenti controproducenti distingue il danno deliberato dai compromessi che privilegiano un beneficio immediato e dalle strategie che producono conseguenze non desiderate. Nelle comuni esperienze quotidiane non emerge una chiara intenzione generale di danneggiare sé stessi: parlare di ostacoli autoalimentati è spesso più preciso e meno colpevolizzante."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Rimandare o abbandonare non è sempre autosabotaggio",
+                                    List.of(
+                                            "Posticipare può essere ragionevole quando mancano informazioni, tempo, salute, denaro o sicurezza; ridurre un impegno può proteggere energie limitate; abbandonare un obiettivo può essere una scelta sana se non è più significativo, realistico o veramente proprio. La produttività continua non è il criterio del benessere.",
+                                            "Per capire se esiste un ostacolo ricorrente è utile chiedersi: l'obiettivo conta ancora per me? Le risorse e le condizioni sono sufficienti? Il comportamento offre un beneficio immediato? Quale costo prevedibile produce? Lo stesso rinvio può segnalare evitamento, riposo necessario, conflitto di priorità oppure un problema pratico da risolvere."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Quali meccanismi possono ostacolare gli obiettivi",
+                                    List.of(
+                                            "Descrivere il meccanismo specifico permette di scegliere una risposta più adatta rispetto a giudicarsi semplicemente poco motivati o disciplinati."
+                                    ),
+                                    List.of(
+                                            "Azione: obiettivi vaghi, difficoltà a iniziare, sottostima dei tempi e attesa di sentirsi completamente pronti o motivati.",
+                                            "Protezione dal giudizio: rinuncia, minore impegno o ostacoli creati prima della prova possono rendere meno diretto il confronto con le proprie capacità, ma riducono apprendimento e opportunità.",
+                                            "Sollievo emotivo: distrazione ed evitamento allontanano temporaneamente ansia, noia, vergogna o frustrazione, anche se aumentano pressione e costi futuri.",
+                                            "Direzione: ritmi iniziali eccessivi, lettura di una pausa come fallimento, rigidità della strategia e difficoltà a riprendere con un passo più piccolo."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Ciclo",
+                                    "Come sollievo immediato e autocritica mantengono il blocco",
+                                    List.of(
+                                            "Un compito importante può attivare disagio, regole rigide o paura di fallire. Passare a qualcosa di più semplice, rimandare o non esporsi riduce rapidamente quella sensazione; proprio questo sollievo rende più probabile ripetere la stessa risposta davanti a un disagio simile.",
+                                            "Con il tempo aumentano urgenza, conseguenze e autocritica, e il compito diventa ancora più minaccioso. Criticarsi duramente può sembrare un modo per recuperare controllo, ma spesso aggiunge vergogna e rende più difficile tornare all'azione. Interrompere il ciclo significa modificare sia il compito sia il modo di attraversare il disagio, non aspettare che ogni emozione scomoda scompaia."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Pratica",
+                                    "Rendere il passo successivo più chiaro e sostenibile",
+                                    List.of(
+                                            "Dopo aver verificato che l'obiettivo sia ancora scelto e praticabile, può essere utile definirne la prossima azione osservabile: non “lavorare al progetto”, ma aprire il documento e scrivere tre punti; non “rimettersi in forma”, ma preparare ciò che serve per una breve attività. Stabilire quando, dove e per quanto tempo riduce decisioni e ambiguità al momento di iniziare.",
+                                            "Preparare in anticipo materiali, promemoria, ambiente e supporti riduce l'attrito. Si può anche prevedere il disagio — «potrei sentirmi annoiato o inadeguato» — e scegliere una risposta breve, come restare sul compito per pochi minuti prima di rivalutare. Alla fine, osservare che cosa ha aiutato e adattare il piano trasforma il tentativo in informazione, invece che in un giudizio definitivo sul proprio valore."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Quando guardare oltre le abitudini",
+                                    List.of(
+                                            "Stress elevato, sonno insufficiente, dolore o malattie, carichi di cura, difficoltà economiche, ambienti caotici o poco sicuri possono ridurre le risorse necessarie per iniziare e perseverare. Ansia, umore depresso, trauma, ADHD e altre difficoltà esecutive possono produrre esperienze simili e richiedono una valutazione distinta, non un'etichetta sulla volontà.",
+                                            "Se i blocchi compaiono in molti ambiti, durano nel tempo o compromettono studio, lavoro, relazioni, salute o cura personale, un confronto con uno psicologo, psicoterapeuta o medico può aiutare a chiarire i fattori coinvolti e individuare supporti adeguati. L'obiettivo non è diventare sempre produttivi, ma aumentare libertà di scelta e coerenza con priorità sostenibili."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, avvio e pianificazione, protezione dal giudizio e auto-handicapping, ricerca di sollievo emotivo e capacità di mantenere o adattare il percorso. Non formula una diagnosi, non attribuisce intenzioni e non distingue da solo abitudini modificabili, ostacoli ambientali, condizioni di salute o difficoltà esecutive; non misura volontà, disciplina o valore personale.",
+                    List.of(
+                            new GuideReference(
+                                    "Self-defeating behavior patterns among normal individuals — Baumeister e Scher",
+                                    "https://pubmed.ncbi.nlm.nih.gov/3043527/",
+                                    "Revisione di riferimento per distinguere danno deliberato, compromessi con benefici immediati e strategie controproducenti, mantenendo una lettura non intenzionale e non moralistica delle comuni esperienze."
+                            ),
+                            new GuideReference(
+                                    "The nature of procrastination: a meta-analytic and theoretical review — Steel",
+                                    "https://pubmed.ncbi.nlm.nih.gov/17201571/",
+                                    "Meta-analisi di riferimento per definizione della procrastinazione, autoregolazione, avversione al compito, impulsività, tempi e divario tra intenzione e azione."
+                            ),
+                            new GuideReference(
+                                    "Procrastination and Stress: A Conceptual Review of Why Context Matters — Sirois",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10049005/",
+                                    "Revisione consultata per il ruolo di stress, risorse di coping, emozioni legate al compito e sollievo a breve termine, con una lettura più contestuale e compassionevole della procrastinazione."
+                            ),
+                            new GuideReference(
+                                    "Procrastination Self-Help Resources — Centre for Clinical Interventions",
+                                    "https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself/Procrastination",
+                                    "Risorsa clinico-educativa per ciclo della procrastinazione, regole e giustificazioni, tolleranza del disagio, motivazione non critica e strategie pratiche di avvio e mantenimento."
+                            )
+                    )
             )
     );
 
