@@ -952,6 +952,98 @@ public class GuideCatalogue {
                                     "Riferimento istituzionale italiano per il ricorso immediato ai servizi di emergenza e al Pronto Soccorso quando la persona è in pericolo o non si sente al sicuro."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "people-pleasing",
+                    "people-pleasing",
+                    "People pleasing e bisogno di approvazione",
+                    "People pleasing: bisogno di approvazione, confini e reciprocità",
+                    "People pleasing: segnali e confini | Spazio Test",
+                    "Una guida al people pleasing: differenze dalla gentilezza, bisogno di approvazione, difficoltà a dire no, autosilenziamento e confini più sostenibili.",
+                    "“People pleasing” descrive l'abitudine a dare priorità alla soddisfazione altrui per evitare disapprovazione, rifiuto o conflitto, anche quando questo richiede di nascondere bisogni e opinioni o superare i propri limiti. Non è una diagnosi né un'identità fissa.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è il people pleasing",
+                                    List.of(
+                                            "People pleaser è un'espressione comune, non una categoria clinica. Può indicare un insieme di comportamenti come cercare conferme, dire sì controvoglia, adattare molto il proprio modo di mostrarsi, assumersi rapidamente la colpa o sentirsi responsabili delle emozioni degli altri.",
+                                            "Nella ricerca, un concetto vicino è la “comunione non mitigata”: una focalizzazione sugli altri a esclusione di sé, distinta dalla positiva disponibilità alla cura perché comprende sovracoinvolgimento, dipendenza dalla valutazione esterna e trascuratezza dei propri bisogni."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Gentilezza, cura e compiacenza non sono la stessa cosa",
+                                    List.of(
+                                            "Aiutare, collaborare e fare sacrifici può essere libero, coerente con i propri valori e importante per una relazione. La cura tende a essere sostenibile quando lascia spazio a scelta, reciprocità, riposo, possibilità di chiedere aiuto e libertà di esprimere un limite senza temere di perdere automaticamente il legame.",
+                                            "La stessa azione può avere significati diversi: dire sì perché lo si desidera non equivale a farlo perché il senso di valore dipende dall'approvazione o perché un rifiuto sembra intollerabile. È quindi utile osservare motivazione, libertà percepita, costo personale e risposta dell'altra persona ai propri bisogni."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Quali dinamiche può essere utile osservare",
+                                    List.of(
+                                            "Il people pleasing può comparire in alcune relazioni e non in altre. Descrivere il meccanismo concreto è più utile che applicarsi un'etichetta generale."
+                                    ),
+                                    List.of(
+                                            "Approvazione: il disappunto altrui viene vissuto come possibile rifiuto e la valutazione di sé dipende molto dalle conferme ricevute.",
+                                            "Confini: dire no, mantenere una decisione o proteggere tempo, riposo e priorità suscita colpa, ansia o lunghe giustificazioni.",
+                                            "Autosilenziamento: opinioni, rabbia, delusione o richieste vengono nascoste per preservare armonia e immagine positiva.",
+                                            "Sovraresponsabilità: ci si sente incaricati di anticipare bisogni e risolvere emozioni o problemi altrui, fino a trascurarsi e provare esaurimento o risentimento."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Ciclo",
+                                    "Come può mantenersi la ricerca di approvazione",
+                                    List.of(
+                                            "Una richiesta o un segnale di disappunto può attivare il timore di deludere. Dire subito sì, scusarsi, tacere o intervenire per sistemare la situazione riduce la tensione nel breve periodo e talvolta porta approvazione; questo sollievo può rinforzare l'idea che il legame dipenda dal continuare ad adattarsi.",
+                                            "Nel tempo possono aumentare sovraccarico, distanza dai propri bisogni e risentimento. Se poi la fatica viene interpretata come egoismo o insufficienza, la persona può cercare ancora più conferme e disponibilità, invece di riconoscere che il modello è diventato poco sostenibile."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Pratica",
+                                    "Costruire più scelta e confini sostenibili",
+                                    List.of(
+                                            "Un primo passo è creare una pausa prima di rispondere: «Controllo e ti faccio sapere» permette di valutare desiderio, energie, priorità e conseguenze reali. Si può iniziare da situazioni a basso rischio, con risposte brevi e rispettose come «Non riesco questa volta» oppure «Posso aiutarti in questo modo, non in quello».",
+                                            "Esprimere un'opinione, fare una richiesta o tollerare un piccolo disappunto offre informazioni sulla relazione. Un confine non garantisce che l'altro sia contento e non serve a controllarne la reazione: chiarisce ciò che si è disponibili a fare e ciò che si farà per proteggere il proprio limite. Procedere gradualmente è più utile che trasformare ogni interazione in una prova di assertività."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Potere, sicurezza e richiesta di supporto",
+                                    List.of(
+                                            "Cultura, ruoli familiari e di cura, gerarchie lavorative, dipendenza economica, disabilità e altre differenze di potere influenzano quanto sia realmente possibile rifiutare o negoziare. Adattarsi in una situazione minacciosa può essere una strategia di protezione, non una carenza personale da correggere con maggiore fermezza.",
+                                            "Se porre un limite può provocare minacce, controllo o violenza, è prudente cercare prima un sostegno individuale e specializzato. In Italia, in caso di pericolo immediato chiama il 112; il 1522 offre gratuitamente e in forma anonima ascolto e orientamento alle donne vittime di violenza e stalking. Se invece il modello causa ansia, esaurimento, risentimento o relazioni poco reciproche, uno psicologo o psicoterapeuta può aiutare a comprenderne funzioni e contesto e ad ampliare gradualmente le possibilità di scelta."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, bisogno di approvazione e paura del rifiuto, difficoltà a dire no e mantenere confini, autosilenziamento nel conflitto e sovraresponsabilità verso gli altri. Non formula una diagnosi, non misura quanto una persona sia gentile e non può stabilire da solo se un comportamento sia libero, imposto dal ruolo o necessario per la sicurezza.",
+                    List.of(
+                            new GuideReference(
+                                    "Distinctions of unmitigated communion from communion: self-neglect and overinvolvement with others — Fritz e Helgeson",
+                                    "https://pubmed.ncbi.nlm.nih.gov/9686454/",
+                                    "Studio di riferimento per distinguere la cura positiva degli altri dalla focalizzazione sugli altri a esclusione di sé e per i legami con valutazione esterna, sovracoinvolgimento, trascuratezza di sé e disagio."
+                            ),
+                            new GuideReference(
+                                    "A theory of unmitigated communion — Helgeson e Fritz",
+                                    "https://pubmed.ncbi.nlm.nih.gov/15647153/",
+                                    "Riferimento teorico per caratteristiche cognitive e comportamentali della comunione non mitigata e possibili implicazioni per il benessere psicologico e fisico."
+                            ),
+                            new GuideReference(
+                                    "Improving Assertiveness — Centre for Clinical Interventions",
+                                    "https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself/Assertiveness",
+                                    "Risorsa clinico-educativa consultata per comunicazione chiara e rispettosa, difficoltà a dire no, pensieri che ostacolano i limiti e pratica assertiva adattata al contesto."
+                            ),
+                            new GuideReference(
+                                    "Il 1522 — Dipartimento per le Pari Opportunità",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Riferimento istituzionale per il servizio pubblico gratuito e anonimo di ascolto e orientamento dedicato alle donne vittime di violenza e stalking."
+                            )
+                    )
             )
     );
 
