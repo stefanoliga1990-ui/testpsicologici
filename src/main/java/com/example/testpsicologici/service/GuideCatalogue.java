@@ -1044,6 +1044,98 @@ public class GuideCatalogue {
                                     "Riferimento istituzionale per il servizio pubblico gratuito e anonimo di ascolto e orientamento dedicato alle donne vittime di violenza e stalking."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "sindrome-impostore",
+                    "sindrome-impostore",
+                    "Sindrome dell'impostore",
+                    "Sindrome dell'impostore: comprendere il fenomeno e i suoi effetti",
+                    "Sindrome dell'impostore: cos'è e segnali | Spazio Test",
+                    "Una guida alla sindrome dell'impostore: difficoltà a riconoscere i successi, paura di essere smascherati, perfezionismo, contesto e strategie utili.",
+                    "La cosiddetta sindrome dell'impostore descrive il vissuto di non meritare risultati, ruoli o riconoscimenti e il timore che gli altri scoprano una presunta incompetenza, anche quando esistono prove concrete di capacità. Nella ricerca si parla più spesso di fenomeno dell'impostore, perché non è una diagnosi.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è il fenomeno dell'impostore",
+                                    List.of(
+                                            "Il fenomeno dell'impostore comprende difficoltà a interiorizzare i successi, attribuzione dei risultati a fortuna, circostanze, aiuto o sforzo eccezionale e paura di non riuscire a ripetere la prestazione. Complimenti e risultati positivi possono dare sollievo senza modificare stabilmente la percezione della propria competenza.",
+                                            "Non è un disturbo riconosciuto né una categoria diagnostica. Gli strumenti disponibili misurano esperienze soggettive con definizioni e proprietà differenti; un punteggio non stabilisce quanto una persona sia competente, preparata o adatta a un ruolo."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Dubbio realistico e vissuto dell'impostore non coincidono",
+                                    List.of(
+                                            "Dubbi, bisogno di imparare e richiesta di feedback sono appropriati quando un compito è nuovo, le aspettative sono poco chiare o mancano conoscenze necessarie. Riconoscere una lacuna concreta permette di cercare informazioni, formazione o supervisione e non implica svalutare l'intera competenza personale.",
+                                            "Nel vissuto dell'impostore, invece, una normale incertezza viene facilmente interpretata come prova di non meritare il ruolo, mentre successi, qualifiche e riscontri vengono esclusi o spiegati soltanto con cause esterne. Sentirsi competenti e possedere competenze non sono la stessa cosa: entrambi vanno valutati con evidenze specifiche e contestuali."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Come può manifestarsi il fenomeno dell'impostore",
+                                    List.of(
+                                            "Le esperienze possono concentrarsi in un solo contesto o comparire soprattutto durante passaggi di ruolo, maggiore visibilità e confronto con persone percepite come molto competenti."
+                                    ),
+                                    List.of(
+                                            "Attribuzione: successi e feedback positivi vengono ridimensionati, mentre fortuna, circostanze e aiuto altrui spiegano quasi interamente il risultato.",
+                                            "Esposizione: emerge il timore di essere smascherati, con difficoltà a fare domande, ammettere di non sapere o sentirsi legittimati nel ruolo.",
+                                            "Prestazione: perfezionismo, sovrapreparazione, controlli ripetuti o procrastinazione servono a ridurre il rischio di una valutazione negativa.",
+                                            "Impatto: confronto sfavorevole, minimizzazione dei risultati e bisogno di sentirsi completamente pronti possono limitare partecipazione, riposo e accesso a opportunità."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Ciclo",
+                                    "Perché un successo può non correggere il dubbio",
+                                    List.of(
+                                            "Davanti a una prova, la paura di fallire può portare a prepararsi molto oltre il necessario oppure a rimandare finché l'urgenza impone di agire. Se il risultato è positivo, viene spiegato con lo sforzo eccessivo, la fortuna o aspettative basse; se è imperfetto, diventa conferma dell'inadeguatezza temuta.",
+                                            "In entrambi i casi la valutazione di sé cambia poco. Il successo può persino aumentare la pressione a mantenere aspettative percepite come immeritate, riavviando sovraccarico, evitamento e paura di esporsi alla prova successiva."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Non tutto nasce dentro la persona",
+                                    List.of(
+                                            "Feedback vaghi o incoerenti, ruoli senza criteri chiari, culture molto competitive, scarsa rappresentazione e transizioni con poco supporto possono rendere più difficile capire se si sta procedendo adeguatamente. Stereotipi, esclusione, microaggressioni e discriminazione possono inoltre comunicare che una persona non appartiene davvero al contesto.",
+                                            "Attribuire automaticamente queste esperienze a una fragilità individuale rischia di ignorare problemi reali dell'ambiente. Una lettura equilibrata considera insieme il modo in cui la persona interpreta le prove e la qualità concreta di accesso, feedback, riconoscimento, sicurezza e appartenenza offerta dal contesto."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Primi passi",
+                                    "Trasformare il dubbio in informazioni più verificabili",
+                                    List.of(
+                                            "Può essere utile separare fatti e interpretazioni: annotare risultato, proprio contributo, aiuti ricevuti, competenze utilizzate e aspetti ancora da apprendere costruisce un'attribuzione più completa, senza negare né il contesto né il merito personale. Prima di un compito, definire che cosa significhi “abbastanza buono” può limitare controlli e preparazione senza fine.",
+                                            "Chiedere feedback specifici — che cosa ha funzionato, che cosa migliorare e quale standard è atteso — è più informativo di una rassicurazione generale. Condividere il vissuto con una persona fidata, un pari o un supervisore disponibile può ridurre l'isolamento e rendere visibili dubbi comuni. Se paura, perfezionismo o autosvalutazione causano ansia, umore depresso, esaurimento o rinunce importanti, uno psicologo o psicoterapeuta può aiutare a lavorare sui problemi associati; le prove su interventi specifici per il solo fenomeno dell'impostore sono ancora limitate."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, attribuzione dei successi, paura di essere smascherati, pressione perfezionistica e impatto di confronto e feedback sulle opportunità. Non formula una diagnosi e non misura competenza, preparazione o adeguatezza reale: il risultato va letto insieme a evidenze concrete, qualità dei riscontri e caratteristiche dell'ambiente.",
+                    List.of(
+                            new GuideReference(
+                                    "The imposter phenomenon in high achieving women — Clance e Imes",
+                                    "https://doi.org/10.1037/h0086006",
+                                    "Lavoro originario sul fenomeno dell'impostore, sulla difficoltà a interiorizzare i successi e sull'attribuzione dei risultati a cause esterne nonostante riscontri di capacità."
+                            ),
+                            new GuideReference(
+                                    "Impostor Phenomenon Measurement Scales: A Systematic Review — Mak, Kleitman e Abbott",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6463809/",
+                                    "Revisione sistematica delle definizioni e delle proprietà delle principali misure, consultata per chiarire che il fenomeno non è diagnosticabile e non dispone di un unico strumento di riferimento."
+                            ),
+                            new GuideReference(
+                                    "Contextualizing the Impostor “Syndrome” — Feenstra e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/33312149/",
+                                    "Contributo scientifico per integrare il ruolo di sottorappresentazione, stereotipi, trattamento diseguale e contesto istituzionale, evitando di collocare cause e soluzioni soltanto nell'individuo."
+                            ),
+                            new GuideReference(
+                                    "Interventions addressing the impostor phenomenon: a scoping review — Para e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/38605843/",
+                                    "Revisione degli interventi in ambito professionale, consultata per educazione sul fenomeno, supporto di gruppo e limiti ed eterogeneità delle prove disponibili."
+                            )
+                    )
             )
     );
 

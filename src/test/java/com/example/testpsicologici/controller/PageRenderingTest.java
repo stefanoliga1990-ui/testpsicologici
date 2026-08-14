@@ -109,6 +109,8 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Depression in adults — NHS")))
                 .andExpect(content().string(containsString(
                         "Distinctions of unmitigated communion from communion: self-neglect and overinvolvement with others — Fritz e Helgeson")))
+                .andExpect(content().string(containsString(
+                        "Contextualizing the Impostor “Syndrome” — Feenstra e colleghi")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -165,7 +167,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/people-pleasing\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>People pleasing e bisogno di approvazione</h3>")));
+                        "<h3>People pleasing e bisogno di approvazione</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/sindrome-impostore\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Sindrome dell&#39;impostore</h3>")));
     }
 
     @Test
@@ -496,6 +502,31 @@ class PageRenderingTest {
     }
 
     @Test
+    void impostorPhenomenonGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/sindrome-impostore"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Sindrome dell&#39;impostore: cos&#39;è e segnali | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/sindrome-impostore\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è il fenomeno dell&#39;impostore")))
+                .andExpect(content().string(containsString(
+                        "Dubbio realistico e vissuto dell&#39;impostore non coincidono")))
+                .andExpect(content().string(containsString(
+                        "Perché un successo può non correggere il dubbio")))
+                .andExpect(content().string(containsString("Non tutto nasce dentro la persona")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "Impostor Phenomenon Measurement Scales: A Systematic Review — Mak, Kleitman e Abbott")))
+                .andExpect(content().string(containsString(
+                        "Contextualizing the Impostor “Syndrome” — Feenstra e colleghi")))
+                .andExpect(content().string(containsString("href=\"/test/sindrome-impostore\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
     void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -575,6 +606,12 @@ class PageRenderingTest {
 
         mockMvc.perform(get("/test/sindrome-impostore"))
                 .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/sindrome-impostore\"")));
+
+        mockMvc.perform(get("/test/autosabotaggio"))
+                .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.not(
                         containsString("Approfondisci l'argomento"))));
     }
@@ -641,6 +678,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/umore-depresso")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/people-pleasing")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/sindrome-impostore")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
