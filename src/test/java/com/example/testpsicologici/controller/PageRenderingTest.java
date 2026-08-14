@@ -98,6 +98,8 @@ class PageRenderingTest {
                         "Improving Assertiveness — Centre for Clinical Interventions")))
                 .andExpect(content().string(containsString(
                         "The Ability Model of Emotional Intelligence: Principles and Updates — Mayer, Caruso e Salovey")))
+                .andExpect(content().string(containsString(
+                        "Perfectionism Self-Help Resources — Centre for Clinical Interventions")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -135,7 +137,9 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("<h3>Assertività</h3>")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/intelligenza-emotiva\"")))
-                .andExpect(content().string(containsString("<h3>Intelligenza emotiva</h3>")));
+                .andExpect(content().string(containsString("<h3>Intelligenza emotiva</h3>")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/perfezionismo\"")))
+                .andExpect(content().string(containsString("<h3>Perfezionismo</h3>")));
     }
 
     @Test
@@ -304,6 +308,32 @@ class PageRenderingTest {
     }
 
     @Test
+    void perfectionismGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/perfezionismo"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Perfezionismo: cos&#39;è e come gestirlo | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/perfezionismo\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è il perfezionismo")))
+                .andExpect(content().string(containsString(
+                        "Standard elevati e perfezionismo problematico non sono la stessa cosa")))
+                .andExpect(content().string(containsString(
+                        "Le diverse forme della pressione perfezionistica")))
+                .andExpect(content().string(containsString(
+                        "Perché controllo e procrastinazione possono mantenere il problema")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "The dimensions of perfectionism — Frost e colleghi")))
+                .andExpect(content().string(containsString(
+                        "Perfectionism Self-Help Resources — Centre for Clinical Interventions")))
+                .andExpect(content().string(containsString("href=\"/test/perfezionismo\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
     void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -346,6 +376,12 @@ class PageRenderingTest {
                         "href=\"/approfondimenti/intelligenza-emotiva\"")));
 
         mockMvc.perform(get("/test/perfezionismo"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/perfezionismo\"")));
+
+        mockMvc.perform(get("/test/ansia-sociale"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.not(
                         containsString("Approfondisci l'argomento"))));
@@ -401,6 +437,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/assertivita")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/intelligenza-emotiva")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/perfezionismo")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))

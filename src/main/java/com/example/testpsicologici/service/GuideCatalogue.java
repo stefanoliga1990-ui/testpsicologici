@@ -550,6 +550,85 @@ public class GuideCatalogue {
                                     "Approfondimento scientifico consultato per distinguere il modello di abilità dagli approcci che riuniscono tratti e qualità personali più ampie sotto la stessa etichetta."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "perfezionismo",
+                    "perfezionismo",
+                    "Perfezionismo",
+                    "Perfezionismo: quando gli standard diventano una pressione",
+                    "Perfezionismo: cos'è e come gestirlo | Spazio Test",
+                    "Una guida concisa al perfezionismo: differenza dagli standard elevati, paura degli errori, rigidità, procrastinazione e strategie pratiche.",
+                    "Il perfezionismo non coincide semplicemente con ambizione, precisione o desiderio di migliorare. Diventa fonte di difficoltà quando gli standard sono rigidi e incessanti, il valore personale dipende soprattutto dai risultati e la ricerca della prestazione ideale continua nonostante stress, blocchi o rinunce.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è il perfezionismo",
+                                    List.of(
+                                            "La ricerca descrive il perfezionismo come un insieme di dimensioni personali e sociali. Possono essere presenti standard molto elevati, forte preoccupazione per gli errori, dubbi sulla qualità delle proprie azioni, bisogno di ordine e la percezione che gli altri si aspettino prestazioni impeccabili.",
+                                            "Non è una diagnosi e non si manifesta allo stesso modo in ogni ambito. Una persona può essere molto esigente nel lavoro o nello studio e più flessibile nelle relazioni, nell'aspetto personale o nelle attività quotidiane."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Standard elevati e perfezionismo problematico non sono la stessa cosa",
+                                    List.of(
+                                            "Uno standard elevato può orientare l'impegno restando adattabile allo scopo, al tempo e alle risorse disponibili. Consente di imparare dagli errori, riconoscere un risultato adeguato, cambiare metodo e separare la qualità di una prestazione dal valore della persona.",
+                                            "La pressione perfezionistica tende invece a trasformare preferenze e obiettivi in regole assolute: il risultato deve essere impeccabile, l'errore sembra dimostrare incapacità e concludere, delegare o mostrarsi prima di sentirsi completamente pronti diventa difficile. È il costo complessivo, non l'ambizione in sé, a rendere importante osservare il meccanismo."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Dimensioni",
+                                    "Le diverse forme della pressione perfezionistica",
+                                    List.of(
+                                            "I principali modelli mostrano che non esiste un solo perfezionismo. Le dimensioni possono sovrapporsi, ma distinguerle aiuta a capire quale processo pesa maggiormente in una determinata situazione."
+                                    ),
+                                    List.of(
+                                            "Standard e valore personale: obiettivi molto esigenti diventano il principale criterio con cui valutarsi.",
+                                            "Errori, dubbi e autocritica: un'imprecisione viene interpretata come fallimento e il lavoro continua a sembrare incompleto o insufficiente.",
+                                            "Aspettative sociali: si percepisce che approvazione, rispetto o appartenenza dipendano dal soddisfare richieste molto elevate degli altri.",
+                                            "Ordine e controllo: pianificazione, dettagli, verifiche e procedure diventano rigidi, rendendo più difficile adattarsi, delegare o terminare.",
+                                            "Perfezionismo rivolto agli altri: aspettative inflessibili verso le prestazioni altrui possono alimentare frustrazione, critica e tensioni nelle relazioni."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Ciclo",
+                                    "Perché controllo e procrastinazione possono mantenere il problema",
+                                    List.of(
+                                            "Di fronte a uno standard rigido, il timore di sbagliare può portare a preparazione eccessiva, controlli ripetuti, ricerca continua di rassicurazioni oppure evitamento e rinvio. Queste strategie riducono temporaneamente l'incertezza, ma impediscono di verificare se un risultato meno che perfetto sarebbe stato comunque adeguato.",
+                                            "Quando il compito riesce, il successo può essere attribuito proprio al controllo estremo e lo standard viene alzato ancora; quando qualcosa non riesce, l'errore sembra confermare la necessità di essere più severi. Per questo perfezionismo e procrastinazione possono convivere, anche se dall'esterno appaiono opposti."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Strategie",
+                                    "Come rendere gli standard più flessibili",
+                                    List.of(
+                                            "Può aiutare definire in anticipo lo scopo del compito, un livello sufficientemente adeguato, il tempo disponibile e il numero di controlli. Piccoli esperimenti in situazioni sicure — consegnare un lavoro adeguato senza un'ultima revisione, delegare una parte o iniziare prima che tutte le condizioni siano ideali — permettono di confrontare le conseguenze temute con quelle reali.",
+                                            "È utile trasformare le regole assolute in preferenze, valutare costi e benefici dello standard, includere risultati positivi e limiti reali nel giudizio e coltivare fonti di valore personale diverse dalla prestazione. L'obiettivo non è rinunciare alla qualità, ma scegliere quando l'impegno aggiuntivo è davvero utile. Se rigidità, autocritica o rinvii causano sofferenza persistente o interferiscono con salute, relazioni, studio o lavoro, un confronto con uno psicologo o psicoterapeuta può offrire un percorso adatto alla situazione."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, standard elevati e valore legato ai risultati, paura degli errori e dubbi, aspettative e giudizio percepiti, ordine e controllo. Descrive la frequenza di alcune dinamiche riferite dalla persona, ma non misura capacità o valore e non costituisce una valutazione clinica.",
+                    List.of(
+                            new GuideReference(
+                                    "The dimensions of perfectionism — Frost e colleghi",
+                                    "https://doi.org/10.1007/BF01172967",
+                                    "Fonte primaria per la natura multidimensionale del perfezionismo e per le aree di standard personali, errori, dubbi, aspettative, critica, ordine e organizzazione."
+                            ),
+                            new GuideReference(
+                                    "Perfectionism in the self and social contexts — Hewitt e Flett",
+                                    "https://pubmed.ncbi.nlm.nih.gov/2027080/",
+                                    "Fonte primaria per distinguere perfezionismo orientato verso di sé, rivolto agli altri e socialmente prescritto."
+                            ),
+                            new GuideReference(
+                                    "Perfectionism Self-Help Resources — Centre for Clinical Interventions",
+                                    "https://www.cci.health.wa.gov.au/resources/looking-after-yourself/perfectionism",
+                                    "Risorsa istituzionale consultata per distinguere standard elevati utili e standard incessanti, comprendere il ciclo di mantenimento e proporre strategie graduali e concrete."
+                            )
+                    )
             )
     );
 
