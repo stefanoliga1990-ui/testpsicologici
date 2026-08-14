@@ -399,6 +399,84 @@ public class GuideCatalogue {
                                     "Riferimento istituzionale per il servizio pubblico gratuito di ascolto e orientamento dedicato alle donne vittime di violenza e stalking, attivo ogni giorno e a ogni ora."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "assertivita",
+                    "assertivita",
+                    "Assertività",
+                    "Assertività: comunicare bisogni, limiti e opinioni",
+                    "Assertività: significato ed esempi pratici | Spazio Test",
+                    "Una guida concisa all'assertività: differenze tra comunicazione passiva, aggressiva e assertiva, confini, capacità di dire no, critiche e strategie pratiche.",
+                    "L'assertività è la capacità di esprimere in modo chiaro e diretto opinioni, emozioni, bisogni e limiti, rispettando contemporaneamente i diritti e la dignità delle altre persone. Non significa ottenere sempre ciò che si vuole, evitare ogni conflitto o parlare in qualsiasi circostanza.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è l'assertività",
+                                    List.of(
+                                            "Essere assertivi significa rendere visibile il proprio punto di vista senza presentarlo come l'unico possibile. Include saper formulare richieste, rifiutare, esprimere disaccordo, chiedere chiarimenti e riconoscere sia i propri diritti sia quelli altrui.",
+                                            "È un insieme di comportamenti che può essere appreso e allenato. Una persona può esprimersi con facilità in alcuni rapporti e bloccarsi in altri, soprattutto quando teme giudizio, conflitto, rifiuto o conseguenze concrete."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Stili comunicativi",
+                                    "Passività, aggressività e assertività",
+                                    List.of(
+                                            "Nella comunicazione passiva i propri bisogni e limiti tendono a restare in secondo piano; questo può ridurre la tensione immediata, ma nel tempo favorire frustrazione, sovraccarico o risentimento.",
+                                            "Nella comunicazione aggressiva il proprio obiettivo viene perseguito ignorando, svalutando o forzando l'altra persona. L'assertività cerca invece chiarezza e fermezza senza minacce, umiliazioni o pretese di controllo."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Le diverse forme dell'assertività",
+                                    List.of(
+                                            "Gli strumenti di ricerca sull'assertività mostrano che non esiste una sola abilità generale. Contano sia la probabilità di mettere in atto un comportamento sia il disagio provato nel farlo: si può riuscire a dire no sentendosi comunque molto in ansia, oppure sentirsi tranquilli ma scegliere di non intervenire."
+                                    ),
+                                    List.of(
+                                            "Espressione: comunicare opinioni, preferenze, emozioni e bisogni in modo comprensibile.",
+                                            "Confini: dire no, proteggere tempo e risorse e chiedere che un comportamento cambi.",
+                                            "Confronto: affrontare disaccordi, dare o ricevere critiche e riconoscere un errore senza annullarsi o attaccare.",
+                                            "Iniziativa: fare richieste, chiedere aiuto, iniziare una conversazione ed esprimere o accogliere apprezzamento."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Non parlare è sempre mancanza di assertività?",
+                                    List.of(
+                                            "No. Scegliere consapevolmente di rimandare una conversazione, non condividere un'informazione o non esporsi può essere appropriato. L'assertività comprende anche valutare obiettivi, momento, interlocutore e possibili conseguenze.",
+                                            "Cultura, ruoli, dipendenza economica, gerarchie e sicurezza influenzano ciò che è possibile esprimere. In un contesto minaccioso o con un forte squilibrio di potere, adattarsi o evitare il confronto può essere una strategia protettiva e non una carenza personale."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Allenamento",
+                                    "Strategie per comunicare in modo più assertivo",
+                                    List.of(
+                                            "Può aiutare descrivere il fatto concreto, parlare in prima persona, spiegare l'effetto che produce e formulare una richiesta specifica. Un rifiuto può essere breve e rispettoso, senza lunghe giustificazioni; se l'altra persona insiste, ripetere con calma lo stesso limite evita di entrare in una discussione infinita.",
+                                            "È utile iniziare da situazioni gestibili, preparare le parole, osservare tono e postura e valutare dopo che cosa ha funzionato. Se paura del conflitto, difficoltà nei confini o reazioni aggressive compromettono relazioni e benessere, un confronto con uno psicologo o psicoterapeuta può aiutare ad allenare queste abilità in modo adatto al contesto."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, espressione di opinioni, bisogni ed emozioni, capacità di dire no e proteggere i confini, gestione di critiche e disaccordi, richieste, iniziativa e riconoscimento reciproco. Non misura valore, forza o coraggio e non costituisce una valutazione clinica.",
+                    List.of(
+                            new GuideReference(
+                                    "A 30-Item Schedule for Assessing Assertive Behavior — Rathus",
+                                    "https://doi.org/10.1016/S0005-7894(73)80120-0",
+                                    "Riferimento storico per la valutazione comportamentale e situazionale dell'assertività e per esempi relativi a espressione, iniziativa, richieste e confronto interpersonale."
+                            ),
+                            new GuideReference(
+                                    "Normative studies with the Scale for Interpersonal Behaviour — Arrindell e colleghi",
+                                    "https://doi.org/10.1016/S0191-8869(98)00252-9",
+                                    "Riferimento per la natura multidimensionale dell'assertività e per distinguere comportamento e disagio nelle aree di espressione, limiti, iniziativa e assertività positiva."
+                            ),
+                            new GuideReference(
+                                    "Improving Assertiveness — Centre for Clinical Interventions",
+                                    "https://www.cci.health.wa.gov.au/en/Resources/Looking-After-Yourself/Assertiveness",
+                                    "Risorsa istituzionale consultata per la definizione di comunicazione chiara e rispettosa, la distinzione tra stili comunicativi e le strategie pratiche su rifiuto, critiche e allenamento graduale."
+                            )
+                    )
             )
     );
 

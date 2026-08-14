@@ -94,6 +94,8 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Raising low self-esteem — NHS")))
                 .andExpect(content().string(containsString(
                         "Il 1522 — Dipartimento per le Pari Opportunità")))
+                .andExpect(content().string(containsString(
+                        "Improving Assertiveness — Centre for Clinical Interventions")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -126,7 +128,9 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("<h3>Autostima</h3>")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/dipendenza-affettiva\"")))
-                .andExpect(content().string(containsString("<h3>Dipendenza affettiva</h3>")));
+                .andExpect(content().string(containsString("<h3>Dipendenza affettiva</h3>")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/assertivita\"")))
+                .andExpect(content().string(containsString("<h3>Assertività</h3>")));
     }
 
     @Test
@@ -244,6 +248,31 @@ class PageRenderingTest {
     }
 
     @Test
+    void assertivenessGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/assertivita"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Assertività: significato ed esempi pratici | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/assertivita\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è l&#39;assertività")))
+                .andExpect(content().string(containsString(
+                        "Passività, aggressività e assertività")))
+                .andExpect(content().string(containsString("Le diverse forme dell&#39;assertività")))
+                .andExpect(content().string(containsString(
+                        "Strategie per comunicare in modo più assertivo")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "A 30-Item Schedule for Assessing Assertive Behavior — Rathus")))
+                .andExpect(content().string(containsString(
+                        "Improving Assertiveness — Centre for Clinical Interventions")))
+                .andExpect(content().string(containsString("href=\"/test/assertivita\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
     void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -275,6 +304,11 @@ class PageRenderingTest {
                         "href=\"/approfondimenti/dipendenza-affettiva\"")));
 
         mockMvc.perform(get("/test/assertivita"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/assertivita\"")));
+
+        mockMvc.perform(get("/test/intelligenza-emotiva"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.not(
                         containsString("Approfondisci l'argomento"))));
@@ -326,6 +360,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/autostima")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/dipendenza-affettiva")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/assertivita")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
