@@ -629,6 +629,85 @@ public class GuideCatalogue {
                                     "Risorsa istituzionale consultata per distinguere standard elevati utili e standard incessanti, comprendere il ciclo di mantenimento e proporre strategie graduali e concrete."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "ansia-sociale",
+                    "ansia-sociale",
+                    "Ansia sociale",
+                    "Ansia sociale: comprendere paura del giudizio ed evitamento",
+                    "Ansia sociale: sintomi e come affrontarla | Spazio Test",
+                    "Una guida concisa all'ansia sociale: differenze dalla timidezza, paura del giudizio, sintomi, evitamento, ciclo di mantenimento e possibili aiuti.",
+                    "L'ansia sociale riguarda una paura intensa di essere osservati, valutati, umiliati o rifiutati nelle interazioni e nelle situazioni di prestazione. Un certo disagio sociale è comune; diventa importante chiedere aiuto quando la paura persiste, causa forte sofferenza o limita relazioni, studio, lavoro e attività desiderate.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è l'ansia sociale",
+                                    List.of(
+                                            "La paura può comparire durante conversazioni, incontri con persone nuove, richieste, appuntamenti, colloqui, lezioni, riunioni o attività svolte sotto lo sguardo altrui. In alcune persone riguarda molti contesti; in altre emerge soprattutto quando devono parlare, esibirsi o essere valutate.",
+                                            "Una diagnosi di disturbo d'ansia sociale non si basa su un singolo episodio o su un questionario online. Richiede una valutazione della durata, dell'intensità, della proporzione rispetto alla situazione, dell'evitamento e dell'impatto sulla vita, considerando anche possibili spiegazioni alternative o condizioni associate."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Manifestazioni",
+                                    "Come può presentarsi prima, durante e dopo una situazione sociale",
+                                    List.of(
+                                            "Prima dell'evento possono comparire previsioni negative e immagini di ciò che potrebbe andare storto. Durante la situazione, l'attenzione può concentrarsi su voce, postura, parole e segnali fisici; rossore, tremore, sudorazione, nausea, battito accelerato o la sensazione di avere la mente vuota possono aumentare il timore che l'ansia sia visibile.",
+                                            "Dopo, è possibile ripercorrere a lungo la conversazione selezionando pause, frasi o espressioni considerate sbagliate e sottovalutando i segnali neutri o positivi. Questo ripensamento non dimostra che l'interazione sia realmente andata male."
+                                    ),
+                                    List.of(
+                                            "Giudizio: paura di apparire incompetenti, noiosi, strani, impacciati o visibilmente ansiosi.",
+                                            "Interazione: difficoltà a iniziare o mantenere conversazioni, esprimere opinioni, fare richieste o conoscere persone.",
+                                            "Prestazione: ansia nel parlare in pubblico, rispondere, sostenere un colloquio, essere osservati o diventare il centro dell'attenzione.",
+                                            "Anticipazione ed evitamento: preoccupazione prolungata, rinuncia a opportunità, uscita anticipata e analisi critica successiva."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Ciclo",
+                                    "Come evitamento e comportamenti protettivi mantengono la paura",
+                                    List.of(
+                                            "Evitare una situazione o usare accorgimenti per non farsi notare — parlare pochissimo, preparare ogni frase, controllare continuamente il proprio aspetto, restare al telefono o cercare sempre una via d'uscita — può ridurre l'ansia nell'immediato.",
+                                            "Il sollievo, però, può rafforzare l'idea che senza quelle protezioni sarebbe accaduto qualcosa di grave. Inoltre l'attenzione rivolta a sé rende più difficile seguire lo scambio e raccogliere informazioni reali sulle reazioni altrui, mentre anticipazione e ripensamento mantengono disponibili soprattutto le interpretazioni negative."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Ansia sociale, timidezza e contesto non sono la stessa cosa",
+                                    List.of(
+                                            "La timidezza è una caratteristica comune e non implica necessariamente sofferenza o limitazioni. Anche introversione e preferenza per gruppi piccoli non sono disturbi: il punto non è quanto una persona sia socievole, ma quanta libertà conserva nel partecipare alle situazioni che per lei contano.",
+                                            "Esperienze di esclusione, bullismo, discriminazione o ambienti realmente ostili possono rendere il timore del giudizio comprensibile e fondato. Trauma, depressione, altre forme d'ansia, neurodivergenze, differenze culturali o linguistiche e difficoltà comunicative possono inoltre produrre esperienze simili; una lettura professionale considera la persona e il contesto, non soltanto i sintomi."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Possibili aiuti",
+                                    "Affrontare gradualmente ciò che conta",
+                                    List.of(
+                                            "Può essere utile osservare situazione, previsione temuta, segnali fisici, attenzione e comportamento adottato, distinguendo i fatti dalle interpretazioni. Suddividere una difficoltà in passi gestibili, riportare l'attenzione sulla conversazione e ridurre gradualmente un comportamento protettivo permette di raccogliere nuove informazioni, senza pretendere di eliminare l'ansia prima di agire.",
+                                            "La terapia cognitivo-comportamentale specifica per l'ansia sociale e l'autoaiuto guidato basato sulla CBT sono interventi raccomandati; l'esposizione graduale può farne parte. Se la paura è intensa, è preferibile pianificare questi passi con un professionista, rispettando sicurezza e condizioni personali. Quando ansia o evitamento limitano la vita, uno psicologo, psicoterapeuta o medico può effettuare una valutazione completa e discutere le opzioni, incluse quelle farmacologiche quando appropriate."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, paura del giudizio e dell'imbarazzo, tensione nelle interazioni, situazioni di prestazione o osservazione e ciclo di anticipazione, protezione, evitamento e ripensamento. Descrive esperienze riferite dalla persona, ma non stabilisce la presenza di un disturbo d'ansia sociale e non sostituisce una valutazione professionale.",
+                    List.of(
+                            new GuideReference(
+                                    "Social Anxiety Disorder: What You Need to Know — NIMH",
+                                    "https://www.nimh.nih.gov/health/publications/social-anxiety-disorder-more-than-just-shyness",
+                                    "Fonte istituzionale per definizione, situazioni temute, segnali fisici e cognitivi, evitamento, criteri considerati nella diagnosi e possibilità di trattamento."
+                            ),
+                            new GuideReference(
+                                    "Social anxiety disorder: recognition, assessment and treatment — NICE CG159",
+                                    "https://www.nice.org.uk/guidance/cg159",
+                                    "Linea guida clinica consultata per valutazione di paura, evitamento e impatto, ciclo di attenzione e comportamenti protettivi e interventi raccomandati per gli adulti."
+                            ),
+                            new GuideReference(
+                                    "Social anxiety (social phobia) — NHS",
+                                    "https://www.nhs.uk/mental-health/conditions/social-anxiety/",
+                                    "Risorsa del servizio sanitario britannico consultata per distinguere ansia sociale e timidezza, descrivere manifestazioni comuni e proporre primi passi graduali e opzioni di aiuto."
+                            )
+                    )
             )
     );
 
