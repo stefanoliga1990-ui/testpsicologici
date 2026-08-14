@@ -708,6 +708,89 @@ public class GuideCatalogue {
                                     "Risorsa del servizio sanitario britannico consultata per distinguere ansia sociale e timidezza, descrivere manifestazioni comuni e proporre primi passi graduali e opzioni di aiuto."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "dinamiche-narcisistiche-coppia",
+                    "dinamiche-narcisistiche-partner",
+                    "Dinamiche narcisistiche nella coppia",
+                    "Dinamiche narcisistiche nella coppia: osservare comportamenti e impatto",
+                    "Dinamiche narcisistiche nella coppia: segnali | Spazio Test",
+                    "Una guida alle dinamiche narcisistiche percepite nella coppia: reciprocità, bisogno di ammirazione, conflitti, confini, controllo e sicurezza.",
+                    "L'espressione “partner narcisista” viene spesso usata per spiegare relazioni sbilanciate o dolorose, ma non consente di sapere se una persona abbia un disturbo narcisistico di personalità. È più affidabile osservare comportamenti ricorrenti, possibilità di confronto, rispetto dei confini e conseguenze della relazione sul benessere e sulla libertà di entrambi.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cosa si intende per dinamiche narcisistiche nella coppia",
+                                    List.of(
+                                            "Il termine può descrivere scambi in cui bisogno di centralità, ammirazione o trattamento speciale, scarsa considerazione dell'esperienza altrui e forte sensibilità alla critica condizionano ripetutamente la relazione. Possono emergere competizione, svalutazione, difficoltà a riconoscere responsabilità e poco spazio per bisogni diversi dai propri.",
+                                            "Un singolo litigio, una reazione difensiva o un comportamento egoista non definiscono una persona. Contano frequenza, rigidità, presenza in contesti diversi, possibilità di riparare e cambiare e impatto concreto sulla relazione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Diagnosi",
+                                    "Si può capire se il partner è narcisista?",
+                                    List.of(
+                                            "No, non attraverso un questionario compilato dall'altra persona. Il disturbo narcisistico di personalità è un quadro clinico pervasivo caratterizzato da grandiosità, bisogno di ammirazione e difficoltà empatiche; la diagnosi considera criteri specifici, storia personale, funzionamento in più contesti e possibili spiegazioni alternative.",
+                                            "Tratti come ricerca di conferme, egocentrismo o sensibilità alle critiche possono comparire anche senza un disturbo di personalità. Una valutazione attendibile richiede il coinvolgimento diretto della persona interessata e un professionista qualificato: la percezione del partner può descrivere la relazione, non stabilire una diagnosi."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Quali aspetti della relazione può essere utile osservare",
+                                    List.of(
+                                            "Concentrarsi su episodi verificabili e modelli ricorrenti riduce il rischio di trasformare un'etichetta in una spiegazione universale. Quattro aree aiutano a descrivere che cosa accade nella coppia."
+                                    ),
+                                    List.of(
+                                            "Reciprocità: emozioni, bisogni e successi di entrambi ricevono ascolto e spazio, anche quando sono scomodi o differenti.",
+                                            "Centralità e aspettative: attenzione, decisioni ed eccezioni ruotano stabilmente intorno a una sola persona oppure possono essere negoziate.",
+                                            "Confronto e responsabilità: critiche e disaccordi portano a dialogo, scuse e cambiamenti concreti oppure a rabbia, disprezzo, ritiro, svalutazione e attribuzione costante della colpa.",
+                                            "Confini e autonomia: limiti su privacy, corpo, denaro, tempo, amicizie e scelte vengono rispettati oppure pressioni e reazioni inducono a restringere la propria libertà."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Sicurezza",
+                                    "Narcisismo, conflitto e abuso non sono sinonimi",
+                                    List.of(
+                                            "Una comunicazione difficile o una dinamica sbilanciata non dimostrano automaticamente abuso; allo stesso tempo, umiliazioni, minacce, coercizione sessuale, isolamento imposto, controllo economico o digitale e violenza non diventano meno importanti se il partner non ha alcuna diagnosi. Sono i comportamenti e il loro effetto sulla sicurezza e sulla libertà a richiedere attenzione.",
+                                            "In una relazione abusante la responsabilità appartiene a chi mette in atto la violenza o il controllo. Se esprimere un limite o annunciare una separazione potrebbe aumentare il pericolo, è prudente non affrontare la situazione da soli e cercare prima un sostegno individuale e specializzato."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Orientamento",
+                                    "Come riflettere sulla relazione e cercare supporto",
+                                    List.of(
+                                            "Può essere utile annotare episodi concreti, contesto, frequenza, reazione a un limite e ciò che accade dopo il conflitto: esistono ascolto, riparazione e cambiamenti osservabili oppure il modello si ripete? Considera anche come la relazione incide su autostima, lucidità, relazioni sociali, autonomia economica, possibilità di dire no e senso di sicurezza.",
+                                            "Un confronto individuale con uno psicologo o psicoterapeuta può aiutare a ordinare le esperienze senza dover prima definire il partner. In presenza di controllo, minacce o violenza, è indicato rivolgersi a servizi specializzati e valutare la sicurezza prima di un confronto di coppia. In caso di pericolo immediato chiama il 112; in Italia il 1522 offre gratuitamente e in forma anonima, ogni giorno e a ogni ora, ascolto e orientamento alle donne vittime di violenza e stalking, anche tramite chat."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, la percezione di reciprocità ed empatia, centralità e bisogno di ammirazione, gestione di critiche e responsabilità, confini, controllo e impatto emotivo nella relazione. Non valuta direttamente il partner, non diagnostica un disturbo narcisistico di personalità e non può stabilire se una relazione sia abusante o sicura.",
+                    List.of(
+                            new GuideReference(
+                                    "Narcissistic Personality Disorder — Merck Manual Professional Edition",
+                                    "https://www.merckmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd",
+                                    "Riferimento clinico per il carattere pervasivo del disturbo, grandiosità, bisogno di ammirazione, empatia, sensibilità alla critica e necessità di una diagnosi professionale basata su criteri."
+                            ),
+                            new GuideReference(
+                                    "What Is Narcissistic Personality Disorder? — American Psychiatric Association",
+                                    "https://www.psychiatry.org/News-room/APA-Blogs/What-Is-Narcissistic-Personality-Disorder",
+                                    "Fonte istituzionale consultata per distinguere l'uso comune del termine narcisista, la presenza di singoli tratti e un disturbo persistente e problematico in più contesti."
+                            ),
+                            new GuideReference(
+                                    "Violence against women — World Health Organization",
+                                    "https://www.who.int/news-room/fact-sheets/detail/violence-against-women",
+                                    "Fonte istituzionale per distinguere i tratti di personalità dalla violenza del partner, che può includere aggressione, coercizione sessuale, abuso psicologico e comportamenti di controllo."
+                            ),
+                            new GuideReference(
+                                    "Il 1522 — Dipartimento per le Pari Opportunità",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Riferimento istituzionale per il servizio pubblico gratuito e anonimo di ascolto e orientamento dedicato alle donne vittime di violenza e stalking, attivo ogni giorno e a ogni ora."
+                            )
+                    )
             )
     );
 

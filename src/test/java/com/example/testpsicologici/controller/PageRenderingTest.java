@@ -102,6 +102,8 @@ class PageRenderingTest {
                         "Perfectionism Self-Help Resources — Centre for Clinical Interventions")))
                 .andExpect(content().string(containsString(
                         "Social anxiety (social phobia) — NHS")))
+                .andExpect(content().string(containsString(
+                        "Violence against women — World Health Organization")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -143,7 +145,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/approfondimenti/perfezionismo\"")))
                 .andExpect(content().string(containsString("<h3>Perfezionismo</h3>")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/ansia-sociale\"")))
-                .andExpect(content().string(containsString("<h3>Ansia sociale</h3>")));
+                .andExpect(content().string(containsString("<h3>Ansia sociale</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/dinamiche-narcisistiche-coppia\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Dinamiche narcisistiche nella coppia</h3>")));
     }
 
     @Test
@@ -364,6 +370,37 @@ class PageRenderingTest {
     }
 
     @Test
+    void narcissisticRelationshipDynamicsGuideRendersHelpfulContentSourcesAndBidirectionalLink()
+            throws Exception {
+        mockMvc.perform(get("/approfondimenti/dinamiche-narcisistiche-coppia"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Dinamiche narcisistiche nella coppia: segnali | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/dinamiche-narcisistiche-coppia\"")))
+                .andExpect(content().string(containsString(
+                        "Che cosa si intende per dinamiche narcisistiche nella coppia")))
+                .andExpect(content().string(containsString(
+                        "Si può capire se il partner è narcisista?")))
+                .andExpect(content().string(containsString(
+                        "Narcisismo, conflitto e abuso non sono sinonimi")))
+                .andExpect(content().string(containsString(
+                        "Come riflettere sulla relazione e cercare supporto")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "Narcissistic Personality Disorder — Merck Manual Professional Edition")))
+                .andExpect(content().string(containsString(
+                        "Violence against women — World Health Organization")))
+                .andExpect(content().string(containsString(
+                        "Il 1522 — Dipartimento per le Pari Opportunità")))
+                .andExpect(content().string(containsString(
+                        "href=\"/test/dinamiche-narcisistiche-partner\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
     void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -418,6 +455,12 @@ class PageRenderingTest {
                         "href=\"/approfondimenti/ansia-sociale\"")));
 
         mockMvc.perform(get("/test/dinamiche-narcisistiche-partner"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/dinamiche-narcisistiche-coppia\"")));
+
+        mockMvc.perform(get("/test/ansia-generalizzata"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.not(
                         containsString("Approfondisci l'argomento"))));
@@ -477,6 +520,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/perfezionismo")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/ansia-sociale")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/dinamiche-narcisistiche-coppia")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
