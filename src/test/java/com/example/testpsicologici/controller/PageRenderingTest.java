@@ -106,6 +106,7 @@ class PageRenderingTest {
                         "Violence against women — World Health Organization")))
                 .andExpect(content().string(containsString(
                         "Generalised anxiety disorder (GAD) — NHS")))
+                .andExpect(content().string(containsString("Depression in adults — NHS")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -154,7 +155,11 @@ class PageRenderingTest {
                         "<h3>Dinamiche narcisistiche nella coppia</h3>")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/ansia-generalizzata\"")))
-                .andExpect(content().string(containsString("<h3>Ansia generalizzata</h3>")));
+                .andExpect(content().string(containsString("<h3>Ansia generalizzata</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/umore-depresso\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Umore depresso e sintomi depressivi</h3>")));
     }
 
     @Test
@@ -432,6 +437,33 @@ class PageRenderingTest {
     }
 
     @Test
+    void depressedMoodGuideRendersHelpfulContentSourcesSafetyAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/umore-depresso"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Depressione: sintomi e segnali da conoscere | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/umore-depresso\"")))
+                .andExpect(content().string(containsString(
+                        "Tristezza, umore depresso e depressione non sono la stessa cosa")))
+                .andExpect(content().string(containsString(
+                        "Come possono presentarsi i sintomi depressivi")))
+                .andExpect(content().string(containsString(
+                        "Perché è importante osservare il quadro completo")))
+                .andExpect(content().string(containsString(
+                        "Trattamenti disponibili e segnali da non affrontare da soli")))
+                .andExpect(content().string(containsString("chiama subito il 112")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "Depressive disorder (depression) — World Health Organization")))
+                .andExpect(content().string(containsString("Depression in adults — NHS")))
+                .andExpect(content().string(containsString("href=\"/test/umore-depresso\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
     void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -499,6 +531,12 @@ class PageRenderingTest {
 
         mockMvc.perform(get("/test/umore-depresso"))
                 .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/umore-depresso\"")));
+
+        mockMvc.perform(get("/test/people-pleasing"))
+                .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.not(
                         containsString("Approfondisci l'argomento"))));
     }
@@ -561,6 +599,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/dinamiche-narcisistiche-coppia")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/ansia-generalizzata")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/umore-depresso")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))

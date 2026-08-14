@@ -869,6 +869,89 @@ public class GuideCatalogue {
                                     "Risorsa del servizio sanitario britannico consultata per manifestazioni comuni, criteri considerati nella valutazione, opzioni di aiuto e accorgimenti quotidiani prudenti."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "umore-depresso",
+                    "umore-depresso",
+                    "Umore depresso e sintomi depressivi",
+                    "Umore depresso e sintomi depressivi: come riconoscerli",
+                    "Depressione: sintomi e segnali da conoscere | Spazio Test",
+                    "Una guida a umore depresso e sintomi della depressione: perdita di interesse, energia, sonno, pensieri, funzionamento, trattamenti e richiesta di aiuto.",
+                    "Sentirsi tristi o scarichi in alcuni periodi fa parte dell'esperienza umana. Un quadro depressivo coinvolge invece un cambiamento più persistente dell'umore o della capacità di provare interesse e piacere, insieme ad altri sintomi che possono incidere sulla vita quotidiana.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Tristezza, umore depresso e depressione non sono la stessa cosa",
+                                    List.of(
+                                            "Tristezza e calo dell'umore possono comparire durante stress, perdite o cambiamenti e spesso si modificano con il tempo e il contesto. In un episodio depressivo, umore depresso oppure perdita di interesse o piacere sono presenti per gran parte del giorno, quasi ogni giorno, per almeno due settimane, insieme ad altri sintomi e a sofferenza o difficoltà nel funzionamento.",
+                                            "Un singolo segnale o un questionario online non permettono di formulare una diagnosi. La valutazione considera frequenza, durata, intensità e impatto, storia personale, lutti e condizioni di vita, oltre a possibili cause mediche, effetti di farmaci o sostanze e altre condizioni psicologiche."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Manifestazioni",
+                                    "Come possono presentarsi i sintomi depressivi",
+                                    List.of(
+                                            "La depressione non si manifesta nello stesso modo in tutte le persone e non coincide necessariamente con una tristezza evidente. Irritabilità, distacco, rallentamento o sintomi fisici possono essere più riconoscibili del tono dell'umore."
+                                    ),
+                                    List.of(
+                                            "Umore e piacere: tristezza, vuoto, irritabilità, distacco oppure minore interesse e difficoltà a provare piacere.",
+                                            "Energia e attivazione: stanchezza, rallentamento, minore motivazione e grande sforzo anche per attività semplici o di cura personale.",
+                                            "Pensieri: colpa eccessiva, autosvalutazione, senso di inutilità o di essere un peso e visione del futuro senza possibilità di cambiamento.",
+                                            "Funzionamento: cambiamenti nel sonno o nell'appetito, difficoltà di concentrazione e decisione, ritiro e interferenza con lavoro, studio, relazioni o responsabilità."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Valutazione",
+                                    "Perché è importante osservare il quadro completo",
+                                    List.of(
+                                            "Sintomi simili possono accompagnare un lutto, stress prolungato, dolore cronico, disturbi del sonno o condizioni mediche; possono inoltre essere influenzati da farmaci, alcol o altre sostanze. Questo non rende la sofferenza meno reale, ma mostra perché è utile evitare autodiagnosi e considerare spiegazioni e bisogni diversi.",
+                                            "È importante riferire al professionista anche eventuali periodi passati di umore insolitamente elevato o molto irritabile, forte aumento di energia o attività, ridotto bisogno di dormire, pensieri accelerati o comportamenti impulsivi. Queste esperienze possono orientare verso un quadro differente e incidere sulle scelte di trattamento."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Primi passi",
+                                    "Ridurre il ritiro senza trasformare tutto in una prova",
+                                    List.of(
+                                            "Quando energia e piacere diminuiscono, è naturale ridurre attività e contatti. Nel tempo, però, il ritiro può lasciare ancora meno occasioni di movimento, relazione, efficacia o significato e contribuire al mantenimento del calo dell'umore. Non è pigrizia né mancanza di volontà.",
+                                            "Può aiutare scegliere un'azione molto piccola e realistica, come alzarsi a un orario sostenibile, fare una breve passeggiata, consumare un pasto regolare o contattare una persona fidata. Annotare sintomi, durata, sonno, appetito e impatto può facilitare il confronto con un professionista. Questi accorgimenti possono sostenere, ma non sostituiscono una cura quando i sintomi persistono o limitano la vita."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aiuto e sicurezza",
+                                    "Trattamenti disponibili e segnali da non affrontare da soli",
+                                    List.of(
+                                            "La depressione è trattabile. Gli interventi possono comprendere psicoterapia, strategie guidate e, quando indicato, farmaci prescritti e monitorati da un medico; la scelta dipende da gravità, storia, preferenze e condizioni della persona. È opportuno chiedere aiuto se i sintomi durano, peggiorano o interferiscono con attività, relazioni o cura di sé.",
+                                            "Pensieri di morte, di non voler vivere o di farsi del male richiedono attenzione indipendentemente dal risultato di qualsiasi test. Se temi un pericolo immediato o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso e, se possibile, resta con una persona di fiducia. Se non c'è un pericolo immediato ma questi pensieri sono presenti, parlane al più presto con un medico o un professionista della salute mentale e con qualcuno di cui ti fidi."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, umore e capacità di provare piacere, energia e attivazione, pensieri su di sé e sul futuro, sonno, appetito, concentrazione e funzionamento nelle ultime due settimane. Non formula una diagnosi e non valuta pensieri suicidari o rischio di autolesionismo: un risultato basso non esclude la necessità di chiedere aiuto.",
+                    List.of(
+                            new GuideReference(
+                                    "Depressive disorder (depression) — World Health Organization",
+                                    "https://www.who.int/news-room/fact-sheets/detail/depression",
+                                    "Fonte istituzionale per differenza dalle comuni variazioni dell'umore, sintomi, durata, impatto sul funzionamento, trattabilità, strategie di cura di sé e indicazioni di sicurezza."
+                            ),
+                            new GuideReference(
+                                    "Depression — National Institute of Mental Health",
+                                    "https://www.nimh.nih.gov/health/publications/depression",
+                                    "Fonte istituzionale per varietà delle manifestazioni, perdita di interesse, energia, colpa, sonno, appetito, possibili cause alternative, valutazione e trattamenti."
+                            ),
+                            new GuideReference(
+                                    "Depression in adults — NHS",
+                                    "https://www.nhs.uk/mental-health/conditions/depression-in-adults/overview/",
+                                    "Risorsa del servizio sanitario britannico consultata per distinguere il calo temporaneo dell'umore dalla depressione e descrivere richiesta di aiuto, supporto e opzioni di trattamento."
+                            ),
+                            new GuideReference(
+                                    "Il numero 118 e il Numero di emergenza unico europeo (112) — Ministero della Salute",
+                                    "https://www.salute.gov.it/new/it/tema/112-118-e-pronto-soccorso/il-numero-118-e-il-numero-di-emergenza-unico-europeo-112/",
+                                    "Riferimento istituzionale italiano per il ricorso immediato ai servizi di emergenza e al Pronto Soccorso quando la persona è in pericolo o non si sente al sicuro."
+                            )
+                    )
             )
     );
 
