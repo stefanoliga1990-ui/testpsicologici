@@ -96,6 +96,8 @@ class PageRenderingTest {
                         "Il 1522 — Dipartimento per le Pari Opportunità")))
                 .andExpect(content().string(containsString(
                         "Improving Assertiveness — Centre for Clinical Interventions")))
+                .andExpect(content().string(containsString(
+                        "The Ability Model of Emotional Intelligence: Principles and Updates — Mayer, Caruso e Salovey")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -130,7 +132,10 @@ class PageRenderingTest {
                         "href=\"/approfondimenti/dipendenza-affettiva\"")))
                 .andExpect(content().string(containsString("<h3>Dipendenza affettiva</h3>")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/assertivita\"")))
-                .andExpect(content().string(containsString("<h3>Assertività</h3>")));
+                .andExpect(content().string(containsString("<h3>Assertività</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/intelligenza-emotiva\"")))
+                .andExpect(content().string(containsString("<h3>Intelligenza emotiva</h3>")));
     }
 
     @Test
@@ -273,6 +278,32 @@ class PageRenderingTest {
     }
 
     @Test
+    void emotionalIntelligenceGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/intelligenza-emotiva"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Intelligenza emotiva: cos&#39;è e come svilupparla | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/intelligenza-emotiva\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è l&#39;intelligenza emotiva")))
+                .andExpect(content().string(containsString(
+                        "Non esiste un unico modo di definire e misurare il costrutto")))
+                .andExpect(content().string(containsString(
+                        "Percepire, usare, comprendere e regolare le emozioni")))
+                .andExpect(content().string(containsString(
+                        "Riconoscere un&#39;emozione non significa leggere la mente")))
+                .andExpect(content().string(containsString("BreadcrumbList")))
+                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "The Ability Model of Emotional Intelligence: Principles and Updates — Mayer, Caruso e Salovey")))
+                .andExpect(content().string(containsString(
+                        "Emotional Intelligence: New Ability or Eclectic Traits? — Mayer, Salovey e Caruso")))
+                .andExpect(content().string(containsString("href=\"/test/intelligenza-emotiva\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
     void testLinksToItsGuideOnlyWhenOneIsPublished() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -309,6 +340,12 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/approfondimenti/assertivita\"")));
 
         mockMvc.perform(get("/test/intelligenza-emotiva"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/intelligenza-emotiva\"")));
+
+        mockMvc.perform(get("/test/perfezionismo"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.not(
                         containsString("Approfondisci l'argomento"))));
@@ -362,6 +399,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/dipendenza-affettiva")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/assertivita")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/intelligenza-emotiva")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))

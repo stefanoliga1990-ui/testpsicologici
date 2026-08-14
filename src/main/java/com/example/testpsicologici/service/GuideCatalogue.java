@@ -477,6 +477,79 @@ public class GuideCatalogue {
                                     "Risorsa istituzionale consultata per la definizione di comunicazione chiara e rispettosa, la distinzione tra stili comunicativi e le strategie pratiche su rifiuto, critiche e allenamento graduale."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "intelligenza-emotiva",
+                    "intelligenza-emotiva",
+                    "Intelligenza emotiva",
+                    "Intelligenza emotiva: riconoscere, comprendere e regolare le emozioni",
+                    "Intelligenza emotiva: cos'è e come svilupparla | Spazio Test",
+                    "Una guida concisa all'intelligenza emotiva: significato, quattro aree del modello di abilità, differenze rispetto ai tratti personali e strategie pratiche.",
+                    "L'intelligenza emotiva descrive la capacità di ragionare sulle emozioni e di usare le informazioni emotive nel pensiero. Nel modello di abilità comprende percezione, uso, comprensione e regolazione delle emozioni: aree collegate, ma non equivalenti a essere sempre calmi, socievoli o empatici.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è l'intelligenza emotiva",
+                                    List.of(
+                                            "Le emozioni forniscono informazioni su ciò che accade dentro di noi e nelle relazioni. L'intelligenza emotiva riguarda il modo in cui queste informazioni vengono riconosciute, interpretate e integrate nel ragionamento e nelle decisioni.",
+                                            "Non sostituisce l'intelligenza generale e non coincide con personalità, autostima, ottimismo, gentilezza o maturità morale. Una persona può comprendere bene un'emozione e scegliere comunque un comportamento poco utile, perché sulle azioni influiscono anche obiettivi, abitudini, contesto e motivazione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Modelli e misure",
+                                    "Non esiste un unico modo di definire e misurare il costrutto",
+                                    List.of(
+                                            "Nella ricerca convivono modelli diversi. Il modello di abilità considera l'intelligenza emotiva una forma di ragionamento su emozioni e informazioni collegate; altri approcci includono invece competenze, disposizioni e tratti personali più ampi. Risultati ottenuti con strumenti basati su modelli differenti non sono quindi direttamente intercambiabili.",
+                                            "Una prova di abilità propone problemi da risolvere e valuta le risposte secondo criteri definiti. Un questionario di autovalutazione, come quello di Spazio Test, descrive invece come la persona percepisce le proprie abitudini: è utile per riflettere, ma non fornisce un quoziente emotivo né una misura oggettiva delle capacità."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le quattro aree",
+                                    "Percepire, usare, comprendere e regolare le emozioni",
+                                    List.of(
+                                            "Il modello di abilità organizza il ragionamento emotivo in quattro aree. Non sono gradini rigidi e nella vita quotidiana vengono spesso utilizzate insieme."
+                                    ),
+                                    List.of(
+                                            "Percezione: riconoscere segnali emotivi nelle proprie sensazioni, nei pensieri, nella voce, nelle espressioni e nel contesto, evitando di trattare una prima impressione come una certezza.",
+                                            "Uso nel pensiero: considerare come gli stati emotivi orientano attenzione, priorità e prospettive e impiegare queste informazioni senza lasciare che decidano automaticamente al posto nostro.",
+                                            "Comprensione: distinguere sfumature, possibili cause, combinazioni e cambiamenti delle emozioni, ampliando il vocabolario con cui vengono descritte.",
+                                            "Regolazione: scegliere come rispondere alle emozioni proprie e altrui, modulandone espressione e intensità quando è utile. Regolare non significa reprimere ogni emozione spiacevole o controllare ciò che provano gli altri."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Riconoscere un'emozione non significa leggere la mente",
+                                    List.of(
+                                            "Espressioni, tono e comportamento possono avere più interpretazioni. Cultura, esperienza, caratteristiche individuali e neurodivergenze influenzano sia il modo di esprimere le emozioni sia quello di riconoscerle; con le altre persone, formulare un'ipotesi e verificarla con rispetto è più affidabile che presumere di sapere cosa provano.",
+                                            "Stress, stanchezza, salute e condizioni di sicurezza possono rendere più difficile identificare o regolare ciò che si prova. Una difficoltà in un momento o in un contesto non definisce il valore della persona e non dimostra, da sola, una carenza stabile."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Allenamento",
+                                    "Strategie per sviluppare consapevolezza e regolazione",
+                                    List.of(
+                                            "Può essere utile fermarsi e descrivere separatamente sensazioni fisiche, emozione, possibile causa, bisogno e impulso ad agire. Dare un nome più preciso a ciò che si prova, distinguere il sentimento dall'azione e osservare a posteriori l'effetto di una risposta aiuta a costruire alternative.",
+                                            "Nelle relazioni, ascoltare, chiedere chiarimenti e restituire con parole proprie ciò che si è compreso permette di correggere interpretazioni affrettate. Per la regolazione si possono sperimentare pause, respirazione, movimento, riformulazione del problema, supporto sociale e pianificazione, valutando quale strategia è adatta alla situazione. Se le difficoltà emotive provocano sofferenza persistente o interferiscono con relazioni, studio o lavoro, può essere utile parlarne con uno psicologo o psicoterapeuta."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, la percezione delle proprie abitudini nelle quattro aree del modello: riconoscere le emozioni, utilizzarne le informazioni, comprenderne cause e cambiamenti e regolarne espressione e intensità. Non è una prova di abilità, non assegna un quoziente emotivo e non costituisce una valutazione clinica.",
+                    List.of(
+                            new GuideReference(
+                                    "The Ability Model of Emotional Intelligence: Principles and Updates — Mayer, Caruso e Salovey",
+                                    "https://sites.usnh.edu/jdmayer/wp-content/uploads/sites/261/2024/03/rp2016-mayer-caruso-salovey.pdf",
+                                    "Fonte primaria per la definizione dell'intelligenza emotiva come abilità, le quattro aree di percezione, uso, comprensione e regolazione e la distinzione tra prove di abilità e autovalutazioni."
+                            ),
+                            new GuideReference(
+                                    "Emotional Intelligence: New Ability or Eclectic Traits? — Mayer, Salovey e Caruso",
+                                    "https://cdn2.psychologytoday.com/assets/attachments/1575/rp2008-mayersaloveycarusob.pdf",
+                                    "Approfondimento scientifico consultato per distinguere il modello di abilità dagli approcci che riuniscono tratti e qualità personali più ampie sotto la stessa etichetta."
+                            )
+                    )
             )
     );
 
