@@ -3,12 +3,15 @@
 ## Architettura scelta
 
 - Applicazione Spring Boot impacchettata come JAR ed eseguita in un'immagine Java 17.
+- Frontend React compilato da Vite durante la build Maven/Docker e incluso nello stesso JAR; gli asset sono serviti direttamente da Spring Boot.
 - Database H2 in modalità file.
 - Un solo servizio e una sola replica.
 - Volume Railway montato a `/data` per rendere persistente il file H2.
 - Dati editoriali inizializzati dal `ContentDataInitializer`: un database vuoto riceve automaticamente gli stessi test e le stesse analisi presenti nel codice.
 
 Il file locale `data/testpsicologici.mv.db` non deve essere pubblicato su GitHub né copiato nel container. Il codice di inizializzazione è la fonte riproducibile dei contenuti; il volume conserva poi il database tra riavvii e nuovi deploy.
+
+Non serve un servizio Node in produzione: Node viene installato soltanto nello stage di build del `Dockerfile`. Routing pubblico, dominio Railway, cookie di sessione ed endpoint Spring restano sullo stesso origin.
 
 ## Configurazione Railway
 

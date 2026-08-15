@@ -5,6 +5,8 @@
 data
 docs
 target
+frontend/node_modules
+frontend/dist
 settings.xml
 *.iml
 HELP.md

@@ -4,8 +4,10 @@ WORKDIR /workspace
 
 COPY .mvn/ .mvn/
 COPY mvnw pom.xml ./
+COPY frontend/package.json frontend/package.json
 RUN chmod +x mvnw && ./mvnw -B -ntp -DskipTests dependency:go-offline
 
+COPY frontend/ frontend/
 COPY src/ src/
 RUN ./mvnw -B -ntp -DskipTests clean package
 

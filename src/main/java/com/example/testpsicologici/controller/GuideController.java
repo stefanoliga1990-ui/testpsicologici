@@ -28,7 +28,9 @@ public class GuideController {
 
     @GetMapping("/approfondimenti")
     public String index(HttpServletRequest request, Model model) {
-        model.addAttribute("guides", guideCatalogue.findAll());
+        var guides = guideCatalogue.findAll();
+        model.addAttribute("guides", guides);
+        model.addAttribute("reactPageData", ReactPageData.of("guides", "guides", guides));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/approfondimenti"));
         model.addAttribute("siteUrl", siteUrlService.canonicalUrl(request, "/"));
         return "guides";
@@ -39,7 +41,9 @@ public class GuideController {
         InformationGuide guide = guideCatalogue.findBySlug(slug)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Approfondimento non trovato"));
         model.addAttribute("guide", guide);
-        model.addAttribute("test", testCatalogue.findById(guide.testId()));
+        var test = testCatalogue.findById(guide.testId());
+        model.addAttribute("test", test);
+        model.addAttribute("reactPageData", ReactPageData.of("guide", "guide", guide, "test", test));
         model.addAttribute("canonicalUrl",
                 siteUrlService.canonicalUrl(request, "/approfondimenti/" + guide.slug()));
         model.addAttribute("siteUrl", siteUrlService.canonicalUrl(request, "/"));

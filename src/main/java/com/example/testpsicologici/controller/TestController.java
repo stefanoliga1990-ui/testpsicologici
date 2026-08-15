@@ -1,5 +1,6 @@
 package com.example.testpsicologici.controller;
 
+import com.example.testpsicologici.model.InformationGuide;
 import com.example.testpsicologici.model.PsychologicalTest;
 import com.example.testpsicologici.model.TestAttempt;
 import com.example.testpsicologici.model.TestResult;
@@ -53,7 +54,9 @@ public class TestController {
 
     @GetMapping("/")
     public String home(HttpServletRequest request, Model model) {
-        model.addAttribute("tests", catalogue.findAll());
+        List<PsychologicalTest> tests = catalogue.findAll();
+        model.addAttribute("tests", tests);
+        model.addAttribute("reactPageData", ReactPageData.of("home", "tests", tests));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/"));
         model.addAttribute("projectUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
         return "home";
@@ -61,8 +64,11 @@ public class TestController {
 
     @GetMapping("/test/{testId}")
     public String introduction(@PathVariable String testId, HttpServletRequest request, Model model) {
-        model.addAttribute("test", findTest(testId));
-        model.addAttribute("guide", guideCatalogue.findByTestId(testId).orElse(null));
+        PsychologicalTest test = findTest(testId);
+        InformationGuide guide = guideCatalogue.findByTestId(testId).orElse(null);
+        model.addAttribute("test", test);
+        model.addAttribute("guide", guide);
+        model.addAttribute("reactPageData", ReactPageData.of("introduction", "test", test, "guide", guide));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/test/" + testId));
         model.addAttribute("projectUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
         model.addAttribute("methodUrl", siteUrlService.canonicalUrl(request, "/metodo-e-fonti"));
@@ -92,6 +98,15 @@ public class TestController {
         model.addAttribute("progress", (questionNumber - 1) * 100 / test.questions().size());
         model.addAttribute("answers", ANSWER_OPTIONS);
         model.addAttribute("selectedAnswer", attempt.answerAt(questionIndex));
+        model.addAttribute("reactPageData", ReactPageData.of(
+                "question",
+                "test", test,
+                "question", test.questions().get(questionIndex),
+                "questionNumber", questionNumber,
+                "questionCount", test.questions().size(),
+                "progress", (questionNumber - 1) * 100 / test.questions().size(),
+                "answers", ANSWER_OPTIONS,
+                "selectedAnswer", attempt.answerAt(questionIndex)));
         return "question";
     }
 
@@ -126,6 +141,13 @@ public class TestController {
         model.addAttribute("percentage", result.percentage());
         model.addAttribute("result", result.general());
         model.addAttribute("areaResults", result.areaResults());
+        model.addAttribute("reactPageData", ReactPageData.of(
+                "result",
+                "test", test,
+                "score", result.score(),
+                "percentage", result.percentage(),
+                "result", result.general(),
+                "areaResults", result.areaResults()));
         return "result";
     }
 

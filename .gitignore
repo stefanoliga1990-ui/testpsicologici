@@ -1,5 +1,7 @@
 HELP.md
 target/
+frontend/node_modules/
+frontend/dist/
 data/
 settings.xml
 .mvn/wrapper/maven-wrapper.jar

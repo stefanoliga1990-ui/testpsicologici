@@ -24,8 +24,11 @@ public class EditorialController {
 
     @GetMapping("/metodo-e-fonti")
     public String methodAndSources(HttpServletRequest request, Model model) {
-        model.addAttribute("tests", catalogue.findAll());
-        model.addAttribute("guides", guideCatalogue.findAll());
+        var tests = catalogue.findAll();
+        var guides = guideCatalogue.findAll();
+        model.addAttribute("tests", tests);
+        model.addAttribute("guides", guides);
+        model.addAttribute("reactPageData", ReactPageData.of("method", "tests", tests, "guides", guides));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/metodo-e-fonti"));
         model.addAttribute("siteUrl", siteUrlService.canonicalUrl(request, "/"));
         model.addAttribute("projectUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
@@ -34,6 +37,7 @@ public class EditorialController {
 
     @GetMapping("/il-progetto")
     public String project(HttpServletRequest request, Model model) {
+        model.addAttribute("reactPageData", ReactPageData.of("project"));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
         model.addAttribute("siteUrl", siteUrlService.canonicalUrl(request, "/"));
         model.addAttribute("methodUrl", siteUrlService.canonicalUrl(request, "/metodo-e-fonti"));

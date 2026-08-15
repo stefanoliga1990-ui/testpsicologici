@@ -18,6 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/app.css(v='guides-1')}">
+    <link rel="stylesheet" th:href="@{/react/assets/app.css(v='react-1')}">
     <script type="application/ld+json" th:inline="javascript">
     {
       "@context": "https://schema.org",
@@ -56,6 +57,7 @@
     </script>
 </head>
 <body class="guide-body">
+<th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
 <main class="guide-shell">
     <nav class="site-nav" aria-label="Navigazione principale">
         <a class="brand" th:href="@{/}"><span class="brand-mark">✦</span> Spazio Test</a>
