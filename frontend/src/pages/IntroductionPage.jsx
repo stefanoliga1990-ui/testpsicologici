@@ -14,7 +14,7 @@ export default function IntroductionPage({ guide, test }) {
 
   return (
     <main className="intro-shell">
-      <Navbar links={[{ href: '/', label: '← Tutti i test' }]} />
+      <Navbar />
       <Card className="intro-card">
         <p className="eyebrow">{test.eyebrow}</p>
         <h1>{test.title}</h1>

@@ -6,7 +6,7 @@ import { withSessionId } from '../utils/urls';
 export default function ResultPage({ areaResults, percentage, result, score, test }) {
   return (
     <main className="result-shell">
-      <Navbar note="Risultato completato" />
+      <Navbar />
       <section className="result-card">
         <p className="eyebrow">Il tuo risultato</p>
         {test.scoreVisible ? <div className="score-badge"><span>{score}</span><small>/100</small></div> : <div className="result-symbol" aria-hidden="true">✦</div>}

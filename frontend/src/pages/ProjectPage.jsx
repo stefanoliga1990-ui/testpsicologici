@@ -2,16 +2,10 @@ import Button from '../components/Button';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
-const links = [
-  { href: '/approfondimenti', label: 'Approfondimenti' },
-  { href: '/metodo-e-fonti', label: 'Metodo e fonti' },
-  { href: '/', label: 'Tutti i test' }
-];
-
 export default function ProjectPage() {
   return (
     <main className="editorial-shell project-shell">
-      <Navbar links={links} />
+      <Navbar />
       <header className="editorial-hero project-hero">
         <p className="eyebrow">Il progetto</p><h1>Uno spazio per osservarti con più chiarezza</h1>
         <p>Spazio Test è un progetto editoriale indipendente nato per rendere più accessibili l'auto-osservazione e l'informazione attraverso questionari e guide chiari, documentati e rispettosi della complessità delle esperienze personali.</p>

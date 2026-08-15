@@ -1,14 +1,27 @@
 import Brand from './Brand';
 
-export default function Navbar({ links = [], note, brandClassName }) {
+const links = [
+  { href: '/approfondimenti', label: 'Approfondimenti' },
+  { href: '/metodo-e-fonti', label: 'Metodo e fonti' },
+  { href: '/il-progetto', label: 'Il progetto' }
+];
+
+function isCurrentPage(href) {
+  return window.location.pathname === href
+    || (href === '/approfondimenti' && window.location.pathname.startsWith('/approfondimenti/'));
+}
+
+export default function Navbar() {
   return (
     <nav className="site-nav" aria-label="Navigazione principale">
-      <Brand className={brandClassName} />
-      {note ? <span className="nav-note">{note}</span> : (
-        <div className="nav-links">
-          {links.map((link) => <a href={link.href} key={link.href}>{link.label}</a>)}
-        </div>
-      )}
+      <Brand />
+      <div className="nav-links">
+        {links.map((link) => (
+          <a href={link.href} aria-current={isCurrentPage(link.href) ? 'page' : undefined} key={link.href}>
+            {link.label}
+          </a>
+        ))}
+      </div>
     </nav>
   );
 }

@@ -2,16 +2,10 @@ import Card from '../components/Card';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
-const links = [
-  { href: '/metodo-e-fonti', label: 'Metodo e fonti' },
-  { href: '/il-progetto', label: 'Il progetto' },
-  { href: '/', label: 'Tutti i test' }
-];
-
 export default function GuidesPage({ guides }) {
   return (
     <main className="editorial-shell guides-shell">
-      <Navbar links={links} />
+      <Navbar />
       <header className="editorial-hero guides-hero">
         <p className="eyebrow">Conoscere per orientarsi</p><h1>Approfondimenti</h1>
         <p>Guide brevi e documentate per comprendere gli argomenti esplorati nei questionari, distinguere esperienze comuni e condizioni cliniche e sapere che cosa può richiedere una valutazione individuale.</p>

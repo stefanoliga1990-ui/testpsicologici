@@ -15,6 +15,33 @@ body.react-mounted > main {
   display: none;
 }
 
+#react-root > :is(.shell, .editorial-shell, .guide-shell, .intro-shell, .result-shell, .test-shell) {
+  width: min(1120px, calc(100% - 48px));
+}
+
+#react-root .site-nav {
+  position: relative;
+  z-index: 2;
+  min-height: 58px;
+  padding: 14px 18px;
+  border: 1px solid rgba(36, 92, 76, .12);
+  border-radius: 16px;
+  background: rgba(255, 254, 250, .88);
+  box-shadow: 0 8px 26px rgba(28, 54, 43, .055);
+  backdrop-filter: blur(12px);
+}
+
+#react-root .site-nav .nav-links a[aria-current="page"] {
+  color: var(--green);
+  border-color: currentColor;
+}
+
+#react-root .hero h1 {
+  max-width: 600px;
+  font-size: clamp(3rem, calc(2.55rem + 1.2vw), 4rem);
+  text-wrap: balance;
+}
+
 .react-error {
   width: min(620px, calc(100% - 32px));
   margin: 15vh auto;
@@ -52,4 +79,15 @@ body.react-mounted > main {
   border-right-color: transparent;
   border-radius: 50%;
   animation: spin .7s linear infinite;
+}
+
+@media (max-width: 680px) {
+  #react-root > :is(.shell, .editorial-shell, .guide-shell, .intro-shell, .result-shell, .test-shell) {
+    width: min(100% - 32px, 1120px);
+  }
+
+  #react-root .site-nav {
+    min-height: 0;
+    padding: 13px 14px;
+  }
 }

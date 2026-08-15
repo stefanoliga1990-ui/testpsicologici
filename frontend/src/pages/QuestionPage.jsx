@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import AsyncError from '../components/AsyncError';
-import Brand from '../components/Brand';
+import Navbar from '../components/Navbar';
 import useAsyncAction from '../hooks/useAsyncAction';
 import { saveAnswer } from '../services/api';
 import { withSessionId } from '../utils/urls';
@@ -14,7 +14,7 @@ export default function QuestionPage({ answers, progress, question, questionCoun
 
   return (
     <main className="test-shell">
-      <header className="test-header"><Brand /><p>{test.title}</p></header>
+      <Navbar />
       <section className="question-layout">
         <div className="question-meta">
           <span>Domanda {questionNumber} di {questionCount}</span>

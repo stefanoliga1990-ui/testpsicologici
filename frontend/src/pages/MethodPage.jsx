@@ -2,12 +2,6 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ReferenceList from '../components/ReferenceList';
 
-const links = [
-  { href: '/approfondimenti', label: 'Approfondimenti' },
-  { href: '/il-progetto', label: 'Il progetto' },
-  { href: '/', label: 'Tutti i test' }
-];
-
 function SourceGroup({ eyebrow, title, href, references }) {
   return (
     <article className="source-test-group">
@@ -23,7 +17,7 @@ function SourceGroup({ eyebrow, title, href, references }) {
 export default function MethodPage({ guides, tests }) {
   return (
     <main className="editorial-shell">
-      <Navbar links={links} />
+      <Navbar />
       <header className="editorial-hero">
         <p className="eyebrow">Trasparenza editoriale</p><h1>Metodo e fonti</h1>
         <p>Spazio Test realizza questionari informativi originali e guide dedicate all'auto-osservazione e al benessere psicologico. Per definire i temi, le aree e il linguaggio vengono consultate fonti istituzionali, linee guida e pubblicazioni scientifiche pertinenti.</p>

@@ -4,12 +4,6 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { normalizeSearch } from '../utils/text';
 
-const navLinks = [
-  { href: '/approfondimenti', label: 'Approfondimenti' },
-  { href: '/metodo-e-fonti', label: 'Metodo e fonti' },
-  { href: '/il-progetto', label: 'Il progetto' }
-];
-
 export default function HomePage({ tests }) {
   const [query, setQuery] = useState('');
   const visibleTests = useMemo(() => {
@@ -20,7 +14,7 @@ export default function HomePage({ tests }) {
   return (
     <main className="shell home-shell">
       <section className="home-panel">
-        <Navbar links={navLinks} />
+        <Navbar />
         <div className="home-feature-layout">
           <div className="home-feature-stage">
             <div className="hero-clip">

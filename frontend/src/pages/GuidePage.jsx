@@ -3,16 +3,10 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ReferenceList from '../components/ReferenceList';
 
-const links = [
-  { href: '/approfondimenti', label: 'Approfondimenti' },
-  { href: '/metodo-e-fonti', label: 'Metodo e fonti' },
-  { href: '/', label: 'Tutti i test' }
-];
-
 export default function GuidePage({ guide, test }) {
   return (
     <main className="guide-shell">
-      <Navbar links={links} />
+      <Navbar />
       <nav className="breadcrumbs" aria-label="Percorso di navigazione">
         <a href="/">Home</a><span aria-hidden="true">/</span><a href="/approfondimenti">Approfondimenti</a><span aria-hidden="true">/</span><span aria-current="page">{guide.cardTitle}</span>
       </nav>
