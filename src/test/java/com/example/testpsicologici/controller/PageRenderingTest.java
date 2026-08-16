@@ -54,7 +54,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/images/brand/apple-touch-icon.png\"")))
                 .andExpect(content().string(containsString(
-                        "property=\"og:image\" content=\"http://localhost/images/brand/og-default.png\"")))
+                        "property=\"og:image\" content=\"http://localhost/images/brand/og-spazio-test.png\"")))
                 .andExpect(content().string(containsString(
                         "name=\"twitter:card\" content=\"summary_large_image\"")))
                 .andExpect(content().string(containsString(
@@ -84,7 +84,7 @@ class PageRenderingTest {
         mockMvc.perform(get("/images/brand/logo-512.png"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith("image/png"));
-        mockMvc.perform(get("/images/brand/og-default.png"))
+        mockMvc.perform(get("/images/brand/og-spazio-test.png"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith("image/png"));
     }

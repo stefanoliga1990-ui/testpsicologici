@@ -20,6 +20,6 @@ public class BrandAssetModelAdvice {
         model.addAttribute("brandLogoUrl",
                 siteUrlService.canonicalUrl(request, "/images/brand/logo-512.png"));
         model.addAttribute("socialImageUrl",
-                siteUrlService.canonicalUrl(request, "/images/brand/og-default.png"));
+                siteUrlService.canonicalUrl(request, "/images/brand/og-spazio-test.png"));
     }
 }

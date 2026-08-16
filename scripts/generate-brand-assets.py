@@ -8,10 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "src" / "main" / "resources" / "static" / "images" / "brand"
 
 GREEN = "#245c4c"
-GREEN_DARK = "#183f34"
 PAPER = "#fffefa"
 CREAM = "#f8f7f2"
-MINT = "#dceee3"
 INK = "#263330"
 
 
@@ -72,26 +70,26 @@ def generate_open_graph():
     image = Image.new("RGB", (width, height), CREAM)
     draw = ImageDraw.Draw(image)
 
-    draw.ellipse((770, -250, 1370, 350), fill=MINT)
-    draw.ellipse((900, 350, 1270, 720), outline=GREEN, width=3)
-    draw.ellipse((960, 410, 1210, 660), outline=GREEN, width=2)
-    draw.polygon(spark_points(1045, 175, 30), fill=GREEN)
-    draw.polygon(spark_points(900, 470, 16), fill=GREEN)
+    label = "Spazio Test"
+    label_font = font(96, bold=True)
+    mark_size = 176
+    gap = 42
+    label_width = draw.textlength(label, font=label_font)
+    group_width = mark_size + gap + label_width
+    group_x = (width - group_width) / 2
+    center_y = height / 2
 
-    mark = logo_image(116)
-    image.paste(mark, (96, 78), mark)
-    draw.text((236, 99), "Spazio Test", font=font(54, bold=True), fill=INK)
-    draw.text((96, 260), "Uno spazio per osservarti", font=font(48, bold=True), fill=INK)
-    draw.text((96, 318), "con più chiarezza.", font=font(48, bold=True), fill=GREEN)
+    mark = logo_image(mark_size)
+    image.paste(mark, (round(group_x), round(center_y - mark_size / 2)), mark)
     draw.text(
-        (96, 420),
-        "Questionari informativi su benessere psicologico e relazioni,",
-        font=font(25),
-        fill=GREEN_DARK,
+        (round(group_x + mark_size + gap), round(center_y)),
+        label,
+        font=label_font,
+        fill=INK,
+        anchor="lm",
     )
-    draw.text((96, 458), "con risultati immediati e senza registrazione.", font=font(25), fill=GREEN_DARK)
-    draw.rounded_rectangle((96, 538, 430, 542), radius=2, fill=GREEN)
     image.save(OUTPUT / "og-default.png", format="PNG", optimize=True)
+    image.save(OUTPUT / "og-spazio-test.png", format="PNG", optimize=True)
 
 
 def main():
