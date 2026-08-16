@@ -54,6 +54,8 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/images/brand/apple-touch-icon.png\"")))
                 .andExpect(content().string(containsString(
+                        "name=\"apple-mobile-web-app-title\" content=\"Spazio Test\"")))
+                .andExpect(content().string(containsString(
                         "property=\"og:image\" content=\"http://localhost/images/brand/og-spazio-test.png\"")))
                 .andExpect(content().string(containsString(
                         "name=\"twitter:card\" content=\"summary_large_image\"")))
