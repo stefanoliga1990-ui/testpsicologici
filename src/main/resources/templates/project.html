@@ -13,7 +13,9 @@
     <meta property="og:title" content="Il progetto | Spazio Test">
     <meta property="og:description" content="Obiettivi e principi del progetto editoriale Spazio Test.">
     <meta property="og:url" th:content="${canonicalUrl}">
-    <meta name="twitter:card" content="summary">
+    <th:block th:replace="~{fragments/brand-head :: socialImage(${socialImageUrl})}"></th:block>
+    <meta name="twitter:card" content="summary_large_image">
+    <th:block th:replace="~{fragments/brand-head :: icons}"></th:block>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -39,7 +41,7 @@
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
 <main class="editorial-shell project-shell">
     <nav class="site-nav" aria-label="Navigazione principale">
-        <a class="brand" th:href="@{/}"><span class="brand-mark">✦</span> Spazio Test</a>
+        <a class="brand" th:href="@{/}"><img class="brand-mark" th:src="@{/images/brand/logo-mark.svg}" alt="" width="27" height="27"> Spazio Test</a>
         <div class="nav-links"><a th:href="@{/approfondimenti}">Approfondimenti</a><a th:href="@{/metodo-e-fonti}">Metodo e fonti</a><a th:href="@{/}">Tutti i test</a></div>
     </nav>
 

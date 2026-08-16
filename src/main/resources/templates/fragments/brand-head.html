@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:fragment="icons">
+    <link rel="icon" type="image/svg+xml" th:href="@{/images/brand/favicon.svg}">
+    <link rel="icon" type="image/x-icon" sizes="any" th:href="@{/images/brand/favicon.ico}">
+    <link rel="icon" type="image/png" sizes="32x32" th:href="@{/images/brand/favicon-32x32.png}">
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/images/brand/favicon-16x16.png}">
+    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/images/brand/apple-touch-icon.png}">
+</th:block>
+<th:block th:fragment="socialImage(imageUrl)">
+    <meta property="og:image" th:content="${imageUrl}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Spazio Test - questionari informativi su benessere psicologico e relazioni">
+    <meta name="twitter:image" th:content="${imageUrl}">
+    <meta name="twitter:image:alt" content="Spazio Test - questionari informativi su benessere psicologico e relazioni">
+</th:block>
+</head>
+</html>

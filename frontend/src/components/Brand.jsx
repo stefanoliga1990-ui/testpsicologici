@@ -1,7 +1,7 @@
 export default function Brand({ className = 'brand' }) {
   return (
     <a className={className} href="/">
-      <span className="brand-mark" aria-hidden="true">✦</span> Spazio Test
+      <img className="brand-mark" src="/images/brand/logo-mark.svg" alt="" width="27" height="27" /> Spazio Test
     </a>
   );
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow, noarchive">
     <title th:text="|Domanda ${questionNumber} di ${questionCount} · ${test.title} · Spazio Test|">Domanda · Spazio Test</title>
+    <th:block th:replace="~{fragments/brand-head :: icons}"></th:block>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -15,7 +16,7 @@
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
 <main class="test-shell">
     <header class="test-header">
-        <a class="brand" th:href="@{/}"><span class="brand-mark">✦</span> Spazio Test</a>
+        <a class="brand" th:href="@{/}"><img class="brand-mark" th:src="@{/images/brand/logo-mark.svg}" alt="" width="27" height="27"> Spazio Test</a>
         <p th:text="${test.title}">Tratti autistici nell'adulto</p>
     </header>
 

@@ -49,6 +49,18 @@ class PageRenderingTest {
                         "<title>Test psicologici online informativi | Spazio Test</title>")))
                 .andExpect(content().string(containsString(
                         "<link rel=\"canonical\" href=\"http://localhost\"")))
+                .andExpect(content().string(containsString(
+                        "rel=\"icon\" type=\"image/svg+xml\" href=\"/images/brand/favicon.svg\"")))
+                .andExpect(content().string(containsString(
+                        "rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/images/brand/apple-touch-icon.png\"")))
+                .andExpect(content().string(containsString(
+                        "property=\"og:image\" content=\"http://localhost/images/brand/og-default.png\"")))
+                .andExpect(content().string(containsString(
+                        "name=\"twitter:card\" content=\"summary_large_image\"")))
+                .andExpect(content().string(containsString(
+                        "\"contentUrl\": \"http:\\/\\/localhost\\/images\\/brand\\/logo-512.png\"")))
+                .andExpect(content().string(containsString(
+                        "src=\"/images/brand/logo-mark.svg\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("id=\"test-search-input\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("data-test-card")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
@@ -56,6 +68,25 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/approfondimenti\"")))
                 .andExpect(content().string(containsString("href=\"/metodo-e-fonti\"")))
                 .andExpect(content().string(containsString("href=\"/il-progetto\"")));
+    }
+
+    @Test
+    void brandAssetsArePubliclyServedWithExpectedContentTypes() throws Exception {
+        mockMvc.perform(get("/images/brand/favicon.svg"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith("image/svg+xml"));
+        mockMvc.perform(get("/images/brand/favicon.ico"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith("image/x-icon"));
+        mockMvc.perform(get("/images/brand/apple-touch-icon.png"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith("image/png"));
+        mockMvc.perform(get("/images/brand/logo-512.png"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith("image/png"));
+        mockMvc.perform(get("/images/brand/og-default.png"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith("image/png"));
     }
 
     @Test

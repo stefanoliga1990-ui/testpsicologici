@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Spazio Test</title>
+  <circle cx="256" cy="256" r="256" fill="#245c4c"/>
+  <path fill="#fffefa" d="M256 133C268 208 304 244 379 256C304 268 268 304 256 379C244 304 208 268 133 256C208 244 244 208 256 133Z"/>
+</svg>

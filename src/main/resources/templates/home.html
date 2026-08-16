@@ -13,7 +13,9 @@
     <meta property="og:title" content="Test psicologici online informativi | Spazio Test">
     <meta property="og:description" content="Questionari online informativi su benessere psicologico e relazioni, con risultati immediati e senza registrazione.">
     <meta property="og:url" th:content="${canonicalUrl}">
-    <meta name="twitter:card" content="summary">
+    <th:block th:replace="~{fragments/brand-head :: socialImage(${socialImageUrl})}"></th:block>
+    <meta name="twitter:card" content="summary_large_image">
+    <th:block th:replace="~{fragments/brand-head :: icons}"></th:block>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -31,7 +33,14 @@
       "publisher": {
         "@type": "Organization",
         "name": "Spazio Test",
-        "url": /*[[${projectUrl}]]*/ "https://example.com/il-progetto"
+        "url": /*[[${canonicalUrl}]]*/ "https://example.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": /*[[${brandLogoUrl}]]*/ "https://example.com/images/brand/logo-512.png",
+          "contentUrl": /*[[${brandLogoUrl}]]*/ "https://example.com/images/brand/logo-512.png",
+          "width": 512,
+          "height": 512
+        }
       }
     }
     </script>
@@ -41,7 +50,7 @@
 <main class="shell home-shell">
     <section class="home-panel">
     <nav class="site-nav" aria-label="Navigazione principale">
-        <a class="brand" th:href="@{/}"><span class="brand-mark">✦</span> Spazio Test</a>
+        <a class="brand" th:href="@{/}"><img class="brand-mark" th:src="@{/images/brand/logo-mark.svg}" alt="" width="27" height="27"> Spazio Test</a>
         <div class="nav-links"><a th:href="@{/approfondimenti}">Approfondimenti</a><a th:href="@{/metodo-e-fonti}">Metodo e fonti</a><a th:href="@{/il-progetto}">Il progetto</a></div>
     </nav>
 
