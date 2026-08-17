@@ -167,6 +167,10 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "<title>Approfondimenti su psicologia e benessere | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Un argomento alla volta")))
+                .andExpect(content().string(containsString("/js/guides.js")))
+                .andExpect(content().string(containsString("id=\"guide-search-input\"")))
+                .andExpect(content().string(containsString("data-guide-card")))
+                .andExpect(content().string(containsString("data-guide-empty")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/autismo-adulti\"")))
                 .andExpect(content().string(containsString("Autismo nell&#39;adulto")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/adhd-adulti\"")))

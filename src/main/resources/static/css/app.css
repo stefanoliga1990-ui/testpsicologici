@@ -68,3 +68,16 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 680px) { .shell, .test-shell, .result-shell, .intro-shell { width: min(100% - 32px, 1120px); }.home-panel { padding-top: 26px; }.hero { grid-template-columns: 1fr; gap: 40px; padding: 52px 28px 34px; margin-bottom: 0; }.hero-orbit { width: 210px; }.home-tests-cta { padding-bottom: 38px; }.tests-circle-link { width: 150px; }.nav-note, .test-header p { display: none; }.tests-section { padding-top: 52px; }.question-layout { padding-top: 24px; }.question-layout h1 { font-size: 2.4rem; }.answer-form { margin-top: 36px; }.answer-navigation { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 10px; }.answer-nav { width: 44px; height: 44px; font-size: 1.15rem; }.answer-nav-next > span:first-child { display: none; }.section-heading h2 { font-size: 2.25rem; }.result-card { padding-inline: 22px; }.area-result-grid, .explored-areas, .editorial-grid, .method-card { grid-template-columns: 1fr; }.area-result-card h3 { min-height: 0; }.intro-card { padding-inline: 24px; }.intro-editorial { margin-top: 70px; }.method-card { gap: 22px; } }
 @media (max-width: 900px) { .editorial-principles, .project-manifesto { grid-template-columns: 1fr; }.project-method-cta, .guide-test-cta { align-items: flex-start; flex-direction: column; }.guide-card-grid { grid-template-columns: 1fr; }.guide-card { min-height: 260px; } }
 @media (max-width: 680px) { .editorial-shell, .guide-shell { width: min(100% - 32px, 1120px); }.site-nav { align-items: flex-start; }.site-nav .nav-links { justify-content: flex-end; flex-wrap: wrap; gap: 7px 13px; font-size: .72rem; }.editorial-hero { padding-top: 75px; }.editorial-process, .guide-index { padding: 30px 22px; }.process-grid, .source-test-group ul, .project-values, .guide-sources ul { grid-template-columns: 1fr; }.process-grid li { min-height: 0; }.source-test-heading { align-items: flex-start; flex-direction: column; }.project-method-cta, .guide-test-cta { gap: 28px; }.breadcrumbs { margin-top: 34px; }.guide-hero { padding-top: 52px; }.guide-section, .guide-sources { padding: 25px 21px; }.site-footer { grid-template-columns: 1fr; }.footer-links { justify-content: flex-start; }.site-footer > p { grid-column: auto; } }
+
+.guide-search { max-width: 620px; margin: 38px 0 0; }
+.guide-search-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; margin-bottom: 10px; }
+.guide-search-heading .test-search-label { margin: 0; color: #b9d7c7; }
+.guide-search-count { flex: 0 0 auto; color: #c9dbd1; font-size: .78rem; }
+.guide-search + .guide-card-grid { margin-top: 28px; }
+.guide-card[hidden] { display: none; }
+.guide-search-empty { margin-top: 28px; background: rgba(255,255,255,.08); color: #dceae2; }
+
+@media (max-width: 520px) {
+    .guide-search-heading { align-items: flex-start; flex-direction: column; gap: 5px; }
+    .guide-search .test-search-field input { font-size: .92rem; }
+}

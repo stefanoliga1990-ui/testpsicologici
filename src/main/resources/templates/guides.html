@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/app.css(v='guides-1')}">
     <link rel="stylesheet" th:href="@{/react/assets/app.css(v='react-2')}">
+    <script defer th:src="@{/js/guides.js(v='guide-search-1')}"></script>
     <script type="application/ld+json" th:inline="javascript">
     {
       "@context": "https://schema.org",
@@ -57,9 +58,26 @@
             <h2 id="guide-disponibili">Un argomento alla volta</h2>
             <p>Ogni approfondimento utilizza fonti istituzionali e scientifiche consultabili e rimane distinto dal questionario informativo collegato.</p>
         </div>
-        <div class="guide-card-grid">
+        <div class="test-search guide-search">
+            <div class="guide-search-heading">
+                <label class="test-search-label" for="guide-search-input">Cerca un approfondimento</label>
+                <span class="guide-search-count" data-guide-count aria-live="polite"
+                      th:text="|${#lists.size(guides)} approfondimenti|">1 approfondimento</span>
+            </div>
+            <div class="test-search-field">
+                <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                    <circle cx="11" cy="11" r="6.5"></circle>
+                    <path d="m16 16 4 4"></path>
+                </svg>
+                <input id="guide-search-input" type="search"
+                       placeholder="Scrivi il titolo dell'approfondimento..."
+                       autocomplete="off" spellcheck="false" aria-controls="guide-card-grid">
+            </div>
+        </div>
+        <div class="guide-card-grid" id="guide-card-grid">
             <a class="guide-card" th:each="guide : ${guides}"
-               th:href="@{/approfondimenti/{slug}(slug=${guide.slug})}">
+               th:href="@{/approfondimenti/{slug}(slug=${guide.slug})}"
+               data-guide-card th:attr="data-guide-title=${guide.cardTitle}">
                 <div>
                     <p class="eyebrow">Guida informativa</p>
                     <h3 th:text="${guide.cardTitle}">Titolo della guida</h3>
@@ -68,6 +86,7 @@
                 <span>Leggi l'approfondimento <span aria-hidden="true">→</span></span>
             </a>
         </div>
+        <p class="test-search-empty guide-search-empty" data-guide-empty hidden>Nessun approfondimento corrisponde alla ricerca.</p>
     </section>
 
     <div th:replace="~{fragments/site-footer :: siteFooter}"></div>
