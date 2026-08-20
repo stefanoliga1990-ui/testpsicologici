@@ -218,7 +218,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/autosabotaggio\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Autosabotaggio e ostacoli agli obiettivi</h3>")));
+                        "<h3>Autosabotaggio e ostacoli agli obiettivi</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/disturbo-borderline-personalita\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Disturbo borderline di personalità</h3>")));
     }
 
     @Test
@@ -600,6 +604,29 @@ class PageRenderingTest {
     }
 
     @Test
+    void borderlineGuideRendersEvidenceLimitsSafetyAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/disturbo-borderline-personalita"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Disturbo borderline di personalità: caratteristiche | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/disturbo-borderline-personalita\"")))
+                .andExpect(content().string(containsString(
+                        "Che cos&#39;è il disturbo borderline di personalità")))
+                .andExpect(content().string(containsString(
+                        "Quattro domini utili per orientarsi, non una checklist")))
+                .andExpect(content().string(containsString(
+                        "Quando serve un aiuto immediato")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString("Pronto Soccorso")))
+                .andExpect(content().string(containsString(
+                        "The Italian Version of the Borderline Personality Disorder Severity Index IV")))
+                .andExpect(content().string(containsString(
+                        "Psychological therapies for people with borderline personality disorder")))
+                .andExpect(content().string(containsString("href=\"/test/tratti-borderline-adulti\"")));
+    }
+
+    @Test
     void testLinksToItsPublishedGuide() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -688,6 +715,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Approfondisci l'argomento")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/autosabotaggio\"")));
+
+        mockMvc.perform(get("/test/tratti-borderline-adulti"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("non valuta autolesionismo")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/disturbo-borderline-personalita\"")));
     }
 
     @Test
@@ -770,8 +805,11 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/sindrome-impostore")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/autosabotaggio")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/disturbo-borderline-personalita")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
+                .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

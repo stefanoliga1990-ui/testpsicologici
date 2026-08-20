@@ -1308,6 +1308,122 @@ public class GuideCatalogue {
                                     "Confronto psicometrico in sei Paesi europei, inclusa l'Italia, consultato per la misura della procrastinazione; non valida un costrutto unitario di autosabotaggio."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "disturbo-borderline-personalita",
+                    "tratti-borderline-adulti",
+                    "Disturbo borderline di personalità",
+                    "Disturbo borderline di personalità: caratteristiche, valutazione e supporto",
+                    "Disturbo borderline di personalità: caratteristiche | Spazio Test",
+                    "Una guida al disturbo borderline di personalità: emozioni, relazioni, immagine di sé, valutazione professionale, supporto e limiti dei test online.",
+                    "Il disturbo borderline di personalità riguarda un pattern duraturo e diffuso di difficoltà nella regolazione delle emozioni, nelle relazioni, nell'immagine di sé e nel controllo delle azioni. Le esperienze possono combinarsi in modi differenti e il nome del disturbo non definisce l'identità, il valore o tutte le caratteristiche di una persona.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è il disturbo borderline di personalità",
+                                    List.of(
+                                            "Il termine descrive un modo di funzionare che coinvolge più aree della vita e che viene valutato nel suo andamento nel tempo. Non coincide con avere emozioni intense, attraversare una relazione difficile o reagire impulsivamente in un singolo periodo.",
+                                            "Le classificazioni cliniche considerano il funzionamento complessivo della persona, la persistenza, la diffusione nei contesti e le conseguenze concrete. Il pattern borderline può includere particolare instabilità emotiva e relazionale, difficoltà nell'immagine di sé, impulsività e reazioni insolite sotto forte stress, ma la combinazione varia da persona a persona."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Esperienze possibili",
+                                    "Quattro domini utili per orientarsi, non una checklist",
+                                    List.of(
+                                            "Raggruppare le esperienze in domini aiuta a parlarne con più precisione, ma non permette di contare criteri o formulare una diagnosi. Un singolo dominio può essere rilevante anche in molte altre condizioni o fasi di vita."
+                                    ),
+                                    List.of(
+                                            "Emozioni: cambiamenti rapidi, reazioni intense e tempo necessario per ritrovare un equilibrio dopo un evento significativo.",
+                                            "Relazioni: forte sensibilità ai segnali di distanza, ricerca di rassicurazione e oscillazioni nel modo di percepire un legame importante.",
+                                            "Identità: immagine di sé, obiettivi o preferenze che possono apparire instabili, insieme a momenti di vuoto o scarsa direzione personale.",
+                                            "Azioni e stress: difficoltà a creare una pausa prima di agire, rapido aumento della rabbia e, sotto forte stress, percezioni di ostilità o distacco da ciò che accade."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Frequenza recente e pattern duraturo non sono la stessa cosa",
+                                    List.of(
+                                            "Una diagnosi di personalità non si basa soltanto su ciò che è accaduto negli ultimi mesi. Servono storia nel tempo, presenza in più contesti, funzionamento, sofferenza, risorse e relazione tra le diverse esperienze; fasi di transizione o crisi possono rendere alcuni fenomeni più visibili senza indicare un pattern stabile.",
+                                            "Stress intenso, lutto, trauma, ansia, depressione, disturbi dell'umore, ADHD, uso di sostanze, condizioni dissociative, neurodivergenza e contesti relazionali instabili o non sicuri possono produrre esperienze sovrapposte. Le associazioni osservate nei gruppi non spiegano il singolo caso e condizioni differenti possono anche coesistere."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Valutazione",
+                                    "Che cosa considera un percorso professionale",
+                                    List.of(
+                                            "Una valutazione viene svolta da professionisti qualificati attraverso colloqui clinici e, quando opportuno, strumenti strutturati. Considera andamento dall'adolescenza all'età adulta, situazioni in cui le difficoltà compaiono, interferenza, salute fisica e mentale, uso di sostanze, esperienze traumatiche, condizioni concomitanti, risorse e obiettivi della persona.",
+                                            "Il percorso non dovrebbe ridursi a un'etichetta o al conteggio automatico di alcune esperienze. Serve a costruire una comprensione condivisa e a distinguere spiegazioni diverse; una validazione italiana di un'intervista clinica non rende valido il questionario originale di Spazio Test e non permette di trasferirne punteggi o soglie."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto",
+                                    "Esistono percorsi di cura e possibilità di cambiamento",
+                                    List.of(
+                                            "Un confronto professionale può essere utile quando le difficoltà persistono, compaiono in più ambiti o incidono su benessere, relazioni, studio, lavoro o cura di sé. In Italia un primo orientamento può passare dal medico di base, dai servizi territoriali di salute mentale o da uno psicologo, psicoterapeuta o psichiatra con esperienza nel funzionamento di personalità.",
+                                            "La ricerca ha studiato diverse psicoterapie strutturate. Una revisione Cochrane ha rilevato benefici possibili rispetto alla cura abituale, ma la certezza varia tra gli esiti, i campioni erano soprattutto femminili e non emerge una soluzione unica adatta a ogni persona. La scelta del percorso richiede quindi valutazione individuale, obiettivi condivisi e monitoraggio nel tempo."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Sicurezza",
+                                    "Quando serve un aiuto immediato",
+                                    List.of(
+                                            "Autolesionismo e pensieri suicidari possono comparire in persone con storie e diagnosi molto diverse. Non vanno usati per autodiagnosticarsi e non sono valutati dal questionario collegato, perché un flusso automatico non può comprendere urgenza, intenzione, mezzi disponibili, protezioni o supporti.",
+                                            "Se pensi di farti del male, non riesci a restare al sicuro o c'è un pericolo immediato, chiama il 112 o raggiungi il Pronto Soccorso più vicino. Se non c'è un'emergenza immediata ma queste esperienze sono presenti, parlane quanto prima con un professionista sanitario o con un servizio di salute mentale, coinvolgendo se possibile una persona fidata."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Limiti",
+                                    "Come leggere le informazioni e il questionario",
+                                    List.of(
+                                            "Le fonti italiane disponibili aiutano a inquadrare domini clinici e percorsi di cura, ma non validano le 24 domande, le quattro aree o le soglie editoriali di Spazio Test. La linea guida ISS specifica sul disturbo borderline è ancora in produzione, perciò non viene presentata come fonte di raccomandazioni definitive.",
+                                            "Il risultato del questionario descrive soltanto frequenza e distribuzione delle risposte negli ultimi tre mesi. Le barre non sono percentuali della persona, probabilità, percentili o misure di gravità e non possono confermare né escludere una diagnosi."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, intensità emotiva e ritorno all'equilibrio, sensibilità alla distanza nelle relazioni, immagine di sé e senso di vuoto, impulsività e reazioni sotto stress. Non è validato, non conta criteri clinici, non valuta autolesionismo o pensieri suicidari e non può confermare, escludere o stimare la presenza di un disturbo borderline di personalità.",
+                    List.of(
+                            new GuideReference(
+                                    "The Italian Version of the Borderline Personality Disorder Severity Index IV — di Giacomo e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/28604275/",
+                                    "Validazione multicentrica italiana di un'intervista strutturata consultata per eterogeneità e domini affettivi, comportamentali, impulsivi e relazionali; non valida il questionario dell'app."
+                            ),
+                            new GuideReference(
+                                    "Clinical descriptions and diagnostic requirements for ICD-11 — World Health Organization",
+                                    "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1",
+                                    "Descrizioni cliniche internazionali consultate per funzionamento complessivo di personalità, andamento nel tempo e pattern borderline; l'applicazione al singolo caso richiede valutazione professionale."
+                            ),
+                            new GuideReference(
+                                    "Percorsi di cura per i disturbi gravi di personalità — Ministero della Salute",
+                                    "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf",
+                                    "Documento tecnico italiano consultato per valutazione clinica e dimensionale, funzionamento, condizioni concomitanti e organizzazione dei percorsi nei servizi di salute mentale."
+                            ),
+                            new GuideReference(
+                                    "Borderline personality disorder: recognition and management — NICE CG78",
+                                    "https://www.nice.org.uk/guidance/cg78",
+                                    "Linea guida europea consultata per riconoscimento, valutazione, comunicazione, organizzazione della presa in carico e necessità di un percorso strutturato."
+                            ),
+                            new GuideReference(
+                                    "Psychological therapies for people with borderline personality disorder — Storebø e colleghi",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7199382/",
+                                    "Revisione sistematica Cochrane di 75 studi randomizzati consultata per benefici e limiti delle psicoterapie; molti esiti hanno certezza bassa e i campioni erano prevalentemente femminili."
+                            ),
+                            new GuideReference(
+                                    "Il numero 118 e il Numero di emergenza unico europeo (112) — Ministero della Salute",
+                                    "https://www.salute.gov.it/new/it/tema/112-118-e-pronto-soccorso/il-numero-118-e-il-numero-di-emergenza-unico-europeo-112/",
+                                    "Riferimento istituzionale italiano per l'indicazione di chiamare il 112 nelle situazioni di pericolo immediato e per l'attivazione del soccorso sanitario."
+                            ),
+                            new GuideReference(
+                                    "Diagnosi e trattamento del disturbo borderline di personalità — ISS, linea guida in produzione",
+                                    "https://www.iss.it/-/diagnosi-trattamento-disturbo-borderline-personalit%C3%A0_in-prog",
+                                    "Pagina ISS consultata per documentare lo sviluppo di una linea guida italiana specifica; non essendo ancora conclusa, non sostiene raccomandazioni definitive."
+                            )
+                    )
             )
     );
 

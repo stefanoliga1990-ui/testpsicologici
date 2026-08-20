@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
@@ -599,10 +601,76 @@ class TestResultServiceTest {
     }
 
     @Test
+    void borderlineTraitsTestIsLoadedWithTwentyFourQuestionsAndSafetyLimits() {
+        PsychologicalTest test = catalogue.findById("tratti-borderline-adulti");
+
+        assertThat(test.title()).isEqualTo("Tratti associati al disturbo borderline di personalità");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).extracting(area -> area.code())
+                .containsExactly("emozioni", "relazioni", "identita", "impulsi");
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "non può confermare, escludere o stimare",
+                "non valuta autolesionismo",
+                "pensieri suicidari",
+                "112",
+                "Pronto Soccorso",
+                "spiegazioni alternative");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze esplorate");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
+        assertThat(test.references()).extracting(reference -> reference.url()).containsExactly(
+                "https://pubmed.ncbi.nlm.nih.gov/28604275/",
+                "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1",
+                "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf",
+                "https://www.iss.it/-/diagnosi-trattamento-disturbo-borderline-personalit%C3%A0_in-prog");
+    }
+
+    @Test
+    void borderlineFocusedProfileKeepsTheoreticalAreaOrderAndAreaMeaning() {
+        TestResult result = analyzeWithAnswersForTest("tratti-borderline-adulti", 1, 5, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Una o due aree emergono con maggiore frequenza");
+        assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Intensità emotiva e ritorno all'equilibrio",
+                "Relazioni e sensibilità alla distanza",
+                "Identità, immagine di sé e senso di vuoto",
+                "Impulsività, rabbia e reazioni allo stress");
+        assertThat(result.areaResults().get(1).description()).contains("frequente sensibilità ai segnali di distanza");
+        assertThat(result.areaResults().get(1).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(0).percentage()).isZero();
+    }
+
+    @Test
+    void borderlineProfilesFollowEditorialRulesAndAlwaysRetainSafetyMessage() {
+        TestResult low = analyzeWithAnswersForTest("tratti-borderline-adulti", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("tratti-borderline-adulti", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("tratti-borderline-adulti", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("tratti-borderline-adulti", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).isEqualTo("Esperienze poco frequenti nelle quattro aree");
+        assertThat(mixed.general().title()).isEqualTo("Un andamento che varia tra aree e contesti");
+        assertThat(focused.general().title()).isEqualTo("Una o due aree emergono con maggiore frequenza");
+        assertThat(broad.general().title()).isEqualTo("Esperienze frequenti distribuite in più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non è una diagnosi",
+                        "non valuta autolesionismo",
+                        "pensieri suicidari",
+                        "112",
+                        "Pronto Soccorso"));
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

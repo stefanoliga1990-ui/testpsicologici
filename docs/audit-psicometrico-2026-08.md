@@ -2,7 +2,7 @@
 
 ## Perimetro e conclusione
 
-Sono stati esaminati tutti i 15 questionari attivi: 360 item, 60 sottoscale, opzioni di risposta, scoring, soglie, profili generali, testi per area, disclaimer e messaggi di sicurezza. L'implementazione di partenza era già prudente: item originali, quattro aree equilibrate da sei item, punteggi numerici nascosti, fonti tracciabili e assenza di affermazioni diagnostiche.
+Sono stati esaminati tutti i 16 questionari attivi: 384 item, 64 sottoscale editoriali, opzioni di risposta, scoring, soglie, profili generali, testi per area, disclaimer e messaggi di sicurezza. L'implementazione è prudente: item originali, quattro aree equilibrate da sei item, punteggi numerici nascosti, fonti tracciabili e assenza di affermazioni diagnostiche.
 
 Non esistono però dati di somministrazione o studi sullo specifico strumento. Non è quindi possibile stimare in modo responsabile struttura fattoriale, omega/alpha, errore di misura, validità, invarianza o cut-off. Le modifiche migliorano validità di contenuto attesa e qualità della somministrazione, ma non trasformano i questionari in strumenti validati.
 
@@ -38,6 +38,7 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 | People pleasing — approvazione; confini; autosilenziamento; sovraresponsabilità | Buona distinzione tra cura e trascuratezza di sé. Semplificati colpa, richieste, programmi, emozioni nascoste, adattamento, accordo, regolazione altrui e cura personale. Periodo: tre mesi e relazioni diverse; i fattori di potere restano centrali. |
 | Fenomeno dell'impostore — attribuzione; esposizione; prestazione; impatto | Il risultato continua a non misurare competenza reale e considera discriminazione e contesto. Ridotti item doppi su contributo/aiuto, standard/riconoscimento, sovraccarico/evitamento, opportunità multiple e impatti eterogenei. Periodo: tre mesi in contesti significativi. |
 | Autosabotaggio — azione; auto-handicapping; sollievo emotivo; persistenza/flessibilità | Il costrutto è esplicitamente trattato come etichetta-ombrello, non diagnosi o intenzione. Semplificati strumenti/aiuti, feedback/chiarimenti, conversazioni/decisioni, riposo/routine, modifica/aiuto e ripresa/inattività. Periodo: tre mesi e obiettivi scelti; carichi reali e difficoltà esecutive restano alternative. |
+| Tratti associati al disturbo borderline di personalità — emozioni; relazioni; identità; impulsività/rabbia/stress | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali riferiti agli ultimi tre mesi, senza conteggio di criteri né riproduzione di scale cliniche. L'area impulsività/rabbia/stress è dichiarata eterogenea e da verificare empiricamente. Autolesionismo e pensieri suicidari non sono misurati perché il flusso non può valutarli in sicurezza; l'avviso 112/Pronto Soccorso resta indipendente dal profilo. |
 
 ## Scoring e interpretazione risultanti
 
@@ -50,4 +51,4 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 
 ## Verifiche automatiche aggiunte
 
-I test impediscono regressioni su: 15 questionari attivi, 24 item, quattro aree, sei item per area, assenza di duplicati, intercalazione delle aree, presenza dell'istruzione temporale, ancore di risposta, soglie e logica dei quattro profili. Le versioni sono state incrementate per forzare il reseed coerente del database locale.
+I test impediscono regressioni su: 16 questionari attivi, 24 item, quattro aree, sei item per area, assenza di duplicati, intercalazione delle aree, presenza dell'istruzione temporale, ancore di risposta, soglie e logica dei quattro profili. Le modifiche ai contenuti esistenti incrementano la versione; il nuovo questionario DBP parte dalla versione `1.0`.

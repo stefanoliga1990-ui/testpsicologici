@@ -104,7 +104,15 @@ public class ReferenceContributionCatalogue {
             entry("https://pubmed.ncbi.nlm.nih.gov/17201571/",
                     "Meta-analisi di riferimento per procrastinazione, autoregolazione, avversione al compito, impulsività, tempi e divario tra intenzione e azione."),
             entry("https://pubmed.ncbi.nlm.nih.gov/27630595/",
-                    "Confronto psicometrico di due misure di procrastinazione in sei Paesi europei, inclusa l'Italia; riguarda la procrastinazione e non valida un costrutto unitario di autosabotaggio."));
+                    "Confronto psicometrico di due misure di procrastinazione in sei Paesi europei, inclusa l'Italia; riguarda la procrastinazione e non valida un costrutto unitario di autosabotaggio."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/28604275/",
+                    "Validazione multicentrica italiana del BPDSI-IV consultata per eterogeneità e domini affettivi, comportamentali, impulsivi e relazionali; strumento, campioni clinici e punteggi sono diversi da quelli dell'app."),
+            entry("https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1",
+                    "Descrizioni cliniche ICD-11 consultate per il funzionamento complessivo di personalità e il pattern borderline; non definiscono la struttura o le soglie del questionario informativo."),
+            entry("https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf",
+                    "Documento italiano sui percorsi di cura consultato per valutazione clinica, funzionamento e condizioni concomitanti nei disturbi gravi di personalità; non riguarda l'autovalutazione online."),
+            entry("https://www.iss.it/-/diagnosi-trattamento-disturbo-borderline-personalit%C3%A0_in-prog",
+                    "Pagina ISS che documenta lo sviluppo di una linea guida italiana su diagnosi e trattamento; il lavoro non è ancora concluso e non sostiene raccomandazioni definitive."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

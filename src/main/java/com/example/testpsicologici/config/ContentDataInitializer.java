@@ -60,6 +60,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedPeoplePleasingInformationTest();
         seedImpostorPhenomenonInformationTest();
         seedSelfSabotageInformationTest();
+        seedBorderlineTraitsInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -1374,6 +1375,98 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Le risposte mostrano una difficoltà frequente nel mantenere o adattare il percorso, con cicli di slancio e abbandono, rigidità o scelte ripetute poco coerenti con le priorità dichiarate.");
     }
 
+    private void seedBorderlineTraitsInformationTest() {
+        String id = "tratti-borderline-adulti";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Tratti associati al disturbo borderline di personalità",
+                "Autovalutazione informativa",
+                "Esplora esperienze recenti legate a emozioni, relazioni, immagine di sé, impulsività e reazioni sotto stress.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Esplora la frequenza recente di alcune esperienze associate al funzionamento borderline, ma non è uno strumento validato, non conta criteri clinici e non può confermare, escludere o stimare la presenza di un disturbo borderline di personalità. Una valutazione professionale considera storia nel tempo, presenza in più contesti, interferenza concreta, condizioni concomitanti e spiegazioni alternative. Stress intenso, lutto, conflitti, esperienze traumatiche, ansia, depressione, disturbi dell'umore, ADHD, uso di sostanze, condizioni dissociative, neurodivergenza o relazioni non sicure possono produrre esperienze simili. Il questionario non valuta autolesionismo, pensieri suicidari o situazioni di pericolo. Se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o raggiungi il Pronto Soccorso più vicino; se le esperienze causano sofferenza o interferiscono con la vita quotidiana, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
+                version, false,
+                "Frequenza complessiva delle esperienze esplorate",
+                "Frequenza delle esperienze",
+                true, 16).withSeo(
+                "Test sui tratti borderline nell'adulto | Spazio Test",
+                "Questionario informativo su emozioni, relazioni, immagine di sé e reazioni sotto stress. 24 domande, circa 6 minuti, senza registrazione.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "The Italian Version of the Borderline Personality Disorder Severity Index IV — di Giacomo e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/28604275/", 1);
+        saveReference(id, "Clinical descriptions and diagnostic requirements for ICD-11 — WHO",
+                "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1", 2);
+        saveReference(id, "Percorsi di cura per i disturbi gravi di personalità — Ministero della Salute",
+                "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf", 3);
+        saveReference(id, "Diagnosi e trattamento del disturbo borderline di personalità — ISS, linea guida in produzione",
+                "https://www.iss.it/-/diagnosi-trattamento-disturbo-borderline-personalit%C3%A0_in-prog", 4);
+
+        saveArea(id, "emozioni", "Intensità emotiva e ritorno all'equilibrio", 1);
+        saveArea(id, "relazioni", "Relazioni e sensibilità alla distanza", 2);
+        saveArea(id, "identita", "Identità, immagine di sé e senso di vuoto", 3);
+        saveArea(id, "impulsi", "Impulsività, rabbia e reazioni allo stress", 4);
+
+        saveQuestions(id, List.of(
+                q("emozioni", "Le mie emozioni cambiano rapidamente nell'arco della stessa giornata."),
+                q("emozioni", "Una reazione emotiva intensa impiega molto tempo ad attenuarsi."),
+                q("emozioni", "Durante un disaccordo, la mia reazione emotiva diventa molto intensa."),
+                q("emozioni", "Dopo essermi sentito ferito, fatico a ritrovare un equilibrio emotivo."),
+                q("emozioni", "Il mio umore cambia in base a ciò che accade nelle relazioni importanti."),
+                q("emozioni", "Durante un'emozione intensa, fatico a considerare informazioni diverse da ciò che sento."),
+                q("relazioni", "Un ritardo nella risposta di una persona importante mi fa temere che si stia allontanando."),
+                q("relazioni", "Cerco rassicurazioni ripetute quando percepisco distanza in una relazione."),
+                q("relazioni", "Passo rapidamente dal sentirmi molto vicino a una persona al sentirmi profondamente deluso da lei."),
+                q("relazioni", "Un cambiamento nel tono di una persona importante mi fa dubitare della stabilità del rapporto."),
+                q("relazioni", "Quando temo un allontanamento, aumento molto i tentativi di contatto."),
+                q("relazioni", "Un conflitto in una relazione importante occupa a lungo i miei pensieri."),
+                q("identita", "Il modo in cui descrivo chi sono cambia molto a seconda della situazione."),
+                q("identita", "I miei obiettivi personali cambiano bruscamente da un periodo all'altro."),
+                q("identita", "Provo un senso di vuoto anche in giornate che considero tranquille."),
+                q("identita", "Fatico a riconoscere preferenze che sento davvero mie."),
+                q("identita", "Il giudizio di una persona importante cambia rapidamente il valore che attribuisco a me."),
+                q("identita", "Mi sento privo di una direzione personale riconoscibile."),
+                q("impulsi", "Durante emozioni intense, agisco prima di considerare le conseguenze."),
+                q("impulsi", "Quando sono molto agitato, prendo decisioni importanti d'impulso."),
+                q("impulsi", "Quando un impulso è forte, fatico a rimandare l'azione anche per poco."),
+                q("impulsi", "La mia rabbia aumenta rapidamente durante un conflitto."),
+                q("impulsi", "Sotto forte stress, interpreto le intenzioni altrui come ostili."),
+                q("impulsi", "Sotto forte stress, mi sento distaccato da ciò che accade intorno a me.")));
+
+        saveGlobal(id, "LOW", "Esperienze poco frequenti nelle quattro aree",
+                "Nelle risposte, le esperienze esplorate risultano poco frequenti in tutte e quattro le aree. Non emerge quindi una distribuzione ampia di cambiamenti emotivi, sensibilità relazionale, instabilità dell'immagine di sé o reazioni impulsive e sotto stress.",
+                "Questo andamento descrive soltanto gli ultimi tre mesi e non esclude difficoltà circoscritte, recenti o non incluse nelle domande. Può essere utile osservare se alcune esperienze cambiano in particolari relazioni, durante periodi di stress o quando incidono sul funzionamento quotidiano. Il risultato non è una diagnosi e non conferma né esclude un disturbo borderline di personalità. Il questionario non valuta autolesionismo, pensieri suicidari o situazioni di pericolo: se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o raggiungi il Pronto Soccorso più vicino.");
+        saveGlobal(id, "MIXED", "Un andamento che varia tra aree e contesti",
+                "Le risposte descrivono esperienze presenti con frequenza diversa tra le quattro aree, senza aree che raggiungano il livello editoriale più alto. Il quadro può quindi cambiare in base al tipo di relazione, all'attivazione emotiva, allo stress e al periodo considerato.",
+                "Le schede d'area aiutano a distinguere dove le esperienze sono più presenti senza trasformare piccole differenze in una classifica personale. Osserva situazioni, durata, conseguenze e condizioni in cui riesci invece a ritrovare equilibrio; stress, trauma, ansia, umore, ADHD, sostanze e contesti relazionali possono offrire spiegazioni alternative o concomitanti. Il risultato non è una diagnosi e le soglie usate sono esclusivamente editoriali. Il questionario non valuta autolesionismo, pensieri suicidari o situazioni di pericolo: se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o raggiungi il Pronto Soccorso più vicino.");
+        saveGlobal(id, "FOCUSED", "Una o due aree emergono con maggiore frequenza",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo è quindi concentrato su aspetti specifici e non descrive un andamento uniforme dell'intero funzionamento.",
+                "Consulta le schede sotto per capire se emergono soprattutto intensità emotiva, sensibilità alla distanza, immagine di sé oppure impulsività e reazioni allo stress. Nota da quanto tempo accade, in quali contesti, quale interferenza produce e quali risorse aiutano, tenendo presenti anche spiegazioni alternative o concomitanti. Il risultato non è una diagnosi; una o due aree frequenti possono essere approfondite con un professionista se causano sofferenza o limitazioni. Il questionario non valuta autolesionismo, pensieri suicidari o situazioni di pericolo: se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o raggiungi il Pronto Soccorso più vicino.");
+        saveGlobal(id, "BROAD", "Esperienze frequenti distribuite in più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Cambiamenti emotivi, dinamiche relazionali, immagine di sé e reazioni impulsive o sotto stress possono quindi presentarsi in una distribuzione ampia nel periodo considerato.",
+                "Questo profilo invita a osservare ampiezza, persistenza e interferenza concreta, senza interpretare le barre come una misura di gravità. Se le esperienze durano nel tempo, compaiono in più contesti o incidono su relazioni, lavoro, studio o benessere, un confronto con uno psicologo, psicoterapeuta o medico può aiutare a valutarle insieme alla storia personale e alle possibili alternative. Il risultato non è una diagnosi e non stima la presenza di un disturbo borderline di personalità. Il questionario non valuta autolesionismo, pensieri suicidari o situazioni di pericolo: se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o raggiungi il Pronto Soccorso più vicino.");
+
+        saveAreaInsights(id, "emozioni",
+                "Le risposte descrivono cambiamenti emotivi intensi o prolungati poco frequenti nel periodo considerato. Questo non esclude reazioni circoscritte in situazioni particolarmente significative.",
+                "In alcune situazioni le emozioni possono cambiare rapidamente o richiedere tempo per attenuarsi. Osserva quali eventi le attivano e che cosa facilita il ritorno all'equilibrio.",
+                "Le risposte descrivono frequenti cambiamenti emotivi, reazioni intense o difficoltà nel ritorno all'equilibrio. È utile osservare durata, contesti, conseguenze e strategie che aiutano senza attribuire automaticamente queste esperienze a una diagnosi.");
+        saveAreaInsights(id, "relazioni",
+                "Timore di distanza, ricerca di rassicurazione e persistenza dei conflitti risultano poco frequenti nelle risposte. Una singola relazione o un periodo recente possono comunque avere un andamento diverso.",
+                "Alcuni segnali di distanza o conflitto possono attivare dubbi sul legame e bisogno di rassicurazione. Considera se accade con persone o situazioni specifiche e come cambia quando la comunicazione è più chiara.",
+                "Le risposte indicano una frequente sensibilità ai segnali di distanza, con rassicurazioni, aumento del contatto o oscillazioni nella percezione del legame. Il contesto e la sicurezza reale della relazione sono essenziali per comprendere queste esperienze.");
+        saveAreaInsights(id, "identita",
+                "Immagine di sé, preferenze, obiettivi e direzione personale appaiono generalmente stabili nel periodo considerato. Eventuali dubbi circoscritti possono essere compatibili con transizioni e cambiamenti normali.",
+                "In alcuni momenti possono emergere vuoto, incertezza sulle preferenze o cambiamenti nel modo di valutarti. Osserva se dipendono soprattutto dal contesto, dal giudizio altrui o da una fase di transizione.",
+                "Le risposte descrivono frequenti cambiamenti nell'immagine di sé, negli obiettivi o nel senso di direzione, oppure un ricorrente senso di vuoto. Queste esperienze possono avere significati diversi e vanno comprese nel tempo e nel contesto.");
+        saveAreaInsights(id, "impulsi",
+                "Azioni impulsive, incremento rapido della rabbia e reazioni di distacco o ostilità sotto stress risultano poco frequenti. Il questionario non valuta comunque tutte le possibili reazioni nelle situazioni critiche.",
+                "In alcuni momenti di forte attivazione può essere più difficile rimandare un impulso, valutare conseguenze o interpretare con calma ciò che accade. Nota segnali iniziali, contesti e strategie che creano tempo prima di agire.",
+                "Le risposte indicano frequenti difficoltà nel rallentare l'azione, un rapido aumento della rabbia o particolari reazioni percettive sotto forte stress. Poiché l'area riunisce fenomeni diversi, è importante distinguere quali esperienze sono presenti e quale interferenza producono.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -1436,6 +1529,11 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Self-defeating behavior patterns among normal individuals — Baumeister e Scher", "https://pubmed.ncbi.nlm.nih.gov/3043527/"),
                 ref("The nature of procrastination: a meta-analytic and theoretical review — Steel", "https://pubmed.ncbi.nlm.nih.gov/17201571/"),
                 ref("On the Measurement of Procrastination in Six European Countries — Svartdal e colleghi", "https://pubmed.ncbi.nlm.nih.gov/27630595/")));
+        syncReferences("tratti-borderline-adulti", List.of(
+                ref("The Italian Version of the Borderline Personality Disorder Severity Index IV — di Giacomo e colleghi", "https://pubmed.ncbi.nlm.nih.gov/28604275/"),
+                ref("Clinical descriptions and diagnostic requirements for ICD-11 — WHO", "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1"),
+                ref("Percorsi di cura per i disturbi gravi di personalità — Ministero della Salute", "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf"),
+                ref("Diagnosi e trattamento del disturbo borderline di personalità — ISS, linea guida in produzione", "https://www.iss.it/-/diagnosi-trattamento-disturbo-borderline-personalit%C3%A0_in-prog")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

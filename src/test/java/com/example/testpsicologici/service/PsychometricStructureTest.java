@@ -26,7 +26,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(15).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(16).allSatisfy(test -> {
             assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
             assertThat(test.areas()).hasSize(4);
             assertThat(test.questions()).hasSize(24);

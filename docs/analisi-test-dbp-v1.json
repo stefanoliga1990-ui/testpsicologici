@@ -1,0 +1,129 @@
+{
+  "test": {
+    "id": "tratti-borderline-adulti",
+    "titolo": "Tratti associati al disturbo borderline di personalità",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione esclusivamente informativa",
+    "periodo_riferimento": "Ultimi tre mesi",
+    "direzione_punteggio": "Valori più alti descrivono una maggiore frequenza delle esperienze formulate",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non conta criteri clinici e non conferma, esclude o stima la presenza di un disturbo borderline di personalità.",
+    "sicurezza": "Il questionario non valuta autolesionismo, pensieri suicidari o situazioni di pericolo. Se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o raggiungi il Pronto Soccorso più vicino."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale personale, un percentile, una probabilità, una misura clinica o un confronto normativo",
+    "ordine_aree_risultato": "Ordine teorico stabile: emozioni, relazioni, identità, impulsi"
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Esperienze poco frequenti nelle quattro aree",
+      "sottotitolo": "Nelle risposte, le esperienze esplorate risultano poco frequenti in tutte e quattro le aree. Non emerge quindi una distribuzione ampia di cambiamenti emotivi, sensibilità relazionale, instabilità dell'immagine di sé o reazioni impulsive e sotto stress.",
+      "descrizione": "Questo andamento descrive soltanto gli ultimi tre mesi e non esclude difficoltà circoscritte, recenti o non incluse nelle domande. Può essere utile osservare se alcune esperienze cambiano in particolari relazioni, durante periodi di stress o quando incidono sul funzionamento quotidiano. Il risultato non è una diagnosi e non conferma né esclude un disturbo borderline di personalità. Il messaggio di sicurezza resta visibile indipendentemente dal profilo."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un andamento che varia tra aree e contesti",
+      "sottotitolo": "Le risposte descrivono esperienze presenti con frequenza diversa tra le quattro aree, senza aree che raggiungano il livello editoriale più alto. Il quadro può quindi cambiare in base al tipo di relazione, all'attivazione emotiva, allo stress e al periodo considerato.",
+      "descrizione": "Le schede d'area distinguono dove le esperienze sono più presenti senza trasformare piccole differenze in una classifica personale. Vanno osservati situazioni, durata, conseguenze e condizioni in cui si ritrova equilibrio, considerando anche spiegazioni alternative o concomitanti. Il risultato non è una diagnosi e le soglie sono esclusivamente editoriali. Il messaggio di sicurezza resta visibile indipendentemente dal profilo."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Una o due aree emergono con maggiore frequenza",
+      "sottotitolo": "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo è quindi concentrato su aspetti specifici e non descrive un andamento uniforme dell'intero funzionamento.",
+      "descrizione": "Le schede specifiche indicano se emergono soprattutto intensità emotiva, sensibilità alla distanza, immagine di sé oppure impulsività e reazioni allo stress. Sono importanti durata, contesti, interferenza e risorse, insieme alle possibili spiegazioni alternative. Il risultato non è una diagnosi; una o due aree frequenti possono essere approfondite con un professionista se causano sofferenza o limitazioni. Il messaggio di sicurezza resta visibile indipendentemente dal profilo."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Esperienze frequenti distribuite in più aree",
+      "sottotitolo": "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Cambiamenti emotivi, dinamiche relazionali, immagine di sé e reazioni impulsive o sotto stress possono quindi presentarsi in una distribuzione ampia nel periodo considerato.",
+      "descrizione": "Il profilo invita a osservare ampiezza, persistenza e interferenza concreta, senza interpretare le barre come una misura clinica. Se le esperienze durano, compaiono in più contesti o incidono sulla vita, un confronto professionale può valutarle insieme alla storia personale e alle possibili alternative. Il risultato non è una diagnosi e non stima la presenza di un disturbo borderline di personalità. Il messaggio di sicurezza resta visibile indipendentemente dal profilo."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "emozioni",
+      "nome_area": "Intensità emotiva e ritorno all'equilibrio",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Cambiamenti emotivi intensi o prolungati poco frequenti; non esclude reazioni circoscritte in situazioni significative."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni le emozioni possono cambiare rapidamente o richiedere tempo per attenuarsi; è utile osservare attivatori e risorse di riequilibrio."},
+        {"livello": "HIGH", "descrizione": "Frequenti cambiamenti emotivi, reazioni intense o difficoltà nel ritorno all'equilibrio; durata, contesti e conseguenze vanno osservati senza dedurre una diagnosi."}
+      ]
+    },
+    {
+      "area_code": "relazioni",
+      "nome_area": "Relazioni e sensibilità alla distanza",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Timore di distanza, ricerca di rassicurazione e persistenza dei conflitti poco frequenti; singole relazioni possono avere un andamento diverso."},
+        {"livello": "MEDIUM", "descrizione": "Alcuni segnali di distanza o conflitto attivano dubbi e bisogno di rassicurazione; vanno considerati persone, situazioni e chiarezza della comunicazione."},
+        {"livello": "HIGH", "descrizione": "Frequente sensibilità ai segnali di distanza, con rassicurazioni, aumento del contatto o oscillazioni nella percezione del legame; contesto e sicurezza reale sono essenziali."}
+      ]
+    },
+    {
+      "area_code": "identita",
+      "nome_area": "Identità, immagine di sé e senso di vuoto",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Immagine di sé, preferenze, obiettivi e direzione generalmente stabili; dubbi circoscritti possono accompagnare normali transizioni."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni momenti emergono vuoto, incertezza sulle preferenze o cambiamenti nella valutazione di sé; va osservato il rapporto con contesto e giudizio altrui."},
+        {"livello": "HIGH", "descrizione": "Frequenti cambiamenti nell'immagine di sé, negli obiettivi o nella direzione, oppure un ricorrente senso di vuoto; il significato richiede storia e contesto."}
+      ]
+    },
+    {
+      "area_code": "impulsi",
+      "nome_area": "Impulsività, rabbia e reazioni allo stress",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Azioni impulsive, rapido aumento della rabbia e reazioni di distacco o ostilità sotto stress poco frequenti; non sono esplorate tutte le possibili reazioni critiche."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni momenti di forte attivazione è più difficile rimandare, valutare conseguenze o interpretare con calma; sono utili segnali iniziali e strategie di pausa."},
+        {"livello": "HIGH", "descrizione": "Frequenti difficoltà nel rallentare l'azione, rapido aumento della rabbia o particolari reazioni sotto forte stress; i fenomeni inclusi vanno distinti individualmente."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {
+      "titolo": "The Italian Version of the Borderline Personality Disorder Severity Index IV",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28604275/",
+      "apporto": "Domini e presentazione eterogenea in campioni clinici italiani; nessun item, punteggio o soglia è stato trasferito."
+    },
+    {
+      "titolo": "Clinical descriptions and diagnostic requirements for ICD-11",
+      "url": "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1",
+      "apporto": "Funzionamento complessivo di personalità e pattern borderline nel modello ICD-11."
+    },
+    {
+      "titolo": "Percorsi di cura per i disturbi gravi di personalità",
+      "url": "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf",
+      "apporto": "Contesto italiano per valutazione clinica, dimensionale, funzionamento e condizioni concomitanti."
+    },
+    {
+      "titolo": "Diagnosi e trattamento del disturbo borderline di personalità — linea guida ISS in produzione",
+      "url": "https://www.iss.it/-/diagnosi-trattamento-disturbo-borderline-personalit%C3%A0_in-prog",
+      "apporto": "Documenta lo sviluppo della linea guida italiana; non contiene ancora raccomandazioni definitive."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia separata, documentata in docs/test-dbp-v1.md e nel GuideCatalogue.",
+  "limite": "Non esistono dati che validino nella popolazione adulta italiana questo specifico set di 24 item, le quattro aree, le soglie o le interpretazioni."
+}

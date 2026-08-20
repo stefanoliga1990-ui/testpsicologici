@@ -2,7 +2,7 @@
 
 ## Obiettivo e perimetro
 
-Questo documento definisce, prima delle modifiche al codice, la revisione delle fonti dei 15 questionari e delle 15 schede di approfondimento di Spazio Test. L'audit riguarda:
+Questo documento definisce la revisione delle fonti dei 16 questionari e delle 16 schede di approfondimento di Spazio Test. L'audit riguarda:
 
 - autorevolezza scientifica o istituzionale;
 - solidità metodologica e aggiornamento;
@@ -72,6 +72,7 @@ Sono necessari interventi mirati:
 | People pleasing | revisione su self-silencing, oltre agli studi su unmitigated communion | ruolo di cultura, genere e relazioni; natura non diagnostica | mancano solide validazioni italiane del costrutto così denominato |
 | Fenomeno dell'impostore | studio europeo 2025 con versione italiana e analisi d'invarianza | dimostra che la trasferibilità interculturale va testata | deviazioni del campione italiano; non usare norme IPP per il test dell'app |
 | Autosabotaggio / procrastinazione | confronto PPS/IPS in sei Paesi europei, inclusa l'Italia | rilevanza europea e problemi di equivalenza della misura | riguarda procrastinazione, non un costrutto unitario di “autosabotaggio” |
+| Tratti associati al disturbo borderline di personalità | validazione multicentrica italiana BPDSI-IV, documento ministeriale sui percorsi di cura, WHO ICD-11 e stato della linea guida ISS | domini affettivi, relazionali, identitari e comportamentali; necessità di valutazione clinica multidimensionale nel contesto italiano | strumenti e campioni clinici diversi; nessun item, punteggio o soglia è trasferibile e la linea guida ISS è ancora in produzione |
 
 ## Decisioni sui testi
 
@@ -97,9 +98,9 @@ Questa revisione non modifica item, opzioni, scoring, pesi, soglie o interpretaz
 
 ## Esito dell'implementazione
 
-- Fonti dei 15 questionari sincronizzate come metadati senza modificare versioni, item o scoring.
-- Fonti e contributi delle 15 schede integrate; i collegamenti scientifici ospitati da terzi sono stati sostituiti con DOI o pagine primarie.
+- Fonti dei 16 questionari sincronizzate come metadati; per il nuovo questionario DBP item, scoring e interpretazioni sono documentati nella specifica v1.0.
+- Fonti e contributi delle 16 schede integrati; i collegamenti scientifici ospitati da terzi sono stati sostituiti con DOI o pagine primarie.
 - Schede su dinamiche narcisistiche, people pleasing e fenomeno dell'impostore corrette nei punti in cui associazioni, cultura o limiti di misura richiedevano maggiore cautela.
 - Pagina “Metodo e fonti” aggiornata con priorità italiana/europea e divieto di trasferire automaticamente norme, prevalenze e cut-off.
 - `AGENTS.md` e `docs/standard-psicometrico.md` aggiornati come standard riutilizzabile.
-- Suite completa eseguita il 20 agosto 2026: 86 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.
+- Suite completa eseguita il 20 agosto 2026: 91 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.
