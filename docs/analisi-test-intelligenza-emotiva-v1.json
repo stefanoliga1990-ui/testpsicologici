@@ -14,13 +14,18 @@
     "fonti_consultate": [
       {
         "titolo": "The Ability Model of Emotional Intelligence: Principles and Updates",
-        "url": "https://sites.usnh.edu/jdmayer/wp-content/uploads/sites/261/2024/03/rp2016-mayer-caruso-salovey.pdf",
+        "url": "https://doi.org/10.1177/1754073916639667",
         "apporto": "Riferimento per le quattro aree di percezione, facilitazione del pensiero, comprensione e gestione delle emozioni."
       },
       {
         "titolo": "Emotional Intelligence: New Ability or Eclectic Traits?",
-        "url": "https://cdn2.psychologytoday.com/assets/attachments/1575/rp2008-mayersaloveycarusob.pdf",
+        "url": "https://doi.org/10.1037/0003-066X.63.6.503",
         "apporto": "Riferimento per distinguere il modello di abilità dalle concezioni più ampie basate su tratti e competenze."
+      },
+      {
+        "titolo": "Construct validity of the Italian version of the Mayer-Salovey-Caruso Emotional Intelligence Test v2.0",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23536991/",
+        "apporto": "Validazione italiana consultata per struttura e distinzione tra abilità emotiva, intelligenza e personalità; riguarda il MSCEIT e non valida l'autovalutazione originale dell'app."
       },
       {
         "titolo": "The Measurement of Emotional Intelligence: A Critical Review",

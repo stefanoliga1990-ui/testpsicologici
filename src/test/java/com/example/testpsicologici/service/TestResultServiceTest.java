@@ -31,7 +31,9 @@ class TestResultServiceTest {
         assertThat(test.version()).isEqualTo("2.2");
         assertThat(test.seoTitle()).startsWith("Test autismo adulti online");
         assertThat(test.seoDescription()).contains("senza registrazione");
-        assertThat(test.references()).hasSize(2);
+        assertThat(test.references()).hasSize(3);
+        assertThat(test.references()).extracting(reference -> reference.title())
+                .anyMatch(title -> title.contains("ISS/SNLG"));
         assertThat(test.references()).allSatisfy(reference ->
                 assertThat(reference.contribution()).isNotBlank());
     }

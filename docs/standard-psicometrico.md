@@ -17,6 +17,15 @@ Il processo segue come riferimenti generali gli [Standards for Educational and P
 
 Output: tabella `dimensione → indicatori → item candidati → esclusioni`.
 
+### 1 bis. Selezione e tracciabilità delle fonti
+
+- Preparare una matrice `affermazione o scelta progettuale → fonte → disegno → popolazione → limite` e verificare che ogni fonte sostenga direttamente ciò che viene pubblicato.
+- Per la popolazione italiana cercare prima evidenze scientifiche o istituzionali italiane, poi validazioni e studi europei, quindi revisioni, meta-analisi e linee guida internazionali.
+- Preferire DOI, PubMed, rivista, università o ente produttore. Divulgazione istituzionale e materiali clinico-educativi possono chiarire il testo, ma non sostituiscono la base scientifica; evitare blog e fonti commerciali.
+- Non trasferire norme, cut-off, prevalenze o accuratezza da un altro strumento, Paese o campione. Descrivere campioni specifici e risultati di invarianza, inclusi quelli contrari alla piena equivalenza culturale.
+- La validazione italiana di uno strumento di riferimento informa il costrutto e la progettazione, ma non costituisce validazione del questionario originale dell'app.
+- Quando l'evidenza italiana è insufficiente, usare le migliori fonti europee o internazionali e registrare esplicitamente la limitazione.
+
 ### 2. Sviluppo degli item
 
 - Generare più item di quelli necessari usando letteratura e, quando possibile, interviste con persone della popolazione destinataria.
