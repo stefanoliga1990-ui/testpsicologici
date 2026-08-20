@@ -20,7 +20,11 @@
     <p class="test-title" th:text="${test.title}">Titolo del test</p>
     <h1 th:text="${result.title}">Titolo dell'analisi</h1>
     <p class="summary" th:text="${result.description}">Descrizione generale.</p>
-    <p class="detail" th:text="${result.detail}">Approfondimento generale.</p>
+</div>
+
+<div class="interpretation-note">
+    <strong>Come leggere il risultato</strong>
+    <p th:text="${result.detail}">Approfondimento generale.</p>
 </div>
 
 <div class="overall-block">

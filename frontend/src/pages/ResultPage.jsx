@@ -13,7 +13,10 @@ export default function ResultPage({ areaResults, percentage, result, score, tes
         <p className="result-label">{test.title}</p>
         <h1>{result.title}</h1>
         <p className="result-description">{result.description}</p>
-        <p className="result-detail">{result.detail}</p>
+        <aside className="notice-box result-notice" aria-label="Come leggere il risultato">
+          <span aria-hidden="true">i</span>
+          <p><strong>Come leggere il risultato</strong><span>{result.detail}</span></p>
+        </aside>
         {areaResults.length > 0 && (
           <>
             <div className="overall-presence">

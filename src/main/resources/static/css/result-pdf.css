@@ -27,7 +27,9 @@ table { width: 100%; border-collapse: collapse; }
 .test-title { margin: 0 0 10pt; color: #66736e; font-size: 9pt; }
 h1 { margin: 0 0 11pt; color: #263330; font-family: Georgia, "Times New Roman", serif; font-size: 27pt; line-height: 1.08; }
 .summary { max-width: 450pt; margin: 0 auto 7pt; font-size: 11.5pt; line-height: 1.5; }
-.detail { max-width: 450pt; margin: 0 auto; color: #5d6a65; }
+.interpretation-note { max-width: 450pt; margin: 12pt auto 0; padding: 12pt 14pt; border: 1px solid #ead7ca; border-radius: 8pt; color: #654f42; background: #f8eee8; text-align: left; page-break-inside: avoid; }
+.interpretation-note strong { font-size: 9pt; }
+.interpretation-note p { margin: 4pt 0 0; font-size: 8.5pt; line-height: 1.45; }
 .overall-block { margin: 22pt 26pt 0; padding: 15pt 17pt; border: 1px solid #c8d9ce; border-radius: 10pt; background: #edf5f0; page-break-inside: avoid; }
 .bar-label { margin: 0 0 6pt; color: #245c4c; font-size: 7.5pt; font-weight: bold; letter-spacing: .7pt; text-transform: uppercase; }
 .bar-track { height: 7pt; overflow: hidden; border-radius: 20pt; background: #dce6de; }
