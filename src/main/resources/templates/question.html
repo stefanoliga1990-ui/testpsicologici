@@ -29,6 +29,9 @@
         </div>
         <p class="question-prompt" th:text="${test.responseInstruction}">Pensando al periodo indicato, con quale frequenza ti è capitato?</p>
         <h1 th:text="${question.text}">Quando apro una nuova pagina, mi piace che tutto sia chiaro al primo sguardo.</h1>
+        <p class="question-example" th:if="${question.example != null and !question.example.isBlank()}">
+            <strong>Un esempio possibile:</strong> <span th:text="${question.example}">una situazione equivalente e concreta.</span>
+        </p>
 
         <form class="answer-form" method="post" th:action="@{/test/{id}/domanda/{number}(id=${test.id},number=${questionNumber})}">
             <div class="answer-navigation">

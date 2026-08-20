@@ -23,18 +23,22 @@ public class TestQuestionEntity {
     private int position;
     @Column(nullable = false, length = 1200)
     private String text;
+    @Column(length = 800)
+    private String example;
 
     protected TestQuestionEntity() {
     }
 
-    public TestQuestionEntity(String testId, String areaCode, int position, String text) {
+    public TestQuestionEntity(String testId, String areaCode, int position, String text, String example) {
         this.testId = testId;
         this.areaCode = areaCode;
         this.position = position;
         this.text = text;
+        this.example = example;
     }
 
     public String getAreaCode() { return areaCode; }
     public int getPosition() { return position; }
     public String getText() { return text; }
+    public String getExample() { return example; }
 }

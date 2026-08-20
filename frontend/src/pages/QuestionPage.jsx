@@ -24,6 +24,7 @@ export default function QuestionPage({ answers, progress, question, questionCoun
         </div>
         <p className="question-prompt">{test.responseInstruction}</p>
         <h1>{question.text}</h1>
+        {question.example ? <p className="question-example"><strong>Un esempio possibile:</strong> {question.example}</p> : null}
         <form className="answer-form" onSubmit={(event) => { event.preventDefault(); run(answer); }} aria-busy={loading}>
           <div className="answer-navigation">
             {questionNumber > 1 ? (

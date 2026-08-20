@@ -799,6 +799,24 @@ class PageRenderingTest {
     }
 
     @Test
+    void questionPageShowsAnOptionalExampleSeparatelyFromTheQuestion() throws Exception {
+        String testId = "tratti-autistici-adulti";
+        PsychologicalTest test = catalogue.findById(testId);
+        int questionNumber = java.util.stream.IntStream.range(0, test.questions().size())
+                .filter(index -> test.questions().get(index).example() != null)
+                .findFirst()
+                .orElseThrow() + 1;
+        MockHttpSession inProgress = new MockHttpSession();
+        inProgress.setAttribute("test-attempt-" + testId, new TestAttempt(test.questions().size()));
+
+        mockMvc.perform(get("/test/{testId}/domanda/{questionNumber}", testId, questionNumber).session(inProgress))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("class=\"question-example\"")))
+                .andExpect(content().string(containsString("Un esempio possibile:")))
+                .andExpect(content().string(containsString(test.questions().get(questionNumber - 1).example())));
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())

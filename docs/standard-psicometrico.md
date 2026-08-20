@@ -32,6 +32,7 @@ Output: tabella `dimensione → indicatori → item candidati → esclusioni`.
 - Far valutare rilevanza, completezza, comprensibilità e possibili bias a esperti del costrutto e a utenti.
 - Usare interviste cognitive per verificare comprensione, recupero dalla memoria, giudizio e scelta della risposta.
 - Eliminare item doppi, ridondanti, troppo generici, suggestivi o dipendenti da un solo contesto non essenziale.
+- Usare un esempio soltanto quando chiarisce un termine o processo astratto mantenendo invariato l'indicatore. Presentarlo separatamente dalla domanda, mantenerlo breve e non esaustivo e verificare con interviste cognitive che non restringa il recupero agli episodi nominati.
 - Non introdurre item invertiti soltanto per contrastare l'acquiescenza: negazioni e inversioni possono creare un fattore di metodo. Se teoricamente necessari, vanno pretestati e codificati esplicitamente.
 
 ### 3. Istruzioni e risposte

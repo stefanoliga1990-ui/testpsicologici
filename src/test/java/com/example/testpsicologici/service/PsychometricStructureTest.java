@@ -59,6 +59,24 @@ class PsychometricStructureTest {
     }
 
     @Test
+    void optionalExamplesRemainSeparateBriefAndNonExhaustive() {
+        List<String> examples = catalogue.findAll().stream()
+                .flatMap(test -> test.questions().stream())
+                .map(question -> question.example())
+                .filter(example -> example != null)
+                .toList();
+
+        assertThat(examples).hasSize(52).allSatisfy(example -> {
+            assertThat(example)
+                    .isNotBlank()
+                    .hasSizeLessThanOrEqualTo(180)
+                    .doesNotContainIgnoringCase("per esempio")
+                    .endsWith(".");
+            assertThat(Character.isLowerCase(example.codePointAt(0))).isTrue();
+        });
+    }
+
+    @Test
     void everyOverallProfileProvidesAStandaloneDetailedInterpretation() {
         catalogue.findAll().forEach(test -> {
             List<TestResult> profiles = List.of(
