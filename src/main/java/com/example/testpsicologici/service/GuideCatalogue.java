@@ -1563,6 +1563,136 @@ public class GuideCatalogue {
                                     "Riferimento istituzionale per descrivere correttamente il servizio pubblico gratuito rivolto alle donne vittime di violenza e stalking."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "fomo",
+                    "fomo",
+                    "FOMO (Fear of Missing Out)",
+                    "FOMO: comprendere la paura di perdersi qualcosa",
+                    "FOMO: significato, social e segnali | Spazio Test",
+                    "Una guida informativa alla FOMO: significato, confronto sociale, bisogno di aggiornamenti, rapporto con i social e limiti dei test online.",
+                    "FOMO significa Fear of Missing Out e descrive la preoccupazione di perdere esperienze rilevanti vissute da altre persone, insieme al desiderio di restare aggiornati e connessi. Può comparire attraverso i social media, ma anche quando si viene a conoscenza direttamente di incontri, conversazioni o opportunità a cui non si partecipa.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è la FOMO",
+                                    List.of(
+                                            "La FOMO è un'esperienza psicologica descrittiva, non una diagnosi. La formulazione più citata unisce la preoccupazione che altri stiano vivendo esperienze gratificanti in propria assenza al desiderio di restare continuamente informati su ciò che fanno.",
+                                            "La ricerca non ha ancora risolto in modo uniforme se la FOMO sia soprattutto una disposizione relativamente stabile, uno stato che cambia nelle situazioni o una combinazione delle due. Anche gli stati emotivi, i confini con il confronto sociale e la struttura delle misure variano tra gli studi."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "FOMO e uso problematico non sono la stessa cosa",
+                                    List.of(
+                                            "Controllare aggiornamenti o voler partecipare a esperienze importanti non costituisce di per sé un problema psicologico. FOMO, tempo online, uso problematico dei social, dipendenza da smartphone, ansia sociale, invidia ed esclusione reale sono concetti distinti, anche quando risultano associati negli studi.",
+                                            "Una correlazione non stabilisce che la FOMO provochi un certo uso della tecnologia o che l'uso della tecnologia provochi la FOMO. Le relazioni possono variare tra persone e periodi, essere reciproche oppure dipendere da condizioni non misurate."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Quattro passaggi utili per osservare l'esperienza",
+                                    List.of(
+                                            "Il questionario organizza l'auto-osservazione in quattro aree editoriali. Non sono sottoscale cliniche e non riproducono la struttura di FoMOs o ON-FoMO."
+                                    ),
+                                    List.of(
+                                            "Inclusione e appartenenza: il significato attribuito a inviti, incontri e conversazioni avvenuti in propria assenza.",
+                                            "Confronto con alternative: come ciò che fanno gli altri o le possibilità non scelte cambiano la valutazione dell'esperienza presente.",
+                                            "Aggiornamento e connessione: controlli, notifiche, ricerca di informazioni e vissuti dei momenti senza accesso.",
+                                            "Attenzione e scelte: eventuali interruzioni, rinvii del sonno o cambiamenti nei programmi collegati al timore di perdere qualcosa."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Online e offline",
+                                    "I social rendono visibili le alternative, ma non sono necessari",
+                                    List.of(
+                                            "Le piattaforme possono mostrare molte esperienze alternative quasi in tempo reale, spesso attraverso selezioni brevi e curate. Questo può aumentare le occasioni di confronto e la sensazione che altrove stia accadendo qualcosa di più rilevante, ma non dimostra che la piattaforma sia la causa dell'esperienza.",
+                                            "Studi quotidiani suggeriscono che la FOMO può comparire anche quando l'informazione arriva senza social e tende a essere più presente per attività sociali. Il significato personale dell'occasione, il gruppo coinvolto e ciò che si sta facendo nel momento possono essere più informativi del semplice tempo online."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Possibile ciclo",
+                                    "Dal segnale al controllo degli aggiornamenti",
+                                    List.of(
+                                            "In alcuni casi un invito mancato, un post o una conversazione possono attivare confronto e preoccupazione. Controllare aggiornamenti può ridurre per poco l'incertezza, ma può anche mostrare nuove alternative e riportare l'attenzione su ciò che non si sta vivendo.",
+                                            "Questo ciclo è un'ipotesi descrittiva, non una sequenza inevitabile né una spiegazione causale. Per comprenderlo sono utili ciò che accade prima, la durata del sollievo, la possibilità di interrompere e le conseguenze sulla scelta presente."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Auto-osservazione",
+                                    "Fatti, interpretazioni e conseguenze",
+                                    List.of(
+                                            "Può essere utile annotare il segnale osservato, l'interpretazione, l'emozione, l'azione successiva e ciò che cambia dopo. Distingui, per esempio, il fatto di non aver ricevuto un invito dal significato attribuito al tuo posto nel gruppo, senza ignorare eventuali pattern reali di esclusione.",
+                                            "Nota quando notifiche e controlli sono scelti intenzionalmente e quando invece interrompono sonno, concentrazione o attività a cui vuoi dedicarti. Osserva anche le eccezioni: momenti in cui resti presente nella tua scelta, tolleri di non sapere subito o chiedi direttamente informazioni rilevanti. Questi spunti non costituiscono un trattamento."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto",
+                                    "Quando può essere utile parlarne",
+                                    List.of(
+                                            "Un confronto con uno psicologo, psicoterapeuta o medico può essere utile quando preoccupazione e controlli persistono, occupano molto tempo o incidono in modo rilevante su sonno, concentrazione, lavoro, studio, relazioni o possibilità di scegliere liberamente le proprie attività.",
+                                            "Una valutazione individuale considera storia recente, relazioni e gruppi, isolamento o esclusione reali, umore, ansia, stress, abitudini digitali e risorse. Non parte automaticamente dall'idea che il problema sia il telefono o da una classificazione ottenuta online."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Limiti",
+                                    "Come leggere ricerca e questionario",
+                                    List.of(
+                                            "Le validazioni italiane disponibili riguardano strumenti diversi e soprattutto adolescenti, adulti emergenti o giovani adulti. Le revisioni includono studi molto eterogenei e in gran parte trasversali, perciò descrivono associazioni medie senza spiegare cause o conseguenze nel singolo caso.",
+                                            "Le 24 domande, le quattro aree e le soglie di Spazio Test sono originali, editoriali e non validate. Le barre mostrano soltanto la frequenza relativa delle risposte nell'ultimo mese: non sono percentuali della persona, probabilità, percentili o misure cliniche."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, inclusione percepita, confronto con alternative, bisogno di restare aggiornati e possibile interferenza su attenzione e scelte. Non è validato, non diagnostica una condizione e non dimostra un uso problematico di social media, Internet o smartphone.",
+                    List.of(
+                            new GuideReference(
+                                    "Factor structure and psychometric properties of the Italian version of the Fear of Missing Out Scale — Casale e Fioravanti",
+                                    "https://pubmed.ncbi.nlm.nih.gov/31704432/",
+                                    "Validazione italiana consultata per i nuclei di preoccupazione e desiderio di connessione; riguarda adolescenti e adulti emergenti, uno strumento diverso e una struttura non trasferibile all'app."
+                            ),
+                            new GuideReference(
+                                    "Factor structure and psychometric properties of the Italian version of the Online Fear of Missing Out — Sommantico e colleghi",
+                                    "https://doi.org/10.1016/j.chbr.2024.100374",
+                                    "Due studi italiani su giovani adulti consultati per appartenenza, riconoscimento, disconnessione e conseguenze dell'uso online; item, fattori e punteggi non validano il questionario dell'app."
+                            ),
+                            new GuideReference(
+                                    "Psychometric properties of the Italian State Fear of Missing Out Inventory — Servidio, Soraci e Holte",
+                                    "https://pubmed.ncbi.nlm.nih.gov/41987296/",
+                                    "Validazione italiana del 2026 consultata per la distinzione tra esperienza di stato e disposizione; i campioni erano giovani adulti e lo strumento è diverso."
+                            ),
+                            new GuideReference(
+                                    "Motivational, emotional, and behavioral correlates of fear of missing out — Przybylski e colleghi",
+                                    "https://doi.org/10.1016/j.chb.2013.02.014",
+                                    "Lavoro fondativo consultato per definizione, bisogni psicologici e associazioni con coinvolgimento nei social; non offre inferenze causali né validazione italiana."
+                            ),
+                            new GuideReference(
+                                    "The relationship between fear of missing out, digital technology use, and psychological well-being — Groenestein e colleghi",
+                                    "https://doi.org/10.1371/journal.pone.0308643",
+                                    "Scoping review preregistrata di 106 studi consultata per eterogeneità concettuale, stato-tratto, confini online e offline e limiti delle interpretazioni causali."
+                            ),
+                            new GuideReference(
+                                    "Fear of missing out and internet use: a systematic review and meta-analysis — Akbari e colleghi",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8987430/",
+                                    "Sintesi di 86 effetti e 55.134 partecipanti consultata per la variabilità dell'associazione tra FOMO e uso di Internet; campioni prevalentemente giovani e nessuna bidirezionalità dimostrata."
+                            ),
+                            new GuideReference(
+                                    "Fear of missing out and social networking sites use and abuse: a meta-analysis — Fioravanti e colleghi",
+                                    "https://doi.org/10.1016/j.chb.2021.106839",
+                                    "Meta-analisi di 33 campioni consultata per le associazioni con uso e uso problematico dei social; le correlazioni di gruppo non identificano cause o condizioni individuali."
+                            ),
+                            new GuideReference(
+                                    "Fear of missing out: prevalence, dynamics, and consequences — Milyavskaya e colleghi",
+                                    "https://doi.org/10.1007/s11031-018-9683-5",
+                                    "Studio con vignette e rilevazioni quotidiane consultato per la natura situazionale e la possibilità di FOMO anche fuori dai social; il campione era composto soprattutto da matricole molto giovani."
+                            )
+                    )
             )
     );
 

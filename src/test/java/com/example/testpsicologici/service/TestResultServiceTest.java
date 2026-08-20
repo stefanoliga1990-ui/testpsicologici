@@ -733,10 +733,75 @@ class TestResultServiceTest {
     }
 
     @Test
+    void fomoTestIsLoadedWithTwentyFourQuestionsAndConceptualLimits() {
+        PsychologicalTest test = catalogue.findById("fomo");
+
+        assertThat(test.title()).isEqualTo("FOMO (Fear of Missing Out)");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).extracting(area -> area.code())
+                .containsExactly("inclusione", "confronto", "connessione", "interferenza");
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.responseInstruction()).contains("ultimo mese", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "online e fuori dai social",
+                "non è una diagnosi",
+                "non valuta né dimostra un uso problematico",
+                "non stabiliscono",
+                "sonno, concentrazione, attività o relazioni");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze FOMO");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
+        assertThat(test.references()).extracting(reference -> reference.url()).containsExactly(
+                "https://pubmed.ncbi.nlm.nih.gov/31704432/",
+                "https://doi.org/10.1016/j.chbr.2024.100374",
+                "https://doi.org/10.1016/j.chb.2013.02.014",
+                "https://doi.org/10.1371/journal.pone.0308643");
+    }
+
+    @Test
+    void fomoFocusedProfileKeepsTheoreticalAreaOrderAndAreaMeaning() {
+        TestResult result = analyzeWithAnswersForTest("fomo", 1, 1, 5, 1);
+
+        assertThat(result.general().title()).isEqualTo("Una o due modalità emergono con maggiore frequenza");
+        assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Inclusione e appartenenza percepita",
+                "Confronto con esperienze alternative",
+                "Bisogno di restare aggiornati e connessi",
+                "Interferenza su attenzione e scelte");
+        assertThat(result.areaResults().get(2).description()).contains("frequente bisogno di aggiornamenti");
+        assertThat(result.areaResults().get(2).description()).contains("Non dimostra una dipendenza tecnologica");
+        assertThat(result.areaResults().get(2).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(0).percentage()).isZero();
+    }
+
+    @Test
+    void fomoProfilesFollowEditorialRulesAndAlwaysRetainSupportMessage() {
+        TestResult low = analyzeWithAnswersForTest("fomo", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("fomo", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("fomo", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("fomo", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).isEqualTo("La FOMO compare poco e non attraversa le quattro aree");
+        assertThat(mixed.general().title()).isEqualTo("La FOMO varia tra contesti e modalità");
+        assertThat(focused.general().title()).isEqualTo("Una o due modalità emergono con maggiore frequenza");
+        assertThat(broad.general().title()).isEqualTo("La preoccupazione di perdere esperienze attraversa più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non diagnostica una condizione",
+                        "non dimostra un uso problematico di social o smartphone",
+                        "sonno, concentrazione, attività o relazioni",
+                        "psicologo, psicoterapeuta o medico qualificato"));
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

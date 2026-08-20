@@ -2,9 +2,9 @@
 
 ## Scopo e perimetro
 
-Sono stati riesaminati tutti i 408 item dei 17 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
+Sono stati riesaminati tutti i 432 item dei 18 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
 
-L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 356 item restano invariati perché già concreti, già dotati di esempi nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
+L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 380 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
 
 Gli esempi non sono elenchi esaustivi e non costituiscono condizioni aggiuntive: l'utente deve rispondere alla domanda principale considerando anche situazioni equivalenti non nominate.
 
@@ -14,6 +14,7 @@ Gli esempi non sono elenchi esaustivi e non costituiscono condizioni aggiuntive:
 - `tratti-ossessivo-compulsivi`: `1.4 → 1.5`.
 - Questionari da `autostima` ad `autosabotaggio`: `1.3 → 1.4`.
 - `tratti-borderline-adulti` e `paura-abbandono`: `1.0 → 1.1`.
+- `fomo`: versione iniziale `1.0`, senza esempi negli item.
 
 L'incremento forza il reseeding degli item nel database esistente; scoring, profili e interpretazioni restano invariati.
 
@@ -142,6 +143,10 @@ Non è stato aggiunto quando l'item è già concreto, contiene già una lista ch
 
 - **Domanda:** Interpreto una minore disponibilità temporanea come segnale di un possibile abbandono. **Esempio:** una giornata molto impegnata riduce i messaggi e la leggo come possibile perdita del legame.
 - **Domanda:** Ritiro un confine quando una persona importante reagisce prendendo le distanze. **Esempio:** dopo aver detto di no, cambio risposta se la persona smette di scrivermi o diventa fredda.
+
+### FOMO
+
+Non sono stati aggiunti esempi ai 24 item. Le formulazioni descrivono già situazioni concrete e brevi; nominare piattaforme, eventi o gruppi specifici potrebbe focalizzare il recupero su un solo canale e restringere un costrutto che può presentarsi online e offline. La scelta è documentata nella specifica v1.0 e dovrà comunque essere verificata con interviste cognitive.
 
 ## Limiti e verifica successiva
 

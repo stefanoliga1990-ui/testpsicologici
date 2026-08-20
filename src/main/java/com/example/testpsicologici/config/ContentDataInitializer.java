@@ -62,6 +62,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedSelfSabotageInformationTest();
         seedBorderlineTraitsInformationTest();
         seedFearOfAbandonmentInformationTest();
+        seedFomoInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -1612,6 +1613,98 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Le risposte indicano frequenti cambiamenti di programmi, bisogni o confini per evitare una possibile perdita. Sicurezza e consenso hanno priorità sul mantenimento del legame: paura, pressione, controllo o minacce meritano attenzione indipendentemente dal risultato del test.");
     }
 
+    private void seedFomoInformationTest() {
+        String id = "fomo";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "FOMO (Fear of Missing Out)",
+                "Autovalutazione informativa",
+                "Esplora la preoccupazione di perdere esperienze, il confronto con alternative e il bisogno di restare aggiornati.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Esplora la frequenza con cui, nell'ultimo mese, la possibilità che altre persone stessero vivendo esperienze rilevanti in tua assenza è stata accompagnata da preoccupazione, confronto, bisogno di aggiornamenti o interferenza sulle tue scelte. La FOMO può comparire online e fuori dai social, ma non è una diagnosi e questo risultato non valuta né dimostra un uso problematico di social media, Internet o smartphone. Le risposte possono cambiare durante transizioni, periodi con molte occasioni, isolamento reale, cambiamenti nei gruppi, stress o uso più intenso delle piattaforme. Le associazioni osservate negli studi non stabiliscono che la tecnologia o una caratteristica personale siano la causa delle esperienze. Se queste esperienze incidono in modo rilevante su sonno, concentrazione, attività o relazioni, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
+                version, false,
+                "Frequenza complessiva delle esperienze FOMO",
+                "Frequenza delle esperienze",
+                true, 18).withSeo(
+                "Test FOMO: paura di perdersi qualcosa | Spazio Test",
+                "Questionario informativo sulla FOMO, il confronto con le esperienze altrui e il bisogno di restare aggiornati. 24 domande, circa 6 minuti.")
+                .withResponseInstruction("Pensando all'ultimo mese, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "Italian version of the Fear of Missing Out Scale — Casale e Fioravanti",
+                "https://pubmed.ncbi.nlm.nih.gov/31704432/", 1);
+        saveReference(id, "Italian version of the Online Fear of Missing Out — Sommantico e colleghi",
+                "https://doi.org/10.1016/j.chbr.2024.100374", 2);
+        saveReference(id, "Motivational, emotional, and behavioral correlates of fear of missing out — Przybylski e colleghi",
+                "https://doi.org/10.1016/j.chb.2013.02.014", 3);
+        saveReference(id, "FoMO, digital technology use, and psychological well-being: a scoping review — Groenestein e colleghi",
+                "https://doi.org/10.1371/journal.pone.0308643", 4);
+
+        saveArea(id, "inclusione", "Inclusione e appartenenza percepita", 1);
+        saveArea(id, "confronto", "Confronto con esperienze alternative", 2);
+        saveArea(id, "connessione", "Bisogno di restare aggiornati e connessi", 3);
+        saveArea(id, "interferenza", "Interferenza su attenzione e scelte", 4);
+
+        saveQuestions(id, List.of(
+                q("inclusione", "Quando scopro che persone importanti hanno condiviso un'esperienza senza di me, mi sento escluso."),
+                q("inclusione", "Quando resto fuori da un invito rivolto al mio gruppo, temo che il mio posto sia cambiato."),
+                q("inclusione", "Se non posso partecipare a un incontro, temo di perdere vicinanza con chi è presente."),
+                q("inclusione", "Quando vedo persone a me vicine insieme in mia assenza, dubito di essere ancora parte del gruppo."),
+                q("inclusione", "Quando il gruppo discute un argomento che conosco poco, temo di restare ai margini."),
+                q("inclusione", "Sapere che un gruppo si è incontrato senza di me mi fa dubitare della mia importanza per quelle persone."),
+                q("confronto", "Penso che le esperienze degli altri siano più appaganti di ciò che sto facendo."),
+                q("confronto", "Quando vedo un'attività a cui non partecipo, immagino che sia più interessante della mia."),
+                q("confronto", "Dopo aver visto cosa fanno gli altri, considero meno soddisfacente la mia giornata."),
+                q("confronto", "Penso di aver scelto l'attività sbagliata quando scopro alternative che sembrano migliori."),
+                q("confronto", "Mi preoccupa che gli altri stiano vivendo più occasioni significative di me."),
+                q("confronto", "Mentre vivo un'esperienza, penso che altrove potrebbe esserci qualcosa di migliore."),
+                q("connessione", "Controllo gli aggiornamenti per sapere cosa stanno facendo le persone che conosco."),
+                q("connessione", "Durante un periodo senza accesso ai social, penso a ciò che potrei perdermi."),
+                q("connessione", "Tengo attive le notifiche per essere informato subito su ciò che accade."),
+                q("connessione", "Torno a controllare gli aggiornamenti anche se li ho appena consultati."),
+                q("connessione", "Mi sento inquieto quando per un po' non so cosa stanno facendo gli altri."),
+                q("connessione", "Cerco informazioni su attività in corso per capire se sto perdendo qualcosa."),
+                q("interferenza", "Interrompo ciò che sto facendo per verificare se ci sono novità."),
+                q("interferenza", "Rimando il momento di dormire per restare aggiornato."),
+                q("interferenza", "Durante un compito, il pensiero di perdermi qualcosa sposta la mia attenzione."),
+                q("interferenza", "Cambio programma quando scopro un'attività che sembra più interessante."),
+                q("interferenza", "Accetto un invito principalmente per evitare di perdermi un'esperienza."),
+                q("interferenza", "Continuo a seguire aggiornamenti anche quando vorrei dedicare tempo ad altro.")));
+
+        saveGlobal(id, "LOW", "La FOMO compare poco e non attraversa le quattro aree",
+                "Nelle risposte, le esperienze collegate alla FOMO risultano poco frequenti in tutte e quattro le aree. Preoccupazione per l'inclusione, confronto con alternative, bisogno di aggiornamenti e interferenza sulle scelte non formano quindi un andamento diffuso nell'ultimo mese.",
+                "Questo andamento non esclude episodi circoscritti, cambiamenti recenti o situazioni di esclusione realmente vissute. Può essere utile osservare se le risposte cambiano in specifici gruppi, periodi o piattaforme e se alcune occasioni assumono un significato particolare. Il risultato non diagnostica una condizione e non dimostra un uso problematico di social o smartphone. Se queste esperienze incidono in modo rilevante su sonno, concentrazione, attività o relazioni, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.");
+        saveGlobal(id, "MIXED", "La FOMO varia tra contesti e modalità",
+                "Le risposte descrivono una frequenza variabile tra le quattro aree, senza che una di esse raggiunga il livello editoriale più alto. La preoccupazione può quindi comparire in alcune situazioni o modalità e restare più contenuta in altre.",
+                "Le schede d'area aiutano a distinguere se emergono soprattutto significato sociale dell'assenza, confronto con alternative, bisogno di connessione o conseguenze sulle scelte. Nota quali contesti, persone, orari o tipi di aggiornamento precedono l'esperienza e considera anche transizioni, isolamento reale, stress o un periodo insolitamente ricco di occasioni. Il risultato non diagnostica una condizione e non dimostra un uso problematico di social o smartphone; le soglie sono esclusivamente editoriali. Se queste esperienze incidono in modo rilevante su sonno, concentrazione, attività o relazioni, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.");
+        saveGlobal(id, "FOCUSED", "Una o due modalità emergono con maggiore frequenza",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo è quindi concentrato su modalità specifiche e non descrive allo stesso modo il tuo rapporto con ogni gruppo, attività o tecnologia.",
+                "Consulta le schede sotto per riconoscere se l'area emergente riguarda appartenenza, confronto, connessione oppure attenzione e scelte. Osserva che cosa accade prima e dopo, quanto dura l'eventuale sollievo ottenuto controllando gli aggiornamenti e quali contesti permettono invece di restare nella scelta presente. Il risultato non diagnostica una condizione e non dimostra un uso problematico di social o smartphone. Se queste esperienze incidono in modo rilevante su sonno, concentrazione, attività o relazioni, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.");
+        saveGlobal(id, "BROAD", "La preoccupazione di perdere esperienze attraversa più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Nell'ultimo mese, inclusione, confronto, bisogno di aggiornamenti e interferenza possono quindi essersi presentati con una distribuzione ampia.",
+                "Questo profilo invita a considerare ampiezza, persistenza e interferenza concreta senza leggere le barre come una misura di gravità. I social possono rendere più visibili le alternative, ma non sono una causa necessaria o sufficiente; anche eventi, relazioni, transizioni, solitudine o stress possono contribuire al contesto. Il risultato non diagnostica una condizione e non dimostra un uso problematico di social o smartphone. Se queste esperienze incidono in modo rilevante su sonno, concentrazione, attività o relazioni, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.");
+
+        saveAreaInsights(id, "inclusione",
+                "Esperienze non condivise, inviti mancati o conversazioni del gruppo vengono raramente accompagnati da dubbi sulla tua appartenenza. Questo non esclude situazioni circoscritte o un'esclusione realmente presente.",
+                "In alcune situazioni l'assenza da un'esperienza può attivare dubbi sul tuo posto o sulla vicinanza con gli altri. Osserva quali fatti sono presenti, con quali gruppi accade e come cambia dopo un contatto diretto.",
+                "Le risposte descrivono frequenti dubbi su inclusione, vicinanza o importanza quando un'esperienza avviene senza di te. È utile distinguere il timore dalla presenza di segnali concreti e considerare la qualità reale delle relazioni coinvolte.");
+        saveAreaInsights(id, "confronto",
+                "Le esperienze altrui o le alternative disponibili raramente rendono meno soddisfacente ciò che stai vivendo. Singoli momenti di confronto possono comunque comparire senza definire un andamento stabile.",
+                "In alcuni momenti ciò che fanno gli altri o un'alternativa non scelta può apparire migliore dell'esperienza presente. Nota quali informazioni alimentano il confronto e se la valutazione cambia quando conosci meglio il contesto.",
+                "Le risposte indicano un frequente confronto sfavorevole tra ciò che vivi e le esperienze o alternative percepite. Osserva quanto le rappresentazioni visibili siano complete e come il confronto influisce sulla possibilità di riconoscere valore alla scelta presente.");
+        saveAreaInsights(id, "connessione",
+                "Controlli, notifiche e momenti senza aggiornamenti risultano raramente accompagnati dal bisogno di sapere subito cosa accade. Questo dato non misura il tempo trascorso online né la qualità delle abitudini digitali.",
+                "In alcune situazioni restare aggiornato o controllare nuovamente può diventare particolarmente importante. Nota orari, piattaforme, persone e durata dell'inquietudine, distinguendo una scelta intenzionale da un automatismo.",
+                "Le risposte descrivono un frequente bisogno di aggiornamenti o connessione e pensieri su ciò che potresti perderti. Non dimostra una dipendenza tecnologica: sono rilevanti contesto, possibilità di interrompere e conseguenze concrete.");
+        saveAreaInsights(id, "interferenza",
+                "Il timore di perdere esperienze raramente interrompe attività, sonno o programmi già scelti. Questo non esclude singole decisioni ragionevoli di cambiare piano quando emerge un'occasione importante.",
+                "In alcuni momenti aggiornamenti e alternative possono spostare attenzione o modificare una scelta. Osserva se il cambiamento è intenzionale e soddisfacente oppure lascia stanchezza, dispersione o distanza dalle tue priorità.",
+                "Le risposte indicano frequenti interruzioni o cambiamenti di attenzione, sonno e programmi collegati al timore di perdere qualcosa. È utile osservare persistenza, libertà della scelta e impatto quotidiano senza trasformare la frequenza in un'etichetta clinica.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -1684,6 +1777,11 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Psychometric properties of the Italian ECR-12 — Brugnera e colleghi", "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/"),
                 ref("Separation anxiety in a community sample of Italian emerging adults — Iannattone e colleghi", "https://pubmed.ncbi.nlm.nih.gov/33937113/"),
                 ref("Attachment Theory and Affect Regulation — Mikulincer, Shaver e Pereg", "https://doi.org/10.1023/A:1024515519160")));
+        syncReferences("fomo", List.of(
+                ref("Italian version of the Fear of Missing Out Scale — Casale e Fioravanti", "https://pubmed.ncbi.nlm.nih.gov/31704432/"),
+                ref("Italian version of the Online Fear of Missing Out — Sommantico e colleghi", "https://doi.org/10.1016/j.chbr.2024.100374"),
+                ref("Motivational, emotional, and behavioral correlates of fear of missing out — Przybylski e colleghi", "https://doi.org/10.1016/j.chb.2013.02.014"),
+                ref("FoMO, digital technology use, and psychological well-being: a scoping review — Groenestein e colleghi", "https://doi.org/10.1371/journal.pone.0308643")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

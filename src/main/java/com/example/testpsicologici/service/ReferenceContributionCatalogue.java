@@ -120,7 +120,15 @@ public class ReferenceContributionCatalogue {
             entry("https://pubmed.ncbi.nlm.nih.gov/33937113/",
                     "Studio italiano consultato per distinguere l'ansia di separazione da ansia generale e dimensioni borderline; il campione di studenti giovani e il disegno correlazionale limitano la generalizzazione."),
             entry("https://doi.org/10.1023/A:1024515519160",
-                    "Revisione teorica consultata per attenzione alla disponibilità, ricerca di prossimità e regolazione affettiva nell'attaccamento; non dimostra cause individuali né valida item o soglie."));
+                    "Revisione teorica consultata per attenzione alla disponibilità, ricerca di prossimità e regolazione affettiva nell'attaccamento; non dimostra cause individuali né valida item o soglie."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/31704432/",
+                    "Validazione italiana della FoMOs consultata per i nuclei di preoccupazione e desiderio di connessione; popolazioni giovani, struttura, item e punteggi non sono trasferibili al questionario dell'app."),
+            entry("https://doi.org/10.1016/j.chbr.2024.100374",
+                    "Validazione italiana dell'ON-FoMO consultata per distinguere appartenenza, riconoscimento, reazioni alla disconnessione e conseguenze dell'uso online; riguarda giovani adulti e un altro strumento."),
+            entry("https://doi.org/10.1016/j.chb.2013.02.014",
+                    "Lavoro fondativo consultato per la definizione della FOMO come preoccupazione per esperienze non condivise e desiderio di connessione; associazioni e misura originale non validano l'app."),
+            entry("https://doi.org/10.1371/journal.pone.0308643",
+                    "Scoping review preregistrata consultata per eterogeneità di definizioni, dimensionalità, stato-tratto e confini online e offline; non fornisce una struttura definitiva né inferenze causali."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

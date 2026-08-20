@@ -226,7 +226,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/paura-abbandono\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Paura dell&#39;abbandono</h3>")));
+                        "<h3>Paura dell&#39;abbandono</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/fomo\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>FOMO (Fear of Missing Out)</h3>")));
     }
 
     @Test
@@ -654,6 +658,27 @@ class PageRenderingTest {
     }
 
     @Test
+    void fomoGuideRendersEvidenceDistinctionsLimitsAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/fomo"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>FOMO: significato, social e segnali | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/fomo\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è la FOMO")))
+                .andExpect(content().string(containsString(
+                        "FOMO e uso problematico non sono la stessa cosa")))
+                .andExpect(content().string(containsString(
+                        "I social rendono visibili le alternative, ma non sono necessari")))
+                .andExpect(content().string(containsString(
+                        "Italian version of the Fear of Missing Out Scale")))
+                .andExpect(content().string(containsString(
+                        "Fear of missing out and internet use: a systematic review and meta-analysis")))
+                .andExpect(content().string(containsString("non sono percentuali della persona")))
+                .andExpect(content().string(containsString("href=\"/test/fomo\"")));
+    }
+
+    @Test
     void testLinksToItsPublishedGuide() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -758,6 +783,13 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("1522")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/paura-abbandono\"")));
+
+        mockMvc.perform(get("/test/fomo"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("online e fuori dai social")))
+                .andExpect(content().string(containsString("non valuta né dimostra un uso problematico")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/fomo\"")));
     }
 
     @Test
@@ -862,10 +894,13 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/disturbo-borderline-personalita")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/paura-abbandono")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/fomo")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/paura-abbandono")))
+                .andExpect(content().string(containsString("http://localhost/test/fomo")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }
