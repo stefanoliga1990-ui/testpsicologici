@@ -1,0 +1,129 @@
+{
+  "test": {
+    "id": "paura-abbandono",
+    "titolo": "Paura dell'abbandono",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione esclusivamente informativa",
+    "periodo_riferimento": "Ultimi tre mesi",
+    "direzione_punteggio": "Valori più alti descrivono una maggiore frequenza delle esperienze formulate",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non diagnostica una condizione, non classifica uno stile di attaccamento e non valuta la qualità reale di una relazione.",
+    "sicurezza": "La paura di perdere un legame non giustifica controllo, coercizione o violenza, subiti o agiti. In un pericolo immediato si chiama il 112; il 1522 è il servizio pubblico gratuito per le donne vittime di violenza e stalking."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi e alle relazioni per te importanti, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale personale, un percentile, una probabilità, una misura clinica o un confronto normativo",
+    "ordine_aree_risultato": "Ordine teorico stabile: segnali, rassicurazione, distanza, confini"
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Timore di perdita poco frequente e non diffuso",
+      "sottotitolo": "Nelle risposte, le esperienze collegate al timore di perdere un legame risultano poco frequenti in tutte e quattro le aree. Segnali di distanza, richieste di rassicurazione, separazioni temporanee e scelte sui confini non formano quindi un andamento diffuso nel periodo considerato.",
+      "descrizione": "Questo andamento non esclude episodi circoscritti, una relazione con caratteristiche diverse o reazioni comprensibili a segnali reali. Vanno osservati cambiamenti nel tempo, contesto e conseguenze. Il risultato non diagnostica una condizione e non classifica uno stile di attaccamento; il messaggio di sicurezza resta indipendente dal profilo."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "La paura cambia tra segnali, distanza e contesti",
+      "sottotitolo": "Le risposte descrivono una frequenza variabile tra le quattro aree, senza che una di esse raggiunga il livello editoriale più alto. Il timore può quindi comparire in alcuni passaggi o relazioni e restare più contenuto in altri.",
+      "descrizione": "Le schede distinguono dove emerge il dubbio e invitano a confrontare fatti osservabili e interpretazioni. Perdite, tradimenti, stress o relazioni incoerenti sono possibili contesti alternativi o concomitanti. Il risultato non diagnostica una condizione e non classifica uno stile di attaccamento; le soglie sono editoriali e il messaggio di sicurezza resta indipendente dal profilo."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Una o due modalità emergono con maggiore frequenza",
+      "sottotitolo": "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo è quindi concentrato su modalità specifiche e non descrive allo stesso modo tutte le relazioni o tutti gli aspetti esplorati.",
+      "descrizione": "Le schede orientano alle aree specifiche senza generalizzare. Sono da osservare funzione, persistenza, interferenza, segnali reali, risorse e conseguenze; se la sofferenza è rilevante può essere utile un confronto professionale. Il risultato non diagnostica una condizione e non classifica uno stile di attaccamento; il messaggio di sicurezza resta indipendente dal profilo."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "La paura di perdere il legame attraversa più aree",
+      "sottotitolo": "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Nel periodo considerato, sensibilità ai segnali, rassicurazione, vissuti della distanza e scelte su autonomia e confini possono quindi presentarsi con una distribuzione ampia.",
+      "descrizione": "Il profilo invita a considerare ampiezza, persistenza e interferenza senza interpretare le barre come gravità. Segnali reali, perdite recenti, relazioni incoerenti, stress, lutto, ansia o umore depresso sono contesti possibili; se le esperienze incidono sulla vita può essere utile un confronto professionale. Il risultato non diagnostica una condizione e non classifica uno stile di attaccamento; il messaggio di sicurezza resta indipendente dal profilo."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "segnali",
+      "nome_area": "Sensibilità ai segnali di distanza",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Ritardi, tono, disaccordi o richieste di spazio raramente vengono letti come perdita imminente; restano possibili eventi specifici e segnali reali."},
+        {"livello": "MEDIUM", "descrizione": "Alcuni segnali attivano dubbi; vanno osservati fatti precedenti, durata e ripetizione nelle stesse relazioni o situazioni."},
+        {"livello": "HIGH", "descrizione": "Segnali ambigui o temporanei vengono spesso letti come possibile abbandono; interpretazioni e fatti osservabili vanno distinti considerando la sicurezza reale della relazione."}
+      ]
+    },
+    {
+      "area_code": "rassicurazione",
+      "nome_area": "Ricerca di rassicurazione e vicinanza",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Conferme ripetute, controllo dei messaggi e aumento del contatto risultano poco frequenti, lasciando generalmente spazio reciproco."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni momenti conferme e contatto diventano importanti; vanno osservati durata del sollievo, condivisione della richiesta e chiarezza della comunicazione."},
+        {"livello": "HIGH", "descrizione": "Rassicurazione e vicinanza vengono cercate frequentemente e il dubbio può tornare presto; sono rilevanti benessere, consenso e spazio reciproco."}
+      ]
+    },
+    {
+      "area_code": "distanza",
+      "nome_area": "Pensieri ed emozioni durante la distanza",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Separazioni temporanee sono raramente accompagnate da preoccupazione prolungata, forte agitazione o difficoltà a ritrovare calma; eventi recenti possono differire."},
+        {"livello": "MEDIUM", "descrizione": "In alcune separazioni emergono pensieri, agitazione o minore concentrazione; contano durata, prevedibilità e risorse disponibili."},
+        {"livello": "HIGH", "descrizione": "Pensieri ed emozioni difficili sono frequenti durante distanze reali o previste; vanno osservati tempo occupato, contesti e ritorno alla calma senza dedurre una diagnosi."}
+      ]
+    },
+    {
+      "area_code": "confini",
+      "nome_area": "Autonomia e confini quando si teme la perdita",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Il timore raramente porta a trattenere disaccordi, cambiare programmi o rinunciare a bisogni e limiti; non stabilisce però la sicurezza della relazione."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni esprimere bisogni o mantenere un confine diventa più difficile; vanno osservate libertà delle scelte, conseguenze temute e supporti."},
+        {"livello": "HIGH", "descrizione": "Programmi, bisogni o confini cambiano frequentemente per evitare la perdita; sicurezza e consenso hanno priorità e pressione, controllo o minacce richiedono attenzione."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {
+      "titolo": "Italian Validation of the Adult Attachment Scale-Revised",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36407970/",
+      "apporto": "Dimensione di ansia dell'attaccamento e timori di rifiuto e abbandono in un campione italiano; nessun item, punteggio o soglia è stato trasferito."
+    },
+    {
+      "titolo": "Psychometric properties of the Italian ECR-12",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/",
+      "apporto": "Distinzione tra ansia ed evitamento e associazioni con ruminazione e difficoltà interpersonali in adulti italiani."
+    },
+    {
+      "titolo": "Separation anxiety in a community sample of Italian emerging adults",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33937113/",
+      "apporto": "Distinzione tra costrutti associati ma non equivalenti; il campione studentesco e il disegno correlazionale limitano la generalizzazione."
+    },
+    {
+      "titolo": "Attachment Theory and Affect Regulation",
+      "url": "https://doi.org/10.1023/A:1024515519160",
+      "apporto": "Modello teorico di attenzione alla disponibilità, prossimità e regolazione affettiva; non valida gli item o le soglie dell'app."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia separata, documentata in docs/test-paura-abbandono-v1.md e nel GuideCatalogue.",
+  "limite": "Non esistono dati che validino nella popolazione adulta italiana questo specifico set di 24 item, le quattro aree, le soglie o le interpretazioni."
+}

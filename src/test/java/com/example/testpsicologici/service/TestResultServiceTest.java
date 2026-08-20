@@ -667,10 +667,76 @@ class TestResultServiceTest {
     }
 
     @Test
+    void fearOfAbandonmentTestIsLoadedWithTwentyFourQuestionsAndRelationalSafeguards() {
+        PsychologicalTest test = catalogue.findById("paura-abbandono");
+
+        assertThat(test.title()).isEqualTo("Paura dell'abbandono");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).extracting(area -> area.code())
+                .containsExactly("segnali", "rassicurazione", "distanza", "confini");
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "relazioni per te importanti", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "non è qui una diagnosi",
+                "non classifica uno stile di attaccamento",
+                "qualità reale delle relazioni",
+                "controllo, coercizione o violenza",
+                "112",
+                "1522");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze esplorate");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
+        assertThat(test.references()).extracting(reference -> reference.url()).containsExactly(
+                "https://pubmed.ncbi.nlm.nih.gov/36407970/",
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/",
+                "https://pubmed.ncbi.nlm.nih.gov/33937113/",
+                "https://doi.org/10.1023/A:1024515519160");
+    }
+
+    @Test
+    void fearOfAbandonmentFocusedProfileKeepsTheoreticalAreaOrderAndAreaMeaning() {
+        TestResult result = analyzeWithAnswersForTest("paura-abbandono", 1, 5, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Una o due modalità emergono con maggiore frequenza");
+        assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Sensibilità ai segnali di distanza",
+                "Ricerca di rassicurazione e vicinanza",
+                "Pensieri ed emozioni durante la distanza",
+                "Autonomia e confini quando si teme la perdita");
+        assertThat(result.areaResults().get(1).description()).contains("frequente ricerca di rassicurazione");
+        assertThat(result.areaResults().get(1).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(0).percentage()).isZero();
+    }
+
+    @Test
+    void fearOfAbandonmentProfilesFollowEditorialRulesAndAlwaysRetainSafetyMessage() {
+        TestResult low = analyzeWithAnswersForTest("paura-abbandono", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("paura-abbandono", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("paura-abbandono", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("paura-abbandono", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).isEqualTo("Timore di perdita poco frequente e non diffuso");
+        assertThat(mixed.general().title()).isEqualTo("La paura cambia tra segnali, distanza e contesti");
+        assertThat(focused.general().title()).isEqualTo("Una o due modalità emergono con maggiore frequenza");
+        assertThat(broad.general().title()).isEqualTo("La paura di perdere il legame attraversa più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non diagnostica una condizione",
+                        "non classifica il tuo stile di attaccamento",
+                        "controllo, coercizione o violenza",
+                        "112",
+                        "1522"));
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

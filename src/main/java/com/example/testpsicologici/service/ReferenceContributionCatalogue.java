@@ -112,7 +112,15 @@ public class ReferenceContributionCatalogue {
             entry("https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf",
                     "Documento italiano sui percorsi di cura consultato per valutazione clinica, funzionamento e condizioni concomitanti nei disturbi gravi di personalità; non riguarda l'autovalutazione online."),
             entry("https://www.iss.it/-/diagnosi-trattamento-disturbo-borderline-personalit%C3%A0_in-prog",
-                    "Pagina ISS che documenta lo sviluppo di una linea guida italiana su diagnosi e trattamento; il lavoro non è ancora concluso e non sostiene raccomandazioni definitive."));
+                    "Pagina ISS che documenta lo sviluppo di una linea guida italiana su diagnosi e trattamento; il lavoro non è ancora concluso e non sostiene raccomandazioni definitive."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/36407970/",
+                    "Validazione italiana dell'AAS-R consultata per la dimensione di ansia dell'attaccamento e i timori di rifiuto e abbandono; lo strumento, il campione giovane e i punteggi non sono trasferibili all'app."),
+            entry("https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/",
+                    "Validazione italiana dell'ECR-12 consultata per distinguere ansia ed evitamento e per le associazioni con ruminazione e difficoltà interpersonali; riguarda uno strumento diverso."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/33937113/",
+                    "Studio italiano consultato per distinguere l'ansia di separazione da ansia generale e dimensioni borderline; il campione di studenti giovani e il disegno correlazionale limitano la generalizzazione."),
+            entry("https://doi.org/10.1023/A:1024515519160",
+                    "Revisione teorica consultata per attenzione alla disponibilità, ricerca di prossimità e regolazione affettiva nell'attaccamento; non dimostra cause individuali né valida item o soglie."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

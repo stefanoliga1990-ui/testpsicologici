@@ -1424,6 +1424,145 @@ public class GuideCatalogue {
                                     "Pagina ISS consultata per documentare lo sviluppo di una linea guida italiana specifica; non essendo ancora conclusa, non sostiene raccomandazioni definitive."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "paura-abbandono",
+                    "paura-abbandono",
+                    "Paura dell'abbandono",
+                    "Paura dell'abbandono: comprenderla nelle relazioni adulte",
+                    "Paura dell'abbandono: segnali e significato | Spazio Test",
+                    "Una guida informativa alla paura dell'abbandono nelle relazioni adulte: segnali di distanza, rassicurazione, separazioni, confini e supporto.",
+                    "La paura dell'abbandono descrive la preoccupazione ricorrente che una persona importante possa rifiutare, ridurre la vicinanza o interrompere il legame. Può coinvolgere il modo di interpretare i segnali, cercare rassicurazione, vivere la distanza e proteggere i propri bisogni e confini.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cosa si intende per paura dell'abbandono",
+                                    List.of(
+                                            "Paura dell'abbandono è un'espressione descrittiva, non il nome di una diagnosi autonoma. In questa guida indica un insieme di pensieri, emozioni e comportamenti che possono attivarsi quando un legame importante sembra meno disponibile o in pericolo.",
+                                            "Le ricerche sull'attaccamento adulto descrivono una dimensione di ansia legata a disponibilità, affetto e possibile rifiuto. Questa vicinanza teorica aiuta a comprendere alcune esperienze, ma non permette di classificare automaticamente lo stile di attaccamento di una persona né di ricostruirne le cause."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Non è una diagnosi né uno stile completo",
+                                    List.of(
+                                            "L'ansia di attaccamento comprende un insieme più ampio di aspettative e strategie relazionali; la paura dell'abbandono ne rappresenta soltanto un possibile aspetto. Il disturbo d'ansia di separazione nell'adulto richiede invece una valutazione specifica di sintomi, durata, contesto e interferenza.",
+                                            "La stessa esperienza non equivale a dipendenza affettiva, disturbo borderline di personalità o disturbo dipendente di personalità. Questi concetti hanno confini diversi e non possono essere dedotti dalla frequenza di alcune risposte online."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Quattro passaggi utili per osservare l'esperienza",
+                                    List.of(
+                                            "Le quattro aree del questionario organizzano l'auto-osservazione senza costituire sottoscale cliniche. Possono aiutare a distinguere dove si attiva il timore e che cosa accade dopo, evitando di trasformare piccole differenze in una classifica personale."
+                                    ),
+                                    List.of(
+                                            "Segnali di distanza: come vengono interpretati ritardi, cambiamenti di tono, disaccordi, programmi annullati o richieste di spazio.",
+                                            "Rassicurazione e vicinanza: conferme, controllo dei messaggi, prevedibilità e aumento del contatto quando emerge un dubbio.",
+                                            "Esperienza della distanza: pensieri, agitazione, concentrazione e ritorno alla calma durante separazioni reali o previste.",
+                                            "Autonomia e confini: espressione di bisogni e disaccordi, programmi personali e mantenimento dei limiti quando si teme di perdere il legame."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Segnali reali e interpretazioni non sono la stessa cosa",
+                                    List.of(
+                                            "Un ritardo o una richiesta di spazio possono avere molte spiegazioni, ma esistono anche relazioni realmente incoerenti, svalutanti o non sicure. Osservare la paura non significa attribuirla automaticamente a una vulnerabilità interna né ignorare fatti, promesse disattese, minacce o comportamenti di controllo.",
+                                            "Perdite, tradimenti, separazioni e cambiamenti recenti possono aumentare temporaneamente la sensibilità alla distanza. Stress, lutto, ansia, umore depresso e altre difficoltà possono inoltre sovrapporsi; le associazioni trovate negli studi di gruppo non spiegano il singolo caso e non stabiliscono causalità."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Possibile ciclo",
+                                    "Quando la rassicurazione dà sollievo solo per poco",
+                                    List.of(
+                                            "In alcuni casi un segnale incerto può aumentare l'attenzione verso il legame, portare a cercare contatto o conferme e produrre un sollievo temporaneo. Se il dubbio ritorna presto, il ciclo può ripetersi e occupare sempre più attenzione.",
+                                            "Questo è un modello possibile, non una spiegazione inevitabile. Chiedere vicinanza è una parte normale delle relazioni; diventano importanti la libertà reciproca, il consenso, la proporzione rispetto ai fatti e le conseguenze per entrambe le persone."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Auto-osservazione",
+                                    "Domande concrete da portare nel quotidiano",
+                                    List.of(
+                                            "Può essere utile separare ciò che hai osservato dall'interpretazione che ne è seguita, annotando situazione, pensiero, emozione, azione e conseguenza. Nota anche le eccezioni: relazioni o momenti in cui riesci a tollerare l'incertezza, comunicare una richiesta specifica e riprendere le tue attività.",
+                                            "Osserva se una rassicurazione risponde davvero al bisogno, quanto dura il sollievo e se programmi, bisogni o confini restano scelti liberamente. Questi spunti non sono un trattamento e non sostituiscono una comprensione condivisa della relazione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto",
+                                    "Quando può essere utile parlarne con un professionista",
+                                    List.of(
+                                            "Un confronto con uno psicologo, psicoterapeuta o medico può essere utile quando la preoccupazione persiste, occupa molto tempo, interferisce con sonno, concentrazione o attività, oppure rende difficile mantenere relazioni, autonomia e confini. Il percorso dovrebbe considerare storia personale, eventi recenti, sicurezza reale delle relazioni, risorse e possibili condizioni concomitanti.",
+                                            "Lo scopo non è assegnare automaticamente un'etichetta, ma comprendere funzioni e contesti dell'esperienza e definire obiettivi utili per la persona. Una validazione italiana di scale sull'attaccamento non rende valido il questionario originale di Spazio Test e non consente di trasferirne punteggi o soglie."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Sicurezza",
+                                    "Paura, pressione e violenza richiedono letture distinte",
+                                    List.of(
+                                            "La paura di perdere una relazione non giustifica controllo dei dispositivi, isolamento, minacce, coercizione, stalking o violenza, subiti o agiti. Sicurezza e consenso hanno priorità sul mantenimento del legame e il risultato del test non valuta il pericolo né stabilisce la responsabilità di ciò che accade.",
+                                            "Se c'è un pericolo immediato chiama il 112. Il 1522 è un servizio pubblico gratuito, attivo 24 ore su 24, rivolto alle donne vittime di violenza e stalking; può offrire ascolto e orientamento, ma non va presentato come un servizio universale per ogni situazione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Limiti",
+                                    "Come leggere fonti, guida e questionario",
+                                    List.of(
+                                            "Le evidenze italiane disponibili riguardano soprattutto adattamenti di altri strumenti e campioni prevalentemente giovani, non la paura dell'abbandono come test autonomo. Gli studi internazionali aiutano a descrivere associazioni medie tra attaccamento e relazioni, ma non prevedono la storia o il comportamento del singolo individuo.",
+                                            "Le 24 domande, le quattro aree e le soglie di Spazio Test sono originali, editoriali e non validate. Le barre mostrano soltanto la frequenza relativa delle risposte: non sono percentuali della persona, probabilità, percentili o misure cliniche."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato esplora, con finalità esclusivamente informative, sensibilità ai segnali di distanza, ricerca di rassicurazione, pensieri ed emozioni durante la distanza e autonomia nei confini. Non è validato, non classifica uno stile di attaccamento e non può confermare, escludere o stimare una condizione psicologica o la qualità reale di una relazione.",
+                    List.of(
+                            new GuideReference(
+                                    "Italian Validation of the Adult Attachment Scale-Revised — Troisi, Parola e Margherita",
+                                    "https://pubmed.ncbi.nlm.nih.gov/36407970/",
+                                    "Validazione su 1.546 adulti italiani consultata per la dimensione di ansia dell'attaccamento e i timori di rifiuto e abbandono; strumento e punteggi non sono trasferibili all'app."
+                            ),
+                            new GuideReference(
+                                    "Psychometric properties of the Italian ECR-12 — Brugnera e colleghi",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/",
+                                    "Validazione su 1.197 adulti madrelingua italiani consultata per distinguere ansia ed evitamento e per le associazioni con ruminazione e difficoltà interpersonali; il campione era giovane e prevalentemente femminile."
+                            ),
+                            new GuideReference(
+                                    "Attachment Theory and Affect Regulation — Mikulincer, Shaver e Pereg",
+                                    "https://doi.org/10.1023/A:1024515519160",
+                                    "Revisione teorica consultata per attenzione alla disponibilità, strategie di prossimità e regolazione affettiva; non dimostra cause individuali né valida item o interventi."
+                            ),
+                            new GuideReference(
+                                    "How anxious and avoidant attachment affect romantic relationship quality differently — Li e Chan",
+                                    "https://doi.org/10.1002/ejsp.1842",
+                                    "Meta-analisi di 73 studi consultata per le differenti associazioni tra ansia, evitamento, conflitto e qualità relazionale; risultati di gruppo, prevalentemente romantici e non applicabili automaticamente al singolo legame."
+                            ),
+                            new GuideReference(
+                                    "Attachment and social support in romantic dyads — Gajwani e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/31566266/",
+                                    "Revisione sistematica di 43 studi consultata per ricerca e interpretazione del supporto nelle coppie; non copre tutte le relazioni importanti e non indica una strategia universale."
+                            ),
+                            new GuideReference(
+                                    "Separation anxiety in a community sample of Italian emerging adults — Iannattone e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/33937113/",
+                                    "Studio correlazionale italiano consultato per distinguere ansia di separazione, ansia generale e dimensioni borderline; il campione di studenti giovani limita la generalizzazione."
+                            ),
+                            new GuideReference(
+                                    "Il numero 118 e il Numero di emergenza unico europeo (112) — Ministero della Salute",
+                                    "https://www.salute.gov.it/new/it/tema/112-118-e-pronto-soccorso/il-numero-118-e-il-numero-di-emergenza-unico-europeo-112/",
+                                    "Riferimento istituzionale italiano per l'indicazione di chiamare il 112 nelle situazioni di pericolo immediato."
+                            ),
+                            new GuideReference(
+                                    "Cos'è il 1522 — Dipartimento per le Pari Opportunità",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Riferimento istituzionale per descrivere correttamente il servizio pubblico gratuito rivolto alle donne vittime di violenza e stalking."
+                            )
+                    )
             )
     );
 

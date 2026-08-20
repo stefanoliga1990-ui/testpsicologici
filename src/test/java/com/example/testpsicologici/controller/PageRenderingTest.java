@@ -222,7 +222,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/disturbo-borderline-personalita\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Disturbo borderline di personalità</h3>")));
+                        "<h3>Disturbo borderline di personalità</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/paura-abbandono\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Paura dell&#39;abbandono</h3>")));
     }
 
     @Test
@@ -627,6 +631,29 @@ class PageRenderingTest {
     }
 
     @Test
+    void fearOfAbandonmentGuideRendersEvidenceDistinctionsSafetyAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/paura-abbandono"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Paura dell&#39;abbandono: segnali e significato | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/paura-abbandono\"")))
+                .andExpect(content().string(containsString(
+                        "Che cosa si intende per paura dell&#39;abbandono")))
+                .andExpect(content().string(containsString(
+                        "Non è una diagnosi né uno stile completo")))
+                .andExpect(content().string(containsString(
+                        "Segnali reali e interpretazioni non sono la stessa cosa")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString("1522")))
+                .andExpect(content().string(containsString(
+                        "Italian Validation of the Adult Attachment Scale-Revised")))
+                .andExpect(content().string(containsString(
+                        "How anxious and avoidant attachment affect romantic relationship quality differently")))
+                .andExpect(content().string(containsString("href=\"/test/paura-abbandono\"")));
+    }
+
+    @Test
     void testLinksToItsPublishedGuide() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -723,6 +750,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/disturbo-borderline-personalita\"")));
+
+        mockMvc.perform(get("/test/paura-abbandono"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("non classifica uno stile di attaccamento")))
+                .andExpect(content().string(containsString("1522")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/paura-abbandono\"")));
     }
 
     @Test
@@ -807,9 +842,12 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/autosabotaggio")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/disturbo-borderline-personalita")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/paura-abbandono")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
+                .andExpect(content().string(containsString("http://localhost/test/paura-abbandono")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

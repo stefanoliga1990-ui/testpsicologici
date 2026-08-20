@@ -61,6 +61,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedImpostorPhenomenonInformationTest();
         seedSelfSabotageInformationTest();
         seedBorderlineTraitsInformationTest();
+        seedFearOfAbandonmentInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -1467,6 +1468,98 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Le risposte indicano frequenti difficoltà nel rallentare l'azione, un rapido aumento della rabbia o particolari reazioni percettive sotto forte stress. Poiché l'area riunisce fenomeni diversi, è importante distinguere quali esperienze sono presenti e quale interferenza producono.");
     }
 
+    private void seedFearOfAbandonmentInformationTest() {
+        String id = "paura-abbandono";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Paura dell'abbandono",
+                "Autovalutazione informativa",
+                "Esplora come vivi segnali di distanza, bisogno di rassicurazione, separazioni temporanee e confini nelle relazioni importanti.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Esplora la frequenza con cui, negli ultimi tre mesi, segnali di distanza, separazioni e timore di perdere relazioni importanti sono stati accompagnati da preoccupazione, ricerca di rassicurazione o cambiamenti nei propri confini. La paura dell'abbandono non è qui una diagnosi e il risultato non classifica uno stile di attaccamento, non stabilisce cause e non valuta la qualità reale delle relazioni. Esperienze simili possono comparire dopo perdite, tradimenti o cambiamenti, in relazioni incoerenti o non sicure, durante stress, lutto, ansia o umore depresso, oppure insieme ad altri modi di vivere i legami. La paura di perdere un legame non giustifica né rende accettabili controllo, coercizione o violenza, subiti o agiti. Se c'è un pericolo immediato chiama il 112; il 1522 è il servizio pubblico gratuito per le donne vittime di violenza e stalking. Se queste esperienze causano sofferenza o interferiscono con la vita quotidiana, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
+                version, false,
+                "Frequenza complessiva delle esperienze esplorate",
+                "Frequenza delle esperienze",
+                true, 17).withSeo(
+                "Paura dell'abbandono: test informativo | Spazio Test",
+                "Questionario informativo sulla paura dell'abbandono nelle relazioni adulte. 24 domande, circa 6 minuti, senza registrazione.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e alle relazioni per te importanti, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "Italian Validation of the Adult Attachment Scale-Revised — Troisi, Parola e Margherita",
+                "https://pubmed.ncbi.nlm.nih.gov/36407970/", 1);
+        saveReference(id, "Psychometric properties of the Italian ECR-12 — Brugnera e colleghi",
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/", 2);
+        saveReference(id, "Separation anxiety in a community sample of Italian emerging adults — Iannattone e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/33937113/", 3);
+        saveReference(id, "Attachment Theory and Affect Regulation — Mikulincer, Shaver e Pereg",
+                "https://doi.org/10.1023/A:1024515519160", 4);
+
+        saveArea(id, "segnali", "Sensibilità ai segnali di distanza", 1);
+        saveArea(id, "rassicurazione", "Ricerca di rassicurazione e vicinanza", 2);
+        saveArea(id, "distanza", "Pensieri ed emozioni durante la distanza", 3);
+        saveArea(id, "confini", "Autonomia e confini quando si teme la perdita", 4);
+
+        saveQuestions(id, List.of(
+                q("segnali", "Dopo un ritardo nella risposta di una persona importante, penso che voglia allontanarsi."),
+                q("segnali", "Un cambiamento nel tono di una persona importante mi sembra un segnale che il legame sia in pericolo."),
+                q("segnali", "Durante un disaccordo, temo che la relazione possa finire."),
+                q("segnali", "Quando una persona importante chiede spazio, penso che il suo affetto sia diminuito."),
+                q("segnali", "Dopo che una persona importante annulla un programma, dubito del suo interesse."),
+                q("segnali", "Interpreto una minore disponibilità temporanea come segnale di un possibile abbandono."),
+                q("rassicurazione", "Chiedo conferme ripetute sull'affetto che una persona importante prova per me."),
+                q("rassicurazione", "Controllo spesso se una persona importante ha letto i miei messaggi."),
+                q("rassicurazione", "Aumento i tentativi di contatto quando percepisco distanza."),
+                q("rassicurazione", "Cerco di sapere con precisione quando rivedrò una persona importante."),
+                q("rassicurazione", "Fatico a lasciare spazio a una persona importante quando chiede tempo per sé."),
+                q("rassicurazione", "Dopo una rassicurazione sul legame, il dubbio ritorna in breve tempo."),
+                q("distanza", "Durante una separazione temporanea, penso a lungo alla possibilità di perdere il legame."),
+                q("distanza", "Nei periodi in cui non posso contattare una persona importante, provo una forte agitazione."),
+                q("distanza", "La possibilità che una relazione finisca occupa a lungo i miei pensieri."),
+                q("distanza", "Prima di una separazione prevista, anticipo mentalmente scenari di rottura."),
+                q("distanza", "Durante la distanza da una persona importante, fatico a concentrarmi sulle attività quotidiane."),
+                q("distanza", "Dopo un saluto o una partenza, impiego molto tempo a ritrovare calma."),
+                q("confini", "Trattengo un disaccordo quando temo che possa allontanare una persona importante."),
+                q("confini", "Quando temo di perdere un legame, accetto richieste contrarie ai miei limiti."),
+                q("confini", "Cambio programmi importanti quando penso che una persona potrebbe allontanarsi."),
+                q("confini", "Ritiro un confine quando una persona importante reagisce prendendo le distanze."),
+                q("confini", "Rinuncio a esprimere un bisogno quando temo che la relazione possa essere messa in discussione."),
+                q("confini", "Quando temo che la distanza diventi definitiva, ristabilisco subito il contatto.")));
+
+        saveGlobal(id, "LOW", "Timore di perdita poco frequente e non diffuso",
+                "Nelle risposte, le esperienze collegate al timore di perdere un legame risultano poco frequenti in tutte e quattro le aree. Segnali di distanza, richieste di rassicurazione, separazioni temporanee e scelte sui confini non formano quindi un andamento diffuso nel periodo considerato.",
+                "Questo andamento non esclude episodi circoscritti, una relazione con caratteristiche diverse o reazioni comprensibili a segnali reali. Può essere utile osservare eventuali cambiamenti nel tempo, il contesto in cui compaiono e le conseguenze sul benessere e sulle relazioni. Il risultato non diagnostica una condizione e non classifica il tuo stile di attaccamento. La paura di perdere un legame non giustifica né rende accettabili controllo, coercizione o violenza, subiti o agiti: in un pericolo immediato chiama il 112; il 1522 offre supporto gratuito alle donne vittime di violenza e stalking.");
+        saveGlobal(id, "MIXED", "La paura cambia tra segnali, distanza e contesti",
+                "Le risposte descrivono una frequenza variabile tra le quattro aree, senza che una di esse raggiunga il livello editoriale più alto. Il timore può quindi comparire in alcuni passaggi o relazioni e restare più contenuto in altri.",
+                "Le schede d'area aiutano a distinguere se il dubbio emerge soprattutto davanti a segnali ambigui, nella ricerca di rassicurazione, durante la distanza o nelle scelte sui confini. Confronta fatti osservabili e interpretazioni e nota se il quadro cambia dopo perdite, tradimenti, stress o in relazioni realmente incoerenti, perché associazioni di gruppo non spiegano il singolo caso. Il risultato non diagnostica una condizione e non classifica il tuo stile di attaccamento; le soglie sono esclusivamente editoriali. La paura di perdere un legame non giustifica né rende accettabili controllo, coercizione o violenza, subiti o agiti: in un pericolo immediato chiama il 112; il 1522 offre supporto gratuito alle donne vittime di violenza e stalking.");
+        saveGlobal(id, "FOCUSED", "Una o due modalità emergono con maggiore frequenza",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo è quindi concentrato su modalità specifiche e non descrive allo stesso modo tutte le relazioni o tutti gli aspetti esplorati.",
+                "Consulta le schede sotto per riconoscere quali passaggi emergono e in quali situazioni svolgono una funzione di protezione o producono conseguenze indesiderate. Osserva persistenza, interferenza, segnali reali, risorse disponibili e ciò che accade dopo una rassicurazione o una separazione; se la sofferenza è rilevante, un professionista può aiutare a ricostruire il contesto senza ridurlo a un'etichetta. Il risultato non diagnostica una condizione e non classifica il tuo stile di attaccamento. La paura di perdere un legame non giustifica né rende accettabili controllo, coercizione o violenza, subiti o agiti: in un pericolo immediato chiama il 112; il 1522 offre supporto gratuito alle donne vittime di violenza e stalking.");
+        saveGlobal(id, "BROAD", "La paura di perdere il legame attraversa più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Nel periodo considerato, sensibilità ai segnali, rassicurazione, vissuti della distanza e scelte su autonomia e confini possono quindi presentarsi con una distribuzione ampia.",
+                "Questo profilo invita a considerare ampiezza, persistenza e interferenza concreta, senza leggere le barre come una misura di gravità. Segnali reali, perdite recenti, relazioni incoerenti, stress, lutto, ansia o umore depresso possono offrire contesti alternativi o concomitanti; se le esperienze incidono sulla vita quotidiana, un confronto professionale può aiutare a comprenderle insieme alla storia personale. Il risultato non diagnostica una condizione e non classifica il tuo stile di attaccamento. La paura di perdere un legame non giustifica né rende accettabili controllo, coercizione o violenza, subiti o agiti: in un pericolo immediato chiama il 112; il 1522 offre supporto gratuito alle donne vittime di violenza e stalking.");
+
+        saveAreaInsights(id, "segnali",
+                "Ritardi, cambiamenti di tono, disaccordi o richieste di spazio vengono raramente interpretati come segnali di una perdita imminente. Questo non esclude reazioni a eventi specifici o a segnali reali in una particolare relazione.",
+                "Alcuni segnali di distanza possono attivare dubbi sul legame, mentre in altri momenti restano compatibili con spiegazioni diverse. Osserva quali fatti precedono il dubbio, quanto dura e se si ripete nelle stesse relazioni o situazioni.",
+                "Le risposte descrivono una frequente tendenza a leggere segnali ambigui o temporanei come possibile abbandono. È importante distinguere interpretazioni e fatti osservabili, considerando anche se la relazione presenta davvero incoerenza, svalutazione o insicurezza.");
+        saveAreaInsights(id, "rassicurazione",
+                "Ricerca ripetuta di conferme, controllo dei messaggi e aumento del contatto risultano poco frequenti. Sembri generalmente in grado di cercare vicinanza lasciando anche spazio all'altra persona.",
+                "In alcuni momenti conferme, prevedibilità o maggiore contatto possono diventare particolarmente importanti. Nota quanto dura il sollievo, se la richiesta è condivisa e come cambia quando bisogni e tempi vengono comunicati con chiarezza.",
+                "Le risposte indicano una frequente ricerca di rassicurazione o vicinanza, con dubbi che possono tornare rapidamente. Osserva l'effetto sul tuo benessere, sul consenso e sullo spazio reciproco, senza attribuire automaticamente intenzioni all'altra persona.");
+        saveAreaInsights(id, "distanza",
+                "Separazioni temporanee o periodi senza contatto sono raramente accompagnati da preoccupazione prolungata, forte agitazione o difficoltà a ritrovare calma. Una perdita recente o una situazione specifica possono comunque avere un andamento diverso.",
+                "In alcune separazioni possono emergere pensieri persistenti, agitazione o minore concentrazione. Considera durata, prevedibilità, significato del legame e attività o relazioni che aiutano a mantenere continuità durante la distanza.",
+                "Le risposte descrivono frequenti pensieri ed emozioni difficili durante separazioni reali o previste. Nota quanto occupano la giornata, quali contesti li intensificano e quali risorse favoriscono il ritorno alla calma, senza equipararli a una diagnosi di ansia di separazione.");
+        saveAreaInsights(id, "confini",
+                "Il timore di perdere un legame raramente porta a trattenere disaccordi, cambiare programmi o rinunciare a bisogni e limiti. Questo andamento non stabilisce comunque se ogni relazione sia sicura o equilibrata.",
+                "In alcune situazioni il timore della distanza può rendere più difficile esprimere un bisogno o mantenere un confine. Osserva quali conseguenze temi, quali scelte restano davvero libere e se puoi chiedere supporto senza isolarti.",
+                "Le risposte indicano frequenti cambiamenti di programmi, bisogni o confini per evitare una possibile perdita. Sicurezza e consenso hanno priorità sul mantenimento del legame: paura, pressione, controllo o minacce meritano attenzione indipendentemente dal risultato del test.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -1534,6 +1627,11 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Clinical descriptions and diagnostic requirements for ICD-11 — WHO", "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1"),
                 ref("Percorsi di cura per i disturbi gravi di personalità — Ministero della Salute", "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf"),
                 ref("Diagnosi e trattamento del disturbo borderline di personalità — ISS, linea guida in produzione", "https://www.iss.it/-/diagnosi-trattamento-disturbo-borderline-personalit%C3%A0_in-prog")));
+        syncReferences("paura-abbandono", List.of(
+                ref("Italian Validation of the Adult Attachment Scale-Revised — Troisi, Parola e Margherita", "https://pubmed.ncbi.nlm.nih.gov/36407970/"),
+                ref("Psychometric properties of the Italian ECR-12 — Brugnera e colleghi", "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/"),
+                ref("Separation anxiety in a community sample of Italian emerging adults — Iannattone e colleghi", "https://pubmed.ncbi.nlm.nih.gov/33937113/"),
+                ref("Attachment Theory and Affect Regulation — Mikulincer, Shaver e Pereg", "https://doi.org/10.1023/A:1024515519160")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {
