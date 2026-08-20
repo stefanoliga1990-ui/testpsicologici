@@ -56,6 +56,7 @@ Output: tabella `dimensione → indicatori → item candidati → esclusioni`.
 - Profilo `LOW`: tutte le aree LOW; `MIXED`: nessuna area HIGH ma almeno un'area MEDIUM; `FOCUSED`: una o due aree HIGH; `BROAD`: almeno tre aree HIGH.
 - Le barre sono trasformazioni lineari da 1–5 a 0–100. Non sono percentuali della persona, percentili, probabilità, gravità clinica o confronti normativi.
 - Le interpretazioni devono descrivere le risposte, includere contesto e alternative, evitare diagnosi e indicare quando rivolgersi a professionisti o servizi di emergenza.
+- Ogni profilo complessivo deve includere una sintesi di almeno due frasi e un approfondimento di almeno tre: distribuzione tra aree, significato possibile, fattori contestuali o alternativi, cosa osservare e limite inferenziale. Le analisi per area restano separate e più specifiche.
 
 ### 6. Validazione necessaria per affermazioni psicometriche
 

@@ -65,7 +65,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAutismInformationTest() {
         String id = "tratti-autistici-adulti";
-        String version = "2.2";
+        String version = "2.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -118,17 +118,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("sensoriale", "Dopo un ambiente molto rumoroso, affollato o luminoso, ho bisogno di tempo in tranquillità per recuperare.")));
 
         saveGlobal(id, "LOW", "Poche esperienze ricorrenti",
-                "Nel complesso hai indicato una presenza contenuta delle esperienze esplorate dal questionario.",
-                "Questo risultato non esclude né conferma l'autismo: un questionario non validato non può sostituire una valutazione della storia personale, dello sviluppo e del funzionamento nei diversi contesti.");
+                "Nel complesso hai riconosciuto con poca frequenza le esperienze esplorate nelle quattro aree. Comunicazione sociale, comprensione implicita, bisogno di prevedibilità e sensibilità sensoriale non formano, nelle tue risposte, un insieme ampio e ricorrente.",
+                "Questo profilo può indicare che tali esperienze sono occasionali, circoscritte oppure attualmente poco rilevanti nella tua vita. Non esclude caratteristiche non rappresentate dagli item, strategie di adattamento molto consolidate o difficoltà che emergono soltanto in contesti specifici. Per comprendere un eventuale dubbio contano storia dello sviluppo, continuità nel tempo e impatto quotidiano: il risultato non conferma né esclude l'autismo e non sostituisce una valutazione professionale.");
         saveGlobal(id, "MIXED", "Un profilo variabile",
-                "Le tue risposte descrivono esperienze presenti in modo diverso a seconda dell'ambito o della situazione.",
-                "Il quadro non è uniforme: alcune modalità possono essere occasionali, legate al contesto o condivise con condizioni ed esperienze diverse dall'autismo.");
+                "Le tue risposte descrivono esperienze presenti in modo diverso tra comunicazione, segnali impliciti, routine e sensibilità sensoriale. Alcuni aspetti sembrano riconoscibili, mentre altri compaiono poco o soprattutto in determinate situazioni.",
+                "Un profilo non uniforme può dipendere dalle richieste dell'ambiente, dalla familiarità delle situazioni, dalla stanchezza o dalle strategie utilizzate per adattarti. Esperienze simili possono inoltre essere condivise con ansia, ADHD, stress, differenze comunicative o sensoriali e non indicano da sole autismo. Osserva quali aree emergono sotto, da quando le riconosci e se richiedono uno sforzo significativo: la distribuzione è più informativa della sola media complessiva.");
         saveGlobal(id, "FOCUSED", "Alcuni aspetti emergono più chiaramente",
-                "Le tue risposte mettono in evidenza alcune esperienze ricorrenti, mentre altre sembrano meno presenti.",
-                "Può essere utile osservare quando questi aspetti compaiono, da quanto tempo sono presenti e quanto incidono sulla vita quotidiana. Da soli non permettono di formulare una diagnosi.");
+                "Le tue risposte mettono in evidenza esperienze ricorrenti in una o due aree, mentre il resto del profilo appare meno coinvolto. La presenza complessiva dipende quindi soprattutto da aspetti specifici e non da un andamento uniforme tra tutte le dimensioni esplorate.",
+                "La lettura delle singole aree può chiarire se il nucleo riguarda soprattutto interazione sociale, comunicazione implicita, flessibilità oppure interessi e sensibilità sensoriale. È utile osservare quando compare, se era riconoscibile anche nelle fasi precedenti della vita e quale costo comporta in contesti diversi. Un'area marcata può meritare attenzione, ma non permette da sola di formulare o escludere una diagnosi di autismo.");
         saveGlobal(id, "BROAD", "Esperienze presenti in più ambiti",
-                "Le tue risposte indicano che molte delle esperienze esplorate compaiono con una certa continuità in più aspetti della vita quotidiana.",
-                "Se queste esperienze sono presenti fin dall'infanzia, causano fatica o limitano relazioni, studio, lavoro o benessere, puoi valutare di parlarne con un professionista esperto di autismo nell'adulto. Il risultato resta informativo e non diagnostico.");
+                "Le tue risposte indicano una presenza frequente delle esperienze esplorate in almeno tre aree del questionario. Il profilo coinvolge quindi più aspetti tra comunicazione sociale, comprensione implicita, prevedibilità, interessi e sensibilità sensoriale, anziché concentrarsi in un solo ambito.",
+                "Un andamento ampio rende utile considerare continuità fin dall'infanzia, richieste dei diversi ambienti, strategie di compensazione e conseguenze su energia, relazioni, studio, lavoro o autonomia. Anche ansia, ADHD, stress e altre condizioni possono contribuire a esperienze sovrapposte e devono essere considerate. Se il profilo descrive una fatica significativa o bisogni di supporto, puoi parlarne con un professionista esperto di autismo nell'adulto; il risultato resta informativo e non diagnostico.");
 
         saveAreaInsights(id, "sociale",
                 "Nelle situazioni sociali riferisci generalmente poca difficoltà nel seguire lo scambio e comprendere cosa ci si aspetta reciprocamente.",
@@ -150,7 +150,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAdhdInformationTest() {
         String id = "tratti-adhd-adulti";
-        String version = "2.2";
+        String version = "2.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -203,17 +203,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("irrequietezza", "Mi sento come se dovessi essere in movimento o impegnato, anche nei momenti in cui vorrei rallentare.")));
 
         saveGlobal(id, "LOW", "Poche difficoltà ricorrenti",
-                "Nel complesso hai indicato una presenza contenuta delle esperienze esplorate dal questionario.",
-                "Questo risultato non esclude né conferma l'ADHD. La frequenza percepita può cambiare nel tempo e un questionario non validato non valuta esordio nell'infanzia, impatto funzionale, presenza in più contesti o possibili spiegazioni alternative.");
+                "Nel complesso hai riconosciuto con poca frequenza le difficoltà esplorate nelle quattro aree. Distraibilità, organizzazione, gestione del tempo, irrequietezza e impulsività non formano, nelle tue risposte, un insieme ampio e ricorrente.",
+                "Questo profilo può indicare che tali difficoltà sono occasionali, ben compensate o limitate ad attività particolari. Non esclude problemi recenti, condizioni ambientali sfavorevoli o aspetti non coperti dalle domande. Per comprendere un dubbio sull'ADHD contano esordio nell'infanzia, persistenza, presenza in più contesti e impatto funzionale: il risultato non conferma né esclude l'ADHD.");
         saveGlobal(id, "MIXED", "Un andamento variabile",
-                "Le tue risposte descrivono difficoltà presenti in modo diverso secondo il tipo di attività o la situazione.",
-                "Il quadro non è uniforme: sonno, stress, carico mentale, interesse e ambiente possono incidere molto su attenzione e autoregolazione. Le risposte, da sole, non permettono di formulare una diagnosi.");
+                "Le tue risposte descrivono difficoltà che cambiano tra attenzione, organizzazione, irrequietezza e impulsività. Alcuni aspetti sembrano presenti, mentre altri emergono poco o soprattutto con attività e situazioni particolari.",
+                "Sonno, stress, carico mentale, interesse, struttura dell'ambiente e richieste del compito possono modificare molto attenzione e autoregolazione. Anche ansia, umore, uso di sostanze o condizioni fisiche possono produrre esperienze simili o accentuarle. Osserva quali aree emergono sotto, se il modello era presente già nell'infanzia e se compare in più contesti: le risposte da sole non permettono di formulare una diagnosi.");
         saveGlobal(id, "FOCUSED", "Alcuni aspetti emergono con chiarezza",
-                "Le tue risposte mettono in evidenza difficoltà ricorrenti in alcuni ambiti, mentre altri sembrano meno coinvolti.",
-                "Può essere utile osservare da quanto tempo sono presenti, in quali contesti compaiono e quanto incidono su lavoro, studio, relazioni o gestione quotidiana. Un profilo circoscritto non conferma né esclude l'ADHD.");
+                "Le tue risposte mettono in evidenza difficoltà ricorrenti in una o due aree, mentre gli altri aspetti risultano meno coinvolti. La presenza complessiva dipende quindi soprattutto da un nucleo specifico, non da difficoltà uniformi in tutto il profilo.",
+                "Le schede di area possono mostrare se il nucleo riguarda attenzione sostenuta, pianificazione e memoria operativa, irrequietezza oppure impulsività. È utile verificare da quanto tempo è presente, quali supporti lo riducono e quanto incide su lavoro, studio, relazioni o gestione quotidiana. Un profilo circoscritto può comunque essere importante, ma non conferma né esclude l'ADHD.");
         saveGlobal(id, "BROAD", "Difficoltà presenti in più ambiti",
-                "Le tue risposte indicano che molte delle esperienze esplorate ricorrono in diversi aspetti della vita quotidiana.",
-                "Se queste difficoltà erano presenti già nell'infanzia, compaiono in più contesti e interferiscono con lavoro, studio, relazioni o benessere, puoi valutare una consulenza con un professionista esperto di ADHD nell'adulto. Il risultato resta informativo e non diagnostico.");
+                "Le tue risposte indicano difficoltà frequenti in almeno tre aree tra attenzione, organizzazione, gestione del tempo, irrequietezza e impulsività. Il profilo appare quindi esteso a più processi di autoregolazione e non limitato a una sola situazione.",
+                "Per interpretarlo contano l'eventuale presenza fin dall'infanzia, la continuità in ambienti diversi e le conseguenze concrete su responsabilità, relazioni, studio, lavoro o sicurezza. Sonno, stress, ansia, depressione, sostanze e condizioni fisiche possono contribuire e richiedono una lettura distinta. Se le difficoltà sono persistenti e interferiscono con la vita quotidiana, puoi valutare una consulenza con un professionista esperto di ADHD nell'adulto; il risultato resta informativo e non diagnostico.");
 
         saveAreaInsights(id, "attenzione",
                 "Riferisci generalmente una buona continuità dell'attenzione, con distrazioni o cali di concentrazione piuttosto occasionali.",
@@ -235,7 +235,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedObsessiveCompulsiveInformationTest() {
         String id = "tratti-ossessivo-compulsivi";
-        String version = "1.3";
+        String version = "1.4";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -288,17 +288,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("rituali", "Dedico tempo a rendere un'azione esatta o perfetta anche quando non produce un vantaggio pratico.")));
 
         saveGlobal(id, "LOW", "Poche esperienze ricorrenti",
-                "Nel complesso hai indicato una presenza contenuta dei pensieri, dubbi e comportamenti ripetitivi esplorati dal questionario.",
-                "Questo risultato non conferma né esclude un disturbo ossessivo-compulsivo. Pensieri indesiderati e controlli occasionali sono comuni; per una valutazione contano soprattutto disagio, tempo occupato, difficoltà a interromperli e impatto sulla vita quotidiana.");
+                "Nel complesso hai riconosciuto con poca frequenza pensieri intrusivi, dubbi, controlli e rituali nelle aree esplorate. Le risposte non descrivono un ciclo ossessivo-compulsivo ampio e ricorrente tra contenuti e comportamenti diversi.",
+                "Pensieri indesiderati, ricontrolli e preferenze per l'ordine possono comparire occasionalmente in molte persone. Un profilo contenuto non esclude però esperienze molto specifiche, recenti o non incluse negli item. Per una valutazione contano soprattutto disagio, tempo occupato, difficoltà a interrompere il ciclo ed effetto sulla vita: il risultato non conferma né esclude un disturbo ossessivo-compulsivo.");
         saveGlobal(id, "MIXED", "Un andamento variabile",
-                "Le tue risposte descrivono esperienze presenti in modo diverso secondo il contenuto, la situazione o il momento.",
-                "Il quadro non è uniforme: stress, ansia, responsabilità percepita e bisogno di certezza possono influenzare dubbi e rituali. Le risposte, da sole, non permettono di formulare una diagnosi.");
+                "Le tue risposte descrivono pensieri o comportamenti ripetitivi presenti in modo diverso tra le aree esplorate. Alcuni contenuti sembrano riconoscibili, mentre altri compaiono poco o soprattutto in particolari momenti e situazioni.",
+                "Stress, ansia, responsabilità percepita, disgusto e bisogno di certezza possono intensificare dubbi e rituali senza produrre un quadro uniforme. È utile distinguere le abitudini preferite dai comportamenti sentiti come obbligati e osservare sollievo, durata e interferenza. Le schede sotto chiariscono dove si concentra il profilo, ma le risposte da sole non permettono di formulare una diagnosi.");
         saveGlobal(id, "FOCUSED", "Alcuni aspetti emergono con chiarezza",
-                "Le tue risposte mettono in evidenza pensieri o comportamenti ricorrenti in alcuni ambiti, mentre altri sembrano meno coinvolti.",
-                "Può essere utile osservare quanto tempo richiedono, quanto disagio provocano e se portano a evitamenti o rallentamenti. Un profilo circoscritto non conferma né esclude un disturbo ossessivo-compulsivo.");
+                "Le tue risposte mettono in evidenza pensieri o comportamenti ricorrenti in una o due aree, mentre il resto del profilo appare meno coinvolto. La presenza complessiva è quindi sostenuta soprattutto da specifici temi o rituali, non da un andamento diffuso.",
+                "L'analisi per area può indicare se emergono maggiormente intrusioni e dubbio, contaminazione, controllo oppure ordine e rituali mentali. Osserva quanto tempo richiedono, quale emozione cercano di ridurre e se determinano evitamenti, rassicurazioni o rallentamenti. Un profilo circoscritto può causare comunque sofferenza, ma non conferma né esclude un disturbo ossessivo-compulsivo.");
         saveGlobal(id, "BROAD", "Esperienze ricorrenti in più ambiti",
-                "Le tue risposte indicano che molte delle esperienze esplorate compaiono con continuità in diversi aspetti della vita quotidiana.",
-                "Se pensieri intrusivi, controlli o rituali occupano molto tempo, provocano forte disagio o interferiscono con relazioni, studio, lavoro o autonomia, puoi valutare di parlarne con un professionista qualificato. Il risultato resta informativo e non diagnostico.");
+                "Le tue risposte indicano pensieri intrusivi, dubbi o rituali frequenti in almeno tre aree del questionario. Il profilo coinvolge quindi più contenuti e modalità di neutralizzazione, controllo o evitamento anziché un'unica abitudine circoscritta.",
+                "Un andamento ampio rende importante osservare tempo assorbito, sollievo temporaneo, difficoltà a resistere e conseguenze su autonomia e attività quotidiane. Ansia, depressione, stress, tic e altre condizioni possono coesistere o richiedere una spiegazione differente. Se le esperienze provocano forte disagio o interferiscono con relazioni, studio o lavoro, puoi parlarne con un professionista qualificato; il risultato resta informativo e non diagnostico.");
 
         saveAreaInsights(id, "intrusioni",
                 "Pensieri indesiderati e dubbi sembrano generalmente passare senza occupare a lungo la tua attenzione o richiedere particolari rassicurazioni.",
@@ -320,7 +320,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSelfEsteemInformationTest() {
         String id = "autostima";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -376,17 +376,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("approvazione", "Un rifiuto, un'esclusione o un disaccordo mi porta a dubitare del mio valore personale.")));
 
         saveGlobal(id, "LOW", "Un senso di valore generalmente solido",
-                "Nel complesso hai indicato una presenza contenuta delle difficoltà relative all'autostima esplorate dal questionario.",
-                "Questo non significa sentirsi sempre sicuri: dubbi, confronti ed errori possono influenzare chiunque. Le risposte suggeriscono però che, in genere, riesci a mantenere un'immagine di te abbastanza stabile senza far dipendere tutto da un singolo limite o giudizio.");
+                "Nel complesso hai riconosciuto con poca frequenza le difficoltà relative a valore personale, fiducia, autocritica e bisogno di approvazione. Le risposte descrivono un'immagine di te abbastanza stabile nelle diverse aree, senza una pressione diffusa sul senso di valore personale.",
+                "Questo non significa sentirti sempre sicuro o non essere influenzato da errori, confronti e critiche. Il profilo suggerisce però che questi eventi tendono a non definire interamente il modo in cui ti consideri e che riesci generalmente a integrare qualità e limiti. Osserva comunque eventuali ambiti molto specifici non rappresentati dalla media: il questionario descrive le risposte attuali e non misura il tuo valore.");
         saveGlobal(id, "MIXED", "Un equilibrio che cambia con il contesto",
-                "Le tue risposte descrivono un rapporto con te stesso che può essere stabile in alcune situazioni e più vulnerabile in altre.",
-                "Autostima e fiducia personale possono risentire del tipo di compito, delle relazioni, dello stress o del confronto con gli altri. Osservare i contesti in cui il giudizio su di te cambia può offrire indicazioni più utili di un punteggio isolato.");
+                "Le tue risposte descrivono un rapporto con te stesso stabile in alcune aree e più vulnerabile in altre. Valore personale, fiducia, risposta agli errori e bisogno di conferme non si muovono quindi tutti nello stesso modo.",
+                "Il tipo di compito, la relazione coinvolta, lo stress e il confronto con gli altri possono modificare temporaneamente il giudizio su di te. Individua nelle schede sotto dove l'equilibrio cambia e quali eventi trasformano un dubbio circoscritto in una valutazione globale della persona. Questa variabilità non definisce un livello fisso di autostima e può essere compresa meglio osservando situazioni e conseguenze concrete.");
         saveGlobal(id, "FOCUSED", "Un'area mette più alla prova la tua autostima",
-                "Le risposte evidenziano difficoltà ricorrenti soprattutto in uno o due aspetti, mentre il resto del profilo appare più stabile.",
-                "Può essere utile notare quali eventi attivano maggiormente dubbi, autocritica o bisogno di conferme e quanto a lungo ne risente l'opinione che hai di te. Questo questionario non è una valutazione clinica e non definisce il tuo valore personale.");
+                "Le risposte evidenziano difficoltà ricorrenti in una o due aree, mentre il resto del profilo appare più stabile. La pressione sull'autostima sembra quindi concentrarsi su un meccanismo specifico anziché coinvolgere uniformemente ogni modo di valutarti.",
+                "Le analisi per area possono chiarire se emergono soprattutto valore personale, espressione dei bisogni, risposta a errori e critiche oppure confronto e approvazione. Nota quali eventi attivano dubbi o autocritica, quanto durano e se influenzano decisioni che vanno oltre la situazione iniziale. Un nucleo circoscritto può meritare attenzione, ma questo questionario non è una valutazione clinica e non definisce il tuo valore personale.");
         saveGlobal(id, "BROAD", "Un'autostima spesso sotto pressione",
-                "Le tue risposte indicano difficoltà frequenti nel riconoscere il tuo valore, fidarti di te o mantenere un'immagine stabile dopo errori e giudizi.",
-                "Se questo modo di guardarti provoca sofferenza, limita scelte e relazioni o ti porta a rinunciare spesso a ciò che conta per te, parlarne con uno psicologo o psicoterapeuta può aiutarti a comprenderne le origini e costruire un rapporto più equilibrato con te stesso. Il risultato resta informativo e non diagnostico.");
+                "Le tue risposte indicano difficoltà frequenti in almeno tre aree del rapporto con te stesso. Riconoscere il tuo valore, fidarti delle tue possibilità, attraversare errori e critiche e mantenere autonomia dal giudizio altrui sembrano quindi richiedere uno sforzo diffuso.",
+                "Un profilo ampio può rendere più facile interpretare singoli insuccessi come giudizi sulla persona e sottovalutare risultati o qualità che non coincidono con quella lettura. Relazioni, esperienze passate, stress e condizioni di vita possono contribuire in modi differenti e vanno considerati insieme alle risposte. Se questo modo di guardarti provoca sofferenza, limita scelte e relazioni o porta a rinunce frequenti, parlarne con uno psicologo o psicoterapeuta può aiutarti; il risultato resta informativo e non diagnostico.");
 
         saveAreaInsights(id, "valore",
                 "Riesci generalmente a riconoscere il tuo valore personale anche quando noti difetti, limiti o aspetti di te che vorresti cambiare.",
@@ -408,7 +408,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedEmotionalDependenceInformationTest() {
         String id = "dipendenza-affettiva";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -464,17 +464,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("regolazione", "Senza una relazione affettiva mi sento privo di direzione.")));
 
         saveGlobal(id, "LOW", "Legame e autonomia generalmente in equilibrio",
-                "Nel complesso hai indicato una presenza contenuta delle dinamiche di dipendenza affettiva esplorate.",
-                "Questo non significa vivere ogni relazione senza paure o bisogno di vicinanza. Le risposte suggeriscono però che, in genere, riesci a mantenere bisogni, interessi e valore personale senza farli dipendere interamente dal legame.");
+                "Nel complesso hai riconosciuto con poca frequenza le dinamiche di dipendenza affettiva nelle quattro aree esplorate. Vicinanza, rassicurazione e importanza della relazione sembrano convivere generalmente con autonomia, confini e interessi personali.",
+                "Questo non significa vivere ogni legame senza paura, gelosia o bisogno dell'altra persona. Le risposte suggeriscono però che tali esperienze tendono a non determinare stabilmente il tuo valore, le tue scelte o l'accesso alla rete personale. Osserva comunque eventuali relazioni o fasi specifiche che la media può non rappresentare: il risultato non definisce se una relazione sia sana e non rileva abusi o violenza.");
         saveGlobal(id, "MIXED", "Un equilibrio sensibile ad alcune situazioni",
-                "Le tue risposte descrivono dinamiche che cambiano in base al momento, alla relazione o al grado di incertezza percepito.",
-                "Distanza, conflitti o periodi di maggiore vulnerabilità possono aumentare il bisogno di rassicurazione o rendere più difficile proteggere i tuoi spazi. Osservare quando accade e quale impatto produce può essere più utile di una singola etichetta.");
+                "Le tue risposte descrivono un equilibrio relazionale che cambia tra paura della separazione, autonomia, confini e regolazione emotiva. Alcune dinamiche sembrano presenti, mentre altre emergono poco o soprattutto in determinate fasi del legame.",
+                "Distanza, conflitti, incertezza o periodi di vulnerabilità possono aumentare il bisogno di rassicurazione e rendere più difficile proteggere i tuoi spazi. Nota con quali persone e circostanze avviene, se la risposta si riduce quando il contesto cambia e quale costo comporta per interessi, riposo e relazioni. La variabilità è più informativa di una singola etichetta e il questionario non stabilisce la qualità complessiva della relazione.");
         saveGlobal(id, "FOCUSED", "Una dinamica relazionale richiede più attenzione",
-                "Una o due aree emergono con maggiore frequenza, mentre negli altri aspetti sembra esserci più equilibrio.",
-                "Può essere utile notare quali situazioni attivano maggiormente paura della perdita, rinunce, difficoltà nei confini o bisogno urgente di contatto. Il risultato è informativo e non definisce te né la tua relazione.");
+                "Una o due aree emergono con maggiore frequenza, mentre negli altri aspetti del legame sembra esserci più equilibrio. La presenza complessiva dipende quindi soprattutto da un meccanismo relazionale specifico e non da una perdita uniforme di autonomia.",
+                "Le schede sotto possono chiarire se il nucleo riguarda separazione e rassicurazione, interessi personali, confini e reciprocità oppure stabilità emotiva. Osserva quali situazioni lo attivano, quali rinunce produce e se l'altra persona rispetta bisogni e limiti quando vengono espressi. Il risultato è informativo, non definisce te né la tua relazione e non può riconoscere una situazione abusante.");
         saveGlobal(id, "BROAD", "La relazione occupa uno spazio molto vincolante",
-                "Le risposte indicano dinamiche frequenti in più aree, con possibile riduzione dell'autonomia e forte dipendenza dal legame per sentirti stabile.",
-                "Se queste dinamiche causano sofferenza, isolamento, rinunce importanti o rendono difficile interrompere una relazione che ti fa stare male, confrontarti con uno psicologo o psicoterapeuta può aiutarti a comprenderle senza giudizio. Controllo, minacce e violenza non sono colpa tua: in questi casi la priorità è trovare un aiuto sicuro. Il questionario resta informativo e non diagnostico.");
+                "Le risposte indicano dinamiche frequenti in almeno tre aree, con possibile riduzione dell'autonomia e forte dipendenza dal legame per sentirti stabile. Paura della separazione, rinunce, difficoltà nei confini e regolazione emotiva sembrano intrecciarsi anziché restare circoscritte a un solo aspetto.",
+                "Un andamento ampio rende utile osservare isolamento, perdita di interessi, possibilità reale di dire no e conseguenze del rapporto sul benessere. Se queste dinamiche causano sofferenza o rendono difficile interrompere una relazione che ti fa stare male, confrontarti con uno psicologo o psicoterapeuta può aiutarti a comprenderle senza giudizio. Controllo, minacce e violenza non sono colpa tua: in questi casi la priorità è trovare un aiuto sicuro, indipendentemente dal punteggio; il questionario resta informativo e non diagnostico.");
 
         saveAreaInsights(id, "separazione",
                 "Distanza, silenzi e conflitti sembrano generalmente gestibili senza un bisogno continuo di conferme o il timore immediato di perdere il legame.",
@@ -496,7 +496,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAssertivenessInformationTest() {
         String id = "assertivita";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -552,17 +552,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("iniziativa", "Nelle decisioni condivise propongo soluzioni che tengono conto anche delle mie priorità.")));
 
         saveGlobal(id, "LOW", "La tua voce trova ancora poco spazio",
-                "Nel complesso hai indicato una frequenza contenuta dei comportamenti assertivi esplorati.",
-                "Potresti tendere a trattenere opinioni, bisogni o richieste, soprattutto quando temi conflitti, giudizi o conseguenze relazionali. L'assertività è un insieme di abilità che può essere allenato gradualmente e il risultato non dice nulla sul tuo valore o sul tuo coraggio.");
+                "Nel complesso hai indicato una frequenza contenuta dei comportamenti assertivi nelle quattro aree esplorate. Esprimere opinioni e bisogni, proteggere i confini, affrontare il confronto e prendere iniziativa sembrano quindi richiedere spesso cautela o rinuncia.",
+                "Questo profilo può riflettere timore del conflitto, scarsa abitudine, ruoli gerarchici o conseguenze relazionali concrete, non una mancanza di valore o coraggio. Osserva se la difficoltà è simile con tutte le persone oppure aumenta nei contesti in cui dipendi maggiormente dall'altro o ti senti poco sicuro. L'assertività è un insieme di abilità allenabili gradualmente, ma in situazioni minacciose evitare il confronto può essere una scelta protettiva.");
         saveGlobal(id, "MIXED", "Un'assertività che cambia con il contesto",
-                "Le tue risposte descrivono comportamenti assertivi presenti in alcune situazioni e più difficili in altre.",
-                "Potresti sentirti libero di esprimerti con alcune persone ma faticare davanti a conflitti, autorità, richieste o legami importanti. Individuare i contesti in cui la tua voce si riduce può offrire indicazioni più utili di un'etichetta generale.");
+                "Le tue risposte descrivono comportamenti assertivi presenti in alcune aree e meno accessibili in altre. La possibilità di esprimerti non appare quindi stabile, ma cambia con il tipo di richiesta, confronto o relazione.",
+                "Potresti sentirti libero con alcune persone e trattenerti davanti ad autorità, conflitti, rifiuti o legami importanti. Individua nelle schede sotto se cambia soprattutto l'espressione, la protezione dei confini, la gestione delle critiche o l'iniziativa e quali conseguenze temi. Capire dove la tua voce si riduce permette di scegliere esercizi graduali e realistici, senza trasformare l'assertività in un obbligo a parlare sempre.");
         saveGlobal(id, "FOCUSED", "Una risorsa assertiva emerge con chiarezza",
-                "Una o due aree risultano particolarmente solide, mentre altre sembrano richiedere più intenzionalità o allenamento.",
-                "Le competenze già presenti possono diventare un punto di partenza: osservare che cosa ti aiuta in quei contesti può facilitare il trasferimento dello stesso equilibrio alle situazioni in cui esprimerti è più difficile.");
+                "Una o due aree risultano particolarmente solide, mentre le altre sembrano richiedere più intenzionalità o allenamento. Il profilo mostra quindi risorse assertive riconoscibili, ma non ancora distribuite con la stessa continuità tra espressione, confini, confronto e iniziativa.",
+                "Le competenze già presenti possono diventare un punto di partenza concreto. Osserva che cosa cambia nei contesti in cui riesci a esprimerti: chiarezza dell'obiettivo, rapporto di fiducia, tempo per prepararti o minore timore delle conseguenze. Trasferire gradualmente questi elementi alle aree meno accessibili può essere più utile che cercare di comportarti nello stesso modo in ogni situazione.");
         saveGlobal(id, "BROAD", "Competenze assertive diffuse",
-                "Le tue risposte indicano che esprimi con frequenza opinioni, bisogni e limiti mantenendo attenzione anche ai diritti altrui.",
-                "Un profilo ampio non significa dover parlare sempre o ottenere sempre ciò che chiedi: essere assertivi comprende anche ascoltare, negoziare e scegliere consapevolmente quando intervenire. Situazione, sicurezza e conseguenze concrete restano importanti. Il risultato è informativo e non costituisce una valutazione clinica.");
+                "Le tue risposte indicano comportamenti assertivi frequenti in almeno tre aree del questionario. Esprimere opinioni e bisogni, porre limiti, affrontare disaccordi e prendere iniziativa sembrano risorse disponibili in una varietà di situazioni.",
+                "Un profilo ampio non significa parlare sempre, non provare disagio o ottenere ciò che chiedi. Essere assertivi comprende anche ascoltare, negoziare e scegliere consapevolmente quando intervenire, adattando forma e intensità allo scopo. Sicurezza, gerarchie e conseguenze concrete restano importanti: il risultato descrive le tue risposte e non costituisce una valutazione clinica o morale del tuo modo di comunicare.");
 
         saveAreaInsights(id, "espressione",
                 "Potresti trattenere spesso opinioni, emozioni o bisogni e adattarti alle preferenze altrui anche quando per te sarebbe importante esprimerti.",
@@ -584,7 +584,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedEmotionalIntelligenceInformationTest() {
         String id = "intelligenza-emotiva";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -640,17 +640,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("regolazione", "Se il modo in cui sto gestendo un'emozione non aiuta, provo a cambiare strategia o a cercare sostegno.")));
 
         saveGlobal(id, "LOW", "Competenze emotive ancora poco accessibili",
-                "Nel complesso hai indicato una frequenza contenuta dei comportamenti emotivi esplorati.",
-                "Potresti trovare difficile riconoscere con precisione ciò che accade dentro di te, usare quelle informazioni o scegliere come rispondere. Queste competenze possono essere sviluppate con osservazione ed esperienza; il risultato riflette la tua percezione attuale e non misura la tua intelligenza o il tuo valore.");
+                "Nel complesso hai indicato una frequenza contenuta delle competenze emotive percepite nelle quattro aree. Riconoscere, utilizzare, comprendere e regolare le informazioni emotive sembrano quindi processi non sempre accessibili con continuità nella vita quotidiana.",
+                "Questo profilo può riflettere difficoltà nel notare i segnali, dare loro un significato o scegliere una risposta quando l'intensità aumenta. Cultura, neurodiversità, stress, sicurezza relazionale e familiarità con il linguaggio emotivo possono influenzare l'autovalutazione. Osserva dove il processo si interrompe nelle schede sotto: queste competenze possono essere sviluppate, ma il risultato riflette la tua percezione e non misura intelligenza, capacità oggettiva o valore personale.");
         saveGlobal(id, "MIXED", "Un profilo emotivo che cambia con le situazioni",
-                "Le tue risposte descrivono competenze accessibili in alcuni momenti e più difficili quando emozioni, relazioni o pressioni diventano intense.",
-                "È comune riconoscere bene alcuni stati ma faticare a comprenderli o regolarli in determinati contesti. Osservare dove il processo si interrompe può essere più utile di cercare un unico punteggio di intelligenza emotiva.");
+                "Le tue risposte descrivono competenze emotive accessibili in alcune aree e meno continue in altre. Potresti quindi riconoscere bene alcuni segnali, ma incontrare più difficoltà nell'usarli, comprenderli o regolarli in particolari situazioni.",
+                "Intensità emotiva, pressione, tipo di relazione e tempo disponibile possono modificare il passaggio da una fase all'altra. Le schede sotto aiutano a distinguere se la variabilità riguarda percezione, uso nel pensiero, comprensione o regolazione, evitando di ridurre tutto a un unico punteggio. Il profilo descrive abitudini percepite, non una prova di abilità, e può cambiare con contesto, esperienza e strategie apprese.");
         saveGlobal(id, "FOCUSED", "Alcune competenze emotive sono già solide",
-                "Una o due aree emergono con maggiore continuità, mentre le altre sembrano dipendere maggiormente dal contesto o richiedere allenamento.",
-                "Le risorse già presenti possono sostenere le aree meno accessibili: per esempio, riconoscere bene un'emozione può diventare il punto di partenza per comprenderla, usarne le informazioni e scegliere una risposta più flessibile.");
+                "Una o due aree emergono con maggiore continuità, mentre le altre sembrano dipendere maggiormente dal contesto o richiedere allenamento. Il profilo mostra quindi risorse emotive specifiche, senza suggerire lo stesso livello di accessibilità in ogni fase del processo.",
+                "Le competenze già presenti possono sostenere quelle meno accessibili: riconoscere un'emozione può aiutare a comprenderla, oppure una buona regolazione può creare spazio per osservarne meglio le cause. Individua nelle schede sotto quale passaggio funziona già e quali condizioni lo rendono possibile. Il risultato resta un'autopercezione informativa e non consente di dedurre una capacità oggettiva generale.");
         saveGlobal(id, "BROAD", "Competenze emotive diffuse e flessibili",
-                "Le tue risposte indicano una presenza frequente delle competenze esplorate in più momenti del processo emotivo.",
-                "Questo non significa comprendere sempre gli altri, non provare emozioni intense o riuscire a regolarle in ogni situazione. Suggerisce piuttosto che disponi di più strumenti per osservare, interpretare e utilizzare le emozioni senza esserne guidato automaticamente. Il risultato resta informativo e non è una misura oggettiva di abilità.");
+                "Le tue risposte indicano competenze emotive percepite con frequenza in almeno tre aree del questionario. Riconoscimento, uso, comprensione e regolazione sembrano quindi risorse abbastanza diffuse, anziché dipendere da un unico passaggio del processo emotivo.",
+                "Questo non significa comprendere sempre gli altri, evitare emozioni intense o scegliere in ogni occasione la risposta più utile. Suggerisce piuttosto che disponi di più modi per osservare, interpretare e utilizzare le emozioni senza esserne guidato automaticamente. Contesto, motivazione e qualità delle relazioni continuano a influire sulle azioni; il risultato resta informativo e non è una misura oggettiva di abilità.");
 
         saveAreaInsights(id, "percezione",
                 "Può esserti difficile accorgerti tempestivamente dei segnali emotivi, distinguerli con precisione o verificare ciò che percepisci nelle altre persone.",
@@ -672,7 +672,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPerfectionismInformationTest() {
         String id = "perfezionismo";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -728,17 +728,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("controllo", "Mi è difficile prendere una decisione quando restano alternative da valutare.")));
 
         saveGlobal(id, "LOW", "Poche dinamiche perfezionistiche ricorrenti",
-                "Nel complesso hai indicato una presenza contenuta delle pressioni perfezionistiche esplorate.",
-                "Puoi avere standard elevati e attenzione alla qualità senza lasciare che errori, giudizi o dettagli determinino stabilmente il tuo valore e le tue scelte. Questo risultato non esclude momenti di forte esigenza e non rappresenta una valutazione clinica.");
+                "Nel complesso hai riconosciuto con poca frequenza le pressioni perfezionistiche nelle quattro aree esplorate. Standard, timore degli errori, aspettative percepite e bisogno di controllo non formano, nelle tue risposte, un insieme rigido e diffuso.",
+                "Puoi avere obiettivi elevati e attenzione alla qualità mantenendo la possibilità di adattare tempi, metodo e livello di precisione. Questo profilo non esclude momenti di forte esigenza né un ambito molto specifico in cui il costo aumenta. Osserva se riesci generalmente a concludere, delegare e separare la prestazione dal valore personale: il risultato descrive tendenze attuali e non rappresenta una valutazione clinica.");
         saveGlobal(id, "MIXED", "Un perfezionismo che emerge in alcuni contesti",
-                "Le tue risposte descrivono dinamiche variabili, più presenti in determinati ambiti, compiti o relazioni.",
-                "Potresti mantenere flessibilità in molte situazioni ma diventare più rigido quando il risultato è importante, visibile o legato al giudizio altrui. Osservare dove il costo aumenta può essere più utile di definirti semplicemente perfezionista.");
+                "Le tue risposte descrivono pressioni perfezionistiche presenti in alcune aree e contenute in altre. La rigidità sembra quindi dipendere dal tipo di compito, dalla visibilità del risultato o dal significato personale attribuito alla prestazione.",
+                "Potresti mantenere flessibilità in molte situazioni ma aumentare controlli, dubbi o autocritica quando temi il giudizio o consideri l'esito particolarmente importante. Le schede sotto aiutano a distinguere quale dimensione cambia e se il costo riguarda tempo, energia, rinvio o relazioni. Osservare quando lo standard smette di essere funzionale è più utile che definirti semplicemente perfezionista.");
         saveGlobal(id, "FOCUSED", "Un'area concentra la pressione perfezionistica",
-                "Una o due aree emergono con particolare frequenza, mentre negli altri aspetti sembra esserci maggiore flessibilità.",
-                "Può essere utile notare se la pressione nasce soprattutto dagli standard, dalla paura degli errori, dalle aspettative percepite o dal bisogno di controllo. Distinguere il meccanismo prevalente aiuta a capire quando la ricerca della qualità smette di essere funzionale.");
+                "Una o due aree emergono con particolare frequenza, mentre negli altri aspetti sembra esserci maggiore flessibilità. La presenza complessiva è quindi sostenuta soprattutto da un meccanismo specifico e non da perfezionismo uniforme in ogni ambito.",
+                "Le analisi per area possono mostrare se la pressione nasce soprattutto da standard e valore personale, paura degli errori, aspettative altrui oppure ordine e controllo. Osserva quali situazioni attivano il meccanismo, che beneficio immediato offre e quale costo produce nel concludere o partecipare. Distinguerne la funzione aiuta a capire quando la ricerca della qualità resta utile e quando diventa una regola difficile da adattare.");
         saveGlobal(id, "BROAD", "Una pressione perfezionistica diffusa",
-                "Le risposte indicano dinamiche frequenti in più aree, con possibile difficoltà a riconoscere un risultato come sufficiente e a separare prestazione e valore personale.",
-                "Se questa pressione causa sofferenza, blocchi, procrastinazione, esaurimento o rinunce importanti, confrontarti con uno psicologo o psicoterapeuta può aiutarti a costruire standard più flessibili senza abbandonare ciò che per te conta. Il risultato resta informativo e non diagnostico.");
+                "Le risposte indicano pressioni perfezionistiche frequenti in almeno tre aree del questionario. Standard, errori, giudizio percepito e controllo sembrano intrecciarsi, rendendo più difficile riconoscere un risultato come sufficiente e separare prestazione e valore personale.",
+                "Un profilo ampio può sostenere cicli di preparazione e controllo eccessivi, rinvio, autocritica e ulteriore innalzamento degli standard. È utile considerare in quali ambiti il costo è maggiore e se il meccanismo limita riposo, relazioni, apprendimento o conclusione dei compiti. Se questa pressione causa sofferenza, blocchi, procrastinazione, esaurimento o rinunce importanti, confrontarti con uno psicologo o psicoterapeuta può aiutarti; il risultato resta informativo e non diagnostico.");
 
         saveAreaInsights(id, "standard",
                 "I tuoi obiettivi sembrano generalmente adattabili alla situazione e il valore che riconosci a te stesso non dipende interamente dai risultati.",
@@ -760,7 +760,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSocialAnxietyInformationTest() {
         String id = "ansia-sociale";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -816,17 +816,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("evitamento", "L'ansia sociale condiziona scelte importanti relative a relazioni, studio, lavoro o attività che vorrei svolgere.")));
 
         saveGlobal(id, "LOW", "Poche difficoltà sociali ricorrenti",
-                "Nel complesso hai indicato una presenza contenuta delle esperienze di ansia sociale esplorate.",
-                "Questo non significa sentirsi sempre disinvolti: timidezza, tensione e desiderio di fare una buona impressione possono comparire in chiunque. Le risposte suggeriscono però che giudizio ed esposizione sociale tendono a non limitare in modo costante le tue scelte.");
+                "Nel complesso hai riconosciuto con poca frequenza le esperienze di ansia sociale nelle quattro aree esplorate. Paura del giudizio, tensione nelle interazioni, difficoltà di prestazione ed evitamento non formano, nelle tue risposte, un insieme ampio e ricorrente.",
+                "Questo non significa sentirti sempre disinvolto: timidezza, tensione e desiderio di fare una buona impressione sono esperienze comuni. Il profilo suggerisce però che giudizio ed esposizione tendono a non limitare stabilmente le tue scelte nei contesti considerati. Situazioni molto specifiche, recenti o non incluse negli item possono comunque avere un peso e vanno valutate per il disagio e l'interferenza che producono.");
         saveGlobal(id, "MIXED", "Un'ansia sociale legata ad alcuni contesti",
-                "Le tue risposte descrivono difficoltà variabili, più evidenti con certe persone, situazioni o livelli di esposizione.",
-                "Potresti sentirti relativamente a tuo agio in contesti familiari ma provare forte tensione quando sei osservato, devi prendere iniziativa o temi una valutazione. Notare quali condizioni fanno aumentare l'ansia può essere più utile di una conclusione generale.");
+                "Le tue risposte descrivono ansia sociale presente in alcune aree e contenuta in altre. La libertà di partecipare sembra quindi cambiare con persone, familiarità, tipo di prestazione e livello di esposizione al giudizio.",
+                "Potresti sentirti relativamente a tuo agio in contesti familiari ma provare maggiore tensione quando sei osservato, devi prendere iniziativa o temi una valutazione. Esclusione, discriminazione, differenze linguistiche o ambienti realmente ostili possono inoltre rendere alcuni timori comprensibili e contestuali. Le schede sotto aiutano a riconoscere dove aumentano anticipazione, protezioni ed evitamento, senza trasformare la variabilità in una diagnosi generale.");
         saveGlobal(id, "FOCUSED", "Un ambito sociale emerge con chiarezza",
-                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore libertà.",
-                "Può essere utile osservare se la difficoltà riguarda soprattutto il giudizio, le conversazioni, la prestazione o il ciclo di anticipazione ed evitamento. Il risultato non stabilisce una diagnosi, ma può aiutarti a descrivere con maggiore precisione ciò che accade.");
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore libertà. La presenza complessiva dipende quindi soprattutto da un tipo di situazione sociale o da una fase specifica del ciclo dell'ansia.",
+                "Le analisi per area possono chiarire se il nucleo riguarda giudizio e imbarazzo, conversazioni, prestazione sotto osservazione oppure anticipazione ed evitamento. Osserva previsioni, segnali fisici, comportamenti protettivi e ripensamento successivo, verificando quali elementi mantengono la difficoltà. Il risultato non stabilisce una diagnosi, ma può aiutarti a descrivere con maggiore precisione ciò che accade e il suo impatto.");
         saveGlobal(id, "BROAD", "Ansia sociale presente in più ambiti",
-                "Le risposte indicano paura, tensione o evitamento frequenti in diversi tipi di situazione sociale o valutativa.",
-                "Se queste esperienze causano sofferenza o limitano relazioni, studio, lavoro e attività importanti, una valutazione con uno psicologo, psicoterapeuta o medico può chiarire il quadro e le possibili forme di aiuto. L'ansia sociale è trattabile, ma questo questionario resta informativo e non diagnostico.");
+                "Le risposte indicano paura, tensione o evitamento frequenti in almeno tre aree del questionario. Il profilo coinvolge più tipi di interazione e valutazione, con possibili effetti sia prima e durante le situazioni sia nel ripensamento successivo.",
+                "Un andamento ampio rende utile osservare quanto la paura modifica partecipazione, opportunità, relazioni, studio o lavoro e quali comportamenti protettivi sembrano indispensabili. Esperienze di esclusione, altre forme d'ansia, depressione e differenze comunicative possono contribuire e richiedono una lettura contestuale. Se la difficoltà causa sofferenza o limitazioni importanti, una valutazione professionale può chiarire il quadro. L'ansia sociale è trattabile, ma questo questionario resta informativo e non diagnostico.");
 
         saveAreaInsights(id, "valutazione",
                 "Il possibile giudizio degli altri sembra generare una preoccupazione contenuta e gli errori sociali tendono a restare episodi circoscritti.",
@@ -848,7 +848,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPerceivedNarcissisticRelationshipDynamicsTest() {
         String id = "dinamiche-narcisistiche-partner";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -904,17 +904,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("confini", "Questa relazione mi lascia frequentemente meno libero di riconoscere e proteggere i miei bisogni.")));
 
         saveGlobal(id, "LOW", "Poche dinamiche relazionali di questo tipo",
-                "Nel complesso hai indicato una presenza contenuta delle dinamiche esplorate dal questionario.",
-                "Ogni relazione attraversa momenti di squilibrio, difesa o scarsa sintonia. Le tue risposte suggeriscono che questi episodi non formano abitualmente un modello esteso. Il risultato non valuta direttamente il partner e non esclude problemi diversi da quelli considerati.");
+                "Nel complesso hai riconosciuto con poca frequenza le dinamiche esplorate nelle quattro aree. Scarsa reciprocità, bisogno di centralità, difficoltà nel confronto e pressioni sui confini non formano, nel tuo resoconto, un modello ampio e ricorrente.",
+                "Ogni relazione attraversa momenti di difesa, egoismo o scarsa sintonia e un singolo episodio non definisce il partner. Il profilo suggerisce che i comportamenti considerati non si combinano abitualmente in più aree, ma non esclude problemi diversi o episodi specifici importanti. Il risultato descrive la tua percezione, non valuta direttamente l'altra persona e non riduce l'importanza di controllo, minacce o violenza, che richiedono attenzione indipendentemente dal punteggio.");
         saveGlobal(id, "MIXED", "Alcune dinamiche emergono in determinati contesti",
-                "Le risposte descrivono comportamenti variabili, più evidenti in alcune situazioni o fasi della relazione.",
-                "Può essere utile osservare quando compaiono, quanto durano e se dopo un conflitto esistono ascolto, riparazione e cambiamenti concreti. La loro presenza non permette di attribuire un disturbo di personalità al partner.");
+                "Le risposte descrivono dinamiche presenti in alcune aree e meno riconoscibili in altre. Il funzionamento della relazione sembra quindi cambiare con il tema del confronto, la fase del rapporto o il modo in cui vengono espressi bisogni e limiti.",
+                "Può essere utile annotare episodi concreti, frequenza, reazione a un confine e ciò che accade dopo il conflitto. Osserva se esistono ascolto, riparazione e cambiamenti verificabili oppure se alcuni schemi tornano senza coinvolgere ogni aspetto della relazione. La variabilità non permette di attribuire un disturbo di personalità al partner e non stabilisce da sola se la relazione sia sicura.");
         saveGlobal(id, "FOCUSED", "Un'area relazionale richiede attenzione",
-                "Una o due aree mostrano dinamiche frequenti, mentre negli altri aspetti la relazione sembra avere un funzionamento diverso.",
-                "Concentrarti sui comportamenti specifici e sul loro effetto può aiutarti più di un'etichetta. Se la dinamica causa sofferenza, confusione o limita la tua autonomia, un confronto individuale con uno psicologo o psicoterapeuta può offrirti uno spazio protetto di valutazione.");
+                "Una o due aree mostrano dinamiche frequenti, mentre negli altri aspetti la relazione sembra avere un funzionamento diverso. La presenza complessiva è quindi sostenuta soprattutto da uno specifico modello di reciprocità, centralità, conflitto o controllo.",
+                "Concentrarti su comportamenti osservabili, conseguenze e possibilità di cambiamento può aiutarti più di un'etichetta sul partner. Le schede sotto chiariscono dove si concentra il problema e se incide su autostima, libertà di scelta o possibilità di esprimere un limite. Se la dinamica causa sofferenza, confusione o limita la tua autonomia, un confronto individuale con uno psicologo o psicoterapeuta può offrire uno spazio protetto di valutazione.");
         saveGlobal(id, "BROAD", "Dinamiche problematiche presenti in più aree",
-                "Le risposte indicano squilibri frequenti nella reciprocità, nel confronto o nel rispetto dei confini, con possibile impatto significativo sul tuo benessere.",
-                "Questo profilo non dimostra che il partner abbia un disturbo narcisistico di personalità. Indica però che diverse dinamiche meritano attenzione per il loro effetto su di te. Cerca sostegno professionale e valuta la tua sicurezza senza attendere una diagnosi: in caso di pericolo immediato chiama il 112; per donne vittime di violenza o stalking è disponibile gratuitamente il 1522, anche via chat.");
+                "Le risposte indicano squilibri frequenti in almeno tre aree tra reciprocità, centralità, confronto e rispetto dei confini. Il resoconto descrive quindi un modello relazionale esteso, con possibile impatto su benessere, libertà di espressione e autonomia.",
+                "Questo profilo non dimostra che il partner abbia un disturbo narcisistico di personalità e non spiega le cause dei suoi comportamenti. Indica però che più dinamiche meritano attenzione per il loro effetto concreto su di te, indipendentemente da qualsiasi diagnosi. Cerca sostegno professionale e valuta la tua sicurezza senza attendere un'etichetta: in caso di pericolo immediato chiama il 112; per donne vittime di violenza o stalking è disponibile gratuitamente il 1522, anche via chat.");
 
         saveAreaInsights(id, "reciprocita",
                 "Le tue emozioni e necessità sembrano trovare generalmente ascolto, considerazione e uno spazio paragonabile a quello del partner.",
@@ -936,7 +936,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedGeneralizedAnxietyInformationTest() {
         String id = "ansia-generalizzata";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -992,17 +992,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("impatto", "Fatico a godermi un momento positivo o a essere presente perché sto già pensando a ciò che potrebbe andare storto.")));
 
         saveGlobal(id, "LOW", "Preoccupazione generalmente circoscritta",
-                "Nel complesso hai indicato una presenza contenuta delle esperienze di ansia esplorate.",
-                "Questo non significa essere sempre tranquilli: preoccupazione e tensione possono aumentare in periodi impegnativi. Le risposte suggeriscono però che tendono a restare circoscritte e a non interferire stabilmente in più aree della vita.");
+                "Nel complesso hai riconosciuto con poca frequenza le esperienze di ansia nelle quattro aree esplorate. Preoccupazione difficile da controllare, tensione, affaticamento e interferenza quotidiana non formano, nelle tue risposte, un insieme ampio e persistente.",
+                "Questo non significa essere sempre tranquillo: preoccupazione e attivazione possono aumentare durante problemi concreti o periodi impegnativi. Il profilo suggerisce però che tendono a restare circoscritte e a ridursi senza coinvolgere stabilmente più aspetti della vita. Difficoltà recenti, sintomi fisici o temi non coperti dagli item possono comunque meritare attenzione; il risultato non conferma né esclude un disturbo d'ansia.");
         saveGlobal(id, "MIXED", "Un'ansia che varia con periodi e situazioni",
-                "Le tue risposte descrivono esperienze variabili, più evidenti in alcuni momenti, ambiti o condizioni di stress.",
-                "Può essere utile osservare se l'ansia diminuisce quando il problema concreto si risolve oppure continua a spostarsi tra temi diversi. Durata, contesto e impatto sono più informativi di una semplice media e questo risultato non costituisce una diagnosi.");
+                "Le tue risposte descrivono ansia presente in alcune aree e più contenuta in altre. Preoccupazione, attivazione fisica, risorse cognitive e funzionamento sembrano quindi cambiare con periodi, temi e condizioni di stress.",
+                "Osserva se l'ansia diminuisce quando un problema concreto si risolve oppure continua a spostarsi tra scenari diversi. Sonno, caffeina, salute fisica, carico di responsabilità e altre difficoltà psicologiche possono modificare il profilo e richiedono una lettura contestuale. Durata, controllabilità e impatto sono più informativi della sola media; questo risultato non costituisce una diagnosi.");
         saveGlobal(id, "FOCUSED", "Un'area concentra maggiormente la tensione",
-                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
-                "L'analisi specifica può aiutarti a riconoscere se emergono soprattutto preoccupazione difficile da controllare, attivazione fisica, affaticamento cognitivo oppure sonno e funzionamento quotidiano. Se la difficoltà persiste o causa sofferenza, puoi confrontarti con un professionista qualificato.");
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio. La presenza complessiva dipende quindi soprattutto da un nucleo di preoccupazione, attivazione o conseguenze quotidiane e non da ansia uniforme in tutto il profilo.",
+                "L'analisi specifica può mostrare se emergono soprattutto difficoltà di controllo dei pensieri, tensione fisica, affaticamento cognitivo oppure sonno e funzionamento. Osserva durata, situazioni scatenanti e strategie usate per ottenere certezza o sollievo, verificando se riducono davvero il problema nel tempo. Se la difficoltà persiste, aumenta o causa sofferenza, puoi confrontarti con un professionista qualificato.");
         saveGlobal(id, "BROAD", "Ansia frequente in più aspetti della vita",
-                "Le risposte indicano preoccupazione, tensione o conseguenze frequenti in diverse aree esplorate dal questionario.",
-                "Se queste esperienze durano da mesi e limitano sonno, relazioni, studio, lavoro o attività importanti, una valutazione con uno psicologo, psicoterapeuta o medico può chiarire il quadro, escludere altre cause e individuare forme di aiuto efficaci. L'ansia è trattabile, ma questo questionario resta informativo e non diagnostico.");
+                "Le risposte indicano preoccupazione, tensione o conseguenze frequenti in almeno tre aree del questionario. Il profilo coinvolge quindi sia l'esperienza dell'ansia sia le risorse necessarie per concentrarti, riposare e partecipare alle attività quotidiane.",
+                "Un andamento ampio rende utile considerare durata, difficoltà di controllo, interferenza e possibili fattori fisici, farmacologici o contestuali. Se le esperienze durano da mesi e limitano sonno, relazioni, studio o lavoro, una valutazione professionale può chiarire il quadro, escludere altre cause e individuare forme di aiuto efficaci. L'ansia è trattabile, ma questo questionario resta informativo e non diagnostico.");
 
         saveAreaInsights(id, "preoccupazione",
                 "Le preoccupazioni sembrano generalmente legate a problemi specifici e tendono a ridursi o a diventare gestibili quando la situazione cambia.",
@@ -1024,7 +1024,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedDepressedMoodInformationTest() {
         String id = "umore-depresso";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1080,17 +1080,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("funzionamento", "Il mio stato emotivo interferisce con lavoro, studio, relazioni, cura personale o gestione della vita quotidiana.")));
 
         saveGlobal(id, "LOW", "Umore generalmente preservato",
-                "Nel complesso hai indicato una presenza contenuta delle esperienze legate all'umore depresso esplorate.",
-                "Questo non esclude giornate difficili, tristezza o stanchezza, ma suggerisce che al momento non formano un quadro frequente e diffuso nelle aree considerate. Il risultato resta informativo. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
+                "Nel complesso hai riconosciuto con poca frequenza le esperienze legate all'umore depresso nelle quattro aree. Calo del piacere, riduzione dell'energia, pensieri negativi e difficoltà di funzionamento non formano, nelle tue risposte, un insieme frequente e diffuso nelle ultime due settimane.",
+                "Questo non esclude giornate difficili, tristezza, lutto o stanchezza, né problemi specifici non inclusi nelle domande. Il profilo descrive il periodo attuale e può cambiare; osserva eventuali peggioramenti, durata e conseguenze sulla cura di te anche se la media è contenuta. Il risultato resta informativo e questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
         saveGlobal(id, "MIXED", "Un calo dell'umore legato ad alcuni periodi o contesti",
-                "Le risposte descrivono esperienze variabili, più evidenti in determinati momenti o aspetti della vita.",
-                "Può essere utile osservare durata, eventi recenti, risorse disponibili e capacità di recuperare quando il contesto cambia. Una media non permette di distinguere stress, lutto, problemi fisici o un disturbo dell'umore. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
+                "Le risposte descrivono esperienze depressive presenti in alcune aree e meno frequenti in altre. Umore, piacere, energia, pensieri e funzionamento non si muovono quindi tutti nello stesso modo nelle ultime due settimane.",
+                "Osserva durata, eventi recenti, sonno, salute, risorse disponibili e capacità di recuperare quando il contesto cambia. Una distribuzione variabile non permette di distinguere stress, lutto, problemi fisici, effetti di sostanze o un disturbo dell'umore, ma può mostrare dove il costo è maggiore. Il risultato resta informativo e questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
         saveGlobal(id, "FOCUSED", "Un'area del benessere emotivo emerge con chiarezza",
-                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
-                "L'analisi specifica può aiutarti a descrivere se la difficoltà riguarda soprattutto piacere e partecipazione, energia, pensieri su di te oppure funzionamento quotidiano. Se persiste o causa sofferenza, parlane con un professionista qualificato. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio. La presenza complessiva dipende quindi soprattutto da un nucleo specifico di umore, energia, pensieri o funzionamento, non da un andamento uniforme.",
+                "L'analisi per area può chiarire se la difficoltà riguarda soprattutto piacere e partecipazione, attivazione, modo di valutarti oppure attività quotidiane. Osserva da quanto dura, se sta peggiorando e quanto incide su relazioni, responsabilità e cura personale; se persiste o causa sofferenza, parlane con un professionista qualificato. Il risultato resta informativo e questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
         saveGlobal(id, "BROAD", "Umore depresso presente in più aree",
-                "Le risposte indicano esperienze frequenti che coinvolgono diversi aspetti dell'umore, delle energie, dei pensieri o del funzionamento.",
-                "Se queste difficoltà sono presenti per gran parte dei giorni e limitano la tua vita, una valutazione con uno psicologo, psicoterapeuta o medico può chiarire il quadro, considerare altre possibili cause e individuare un aiuto adeguato. I problemi depressivi sono trattabili e chiedere sostegno è appropriato. Questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
+                "Le risposte indicano esperienze frequenti in almeno tre aree tra umore e piacere, energia, pensieri e funzionamento. Il profilo appare quindi diffuso nelle ultime due settimane e può incidere contemporaneamente su vissuto emotivo, risorse e partecipazione quotidiana.",
+                "È importante considerare durata, cambiamento rispetto al solito, cause mediche o farmacologiche, uso di sostanze ed eventuali periodi passati di energia insolitamente elevata. Se le difficoltà sono presenti per gran parte dei giorni e limitano la tua vita, una valutazione professionale può chiarire il quadro; i problemi depressivi sono trattabili e chiedere sostegno è appropriato. Il risultato resta informativo e questo questionario non valuta il rischio suicidario: se pensi di farti del male o non ti senti al sicuro, chiama subito il 112 o vai al Pronto Soccorso.");
 
         saveAreaInsights(id, "umore",
                 "Interesse, partecipazione emotiva e capacità di provare piacere sembrano generalmente preservati, anche in presenza di giornate difficili.",
@@ -1112,7 +1112,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPeoplePleasingInformationTest() {
         String id = "people-pleasing";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1168,17 +1168,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("sacrificio", "Dopo essermi reso molto disponibile, provo risentimento o esaurimento perché i miei bisogni sono rimasti in secondo piano.")));
 
         saveGlobal(id, "LOW", "Disponibilità e bisogni personali in buon equilibrio",
-                "Nel complesso hai indicato una presenza contenuta delle dinamiche di compiacenza esplorate.",
-                "Puoi essere attento e disponibile senza rinunciare abitualmente alla tua voce, ai tuoi limiti o al recupero. Questo non significa essere sempre assertivi né dover rifiutare l'aiuto agli altri: reciprocità, contesto e libertà di scelta restano centrali.");
+                "Nel complesso hai riconosciuto con poca frequenza le dinamiche di compiacenza nelle quattro aree esplorate. Bisogno di approvazione, difficoltà nei confini, autosilenziamento e sacrificio personale non formano, nelle tue risposte, un modello ampio e ricorrente.",
+                "Puoi essere attento e disponibile senza rinunciare abitualmente alla tua voce, ai tuoi limiti o al recupero. Questo non significa essere sempre assertivo né dover rifiutare l'aiuto agli altri: reciprocità, contesto e libertà di scelta restano centrali. Osserva comunque eventuali relazioni o ruoli specifici in cui dire no ha conseguenze particolari, perché una media contenuta può non rappresentare ogni situazione.");
         saveGlobal(id, "MIXED", "La compiacenza emerge in alcuni contesti",
-                "Le risposte descrivono dinamiche variabili, più frequenti con alcune persone, richieste o situazioni.",
-                "Potresti mantenere un buon equilibrio in molti rapporti ma adattarti maggiormente davanti a autorità, conflitto, bisogno altrui o rischio di disapprovazione. Riconoscere dove accade può essere più utile dell'etichetta “people pleaser”.");
+                "Le risposte descrivono dinamiche di compiacenza presenti in alcune aree e più contenute in altre. La libertà di esprimere preferenze, mantenere limiti e proteggere le tue risorse sembra quindi cambiare con persone, richieste e situazioni.",
+                "Potresti mantenere un buon equilibrio in molti rapporti ma adattarti maggiormente davanti a autorità, conflitto, bisogno altrui o rischio di disapprovazione. Nota con chi accade, quale reazione temi e se l'adattamento è una scelta sostenibile oppure lascia ansia, risentimento o stanchezza. Riconoscere questa distribuzione è più utile dell'etichetta “people pleaser” e permette di distinguere disponibilità volontaria, abitudine e risposta a un reale squilibrio di potere.");
         saveGlobal(id, "FOCUSED", "Un meccanismo di compiacenza emerge con chiarezza",
-                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore libertà.",
-                "Può essere utile osservare se il costo nasce soprattutto dalla ricerca di approvazione, dai limiti, dal silenziamento o dall'eccessiva responsabilità verso gli altri. Il profilo descrive abitudini modificabili, non un'identità fissa.");
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore libertà. La presenza complessiva dipende quindi soprattutto da uno specifico meccanismo relazionale e non da una tendenza uniforme a compiacere chiunque.",
+                "Le schede sotto possono chiarire se il costo nasce soprattutto dalla ricerca di approvazione, dai limiti, dal silenziamento o dall'eccessiva responsabilità verso gli altri. Osserva quali richieste lo attivano, se riesci a cambiare risposta con persone sicure e quali bisogni personali restano esclusi. Il profilo descrive abitudini e condizioni contestuali, non un'identità fissa né una mancanza di carattere.");
         saveGlobal(id, "BROAD", "I bisogni altrui occupano spesso il primo posto",
-                "Le risposte indicano dinamiche frequenti in più aree, con possibile difficoltà a mantenere visibili bisogni, opinioni, limiti e risorse personali.",
-                "Se questo modo di stare nelle relazioni porta esaurimento, risentimento, ansia o legami poco reciproci, un confronto con uno psicologo o psicoterapeuta può aiutarti a costruire maggiore scelta e confini sostenibili. In situazioni minacciose o con forte squilibrio di potere, valuta prima la sicurezza e cerca un supporto adeguato; il risultato resta informativo e non diagnostico.");
+                "Le risposte indicano dinamiche frequenti in almeno tre aree, con possibile difficoltà a mantenere visibili bisogni, opinioni, limiti e risorse personali. Ricerca di approvazione, rinunce e responsabilità verso gli altri sembrano quindi rinforzarsi tra loro anziché restare circoscritte a un rapporto isolato.",
+                "Un andamento ampio può rendere difficile distinguere la disponibilità scelta dall'adattamento guidato da colpa, paura del rifiuto o bisogno di ristabilire subito l'armonia. Se porta esaurimento, risentimento, ansia o legami poco reciproci, un confronto con uno psicologo o psicoterapeuta può aiutarti a costruire maggiore scelta e confini sostenibili. In situazioni minacciose o con forte squilibrio di potere, valuta prima la sicurezza e cerca un supporto adeguato; il risultato resta informativo e non diagnostico.");
 
         saveAreaInsights(id, "approvazione",
                 "L'apprezzamento degli altri sembra piacevole ma non indispensabile per mantenere opinioni, scelte e una valutazione stabile di te stesso.",
@@ -1200,7 +1200,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedImpostorPhenomenonInformationTest() {
         String id = "sindrome-impostore";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1256,17 +1256,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("impatto", "I dubbi sul mio valore mi portano a partecipare meno alle attività che contano per me.")));
 
         saveGlobal(id, "LOW", "Successi e competenze generalmente riconosciuti",
-                "Nel complesso hai indicato una presenza contenuta delle esperienze associate al fenomeno dell'impostore.",
-                "Sembri riuscire generalmente a integrare risultati e feedback nella valutazione delle tue capacità, mantenendo i dubbi in proporzione al contesto. Questo non dimostra una competenza assoluta né esclude incertezze normali, soprattutto quando stai imparando o affrontando un ruolo nuovo.");
+                "Nel complesso hai riconosciuto con poca frequenza le esperienze associate al fenomeno dell'impostore nelle quattro aree. Attribuzione esterna dei successi, paura di essere smascherato, pressione da prestazione e rinuncia alle opportunità non formano, nelle tue risposte, un modello ampio e ricorrente.",
+                "Sembri riuscire generalmente a integrare risultati e feedback nella valutazione delle tue capacità, mantenendo i dubbi in proporzione al contesto. Questo non dimostra una competenza assoluta né esclude incertezze normali, soprattutto quando stai imparando o affrontando un ruolo nuovo. Valuta comunque eventuali ambienti molto competitivi o poco chiari che la media non rappresenta: un dubbio realistico può segnalare bisogno di formazione, feedback o condizioni più eque.");
         saveGlobal(id, "MIXED", "Dubbi che emergono in alcuni contesti",
-                "Le risposte descrivono esperienze variabili, più frequenti davanti ad alcune persone, compiti o passaggi di ruolo.",
-                "Potresti riconoscere le tue capacità in molte situazioni ma dubitarne quando aumentano visibilità, confronto, novità o ambiguità del feedback. Distinguere i contesti può aiutare a separare ciò che richiede apprendimento da ciò che nasce da standard rigidi, scarsa appartenenza o difficoltà a interiorizzare i risultati.");
+                "Le risposte descrivono esperienze dell'impostore presenti in alcune aree e più contenute in altre. La capacità di riconoscere risultati e competenze sembra quindi cambiare davanti a specifiche persone, compiti, livelli di visibilità o passaggi di ruolo.",
+                "Potresti fidarti delle tue capacità in molte situazioni ma dubitarne quando aumentano confronto, novità o ambiguità del feedback. Nota se il dubbio si riduce con esperienza e informazioni concrete oppure persiste anche dopo risultati coerenti e riconoscimenti attendibili. Distinguere i contesti aiuta a separare ciò che richiede apprendimento da ciò che nasce da standard rigidi, scarsa appartenenza o difficoltà a interiorizzare i successi.");
         saveGlobal(id, "FOCUSED", "Un meccanismo dell'impostore emerge con chiarezza",
-                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
-                "Il profilo invita a osservare dove si concentra il costo: attribuzione dei successi, paura di essere smascherati, pressione da prestazione oppure rinuncia a opportunità. Il risultato non misura la competenza effettiva e va letto insieme a esperienza reale, qualità dei feedback e caratteristiche dell'ambiente.");
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio. La presenza complessiva dipende quindi soprattutto da un meccanismo specifico e non da dubbi uniformi in ogni esperienza di studio, lavoro o responsabilità.",
+                "Le schede sotto chiariscono se il costo si concentra nell'attribuzione dei successi, nella paura di essere smascherato, nella pressione da prestazione oppure nella rinuncia a opportunità. Osserva quali compiti lo attivano e se porta a sovrapreparazione, silenzio, evitamento o difficoltà ad accettare riscontri positivi. Il risultato non misura la competenza effettiva e va letto insieme a esperienza reale, qualità dei feedback e caratteristiche dell'ambiente.");
         saveGlobal(id, "BROAD", "Il vissuto dell'impostore è presente in più aree",
-                "Le risposte indicano esperienze frequenti e diffuse nel modo di leggere risultati, competenza, prestazione e opportunità.",
-                "Questo schema può rendere difficile riconoscere prove di capacità, accettare una normale quota di apprendimento e partecipare senza sovraccaricarti. Se alimenta ansia, evitamento, esaurimento o rinunce importanti, un confronto professionale può aiutarti. Considera anche fattori reali come aspettative poco chiare, feedback inadeguati, esclusione o discriminazione: il risultato resta informativo, non diagnostico e non stabilisce quanto sei competente.");
+                "Le risposte indicano esperienze frequenti in almeno tre aree del modo di leggere risultati, competenza, prestazione e opportunità. Il vissuto dell'impostore appare quindi esteso e non limitato a un singolo compito o a una sola forma di dubbio.",
+                "Questo schema può rendere difficile riconoscere prove di capacità, accettare una normale quota di apprendimento e partecipare senza sovraccaricarti. Se alimenta ansia, evitamento, esaurimento o rinunce importanti, un confronto professionale può aiutarti a esaminare pensieri, comportamenti e condizioni del contesto. Considera anche fattori reali come aspettative poco chiare, feedback inadeguati, esclusione o discriminazione: il risultato resta informativo, non diagnostico e non stabilisce quanto sei competente.");
 
         saveAreaInsights(id, "attribuzione",
                 "Sembri generalmente capace di riconoscere il tuo contributo e usare successi e feedback come informazioni credibili sulle tue capacità.",
@@ -1288,7 +1288,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSelfSabotageInformationTest() {
         String id = "autosabotaggio";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1344,17 +1344,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("direzione", "Dopo una pausa faccio fatica a riprendere anche con un passo più piccolo.")));
 
         saveGlobal(id, "LOW", "Scelte generalmente coerenti con i tuoi obiettivi",
-                "Nel complesso hai indicato una presenza contenuta degli ostacoli autoalimentati esplorati dal questionario.",
-                "Sembri generalmente capace di trasformare intenzioni in passi sostenibili, attraversare il disagio e adattare il percorso quando serve. Questo non significa essere sempre produttivo: riposo, cambi di priorità e abbandono di obiettivi non più realistici possono essere forme sane di autoregolazione.");
+                "Nel complesso hai riconosciuto con poca frequenza gli ostacoli autoalimentati nelle quattro aree esplorate. Difficoltà di avvio, protezione dal giudizio, ricerca di sollievo immediato e rigidità nel percorso non formano, nelle tue risposte, un modello ampio e ricorrente.",
+                "Sembri generalmente capace di trasformare intenzioni in passi sostenibili, attraversare il disagio e adattare il percorso quando serve. Questo non significa essere sempre produttivo: riposo, cambi di priorità e abbandono di obiettivi non più realistici possono essere forme sane di autoregolazione. Eventuali blocchi circoscritti possono dipendere dalle caratteristiche dell'obiettivo, dalle risorse disponibili o da ostacoli esterni e meritano una lettura concreta, non moralistica.");
         saveGlobal(id, "MIXED", "Gli ostacoli emergono in alcune situazioni",
-                "Le risposte descrivono schemi variabili, più frequenti con alcuni obiettivi, emozioni o condizioni.",
-                "Potresti procedere con continuità in molti ambiti ma bloccarti quando aumentano pressione, giudizio, incertezza o fatica. Individuare quando e a quale costo accade è più utile dell'etichetta “autosabotaggio”, perché lo stesso comportamento può avere funzioni e cause differenti.");
+                "Le risposte descrivono ostacoli presenti in alcune aree e più contenuti in altre. La continuità tra intenzioni e azioni sembra quindi cambiare con il tipo di obiettivo, le emozioni coinvolte e le condizioni in cui provi a procedere.",
+                "Potresti avanzare con regolarità in molti ambiti ma bloccarti quando aumentano pressione, giudizio, incertezza o fatica. Nota quali passaggi interrompono il percorso, quale sollievo immediato ottieni e se strumenti, tempi o richieste dell'ambiente sono realistici. Individuare contesto e funzione è più utile dell'etichetta “autosabotaggio”, perché lo stesso comportamento può derivare da cause differenti.");
         saveGlobal(id, "FOCUSED", "Un meccanismo di autosabotaggio emerge con chiarezza",
-                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio.",
-                "Il profilo suggerisce di osservare il meccanismo prevalente: difficoltà ad avviare, protezione dal giudizio, ricerca di sollievo emotivo oppure scarsa flessibilità nel mantenere il percorso. Non attribuisce intenzioni e va letto insieme a risorse disponibili, salute, carico reale e caratteristiche dell'ambiente.");
+                "Una o due aree risultano particolarmente frequenti, mentre negli altri aspetti sembra esserci maggiore equilibrio. La presenza complessiva dipende quindi soprattutto da uno specifico punto di interruzione tra obiettivi e azioni, non da difficoltà uniformi in ogni fase del percorso.",
+                "Le schede sotto possono mostrare se il meccanismo prevalente riguarda avvio, protezione dal giudizio, sollievo emotivo oppure flessibilità nel mantenere e riprendere il percorso. Osserva antecedenti, conseguenze e condizioni in cui riesci invece a procedere, così da identificare supporti concreti senza trasformare il comportamento in un giudizio su di te. Non attribuisce intenzioni e va letto insieme a risorse disponibili, salute, carico reale e caratteristiche dell'ambiente.");
         saveGlobal(id, "BROAD", "Più meccanismi ostacolano i tuoi obiettivi",
-                "Le risposte indicano schemi frequenti in più aree, con una distanza ricorrente tra ciò che per te conta e le azioni che riesci a sostenere.",
-                "Procrastinazione, protezione dal giudizio, sollievo immediato e difficoltà a riprendere possono rinforzarsi a vicenda senza essere scelte consapevoli. Se il costo riguarda più ambiti o genera forte autocritica, un confronto professionale può aiutare a comprenderne funzione e contesto. Il risultato resta informativo e non diagnostico: non distingue da solo abitudini modificabili, ostacoli esterni, condizioni cliniche o difficoltà esecutive e non misura la tua forza di volontà.");
+                "Le risposte indicano schemi frequenti in almeno tre aree, con una distanza ricorrente tra ciò che per te conta e le azioni che riesci a sostenere. Avvio, gestione del giudizio e delle emozioni e capacità di adattare il percorso sembrano quindi ostacolarsi a vicenda anziché costituire episodi isolati.",
+                "Procrastinazione, protezione dal giudizio, sollievo immediato e difficoltà a riprendere possono rinforzarsi senza essere scelte consapevoli. Se il costo riguarda più ambiti o genera forte autocritica, un confronto professionale può aiutare a comprenderne funzione, sequenza e contesto. Il risultato resta informativo e non diagnostico: non distingue da solo abitudini modificabili, ostacoli esterni, condizioni cliniche o difficoltà esecutive e non misura la tua forza di volontà.");
 
         saveAreaInsights(id, "azione",
                 "Sembri generalmente capace di rendere concreti gli obiettivi e iniziare senza aspettare condizioni perfette, usando supporti quando servono.",
