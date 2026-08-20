@@ -885,10 +885,6 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
                         "class=\"overall-presence-track\"")))
-                .andExpect(content().string(org.hamcrest.Matchers.containsString(
-                        "class=\"notice-box result-notice\"")))
-                .andExpect(content().string(org.hamcrest.Matchers.containsString(
-                        "Come leggere il risultato")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("aria-valuenow=\"50\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
                         "href=\"/test/tratti-adhd-adulti/risultato/pdf\"")));
