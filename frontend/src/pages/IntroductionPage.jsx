@@ -46,7 +46,7 @@ export default function IntroductionPage({ guide, test }) {
         </div>
         <ul className="explored-areas">{test.areas.map((area) => <li key={area.code}>{area.name}</li>)}</ul>
         <div className="editorial-grid">
-          <Card className="editorial-card"><p className="eyebrow">Come funziona</p><h2>Una risposta alla volta</h2><p>Per ogni affermazione indicherai una frequenza da “Mai” a “Sempre”. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.</p></Card>
+          <Card className="editorial-card"><p className="eyebrow">Come funziona</p><h2>Una risposta alla volta</h2><p>Per ogni affermazione indicherai una frequenza da “Mai” a “Quasi sempre”, riferita al periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.</p></Card>
           <Card className="editorial-card"><p className="eyebrow">Il risultato</p><h2>Una lettura orientativa</h2><p>Il risultato riassume l'andamento generale e le aree esplorate. Le barre descrivono la frequenza delle risposte: non sono percentili, probabilità diagnostiche o misure di gravità clinica.</p></Card>
         </div>
         <section className="method-card">

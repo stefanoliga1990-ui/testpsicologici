@@ -15,7 +15,10 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Component
 public class ContentDataInitializer implements ApplicationRunner {
@@ -61,7 +64,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAutismInformationTest() {
         String id = "tratti-autistici-adulti";
-        String version = "2.1";
+        String version = "2.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -74,7 +77,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato: le esperienze descritte possono avere molte spiegazioni diverse. Per una valutazione dell'autismo è necessario rivolgersi a professionisti qualificati.",
                 version, false, true, 1).withSeo(
                 "Test autismo adulti online: questionario | Spazio Test",
-                "Questionario informativo per adulti su comunicazione sociale, routine e sensibilità sensoriale. 24 domande, 6 minuti, senza registrazione; non diagnostico."));
+                "Questionario informativo per adulti su comunicazione sociale, routine e sensibilità sensoriale. 24 domande, 6 minuti, senza registrazione; non diagnostico.")
+                .withResponseInstruction("Pensando a come ti capita abitualmente, con quale frequenza riconosci questa esperienza?"));
 
         saveReference(id, "Clinical testing and diagnosis for autism spectrum disorder — CDC",
                 "https://www.cdc.gov/autism/hcp/diagnosis/index.html", 1);
@@ -91,21 +95,21 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("sociale", "Dopo un incontro sociale ripenso a ciò che ho detto per capire se mi sono comportato come previsto."),
                 q("sociale", "Trovo faticoso mantenere una relazione quando le aspettative reciproche non vengono espresse chiaramente."),
                 q("sociale", "Quando qualcuno condivide un'emozione, non sempre capisco quale risposta si aspetta da me."),
-                q("sociale", "Le interazioni sociali prolungate mi richiedono uno sforzo consapevole o mi lasciano molto affaticato."),
+                q("sociale", "Durante interazioni sociali prolungate devo mantenere uno sforzo consapevole per partecipare."),
                 q("sociale", "Quando una conversazione cambia rapidamente tono o argomento, mi è difficile adattare il mio modo di partecipare."),
                 q("non_verbale", "Mi è difficile capire cosa prova una persona basandomi soltanto sull'espressione del viso o sul tono di voce."),
                 q("non_verbale", "Durante una conversazione devo pensare consapevolmente a quanto contatto visivo mantenere."),
-                q("non_verbale", "Posso interpretare in modo letterale battute, allusioni o richieste formulate indirettamente."),
+                q("non_verbale", "Interpreto in modo letterale battute, allusioni o richieste formulate indirettamente."),
                 q("non_verbale", "Preparo mentalmente parole, espressioni o tono di voce prima di affrontare alcune situazioni sociali."),
                 q("non_verbale", "Gesti, posture o regole sociali non dette possono risultarmi difficili da interpretare."),
                 q("non_verbale", "Mi capita di non accorgermi che qualcuno vuole concludere o cambiare una conversazione finché non lo dice chiaramente."),
-                q("routine", "Un cambiamento imprevisto nei programmi può provocarmi forte disagio o richiedermi tempo per adattarmi."),
+                q("routine", "Un cambiamento imprevisto nei programmi mi richiede molto tempo per adattarmi."),
                 q("routine", "Preferisco svolgere alcune attività seguendo ogni volta lo stesso ordine o la stessa procedura."),
                 q("routine", "Passare rapidamente da un'attività a un'altra può essere difficile, anche quando so cosa devo fare."),
-                q("routine", "Ripetere movimenti, parole, suoni o piccoli gesti mi aiuta a concentrarmi, calmarmi o regolare l'energia."),
+                q("routine", "Ripetere piccoli movimenti o gesti mi aiuta a calmarmi."),
                 q("routine", "Affronto meglio una situazione nuova quando posso conoscerne in anticipo dettagli e passaggi."),
                 q("routine", "Se non posso completare un'attività nel modo che avevo previsto, faccio fatica a lasciarla e passare oltre."),
-                q("sensoriale", "Posso concentrarmi così intensamente su un interesse da perdere la percezione del tempo o trascurare altre attività."),
+                q("sensoriale", "Mi concentro su un interesse fino a perdere la percezione del tempo."),
                 q("sensoriale", "Alcuni miei interessi occupano molto spazio nei miei pensieri e mi spingono ad approfondire ogni dettaglio."),
                 q("sensoriale", "Suoni, luci, odori, tessuti o temperature che altri tollerano possono risultarmi molto intensi o distraenti."),
                 q("sensoriale", "Cerco volontariamente particolari sensazioni, movimenti, consistenze o suoni perché mi fanno stare bene."),
@@ -145,7 +149,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAdhdInformationTest() {
         String id = "tratti-adhd-adulti";
-        String version = "2.1";
+        String version = "2.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -158,7 +162,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato: difficoltà simili possono dipendere da stress, sonno, ansia, depressione, altre condizioni o circostanze personali. Una diagnosi di ADHD richiede una valutazione specialistica della storia dello sviluppo, dell'impatto quotidiano e della presenza delle difficoltà in più contesti.",
                 version, false, true, 2).withSeo(
                 "Test ADHD adulti online: questionario | Spazio Test",
-                "Questionario informativo per adulti su attenzione, organizzazione, impulsività e irrequietezza. 24 domande, 6 minuti, senza registrazione; non diagnostico."));
+                "Questionario informativo per adulti su attenzione, organizzazione, impulsività e irrequietezza. 24 domande, 6 minuti, senza registrazione; non diagnostico.")
+                .withResponseInstruction("Pensando agli ultimi sei mesi, con quale frequenza ti è capitato?"));
 
         saveReference(id, "Attention deficit hyperactivity disorder: diagnosis and management — NICE NG87",
                 "https://www.nice.org.uk/guidance/ng87/chapter/recommendations", 1);
@@ -171,7 +176,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "irrequietezza", "Irrequietezza e bisogno di stimolazione", 4);
 
         saveQuestions(id, List.of(
-                q("attenzione", "Durante una lettura o una conversazione, la mia mente si sposta altrove anche quando cerco di restare concentrato."),
+                q("attenzione", "Durante una lettura prolungata, la mia mente si sposta altrove anche quando cerco di restare concentrato."),
                 q("attenzione", "Rumori, notifiche o pensieri improvvisi interrompono facilmente quello che sto facendo."),
                 q("attenzione", "Nelle attività che richiedono precisione mi capita di tralasciare dettagli o commettere errori di distrazione."),
                 q("attenzione", "Fatico a mantenere l'attenzione su attività lunghe, ripetitive o poco stimolanti."),
@@ -184,14 +189,14 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("organizzazione", "Rimando attività che richiedono concentrazione finché l'urgenza non mi costringe a iniziare."),
                 q("organizzazione", "Mi accorgo troppo tardi che più impegni, attività o scadenze si sovrappongono."),
                 q("impulsivita", "Interrompo le persone o completo le loro frasi prima che abbiano finito di parlare."),
-                q("impulsivita", "Prendo decisioni, faccio acquisti o accetto impegni rapidamente, valutando le conseguenze solo dopo."),
+                q("impulsivita", "Prendo decisioni rapidamente e ne valuto le conseguenze solo dopo."),
                 q("impulsivita", "Aspettare il mio turno in una conversazione, una fila o un'attività mi richiede molto autocontrollo."),
-                q("impulsivita", "Dico o faccio qualcosa nell'immediato e poco dopo vorrei averci pensato più a lungo."),
+                q("impulsivita", "Dico qualcosa d'impulso e poco dopo vorrei averci pensato più a lungo."),
                 q("impulsivita", "Abbandono un piano per seguire un'idea o un impulso appena comparso, anche se avevo altre priorità."),
                 q("impulsivita", "Nelle discussioni reagisco prima di aver compreso fino in fondo ciò che l'altra persona intende."),
                 q("irrequietezza", "Quando devo restare fermo a lungo avverto un'irrequietezza interna difficile da ignorare."),
                 q("irrequietezza", "Muovo mani o piedi, cambio spesso posizione o cerco occasioni per alzarmi."),
-                q("irrequietezza", "Mi è difficile riposare senza svolgere, controllare o pianificare contemporaneamente qualcos'altro."),
+                q("irrequietezza", "Mi è difficile riposare senza occuparmi contemporaneamente di qualcos'altro."),
                 q("irrequietezza", "Quando un'attività non mi coinvolge, cerco rapidamente novità o stimoli più interessanti."),
                 q("irrequietezza", "Attività molto lente o attese prolungate mi fanno sentire impaziente o agitato."),
                 q("irrequietezza", "Mi sento come se dovessi essere in movimento o impegnato, anche nei momenti in cui vorrei rallentare.")));
@@ -229,7 +234,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedObsessiveCompulsiveInformationTest() {
         String id = "tratti-ossessivo-compulsivi";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -242,7 +247,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato: pensieri indesiderati, dubbi e abitudini ripetitive possono comparire in molte persone e non indicano l'intenzione di agire su un pensiero. Una valutazione del disturbo ossessivo-compulsivo considera anche disagio, tempo occupato, interferenza con la vita quotidiana e possibili spiegazioni alternative.",
                 version, false, true, 3).withSeo(
                 "Test disturbo ossessivo-compulsivo (DOC) online | Spazio Test",
-                "Questionario informativo su pensieri ossessivi, compulsioni, dubbi, controlli e rituali. 24 domande, circa 6 minuti, senza registrazione; non diagnostico."));
+                "Questionario informativo su pensieri ossessivi, compulsioni, dubbi, controlli e rituali. 24 domande, circa 6 minuti, senza registrazione; non diagnostico.")
+                .withResponseInstruction("Pensando all'ultimo mese, con quale frequenza ti è capitato?"));
 
         saveReference(id, "Obsessive compulsive disorder (OCD): symptoms — NHS",
                 "https://www.nhs.uk/mental-health/conditions/obsessive-compulsive-disorder-ocd/symptoms/", 1);
@@ -256,7 +262,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
         saveQuestions(id, List.of(
                 q("intrusioni", "Pensieri, immagini o impulsi indesiderati tornano nella mia mente anche quando cerco di lasciarli andare."),
-                q("intrusioni", "Dubito di aver capito, ricordato o fatto qualcosa correttamente anche dopo averlo verificato."),
+                q("intrusioni", "Dubito di aver fatto qualcosa correttamente anche dopo averlo verificato."),
                 q("intrusioni", "Mi soffermo sul significato di un pensiero indesiderato e temo che dica qualcosa di negativo su di me."),
                 q("intrusioni", "Ho bisogno di sentirmi completamente certo prima di considerare chiusa una decisione o una situazione."),
                 q("intrusioni", "Cerco rassicurazioni da altre persone per calmare dubbi che tendono a ripresentarsi."),
@@ -267,7 +273,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("contaminazione", "Evito di toccare oggetti comuni o di frequentare alcuni luoghi per paura della contaminazione."),
                 q("contaminazione", "Separo o maneggio vestiti e oggetti secondo regole precise per evitare di diffondere sporco o contaminazione."),
                 q("contaminazione", "Pulizia, lavaggi o precauzioni contro la contaminazione rallentano o interrompono le mie attività."),
-                q("controllo", "Controllo più volte porte, elettrodomestici, messaggi o attività anche quando so di averlo già fatto."),
+                q("controllo", "Controllo più volte di aver chiuso una porta anche quando so di averlo già verificato."),
                 q("controllo", "Mi sento particolarmente responsabile di impedire eventi negativi, anche quando sono poco probabili."),
                 q("controllo", "Torno sui miei passi o riapro un'attività per assicurarmi di non aver lasciato un pericolo o un errore."),
                 q("controllo", "Ripercorro mentalmente ciò che ho fatto per verificare di non aver causato danni o conseguenze indesiderate."),
@@ -313,7 +319,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSelfEsteemInformationTest() {
         String id = "autostima";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -329,7 +335,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza delle difficoltà",
                 true, 4).withSeo(
                 "Test autostima online: questionario | Spazio Test",
-                "Questionario su valore personale, fiducia in sé, errori, critiche e confronto. 24 domande, 6 minuti, senza registrazione; non misura il tuo valore."));
+                "Questionario su valore personale, fiducia in sé, errori, critiche e confronto. 24 domande, 6 minuti, senza registrazione; non misura il tuo valore.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi, con quale frequenza ti è capitato?"));
 
         saveReference(id, "Rosenberg Self-Esteem Scale — University of Maryland",
                 "https://socy.umd.edu/about-us/rosenberg-self-esteem-scale", 1);
@@ -353,7 +360,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("fiducia", "Ho bisogno che un'altra persona confermi la mia opinione prima di fidarmi del mio giudizio."),
                 q("fiducia", "Evito di esprimere ciò che penso per paura che la mia opinione abbia poco valore."),
                 q("fiducia", "Faccio fatica a dire di no o a proteggere i miei bisogni perché temo di non avere il diritto di farlo."),
-                q("fiducia", "Attribuisco i miei successi alla fortuna o all'aiuto altrui, mentre considero gli errori una prova della mia incapacità."),
+                q("fiducia", "Considero gli errori una prova della mia incapacità, invece di valutarli come eventi specifici."),
                 q("autocritica", "Dopo un errore mi rivolgo parole più dure di quelle che userei con una persona a cui voglio bene."),
                 q("autocritica", "Ripenso a lungo ai miei sbagli anche quando non posso più modificarli."),
                 q("autocritica", "Un insuccesso in un ambito mi fa sentire incapace anche in aspetti non collegati."),
@@ -400,7 +407,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedEmotionalDependenceInformationTest() {
         String id = "dipendenza-affettiva";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -416,7 +423,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza delle dinamiche",
                 true, 5).withSeo(
                 "Test dipendenza affettiva online | Spazio Test",
-                "Questionario su paura dell'abbandono, rassicurazione, autonomia e confini nella relazione. 24 domande, 6 minuti, senza registrazione; non diagnostico."));
+                "Questionario su paura dell'abbandono, rassicurazione, autonomia e confini nella relazione. 24 domande, 6 minuti, senza registrazione; non diagnostico.")
+                .withResponseInstruction("Pensando alla relazione indicata nell'introduzione, con quale frequenza ti è capitato?"));
 
         saveReference(id, "I disturbi da addiction nelle dipendenze non legate a sostanze — Ministero della Salute",
                 "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_3313_allegato.pdf", 1);
@@ -449,10 +457,10 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("confini", "Controllo attentamente parole e comportamenti per evitare che l'altra persona si allontani o ritiri il proprio affetto."),
                 q("regolazione", "Il mio umore dipende molto dall'attenzione o dalla disponibilità che ricevo dall'altra persona."),
                 q("regolazione", "I pensieri sulla relazione occupano così tanto spazio da rendermi difficile concentrarmi su altro."),
-                q("regolazione", "Quando temo un allontanamento, cerco ripetutamente contatto o controllo messaggi e attività online."),
+                q("regolazione", "Quando temo un allontanamento, cerco ripetutamente di ristabilire il contatto."),
                 q("regolazione", "Dopo una rottura o un allontanamento sento un impulso forte a ristabilire il rapporto, anche sapendo che mi faceva stare male."),
-                q("regolazione", "Idealizzo l'altra persona o minimizzo incompatibilità importanti per proteggere l'immagine della relazione."),
-                q("regolazione", "Senza una relazione o un interesse affettivo mi sento vuoto, incompleto o privo di direzione.")));
+                q("regolazione", "Minimizzo incompatibilità importanti per proteggere l'immagine della relazione."),
+                q("regolazione", "Senza una relazione affettiva mi sento privo di direzione.")));
 
         saveGlobal(id, "LOW", "Legame e autonomia generalmente in equilibrio",
                 "Nel complesso hai indicato una presenza contenuta delle dinamiche di dipendenza affettiva esplorate.",
@@ -487,7 +495,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAssertivenessInformationTest() {
         String id = "assertivita";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -503,7 +511,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza dei comportamenti assertivi",
                 true, 6).withSeo(
                 "Test assertività online: questionario | Spazio Test",
-                "Questionario informativo su opinioni, bisogni, capacità di dire di no, confini e disaccordi. 24 domande, circa 6 minuti e nessuna registrazione."));
+                "Questionario informativo su opinioni, bisogni, capacità di dire di no, confini e disaccordi. 24 domande, circa 6 minuti e nessuna registrazione.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e ai diversi contesti, con quale frequenza lo hai fatto?"));
 
         saveReference(id, "A 30-Item Schedule for Assessing Assertive Behavior",
                 "https://doi.org/10.1016/S0005-7894(73)80120-0", 1);
@@ -518,7 +527,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveQuestions(id, List.of(
                 q("espressione", "Esprimo la mia opinione anche quando è diversa da quella delle persone presenti."),
                 q("espressione", "Comunico ciò di cui ho bisogno prima che il disagio si trasformi in frustrazione o risentimento."),
-                q("espressione", "Riesco a dire come mi sento parlando della mia esperienza senza accusare l'altra persona."),
+                q("espressione", "Descrivo come mi sento parlando della mia esperienza personale."),
                 q("espressione", "Quando una mia preferenza conta, la esprimo invece di adeguarmi automaticamente alle scelte altrui."),
                 q("espressione", "Intervengo quando una mia idea, un contributo o un merito non vengono riconosciuti correttamente."),
                 q("espressione", "Se vengo frainteso, chiarisco con calma ciò che intendevo dire o chiedere."),
@@ -531,7 +540,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("confronto", "Durante un disaccordo rimango sul problema concreto senza attaccare la persona o svalutarla."),
                 q("confronto", "Ascolto il punto di vista altrui senza sentirmi obbligato ad abbandonare il mio."),
                 q("confronto", "Quando ricevo una critica, cerco di valutarne la parte utile prima di difendermi o chiudermi."),
-                q("confronto", "Riconosco un mio errore senza lasciare che questo annulli il valore della mia posizione o della mia persona."),
+                q("confronto", "Riconosco un mio errore senza svalutare l'intera mia posizione."),
                 q("confronto", "Esprimo un disaccordo rispettoso anche con una persona autorevole o importante per me."),
                 q("confronto", "Affronto una tensione significativa invece di evitarla a lungo o accumulare risentimento."),
                 q("iniziativa", "Formulo richieste chiare anche quando esiste la possibilità che l'altra persona risponda di no."),
@@ -539,7 +548,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("iniziativa", "Prendo l'iniziativa per iniziare una conversazione o presentarmi in un contesto poco familiare."),
                 q("iniziativa", "Esprimo apprezzamento o affetto in modo diretto quando lo provo."),
                 q("iniziativa", "Accolgo un complimento o un riconoscimento senza sminuirlo o respingerlo automaticamente."),
-                q("iniziativa", "Nelle decisioni condivise propongo una soluzione negoziabile spiegando quali priorità sono importanti per me.")));
+                q("iniziativa", "Nelle decisioni condivise propongo soluzioni che tengono conto anche delle mie priorità.")));
 
         saveGlobal(id, "LOW", "La tua voce trova ancora poco spazio",
                 "Nel complesso hai indicato una frequenza contenuta dei comportamenti assertivi esplorati.",
@@ -574,7 +583,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedEmotionalIntelligenceInformationTest() {
         String id = "intelligenza-emotiva";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -590,7 +599,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza delle competenze emotive",
                 true, 7).withSeo(
                 "Test intelligenza emotiva online | Spazio Test",
-                "Questionario su consapevolezza, comprensione e regolazione delle emozioni proprie e altrui. 24 domande, circa 6 minuti; non misura un quoziente emotivo."));
+                "Questionario su consapevolezza, comprensione e regolazione delle emozioni proprie e altrui. 24 domande, circa 6 minuti; non misura un quoziente emotivo.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e a situazioni diverse, con quale frequenza lo hai fatto?"));
 
         saveReference(id, "The Ability Model of Emotional Intelligence: Principles and Updates",
                 "https://sites.usnh.edu/jdmayer/wp-content/uploads/sites/261/2024/03/rp2016-mayer-caruso-salovey.pdf", 1);
@@ -606,26 +616,26 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("percezione", "Mi accorgo dei segnali del corpo che accompagnano un'emozione prima che diventi molto intensa."),
                 q("percezione", "Riesco a dare un nome abbastanza preciso a ciò che provo invece di fermarmi a un generico stare bene o stare male."),
                 q("percezione", "Riconosco quando un'emozione sta aumentando, diminuendo o lasciando spazio a un'altra."),
-                q("percezione", "Noto il tono emotivo nella voce, nel volto o nella postura di una persona senza considerare infallibile la mia impressione."),
-                q("percezione", "Mi accorgo quando il mio stato emotivo sta influenzando il modo in cui parlo, ascolto o mi comporto."),
+                q("percezione", "Noto i segnali emotivi non verbali di una persona senza considerare infallibile la mia impressione."),
+                q("percezione", "Mi accorgo quando il mio stato emotivo sta influenzando il mio comportamento."),
                 q("percezione", "Quando non sono sicuro di ciò che prova qualcuno, verifico la mia interpretazione con domande rispettose."),
                 q("facilitazione", "Considero ciò che provo come un'informazione utile quando devo prendere una decisione importante."),
                 q("facilitazione", "Uso interesse, entusiasmo o disagio per capire meglio che cosa conta per me in una situazione."),
                 q("facilitazione", "Quando un'emozione intensa riduce la mia lucidità, rimando se possibile le decisioni impulsive finché riesco a valutarle meglio."),
-                q("facilitazione", "Adatto il modo di affrontare un compito al mio livello di energia, tensione o coinvolgimento emotivo."),
+                q("facilitazione", "Adatto il modo di affrontare un compito al mio stato emotivo."),
                 q("facilitazione", "Se sono bloccato in un unico punto di vista, cerco una prospettiva emotiva diversa per vedere nuove possibilità."),
                 q("facilitazione", "Distinguo l'impulso emotivo del momento dagli obiettivi e dai valori che voglio seguire nel lungo periodo."),
                 q("comprensione", "Collego ciò che provo a eventi, bisogni, aspettative o interpretazioni che possono averlo attivato."),
                 q("comprensione", "Riesco a riconoscere emozioni diverse o contrastanti presenti nello stesso momento."),
                 q("comprensione", "Comprendo come un'emozione possa trasformarsi, per esempio da irritazione a delusione o da timore a sollievo."),
-                q("comprensione", "Prima di una situazione importante considero quali reazioni emotive potrebbe suscitare in me e nelle altre persone."),
+                q("comprensione", "Prima di una situazione importante considero come potrei reagire emotivamente."),
                 q("comprensione", "Riesco a capire perché lo stesso evento può provocare emozioni diverse in persone diverse."),
                 q("comprensione", "Rivedo la mia lettura di una reazione emotiva quando emergono informazioni nuove sul contesto."),
                 q("regolazione", "Riesco a restare in contatto con un'emozione intensa senza dover agire subito o fingere che non esista."),
                 q("regolazione", "Scelgo strategie diverse per gestire le emozioni in base alla situazione, invece di usare sempre la stessa risposta."),
-                q("regolazione", "Esprimo ciò che provo e ciò di cui ho bisogno in modo comprensibile e rispettoso."),
+                q("regolazione", "Esprimo ciò che provo in modo comprensibile e rispettoso."),
                 q("regolazione", "Dopo una reazione emotiva forte riesco a recuperare e riflettere su ciò che è accaduto."),
-                q("regolazione", "Quando qualcuno condivide un'emozione, lo aiuto a sentirsi ascoltato senza minimizzare o cercare subito di risolvere tutto."),
+                q("regolazione", "Quando qualcuno condivide un'emozione, ascolto senza minimizzarla."),
                 q("regolazione", "Se il modo in cui sto gestendo un'emozione non aiuta, provo a cambiare strategia o a cercare sostegno.")));
 
         saveGlobal(id, "LOW", "Competenze emotive ancora poco accessibili",
@@ -661,7 +671,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPerfectionismInformationTest() {
         String id = "perfezionismo";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -677,7 +687,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza delle dinamiche perfezionistiche",
                 true, 8).withSeo(
                 "Test perfezionismo online | Spazio Test",
-                "Questionario su standard personali, paura degli errori, giudizio, dubbi e controllo. 24 domande, circa 6 minuti, senza registrazione; non diagnostico."));
+                "Questionario su standard personali, paura degli errori, giudizio, dubbi e controllo. 24 domande, circa 6 minuti, senza registrazione; non diagnostico.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e ai diversi ambiti della tua vita, con quale frequenza ti è capitato?"));
 
         saveReference(id, "The dimensions of perfectionism",
                 "https://doi.org/10.1007/BF01172967", 1);
@@ -703,17 +714,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("errori", "Mi critico per un errore con una durezza che non userei verso un'altra persona nella stessa situazione."),
                 q("errori", "Evito attività nuove quando temo di non riuscire a farle bene fin dall'inizio."),
                 q("giudizio", "Sento che le persone importanti per me si aspettano risultati molto elevati in quasi tutto ciò che faccio."),
-                q("giudizio", "Temo che rispetto, approvazione o affetto possano diminuire se commetto un errore o fallisco."),
-                q("giudizio", "Nascondo difficoltà, incertezze o errori per non apparire meno competente agli occhi degli altri."),
+                q("giudizio", "Temo che l'opinione che gli altri hanno di me peggiori se commetto un errore."),
+                q("giudizio", "Nascondo i miei errori per non apparire meno competente agli occhi degli altri."),
                 q("giudizio", "Confronto i miei risultati con le prestazioni migliori degli altri e finisco per sentirmi inadeguato."),
                 q("giudizio", "Interpreto un feedback correttivo come la prova che non sono stato all'altezza delle aspettative."),
-                q("giudizio", "Sento di dover apparire sempre preparato, efficiente e in controllo anche quando sono in difficoltà."),
+                q("giudizio", "Sento di dover apparire sempre competente anche quando sono in difficoltà."),
                 q("controllo", "Dedico a dettagli secondari molto più tempo di quanto il loro impatto sul risultato richiederebbe."),
                 q("controllo", "Rifaccio o ritocco attività già adeguate perché mi è difficile accettarle come concluse."),
                 q("controllo", "Fatico a delegare perché temo che il compito non venga svolto esattamente come ritengo necessario."),
                 q("controllo", "Un cambiamento imprevisto nel piano mi provoca una frustrazione intensa perché compromette il modo ideale di procedere."),
                 q("controllo", "Rimando l'inizio di un'attività finché non ho trovato il metodo, il momento o le condizioni che considero perfetti."),
-                q("controllo", "Mi è difficile prendere una decisione o chiudere un lavoro quando esistono ancora alternative da valutare o possibili miglioramenti.")));
+                q("controllo", "Mi è difficile prendere una decisione quando restano alternative da valutare.")));
 
         saveGlobal(id, "LOW", "Poche dinamiche perfezionistiche ricorrenti",
                 "Nel complesso hai indicato una presenza contenuta delle pressioni perfezionistiche esplorate.",
@@ -748,7 +759,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSocialAnxietyInformationTest() {
         String id = "ansia-sociale";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -764,7 +775,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza delle esperienze",
                 true, 9).withSeo(
                 "Test ansia sociale online | Spazio Test",
-                "Questionario informativo su paura del giudizio, tensione, autocontrollo ed evitamento sociale. 24 domande, circa 6 minuti, senza registrazione; non diagnostico."));
+                "Questionario informativo su paura del giudizio, tensione, autocontrollo ed evitamento sociale. 24 domande, circa 6 minuti, senza registrazione; non diagnostico.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e ai diversi contesti sociali, con quale frequenza ti è capitato?"));
 
         saveReference(id, "Social Anxiety Disorder: More Than Just Shyness — NIMH",
                 "https://www.nimh.nih.gov/health/publications/social-anxiety-disorder-more-than-just-shyness", 1);
@@ -777,18 +789,18 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "evitamento", "Anticipazione, evitamento e ripensamento", 4);
 
         saveQuestions(id, List.of(
-                q("valutazione", "Prima di parlare con altre persone temo di dire qualcosa di inappropriato, poco interessante o imbarazzante."),
+                q("valutazione", "Prima di parlare con altre persone temo di dire qualcosa di imbarazzante."),
                 q("valutazione", "Interpreto silenzi, espressioni neutre o risposte brevi come segnali che gli altri mi stanno giudicando negativamente."),
                 q("valutazione", "Temo che rossore, tremore, sudorazione, voce incerta o altri segnali d'ansia siano visibili e mi facciano apparire male."),
-                q("valutazione", "La possibilità di essere criticato, respinto o preso in giro mi provoca una forte preoccupazione nelle situazioni sociali."),
+                q("valutazione", "La possibilità di essere giudicato negativamente mi provoca una forte preoccupazione nelle situazioni sociali."),
                 q("valutazione", "Sento di dover controllare attentamente ciò che dico e faccio per evitare di dare un'impressione negativa."),
                 q("valutazione", "Un piccolo errore sociale mi sembra capace di compromettere a lungo l'opinione che gli altri hanno di me."),
                 q("interazione", "Parlare con persone che conosco poco mi provoca una tensione difficile da ignorare."),
                 q("interazione", "Mi è difficile iniziare una conversazione, presentarmi o trovare qualcosa da dire con persone nuove."),
                 q("interazione", "Quando l'attenzione si sposta su di me durante una conversazione, la mente può diventare vuota o confusa."),
-                q("interazione", "Esprimere un'opinione diversa, fare una richiesta o chiedere aiuto in presenza di altri mi crea forte disagio."),
+                q("interazione", "Fare una richiesta in presenza di altre persone mi crea forte disagio."),
                 q("interazione", "Nei gruppi controllo così tanto come sto apparendo da faticare a seguire e partecipare spontaneamente alla conversazione."),
-                q("interazione", "Situazioni come conoscere nuove persone, partecipare a eventi o creare un legame affettivo mi mettono in forte soggezione."),
+                q("interazione", "Conoscere nuove persone mi mette in forte soggezione."),
                 q("prestazione", "Parlare, presentare un lavoro o esibirmi davanti a un gruppo mi provoca molta ansia."),
                 q("prestazione", "Rispondere a una domanda o intervenire durante una riunione, una lezione o un incontro mi fa sentire fortemente esposto."),
                 q("prestazione", "Essere osservato mentre scrivo, mangio, lavoro o svolgo un'attività rende più difficile comportarmi con naturalezza."),
@@ -798,7 +810,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("evitamento", "Inizio a preoccuparmi per un evento sociale molto prima che accada, immaginando ciò che potrebbe andare storto."),
                 q("evitamento", "Rifiuto inviti, opportunità o attività perché temo il disagio o il giudizio che potrei provare."),
                 q("evitamento", "Durante le situazioni sociali uso accorgimenti per non farmi notare, come parlare poco, restare al telefono o preparare mentalmente ogni frase."),
-                q("evitamento", "Cerco di lasciare presto una situazione sociale o provo un forte sollievo quando viene annullata."),
+                q("evitamento", "Cerco di lasciare presto una situazione sociale a causa dell'ansia."),
                 q("evitamento", "Dopo un'interazione ripenso a lungo a ciò che ho detto o fatto, concentrandomi soprattutto sui possibili errori."),
                 q("evitamento", "L'ansia sociale condiziona scelte importanti relative a relazioni, studio, lavoro o attività che vorrei svolgere.")));
 
@@ -835,7 +847,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPerceivedNarcissisticRelationshipDynamicsTest() {
         String id = "dinamiche-narcisistiche-partner";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -851,7 +863,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza delle dinamiche osservate",
                 true, 10).withSeo(
                 "Test partner narcisista: dinamiche di coppia | Spazio Test",
-                "Questionario sulle dinamiche percepite nel partner: reciprocità, confronto, confini e impatto emotivo. 24 domande; non etichetta né diagnostica la persona."));
+                "Questionario sulle dinamiche percepite nel partner: reciprocità, confronto, confini e impatto emotivo. 24 domande; non etichetta né diagnostica la persona.")
+                .withResponseInstruction("Pensando a episodi concreti degli ultimi tre mesi, con quale frequenza è accaduto?"));
 
         saveReference(id, "Narcissistic Personality Disorder — Merck Manual Professional Edition",
                 "https://www.merckmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd", 1);
@@ -865,7 +878,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
         saveQuestions(id, List.of(
                 q("reciprocita", "Quando racconto un problema, il mio partner riporta presto la conversazione su di sé o sui propri bisogni."),
-                q("reciprocita", "Il mio partner minimizza, mette in dubbio o svaluta ciò che provo quando le mie emozioni sono scomode per lui o lei."),
+                q("reciprocita", "Il mio partner svaluta ciò che provo quando le mie emozioni sono scomode per lui o lei."),
                 q("reciprocita", "Il mio partner fatica a riconoscere l'effetto che le sue parole o azioni hanno su di me."),
                 q("reciprocita", "Il sostegno del mio partner diminuisce quando ciò di cui ho bisogno entra in conflitto con i suoi programmi o desideri."),
                 q("reciprocita", "Nella relazione, i bisogni e gli interessi del mio partner ricevono più spazio dei miei."),
@@ -877,17 +890,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("centralita", "Le decisioni di coppia finiscono frequentemente per ruotare intorno alle priorità e all'immagine del mio partner."),
                 q("centralita", "Quando ottengo un successo, il mio partner tende a ridimensionarlo, competere o spostare il merito e l'attenzione su di sé."),
                 q("confronto", "Il mio partner interpreta osservazioni o richieste ordinarie come attacchi, mancanze di rispetto o umiliazioni."),
-                q("confronto", "Di fronte a una critica, il mio partner reagisce con rabbia, disprezzo, freddezza o ritiro prolungato."),
+                q("confronto", "Di fronte a una critica, il mio partner interrompe a lungo il dialogo."),
                 q("confronto", "Durante i conflitti, il mio partner attribuisce a me o ad altri quasi tutta la responsabilità di ciò che è accaduto."),
                 q("confronto", "Il mio partner fatica a scusarsi in modo concreto e a modificare il comportamento che mi ha ferito."),
                 q("confronto", "Quando non sono d'accordo, il mio partner svaluta la mia competenza, sensibilità o credibilità invece di discutere il problema."),
                 q("confronto", "Dopo un conflitto, mi viene richiesto di rassicurare o riavvicinare il mio partner prima che ci sia spazio per il mio punto di vista."),
                 q("confini", "Il mio partner fa pressione perché io modifichi amicizie, attività, abitudini o scelte personali secondo le sue preferenze."),
-                q("confini", "Il mio partner usa colpa, silenzio, minacce di rottura o ritiro dell'affetto per influenzare le mie decisioni."),
+                q("confini", "Il mio partner usa il senso di colpa per influenzare le mie decisioni."),
                 q("confini", "Il mio partner passa dal valorizzarmi molto allo svalutarmi quando non soddisfo le sue aspettative."),
                 q("confini", "Il mio partner oltrepassa limiti che ho espresso chiaramente, per esempio riguardo privacy, tempo, denaro, corpo o relazioni sociali."),
                 q("confini", "Controllo attentamente ciò che dico o faccio per evitare reazioni sproporzionate del mio partner."),
-                q("confini", "Questa relazione mi lascia frequentemente confuso, sminuito, isolato o meno libero di riconoscere i miei bisogni.")));
+                q("confini", "Questa relazione mi lascia frequentemente meno libero di riconoscere e proteggere i miei bisogni.")));
 
         saveGlobal(id, "LOW", "Poche dinamiche relazionali di questo tipo",
                 "Nel complesso hai indicato una presenza contenuta delle dinamiche esplorate dal questionario.",
@@ -922,7 +935,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedGeneralizedAnxietyInformationTest() {
         String id = "ansia-generalizzata";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -938,7 +951,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza delle esperienze",
                 true, 11).withSeo(
                 "Test ansia generalizzata online | Spazio Test",
-                "Questionario informativo su preoccupazione diffusa, tensione, affaticamento, sonno e impatto quotidiano. 24 domande, circa 6 minuti; non diagnostico."));
+                "Questionario informativo su preoccupazione diffusa, tensione, affaticamento, sonno e impatto quotidiano. 24 domande, circa 6 minuti; non diagnostico.")
+                .withResponseInstruction("Pensando agli ultimi sei mesi, con quale frequenza ti è capitato?"));
 
         saveReference(id, "Generalized Anxiety Disorder: What You Need to Know — NIMH",
                 "https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad", 1);
@@ -957,22 +971,22 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("preoccupazione", "Anticipo conseguenze negative anche quando ho poche informazioni che facciano pensare che accadranno."),
                 q("preoccupazione", "Sento il bisogno di prevedere e prepararmi a molti possibili problemi prima di riuscire a sentirmi tranquillo."),
                 q("preoccupazione", "Anche quando riconosco che una preoccupazione è sproporzionata, continuo a rimuginarci sopra."),
-                q("attivazione", "Mi sento in allerta, irrequieto o sul punto che possa accadere qualcosa di negativo."),
+                q("attivazione", "Mi sento in allerta anche quando non ci sono pericoli immediati."),
                 q("attivazione", "Accumulo tensione nei muscoli, per esempio a mandibola, collo, spalle, schiena o mani."),
                 q("attivazione", "Faccio fatica a rilassare davvero il corpo anche quando ho tempo libero e non ci sono problemi immediati."),
                 q("attivazione", "Rumori, imprevisti o richieste improvvise mi fanno sobbalzare o reagire con una forte tensione."),
                 q("attivazione", "Nei periodi di preoccupazione avverto disturbi fisici come mal di testa, fastidi allo stomaco, tremore o sudorazione."),
                 q("attivazione", "Dopo una situazione stressante, il mio corpo rimane attivato a lungo anche quando il problema è terminato."),
                 q("risorse", "Le preoccupazioni interrompono la concentrazione mentre lavoro, studio, leggo o seguo una conversazione."),
-                q("risorse", "Quando devo decidere o risolvere un problema, la mente diventa confusa o sembra bloccarsi."),
-                q("risorse", "Mi sento mentalmente o fisicamente affaticato anche dopo giornate che non richiederebbero uno sforzo eccezionale."),
+                q("risorse", "Quando devo risolvere un problema, la mente sembra bloccarsi."),
+                q("risorse", "Mi sento affaticato anche dopo giornate che non richiederebbero uno sforzo eccezionale."),
                 q("risorse", "Le normali richieste quotidiane mi sembrano più faticose perché una parte della mia attenzione resta assorbita dall'ansia."),
                 q("risorse", "Quando sono preoccupato divento facilmente irritabile, impaziente o sensibile alle piccole difficoltà."),
-                q("risorse", "Valutare tutti i possibili rischi rende difficile scegliere, stabilire priorità o iniziare un compito."),
+                q("risorse", "Valutare tutti i possibili rischi rende difficile prendere una decisione."),
                 q("impatto", "Faccio fatica ad addormentarmi perché la mente continua a esaminare problemi o scenari futuri."),
                 q("impatto", "Mi sveglio durante la notte con pensieri di preoccupazione che rendono difficile riprendere sonno."),
                 q("impatto", "Al risveglio mi sento poco riposato perché tensione o pensieri hanno disturbato il sonno."),
-                q("impatto", "Rimando decisioni, attività o opportunità perché l'incertezza mi fa temere conseguenze negative."),
+                q("impatto", "Rimando decisioni perché l'incertezza mi fa temere conseguenze negative."),
                 q("impatto", "La preoccupazione interferisce con lavoro, studio, relazioni, cura di me o gestione delle attività quotidiane."),
                 q("impatto", "Fatico a godermi un momento positivo o a essere presente perché sto già pensando a ciò che potrebbe andare storto.")));
 
@@ -1009,7 +1023,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedDepressedMoodInformationTest() {
         String id = "umore-depresso";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1025,7 +1039,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza delle esperienze",
                 true, 12).withSeo(
                 "Test depressione online: umore e sintomi | Spazio Test",
-                "Questionario su umore, interesse, energia e funzionamento nelle ultime due settimane. 24 domande; non diagnostico e non valuta il rischio suicidario."));
+                "Questionario su umore, interesse, energia e funzionamento nelle ultime due settimane. 24 domande; non diagnostico e non valuta il rischio suicidario.")
+                .withResponseInstruction("Pensando alle ultime due settimane, con quale frequenza ti è capitato?"));
 
         saveReference(id, "Depressive disorder — World Health Organization",
                 "https://www.who.int/news-room/fact-sheets/detail/depression", 1);
@@ -1041,8 +1056,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("umore", "Mi sento triste, vuoto o emotivamente abbattuto per gran parte della giornata."),
                 q("umore", "Le attività che di solito mi interessano o mi coinvolgono hanno perso attrattiva."),
                 q("umore", "Faccio fatica a provare piacere o soddisfazione anche quando accade qualcosa di positivo."),
-                q("umore", "Mi sento più irritabile, frustrato o emotivamente sensibile del solito."),
-                q("umore", "Tendo a ritirarmi dalle persone perché mi sento distante, spento o poco partecipe."),
+                q("umore", "Mi sento più irritabile del solito."),
+                q("umore", "Tendo a ritirarmi dalle persone perché mi sento emotivamente distante."),
                 q("umore", "Il tono dell'umore rimane basso anche quando ricevo sostegno o vivo un momento favorevole."),
                 q("energia", "Inizio la giornata con poca energia, come se le mie risorse fossero già ridotte."),
                 q("energia", "Attività quotidiane semplici richiedono uno sforzo molto maggiore del solito."),
@@ -1053,14 +1068,14 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("pensieri", "Giudico me stesso in modo prevalentemente negativo, anche per caratteristiche o difficoltà comuni."),
                 q("pensieri", "Provo un senso di colpa intenso o mi attribuisco responsabilità maggiori di quelle che ho realmente."),
                 q("pensieri", "Interpreto errori o risultati deludenti come prove del mio scarso valore personale."),
-                q("pensieri", "Mi sento inutile, di peso o poco importante per le persone che mi circondano."),
+                q("pensieri", "Mi sento inutile."),
                 q("pensieri", "Immagino il futuro come privo di possibilità positive o di cambiamenti significativi."),
-                q("pensieri", "Faccio fatica a riconoscere le mie capacità, i risultati raggiunti o ciò che di buono porto nelle relazioni."),
+                q("pensieri", "Faccio fatica a riconoscere le mie capacità."),
                 q("funzionamento", "Faccio fatica ad addormentarmi, mi sveglio spesso o mi sveglio molto prima del previsto."),
                 q("funzionamento", "Dormo molto più del solito o faccio fatica ad alzarmi anche dopo molte ore di sonno."),
                 q("funzionamento", "Il mio appetito è diminuito o aumentato in modo evidente rispetto al mio equilibrio abituale."),
                 q("funzionamento", "Faccio fatica a concentrarmi, ricordare informazioni o seguire un'attività fino alla fine."),
-                q("funzionamento", "Anche decisioni semplici diventano lente, pesanti o difficili da prendere."),
+                q("funzionamento", "Anche decisioni semplici diventano difficili da prendere."),
                 q("funzionamento", "Il mio stato emotivo interferisce con lavoro, studio, relazioni, cura personale o gestione della vita quotidiana.")));
 
         saveGlobal(id, "LOW", "Umore generalmente preservato",
@@ -1096,7 +1111,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPeoplePleasingInformationTest() {
         String id = "people-pleasing";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1112,7 +1127,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza delle dinamiche",
                 true, 13).withSeo(
                 "Test people pleaser: approvazione e confini | Spazio Test",
-                "Questionario informativo su people pleasing, bisogno di approvazione, confini e difficoltà a dire di no. 24 domande, circa 6 minuti, senza registrazione."));
+                "Questionario informativo su people pleasing, bisogno di approvazione, confini e difficoltà a dire di no. 24 domande, circa 6 minuti, senza registrazione.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e a relazioni diverse, con quale frequenza ti è capitato?"));
 
         saveReference(id, "Distinctions of unmitigated communion from communion",
                 "https://pubmed.ncbi.nlm.nih.gov/9686454/", 1);
@@ -1128,25 +1144,25 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("approvazione", "Cambio opinione o preferenza quando percepisco che potrebbe non piacere alle persone presenti."),
                 q("approvazione", "Cerco conferme che gli altri siano contenti di me prima di sentirmi tranquillo in una relazione."),
                 q("approvazione", "Interpreto il disappunto di una persona come un possibile segnale di rifiuto o allontanamento."),
-                q("approvazione", "Mi scuso o mi assumo la colpa rapidamente, anche prima di capire se la responsabilità sia davvero mia."),
+                q("approvazione", "Mi assumo rapidamente la colpa, anche prima di capire se la responsabilità sia davvero mia."),
                 q("approvazione", "Il mio umore dipende molto dal sapere che le persone intorno a me sono soddisfatte di ciò che faccio."),
                 q("approvazione", "Cerco di essere apprezzato anche da persone la cui opinione, a mente fredda, non è importante per me."),
                 q("confini", "Accetto richieste quando vorrei dire di no, per evitare di deludere o sembrare egoista."),
-                q("confini", "Fatico a rifiutare una richiesta improvvisa o eccessiva se l'altra persona sembra aver bisogno di me."),
+                q("confini", "Fatico a rifiutare una richiesta eccessiva se l'altra persona sembra aver bisogno di me."),
                 q("confini", "Quando pongo un limite, sento di doverlo giustificare a lungo perché sia considerato legittimo."),
-                q("confini", "Modifico programmi, riposo o priorità personali per assecondare gli altri anche quando non è realmente necessario."),
+                q("confini", "Modifico i miei programmi per assecondare gli altri anche quando non è realmente necessario."),
                 q("confini", "Dopo aver detto di no provo colpa o ansia e ripenso a lungo alla possibile reazione dell'altra persona."),
                 q("confini", "Se qualcuno insiste dopo un mio rifiuto, finisco spesso per cedere anche se il mio limite non è cambiato."),
                 q("silenzio", "Evito di esprimere un disaccordo per non creare tensione o cambiare l'immagine positiva che gli altri hanno di me."),
-                q("silenzio", "Nascondo rabbia, delusione o ferite per mantenere un clima sereno nella relazione."),
-                q("silenzio", "Adatto molto il mio modo di parlare, comportarmi o mostrarmi a seconda di ciò che penso gli altri preferiscano."),
+                q("silenzio", "Nascondo la rabbia per mantenere un clima sereno nella relazione."),
+                q("silenzio", "Adatto molto il mio comportamento a ciò che penso gli altri preferiscano."),
                 q("silenzio", "Rinuncio a chiedere aiuto o sostegno perché non voglio pesare sugli altri."),
-                q("silenzio", "Mostro accordo o entusiasmo anche quando dentro di me penso o sento qualcosa di diverso."),
+                q("silenzio", "Mostro accordo anche quando penso qualcosa di diverso."),
                 q("silenzio", "Dopo un conflitto mi concentro sul ristabilire subito l'armonia prima che il mio problema sia stato davvero ascoltato."),
-                q("sacrificio", "Mi sento responsabile di risolvere l'umore, i problemi o il disagio delle persone a cui tengo."),
+                q("sacrificio", "Mi sento responsabile di migliorare l'umore delle persone a cui tengo."),
                 q("sacrificio", "Cerco di anticipare i bisogni degli altri senza aspettare che vengano espressi, per evitare loro qualsiasi difficoltà."),
                 q("sacrificio", "Continuo ad aiutare anche quando sono stanco, sovraccarico o avrei bisogno di fermarmi."),
-                q("sacrificio", "Rimando cura personale, obiettivi o attività importanti per occuparmi delle priorità altrui."),
+                q("sacrificio", "Rimando la cura personale per occuparmi delle priorità altrui."),
                 q("sacrificio", "Mi sento particolarmente utile o degno di affetto quando qualcuno ha bisogno di me."),
                 q("sacrificio", "Dopo essermi reso molto disponibile, provo risentimento o esaurimento perché i miei bisogni sono rimasti in secondo piano.")));
 
@@ -1183,7 +1199,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedImpostorPhenomenonInformationTest() {
         String id = "sindrome-impostore";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1199,7 +1215,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza delle esperienze",
                 true, 14).withSeo(
                 "Test sindrome dell'impostore online | Spazio Test",
-                "Questionario informativo su successi, dubbi di competenza, perfezionismo e paura di essere smascherati. 24 domande, circa 6 minuti; non diagnostico."));
+                "Questionario informativo su successi, dubbi di competenza, perfezionismo e paura di essere smascherati. 24 domande, circa 6 minuti; non diagnostico.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e ai contesti per te significativi, con quale frequenza ti è capitato?"));
 
         saveReference(id, "The imposter phenomenon in high achieving women",
                 "https://doi.org/10.1037/h0086006", 1);
@@ -1216,8 +1233,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("attribuzione", "Considero complimenti e riconoscimenti più come gentilezza altrui che come riscontri attendibili sul mio lavoro."),
                 q("attribuzione", "Quando valuto la mia competenza, fatico a tenere presenti i risultati positivi già ottenuti."),
                 q("attribuzione", "Un successo mi dà sollievo sul momento, ma non aumenta la fiducia con cui affronto il compito successivo."),
-                q("attribuzione", "Ridimensiono il mio contributo e sottolineo l'aiuto ricevuto anche quando il mio apporto è stato importante."),
-                q("attribuzione", "Quando raggiungo un obiettivo difficile, alzo subito lo standard invece di riconoscere ciò che ho saputo fare."),
+                q("attribuzione", "Ridimensiono il mio contributo anche quando il mio apporto è stato importante."),
+                q("attribuzione", "Quando raggiungo un obiettivo difficile, alzo subito lo standard successivo."),
                 q("esposizione", "Temo che gli altri scoprano che so o valgo meno di quanto pensano."),
                 q("esposizione", "Ho la sensazione di aver dato un'immagine eccessiva delle mie capacità, anche senza aver cercato di ingannare nessuno."),
                 q("esposizione", "Davanti a una nuova responsabilità mi chiedo se merito davvero il ruolo o l'opportunità ricevuta."),
@@ -1229,13 +1246,13 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("prestazione", "Un piccolo errore mi sembra una prova generale della mia scarsa competenza."),
                 q("prestazione", "Fatico a considerare concluso un compito perché continuo a controllarlo o perfezionarlo."),
                 q("prestazione", "Solo un risultato quasi impeccabile mi sembra una conferma sufficiente di essere all'altezza."),
-                q("prestazione", "Quando la mia prestazione sarà visibile agli altri, alterno sovraccarico di lavoro ed evitamento."),
+                q("prestazione", "Quando la mia prestazione sarà visibile agli altri, tendo a sovraccaricarmi di lavoro."),
                 q("impatto", "Confronto i miei dubbi interiori con la sicurezza che gli altri mostrano all'esterno."),
                 q("impatto", "Svaluto i feedback positivi e resto concentrato soprattutto su quelli negativi o ambigui."),
-                q("impatto", "Rinuncio a candidarmi, espormi o assumere un'opportunità finché non mi sento completamente pronto."),
+                q("impatto", "Rinuncio a candidarmi a un'opportunità finché non mi sento completamente pronto."),
                 q("impatto", "Quando devo presentare le mie capacità o i miei risultati, tendo a minimizzarli."),
                 q("impatto", "Un successo aumenta soprattutto la pressione a mantenere le aspettative, invece della soddisfazione."),
-                q("impatto", "I dubbi sul mio valore riducono la partecipazione, le decisioni, il riposo o il piacere per ciò che faccio.")));
+                q("impatto", "I dubbi sul mio valore mi portano a partecipare meno alle attività che contano per me.")));
 
         saveGlobal(id, "LOW", "Successi e competenze generalmente riconosciuti",
                 "Nel complesso hai indicato una presenza contenuta delle esperienze associate al fenomeno dell'impostore.",
@@ -1270,7 +1287,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSelfSabotageInformationTest() {
         String id = "autosabotaggio";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1286,7 +1303,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza degli ostacoli",
                 true, 15).withSeo(
                 "Test autosabotaggio online | Spazio Test",
-                "Questionario informativo su procrastinazione, evitamento e ostacoli tra intenzioni e obiettivi. 24 domande, circa 6 minuti, senza registrazione."));
+                "Questionario informativo su procrastinazione, evitamento e ostacoli tra intenzioni e obiettivi. 24 domande, circa 6 minuti, senza registrazione.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e a obiettivi scelti da te, con quale frequenza ti è capitato?"));
 
         saveReference(id, "Self-defeating behavior patterns among normal individuals",
                 "https://pubmed.ncbi.nlm.nih.gov/3043527/", 1);
@@ -1304,25 +1322,25 @@ public class ContentDataInitializer implements ApplicationRunner {
                 q("azione", "Mantengo gli obiettivi vaghi, senza tradurli in passi o tempi concreti, anche quando così è più difficile realizzarli."),
                 q("azione", "Riempio il tempo con compiti secondari o urgenti per non affrontare quello che considero davvero prioritario."),
                 q("azione", "Sottovaluto il tempo necessario e comincio soltanto quando la pressione è già elevata."),
-                q("azione", "Pur sapendo quali promemoria, condizioni o aiuti mi servirebbero, non li preparo e finisco per bloccarmi di nuovo."),
+                q("azione", "Non preparo in anticipo gli strumenti che so potrebbero aiutarmi a iniziare."),
                 q("protezione", "Quando un risultato potrebbe essere giudicato, investo meno impegno di quanto potrei per non mettere davvero alla prova le mie capacità."),
                 q("protezione", "Prima di una prova importante accumulo impegni o condizioni che potranno spiegare un eventuale risultato negativo."),
-                q("protezione", "Evito feedback, chiarimenti o aiuto anche quando potrebbero migliorare il risultato, perché confrontarmi con le mie lacune mi mette a disagio."),
+                q("protezione", "Evito feedback che potrebbero migliorare il risultato perché confrontarmi con le mie lacune mi mette a disagio."),
                 q("protezione", "Non provo a cogliere un'opportunità realistica quando comporta il rischio visibile di un rifiuto o di un giudizio."),
                 q("protezione", "Dichiaro in anticipo che un obiettivo non mi interessa molto o che andrà male, per proteggermi da un possibile insuccesso."),
                 q("protezione", "Scelgo obiettivi troppo facili o quasi impossibili invece di una sfida realistica che permetterebbe di valutare il mio progresso."),
                 q("emozioni", "Quando un compito suscita ansia, noia o frustrazione, passo rapidamente a un'attività che mi distrae."),
                 q("emozioni", "Scelgo un sollievo immediato anche quando prevedo che renderà più difficile ciò che conta per me in seguito."),
                 q("emozioni", "Dopo un errore, vergogna o autocritica occupano lo spazio che potrei usare per correggere o riprovare."),
-                q("emozioni", "Rimando conversazioni o decisioni scomode finché le conseguenze diventano più difficili da gestire."),
+                q("emozioni", "Rimando conversazioni scomode finché le conseguenze diventano più difficili da gestire."),
                 q("emozioni", "Più un obiettivo è importante per me, più le emozioni che suscita mi portano a evitarlo."),
-                q("emozioni", "Quando sono sotto pressione trascuro riposo o routine di base, anche se questo peggiora la mia capacità di proseguire."),
+                q("emozioni", "Quando sono sotto pressione trascuro il riposo, anche se questo peggiora la mia capacità di proseguire."),
                 q("direzione", "Inizio cambiamenti molto ambiziosi con grande slancio e li abbandono quando non riesco a sostenerne il ritmo."),
                 q("direzione", "Un'interruzione o un passo mancato diventa per me un motivo per considerare compromesso l'intero percorso."),
-                q("direzione", "Continuo a usare una strategia che non funziona invece di modificarla o chiedere un confronto."),
+                q("direzione", "Continuo a usare una strategia che non funziona invece di modificarla."),
                 q("direzione", "Abbandono obiettivi ancora realistici prima di aver dedicato loro un impegno abbastanza regolare da valutarli."),
                 q("direzione", "Ripeto scelte che entrano prevedibilmente in conflitto con le mie priorità, anche dopo aver riconosciuto lo schema."),
-                q("direzione", "Dopo una pausa faccio fatica a riprendere con un passo più piccolo e rimango fermo più a lungo del necessario.")));
+                q("direzione", "Dopo una pausa faccio fatica a riprendere anche con un passo più piccolo.")));
 
         saveGlobal(id, "LOW", "Scelte generalmente coerenti con i tuoi obiettivi",
                 "Nel complesso hai indicato una presenza contenuta degli ostacoli autoalimentati esplorati dal questionario.",
@@ -1378,9 +1396,17 @@ public class ContentDataInitializer implements ApplicationRunner {
     private void saveArea(String testId, String code, String name, int order) { areaRepository.save(new TestAreaEntity(testId, code, name, order)); }
     private QuestionSeed q(String areaCode, String text) { return new QuestionSeed(areaCode, text); }
     private void saveQuestions(String testId, List<QuestionSeed> questions) {
-        for (int index = 0; index < questions.size(); index++) {
-            QuestionSeed question = questions.get(index);
-            questionRepository.save(new TestQuestionEntity(testId, question.areaCode(), index + 1, question.text()));
+        Map<String, List<QuestionSeed>> questionsByArea = questions.stream()
+                .collect(Collectors.groupingBy(QuestionSeed::areaCode, LinkedHashMap::new, Collectors.toList()));
+        int longestArea = questionsByArea.values().stream().mapToInt(List::size).max().orElse(0);
+        int position = 1;
+        for (int offset = 0; offset < longestArea; offset++) {
+            for (List<QuestionSeed> areaQuestions : questionsByArea.values()) {
+                if (offset < areaQuestions.size()) {
+                    QuestionSeed question = areaQuestions.get(offset);
+                    questionRepository.save(new TestQuestionEntity(testId, question.areaCode(), position++, question.text()));
+                }
+            }
         }
     }
     private void saveGlobal(String testId, String code, String title, String description, String detail) {

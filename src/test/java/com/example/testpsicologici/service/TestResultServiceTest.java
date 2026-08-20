@@ -28,7 +28,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("2.1");
+        assertThat(test.version()).isEqualTo("2.2");
         assertThat(test.seoTitle()).startsWith("Test autismo adulti online");
         assertThat(test.seoDescription()).contains("senza registrazione");
         assertThat(test.references()).hasSize(2);
@@ -75,7 +75,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("2.1");
+        assertThat(test.version()).isEqualTo("2.2");
     }
 
     @Test
@@ -105,7 +105,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.2");
+        assertThat(test.version()).isEqualTo("1.3");
     }
 
     @Test
@@ -144,7 +144,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.overallMetricLabel()).isEqualTo("Difficoltà complessive relative all'autostima");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle difficoltà");
     }
@@ -180,7 +180,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche esplorate");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche");
     }
@@ -217,7 +217,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva dei comportamenti assertivi");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza dei comportamenti assertivi");
     }
@@ -254,7 +254,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle competenze emotive esplorate");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle competenze emotive");
     }
@@ -291,7 +291,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche perfezionistiche");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche perfezionistiche");
     }
@@ -328,7 +328,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze di ansia sociale");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
     }
@@ -366,21 +366,21 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.introductoryText()).contains("non può stabilire", "valutazione clinica diretta", "112", "1522");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche osservate");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche osservate");
     }
 
     @Test
-    void perceivedNarcissisticDynamicsFocusedProfileShowsTheMostRelevantAreaFirst() {
+    void perceivedNarcissisticDynamicsFocusedProfileKeepsTheoreticalAreaOrder() {
         TestResult result = analyzeWithAnswersForTest("dinamiche-narcisistiche-partner", 1, 1, 1, 5);
 
         assertThat(result.general().title()).isEqualTo("Un'area relazionale richiede attenzione");
         assertThat(result.areaResults()).hasSize(4);
-        assertThat(result.areaResults().get(0).title()).isEqualTo("Confini, controllo e impatto sulla relazione");
-        assertThat(result.areaResults().get(0).description()).contains("indipendentemente da qualsiasi etichetta diagnostica");
-        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(3).title()).isEqualTo("Confini, controllo e impatto sulla relazione");
+        assertThat(result.areaResults().get(3).description()).contains("indipendentemente da qualsiasi etichetta diagnostica");
+        assertThat(result.areaResults().get(3).percentage()).isEqualTo(100);
     }
 
     @Test
@@ -405,7 +405,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.introductoryText()).contains("ultimi sei mesi", "condizioni mediche", "Non è uno strumento diagnostico");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze di ansia");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
@@ -444,7 +444,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.introductoryText()).contains("ultime due settimane", "non valuta il rischio suicidario", "112", "Pronto Soccorso");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze legate all'umore");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
@@ -485,21 +485,21 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.introductoryText()).contains("non una diagnosi", "differenze di potere", "strategia protettiva");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche di compiacenza");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche");
     }
 
     @Test
-    void peoplePleasingFocusedProfileShowsTheMostRelevantAreaFirst() {
+    void peoplePleasingFocusedProfileKeepsTheoreticalAreaOrder() {
         TestResult result = analyzeWithAnswersForTest("people-pleasing", 1, 1, 1, 5);
 
         assertThat(result.general().title()).isEqualTo("Un meccanismo di compiacenza emerge con chiarezza");
         assertThat(result.areaResults()).hasSize(4);
-        assertThat(result.areaResults().get(0).title()).isEqualTo("Sovraresponsabilità e trascuratezza di sé");
-        assertThat(result.areaResults().get(0).description()).contains("sovraresponsabilità frequente");
-        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(3).title()).isEqualTo("Sovraresponsabilità e trascuratezza di sé");
+        assertThat(result.areaResults().get(3).description()).contains("sovraresponsabilità frequente");
+        assertThat(result.areaResults().get(3).percentage()).isEqualTo(100);
     }
 
     @Test
@@ -524,21 +524,21 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.introductoryText()).contains("fenomeno dell'impostore", "non è una diagnosi", "discriminazione", "non misura la tua competenza reale");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze di impostore");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
     }
 
     @Test
-    void impostorPhenomenonFocusedProfileShowsTheMostRelevantAreaFirst() {
+    void impostorPhenomenonFocusedProfileKeepsTheoreticalAreaOrder() {
         TestResult result = analyzeWithAnswersForTest("sindrome-impostore", 1, 5, 1, 1);
 
         assertThat(result.general().title()).isEqualTo("Un meccanismo dell'impostore emerge con chiarezza");
         assertThat(result.areaResults()).hasSize(4);
-        assertThat(result.areaResults().get(0).title()).isEqualTo("Dubbi di competenza e paura di essere smascherati");
-        assertThat(result.areaResults().get(0).description()).contains("paura frequente di essere smascherato");
-        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(1).title()).isEqualTo("Dubbi di competenza e paura di essere smascherati");
+        assertThat(result.areaResults().get(1).description()).contains("paura frequente di essere smascherato");
+        assertThat(result.areaResults().get(1).percentage()).isEqualTo(100);
         assertThat(result.general().detail()).contains("non misura la competenza effettiva");
     }
 
@@ -565,21 +565,21 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.introductoryText()).contains("non una diagnosi", "Non implica", "può essere adattivo", "difficoltà esecutive", "non moralistica");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva degli ostacoli autoalimentati");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza degli ostacoli");
     }
 
     @Test
-    void selfSabotageFocusedProfileShowsTheMostRelevantAreaFirst() {
+    void selfSabotageFocusedProfileKeepsTheoreticalAreaOrder() {
         TestResult result = analyzeWithAnswersForTest("autosabotaggio", 1, 5, 1, 1);
 
         assertThat(result.general().title()).isEqualTo("Un meccanismo di autosabotaggio emerge con chiarezza");
         assertThat(result.areaResults()).hasSize(4);
-        assertThat(result.areaResults().get(0).title()).isEqualTo("Paura della valutazione e auto-handicapping");
-        assertThat(result.areaResults().get(0).description()).contains("auto-handicapping frequente");
-        assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(1).title()).isEqualTo("Paura della valutazione e auto-handicapping");
+        assertThat(result.areaResults().get(1).description()).contains("auto-handicapping frequente");
+        assertThat(result.areaResults().get(1).percentage()).isEqualTo(100);
         assertThat(result.general().detail()).contains("Non attribuisce intenzioni", "carico reale");
     }
 
@@ -628,10 +628,13 @@ class TestResultServiceTest {
         PsychologicalTest test = catalogue.findById(testId);
         TestAttempt attempt = new TestAttempt(test.questions().size());
         int[] areaAnswers = {first, second, third, fourth};
-        for (int area = 0; area < areaAnswers.length; area++) {
-            for (int offset = 0; offset < 6; offset++) {
-                attempt.answer(area * 6 + offset, areaAnswers[area]);
-            }
+        for (int question = 0; question < test.questions().size(); question++) {
+            String areaCode = test.questions().get(question).areaCode();
+            int areaIndex = java.util.stream.IntStream.range(0, test.areas().size())
+                    .filter(index -> test.areas().get(index).code().equals(areaCode))
+                    .findFirst()
+                    .orElseThrow();
+            attempt.answer(question, areaAnswers[areaIndex]);
         }
         return resultService.analyze(test, attempt);
     }

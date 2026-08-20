@@ -11,6 +11,7 @@ public record PsychologicalTest(
         String seoDescription,
         String duration,
         String introductoryText,
+        String responseInstruction,
         String version,
         boolean scoreVisible,
         String overallMetricLabel,

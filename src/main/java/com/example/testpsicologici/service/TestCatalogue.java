@@ -75,7 +75,7 @@ public class TestCatalogue {
         return new PsychologicalTest(
                 entity.getId(), entity.getTitle(), entity.getSeoTitle(), entity.getEyebrow(),
                 entity.getDescription(), entity.getSeoDescription(), entity.getDuration(),
-                entity.getIntroductoryText(), entity.getVersion(), entity.isScoreVisible(),
+                entity.getIntroductoryText(), entity.getResponseInstruction(), entity.getVersion(), entity.isScoreVisible(),
                 entity.getOverallMetricLabel(), entity.getAreaMetricLabel(), areas, questions, references);
     }
 

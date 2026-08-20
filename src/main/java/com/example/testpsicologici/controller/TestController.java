@@ -34,7 +34,8 @@ import java.util.List;
 public class TestController {
 
     private static final String ATTEMPT_PREFIX = "test-attempt-";
-    private static final List<String> ANSWER_OPTIONS = List.of("Mai", "Raramente", "A volte", "Spesso", "Sempre");
+    private static final List<String> ANSWER_OPTIONS =
+            List.of("Mai", "Raramente", "A volte", "Spesso", "Quasi sempre");
 
     private final TestCatalogue catalogue;
     private final TestResultService resultService;

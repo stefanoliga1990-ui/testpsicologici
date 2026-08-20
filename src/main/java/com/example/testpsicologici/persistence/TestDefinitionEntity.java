@@ -22,6 +22,8 @@ public class TestDefinitionEntity {
     private String duration;
     @Column(name = "introductory_text", length = 2400)
     private String introductoryText;
+    @Column(name = "response_instruction", length = 400)
+    private String responseInstruction;
     private String version;
     @Column(name = "score_visible")
     private boolean scoreVisible;
@@ -67,6 +69,11 @@ public class TestDefinitionEntity {
         return this;
     }
 
+    public TestDefinitionEntity withResponseInstruction(String responseInstruction) {
+        this.responseInstruction = responseInstruction;
+        return this;
+    }
+
     public String getId() { return id; }
     public String getTitle() { return title; }
     public String getSeoTitle() { return seoTitle == null || seoTitle.isBlank() ? title + " · Spazio Test" : seoTitle; }
@@ -75,6 +82,11 @@ public class TestDefinitionEntity {
     public String getSeoDescription() { return seoDescription == null || seoDescription.isBlank() ? description : seoDescription; }
     public String getDuration() { return duration; }
     public String getIntroductoryText() { return introductoryText; }
+    public String getResponseInstruction() {
+        return responseInstruction == null || responseInstruction.isBlank()
+                ? "Pensando agli ultimi mesi, con quale frequenza ti è capitato?"
+                : responseInstruction;
+    }
     public String getVersion() { return version; }
     public boolean isScoreVisible() { return scoreVisible; }
     public String getOverallMetricLabel() {
