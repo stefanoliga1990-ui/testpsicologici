@@ -712,6 +712,20 @@ class PageRenderingTest {
     }
 
     @Test
+    void questionPageShowsTheQuestionnaireRecallPeriodAndNonAbsoluteFrequencyAnchors() throws Exception {
+        String testId = "umore-depresso";
+        MockHttpSession inProgress = new MockHttpSession();
+        inProgress.setAttribute("test-attempt-" + testId,
+                new TestAttempt(catalogue.findById(testId).questions().size()));
+
+        mockMvc.perform(get("/test/{testId}/domanda/1", testId).session(inProgress))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Pensando alle ultime due settimane")))
+                .andExpect(content().string(containsString("Quasi sempre")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString(">Sempre<"))));
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())

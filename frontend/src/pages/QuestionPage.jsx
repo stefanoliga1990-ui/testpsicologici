@@ -22,7 +22,7 @@ export default function QuestionPage({ answers, progress, question, questionCoun
             <div className="progress-value" style={{ width: `${progress}%` }} />
           </div>
         </div>
-        <p className="question-prompt">Quanto questa affermazione ti rappresenta?</p>
+        <p className="question-prompt">{test.responseInstruction}</p>
         <h1>{question.text}</h1>
         <form className="answer-form" onSubmit={(event) => { event.preventDefault(); run(answer); }} aria-busy={loading}>
           <div className="answer-navigation">

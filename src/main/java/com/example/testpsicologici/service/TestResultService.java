@@ -12,8 +12,8 @@ import java.util.List;
 @Service
 public class TestResultService {
 
-    private static final double LOW_LIMIT = 2.4;
-    private static final double HIGH_LIMIT = 3.75;
+    static final double LOW_LIMIT = 2.5;
+    static final double HIGH_LIMIT = 3.5;
 
     private final TestCatalogue catalogue;
 
@@ -24,12 +24,12 @@ public class TestResultService {
     public TestResult analyze(PsychologicalTest test, TestAttempt attempt) {
         List<AreaScore> areaScores = test.areas().stream()
                 .map(area -> new AreaScore(area, scoreForArea(test, attempt, area.code())))
-                .sorted((first, second) -> Double.compare(second.score(), first.score()))
                 .toList();
 
         double overallAverage = (double) attempt.score() / test.questions().size();
         long highAreaCount = areaScores.stream().filter(area -> area.score() >= HIGH_LIMIT).count();
-        String profileCode = profileCode(overallAverage, highAreaCount);
+        long lowAreaCount = areaScores.stream().filter(area -> area.score() < LOW_LIMIT).count();
+        String profileCode = profileCode(highAreaCount, lowAreaCount, areaScores.size());
         long areaResultLimit = test.scoreVisible() ? 2 : test.areas().size();
         List<AreaResult> areaResults = test.areas().size() > 1
                 ? areaScores.stream()
@@ -45,10 +45,10 @@ public class TestResultService {
                 areaResults);
     }
 
-    String profileCode(double overallAverage, long highAreaCount) {
-        if (highAreaCount >= 3 || overallAverage >= 4.0) return "BROAD";
+    String profileCode(long highAreaCount, long lowAreaCount, int areaCount) {
+        if (highAreaCount >= 3) return "BROAD";
         if (highAreaCount >= 1) return "FOCUSED";
-        if (overallAverage < LOW_LIMIT) return "LOW";
+        if (lowAreaCount == areaCount) return "LOW";
         return "MIXED";
     }
 

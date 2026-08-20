@@ -23,7 +23,7 @@ export default function ResultPage({ areaResults, percentage, result, score, tes
             <div className="area-results">
               <div className="area-results-heading">
                 <p className="eyebrow">Le quattro aree</p><h2>Una lettura più completa</h2>
-                <p>Le barre rappresentano quanto spesso hai riconosciuto le esperienze esplorate in ciascuna area.</p>
+                <p>Le barre riassumono le risposte agli item di ciascuna area. Non sono percentili, probabilità diagnostiche o confronti con altre persone.</p>
               </div>
               <div className="area-result-grid">
                 {areaResults.map((area) => (
