@@ -1,0 +1,128 @@
+{
+  "test": {
+    "id": "intelligenza-linguistica",
+    "titolo": "Intelligenza linguistica",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione esclusivamente informativa delle risorse linguistiche percepite e utilizzate",
+    "periodo_riferimento": "Ultimi tre mesi, nelle occasioni disponibili",
+    "direzione_punteggio": "Valori più alti descrivono maggiore frequenza dei comportamenti formulati, non maggiore intelligenza o competenza",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non misura intelligenza generale, QI o competenza linguistica; non certifica talenti o limiti e non diagnostica condizioni."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi e alle occasioni che hai avuto di usare la lingua, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; rappresenta frequenza relativa delle risposte, non intelligenza, competenza, probabilità, percentile o confronto normativo",
+    "ordine_aree_risultato": "Ordine teorico stabile: comprensione, orale, scrittura, flessibilita"
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Risorse linguistiche poco espresse nei contesti considerati",
+      "sottotitolo": "I comportamenti proposti risultano poco frequenti in tutte le aree; non formano un andamento ricorrente nelle occasioni considerate.",
+      "descrizione": "Non indica scarsa intelligenza e non esclude competenze non coperte o non espresse. Invita a considerare occasioni, lingue, modalità, richieste e accessibilità. Mantiene in modo indipendente il limite di misura e l'indicazione professionale in caso di cambiamenti o interferenza."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Un profilo linguistico che cambia tra modalità",
+      "sottotitolo": "La frequenza varia tra le aree senza livelli editoriali alti; alcune risorse compaiono in specifici compiti o modalità.",
+      "descrizione": "Le aree non sono una classifica. Vanno osservati lingua, destinatario, familiarità, tempo e opportunità. Soglie e barre restano editoriali e non misurano competenza."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Una o due modalità linguistiche emergono con più continuità",
+      "sottotitolo": "Una o due aree raccolgono comportamenti più frequenti, mentre le altre sono più contenute; il profilo non descrive una capacità generale.",
+      "descrizione": "Le aree emergenti non sono talenti misurati. Si osservano trasferibilità tra lingue, destinatari e compiti e condizioni che facilitano le altre modalità. Limite e supporto restano indipendenti dal profilo."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le risorse linguistiche sono espresse in più modalità",
+      "sottotitolo": "Almeno tre aree raccolgono comportamenti riferiti con maggiore frequenza nelle occasioni disponibili.",
+      "descrizione": "L'ampiezza riguarda autopercezione e frequenza, non accuratezza o livello di prestazione. Si osservano lingue, attività, sforzo e barriere senza inferire un'intelligenza indipendente. Il risultato non certifica capacità."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "comprensione",
+      "nome_area": "Comprensione e sensibilità al significato",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Idee centrali, sfumature, ambiguità e collegamenti vengono riconosciuti poco spesso; non misura la comprensione effettiva e richiede contesto."},
+        {"livello": "MEDIUM", "descrizione": "Alcuni aspetti del significato e della struttura vengono riconosciuti con frequenza intermedia; sono rilevanti testi, lingue e argomenti."},
+        {"livello": "HIGH", "descrizione": "Il riconoscimento riferito è frequente; non è una prova di accuratezza, velocità, vocabolario o comprensione oggettiva."}
+      ]
+    },
+    {
+      "area_code": "orale",
+      "nome_area": "Espressione orale e adattamento",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Organizzazione e adattamento orale risultano poco frequenti; preferire altri canali o usare comunicazione segnata non implica minori capacità."},
+        {"livello": "MEDIUM", "descrizione": "L'espressione organizzata compare in alcune situazioni; sono rilevanti destinatario, preparazione, sicurezza e lingua."},
+        {"livello": "HIGH", "descrizione": "Organizzazione, precisione e riformulazione sono riferite spesso; non misura eloquenza, pronuncia, persuasione o prestazione."}
+      ]
+    },
+    {
+      "area_code": "scrittura",
+      "nome_area": "Espressione scritta e revisione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Pianificazione e revisione risultano poco frequenti; possono riflettere opportunità, strumenti, accessibilità o preferenze."},
+        {"livello": "MEDIUM", "descrizione": "Pianificazione, precisione e revisione compaiono in alcune situazioni; contano tipo di testo, lingua, strumenti e tempo."},
+        {"livello": "HIGH", "descrizione": "Pianificazione, coesione e revisione sono riferite spesso; non è una prova di ortografia, creatività, literacy o qualità."}
+      ]
+    },
+    {
+      "area_code": "flessibilita",
+      "nome_area": "Apprendimento e uso flessibile delle parole",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Parole nuove, cambi di registro e sperimentazione risultano poco frequenti; non indica minore creatività o apprendimento."},
+        {"livello": "MEDIUM", "descrizione": "L'uso flessibile compare in alcune situazioni; vanno osservati pertinenza, curiosità, analogie e appunti."},
+        {"livello": "HIGH", "descrizione": "Parole nuove, registri, analogie e sperimentazione sono riferiti spesso; non prova memoria, creatività o apprendimento linguistico."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {
+      "titolo": "The Theory of Multiple Intelligences — Project Zero, Harvard",
+      "url": "https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf",
+      "apporto": "Definizione teorica del dominio linguistico e precisazione sugli otto domini; non valida il questionario."
+    },
+    {
+      "titolo": "Beyond g: Putting multiple intelligences theory to the test",
+      "url": "https://doi.org/10.1016/j.intell.2006.02.004",
+      "apporto": "Evidenza sulle correlazioni tra prove dei domini e il fattore generale; campione e misure non sono trasferibili."
+    },
+    {
+      "titolo": "CEFR Companion Volume: mediation and modes of communication",
+      "url": "https://www.coe.int/en/web/common-european-framework-reference-languages/mediation",
+      "apporto": "Multidimensionalità delle attività linguistiche e plurilinguismo; non è una misura dell'intelligenza di Gardner."
+    },
+    {
+      "titolo": "L'indagine PIAAC sulle competenze degli adulti",
+      "url": "https://www.inapp.gov.it/piaac/conosci-piaac/lindagine-piaac",
+      "apporto": "Distinzione italiana tra prove cognitive e questionario sugli usi quotidiani; livelli e punteggi non vengono trasferiti."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia separata, documentata in docs/test-intelligenza-linguistica-v1.md e nel GuideCatalogue.",
+  "limite": "Non esistono dati che validino nella popolazione adulta italiana questo specifico set di 24 item, le quattro aree, la media generale, le soglie o le interpretazioni."
+}

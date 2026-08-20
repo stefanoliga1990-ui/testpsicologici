@@ -230,7 +230,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/fomo\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>FOMO (Fear of Missing Out)</h3>")));
+                        "<h3>FOMO (Fear of Missing Out)</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/intelligenza-linguistica\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Intelligenza linguistica</h3>")));
     }
 
     @Test
@@ -679,6 +683,26 @@ class PageRenderingTest {
     }
 
     @Test
+    void linguisticIntelligenceGuideRendersTheoryDebateItalianContextAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/intelligenza-linguistica"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Intelligenza linguistica di Gardner: significato | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/intelligenza-linguistica\"")))
+                .andExpect(content().string(containsString(
+                        "Che cosa intende Gardner per intelligenza linguistica")))
+                .andExpect(content().string(containsString("Otto intelligenze o nove?")))
+                .andExpect(content().string(containsString(
+                        "Autopercezione, uso e prestazione non coincidono")))
+                .andExpect(content().string(containsString(
+                        "non significa bassa intelligenza")))
+                .andExpect(content().string(containsString("Project Zero, Harvard")))
+                .andExpect(content().string(containsString("L&#39;indagine PIAAC")))
+                .andExpect(content().string(containsString("href=\"/test/intelligenza-linguistica\"")));
+    }
+
+    @Test
     void testLinksToItsPublishedGuide() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -790,6 +814,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("online e fuori dai social")))
                 .andExpect(content().string(containsString("non valuta né dimostra un uso problematico")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/fomo\"")));
+
+        mockMvc.perform(get("/test/intelligenza-linguistica"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("non misura un'intelligenza indipendente")))
+                .andExpect(content().string(containsString("non certifica un talento o un limite")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/intelligenza-linguistica\"")));
     }
 
     @Test
@@ -896,11 +928,14 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/paura-abbandono")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/fomo")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/intelligenza-linguistica")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/paura-abbandono")))
                 .andExpect(content().string(containsString("http://localhost/test/fomo")))
+                .andExpect(content().string(containsString("http://localhost/test/intelligenza-linguistica")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

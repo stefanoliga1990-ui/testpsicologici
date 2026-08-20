@@ -63,6 +63,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedBorderlineTraitsInformationTest();
         seedFearOfAbandonmentInformationTest();
         seedFomoInformationTest();
+        seedLinguisticIntelligenceInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -1705,6 +1706,98 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Le risposte indicano frequenti interruzioni o cambiamenti di attenzione, sonno e programmi collegati al timore di perdere qualcosa. È utile osservare persistenza, libertà della scelta e impatto quotidiano senza trasformare la frequenza in un'etichetta clinica.");
     }
 
+    private void seedLinguisticIntelligenceInformationTest() {
+        String id = "intelligenza-linguistica";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Intelligenza linguistica",
+                "Autovalutazione informativa",
+                "Esplora come percepisci e usi comprensione, espressione orale, scrittura e flessibilità linguistica.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Riprende l'idea di intelligenza linguistica proposta da Howard Gardner, ma non misura un'intelligenza indipendente, il quoziente intellettivo o una competenza linguistica oggettiva. Esplora soltanto la frequenza con cui, negli ultimi tre mesi e nelle occasioni disponibili, hai riconosciuto alcuni comportamenti di comprensione, espressione, revisione e uso flessibile della lingua. Istruzione, lingue usate, modalità comunicativa, disabilità, neurodivergenza, professione, abitudini e opportunità possono influire sulle risposte. Il risultato non certifica un talento o un limite, non valuta disturbi del linguaggio o dell'apprendimento e non sostituisce prove di prestazione o una valutazione qualificata. Se un cambiamento o una difficoltà nella comprensione o nell'espressione persiste e interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.",
+                version, false,
+                "Frequenza complessiva delle risorse linguistiche riferite",
+                "Frequenza delle risorse riferite",
+                true, 19).withSeo(
+                "Test intelligenza linguistica di Gardner | Spazio Test",
+                "Questionario informativo sulle risorse linguistiche percepite: comprensione, espressione orale, scrittura e uso flessibile. 24 domande, non misura il QI.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e alle occasioni che hai avuto di usare la lingua, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "The Theory of Multiple Intelligences — Project Zero, Harvard",
+                "https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf", 1);
+        saveReference(id, "Beyond g: Putting multiple intelligences theory to the test — Visser, Ashton e Vernon",
+                "https://doi.org/10.1016/j.intell.2006.02.004", 2);
+        saveReference(id, "CEFR Companion Volume: mediation and modes of communication — Council of Europe",
+                "https://www.coe.int/en/web/common-european-framework-reference-languages/mediation", 3);
+        saveReference(id, "L'indagine PIAAC sulle competenze degli adulti — INAPP",
+                "https://www.inapp.gov.it/piaac/conosci-piaac/lindagine-piaac", 4);
+
+        saveArea(id, "comprensione", "Comprensione e sensibilità al significato", 1);
+        saveArea(id, "orale", "Espressione orale e adattamento", 2);
+        saveArea(id, "scrittura", "Espressione scritta e revisione", 3);
+        saveArea(id, "flessibilita", "Apprendimento e uso flessibile delle parole", 4);
+
+        saveQuestions(id, List.of(
+                q("comprensione", "Individuo l'idea centrale di un testo o di un discorso articolato."),
+                q("comprensione", "Colgo differenze di significato tra parole simili."),
+                q("comprensione", "Mi accorgo quando una frase può essere interpretata in più modi."),
+                q("comprensione", "Seguo il collegamento tra le diverse parti di una spiegazione."),
+                q("comprensione", "Ricavo dal contesto il possibile significato di una parola che non conosco."),
+                q("comprensione", "Riconosco come una parola modifica il significato complessivo di una frase."),
+                q("orale", "Organizzo ciò che voglio dire in una sequenza comprensibile."),
+                q("orale", "Trovo parole precise per esprimere ciò che penso."),
+                q("orale", "Spiego un argomento rendendo espliciti i passaggi principali."),
+                q("orale", "Adatto il vocabolario alle conoscenze della persona con cui parlo."),
+                q("orale", "Racconto un evento mantenendo riconoscibili i passaggi essenziali."),
+                q("orale", "Se una spiegazione non viene compresa, la formulo in un altro modo."),
+                q("scrittura", "Prima di scrivere, definisco i punti che voglio comunicare."),
+                q("scrittura", "Scrivo frasi che rendono chiaro il messaggio principale."),
+                q("scrittura", "Scelgo le parole in base alla precisione richiesta dal testo."),
+                q("scrittura", "Collego le frasi in modo che il testo proceda con continuità."),
+                q("scrittura", "Rileggo un testo per migliorarne chiarezza e ordine."),
+                q("scrittura", "Esprimo per iscritto differenze sottili tra idee o punti di vista."),
+                q("flessibilita", "Presto attenzione alle parole nuove che incontro."),
+                q("flessibilita", "Uso in seguito una parola nuova che ho compreso."),
+                q("flessibilita", "Cambio registro linguistico in base alla situazione."),
+                q("flessibilita", "Trovo analogie verbali per rendere più accessibile un'idea."),
+                q("flessibilita", "Esploro suoni, significati o combinazioni delle parole per creare espressioni nuove."),
+                q("flessibilita", "Uso parole o appunti per sviluppare un'idea ancora poco definita.")));
+
+        saveGlobal(id, "LOW", "Risorse linguistiche poco espresse nei contesti considerati",
+                "Nelle risposte, i comportamenti linguistici proposti risultano poco frequenti in tutte e quattro le aree. Comprensione percepita, espressione orale, scrittura e uso flessibile delle parole non formano quindi un andamento ricorrente nelle occasioni considerate.",
+                "Questo profilo non indica scarsa intelligenza e non esclude competenze che gli item o i contesti recenti non hanno permesso di esprimere. Considera quante occasioni hai avuto, quali lingue e modalità usi, quali richieste erano presenti e se preferisci forme comunicative diverse. Il risultato non misura l'intelligenza generale né una competenza linguistica oggettiva, non certifica un talento o un limite e non diagnostica condizioni. Se un cambiamento o una difficoltà nella comprensione o nell'espressione persiste e interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.");
+        saveGlobal(id, "MIXED", "Un profilo linguistico che cambia tra modalità",
+                "Le risposte descrivono una frequenza variabile tra le quattro aree, senza che una di esse raggiunga il livello editoriale più alto. Alcune risorse possono quindi comparire in determinati compiti o modalità e restare meno accessibili in altri.",
+                "Le schede d'area aiutano a distinguere comprensione, oralità, scrittura e uso flessibile senza trasformarle in una classifica. Osserva lingua, destinatario, familiarità del tema, tempo disponibile e opportunità reali: la variabilità può dipendere dalle richieste del contesto oltre che dall'autopercezione. Il risultato non misura l'intelligenza generale né una competenza linguistica oggettiva, non certifica un talento o un limite e non diagnostica condizioni; le soglie sono esclusivamente editoriali. Se un cambiamento o una difficoltà nella comprensione o nell'espressione persiste e interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.");
+        saveGlobal(id, "FOCUSED", "Una o due modalità linguistiche emergono con più continuità",
+                "Una o due aree raccolgono comportamenti riferiti con maggiore frequenza, mentre le altre risultano più contenute. Il profilo è quindi concentrato su modalità specifiche e non descrive una capacità generale valida in ogni situazione.",
+                "Consulta le schede sotto per riconoscere dove l'uso linguistico è più ricorrente, senza definire le aree emergenti come talenti misurati. Può essere utile osservare se queste risorse si trasferiscono tra lingue, destinatari e compiti e quali condizioni rendono più accessibili le modalità usate meno spesso. Il risultato non misura l'intelligenza generale né una competenza linguistica oggettiva, non certifica un talento o un limite e non diagnostica condizioni. Se un cambiamento o una difficoltà nella comprensione o nell'espressione persiste e interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.");
+        saveGlobal(id, "BROAD", "Le risorse linguistiche sono espresse in più modalità",
+                "Le risposte indicano comportamenti riferiti con maggiore frequenza in almeno tre delle quattro aree esplorate. Negli ultimi tre mesi, comprensione, espressione, revisione e flessibilità linguistica possono quindi essere state utilizzate in modo ampio nelle occasioni disponibili.",
+                "L'ampiezza riguarda la frequenza percepita e non dimostra accuratezza, livello di prestazione o indipendenza di una specifica intelligenza linguistica. Osserva in quali lingue, attività e relazioni queste risorse funzionano, quali richiedono maggiore sforzo e dove esistono ancora barriere o poche occasioni. Il risultato non misura l'intelligenza generale né una competenza linguistica oggettiva, non certifica un talento o un limite e non diagnostica condizioni. Se un cambiamento o una difficoltà nella comprensione o nell'espressione persiste e interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.");
+
+        saveAreaInsights(id, "comprensione",
+                "Riconoscere idee centrali, sfumature, ambiguità e collegamenti risulta poco frequente nelle occasioni considerate. Questo dato non misura la comprensione effettiva e può dipendere da lingua, familiarità, formato, accessibilità e complessità dei contenuti.",
+                "Alcuni aspetti del significato e della struttura vengono riconosciuti con una frequenza intermedia. Nota quali testi, discorsi, lingue e argomenti rendono la comprensione più immediata e quali richiedono tempo o supporti.",
+                "Le risposte descrivono un frequente riconoscimento di idee centrali, sfumature, ambiguità e collegamenti. È una percezione d'uso, non una prova di accuratezza, velocità, vocabolario o comprensione linguistica oggettiva.");
+        saveAreaInsights(id, "orale",
+                "Organizzare, precisare e adattare l'espressione orale risulta poco frequente nelle occasioni considerate. Parlare poco, usare comunicazione segnata o preferire altri canali non implica minori capacità linguistiche.",
+                "L'espressione orale organizzata e adattata compare in alcune situazioni più che in altre. Osserva l'effetto di destinatario, familiarità, tempo per prepararti, sicurezza del contesto e lingua utilizzata.",
+                "Le risposte descrivono un uso frequente di organizzazione, precisione, adattamento e riformulazione nell'espressione orale. Non è una misura di eloquenza, pronuncia, persuasione o prestazione comunicativa.");
+        saveAreaInsights(id, "scrittura",
+                "Pianificare, collegare e rivedere testi risulta poco frequente nelle occasioni considerate. Il dato può riflettere poche attività di scrittura, strumenti usati, accessibilità o preferenza per altre modalità e non misura competenza.",
+                "Pianificazione, precisione e revisione compaiono con una frequenza intermedia. Nota quali tipi di testo, destinatari, lingue, strumenti e tempi facilitano o rendono meno accessibile questo modo di esprimerti.",
+                "Le risposte descrivono un uso frequente di pianificazione, precisione, coesione e revisione nella scrittura. Non è una prova di ortografia, velocità, creatività, literacy o qualità oggettiva dei testi.");
+        saveAreaInsights(id, "flessibilita",
+                "Prestare attenzione a parole nuove, cambiare registro e sperimentare con il linguaggio risulta poco frequente nelle occasioni considerate. Questo non indica minore creatività o capacità di apprendimento e può dipendere da interessi e contesti disponibili.",
+                "Apprendimento e uso flessibile delle parole compaiono in alcune situazioni. Osserva quando curiosità, analogie, appunti o cambi di registro aiutano davvero a comprendere o comunicare e quando risultano meno pertinenti.",
+                "Le risposte descrivono un frequente uso di parole nuove, registri, analogie e sperimentazione verbale. È una frequenza percepita e non una prova di memoria, creatività, apprendimento linguistico o mediazione.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -1782,6 +1875,11 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Italian version of the Online Fear of Missing Out — Sommantico e colleghi", "https://doi.org/10.1016/j.chbr.2024.100374"),
                 ref("Motivational, emotional, and behavioral correlates of fear of missing out — Przybylski e colleghi", "https://doi.org/10.1016/j.chb.2013.02.014"),
                 ref("FoMO, digital technology use, and psychological well-being: a scoping review — Groenestein e colleghi", "https://doi.org/10.1371/journal.pone.0308643")));
+        syncReferences("intelligenza-linguistica", List.of(
+                ref("The Theory of Multiple Intelligences — Project Zero, Harvard", "https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf"),
+                ref("Beyond g: Putting multiple intelligences theory to the test — Visser, Ashton e Vernon", "https://doi.org/10.1016/j.intell.2006.02.004"),
+                ref("CEFR Companion Volume: mediation and modes of communication — Council of Europe", "https://www.coe.int/en/web/common-european-framework-reference-languages/mediation"),
+                ref("L'indagine PIAAC sulle competenze degli adulti — INAPP", "https://www.inapp.gov.it/piaac/conosci-piaac/lindagine-piaac")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

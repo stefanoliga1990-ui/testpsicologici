@@ -798,10 +798,75 @@ class TestResultServiceTest {
     }
 
     @Test
+    void linguisticIntelligenceTestIsLoadedWithTwentyFourOriginalQuestionsAndMeasurementLimits() {
+        PsychologicalTest test = catalogue.findById("intelligenza-linguistica");
+
+        assertThat(test.title()).isEqualTo("Intelligenza linguistica");
+        assertThat(test.questions()).hasSize(24).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code())
+                .containsExactly("comprensione", "orale", "scrittura", "flessibilita");
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "occasioni", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "Howard Gardner",
+                "non misura un'intelligenza indipendente",
+                "competenza linguistica oggettiva",
+                "non certifica un talento o un limite",
+                "professionista qualificato");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle risorse linguistiche riferite");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle risorse riferite");
+        assertThat(test.references()).extracting(reference -> reference.url()).containsExactly(
+                "https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf",
+                "https://doi.org/10.1016/j.intell.2006.02.004",
+                "https://www.coe.int/en/web/common-european-framework-reference-languages/mediation",
+                "https://www.inapp.gov.it/piaac/conosci-piaac/lindagine-piaac");
+    }
+
+    @Test
+    void linguisticIntelligenceFocusedProfileKeepsTheoreticalOrderAndPositiveDirection() {
+        TestResult result = analyzeWithAnswersForTest("intelligenza-linguistica", 1, 1, 5, 1);
+
+        assertThat(result.general().title()).isEqualTo("Una o due modalità linguistiche emergono con più continuità");
+        assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Comprensione e sensibilità al significato",
+                "Espressione orale e adattamento",
+                "Espressione scritta e revisione",
+                "Apprendimento e uso flessibile delle parole");
+        assertThat(result.areaResults().get(2).description()).contains("uso frequente", "Non è una prova");
+        assertThat(result.areaResults().get(2).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(0).percentage()).isZero();
+    }
+
+    @Test
+    void linguisticIntelligenceProfilesFollowEditorialRulesAndAlwaysRetainMeasurementLimit() {
+        TestResult low = analyzeWithAnswersForTest("intelligenza-linguistica", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("intelligenza-linguistica", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("intelligenza-linguistica", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("intelligenza-linguistica", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).isEqualTo("Risorse linguistiche poco espresse nei contesti considerati");
+        assertThat(mixed.general().title()).isEqualTo("Un profilo linguistico che cambia tra modalità");
+        assertThat(focused.general().title()).isEqualTo("Una o due modalità linguistiche emergono con più continuità");
+        assertThat(broad.general().title()).isEqualTo("Le risorse linguistiche sono espresse in più modalità");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non misura l'intelligenza generale né una competenza linguistica oggettiva",
+                        "non certifica un talento o un limite",
+                        "professionista qualificato"));
+        assertThat(low.general().detail()).contains("non indica scarsa intelligenza");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

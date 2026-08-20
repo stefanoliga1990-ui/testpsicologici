@@ -2,7 +2,7 @@
 
 ## Obiettivo e perimetro
 
-Questo documento definisce la revisione delle fonti dei 18 questionari e delle 18 schede di approfondimento di Spazio Test. L'audit riguarda:
+Questo documento definisce la revisione delle fonti dei 19 questionari e delle 19 schede di approfondimento di Spazio Test. L'audit riguarda:
 
 - autorevolezza scientifica o istituzionale;
 - solidità metodologica e aggiornamento;
@@ -75,6 +75,7 @@ Sono necessari interventi mirati:
 | Tratti associati al disturbo borderline di personalità | validazione multicentrica italiana BPDSI-IV, documento ministeriale sui percorsi di cura, WHO ICD-11 e stato della linea guida ISS | domini affettivi, relazionali, identitari e comportamentali; necessità di valutazione clinica multidimensionale nel contesto italiano | strumenti e campioni clinici diversi; nessun item, punteggio o soglia è trasferibile e la linea guida ISS è ancora in produzione |
 | Paura dell'abbandono | validazioni italiane AAS-R ed ECR-12, studio italiano sull'ansia di separazione, revisione teorica e sintesi internazionali sulle relazioni | delimitazione dimensionale, distinzione da costrutti vicini, possibili strategie di prossimità e ruolo del contesto relazionale | strumenti differenti, campioni italiani prevalentemente giovani e studi associativi; nessun item, stile, punteggio o soglia è trasferibile |
 | FOMO | validazioni italiane FoMOs, ON-FoMO e State-FoMO; studio fondativo, scoping review e meta-analisi internazionali | definizione, distinzione tra preoccupazione e connessione, confini online/offline, associazioni con uso digitale | strumenti e strutture differenti, campioni soprattutto giovani e disegni associativi; nessun item, fattore, punteggio o soglia è trasferibile |
+| Intelligenza linguistica | sintesi ufficiale Project Zero, confronto empirico sui domini MI, quadro europeo QCER e PIAAC-INAPP | definizione prudente della cornice di Gardner, distinzione tra autopercezione e prestazione, pluralità delle modalità linguistiche | nessuna validazione italiana pertinente del self-report originale; QCER e PIAAC misurano costrutti diversi e nessun livello o punteggio è trasferibile |
 
 ## Decisioni sui testi
 
@@ -100,9 +101,9 @@ Questa revisione non modifica item, opzioni, scoring, pesi, soglie o interpretaz
 
 ## Esito dell'implementazione
 
-- Fonti dei 18 questionari sincronizzate come metadati; per i nuovi questionari item, scoring e interpretazioni sono documentati nelle rispettive specifiche v1.0.
-- Fonti e contributi delle 18 schede integrati; i collegamenti scientifici ospitati da terzi sono stati sostituiti con DOI o pagine primarie.
+- Fonti dei 19 questionari sincronizzate come metadati; per i nuovi questionari item, scoring e interpretazioni sono documentati nelle rispettive specifiche v1.0.
+- Fonti e contributi delle 19 schede integrati; i collegamenti scientifici ospitati da terzi sono stati sostituiti con DOI o pagine primarie.
 - Schede su dinamiche narcisistiche, people pleasing e fenomeno dell'impostore corrette nei punti in cui associazioni, cultura o limiti di misura richiedevano maggiore cautela.
 - Pagina “Metodo e fonti” aggiornata con priorità italiana/europea e divieto di trasferire automaticamente norme, prevalenze e cut-off.
 - `AGENTS.md` e `docs/standard-psicometrico.md` aggiornati come standard riutilizzabile.
-- Suite completa eseguita il 21 agosto 2026: 101 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.
+- Suite completa eseguita il 21 agosto 2026: 105 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.

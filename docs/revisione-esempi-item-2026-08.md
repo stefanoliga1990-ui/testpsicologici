@@ -2,9 +2,9 @@
 
 ## Scopo e perimetro
 
-Sono stati riesaminati tutti i 432 item dei 18 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
+Sono stati riesaminati tutti i 456 item dei 19 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
 
-L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 380 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
+L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 404 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
 
 Gli esempi non sono elenchi esaustivi e non costituiscono condizioni aggiuntive: l'utente deve rispondere alla domanda principale considerando anche situazioni equivalenti non nominate.
 
@@ -147,6 +147,10 @@ Non è stato aggiunto quando l'item è già concreto, contiene già una lista ch
 ### FOMO
 
 Non sono stati aggiunti esempi ai 24 item. Le formulazioni descrivono già situazioni concrete e brevi; nominare piattaforme, eventi o gruppi specifici potrebbe focalizzare il recupero su un solo canale e restringere un costrutto che può presentarsi online e offline. La scelta è documentata nella specifica v1.0 e dovrà comunque essere verificata con interviste cognitive.
+
+### Intelligenza linguistica
+
+Non sono stati aggiunti esempi ai 24 item. Esempi legati a scuola, lavoro, italiano standard, lettura o parlato potrebbero privilegiare una lingua, una modalità comunicativa o un tipo di opportunità e far sembrare non pertinenti esperienze equivalenti. La scelta è documentata nella specifica v1.0 e richiede verifica con interviste cognitive inclusive di adulti plurilingui e con modalità comunicative diverse.
 
 ## Limiti e verifica successiva
 

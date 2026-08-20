@@ -1693,6 +1693,136 @@ public class GuideCatalogue {
                                     "Studio con vignette e rilevazioni quotidiane consultato per la natura situazionale e la possibilità di FOMO anche fuori dai social; il campione era composto soprattutto da matricole molto giovani."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "intelligenza-linguistica",
+                    "intelligenza-linguistica",
+                    "Intelligenza linguistica",
+                    "Intelligenza linguistica: significato, teoria e limiti",
+                    "Intelligenza linguistica di Gardner: significato | Spazio Test",
+                    "Una guida all'intelligenza linguistica nella teoria di Gardner, al dibattito scientifico e alla differenza tra autopercezione e competenza misurata.",
+                    "L'intelligenza linguistica è uno dei domini proposti da Howard Gardner nella teoria delle intelligenze multiple. Indica, nella sua cornice, la sensibilità al linguaggio parlato e scritto e la possibilità di usarlo per comprendere, esprimere e raggiungere scopi; non è però una capacità indipendente che questo questionario possa misurare oggettivamente.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cosa intende Gardner per intelligenza linguistica",
+                                    List.of(
+                                            "Gardner ha proposto una visione pluralistica dell'intelligenza, distinguendo domini nei quali le persone possono mostrare combinazioni diverse di risorse. Il dominio linguistico riguarda la sensibilità a parole, significati e usi della lingua, non soltanto il parlare molto o conoscere molte parole.",
+                                            "La teoria può offrire una cornice per osservare modalità differenti di partecipazione e apprendimento. Questo valore descrittivo o educativo non equivale però alla dimostrazione che ogni dominio sia un'intelligenza psicometricamente indipendente."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Una precisazione",
+                                    "Otto intelligenze o nove?",
+                                    List.of(
+                                            "La teoria originaria del 1983 presentava sette intelligenze; la naturalistica è stata aggiunta in seguito. La sintesi ufficiale di Project Zero elenca otto intelligenze identificate.",
+                                            "Gardner ha discusso l'intelligenza esistenziale come possibile nona candidata, senza collocarla nello stesso modo tra quelle identificate. Dire semplicemente che esistono nove intelligenze è quindi una semplificazione popolare, non una conclusione scientifica definitiva."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Evidenze",
+                                    "Una teoria discussa, non un test di abilità",
+                                    List.of(
+                                            "In uno studio su 200 adulti, prove costruite per rappresentare otto domini mostravano correlazioni importanti e, per diversi domini cognitivi, forti legami con un fattore generale. Gli autori trovarono soltanto un supporto modesto per componenti specifiche ai domini; Gardner ha contestato che quei compiti rappresentassero adeguatamente la propria teoria.",
+                                            "Il dibattito riguarda dunque anche come trasformare una teoria ampia in misure verificabili. In assenza di validazione dello strumento dell'app, il risultato deve restare un'autodescrizione di comportamenti e non una conferma, graduatoria o percentuale d'intelligenza."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Autopercezione, uso e prestazione non coincidono",
+                                    List.of(
+                                            "Dire che spesso si trova una formulazione chiara descrive un'esperienza percepita; dimostrare accuratezza o competenza richiede invece compiti osservabili, criteri e procedure adatte allo scopo. PIAAC, per esempio, misura la literacy adulta con prove cognitive e raccoglie separatamente informazioni sull'uso delle competenze nella vita quotidiana.",
+                                            "Il QCER descrive inoltre l'attività linguistica attraverso ricezione, produzione, interazione e mediazione e riconosce repertori plurilingui. Nessuno di questi quadri coincide con l'intelligenza linguistica di Gardner o valida le quattro aree editoriali del questionario."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Quattro prospettive per l'auto-osservazione",
+                                    List.of(
+                                            "Le quattro aree organizzano comportamenti quotidiani e non sono fattori scientificamente confermati. Non devono essere usate per mettere in classifica modalità o persone."
+                                    ),
+                                    List.of(
+                                            "Comprensione e sensibilità al significato: idee centrali, sfumature, ambiguità e collegamenti percepiti.",
+                                            "Espressione orale e adattamento: ordine, precisione, spiegazione e riformulazione nel parlato pertinente alla persona.",
+                                            "Espressione scritta e revisione: pianificazione, coesione, scelta delle parole e rilettura dei testi.",
+                                            "Apprendimento e uso flessibile: attenzione a parole nuove, registri, analogie e sperimentazione verbale."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Lingue, modalità e opportunità cambiano ciò che emerge",
+                                    List.of(
+                                            "Istruzione, professione, abitudini, familiarità con un argomento, tempo disponibile e sicurezza del contesto cambiano le occasioni di usare determinate risorse. Una persona può comprendere bene ma parlare poco, oppure scrivere spesso per necessità senza preferire quella modalità.",
+                                            "Plurilinguismo, lingua della compilazione, comunicazione segnata, strumenti assistivi, disabilità e neurodivergenza richiedono letture non gerarchiche. Una frequenza contenuta non significa bassa intelligenza; una frequenza elevata non certifica talento, correttezza o superiorità."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Auto-osservazione",
+                                    "Osservare compiti e condizioni, non cercare un'etichetta",
+                                    List.of(
+                                            "Può essere utile annotare in quale lingua e attività comprendi o ti esprimi con maggiore facilità, quale destinatario è presente, quanto tempo hai e quali strumenti usi. Cerca anche le eccezioni: un compito difficile in un contesto può diventare accessibile con preparazione, un formato diverso o un argomento familiare.",
+                                            "Per esplorare le risorse puoi confrontare versioni diverse di una spiegazione, rivedere un testo dopo una pausa, raccogliere parole nuove o provare a rendere accessibile un'idea. Sono attività di osservazione e pratica, non trattamenti né metodi dimostrati per aumentare un tipo di intelligenza."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e limiti",
+                                    "Quando serve una valutazione diversa",
+                                    List.of(
+                                            "Se noti un cambiamento nuovo o persistente nella comprensione, nel trovare parole, nel parlare, nello scrivere o nel comunicare e questo interferisce con la vita quotidiana, parlane con un medico o altro professionista qualificato. Una valutazione appropriata considera storia, lingue, modalità, accessibilità e usa strumenti scelti per la domanda specifica.",
+                                            "La ricerca non ha fornito una validazione italiana pertinente di questo self-report adulto sull'intelligenza linguistica. Le 24 domande, le quattro aree e le soglie di Spazio Test sono originali e non validate; le barre mostrano soltanto frequenze relative, non intelligenza, competenza, probabilità, percentili o confronti con altre persone."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa la cornice di Gardner soltanto come punto di partenza per osservare la frequenza percepita di comprensione, espressione orale, scrittura e flessibilità linguistica. Non misura intelligenza generale o competenza, non certifica talenti o limiti e non diagnostica condizioni.",
+                    List.of(
+                            new GuideReference(
+                                    "The Theory of Multiple Intelligences — Project Zero, Harvard",
+                                    "https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf",
+                                    "Sintesi istituzionale consultata per la definizione del dominio linguistico e l'elenco di otto intelligenze identificate; presenta la teoria e non costituisce una validazione indipendente."
+                            ),
+                            new GuideReference(
+                                    "A Resurgence of Interest in Existential Intelligence: Why Now? — Howard Gardner",
+                                    "https://www.howardgardner.com/howards-blog/a-resurgence-of-interest-in-existential-intelligence-why-now",
+                                    "Fonte primaria dell'autore consultata per precisare che l'intelligenza esistenziale fu proposta come possibile nona candidata, senza trattare il numero nove come conclusione empirica."
+                            ),
+                            new GuideReference(
+                                    "Beyond g: Putting multiple intelligences theory to the test — Visser, Ashton e Vernon",
+                                    "https://doi.org/10.1016/j.intell.2006.02.004",
+                                    "Studio su prove di prestazione in adulti consultato per correlazioni tra domini, fattore generale e modesto supporto specifico; il campione canadese e l'operazionalizzazione sono limiti espliciti."
+                            ),
+                            new GuideReference(
+                                    "The Science of Multiple Intelligences Theory: A Response to Lynn Waterhouse — Gardner e Moran",
+                                    "https://doi.org/10.1207/s15326985ep4104_2",
+                                    "Risposta teorica consultata per rappresentare la posizione degli autori sulle finalità e sull'operazionalizzazione della teoria; non è una conferma indipendente della sua struttura."
+                            ),
+                            new GuideReference(
+                                    "g and the measurement of Multiple Intelligences: A response to Gardner — Visser, Ashton e Vernon",
+                                    "https://doi.org/10.1016/j.intell.2006.04.006",
+                                    "Replica metodologica consultata per rendere visibile il dibattito su fattore generale e contenuto dei compiti, senza presentare un singolo studio come verdetto definitivo."
+                            ),
+                            new GuideReference(
+                                    "CEFR Companion Volume — Council of Europe",
+                                    "https://book.coe.int/en/education-and-modern-languages/8152-common-european-framework-of-reference-for-languages-learning-teaching-assessment-companion-volume.html",
+                                    "Quadro europeo consultato per ricezione, produzione, interazione, mediazione e repertori plurilingui; descrive competenze linguistiche e non l'intelligenza di Gardner."
+                            ),
+                            new GuideReference(
+                                    "PIAAC Cycle 2 assessment framework: Literacy — OECD",
+                                    "https://www.oecd.org/en/publications/the-assessment-frameworks-for-cycle-2-of-the-programme-for-the-international-assessment-of-adult-competencies_4bc2342d-en/full-report/component-5.html",
+                                    "Framework consultato per distinguere prove cognitive di literacy e autodescrizioni d'uso; riguarda soprattutto testi scritti e non misura il costrutto dell'app."
+                            ),
+                            new GuideReference(
+                                    "L'indagine PIAAC — INAPP",
+                                    "https://www.inapp.gov.it/piaac/conosci-piaac/lindagine-piaac",
+                                    "Fonte istituzionale italiana consultata per la distinzione tra prove cognitive autosomministrate e questionario sugli usi delle competenze nella popolazione adulta 16–65; nessun livello è trasferito."
+                            )
+                    )
             )
     );
 

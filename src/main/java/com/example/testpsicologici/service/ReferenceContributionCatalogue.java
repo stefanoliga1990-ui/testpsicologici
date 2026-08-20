@@ -128,7 +128,15 @@ public class ReferenceContributionCatalogue {
             entry("https://doi.org/10.1016/j.chb.2013.02.014",
                     "Lavoro fondativo consultato per la definizione della FOMO come preoccupazione per esperienze non condivise e desiderio di connessione; associazioni e misura originale non validano l'app."),
             entry("https://doi.org/10.1371/journal.pone.0308643",
-                    "Scoping review preregistrata consultata per eterogeneità di definizioni, dimensionalità, stato-tratto e confini online e offline; non fornisce una struttura definitiva né inferenze causali."));
+                    "Scoping review preregistrata consultata per eterogeneità di definizioni, dimensionalità, stato-tratto e confini online e offline; non fornisce una struttura definitiva né inferenze causali."),
+            entry("https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf",
+                    "Sintesi ufficiale di Project Zero consultata per delimitare il dominio linguistico nella teoria delle intelligenze multiple; presenta la teoria e non valida item, aree o scoring dell'app."),
+            entry("https://doi.org/10.1016/j.intell.2006.02.004",
+                    "Studio su prove ispirate a otto domini consultato per le correlazioni con il fattore generale e il modesto supporto specifico; il campione canadese e l'operazionalizzazione non validano l'app."),
+            entry("https://www.coe.int/en/web/common-european-framework-reference-languages/mediation",
+                    "Quadro del Consiglio d'Europa consultato per distinguere ricezione, produzione, interazione e mediazione e considerare il plurilinguismo; non misura l'intelligenza di Gardner."),
+            entry("https://www.inapp.gov.it/piaac/conosci-piaac/lindagine-piaac",
+                    "Fonte istituzionale italiana consultata per distinguere prove cognitive di literacy e questionario sugli usi quotidiani; livelli e risultati PIAAC non sono trasferibili al test dell'app."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);
