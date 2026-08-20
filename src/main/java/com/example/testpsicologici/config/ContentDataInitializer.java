@@ -60,6 +60,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedPeoplePleasingInformationTest();
         seedImpostorPhenomenonInformationTest();
         seedSelfSabotageInformationTest();
+        synchronizeEvidenceReferences();
     }
 
     private void seedAutismInformationTest() {
@@ -603,9 +604,9 @@ public class ContentDataInitializer implements ApplicationRunner {
                 .withResponseInstruction("Pensando agli ultimi tre mesi e a situazioni diverse, con quale frequenza lo hai fatto?"));
 
         saveReference(id, "The Ability Model of Emotional Intelligence: Principles and Updates",
-                "https://sites.usnh.edu/jdmayer/wp-content/uploads/sites/261/2024/03/rp2016-mayer-caruso-salovey.pdf", 1);
+                "https://doi.org/10.1177/1754073916639667", 1);
         saveReference(id, "Emotional Intelligence: New Ability or Eclectic Traits?",
-                "https://cdn2.psychologytoday.com/assets/attachments/1575/rp2008-mayersaloveycarusob.pdf", 2);
+                "https://doi.org/10.1037/0003-066X.63.6.503", 2);
 
         saveArea(id, "percezione", "Percezione e consapevolezza emotiva", 1);
         saveArea(id, "facilitazione", "Uso delle emozioni nel pensiero e nelle decisioni", 2);
@@ -868,8 +869,8 @@ public class ContentDataInitializer implements ApplicationRunner {
 
         saveReference(id, "Narcissistic Personality Disorder — Merck Manual Professional Edition",
                 "https://www.merckmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd", 1);
-        saveReference(id, "What Is Narcissistic Personality Disorder? — American Psychiatric Association",
-                "https://www.psychiatry.org/News-room/APA-Blogs/What-Is-Narcissistic-Personality-Disorder", 2);
+        saveReference(id, "Narcissism and Intimate Partner Violence: systematic review and meta-analysis — Oliver e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/37702183/", 2);
 
         saveArea(id, "reciprocita", "Reciprocità, empatia e spazio emotivo", 1);
         saveArea(id, "centralita", "Centralità, ammirazione e aspettative", 2);
@@ -1373,6 +1374,93 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Le risposte mostrano una difficoltà frequente nel mantenere o adattare il percorso, con cicli di slancio e abbandono, rigidità o scelte ripetute poco coerenti con le priorità dichiarate.");
     }
 
+    private void synchronizeEvidenceReferences() {
+        syncReferences("tratti-autistici-adulti", List.of(
+                ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
+                ref("Autism spectrum disorder in adults: diagnosis and management — NICE CG142", "https://www.nice.org.uk/guidance/cg142/chapter/Recommendations"),
+                ref("Diagnosi e trattamento del disturbo dello spettro autistico negli adulti — ISS/SNLG", "https://www.iss.it/documents/20126/8968214/Linea_Guida_ASD_adulti.pdf/b15434a0-3bcd-60c0-46b2-e5b34dc170bd?t=1691389267884")));
+        syncReferences("tratti-adhd-adulti", List.of(
+                ref("Attention deficit hyperactivity disorder: diagnosis and management — NICE NG87", "https://www.nice.org.uk/guidance/ng87/chapter/recommendations"),
+                ref("ADHD in adults — NHS", "https://www.nhs.uk/conditions/adhd-adults/"),
+                ref("Validity of the Italian Version of DIVA-5 — Di Lorenzo e colleghi", "https://pubmed.ncbi.nlm.nih.gov/39942433/")));
+        syncReferences("tratti-ossessivo-compulsivi", List.of(
+                ref("Obsessive compulsive disorder (OCD): symptoms — NHS", "https://www.nhs.uk/mental-health/conditions/obsessive-compulsive-disorder-ocd/symptoms/"),
+                ref("Obsessive-Compulsive Disorder — NIMH", "https://www.nimh.nih.gov/health/publications/obsessive-compulsive-disorder-when-unwanted-thoughts-or-repetitive-behaviors-take-over"),
+                ref("The Italian version of the Obsessive Compulsive Inventory — Sica e colleghi", "https://pubmed.ncbi.nlm.nih.gov/18701254/")));
+        syncReferences("autostima", List.of(
+                ref("Rosenberg Self-Esteem Scale — University of Maryland", "https://socy.umd.edu/about-us/rosenberg-self-esteem-scale"),
+                ref("The Development of Self-Esteem — Orth e Robins", "https://doi.org/10.1177/0963721414547414"),
+                ref("On the factor structure of the Rosenberg Self-Esteem Scale — Alessandri e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25580614/")));
+        syncReferences("dipendenza-affettiva", List.of(
+                ref("I disturbi da addiction nelle dipendenze non legate a sostanze — Ministero della Salute", "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_3313_allegato.pdf"),
+                ref("Conceptualizing love addiction within the attachment perspective", "https://pmc.ncbi.nlm.nih.gov/articles/PMC12284683/"),
+                ref("Problematic Love Behaviors: systematic review and meta-analysis — Cavalli e colleghi", "https://pubmed.ncbi.nlm.nih.gov/42029817/")));
+        syncReferences("assertivita", List.of(
+                ref("A 30-Item Schedule for Assessing Assertive Behavior — Rathus", "https://doi.org/10.1016/S0005-7894(73)80120-0"),
+                ref("Normative studies with the Scale for Interpersonal Behaviour — Arrindell e colleghi", "https://doi.org/10.1016/S0191-8869(98)00252-9"),
+                ref("Cross-cultural validity of the Scale for Interpersonal Behavior — Nota e colleghi", "https://pubmed.ncbi.nlm.nih.gov/21721362/")));
+        syncReferences("intelligenza-emotiva", List.of(
+                ref("The Ability Model of Emotional Intelligence: Principles and Updates", "https://doi.org/10.1177/1754073916639667"),
+                ref("Emotional Intelligence: New Ability or Eclectic Traits?", "https://doi.org/10.1037/0003-066X.63.6.503"),
+                ref("Construct validity of the Italian MSCEIT v2.0 — Curci e colleghi", "https://pubmed.ncbi.nlm.nih.gov/23536991/")));
+        syncReferences("perfezionismo", List.of(
+                ref("The dimensions of perfectionism — Frost e colleghi", "https://doi.org/10.1007/BF01172967"),
+                ref("Perfectionism in the self and social contexts — Hewitt e Flett", "https://pubmed.ncbi.nlm.nih.gov/2027080/"),
+                ref("Short Forms of the Multidimensional Perfectionism Scale in Italian samples — Lombardo e colleghi", "https://pubmed.ncbi.nlm.nih.gov/33835908/")));
+        syncReferences("ansia-sociale", List.of(
+                ref("Social Anxiety Disorder: More Than Just Shyness — NIMH", "https://www.nimh.nih.gov/health/publications/social-anxiety-disorder-more-than-just-shyness"),
+                ref("Social anxiety disorder: assessment and diagnosis for adults — NICE CG159", "https://www.nice.org.uk/guidance/cg159/ifp/chapter/assessment-and-diagnosis-for-adults"),
+                ref("Psychometric properties of the Italian Social Phobia Inventory — Gori e colleghi", "https://www.clinicalneuropsychiatry.org/download/assessing-social-anxiety-disorder-psychometric-properties-of-the-italian-social-phobia-inventory-i-spin/")));
+        syncReferences("dinamiche-narcisistiche-partner", List.of(
+                ref("Narcissistic Personality Disorder — Merck Manual Professional Edition", "https://www.merckmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd"),
+                ref("Narcissism and Intimate Partner Violence: systematic review and meta-analysis — Oliver e colleghi", "https://pubmed.ncbi.nlm.nih.gov/37702183/"),
+                ref("La violenza contro le donne dentro e fuori la famiglia — ISTAT 2025", "https://www.istat.it/wp-content/uploads/2025/11/La-violenza-contro-le-donne-dentro-e-fuori-la-famiglia_Anno-2025.pdf")));
+        syncReferences("ansia-generalizzata", List.of(
+                ref("Generalized Anxiety Disorder: What You Need to Know — NIMH", "https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad"),
+                ref("Assessing generalised anxiety disorder — NICE CG113", "https://www.nice.org.uk/guidance/cg113/chapter/Appendix-Assessing-generalised-anxiety-disorder"),
+                ref("Psychometric properties of the GAD-7 in an Italian population — Bolgeo e colleghi", "https://pubmed.ncbi.nlm.nih.gov/37149049/")));
+        syncReferences("umore-depresso", List.of(
+                ref("Depressive disorder — World Health Organization", "https://www.who.int/news-room/fact-sheets/detail/depression"),
+                ref("Depression — National Institute of Mental Health", "https://www.nimh.nih.gov/health/publications/depression"),
+                ref("Consensus sulle terapie psicologiche per ansia e depressione — ISS", "https://www.iss.it/documents/20126/0/Consensus_1_2022_IT.pdf"),
+                ref("Psychometric properties of the PHQ-9 in an Italian population — Bolgeo e colleghi", "https://pubmed.ncbi.nlm.nih.gov/39932691/")));
+        syncReferences("people-pleasing", List.of(
+                ref("Distinctions of unmitigated communion from communion — Fritz e Helgeson", "https://pubmed.ncbi.nlm.nih.gov/9686454/"),
+                ref("A theory of unmitigated communion — Helgeson e Fritz", "https://pubmed.ncbi.nlm.nih.gov/15647153/"),
+                ref("Self-silencing and women's health: a review — Maji e Dixit", "https://pubmed.ncbi.nlm.nih.gov/30518269/")));
+        syncReferences("sindrome-impostore", List.of(
+                ref("The imposter phenomenon in high achieving women — Clance e Imes", "https://doi.org/10.1037/h0086006"),
+                ref("Impostor Phenomenon Measurement Scales: A Systematic Review", "https://pmc.ncbi.nlm.nih.gov/articles/PMC6463809/"),
+                ref("Cross-cultural validation of the Impostor-Profile 30 — Ibrahim e colleghi", "https://doi.org/10.1007/s12144-025-07865-1")));
+        syncReferences("autosabotaggio", List.of(
+                ref("Self-defeating behavior patterns among normal individuals — Baumeister e Scher", "https://pubmed.ncbi.nlm.nih.gov/3043527/"),
+                ref("The nature of procrastination: a meta-analytic and theoretical review — Steel", "https://pubmed.ncbi.nlm.nih.gov/17201571/"),
+                ref("On the Measurement of Procrastination in Six European Countries — Svartdal e colleghi", "https://pubmed.ncbi.nlm.nih.gov/27630595/")));
+    }
+
+    private void syncReferences(String testId, List<ReferenceSeed> expected) {
+        List<TestReferenceEntity> current = referenceRepository.findByTestIdOrderByDisplayOrderAsc(testId);
+        boolean alreadySynchronized = current.size() == expected.size();
+        for (int index = 0; alreadySynchronized && index < expected.size(); index++) {
+            TestReferenceEntity actual = current.get(index);
+            ReferenceSeed desired = expected.get(index);
+            alreadySynchronized = actual.getDisplayOrder() == index + 1
+                    && actual.getTitle().equals(desired.title())
+                    && actual.getUrl().equals(desired.url());
+        }
+        if (alreadySynchronized) return;
+
+        referenceRepository.deleteByTestId(testId);
+        for (int index = 0; index < expected.size(); index++) {
+            ReferenceSeed reference = expected.get(index);
+            saveReference(testId, reference.title(), reference.url(), index + 1);
+        }
+    }
+
+    private ReferenceSeed ref(String title, String url) {
+        return new ReferenceSeed(title, url);
+    }
+
     private boolean requiresSeed(String testId, String version) {
         return testRepository.findById(testId)
                 .map(test -> !version.equals(test.getVersion()))
@@ -1419,5 +1507,8 @@ public class ContentDataInitializer implements ApplicationRunner {
     }
 
     private record QuestionSeed(String areaCode, String text) {
+    }
+
+    private record ReferenceSeed(String title, String url) {
     }
 }

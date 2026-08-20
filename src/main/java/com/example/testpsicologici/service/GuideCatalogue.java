@@ -92,6 +92,11 @@ public class GuideCatalogue {
                                     "Clinical testing and diagnosis for autism spectrum disorder — CDC",
                                     "https://www.cdc.gov/autism/hcp/diagnosis/index.html",
                                     "Riferimento per le aree della comunicazione e interazione sociale, i comportamenti ripetitivi, gli interessi, la flessibilità e la reattività sensoriale."
+                            ),
+                            new GuideReference(
+                                    "Diagnosi e trattamento del disturbo dello spettro autistico negli adulti — ISS/SNLG",
+                                    "https://www.iss.it/documents/20126/8968214/Linea_Guida_ASD_adulti.pdf/b15434a0-3bcd-60c0-46b2-e5b34dc170bd?t=1691389267884",
+                                    "Linea guida italiana consultata per valutazione complessiva, diagnosi differenziale, condizioni coesistenti e organizzazione del supporto nell'adulto; non valida il questionario dell'app."
                             )
                     )
             ),
@@ -170,6 +175,11 @@ public class GuideCatalogue {
                                     "Attention-Deficit/Hyperactivity Disorder: What You Need to Know — NIMH",
                                     "https://www.nimh.nih.gov/health/publications/attention-deficit-hyperactivity-disorder-what-you-need-to-know",
                                     "Riferimento per manifestazioni nell'adulto, andamento nel corso della vita, raccolta della storia personale e necessità di considerare sonno, stress, salute mentale e condizioni fisiche."
+                            ),
+                            new GuideReference(
+                                    "Validity of the Italian Version of DIVA-5 — Di Lorenzo e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/39942433/",
+                                    "Studio italiano recente su un'intervista clinica per adulti, consultato per il contesto nazionale e la valutazione strutturata; il campione specialistico e lo strumento diverso impediscono di trasferire proprietà al test online."
                             )
                     )
             ),
@@ -244,6 +254,11 @@ public class GuideCatalogue {
                                     "Obsessive-compulsive disorder and body dysmorphic disorder: treatment — NICE CG31",
                                     "https://www.nice.org.uk/guidance/cg31/chapter/Recommendations",
                                     "Riferimento per la natura involontaria dei sintomi, la valutazione del disagio e del funzionamento e le opzioni di trattamento per gli adulti, inclusa la CBT con ERP."
+                            ),
+                            new GuideReference(
+                                    "The Italian version of the Obsessive Compulsive Inventory — Sica e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/18701254/",
+                                    "Validazione italiana su campioni comunitario e clinico consultata per multidimensionalità e sensibilità al livello di istruzione; punteggi e proprietà dell'OCI-R non sono trasferiti al questionario dell'app."
                             )
                     )
             ),
@@ -318,6 +333,11 @@ public class GuideCatalogue {
                                     "Raising low self-esteem — NHS",
                                     "https://www.nhs.uk/mental-health/self-help/tips-and-support/raise-low-self-esteem/",
                                     "Riferimento per oscillazioni comuni, possibili influenze, evitamento, autocritica, assertività, obiettivi graduali e possibilità di ricorrere a un supporto professionale."
+                            ),
+                            new GuideReference(
+                                    "On the factor structure of the Rosenberg Self-Esteem Scale — Alessandri e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/25580614/",
+                                    "Studio con campioni italiano ed europei consultato per struttura e invarianza della misura di Rosenberg; non fornisce norme o soglie applicabili a Spazio Test."
                             )
                     )
             ),
@@ -392,6 +412,11 @@ public class GuideCatalogue {
                                     "Conceptualizing love addiction within the attachment perspective — Cavalli e colleghi",
                                     "https://pmc.ncbi.nlm.nih.gov/articles/PMC12284683/",
                                     "Revisione sistematica e meta-analisi consultata per l'assenza di una definizione condivisa, l'eterogeneità del costrutto e l'associazione tra love addiction e dimensioni dell'attaccamento insicuro."
+                            ),
+                            new GuideReference(
+                                    "Problematic Love Behaviors: systematic review and meta-analysis — Cavalli e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/42029817/",
+                                    "Sintesi recente consultata per distinguere dipendenza emotiva, love addiction e amore maniacale e descrivere correlati senza trasformare associazioni in cause o diagnosi individuali."
                             ),
                             new GuideReference(
                                     "Il 1522 — Dipartimento per le Pari Opportunità",
@@ -472,6 +497,11 @@ public class GuideCatalogue {
                                     "Riferimento per la natura multidimensionale dell'assertività e per distinguere comportamento e disagio nelle aree di espressione, limiti, iniziativa e assertività positiva."
                             ),
                             new GuideReference(
+                                    "Cross-cultural validity of the Scale for Interpersonal Behavior — Nota e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/21721362/",
+                                    "Validazione su un ampio campione studentesco italiano consultata per struttura e differenze culturali rispetto al campione olandese; non viene usata per norme individuali."
+                            ),
+                            new GuideReference(
                                     "Improving Assertiveness — Centre for Clinical Interventions",
                                     "https://www.cci.health.wa.gov.au/en/Resources/Looking-After-Yourself/Assertiveness",
                                     "Risorsa istituzionale consultata per la definizione di comunicazione chiara e rispettosa, la distinzione tra stili comunicativi e le strategie pratiche su rifiuto, critiche e allenamento graduale."
@@ -541,13 +571,18 @@ public class GuideCatalogue {
                     List.of(
                             new GuideReference(
                                     "The Ability Model of Emotional Intelligence: Principles and Updates — Mayer, Caruso e Salovey",
-                                    "https://sites.usnh.edu/jdmayer/wp-content/uploads/sites/261/2024/03/rp2016-mayer-caruso-salovey.pdf",
+                                    "https://doi.org/10.1177/1754073916639667",
                                     "Fonte primaria per la definizione dell'intelligenza emotiva come abilità, le quattro aree di percezione, uso, comprensione e regolazione e la distinzione tra prove di abilità e autovalutazioni."
                             ),
                             new GuideReference(
                                     "Emotional Intelligence: New Ability or Eclectic Traits? — Mayer, Salovey e Caruso",
-                                    "https://cdn2.psychologytoday.com/assets/attachments/1575/rp2008-mayersaloveycarusob.pdf",
+                                    "https://doi.org/10.1037/0003-066X.63.6.503",
                                     "Approfondimento scientifico consultato per distinguere il modello di abilità dagli approcci che riuniscono tratti e qualità personali più ampie sotto la stessa etichetta."
+                            ),
+                            new GuideReference(
+                                    "Construct validity of the Italian MSCEIT v2.0 — Curci e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/23536991/",
+                                    "Validazione italiana consultata per struttura e distinzione tra abilità emotiva, intelligenza e personalità; il MSCEIT è una prova di abilità e non valida l'autovalutazione dell'app."
                             )
                     )
             ),
@@ -627,6 +662,11 @@ public class GuideCatalogue {
                                     "Perfectionism Self-Help Resources — Centre for Clinical Interventions",
                                     "https://www.cci.health.wa.gov.au/resources/looking-after-yourself/perfectionism",
                                     "Risorsa istituzionale consultata per distinguere standard elevati utili e standard incessanti, comprendere il ciclo di mantenimento e proporre strategie graduali e concrete."
+                            ),
+                            new GuideReference(
+                                    "Short Forms of the Multidimensional Perfectionism Scale in Italian samples — Lombardo e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/33835908/",
+                                    "Confronto psicometrico italiano consultato per multidimensionalità e per i risultati misti sulla struttura delle forme brevi; nessuna soglia viene trasferita al test."
                             )
                     )
             ),
@@ -706,6 +746,11 @@ public class GuideCatalogue {
                                     "Social anxiety (social phobia) — NHS",
                                     "https://www.nhs.uk/mental-health/conditions/social-anxiety/",
                                     "Risorsa del servizio sanitario britannico consultata per distinguere ansia sociale e timidezza, descrivere manifestazioni comuni e proporre primi passi graduali e opzioni di aiuto."
+                            ),
+                            new GuideReference(
+                                    "Psychometric properties of the Italian Social Phobia Inventory — Gori e colleghi",
+                                    "https://www.clinicalneuropsychiatry.org/download/assessing-social-anxiety-disorder-psychometric-properties-of-the-italian-social-phobia-inventory-i-spin/",
+                                    "Studio peer-reviewed sulla versione italiana dello SPIN consultato per pertinenza linguistica e culturale; non autorizza a trasferire cut-off o proprietà al questionario dell'app."
                             )
                     )
             ),
@@ -732,7 +777,7 @@ public class GuideCatalogue {
                                     "Si può capire se il partner è narcisista?",
                                     List.of(
                                             "No, non attraverso un questionario compilato dall'altra persona. Il disturbo narcisistico di personalità è un quadro clinico pervasivo caratterizzato da grandiosità, bisogno di ammirazione e difficoltà empatiche; la diagnosi considera criteri specifici, storia personale, funzionamento in più contesti e possibili spiegazioni alternative.",
-                                            "Tratti come ricerca di conferme, egocentrismo o sensibilità alle critiche possono comparire anche senza un disturbo di personalità. Una valutazione attendibile richiede il coinvolgimento diretto della persona interessata e un professionista qualificato: la percezione del partner può descrivere la relazione, non stabilire una diagnosi."
+                                            "Tratti come ricerca di conferme, egocentrismo o sensibilità alle critiche possono comparire anche senza un disturbo di personalità. Una meta-analisi ha rilevato un'associazione debole, a livello di gruppo, tra narcisismo e violenza di coppia: non consente di spiegare un singolo comportamento né di dedurre una diagnosi. Una valutazione attendibile richiede il coinvolgimento diretto della persona interessata e un professionista qualificato: la percezione del partner può descrivere la relazione, non stabilire una diagnosi."
                                     ),
                                     List.of()
                             ),
@@ -776,9 +821,14 @@ public class GuideCatalogue {
                                     "Riferimento clinico per il carattere pervasivo del disturbo, grandiosità, bisogno di ammirazione, empatia, sensibilità alla critica e necessità di una diagnosi professionale basata su criteri."
                             ),
                             new GuideReference(
-                                    "What Is Narcissistic Personality Disorder? — American Psychiatric Association",
-                                    "https://www.psychiatry.org/News-room/APA-Blogs/What-Is-Narcissistic-Personality-Disorder",
-                                    "Fonte istituzionale consultata per distinguere l'uso comune del termine narcisista, la presenza di singoli tratti e un disturbo persistente e problematico in più contesti."
+                                    "Narcissism and Intimate Partner Violence: systematic review and meta-analysis — Oliver e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/37702183/",
+                                    "Meta-analisi consultata per descrivere un'associazione debole a livello di gruppo e per evitare di usare il narcisismo come diagnosi del partner o spiegazione del singolo comportamento abusante."
+                            ),
+                            new GuideReference(
+                                    "La violenza contro le donne dentro e fuori la famiglia — ISTAT 2025",
+                                    "https://www.istat.it/wp-content/uploads/2025/11/La-violenza-contro-le-donne-dentro-e-fuori-la-famiglia_Anno-2025.pdf",
+                                    "Fonte statistica italiana per descrivere isolamento, controllo, svalorizzazione, minacce e violenza economica come comportamenti osservabili nel contesto della coppia."
                             ),
                             new GuideReference(
                                     "Violence against women — World Health Organization",
@@ -867,6 +917,11 @@ public class GuideCatalogue {
                                     "Generalised anxiety disorder (GAD) — NHS",
                                     "https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/",
                                     "Risorsa del servizio sanitario britannico consultata per manifestazioni comuni, criteri considerati nella valutazione, opzioni di aiuto e accorgimenti quotidiani prudenti."
+                            ),
+                            new GuideReference(
+                                    "Psychometric properties of the GAD-7 in an Italian population — Bolgeo e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/37149049/",
+                                    "Studio italiano su struttura e invarianza del GAD-7; il campione cardiologico e prevalentemente maschile limita la generalizzazione e non fornisce soglie per il questionario dell'app."
                             )
                     )
             ),
@@ -950,6 +1005,16 @@ public class GuideCatalogue {
                                     "Il numero 118 e il Numero di emergenza unico europeo (112) — Ministero della Salute",
                                     "https://www.salute.gov.it/new/it/tema/112-118-e-pronto-soccorso/il-numero-118-e-il-numero-di-emergenza-unico-europeo-112/",
                                     "Riferimento istituzionale italiano per il ricorso immediato ai servizi di emergenza e al Pronto Soccorso quando la persona è in pericolo o non si sente al sicuro."
+                            ),
+                            new GuideReference(
+                                    "Consensus sulle terapie psicologiche per ansia e depressione — ISS",
+                                    "https://www.iss.it/documents/20126/0/Consensus_1_2022_IT.pdf",
+                                    "Documento istituzionale consultato per il contesto italiano dell'accesso e degli interventi psicologici; non sostiene lo scoring o la validità del questionario."
+                            ),
+                            new GuideReference(
+                                    "Psychometric properties of the PHQ-9 in an Italian population — Bolgeo e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/39932691/",
+                                    "Studio italiano su struttura e invarianza del PHQ-9 in persone con cardiopatia; il campione clinico specifico impedisce di trasferire norme e cut-off alla popolazione generale o a Spazio Test."
                             )
                     )
             ),
@@ -1016,7 +1081,7 @@ public class GuideCatalogue {
                                     "Potere, sicurezza e richiesta di supporto",
                                     List.of(
                                             "Cultura, ruoli familiari e di cura, gerarchie lavorative, dipendenza economica, disabilità e altre differenze di potere influenzano quanto sia realmente possibile rifiutare o negoziare. Adattarsi in una situazione minacciosa può essere una strategia di protezione, non una carenza personale da correggere con maggiore fermezza.",
-                                            "Se porre un limite può provocare minacce, controllo o violenza, è prudente cercare prima un sostegno individuale e specializzato. In Italia, in caso di pericolo immediato chiama il 112; il 1522 offre gratuitamente e in forma anonima ascolto e orientamento alle donne vittime di violenza e stalking. Se invece il modello causa ansia, esaurimento, risentimento o relazioni poco reciproche, uno psicologo o psicoterapeuta può aiutare a comprenderne funzioni e contesto e ad ampliare gradualmente le possibilità di scelta."
+                                            "Non è disponibile una validazione italiana consolidata del people pleasing come costrutto unitario: le fonti descrivono costrutti vicini, come comunione non mitigata e autosilenziamento, sensibili a genere e cultura. Se porre un limite può provocare minacce, controllo o violenza, è prudente cercare prima un sostegno individuale e specializzato. In Italia, in caso di pericolo immediato chiama il 112; il 1522 offre gratuitamente e in forma anonima ascolto e orientamento alle donne vittime di violenza e stalking. Se invece il modello causa ansia, esaurimento, risentimento o relazioni poco reciproche, uno psicologo o psicoterapeuta può aiutare a comprenderne funzioni e contesto e ad ampliare gradualmente le possibilità di scelta."
                                     ),
                                     List.of()
                             )
@@ -1032,6 +1097,11 @@ public class GuideCatalogue {
                                     "A theory of unmitigated communion — Helgeson e Fritz",
                                     "https://pubmed.ncbi.nlm.nih.gov/15647153/",
                                     "Riferimento teorico per caratteristiche cognitive e comportamentali della comunione non mitigata e possibili implicazioni per il benessere psicologico e fisico."
+                            ),
+                            new GuideReference(
+                                    "Self-silencing and women's health: a review — Maji e Dixit",
+                                    "https://pubmed.ncbi.nlm.nih.gov/30518269/",
+                                    "Revisione consultata per autosilenziamento, relazioni, genere e cultura; non viene presentata come validazione italiana del people pleasing né come prova causale."
                             ),
                             new GuideReference(
                                     "Improving Assertiveness — Centre for Clinical Interventions",
@@ -1099,7 +1169,7 @@ public class GuideCatalogue {
                                     "Non tutto nasce dentro la persona",
                                     List.of(
                                             "Feedback vaghi o incoerenti, ruoli senza criteri chiari, culture molto competitive, scarsa rappresentazione e transizioni con poco supporto possono rendere più difficile capire se si sta procedendo adeguatamente. Stereotipi, esclusione, microaggressioni e discriminazione possono inoltre comunicare che una persona non appartiene davvero al contesto.",
-                                            "Attribuire automaticamente queste esperienze a una fragilità individuale rischia di ignorare problemi reali dell'ambiente. Una lettura equilibrata considera insieme il modo in cui la persona interpreta le prove e la qualità concreta di accesso, feedback, riconoscimento, sicurezza e appartenenza offerta dal contesto."
+                                            "Attribuire automaticamente queste esperienze a una fragilità individuale rischia di ignorare problemi reali dell'ambiente. Una lettura equilibrata considera insieme il modo in cui la persona interpreta le prove e la qualità concreta di accesso, feedback, riconoscimento, sicurezza e appartenenza offerta dal contesto. Uno studio europeo recente ha inoltre rilevato deviazioni nel campione italiano di una misura dell'impostore: è un motivo in più per non importare norme o interpretazioni da altri Paesi."
                                     ),
                                     List.of()
                             ),
@@ -1134,6 +1204,11 @@ public class GuideCatalogue {
                                     "Interventions addressing the impostor phenomenon: a scoping review — Para e colleghi",
                                     "https://pubmed.ncbi.nlm.nih.gov/38605843/",
                                     "Revisione degli interventi in ambito professionale, consultata per educazione sul fenomeno, supporto di gruppo e limiti ed eterogeneità delle prove disponibili."
+                            ),
+                            new GuideReference(
+                                    "Cross-cultural validation of the Impostor-Profile 30 — Ibrahim e colleghi",
+                                    "https://doi.org/10.1007/s12144-025-07865-1",
+                                    "Studio europeo con versione italiana consultato per invarianza culturale; le deviazioni osservate nel campione italiano impediscono di assumere equivalenza piena o trasferire norme al test dell'app."
                             )
                     )
             ),
@@ -1226,6 +1301,11 @@ public class GuideCatalogue {
                                     "Procrastination Self-Help Resources — Centre for Clinical Interventions",
                                     "https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself/Procrastination",
                                     "Risorsa clinico-educativa per ciclo della procrastinazione, regole e giustificazioni, tolleranza del disagio, motivazione non critica e strategie pratiche di avvio e mantenimento."
+                            ),
+                            new GuideReference(
+                                    "On the Measurement of Procrastination in Six European Countries — Svartdal e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/27630595/",
+                                    "Confronto psicometrico in sei Paesi europei, inclusa l'Italia, consultato per la misura della procrastinazione; non valida un costrutto unitario di autosabotaggio."
                             )
                     )
             )

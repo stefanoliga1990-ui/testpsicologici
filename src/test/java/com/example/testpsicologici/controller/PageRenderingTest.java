@@ -115,11 +115,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "<title>Metodo e fonti di questionari e guide | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Come nasce un contenuto")))
+                .andExpect(content().string(containsString("fonti scientifiche o istituzionali italiane")))
+                .andExpect(content().string(containsString("Norme, prevalenze e cut-off non vengono trasferiti")))
                 .andExpect(content().string(containsString("Fonti per ogni questionario")))
                 .andExpect(content().string(containsString("ADHD nell&#39;adulto: tratti associati")))
                 .andExpect(content().string(containsString("ADHD in adults — NHS")))
                 .andExpect(content().string(containsString("Riferimenti delle guide")))
                 .andExpect(content().string(containsString("Signs of autism in adults — NHS")))
+                .andExpect(content().string(containsString("Diagnosi e trattamento del disturbo dello spettro autistico negli adulti — ISS/SNLG")))
                 .andExpect(content().string(containsString(
                         "Attention-Deficit/Hyperactivity Disorder: What You Need to Know — NIMH")))
                 .andExpect(content().string(containsString(
