@@ -3,6 +3,7 @@
 - `audit-psicometrico-2026-08.md` descrive l'audit trasversale e lo stato corrente dei 19 questionari.
 - `audit-fonti-2026-08.md` documenta criteri, decisioni e limiti della revisione delle fonti per la popolazione italiana.
 - `revisione-analisi-globali-2026-08.md` definisce struttura e requisiti delle restituzioni complessive più dettagliate.
+- `revisione-titoli-profili-2026-08.md` definisce i titoli globali specifici per tutti i test e la convenzione obbligatoria per i questionari futuri.
 - `revisione-esempi-item-2026-08.md` documenta l'audit dei 456 item e gli esempi facoltativi aggiunti agli item più astratti.
 - `standard-psicometrico.md` definisce il processo obbligatorio per revisioni e nuovi questionari.
 - `test-dbp-v1.md` è la specifica psicometrica corrente del questionario sui tratti associati al disturbo borderline di personalità e documenta separatamente le fonti del test e della scheda.

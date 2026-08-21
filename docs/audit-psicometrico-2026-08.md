@@ -18,6 +18,7 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 | Aree nel risultato | Le aree erano ordinate per media, trasformando differenze minime e non validate in una classifica. | Ordine teorico stabile. Ogni area conserva testo e barra. |
 | Barre | La trasformazione 0–100 poteva sembrare percentuale normativa o probabilità. | Nota esplicita nel risultato: non sono percentili, probabilità o confronti. |
 | Pesi | Non vi erano dati per giustificare pesi diversi. | Pesi uguali confermati; ogni area continua ad avere sei item. |
+| Titoli globali | Formule come “Un profilo variabile” o “Dubbi che emergono in alcuni contesti” non nominavano il contenuto del test se lette isolatamente. | Tutti i 76 titoli ora nominano esplicitamente costrutto, esperienze o risorse e distinguono la distribuzione `LOW`, `MIXED`, `FOCUSED` e `BROAD` senza formulare diagnosi. |
 
 ## Audit per questionario
 
@@ -51,7 +52,8 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 - `LOW`: quattro aree LOW; `MIXED`: nessuna HIGH e almeno una MEDIUM; `FOCUSED`: una o due HIGH; `BROAD`: almeno tre HIGH.
 - Le interpretazioni globali e di area sono state riesaminate: sono coerenti con la direzione positiva di assertività, intelligenza emotiva e intelligenza linguistica e con la direzione di difficoltà degli altri questionari. Non sono state trovate inversioni di scoring.
 - I testi di sicurezza e le cautele diagnostiche sono stati mantenuti. Non sono state aggiunte stime di affidabilità o validità non osservate.
+- La revisione dei soli titoli globali ha incrementato la versione di tutti i 19 questionari, così i dati persistenti vengono riallineati al successivo avvio senza modificare scoring o contenuti delle analisi.
 
 ## Verifiche automatiche aggiunte
 
-I test impediscono regressioni su: 19 questionari attivi, 24 item, quattro aree, sei item per area, assenza di duplicati, intercalazione delle aree, presenza dell'istruzione temporale, ancore di risposta, soglie e logica dei quattro profili. Le modifiche ai contenuti esistenti incrementano la versione; i nuovi questionari partono dalla versione `1.0`.
+I test impediscono regressioni su: 19 questionari attivi, 24 item, quattro aree, sei item per area, assenza di duplicati, intercalazione delle aree, presenza dell'istruzione temporale, ancore di risposta, soglie, logica dei quattro profili e presenza del soggetto specifico in tutti i 76 titoli globali. Le modifiche ai contenuti esistenti incrementano la versione; i nuovi questionari partono dalla versione `1.0`.

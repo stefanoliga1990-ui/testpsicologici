@@ -106,4 +106,4 @@ Questa revisione non modifica item, opzioni, scoring, pesi, soglie o interpretaz
 - Schede su dinamiche narcisistiche, people pleasing e fenomeno dell'impostore corrette nei punti in cui associazioni, cultura o limiti di misura richiedevano maggiore cautela.
 - Pagina “Metodo e fonti” aggiornata con priorità italiana/europea e divieto di trasferire automaticamente norme, prevalenze e cut-off.
 - `AGENTS.md` e `docs/standard-psicometrico.md` aggiornati come standard riutilizzabile.
-- Suite completa eseguita il 21 agosto 2026: 105 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.
+- Suite completa eseguita il 21 agosto 2026: 113 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.

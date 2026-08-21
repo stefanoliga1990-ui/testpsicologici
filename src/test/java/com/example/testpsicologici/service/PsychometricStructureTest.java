@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -17,6 +18,26 @@ import static org.assertj.core.api.Assertions.assertThat;
 class PsychometricStructureTest {
 
     private static final Pattern SENTENCE_END = Pattern.compile("[.!?](?=\\s|$)");
+    private static final Map<String, String> RESULT_TITLE_SUBJECTS = Map.ofEntries(
+            Map.entry("tratti-autistici-adulti", "tratti autistici esplorati"),
+            Map.entry("tratti-adhd-adulti", "esperienze associate all'adhd"),
+            Map.entry("tratti-ossessivo-compulsivi", "esperienze ossessivo-compulsive"),
+            Map.entry("autostima", "difficoltà legate all'autostima"),
+            Map.entry("dipendenza-affettiva", "dinamiche di dipendenza affettiva"),
+            Map.entry("assertivita", "risorse assertive"),
+            Map.entry("intelligenza-emotiva", "competenze emotive percepite"),
+            Map.entry("perfezionismo", "dinamiche perfezionistiche"),
+            Map.entry("ansia-sociale", "esperienze di ansia sociale"),
+            Map.entry("dinamiche-narcisistiche-partner", "dinamiche narcisistiche percepite"),
+            Map.entry("ansia-generalizzata", "esperienze associate all'ansia generalizzata"),
+            Map.entry("umore-depresso", "esperienze di umore depresso"),
+            Map.entry("people-pleasing", "dinamiche di people pleasing"),
+            Map.entry("sindrome-impostore", "esperienze del fenomeno dell'impostore"),
+            Map.entry("autosabotaggio", "meccanismi di autosabotaggio esplorati"),
+            Map.entry("tratti-borderline-adulti", "esperienze associate ai tratti borderline"),
+            Map.entry("paura-abbandono", "paura dell'abbandono"),
+            Map.entry("fomo", "esperienze di fomo"),
+            Map.entry("intelligenza-linguistica", "risorse linguistiche percepite"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -107,6 +128,28 @@ class PsychometricStructureTest {
                         .as("L'approfondimento complessivo di %s deve contenere almeno tre frasi", test.id())
                         .isGreaterThanOrEqualTo(3);
             });
+        });
+    }
+
+    @Test
+    void everyOverallTitleNamesItsSpecificSubjectAndProfileDistribution() {
+        assertThat(RESULT_TITLE_SUBJECTS).hasSize(catalogue.findAll().size());
+
+        catalogue.findAll().forEach(test -> {
+            List<TestResult> profiles = List.of(
+                    analyzeWithAreaAnswers(test, 1, 1, 1, 1),
+                    analyzeWithAreaAnswers(test, 3, 3, 3, 3),
+                    analyzeWithAreaAnswers(test, 5, 1, 1, 1),
+                    analyzeWithAreaAnswers(test, 5, 5, 5, 5));
+            String subject = RESULT_TITLE_SUBJECTS.get(test.id());
+
+            assertThat(subject).as("Descrittore del titolo di %s", test.id()).isNotBlank();
+            assertThat(profiles).allSatisfy(result ->
+                    assertThat(result.general().title()).containsIgnoringCase(subject));
+            assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
+            assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
+            assertThat(profiles.get(2).general().title()).containsIgnoringCase("una o due aree");
+            assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
         });
     }
 

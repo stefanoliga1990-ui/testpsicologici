@@ -30,7 +30,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("2.4");
+        assertThat(test.version()).isEqualTo("2.5");
         assertThat(test.seoTitle()).startsWith("Test autismo adulti online");
         assertThat(test.seoDescription()).contains("senza registrazione");
         assertThat(test.references()).hasSize(3);
@@ -44,7 +44,7 @@ class TestResultServiceTest {
     void lowAnswersSelectLowGeneralAndFourSpecificAnalyses() {
         TestResult result = analyzeWithAnswers(1, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Poche esperienze ricorrenti");
+        assertThat(result.general().title()).isEqualTo("I tratti autistici esplorati sembrano poco presenti");
         assertThat(result.percentage()).isZero();
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults()).allSatisfy(area -> assertThat(area.percentage()).isZero());
@@ -54,7 +54,7 @@ class TestResultServiceTest {
     void oneHighAreaSelectsFocusedProfile() {
         TestResult result = analyzeWithAnswers(5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Alcuni aspetti emergono più chiaramente");
+        assertThat(result.general().title()).isEqualTo("I tratti autistici esplorati sembrano più presenti in una o due aree");
         assertThat(result.areaResults().get(0).title()).isEqualTo("Interazione sociale e reciprocità emotiva");
         assertThat(result.areaResults().get(0).description()).contains("spazio nella conversazione");
         assertThat(result.areaResults().get(0).percentage()).isEqualTo(100);
@@ -64,7 +64,7 @@ class TestResultServiceTest {
     void highAnswersAcrossAreasSelectBroadProfile() {
         TestResult result = analyzeWithAnswers(5, 5, 5, 5);
 
-        assertThat(result.general().title()).isEqualTo("Esperienze presenti in più ambiti");
+        assertThat(result.general().title()).isEqualTo("I tratti autistici esplorati sembrano frequentemente presenti in più aree");
         assertThat(result.percentage()).isEqualTo(100);
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults()).allSatisfy(area -> assertThat(area.percentage()).isEqualTo(100));
@@ -79,14 +79,14 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("2.4");
+        assertThat(test.version()).isEqualTo("2.5");
     }
 
     @Test
     void adhdFocusedProfileUsesTheMostRelevantAreaFirst() {
         TestResult result = analyzeWithAnswersForTest("tratti-adhd-adulti", 5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Alcuni aspetti emergono con chiarezza");
+        assertThat(result.general().title()).isEqualTo("Le esperienze associate all'ADHD sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(0).title()).isEqualTo("Attenzione sostenuta e distraibilità");
         assertThat(result.areaResults().get(0).description()).contains("distraibilità frequente");
@@ -97,7 +97,7 @@ class TestResultServiceTest {
     void adhdHighAnswersAcrossAreasSelectBroadProfile() {
         TestResult result = analyzeWithAnswersForTest("tratti-adhd-adulti", 5, 5, 5, 5);
 
-        assertThat(result.general().title()).isEqualTo("Difficoltà presenti in più ambiti");
+        assertThat(result.general().title()).isEqualTo("Le esperienze associate all'ADHD sembrano frequentemente presenti in più aree");
     }
 
     @Test
@@ -109,14 +109,14 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.5");
+        assertThat(test.version()).isEqualTo("1.6");
     }
 
     @Test
     void obsessiveCompulsiveFocusedProfileShowsTheMostRelevantAreaFirst() {
         TestResult result = analyzeWithAnswersForTest("tratti-ossessivo-compulsivi", 5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Alcuni aspetti emergono con chiarezza");
+        assertThat(result.general().title()).isEqualTo("Le esperienze ossessivo-compulsive sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(0).title()).isEqualTo("Pensieri intrusivi, dubbio e bisogno di certezza");
         assertThat(result.areaResults().get(0).description()).contains("pensieri intrusivi o dubbi ricorrenti");
@@ -127,7 +127,7 @@ class TestResultServiceTest {
     void obsessiveCompulsiveLowAnswersSelectLowProfileAndEmptyBars() {
         TestResult result = analyzeWithAnswersForTest("tratti-ossessivo-compulsivi", 1, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Poche esperienze ricorrenti");
+        assertThat(result.general().title()).isEqualTo("Le esperienze ossessivo-compulsive sembrano poco presenti");
         assertThat(result.areaResults()).allSatisfy(area -> assertThat(area.percentage()).isZero());
     }
 
@@ -135,7 +135,7 @@ class TestResultServiceTest {
     void obsessiveCompulsiveHighAnswersAcrossAreasSelectBroadProfile() {
         TestResult result = analyzeWithAnswersForTest("tratti-ossessivo-compulsivi", 5, 5, 5, 5);
 
-        assertThat(result.general().title()).isEqualTo("Esperienze ricorrenti in più ambiti");
+        assertThat(result.general().title()).isEqualTo("Le esperienze ossessivo-compulsive sembrano frequentemente presenti in più aree");
         assertThat(result.areaResults()).allSatisfy(area -> assertThat(area.percentage()).isEqualTo(100));
     }
 
@@ -148,7 +148,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.overallMetricLabel()).isEqualTo("Difficoltà complessive relative all'autostima");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle difficoltà");
     }
@@ -157,7 +157,7 @@ class TestResultServiceTest {
     void selfEsteemFocusedProfileShowsTheMostRelevantAreaFirst() {
         TestResult result = analyzeWithAnswersForTest("autostima", 5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Un'area mette più alla prova la tua autostima");
+        assertThat(result.general().title()).isEqualTo("Le difficoltà legate all'autostima sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(0).title()).isEqualTo("Valore personale e autoaccettazione");
         assertThat(result.areaResults().get(0).description()).contains("dignità personale");
@@ -169,9 +169,9 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("autostima", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("autostima", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Un senso di valore generalmente solido");
+        assertThat(low.general().title()).isEqualTo("Le difficoltà legate all'autostima sembrano poco presenti");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("Un'autostima spesso sotto pressione");
+        assertThat(broad.general().title()).isEqualTo("Le difficoltà legate all'autostima sembrano frequentemente presenti in più aree");
         assertThat(broad.percentage()).isEqualTo(100);
     }
 
@@ -184,7 +184,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche esplorate");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche");
     }
@@ -193,7 +193,7 @@ class TestResultServiceTest {
     void emotionalDependenceFocusedProfileShowsTheMostRelevantAreaFirst() {
         TestResult result = analyzeWithAnswersForTest("dipendenza-affettiva", 5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Una dinamica relazionale richiede più attenzione");
+        assertThat(result.general().title()).isEqualTo("Le dinamiche di dipendenza affettiva sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(0).title()).isEqualTo("Paura della separazione e bisogno di rassicurazione");
         assertThat(result.areaResults().get(0).description()).contains("paura frequente della separazione");
@@ -205,9 +205,9 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("dipendenza-affettiva", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("dipendenza-affettiva", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Legame e autonomia generalmente in equilibrio");
+        assertThat(low.general().title()).isEqualTo("Le dinamiche di dipendenza affettiva sembrano poco presenti");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("La relazione occupa uno spazio molto vincolante");
+        assertThat(broad.general().title()).isEqualTo("Le dinamiche di dipendenza affettiva sembrano frequentemente presenti in più aree");
         assertThat(broad.general().detail()).contains("Controllo, minacce e violenza non sono colpa tua");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -221,7 +221,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva dei comportamenti assertivi");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza dei comportamenti assertivi");
     }
@@ -230,7 +230,7 @@ class TestResultServiceTest {
     void assertivenessFocusedProfileShowsTheStrongestAreaFirst() {
         TestResult result = analyzeWithAnswersForTest("assertivita", 5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Una risorsa assertiva emerge con chiarezza");
+        assertThat(result.general().title()).isEqualTo("Le risorse assertive sembrano più espresse in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(0).title()).isEqualTo("Espressione di opinioni, bisogni ed emozioni");
         assertThat(result.areaResults().get(0).description()).contains("buona capacità di rendere visibili");
@@ -242,9 +242,9 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("assertivita", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("assertivita", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("La tua voce trova ancora poco spazio");
+        assertThat(low.general().title()).isEqualTo("Le risorse assertive sembrano poco espresse");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("Competenze assertive diffuse");
+        assertThat(broad.general().title()).isEqualTo("Le risorse assertive sembrano frequentemente espresse in più aree");
         assertThat(broad.general().detail()).contains("ascoltare, negoziare");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -258,7 +258,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle competenze emotive esplorate");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle competenze emotive");
     }
@@ -267,7 +267,7 @@ class TestResultServiceTest {
     void emotionalIntelligenceFocusedProfileShowsTheStrongestAreaFirst() {
         TestResult result = analyzeWithAnswersForTest("intelligenza-emotiva", 5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Alcune competenze emotive sono già solide");
+        assertThat(result.general().title()).isEqualTo("Le competenze emotive percepite sembrano più espresse in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(0).title()).isEqualTo("Percezione e consapevolezza emotiva");
         assertThat(result.areaResults().get(0).description()).contains("buona attenzione ai segnali corporei");
@@ -279,9 +279,9 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("intelligenza-emotiva", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("intelligenza-emotiva", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Competenze emotive ancora poco accessibili");
+        assertThat(low.general().title()).isEqualTo("Le competenze emotive percepite sembrano poco espresse");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("Competenze emotive diffuse e flessibili");
+        assertThat(broad.general().title()).isEqualTo("Le competenze emotive percepite sembrano frequentemente espresse in più aree");
         assertThat(broad.general().detail()).contains("non è una misura oggettiva di abilità");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -295,7 +295,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche perfezionistiche");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche perfezionistiche");
     }
@@ -304,7 +304,7 @@ class TestResultServiceTest {
     void perfectionismFocusedProfileShowsTheMostRelevantAreaFirst() {
         TestResult result = analyzeWithAnswersForTest("perfezionismo", 5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Un'area concentra la pressione perfezionistica");
+        assertThat(result.general().title()).isEqualTo("Le dinamiche perfezionistiche sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(0).title()).isEqualTo("Standard elevati e valore legato ai risultati");
         assertThat(result.areaResults().get(0).description()).contains("standard frequentemente molto elevati");
@@ -316,9 +316,9 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("perfezionismo", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("perfezionismo", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Poche dinamiche perfezionistiche ricorrenti");
+        assertThat(low.general().title()).isEqualTo("Le dinamiche perfezionistiche sembrano poco presenti");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("Una pressione perfezionistica diffusa");
+        assertThat(broad.general().title()).isEqualTo("Le dinamiche perfezionistiche sembrano frequentemente presenti in più aree");
         assertThat(broad.general().detail()).contains("procrastinazione, esaurimento");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -332,7 +332,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze di ansia sociale");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
     }
@@ -341,7 +341,7 @@ class TestResultServiceTest {
     void socialAnxietyFocusedProfileShowsTheMostRelevantAreaFirst() {
         TestResult result = analyzeWithAnswersForTest("ansia-sociale", 5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Un ambito sociale emerge con chiarezza");
+        assertThat(result.general().title()).isEqualTo("Le esperienze di ansia sociale sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(0).title()).isEqualTo("Paura del giudizio e dell'imbarazzo");
         assertThat(result.areaResults().get(0).description()).contains("paura frequente di essere giudicato");
@@ -353,9 +353,9 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("ansia-sociale", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("ansia-sociale", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Poche difficoltà sociali ricorrenti");
+        assertThat(low.general().title()).isEqualTo("Le esperienze di ansia sociale sembrano poco presenti");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("Ansia sociale presente in più ambiti");
+        assertThat(broad.general().title()).isEqualTo("Le esperienze di ansia sociale sembrano frequentemente presenti in più aree");
         assertThat(broad.general().detail()).contains("L'ansia sociale è trattabile");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -370,7 +370,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.introductoryText()).contains("non può stabilire", "valutazione clinica diretta", "112", "1522");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche osservate");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche osservate");
@@ -380,7 +380,7 @@ class TestResultServiceTest {
     void perceivedNarcissisticDynamicsFocusedProfileKeepsTheoreticalAreaOrder() {
         TestResult result = analyzeWithAnswersForTest("dinamiche-narcisistiche-partner", 1, 1, 1, 5);
 
-        assertThat(result.general().title()).isEqualTo("Un'area relazionale richiede attenzione");
+        assertThat(result.general().title()).isEqualTo("Le dinamiche narcisistiche percepite sembrano più presenti in una o due aree della relazione");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(3).title()).isEqualTo("Confini, controllo e impatto sulla relazione");
         assertThat(result.areaResults().get(3).description()).contains("indipendentemente da qualsiasi etichetta diagnostica");
@@ -392,9 +392,9 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("dinamiche-narcisistiche-partner", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("dinamiche-narcisistiche-partner", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Poche dinamiche relazionali di questo tipo");
+        assertThat(low.general().title()).isEqualTo("Le dinamiche narcisistiche percepite sembrano poco presenti nella relazione");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("Dinamiche problematiche presenti in più aree");
+        assertThat(broad.general().title()).isEqualTo("Le dinamiche narcisistiche percepite sembrano frequentemente presenti in più aree della relazione");
         assertThat(broad.general().detail()).contains("non dimostra", "112", "1522");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -409,7 +409,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.introductoryText()).contains("ultimi sei mesi", "condizioni mediche", "Non è uno strumento diagnostico");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze di ansia");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
@@ -419,7 +419,7 @@ class TestResultServiceTest {
     void generalizedAnxietyFocusedProfileShowsTheMostRelevantAreaFirst() {
         TestResult result = analyzeWithAnswersForTest("ansia-generalizzata", 5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Un'area concentra maggiormente la tensione");
+        assertThat(result.general().title()).isEqualTo("Le esperienze associate all'ansia generalizzata sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(0).title()).isEqualTo("Preoccupazione diffusa e difficoltà di controllo");
         assertThat(result.areaResults().get(0).description()).contains("preoccupazione frequente");
@@ -431,9 +431,9 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("ansia-generalizzata", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("ansia-generalizzata", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Preoccupazione generalmente circoscritta");
+        assertThat(low.general().title()).isEqualTo("Le esperienze associate all'ansia generalizzata sembrano poco presenti");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("Ansia frequente in più aspetti della vita");
+        assertThat(broad.general().title()).isEqualTo("Le esperienze associate all'ansia generalizzata sembrano frequentemente presenti in più aree");
         assertThat(broad.general().detail()).contains("escludere altre cause", "non diagnostico");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -448,7 +448,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.introductoryText()).contains("ultime due settimane", "non valuta il rischio suicidario", "112", "Pronto Soccorso");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze legate all'umore");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
@@ -458,7 +458,7 @@ class TestResultServiceTest {
     void depressedMoodFocusedProfileShowsTheMostRelevantAreaFirst() {
         TestResult result = analyzeWithAnswersForTest("umore-depresso", 5, 1, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Un'area del benessere emotivo emerge con chiarezza");
+        assertThat(result.general().title()).isEqualTo("Le esperienze di umore depresso sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(0).title()).isEqualTo("Tono dell'umore e capacità di provare piacere");
         assertThat(result.areaResults().get(0).description()).contains("calo frequente del tono dell'umore");
@@ -471,10 +471,10 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("umore-depresso", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("umore-depresso", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Umore generalmente preservato");
+        assertThat(low.general().title()).isEqualTo("Le esperienze di umore depresso sembrano poco presenti");
         assertThat(low.general().detail()).contains("non valuta il rischio suicidario", "Pronto Soccorso");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("Umore depresso presente in più aree");
+        assertThat(broad.general().title()).isEqualTo("Le esperienze di umore depresso sembrano frequentemente presenti in più aree");
         assertThat(broad.general().detail()).contains("problemi depressivi sono trattabili", "112");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -489,7 +489,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.introductoryText()).contains("non una diagnosi", "differenze di potere", "strategia protettiva");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle dinamiche di compiacenza");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle dinamiche");
@@ -499,7 +499,7 @@ class TestResultServiceTest {
     void peoplePleasingFocusedProfileKeepsTheoreticalAreaOrder() {
         TestResult result = analyzeWithAnswersForTest("people-pleasing", 1, 1, 1, 5);
 
-        assertThat(result.general().title()).isEqualTo("Un meccanismo di compiacenza emerge con chiarezza");
+        assertThat(result.general().title()).isEqualTo("Le dinamiche di people pleasing sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(3).title()).isEqualTo("Sovraresponsabilità e trascuratezza di sé");
         assertThat(result.areaResults().get(3).description()).contains("sovraresponsabilità frequente");
@@ -511,9 +511,9 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("people-pleasing", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("people-pleasing", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Disponibilità e bisogni personali in buon equilibrio");
+        assertThat(low.general().title()).isEqualTo("Le dinamiche di people pleasing sembrano poco presenti");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("I bisogni altrui occupano spesso il primo posto");
+        assertThat(broad.general().title()).isEqualTo("Le dinamiche di people pleasing sembrano frequentemente presenti in più aree");
         assertThat(broad.general().detail()).contains("forte squilibrio di potere", "non diagnostico");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -528,7 +528,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.introductoryText()).contains("fenomeno dell'impostore", "non è una diagnosi", "discriminazione", "non misura la tua competenza reale");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze di impostore");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze");
@@ -538,7 +538,7 @@ class TestResultServiceTest {
     void impostorPhenomenonFocusedProfileKeepsTheoreticalAreaOrder() {
         TestResult result = analyzeWithAnswersForTest("sindrome-impostore", 1, 5, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Un meccanismo dell'impostore emerge con chiarezza");
+        assertThat(result.general().title()).isEqualTo("Le esperienze del fenomeno dell'impostore sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(1).title()).isEqualTo("Dubbi di competenza e paura di essere smascherati");
         assertThat(result.areaResults().get(1).description()).contains("paura frequente di essere smascherato");
@@ -551,10 +551,10 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("sindrome-impostore", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("sindrome-impostore", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Successi e competenze generalmente riconosciuti");
+        assertThat(low.general().title()).isEqualTo("Le esperienze del fenomeno dell'impostore sembrano poco presenti");
         assertThat(low.general().detail()).contains("ruolo nuovo");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("Il vissuto dell'impostore è presente in più aree");
+        assertThat(broad.general().title()).isEqualTo("Le esperienze del fenomeno dell'impostore sembrano frequentemente presenti in più aree");
         assertThat(broad.general().detail()).contains("esclusione o discriminazione", "non diagnostico", "non stabilisce quanto sei competente");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -569,7 +569,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.4");
+        assertThat(test.version()).isEqualTo("1.5");
         assertThat(test.introductoryText()).contains("non una diagnosi", "Non implica", "può essere adattivo", "difficoltà esecutive", "non moralistica");
         assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva degli ostacoli autoalimentati");
         assertThat(test.areaMetricLabel()).isEqualTo("Frequenza degli ostacoli");
@@ -579,7 +579,7 @@ class TestResultServiceTest {
     void selfSabotageFocusedProfileKeepsTheoreticalAreaOrder() {
         TestResult result = analyzeWithAnswersForTest("autosabotaggio", 1, 5, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Un meccanismo di autosabotaggio emerge con chiarezza");
+        assertThat(result.general().title()).isEqualTo("I meccanismi di autosabotaggio esplorati sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).hasSize(4);
         assertThat(result.areaResults().get(1).title()).isEqualTo("Paura della valutazione e auto-handicapping");
         assertThat(result.areaResults().get(1).description()).contains("auto-handicapping frequente");
@@ -592,10 +592,10 @@ class TestResultServiceTest {
         TestResult low = analyzeWithAnswersForTest("autosabotaggio", 1, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("autosabotaggio", 5, 5, 5, 5);
 
-        assertThat(low.general().title()).isEqualTo("Scelte generalmente coerenti con i tuoi obiettivi");
+        assertThat(low.general().title()).isEqualTo("I meccanismi di autosabotaggio esplorati sembrano poco presenti");
         assertThat(low.general().detail()).contains("abbandono di obiettivi non più realistici");
         assertThat(low.percentage()).isZero();
-        assertThat(broad.general().title()).isEqualTo("Più meccanismi ostacolano i tuoi obiettivi");
+        assertThat(broad.general().title()).isEqualTo("I meccanismi di autosabotaggio esplorati sembrano frequentemente presenti in più aree");
         assertThat(broad.general().detail()).contains("non diagnostico", "difficoltà esecutive", "non misura la tua forza di volontà");
         assertThat(broad.percentage()).isEqualTo(100);
     }
@@ -611,7 +611,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.responseInstruction()).contains("ultimi tre mesi", "frequenza");
         assertThat(test.introductoryText()).contains(
                 "non può confermare, escludere o stimare",
@@ -633,7 +633,7 @@ class TestResultServiceTest {
     void borderlineFocusedProfileKeepsTheoreticalAreaOrderAndAreaMeaning() {
         TestResult result = analyzeWithAnswersForTest("tratti-borderline-adulti", 1, 5, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Una o due aree emergono con maggiore frequenza");
+        assertThat(result.general().title()).isEqualTo("Le esperienze associate ai tratti borderline sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
                 "Intensità emotiva e ritorno all'equilibrio",
                 "Relazioni e sensibilità alla distanza",
@@ -651,10 +651,10 @@ class TestResultServiceTest {
         TestResult focused = analyzeWithAnswersForTest("tratti-borderline-adulti", 5, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("tratti-borderline-adulti", 5, 5, 5, 1);
 
-        assertThat(low.general().title()).isEqualTo("Esperienze poco frequenti nelle quattro aree");
-        assertThat(mixed.general().title()).isEqualTo("Un andamento che varia tra aree e contesti");
-        assertThat(focused.general().title()).isEqualTo("Una o due aree emergono con maggiore frequenza");
-        assertThat(broad.general().title()).isEqualTo("Esperienze frequenti distribuite in più aree");
+        assertThat(low.general().title()).isEqualTo("Le esperienze associate ai tratti borderline sembrano poco presenti");
+        assertThat(mixed.general().title()).isEqualTo("Le esperienze associate ai tratti borderline sembrano presenti in modo variabile");
+        assertThat(focused.general().title()).isEqualTo("Le esperienze associate ai tratti borderline sembrano più presenti in una o due aree");
+        assertThat(broad.general().title()).isEqualTo("Le esperienze associate ai tratti borderline sembrano frequentemente presenti in più aree");
         assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
                 assertThat(result.general().detail()).contains(
                         "non è una diagnosi",
@@ -677,7 +677,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.responseInstruction()).contains("ultimi tre mesi", "relazioni per te importanti", "frequenza");
         assertThat(test.introductoryText()).contains(
                 "non è qui una diagnosi",
@@ -699,7 +699,7 @@ class TestResultServiceTest {
     void fearOfAbandonmentFocusedProfileKeepsTheoreticalAreaOrderAndAreaMeaning() {
         TestResult result = analyzeWithAnswersForTest("paura-abbandono", 1, 5, 1, 1);
 
-        assertThat(result.general().title()).isEqualTo("Una o due modalità emergono con maggiore frequenza");
+        assertThat(result.general().title()).isEqualTo("La paura dell'abbandono sembra più presente in una o due aree");
         assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
                 "Sensibilità ai segnali di distanza",
                 "Ricerca di rassicurazione e vicinanza",
@@ -717,10 +717,10 @@ class TestResultServiceTest {
         TestResult focused = analyzeWithAnswersForTest("paura-abbandono", 5, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("paura-abbandono", 5, 5, 5, 1);
 
-        assertThat(low.general().title()).isEqualTo("Timore di perdita poco frequente e non diffuso");
-        assertThat(mixed.general().title()).isEqualTo("La paura cambia tra segnali, distanza e contesti");
-        assertThat(focused.general().title()).isEqualTo("Una o due modalità emergono con maggiore frequenza");
-        assertThat(broad.general().title()).isEqualTo("La paura di perdere il legame attraversa più aree");
+        assertThat(low.general().title()).isEqualTo("La paura dell'abbandono sembra poco presente");
+        assertThat(mixed.general().title()).isEqualTo("La paura dell'abbandono sembra presente in modo variabile");
+        assertThat(focused.general().title()).isEqualTo("La paura dell'abbandono sembra più presente in una o due aree");
+        assertThat(broad.general().title()).isEqualTo("La paura dell'abbandono sembra frequentemente presente in più aree");
         assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
                 assertThat(result.general().detail()).contains(
                         "non diagnostica una condizione",
@@ -743,7 +743,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.version()).isEqualTo("1.1");
         assertThat(test.responseInstruction()).contains("ultimo mese", "frequenza");
         assertThat(test.introductoryText()).contains(
                 "online e fuori dai social",
@@ -764,7 +764,7 @@ class TestResultServiceTest {
     void fomoFocusedProfileKeepsTheoreticalAreaOrderAndAreaMeaning() {
         TestResult result = analyzeWithAnswersForTest("fomo", 1, 1, 5, 1);
 
-        assertThat(result.general().title()).isEqualTo("Una o due modalità emergono con maggiore frequenza");
+        assertThat(result.general().title()).isEqualTo("Le esperienze di FOMO sembrano più presenti in una o due aree");
         assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
                 "Inclusione e appartenenza percepita",
                 "Confronto con esperienze alternative",
@@ -783,10 +783,10 @@ class TestResultServiceTest {
         TestResult focused = analyzeWithAnswersForTest("fomo", 5, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("fomo", 5, 5, 5, 1);
 
-        assertThat(low.general().title()).isEqualTo("La FOMO compare poco e non attraversa le quattro aree");
-        assertThat(mixed.general().title()).isEqualTo("La FOMO varia tra contesti e modalità");
-        assertThat(focused.general().title()).isEqualTo("Una o due modalità emergono con maggiore frequenza");
-        assertThat(broad.general().title()).isEqualTo("La preoccupazione di perdere esperienze attraversa più aree");
+        assertThat(low.general().title()).isEqualTo("Le esperienze di FOMO sembrano poco presenti");
+        assertThat(mixed.general().title()).isEqualTo("Le esperienze di FOMO sembrano presenti in modo variabile");
+        assertThat(focused.general().title()).isEqualTo("Le esperienze di FOMO sembrano più presenti in una o due aree");
+        assertThat(broad.general().title()).isEqualTo("Le esperienze di FOMO sembrano frequentemente presenti in più aree");
         assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
                 assertThat(result.general().detail()).contains(
                         "non diagnostica una condizione",
@@ -809,7 +809,7 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.version()).isEqualTo("1.1");
         assertThat(test.responseInstruction()).contains("ultimi tre mesi", "occasioni", "frequenza");
         assertThat(test.introductoryText()).contains(
                 "Howard Gardner",
@@ -830,7 +830,7 @@ class TestResultServiceTest {
     void linguisticIntelligenceFocusedProfileKeepsTheoreticalOrderAndPositiveDirection() {
         TestResult result = analyzeWithAnswersForTest("intelligenza-linguistica", 1, 1, 5, 1);
 
-        assertThat(result.general().title()).isEqualTo("Una o due modalità linguistiche emergono con più continuità");
+        assertThat(result.general().title()).isEqualTo("Le risorse linguistiche percepite sembrano più espresse in una o due aree");
         assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
                 "Comprensione e sensibilità al significato",
                 "Espressione orale e adattamento",
@@ -848,10 +848,10 @@ class TestResultServiceTest {
         TestResult focused = analyzeWithAnswersForTest("intelligenza-linguistica", 5, 1, 1, 1);
         TestResult broad = analyzeWithAnswersForTest("intelligenza-linguistica", 5, 5, 5, 1);
 
-        assertThat(low.general().title()).isEqualTo("Risorse linguistiche poco espresse nei contesti considerati");
-        assertThat(mixed.general().title()).isEqualTo("Un profilo linguistico che cambia tra modalità");
-        assertThat(focused.general().title()).isEqualTo("Una o due modalità linguistiche emergono con più continuità");
-        assertThat(broad.general().title()).isEqualTo("Le risorse linguistiche sono espresse in più modalità");
+        assertThat(low.general().title()).isEqualTo("Le risorse linguistiche percepite sembrano poco espresse");
+        assertThat(mixed.general().title()).isEqualTo("Le risorse linguistiche percepite sembrano espresse in modo variabile");
+        assertThat(focused.general().title()).isEqualTo("Le risorse linguistiche percepite sembrano più espresse in una o due aree");
+        assertThat(broad.general().title()).isEqualTo("Le risorse linguistiche percepite sembrano frequentemente espresse in più aree");
         assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
                 assertThat(result.general().detail()).contains(
                         "non misura l'intelligenza generale né una competenza linguistica oggettiva",

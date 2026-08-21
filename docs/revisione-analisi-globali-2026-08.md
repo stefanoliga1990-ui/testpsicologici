@@ -20,7 +20,7 @@ Le interpretazioni correnti sono prudenti e coerenti con il profilo, ma alcune r
 
 Ogni interpretazione globale comprende:
 
-1. **Titolo** breve e specifico per il profilo.
+1. **Titolo** breve ma autonomamente comprensibile: deve nominare il costrutto, le esperienze o le risorse esplorate e distinguere il profilo senza affermare diagnosi o capacità certificate.
 2. **Sintesi** di almeno due frasi, che descrive frequenza e distribuzione delle risposte e ne traduce il significato generale nel costrutto specifico.
 3. **Approfondimento** di almeno tre frasi, che include:
    - significato possibile del profilo;

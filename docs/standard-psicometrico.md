@@ -58,6 +58,7 @@ Output: tabella `dimensione → indicatori → item candidati → esclusioni`.
 - Le barre sono trasformazioni lineari da 1–5 a 0–100. Non sono percentuali della persona, percentili, probabilità, gravità clinica o confronti normativi.
 - Le interpretazioni devono descrivere le risposte, includere contesto e alternative, evitare diagnosi e indicare quando rivolgersi a professionisti o servizi di emergenza.
 - Ogni profilo complessivo deve includere una sintesi di almeno due frasi e un approfondimento di almeno tre: distribuzione tra aree, significato possibile, fattori contestuali o alternativi, cosa osservare e limite inferenziale. Le analisi per area restano separate e più specifiche.
+- Il titolo di ogni profilo deve nominare esplicitamente il costrutto, le esperienze o le risorse esplorate e rendere riconoscibile `LOW`, `MIXED`, `FOCUSED` o `BROAD` anche se letto isolatamente. Titoli generici come “Un profilo variabile” non sono ammessi. Nei questionari sensibili il titolo descrive ciò che emerge **nelle risposte** e non afferma una diagnosi; nei questionari a direzione positiva descrive risorse percepite, non capacità certificate.
 
 ### 6. Validazione necessaria per affermazioni psicometriche
 
@@ -83,6 +84,7 @@ Prima di pubblicare coefficienti o cut-off:
 - [ ] Direzione dello scoring uniforme e documentata.
 - [ ] Sei item per area nell'architettura corrente; item intercalati.
 - [ ] Soglie e interpretazioni testate ai confini.
+- [ ] Titoli globali specifici, autonomamente comprensibili e coerenti con la direzione del test.
 - [ ] Nessuna classifica delle aree né linguaggio normativo.
 - [ ] Disclaimer e messaggi di sicurezza adeguati.
 - [ ] Versione incrementata, test automatici verdi e audit aggiornato.
