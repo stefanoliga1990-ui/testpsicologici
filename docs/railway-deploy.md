@@ -30,6 +30,27 @@ Non serve un servizio Node in produzione: Node viene installato soltanto nello s
 
 Per questa prima versione non è necessario definire nessuna delle variabili opzionali.
 
+## Variabili per monitoraggio visite
+
+Prima di usare la dashboard configurare in **Variables** del servizio Railway:
+
+- `MONITORING_USERNAME`: nome utente scelto per `/monitoring`;
+- `MONITORING_PASSWORD`: password lunga e univoca per la dashboard;
+- `VISITOR_COOKIE_SECRET`: segreto casuale stabile usato per firmare il cookie giornaliero;
+- `APP_PRIVACY_CONTACT_EMAIL`: indirizzo mostrato nella pagina `/privacy-e-cookie`.
+
+Per generare una chiave casuale da PowerShell:
+
+```powershell
+[Convert]::ToBase64String([Security.Cryptography.RandomNumberGenerator]::GetBytes(32))
+```
+
+Railway tratta le variabili come segreti del servizio e avvia automaticamente un nuovo deploy dopo la modifica. Non inserire questi valori in `application.properties`, nei log o nel repository.
+
+Se `MONITORING_USERNAME` o `MONITORING_PASSWORD` mancano, l'area riservata non è accessibile. Se manca `VISITOR_COOKIE_SECRET`, il conteggio funziona con una chiave temporanea ma può ricontare alcuni browser dopo un riavvio; in produzione va quindi sempre configurata.
+
+La dashboard è disponibile su `https://spaziotest.me/monitoring` e aggiorna il valore odierno ogni 15 secondi. Le visite alla dashboard e alla pagina di login non entrano nelle statistiche. Dettagli tecnici e limiti sono documentati in [`docs/monitoraggio-visite.md`](monitoraggio-visite.md).
+
 ## Limiti della soluzione H2
 
 H2 su volume è adatto a questa applicazione leggera e senza scritture concorrenti degli utenti. Il servizio deve restare a una sola replica. Se in futuro verranno aggiunti account, salvataggio dei risultati o più repliche, sarà opportuno migrare a PostgreSQL.

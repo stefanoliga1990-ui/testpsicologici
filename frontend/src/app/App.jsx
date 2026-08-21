@@ -1,12 +1,15 @@
-import { Component } from 'react';
+import { Component, useEffect } from 'react';
 import GuidePage from '../pages/GuidePage';
 import GuidesPage from '../pages/GuidesPage';
 import HomePage from '../pages/HomePage';
 import IntroductionPage from '../pages/IntroductionPage';
 import MethodPage from '../pages/MethodPage';
 import ProjectPage from '../pages/ProjectPage';
+import PrivacyPage from '../pages/PrivacyPage';
 import QuestionPage from '../pages/QuestionPage';
 import ResultPage from '../pages/ResultPage';
+import MonitoringPage from '../pages/MonitoringPage';
+import { recordDailyVisit } from '../services/visits';
 
 const pages = {
   guide: GuidePage,
@@ -14,6 +17,8 @@ const pages = {
   home: HomePage,
   introduction: IntroductionPage,
   method: MethodPage,
+  monitoring: MonitoringPage,
+  privacy: PrivacyPage,
   project: ProjectPage,
   question: QuestionPage,
   result: ResultPage
@@ -54,6 +59,12 @@ function PageRenderer({ pageData }) {
 }
 
 export default function App({ pageData }) {
+  useEffect(() => {
+    if (pageData.page !== 'monitoring') {
+      recordDailyVisit();
+    }
+  }, [pageData.page]);
+
   return (
     <ErrorBoundary>
       <PageRenderer pageData={pageData} />

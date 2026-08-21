@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Informazioni su privacy, cookie tecnici e conteggio aggregato delle visite di Spazio Test.">
+    <meta name="robots" content="index, follow">
+    <title>Privacy e cookie | Spazio Test</title>
+    <link rel="canonical" th:href="${canonicalUrl}">
+    <th:block th:replace="~{fragments/brand-head :: icons}"></th:block>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='monitoring-1')}">
+    <link rel="stylesheet" th:href="@{/react/assets/app.css(v='monitoring-1')}">
+</head>
+<body class="editorial-body">
+<th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
+<main class="editorial-shell privacy-shell">
+    <nav class="site-nav" aria-label="Navigazione principale">
+        <a class="brand" th:href="@{/}"><img class="brand-mark" th:src="@{/images/brand/logo-mark.svg}" alt="" width="27" height="27"> Spazio Test</a>
+    </nav>
+    <header class="editorial-hero privacy-hero"><p class="eyebrow">Trasparenza</p><h1>Privacy e cookie</h1><p>Spazio Test limita la raccolta ai dati necessari al funzionamento e a una statistica giornaliera aggregata.</p></header>
+    <section class="privacy-content">
+        <article><h2>Dati dei questionari</h2><p>Le risposte sono mantenute soltanto nella sessione tecnica del browser e non sono salvate nel database delle statistiche.</p></article>
+        <article><h2>Conteggio delle visite</h2><p>Viene conservato soltanto il numero complessivo giornaliero di browser distinti, senza IP, pagine visitate o identificatori individuali.</p></article>
+        <article><h2>Cookie</h2><p>Il cookie tecnico giornaliero di prima parte <strong>__Host-st_visit_day</strong> evita conteggi ripetuti e scade alla mezzanotte. JSESSIONID mantiene temporaneamente la sessione necessaria ai questionari e all'area riservata.</p></article>
+        <article><h2>Contatti</h2><p th:if="${!#strings.isEmpty(privacyContactEmail)}">Per richieste relative alla privacy: <a th:href="|mailto:${privacyContactEmail}|" th:text="${privacyContactEmail}">privacy@example.com</a>.</p><p th:if="${#strings.isEmpty(privacyContactEmail)}">Il recapito privacy del titolare non è ancora stato configurato.</p></article>
+    </section>
+    <div th:replace="~{fragments/site-footer :: siteFooter}"></div>
+</main>
+</body>
+</html>

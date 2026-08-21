@@ -45,6 +45,7 @@ public class SeoController {
                 .append(urlEntry(siteUrlService.canonicalUrl(request, "/"), "1.0"))
                 .append(urlEntry(siteUrlService.canonicalUrl(request, "/metodo-e-fonti"), "0.7"))
                 .append(urlEntry(siteUrlService.canonicalUrl(request, "/il-progetto"), "0.6"))
+                .append(urlEntry(siteUrlService.canonicalUrl(request, "/privacy-e-cookie"), "0.3"))
                 .append(urlEntry(siteUrlService.canonicalUrl(request, "/approfondimenti"), "0.8"));
         for (PsychologicalTest test : catalogue.findAll()) {
             xml.append(urlEntry(siteUrlService.canonicalUrl(request, "/test/" + test.id()), "0.8"));

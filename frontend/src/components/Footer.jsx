@@ -8,6 +8,7 @@ export default function Footer() {
         <a href="/approfondimenti">Approfondimenti</a>
         <a href="/metodo-e-fonti">Metodo e fonti</a>
         <a href="/il-progetto">Il progetto</a>
+        <a href="/privacy-e-cookie">Privacy e cookie</a>
         <a href="/">Tutti i test</a>
       </nav>
       <p>Questionari e guide informative per l'auto-osservazione. I contenuti non costituiscono diagnosi o valutazioni cliniche.</p>
