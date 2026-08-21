@@ -37,7 +37,8 @@ class PsychometricStructureTest {
             Map.entry("tratti-borderline-adulti", "esperienze associate ai tratti borderline"),
             Map.entry("paura-abbandono", "paura dell'abbandono"),
             Map.entry("fomo", "esperienze di fomo"),
-            Map.entry("intelligenza-linguistica", "risorse linguistiche percepite"));
+            Map.entry("intelligenza-linguistica", "risorse linguistiche percepite"),
+            Map.entry("intelligenza-intrapersonale", "risorse intrapersonali percepite"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -47,7 +48,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(19).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(20).allSatisfy(test -> {
             assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
             assertThat(test.areas()).hasSize(4);
             assertThat(test.questions()).hasSize(24);

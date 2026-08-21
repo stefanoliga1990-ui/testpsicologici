@@ -2,7 +2,7 @@
 
 ## Scopo e perimetro
 
-Sono stati riesaminati tutti i 456 item dei 19 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
+Sono stati riesaminati tutti i 480 item dei 20 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
 
 L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 404 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
 
@@ -151,6 +151,10 @@ Non sono stati aggiunti esempi ai 24 item. Le formulazioni descrivono già situa
 ### Intelligenza linguistica
 
 Non sono stati aggiunti esempi ai 24 item. Esempi legati a scuola, lavoro, italiano standard, lettura o parlato potrebbero privilegiare una lingua, una modalità comunicativa o un tipo di opportunità e far sembrare non pertinenti esperienze equivalenti. La scelta è documentata nella specifica v1.0 e richiede verifica con interviste cognitive inclusive di adulti plurilingui e con modalità comunicative diverse.
+
+### Intelligenza intrapersonale
+
+Non sono stati aggiunti esempi ai 24 item. Esempi legati a diario, terapia, meditazione, studio o lavoro potrebbero privilegiare la verbalizzazione e un particolare modello culturale di auto-osservazione, restringendo esperienze equivalenti. La scelta è documentata nella specifica v1.0 e richiede verifica con interviste cognitive attente a lingua, cultura, neurodivergenza e modalità diverse di elaborazione.
 
 ## Limiti e verifica successiva
 

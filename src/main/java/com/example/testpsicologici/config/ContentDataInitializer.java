@@ -64,6 +64,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedFearOfAbandonmentInformationTest();
         seedFomoInformationTest();
         seedLinguisticIntelligenceInformationTest();
+        seedIntrapersonalIntelligenceInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -1798,6 +1799,98 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Le risposte descrivono un frequente uso di parole nuove, registri, analogie e sperimentazione verbale. È una frequenza percepita e non una prova di memoria, creatività, apprendimento linguistico o mediazione.");
     }
 
+    private void seedIntrapersonalIntelligenceInformationTest() {
+        String id = "intelligenza-intrapersonale";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Intelligenza intrapersonale",
+                "Autovalutazione informativa",
+                "Esplora come riconosci stati interni, bisogni, valori e schemi personali e come riferisci di usarli nelle scelte.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Riprende l'idea di intelligenza intrapersonale proposta da Howard Gardner, ma non misura un'intelligenza indipendente, il quoziente intellettivo o l'accuratezza della conoscenza di sé. Esplora soltanto la frequenza con cui, negli ultimi tre mesi e nelle occasioni disponibili, hai riconosciuto alcuni stati interni, chiarito bisogni e valori, riflettuto su schemi personali e riferito di usare queste informazioni nelle scelte. Tempo, privacy, sicurezza, cultura, lingua, stress, umore, neurodivergenza, disabilità, abitudini e opportunità possono influire sulle risposte. Riflettere spesso non equivale necessariamente ad avere insight accurati o a prendere decisioni efficaci. Il risultato non certifica un talento o un limite, non valuta personalità o salute mentale e non diagnostica condizioni. Se un cambiamento nella percezione di te, confusione, pensieri ripetitivi o difficoltà nelle decisioni causa disagio o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.",
+                version, false,
+                "Frequenza complessiva delle risorse intrapersonali riferite",
+                "Frequenza delle risorse riferite",
+                true, 20).withSeo(
+                "Test intelligenza intrapersonale di Gardner | Spazio Test",
+                "Questionario informativo sulle risorse intrapersonali percepite: stati interni, chiarezza personale, riflessione e scelte. 24 domande, non misura il QI.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e alle occasioni in cui hai potuto osservarti o fare una scelta, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "The Theory of Multiple Intelligences — Project Zero, Harvard",
+                "https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf", 1);
+        saveReference(id, "Beyond g: Putting multiple intelligences theory to the test — Visser, Ashton e Vernon",
+                "https://doi.org/10.1016/j.intell.2006.02.004", 2);
+        saveReference(id, "The Self-Reflection and Insight Scale — Italian Version — Di Fabio e Svicher",
+                "https://doi.org/10.14605/CS1532206", 3);
+        saveReference(id, "Interoceptive accuracy and awareness in an Italian sample — Calì e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/26379571/", 4);
+
+        saveArea(id, "stati-interni", "Riconoscimento degli stati interni", 1);
+        saveArea(id, "chiarezza", "Chiarezza su bisogni, valori e motivazioni", 2);
+        saveArea(id, "riflessione", "Riflessione su schemi e funzionamento personale", 3);
+        saveArea(id, "orientamento", "Uso della conoscenza di sé nelle scelte", 4);
+
+        saveQuestions(id, List.of(
+                q("stati-interni", "Mi accorgo quando il mio stato emotivo cambia."),
+                q("stati-interni", "Distinguo le emozioni che provo nello stesso momento."),
+                q("stati-interni", "Noto i segnali del corpo collegati a come sto."),
+                q("stati-interni", "Riconosco quando ho bisogno di una pausa."),
+                q("stati-interni", "Mi accorgo dei pensieri che ritornano in determinate situazioni."),
+                q("stati-interni", "Noto quando una situazione cambia il mio livello di energia."),
+                q("chiarezza", "Metto a fuoco ciò che per me conta in una decisione."),
+                q("chiarezza", "Distinguo un mio desiderio da ciò che percepisco atteso dagli altri."),
+                q("chiarezza", "Identifico il bisogno che accompagna una mia reazione."),
+                q("chiarezza", "Formulo il motivo per cui un obiettivo è importante per me."),
+                q("chiarezza", "Riconosco le condizioni in cui mi sento a mio agio."),
+                q("chiarezza", "Individuo le attività che per me hanno significato."),
+                q("riflessione", "Ripercorro una mia reazione per comprenderne i passaggi."),
+                q("riflessione", "Riconosco situazioni in cui tendo a reagire in modo simile."),
+                q("riflessione", "Confronto ciò che intendevo fare con ciò che ho fatto."),
+                q("riflessione", "Uso il feedback di una persona per riesaminare come mi vedo."),
+                q("riflessione", "Individuo le condizioni che favoriscono una mia risorsa personale."),
+                q("riflessione", "Individuo le condizioni che rendono per me un compito più difficile."),
+                q("orientamento", "Tengo conto delle mie priorità quando scelgo come usare il tempo."),
+                q("orientamento", "Adatto un obiettivo alle energie che percepisco disponibili."),
+                q("orientamento", "Cambio strategia quando noto che una modalità non mi aiuta."),
+                q("orientamento", "Comunico un mio limite quando riconosco che è importante farlo."),
+                q("orientamento", "Preparo condizioni che mi aiutano ad affrontare un compito."),
+                q("orientamento", "Dopo una scelta, osservo se l'esito è coerente con ciò che per me conta.")));
+
+        saveGlobal(id, "LOW", "Le risorse intrapersonali percepite sembrano poco espresse",
+                "Nelle risposte, i comportamenti di auto-osservazione e uso delle informazioni su di sé risultano poco frequenti in tutte e quattro le aree. Riconoscimento degli stati interni, chiarezza personale, riflessione e orientamento delle scelte non formano quindi un andamento ricorrente nelle occasioni considerate.",
+                "Questo profilo non indica scarsa intelligenza o scarsa conoscenza di sé e non esclude processi rapidi, non verbalizzati o non coperti dagli item. Considera quante occasioni e quanta sicurezza hai avuto per fermarti, quali richieste erano presenti e se preferisci modi diversi di comprenderti. Il risultato non misura l'intelligenza generale né l'accuratezza della conoscenza di sé, non certifica un talento o un limite e non diagnostica condizioni. Se un cambiamento nella percezione di te, confusione, pensieri ripetitivi o difficoltà nelle decisioni causa disagio o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.");
+        saveGlobal(id, "MIXED", "Le risorse intrapersonali percepite sembrano espresse in modo variabile",
+                "Le risposte descrivono una frequenza variabile tra le quattro aree, senza che una di esse raggiunga il livello editoriale più alto. Alcune forme di auto-osservazione possono quindi comparire in determinate situazioni e restare meno accessibili o meno utilizzate in altre.",
+                "Le schede d'area aiutano a distinguere ciò che noti, chiarisci, riesamini e usi senza trasformare le differenze in una classifica personale. Osserva tempo, sicurezza, tipo di scelta, stato del momento e feedback disponibili: riflettere e raggiungere un nuovo insight non sono lo stesso processo. Il risultato non misura l'intelligenza generale né l'accuratezza della conoscenza di sé, non certifica un talento o un limite e non diagnostica condizioni; le soglie sono esclusivamente editoriali. Se un cambiamento nella percezione di te, confusione, pensieri ripetitivi o difficoltà nelle decisioni causa disagio o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.");
+        saveGlobal(id, "FOCUSED", "Le risorse intrapersonali percepite sembrano più espresse in una o due aree",
+                "Una o due aree raccolgono comportamenti riferiti con maggiore frequenza, mentre le altre risultano più contenute. Il profilo è quindi concentrato su modalità specifiche di auto-osservazione o scelta e non descrive una capacità generale valida in ogni situazione.",
+                "Consulta le schede sotto per riconoscere dove queste risorse ricorrono, senza definire le aree emergenti come talenti misurati o prove di accuratezza. Può essere utile osservare se ciò che noti si traduce in comprensioni verificabili e scelte coerenti in contesti diversi e quali condizioni rendono accessibili le aree meno usate. Il risultato non misura l'intelligenza generale né l'accuratezza della conoscenza di sé, non certifica un talento o un limite e non diagnostica condizioni. Se un cambiamento nella percezione di te, confusione, pensieri ripetitivi o difficoltà nelle decisioni causa disagio o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.");
+        saveGlobal(id, "BROAD", "Le risorse intrapersonali percepite sembrano frequentemente espresse in più aree",
+                "Le risposte indicano comportamenti riferiti con maggiore frequenza in almeno tre delle quattro aree esplorate. Negli ultimi tre mesi, riconoscimento, chiarificazione, riflessione e uso delle informazioni su di sé possono quindi essere comparsi in modo ampio nelle occasioni disponibili.",
+                "L'ampiezza riguarda la frequenza percepita e non dimostra che le interpretazioni su di te siano accurate, che le scelte siano efficaci o che esista un'intelligenza intrapersonale indipendente misurata. Osserva se le tue letture cambiano alla luce di comportamenti, esiti e feedback e se la riflessione rimane flessibile anziché ripetitiva. Il risultato non misura l'intelligenza generale né l'accuratezza della conoscenza di sé, non certifica un talento o un limite e non diagnostica condizioni. Se un cambiamento nella percezione di te, confusione, pensieri ripetitivi o difficoltà nelle decisioni causa disagio o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.");
+
+        saveAreaInsights(id, "stati-interni",
+                "Accorgerti di cambiamenti emotivi, segnali corporei, pensieri ricorrenti, pause ed energia risulta poco frequente nelle occasioni considerate. Il dato può dipendere da contesto, stress, abitudini attentive o possibilità di fermarti e non misura accuratezza emotiva o interocettiva.",
+                "Il riconoscimento degli stati interni compare in alcune situazioni più che in altre. Nota quali condizioni facilitano l'attenzione e distingui ciò che percepisci dall'interpretazione che ne dai, senza cercare una lettura perfetta.",
+                "Le risposte descrivono un frequente riconoscimento di cambiamenti emotivi, segnali corporei, pensieri, bisogno di pausa ed energia. È una percezione autoriferita e non una prova di accuratezza interocettiva, regolazione emotiva o salute mentale.");
+        saveAreaInsights(id, "chiarezza",
+                "Mettere a fuoco bisogni, desideri, valori e motivazioni risulta poco frequente nelle occasioni considerate. Questo non indica assenza di valori o autonomia e può riflettere richieste urgenti, attese sociali, cultura o poco spazio per la riflessione.",
+                "La chiarezza su ciò che conta compare con frequenza intermedia o dipende dalla situazione. Osserva quali decisioni rendono più facile distinguere bisogni, desideri, attese e significato e quali lasciano maggiore incertezza.",
+                "Le risposte descrivono una frequente chiarificazione di bisogni, valori, motivazioni e condizioni personali. Non certifica autenticità, coerenza, indipendenza dalle influenze esterne o qualità delle decisioni.");
+        saveAreaInsights(id, "riflessione",
+                "Riesaminare reazioni, ricorrenze, intenzioni, feedback e condizioni personali risulta poco frequente. Il dato non implica mancanza di insight: alcune persone elaborano in altri modi o hanno avuto poche occasioni sicure per farlo.",
+                "La riflessione sul tuo funzionamento compare in alcune situazioni. Nota quando conduce a una comprensione nuova o a un'ipotesi verificabile e quando invece ripete la stessa spiegazione senza aggiungere informazioni.",
+                "Le risposte descrivono un frequente riesame di reazioni, schemi, feedback e condizioni facilitanti o ostacolanti. Riflettere spesso non prova che l'insight sia accurato e non esclude punti ciechi, bias o letture alternative.");
+        saveAreaInsights(id, "orientamento",
+                "Usare priorità, energie percepite, limiti ed esiti per orientare le scelte risulta poco frequente nelle occasioni considerate. Vincoli reali, urgenze, responsabilità e sicurezza possono ridurre il margine di scelta senza indicare minore capacità.",
+                "L'uso delle informazioni su di te nelle scelte compare in alcune situazioni più che in altre. Osserva quali condizioni permettono di adattare obiettivi e strategie e quali richiedono sostegno, tempo o un margine decisionale diverso.",
+                "Le risposte descrivono un frequente uso di priorità, limiti, strategie e verifica degli esiti nelle scelte. Non misura efficacia, produttività, autocontrollo o qualità oggettiva delle decisioni.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -1880,6 +1973,11 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Beyond g: Putting multiple intelligences theory to the test — Visser, Ashton e Vernon", "https://doi.org/10.1016/j.intell.2006.02.004"),
                 ref("CEFR Companion Volume: mediation and modes of communication — Council of Europe", "https://www.coe.int/en/web/common-european-framework-reference-languages/mediation"),
                 ref("L'indagine PIAAC sulle competenze degli adulti — INAPP", "https://www.inapp.gov.it/piaac/conosci-piaac/lindagine-piaac")));
+        syncReferences("intelligenza-intrapersonale", List.of(
+                ref("The Theory of Multiple Intelligences — Project Zero, Harvard", "https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf"),
+                ref("Beyond g: Putting multiple intelligences theory to the test — Visser, Ashton e Vernon", "https://doi.org/10.1016/j.intell.2006.02.004"),
+                ref("The Self-Reflection and Insight Scale — Italian Version — Di Fabio e Svicher", "https://doi.org/10.14605/CS1532206"),
+                ref("Interoceptive accuracy and awareness in an Italian sample — Calì e colleghi", "https://pubmed.ncbi.nlm.nih.gov/26379571/")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

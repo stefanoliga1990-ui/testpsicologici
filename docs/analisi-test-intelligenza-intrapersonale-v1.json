@@ -1,0 +1,128 @@
+{
+  "test": {
+    "id": "intelligenza-intrapersonale",
+    "titolo": "Intelligenza intrapersonale",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione esclusivamente informativa delle risorse intrapersonali percepite e utilizzate",
+    "periodo_riferimento": "Ultimi tre mesi, nelle occasioni disponibili per osservarsi o scegliere",
+    "direzione_punteggio": "Valori più alti descrivono maggiore frequenza dei comportamenti formulati, non maggiore intelligenza, insight o accuratezza",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non misura intelligenza generale, QI o accuratezza della conoscenza di sé; non certifica talenti o limiti e non diagnostica condizioni."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi e alle occasioni in cui hai potuto osservarti o fare una scelta, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; rappresenta frequenza relativa delle risposte, non intelligenza, accuratezza, benessere, probabilità, percentile o confronto normativo",
+    "ordine_aree_risultato": "Ordine teorico stabile: stati-interni, chiarezza, riflessione, orientamento"
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le risorse intrapersonali percepite sembrano poco espresse",
+      "sottotitolo": "I comportamenti di auto-osservazione e uso delle informazioni su di sé risultano poco frequenti in tutte le aree.",
+      "descrizione": "Non indica scarsa intelligenza o conoscenza di sé e non esclude processi rapidi o non verbalizzati. Invita a considerare occasioni, sicurezza, contesto e modalità personali. Mantiene il limite tra frequenza e accuratezza e l'indicazione professionale in caso di disagio o interferenza."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le risorse intrapersonali percepite sembrano espresse in modo variabile",
+      "sottotitolo": "La frequenza varia tra le aree senza livelli editoriali alti; alcune modalità compaiono in situazioni specifiche.",
+      "descrizione": "Le aree non sono una classifica. Vanno osservati tempo, sicurezza, tipo di scelta, stato del momento e feedback, distinguendo riflessione e insight. Soglie e barre restano editoriali e non misurano accuratezza."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le risorse intrapersonali percepite sembrano più espresse in una o due aree",
+      "sottotitolo": "Una o due aree raccolgono comportamenti più frequenti, mentre le altre sono più contenute; il profilo non descrive una capacità generale.",
+      "descrizione": "Le aree emergenti non sono talenti misurati. Si osservano trasferibilità tra contesti, riscontri in comportamenti ed esiti e condizioni che facilitano le altre modalità. Limite e supporto restano indipendenti dal profilo."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le risorse intrapersonali percepite sembrano frequentemente espresse in più aree",
+      "sottotitolo": "Almeno tre aree raccolgono comportamenti riferiti con maggiore frequenza nelle occasioni disponibili.",
+      "descrizione": "L'ampiezza riguarda autopercezione e frequenza, non accuratezza, efficacia o un'intelligenza indipendente. Si osservano comportamenti, esiti, feedback e flessibilità della riflessione senza inferire capacità certificate."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "stati-interni",
+      "nome_area": "Riconoscimento degli stati interni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Cambiamenti emotivi, segnali corporei, pensieri, pause ed energia vengono riconosciuti poco spesso; contesto e possibilità di fermarsi sono rilevanti."},
+        {"livello": "MEDIUM", "descrizione": "Il riconoscimento compare in alcune situazioni; è utile distinguere la percezione del segnale dall'interpretazione che ne viene data."},
+        {"livello": "HIGH", "descrizione": "Il riconoscimento degli stati interni è riferito spesso; non è una prova di accuratezza interocettiva, regolazione emotiva o salute mentale."}
+      ]
+    },
+    {
+      "area_code": "chiarezza",
+      "nome_area": "Chiarezza su bisogni, valori e motivazioni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Mettere a fuoco bisogni, desideri, valori e motivazioni risulta poco frequente; non indica assenza di valori o autonomia."},
+        {"livello": "MEDIUM", "descrizione": "La chiarezza dipende dalla situazione; sono rilevanti decisioni, attese percepite, spazio disponibile e incertezza."},
+        {"livello": "HIGH", "descrizione": "Bisogni, valori e motivazioni vengono chiariti spesso; non certifica autenticità, indipendenza o qualità delle decisioni."}
+      ]
+    },
+    {
+      "area_code": "riflessione",
+      "nome_area": "Riflessione su schemi e funzionamento personale",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Riesaminare reazioni, intenzioni, feedback e condizioni risulta poco frequente; non implica mancanza di insight."},
+        {"livello": "MEDIUM", "descrizione": "La riflessione compare in alcune situazioni; si può osservare quando aggiunge un'ipotesi nuova e verificabile."},
+        {"livello": "HIGH", "descrizione": "Il riesame di schemi e feedback è riferito spesso; non prova accuratezza e non esclude punti ciechi o letture alternative."}
+      ]
+    },
+    {
+      "area_code": "orientamento",
+      "nome_area": "Uso della conoscenza di sé nelle scelte",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Usare priorità, energie, limiti ed esiti risulta poco frequente; vincoli reali e sicurezza possono ridurre il margine di scelta."},
+        {"livello": "MEDIUM", "descrizione": "Le informazioni su di sé orientano alcune scelte; condizioni e margine decisionale possono facilitarne o limitarne l'uso."},
+        {"livello": "HIGH", "descrizione": "Priorità, limiti, strategie ed esiti vengono considerati spesso; non misura efficacia, produttività o qualità oggettiva delle decisioni."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {
+      "titolo": "The Theory of Multiple Intelligences — Project Zero, Harvard",
+      "url": "https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf",
+      "apporto": "Definizione teorica del dominio intrapersonale e precisazione sugli otto domini; non valida il questionario."
+    },
+    {
+      "titolo": "Beyond g: Putting multiple intelligences theory to the test",
+      "url": "https://doi.org/10.1016/j.intell.2006.02.004",
+      "apporto": "Evidenza sulle correlazioni tra prove dei domini e il fattore generale; campione e misure non sono trasferibili."
+    },
+    {
+      "titolo": "The Self-Reflection and Insight Scale — Italian Version",
+      "url": "https://doi.org/10.14605/CS1532206",
+      "apporto": "Distinzione tra autoriflessione e insight in un primo studio italiano; il campione ristretto non valida l'app."
+    },
+    {
+      "titolo": "Investigating interoceptive accuracy and awareness",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26379571/",
+      "apporto": "Distinzione italiana tra consapevolezza corporea autoriferita e accuratezza a un compito; campione non rappresentativo."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia separata, documentata in docs/test-intelligenza-intrapersonale-v1.md e nel GuideCatalogue.",
+  "limite": "Non esistono dati che validino nella popolazione adulta italiana questo specifico set di 24 item, le quattro aree, la media generale, le soglie o le interpretazioni."
+}

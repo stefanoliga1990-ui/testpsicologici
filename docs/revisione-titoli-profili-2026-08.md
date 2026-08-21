@@ -4,7 +4,7 @@
 
 I titoli globali precedenti descrivevano spesso soltanto la forma del profilo, con formule come “Un profilo variabile” o “Dubbi che emergono in alcuni contesti”. Isolati dalla pagina, questi titoli non chiarivano quale costrutto, esperienza o risorsa fosse oggetto della restituzione.
 
-Questa revisione modifica esclusivamente i titoli delle analisi globali dei 19 questionari. Item, aree, scala, punteggi, soglie, logica `LOW`/`MIXED`/`FOCUSED`/`BROAD`, sintesi, approfondimenti e testi di sicurezza restano invariati.
+Questa revisione ha modificato esclusivamente i titoli delle analisi globali dei 19 questionari allora presenti e definisce la convenzione applicata anche ai questionari successivi. La tabella viene estesa quando entra un nuovo test; item, aree, scala, punteggi, soglie e logica `LOW`/`MIXED`/`FOCUSED`/`BROAD` restano documentati nelle specifiche del singolo questionario.
 
 ## Regola repository-wide
 
@@ -46,6 +46,7 @@ Ogni titolo globale deve:
 | Paura dell'abbandono | La paura dell'abbandono sembra poco presente | La paura dell'abbandono sembra presente in modo variabile | La paura dell'abbandono sembra più presente in una o due aree | La paura dell'abbandono sembra frequentemente presente in più aree |
 | FOMO | Le esperienze di FOMO sembrano poco presenti | Le esperienze di FOMO sembrano presenti in modo variabile | Le esperienze di FOMO sembrano più presenti in una o due aree | Le esperienze di FOMO sembrano frequentemente presenti in più aree |
 | Intelligenza linguistica | Le risorse linguistiche percepite sembrano poco espresse | Le risorse linguistiche percepite sembrano espresse in modo variabile | Le risorse linguistiche percepite sembrano più espresse in una o due aree | Le risorse linguistiche percepite sembrano frequentemente espresse in più aree |
+| Intelligenza intrapersonale | Le risorse intrapersonali percepite sembrano poco espresse | Le risorse intrapersonali percepite sembrano espresse in modo variabile | Le risorse intrapersonali percepite sembrano più espresse in una o due aree | Le risorse intrapersonali percepite sembrano frequentemente espresse in più aree |
 
 ## Versionamento e verifiche
 
@@ -57,4 +58,3 @@ La modifica interessa un elemento visibile dell'interpretazione e richiede un in
 - nei test positivi si parli di risorse o competenze percepite, non di difficoltà;
 - nei test clinicamente sensibili non si affermi la presenza di una diagnosi;
 - sintesi, approfondimenti e messaggi di sicurezza restino invariati.
-

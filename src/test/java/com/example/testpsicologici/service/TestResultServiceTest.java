@@ -863,10 +863,75 @@ class TestResultServiceTest {
     }
 
     @Test
+    void intrapersonalIntelligenceTestIsLoadedWithTwentyFourOriginalQuestionsAndMeasurementLimits() {
+        PsychologicalTest test = catalogue.findById("intelligenza-intrapersonale");
+
+        assertThat(test.title()).isEqualTo("Intelligenza intrapersonale");
+        assertThat(test.questions()).hasSize(24).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code())
+                .containsExactly("stati-interni", "chiarezza", "riflessione", "orientamento");
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "occasioni", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "Howard Gardner",
+                "non misura un'intelligenza indipendente",
+                "accuratezza della conoscenza di sé",
+                "Riflettere spesso non equivale",
+                "professionista qualificato");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle risorse intrapersonali riferite");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle risorse riferite");
+        assertThat(test.references()).extracting(reference -> reference.url()).containsExactly(
+                "https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf",
+                "https://doi.org/10.1016/j.intell.2006.02.004",
+                "https://doi.org/10.14605/CS1532206",
+                "https://pubmed.ncbi.nlm.nih.gov/26379571/");
+    }
+
+    @Test
+    void intrapersonalIntelligenceFocusedProfileKeepsTheoreticalOrderAndPositiveDirection() {
+        TestResult result = analyzeWithAnswersForTest("intelligenza-intrapersonale", 1, 1, 5, 1);
+
+        assertThat(result.general().title()).isEqualTo("Le risorse intrapersonali percepite sembrano più espresse in una o due aree");
+        assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Riconoscimento degli stati interni",
+                "Chiarezza su bisogni, valori e motivazioni",
+                "Riflessione su schemi e funzionamento personale",
+                "Uso della conoscenza di sé nelle scelte");
+        assertThat(result.areaResults().get(2).description()).contains("frequente riesame", "non prova");
+        assertThat(result.areaResults().get(2).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(0).percentage()).isZero();
+    }
+
+    @Test
+    void intrapersonalIntelligenceProfilesFollowEditorialRulesAndAlwaysRetainMeasurementLimit() {
+        TestResult low = analyzeWithAnswersForTest("intelligenza-intrapersonale", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("intelligenza-intrapersonale", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("intelligenza-intrapersonale", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("intelligenza-intrapersonale", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).isEqualTo("Le risorse intrapersonali percepite sembrano poco espresse");
+        assertThat(mixed.general().title()).isEqualTo("Le risorse intrapersonali percepite sembrano espresse in modo variabile");
+        assertThat(focused.general().title()).isEqualTo("Le risorse intrapersonali percepite sembrano più espresse in una o due aree");
+        assertThat(broad.general().title()).isEqualTo("Le risorse intrapersonali percepite sembrano frequentemente espresse in più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non misura l'intelligenza generale né l'accuratezza della conoscenza di sé",
+                        "non certifica un talento o un limite",
+                        "professionista qualificato"));
+        assertThat(low.general().detail()).contains("non indica scarsa intelligenza");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

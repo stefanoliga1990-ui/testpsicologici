@@ -1823,6 +1823,141 @@ public class GuideCatalogue {
                                     "Fonte istituzionale italiana consultata per la distinzione tra prove cognitive autosomministrate e questionario sugli usi delle competenze nella popolazione adulta 16–65; nessun livello è trasferito."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "intelligenza-intrapersonale",
+                    "intelligenza-intrapersonale",
+                    "Intelligenza intrapersonale",
+                    "Intelligenza intrapersonale: significato, teoria e limiti",
+                    "Intelligenza intrapersonale di Gardner: significato | Spazio Test",
+                    "Una guida all'intelligenza intrapersonale nella teoria di Gardner e alla differenza tra auto-osservazione, insight e conoscenza accurata di sé.",
+                    "L'intelligenza intrapersonale è uno dei domini proposti da Howard Gardner nella teoria delle intelligenze multiple. Nella sua cornice riguarda il distinguere e usare informazioni su di sé; non è però una capacità indipendente che questo questionario possa misurare oggettivamente, né una garanzia di insight accurato.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cosa intende Gardner per intelligenza intrapersonale",
+                                    List.of(
+                                            "Gardner ha proposto una visione pluralistica dell'intelligenza, distinguendo domini nei quali le persone possono mostrare combinazioni diverse di risorse. La sintesi di Project Zero descrive il dominio intrapersonale come la possibilità di distinguere e usare informazioni su di sé, collegando comprensione personale e regolazione del comportamento orientato a obiettivi.",
+                                            "Questa cornice può offrire un linguaggio per osservare come una persona nota stati interni e tiene conto di ciò che sa di sé. Il suo valore descrittivo o educativo non equivale però alla dimostrazione che il dominio sia un'intelligenza psicometricamente indipendente."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Una precisazione",
+                                    "Otto intelligenze o nove?",
+                                    List.of(
+                                            "La teoria originaria del 1983 presentava sette intelligenze; la naturalistica è stata aggiunta in seguito. La sintesi ufficiale di Project Zero elenca otto intelligenze identificate, tra cui quella intrapersonale.",
+                                            "Gardner ha discusso l'intelligenza esistenziale come possibile nona candidata, senza collocarla nello stesso modo tra quelle identificate. Parlare semplicemente di nove intelligenze è quindi una semplificazione popolare, non una conclusione scientifica definitiva."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Evidenze",
+                                    "Una teoria discussa, non un test di autoconsapevolezza",
+                                    List.of(
+                                            "In uno studio su 200 adulti, prove costruite per rappresentare otto domini mostravano correlazioni importanti e un fattore generale per diverse abilità. Gli autori trovarono soltanto un supporto modesto per componenti specifiche ai domini; Gardner ha contestato che quei compiti rappresentassero adeguatamente la propria teoria.",
+                                            "Il dibattito riguarda anche come rendere verificabile una teoria ampia. In assenza di validazione dello strumento dell'app, il risultato deve restare un'autodescrizione di comportamenti e non una conferma, graduatoria o percentuale d'intelligenza intrapersonale."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Guardarsi dentro, ottenere insight ed essere accurati non coincidono",
+                                    List.of(
+                                            "La Self-Reflection and Insight Scale distingue il processo di esaminare pensieri, emozioni e azioni dall'insight che può derivarne. Il primo studio della versione italiana ha ritrovato due fattori in 112 studenti toscani, ma il campione è ristretto e lo strumento non misura il dominio di Gardner.",
+                                            "Inoltre, l'accesso ai propri pensieri non rende infallibili le spiegazioni sulle loro cause. Comportamenti osservati, esiti nel tempo e feedback possono integrare l'introspezione; una lettura personale resta un'ipotesi rivedibile, non una verità certificata dal punteggio."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Quattro prospettive per l'auto-osservazione",
+                                    List.of(
+                                            "Le quattro aree organizzano comportamenti quotidiani e non sono fattori scientificamente confermati. Seguono la sequenza editoriale notare, chiarire, riesaminare e usare, senza formare una gerarchia o una classifica personale."
+                                    ),
+                                    List.of(
+                                            "Riconoscimento degli stati interni: cambiamenti emotivi, segnali corporei, pensieri, bisogno di pausa ed energia percepita.",
+                                            "Chiarezza su bisogni, valori e motivazioni: ciò che conta, desideri, attese percepite, condizioni di agio e significato.",
+                                            "Riflessione su schemi e funzionamento personale: reazioni ricorrenti, intenzioni, azioni, feedback e condizioni che facilitano o ostacolano.",
+                                            "Uso della conoscenza di sé nelle scelte: priorità, adattamento degli obiettivi, strategie, limiti, preparazione e verifica degli esiti."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Corpo e contesto",
+                                    "Percepire un segnale non significa interpretarlo con precisione",
+                                    List.of(
+                                            "Uno studio italiano sull'interocezione ha distinto la consapevolezza corporea autoriferita dall'accuratezza in un compito sul battito cardiaco, trovando una sostanziale indipendenza tra le misure. Il campione era formato soprattutto da studentesse di psicologia e non rappresenta tutti gli adulti italiani, ma mostra perché una risposta soggettiva non va trasformata in prova di accuratezza.",
+                                            "Tempo, privacy, sicurezza, cultura, lingua, stress, umore, sonno, dolore, neurodivergenza e disabilità cambiano ciò che è disponibile all'attenzione. In un contesto minaccioso o urgente, concentrarsi sull'esterno può essere appropriato; una frequenza bassa non significa bassa intelligenza."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Auto-osservazione",
+                                    "Confrontare ipotesi, azioni ed esiti",
+                                    List.of(
+                                            "Può essere utile annotare separatamente situazione, stato percepito, interpretazione, azione ed esito. Tornare in seguito sulla nota permette di vedere se una spiegazione regge, cambia o richiede informazioni diverse, senza cercare una coerenza perfetta.",
+                                            "Puoi anche confrontare ciò che avevi previsto con ciò che è accaduto o chiedere un feedback specifico a una persona affidabile. Sono pratiche di osservazione, non trattamenti né metodi dimostrati per aumentare un tipo di intelligenza; se la riflessione diventa ripetitiva e non aggiunge informazioni, fermarsi o cambiare canale può essere più utile che insistere."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e limiti",
+                                    "Quando serve una valutazione diversa",
+                                    List.of(
+                                            "Se noti un cambiamento nella percezione di te, confusione persistente, pensieri ripetitivi o difficoltà nelle decisioni e questo causa disagio o interferisce con la vita quotidiana, parlane con uno psicologo, psicoterapeuta, medico o altro professionista qualificato. Una valutazione appropriata considera storia, contesto, sicurezza e obiettivi e usa strumenti scelti per la domanda specifica.",
+                                            "La ricerca non ha fornito una validazione italiana pertinente di questo self-report adulto sull'intelligenza intrapersonale. Le 24 domande, le quattro aree e le soglie di Spazio Test sono originali e non validate; le barre mostrano soltanto frequenze relative, non intelligenza, accuratezza, benessere, probabilità, percentili o confronti con altre persone."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa la cornice di Gardner soltanto come punto di partenza per osservare la frequenza percepita di riconoscimento, chiarezza, riflessione e uso delle informazioni su di sé. Non misura intelligenza generale o accuratezza, non certifica talenti o limiti e non diagnostica condizioni.",
+                    List.of(
+                            new GuideReference(
+                                    "The Theory of Multiple Intelligences — Project Zero, Harvard",
+                                    "https://pz.harvard.edu/sites/default/files/Theory%20of%20MI.pdf",
+                                    "Sintesi istituzionale consultata per la definizione del dominio intrapersonale e l'elenco di otto intelligenze identificate; presenta la teoria e non costituisce una validazione indipendente."
+                            ),
+                            new GuideReference(
+                                    "A Resurgence of Interest in Existential Intelligence: Why Now? — Howard Gardner",
+                                    "https://www.howardgardner.com/howards-blog/a-resurgence-of-interest-in-existential-intelligence-why-now",
+                                    "Fonte primaria dell'autore consultata per precisare che l'intelligenza esistenziale fu proposta come possibile nona candidata, senza trattare il numero nove come conclusione empirica."
+                            ),
+                            new GuideReference(
+                                    "Beyond g: Putting multiple intelligences theory to the test — Visser, Ashton e Vernon",
+                                    "https://doi.org/10.1016/j.intell.2006.02.004",
+                                    "Studio su prove di prestazione in adulti consultato per correlazioni tra domini, fattore generale e modesto supporto specifico; campione canadese e operazionalizzazione sono limiti espliciti."
+                            ),
+                            new GuideReference(
+                                    "The Science of Multiple Intelligences Theory: A Response to Lynn Waterhouse — Gardner e Moran",
+                                    "https://doi.org/10.1207/s15326985ep4104_2",
+                                    "Risposta teorica consultata per rappresentare la posizione degli autori sulle finalità e sull'operazionalizzazione della teoria; non è una conferma indipendente della sua struttura."
+                            ),
+                            new GuideReference(
+                                    "The Self-Reflection and Insight Scale — Grant, Franklin e Langford",
+                                    "https://doi.org/10.2224/sbp.2002.30.8.821",
+                                    "Studio originario consultato per distinguere autoriflessione e insight nel processo di autoregolazione; la scala e i suoi item non sono stati copiati né adattati."
+                            ),
+                            new GuideReference(
+                                    "The Self-Reflection and Insight Scale — Italian Version — Di Fabio e Svicher",
+                                    "https://doi.org/10.14605/CS1532206",
+                                    "Primo studio italiano consultato per la distinzione tra riflessione e insight; i 112 studenti toscani e il disegno esplorativo limitano la trasferibilità."
+                            ),
+                            new GuideReference(
+                                    "The Introspection Illusion — Pronin",
+                                    "https://doi.org/10.1016/S0065-2601(08)00401-2",
+                                    "Revisione teorica consultata per i limiti dell'accesso introspettivo alle cause di giudizi e comportamenti; non implica che ogni introspezione sia errata o inutile."
+                            ),
+                            new GuideReference(
+                                    "Investigating interoceptive accuracy and awareness — Calì e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/26379571/",
+                                    "Studio italiano consultato per distinguere consapevolezza corporea autoriferita e accuratezza a un compito; il campione studentesco prevalentemente femminile non è rappresentativo."
+                            ),
+                            new GuideReference(
+                                    "Psychometric validation of the Italian Emotional Style Questionnaire — Malandrone e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/36459526/",
+                                    "Validazione italiana consultata per contestualizzare la self-awareness come componente di un altro modello emotivo; struttura e risultati non sono trasferiti al test dell'app."
+                            )
+                    )
             )
     );
 

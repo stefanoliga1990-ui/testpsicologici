@@ -234,7 +234,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/intelligenza-linguistica\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Intelligenza linguistica</h3>")));
+                        "<h3>Intelligenza linguistica</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/intelligenza-intrapersonale\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Intelligenza intrapersonale</h3>")));
     }
 
     @Test
@@ -703,6 +707,26 @@ class PageRenderingTest {
     }
 
     @Test
+    void intrapersonalIntelligenceGuideRendersTheoryInsightAccuracyAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/intelligenza-intrapersonale"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Intelligenza intrapersonale di Gardner: significato | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/intelligenza-intrapersonale\"")))
+                .andExpect(content().string(containsString(
+                        "Che cosa intende Gardner per intelligenza intrapersonale")))
+                .andExpect(content().string(containsString("Otto intelligenze o nove?")))
+                .andExpect(content().string(containsString(
+                        "Guardarsi dentro, ottenere insight ed essere accurati non coincidono")))
+                .andExpect(content().string(containsString(
+                        "non significa bassa intelligenza")))
+                .andExpect(content().string(containsString("Self-Reflection and Insight Scale")))
+                .andExpect(content().string(containsString("26379571")))
+                .andExpect(content().string(containsString("href=\"/test/intelligenza-intrapersonale\"")));
+    }
+
+    @Test
     void testLinksToItsPublishedGuide() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -822,6 +846,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("non certifica un talento o un limite")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/intelligenza-linguistica\"")));
+
+        mockMvc.perform(get("/test/intelligenza-intrapersonale"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("non misura un'intelligenza indipendente")))
+                .andExpect(content().string(containsString("Riflettere spesso non equivale")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/intelligenza-intrapersonale\"")));
     }
 
     @Test
@@ -930,12 +962,15 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/fomo")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/intelligenza-linguistica")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/intelligenza-intrapersonale")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/paura-abbandono")))
                 .andExpect(content().string(containsString("http://localhost/test/fomo")))
                 .andExpect(content().string(containsString("http://localhost/test/intelligenza-linguistica")))
+                .andExpect(content().string(containsString("http://localhost/test/intelligenza-intrapersonale")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }
