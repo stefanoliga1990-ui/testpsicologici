@@ -47,6 +47,7 @@ Ogni titolo globale deve:
 | FOMO | Le esperienze di FOMO sembrano poco presenti | Le esperienze di FOMO sembrano presenti in modo variabile | Le esperienze di FOMO sembrano più presenti in una o due aree | Le esperienze di FOMO sembrano frequentemente presenti in più aree |
 | Intelligenza linguistica | Le risorse linguistiche percepite sembrano poco espresse | Le risorse linguistiche percepite sembrano espresse in modo variabile | Le risorse linguistiche percepite sembrano più espresse in una o due aree | Le risorse linguistiche percepite sembrano frequentemente espresse in più aree |
 | Intelligenza intrapersonale | Le risorse intrapersonali percepite sembrano poco espresse | Le risorse intrapersonali percepite sembrano espresse in modo variabile | Le risorse intrapersonali percepite sembrano più espresse in una o due aree | Le risorse intrapersonali percepite sembrano frequentemente espresse in più aree |
+| Resilienza psicologica | Le risorse di resilienza percepite sembrano poco espresse | Le risorse di resilienza percepite sembrano espresse in modo variabile | Le risorse di resilienza percepite sembrano più espresse in una o due aree | Le risorse di resilienza percepite sembrano frequentemente espresse in più aree |
 
 ## Versionamento e verifiche
 

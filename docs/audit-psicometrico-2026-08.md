@@ -2,7 +2,7 @@
 
 ## Perimetro e conclusione
 
-Sono stati esaminati tutti i 20 questionari attivi: 480 item, 80 sottoscale editoriali, opzioni di risposta, scoring, soglie, profili generali, testi per area, disclaimer e messaggi di sicurezza. L'implementazione è prudente: item originali, quattro aree equilibrate da sei item, punteggi numerici nascosti, fonti tracciabili e assenza di affermazioni diagnostiche.
+Sono stati esaminati tutti i 21 questionari attivi: 504 item, 84 sottoscale editoriali, opzioni di risposta, scoring, soglie, profili generali, testi per area, disclaimer e messaggi di sicurezza. L'implementazione è prudente: item originali, quattro aree equilibrate da sei item, punteggi numerici nascosti, fonti tracciabili e assenza di affermazioni diagnostiche.
 
 Non esistono però dati di somministrazione o studi sullo specifico strumento. Non è quindi possibile stimare in modo responsabile struttura fattoriale, omega/alpha, errore di misura, validità, invarianza o cut-off. Le modifiche migliorano validità di contenuto attesa e qualità della somministrazione, ma non trasformano i questionari in strumenti validati.
 
@@ -18,7 +18,7 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 | Aree nel risultato | Le aree erano ordinate per media, trasformando differenze minime e non validate in una classifica. | Ordine teorico stabile. Ogni area conserva testo e barra. |
 | Barre | La trasformazione 0–100 poteva sembrare percentuale normativa o probabilità. | Nota esplicita nel risultato: non sono percentili, probabilità o confronti. |
 | Pesi | Non vi erano dati per giustificare pesi diversi. | Pesi uguali confermati; ogni area continua ad avere sei item. |
-| Titoli globali | Formule come “Un profilo variabile” o “Dubbi che emergono in alcuni contesti” non nominavano il contenuto del test se lette isolatamente. | Tutti i 76 titoli ora nominano esplicitamente costrutto, esperienze o risorse e distinguono la distribuzione `LOW`, `MIXED`, `FOCUSED` e `BROAD` senza formulare diagnosi. |
+| Titoli globali | Formule come “Un profilo variabile” o “Dubbi che emergono in alcuni contesti” non nominavano il contenuto del test se lette isolatamente. | Tutti gli 84 titoli ora nominano esplicitamente costrutto, esperienze o risorse e distinguono la distribuzione `LOW`, `MIXED`, `FOCUSED` e `BROAD` senza formulare diagnosi. |
 
 ## Audit per questionario
 
@@ -44,6 +44,7 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 | FOMO — inclusione; confronto; aggiornamento/connessione; interferenza | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali riferiti all'ultimo mese, con distinzione da uso problematico dei social, dipendenza da smartphone, ansia sociale ed esclusione reale. Le quattro aree sono una sequenza editoriale e non fattori importati da FoMOs o ON-FoMO; i profili mantengono il limite inferenziale e l'indicazione al supporto indipendentemente dal livello. |
 | Intelligenza linguistica — comprensione; espressione orale; scrittura; apprendimento e uso flessibile | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali riferiti agli ultimi tre mesi e alle occasioni d'uso, con scoring positivo e distinzione esplicita tra frequenza percepita, competenza di prestazione e intelligenza generale. La cornice di Gardner è presentata come teoria discussa; plurilinguismo, modalità comunicativa, accessibilità e contesto restano limiti indipendenti dal profilo. |
 | Intelligenza intrapersonale — stati interni; chiarezza; riflessione; orientamento delle scelte | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali riferiti agli ultimi tre mesi e alle occasioni disponibili, con scoring positivo e distinzione esplicita tra frequenza percepita, autoriflessione, insight e accuratezza. La cornice di Gardner è presentata come teoria discussa; cultura, sicurezza, accessibilità, stato del momento e riscontri esterni restano limiti indipendenti dal profilo. |
+| Resilienza psicologica — recupero; flessibilità; risorse relazionali e contestuali; continuità | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali riferiti agli ultimi sei mesi e a difficoltà realmente incontrate, con scoring positivo e distinzione esplicita tra frequenza delle risorse, processo ed esito. Carico, sicurezza, condizioni materiali, supporti e poche occasioni restano limiti indipendenti dal profilo; il risultato non attribuisce fragilità né predice adattamento futuro. |
 
 ## Scoring e interpretazione risultanti
 
@@ -51,10 +52,10 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 - Ogni media di area deriva da sei item; la media generale deriva da 24 item.
 - `LOW < 2,5`, `MEDIUM 2,5–<3,5`, `HIGH ≥ 3,5` sono categorie editoriali ancorate ai punti medi, non cut-off.
 - `LOW`: quattro aree LOW; `MIXED`: nessuna HIGH e almeno una MEDIUM; `FOCUSED`: una o due HIGH; `BROAD`: almeno tre HIGH.
-- Le interpretazioni globali e di area sono state riesaminate: sono coerenti con la direzione positiva di assertività, intelligenza emotiva, intelligenza linguistica e intelligenza intrapersonale e con la direzione di difficoltà degli altri questionari. Non sono state trovate inversioni di scoring.
+- Le interpretazioni globali e di area sono state riesaminate: sono coerenti con la direzione positiva di assertività, intelligenza emotiva, intelligenza linguistica, intelligenza intrapersonale e resilienza psicologica e con la direzione di difficoltà degli altri questionari. Non sono state trovate inversioni di scoring.
 - I testi di sicurezza e le cautele diagnostiche sono stati mantenuti. Non sono state aggiunte stime di affidabilità o validità non osservate.
 - La revisione dei soli titoli globali ha incrementato la versione di tutti i 19 questionari, così i dati persistenti vengono riallineati al successivo avvio senza modificare scoring o contenuti delle analisi.
 
 ## Verifiche automatiche aggiunte
 
-I test impediscono regressioni su: 20 questionari attivi, 24 item, quattro aree, sei item per area, assenza di duplicati, intercalazione delle aree, presenza dell'istruzione temporale, ancore di risposta, soglie, logica dei quattro profili e presenza del soggetto specifico in tutti gli 80 titoli globali. Le modifiche ai contenuti esistenti incrementano la versione; i nuovi questionari partono dalla versione `1.0`.
+I test impediscono regressioni su: 21 questionari attivi, 24 item, quattro aree, sei item per area, assenza di duplicati, intercalazione delle aree, presenza dell'istruzione temporale, ancore di risposta, soglie, logica dei quattro profili e presenza del soggetto specifico in tutti gli 84 titoli globali. Le modifiche ai contenuti esistenti incrementano la versione; i nuovi questionari partono dalla versione `1.0`.

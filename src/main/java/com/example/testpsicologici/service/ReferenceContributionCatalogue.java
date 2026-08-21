@@ -140,7 +140,17 @@ public class ReferenceContributionCatalogue {
             entry("https://doi.org/10.14605/CS1532206",
                     "Primo studio italiano della Self-Reflection and Insight Scale consultato per distinguere autoriflessione e insight; il campione di 112 studenti toscani e la misura differente non validano l'app."),
             entry("https://pubmed.ncbi.nlm.nih.gov/26379571/",
-                    "Studio italiano consultato per distinguere consapevolezza interocettiva autoriferita e accuratezza a un compito; il campione studentesco prevalentemente femminile non è rappresentativo."));
+                    "Studio italiano consultato per distinguere consapevolezza interocettiva autoriferita e accuratezza a un compito; il campione studentesco prevalentemente femminile non è rappresentativo."),
+            entry("https://doi.org/10.1027/1016-9040/a000124",
+                    "Revisione critica consultata per definire la resilienza attraverso difficoltà significativa e adattamento e per trattarla come processo dinamico; non valida item, aree o soglie dell'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/25317257/",
+                    "Sintesi interdisciplinare consultata per distinguere tratto, processo ed esito e includere fattori biologici, psicologici, sociali e culturali; non fornisce una misura universale."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/27031088/",
+                    "Validazione italiana della Resilience Scale for Adults consultata per rappresentare risorse individuali, familiari e sociali; campioni e strumento differenti non validano il questionario dell'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/34850301/",
+                    "Validazione italiana della RS-14 su volontari adulti consultata per l'eterogeneità della struttura; fattori, proprietà e punteggi dello strumento non sono trasferiti all'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/21294858/",
+                    "Revisione metodologica consultata per differenze tra le scale di resilienza, qualità psicometriche variabili e assenza di un unico standard; non autorizza soglie normative nell'app."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

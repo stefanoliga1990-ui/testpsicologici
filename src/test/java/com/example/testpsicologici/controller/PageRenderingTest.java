@@ -238,7 +238,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/intelligenza-intrapersonale\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Intelligenza intrapersonale</h3>")));
+                        "<h3>Intelligenza intrapersonale</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/resilienza-psicologica\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Resilienza psicologica</h3>")));
     }
 
     @Test
@@ -727,6 +731,24 @@ class PageRenderingTest {
     }
 
     @Test
+    void psychologicalResilienceGuideRendersProcessContextItalianEvidenceAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/resilienza-psicologica"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Resilienza psicologica: significato e risorse | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/resilienza-psicologica\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è la resilienza psicologica")))
+                .andExpect(content().string(containsString("Risorsa, processo ed esito non sono la stessa cosa")))
+                .andExpect(content().string(containsString("La resilienza non dipende soltanto dalla persona")))
+                .andExpect(content().string(containsString("Soffrire o chiedere aiuto non significa non essere resilienti")))
+                .andExpect(content().string(containsString("The Resilience Scale for Adults in Italy")))
+                .andExpect(content().string(containsString("27031088")))
+                .andExpect(content().string(containsString("significato molto limitato")))
+                .andExpect(content().string(containsString("href=\"/test/resilienza-psicologica\"")));
+    }
+
+    @Test
     void testLinksToItsPublishedGuide() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -854,6 +876,15 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Riflettere spesso non equivale")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/intelligenza-intrapersonale\"")));
+
+        mockMvc.perform(get("/test/resilienza-psicologica"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("processo dinamico e contestuale")))
+                .andExpect(content().string(containsString("significato molto limitato")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/resilienza-psicologica\"")));
     }
 
     @Test
@@ -964,6 +995,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/intelligenza-linguistica")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/intelligenza-intrapersonale")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/resilienza-psicologica")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -971,6 +1004,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/fomo")))
                 .andExpect(content().string(containsString("http://localhost/test/intelligenza-linguistica")))
                 .andExpect(content().string(containsString("http://localhost/test/intelligenza-intrapersonale")))
+                .andExpect(content().string(containsString("http://localhost/test/resilienza-psicologica")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

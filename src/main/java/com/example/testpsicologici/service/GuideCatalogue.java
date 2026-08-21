@@ -1958,6 +1958,136 @@ public class GuideCatalogue {
                                     "Validazione italiana consultata per contestualizzare la self-awareness come componente di un altro modello emotivo; struttura e risultati non sono trasferiti al test dell'app."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "resilienza-psicologica",
+                    "resilienza-psicologica",
+                    "Resilienza psicologica",
+                    "Resilienza psicologica: significato, risorse e limiti",
+                    "Resilienza psicologica: significato e risorse | Spazio Test",
+                    "Una guida alla resilienza come processo dinamico e contestuale, alle risorse personali e ambientali e ai limiti delle autovalutazioni.",
+                    "La resilienza psicologica riguarda i processi attraverso cui persone e contesti affrontano difficoltà significative e mantengono o recuperano un adattamento possibile. Non equivale a invulnerabilità, assenza di sofferenza, rapido ritorno alla normalità o forza individuale fissa.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è la resilienza psicologica",
+                                    List.of(
+                                            "Le definizioni scientifiche più ricorrenti mettono insieme due elementi: l'esposizione a una difficoltà significativa e un adattamento che si sviluppa nel tempo. La resilienza non può quindi essere dedotta da una risposta isolata né osservata senza considerare che cosa la persona ha incontrato e quali esiti o funzioni sono in gioco.",
+                                            "Le revisioni la descrivono come un fenomeno dinamico al quale contribuiscono processi biologici, psicologici, sociali e culturali. Parlare di processo aiuta a evitare l'idea di una dote immutabile posseduta o assente una volta per tutte."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Risorsa, processo ed esito non sono la stessa cosa",
+                                    List.of(
+                                            "Una risorsa è qualcosa che può sostenere l'adattamento, come una relazione affidabile, un servizio accessibile, una strategia flessibile o condizioni materiali sufficienti. Il processo riguarda il modo in cui risorse, richieste e azioni interagiscono; l'esito riguarda ciò che viene mantenuto o recuperato in un determinato ambito e momento.",
+                                            "Un questionario autoriferito può descrivere la frequenza percepita di alcune azioni o risorse, ma non osserva da solo il processo completo né stabilisce se l'esito sia positivo. Per questo le barre del test non sono percentuali di resilienza e non predicono risposte future."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "La resilienza non dipende soltanto dalla persona",
+                                    List.of(
+                                            "Natura, intensità e durata delle difficoltà cambiano il carico da affrontare. Anche salute, sicurezza, reddito, abitazione, discriminazioni, responsabilità di cura, qualità delle relazioni e accesso ai servizi possono aprire o chiudere possibilità concrete.",
+                                            "Includere le risorse relazionali e contestuali evita di attribuire all'individuo la responsabilità di condizioni che non controlla. La stessa persona può mostrare adattamenti diversi tra momenti e ambiti perché cambiano richieste, supporti e margine d'azione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Misurazione",
+                                    "Misure diverse raccontano aspetti diversi",
+                                    List.of(
+                                            "Una revisione metodologica delle scale di resilienza ha rilevato differenze importanti nella definizione e nei contenuti misurati, senza individuare un unico standard valido per ogni popolazione e uso. Alcuni strumenti privilegiano risorse personali, altri includono famiglia, supporto sociale o adattamento osservato.",
+                                            "Studi italiani su scale esistenti hanno trovato strutture che distinguono risorse personali e contestuali o fattori parzialmente diversi. Questi risultati aiutano a progettare con prudenza, ma non validano le 24 domande originali di Spazio Test e non autorizzano a trasferire norme o soglie."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Quattro prospettive per l'auto-osservazione",
+                                    List.of(
+                                            "Le quattro aree organizzano comportamenti osservabili riferiti negli ultimi sei mesi. Sono una scelta editoriale informata dalla letteratura, non sottoscale validate né tappe obbligatorie di un unico percorso."
+                                    ),
+                                    List.of(
+                                            "Recupero e regolazione dopo la difficoltà: riconoscere bisogni immediati, regolare il ritmo, concedersi tempo e riprendere gradualmente attività.",
+                                            "Adattamento e revisione delle strategie: distinguere margini d'azione, suddividere problemi, modificare piani e apprendere dai tentativi.",
+                                            "Accesso alle risorse relazionali e contestuali: individuare, chiedere, accettare e usare persone, informazioni o servizi pertinenti.",
+                                            "Continuità personale e orientamento: mantenere o ricostruire attività significative, rivedere obiettivi e riconoscere passi compiuti."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Falsi miti",
+                                    "Soffrire o chiedere aiuto non significa non essere resilienti",
+                                    List.of(
+                                            "La resilienza non richiede di restare calmi, produttivi o ottimisti durante ogni difficoltà. Paura, tristezza, rabbia, stanchezza e bisogno di una pausa possono coesistere con processi di adattamento; chiedere aiuto può esserne una parte, non il contrario.",
+                                            "Non ogni avversità produce crescita e nessuno è tenuto a trovare un significato positivo in ciò che è accaduto. Protezione, riposo, cambiamento di obiettivo o uscita da una situazione dannosa possono essere risposte appropriate anche quando non assomigliano al ritorno rapido a una condizione precedente."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Auto-osservazione",
+                                    "Osservare carico, azioni, supporti ed esiti",
+                                    List.of(
+                                            "Per comprendere un episodio può essere utile annotare separatamente la difficoltà, il carico percepito, le azioni tentate, i supporti disponibili e ciò che è cambiato nel tempo. Questa distinzione riduce il rischio di attribuire ogni esito alla sola volontà personale.",
+                                            "Confrontare contesti diversi può mostrare dove una risorsa era accessibile e dove mancavano sicurezza, tempo o aiuti adeguati. È un esercizio descrittivo, non un trattamento né una tecnica che garantisce di diventare più resilienti."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e limiti",
+                                    "Quando il questionario non basta",
+                                    List.of(
+                                            "Se una difficoltà, una perdita o una condizione prolungata causa disagio persistente o interferisce con sonno, lavoro, relazioni, cura di te o attività quotidiane, puoi parlarne con uno psicologo, psicoterapeuta, medico o altro professionista qualificato. In caso di pericolo immediato per te o per altre persone, contatta il 112 o i servizi di emergenza.",
+                                            "Il questionario non è validato e non misura diagnosi, esiti, efficacia delle strategie o capacità futura. Se negli ultimi sei mesi non hai incontrato difficoltà significative o hai avuto poche occasioni pertinenti, il risultato ha un significato molto limitato; le soglie e le quattro aree restano scelte editoriali."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato descrive la frequenza riferita di alcuni comportamenti di recupero, adattamento, accesso ai supporti e continuità davanti a difficoltà recenti. Non misura una forza personale fissa, non osserva il processo completo né gli esiti e non predice il futuro.",
+                    List.of(
+                            new GuideReference(
+                                    "Psychological Resilience: A Review and Critique — Fletcher e Sarkar",
+                                    "https://doi.org/10.1027/1016-9040/a000124",
+                                    "Revisione critica consultata per la ricorrenza di avversità e adattamento nelle definizioni e per la natura dinamica del costrutto; non stabilisce una definizione o una misura universale."
+                            ),
+                            new GuideReference(
+                                    "Resilience definitions, theory, and challenges — Southwick e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/25317257/",
+                                    "Sintesi interdisciplinare consultata per distinguere resilienza come tratto, processo ed esito e includere livelli biologici, psicologici, sociali e culturali; non valida il test dell'app."
+                            ),
+                            new GuideReference(
+                                    "The resilience framework as a strategy to combat stress-related disorders — Kalisch e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/31024125/",
+                                    "Cornice teorica consultata per considerare la resilienza come mantenimento dinamico della salute mentale sotto stress; il modello non viene trasformato in soglie individuali."
+                            ),
+                            new GuideReference(
+                                    "A methodological review of resilience measurement scales — Windle e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/21294858/",
+                                    "Revisione metodologica consultata per eterogeneità delle definizioni, qualità variabile delle scale e assenza di un unico gold standard; non autorizza confronti normativi."
+                            ),
+                            new GuideReference(
+                                    "The Resilience Scale for Adults in Italy — Bonfiglio e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/27031088/",
+                                    "Validazione italiana della RSA consultata per l'inclusione di risorse individuali, familiari e sociali; campioni clinico e non clinico e strumento differente non validano gli item dell'app."
+                            ),
+                            new GuideReference(
+                                    "A brief version of the Resilience Scale for Adults in an Italian university sample — Rossi e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/34927625/",
+                                    "Studio italiano su 500 studenti universitari consultato per la distinzione tra risorse personali e contestuali; popolazione e misura limitano la trasferibilità agli adulti in generale."
+                            ),
+                            new GuideReference(
+                                    "Italian version of the 14-item Resilience Scale — Cuoco e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/34850301/",
+                                    "Studio italiano su 300 volontari adulti consultato per la struttura di una diversa scala di resilienza; i due fattori osservati e i punteggi non sono trasferiti al questionario originale."
+                            ),
+                            new GuideReference(
+                                    "Intervention studies to foster resilience: a systematic review and proposal — Chmitorz e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/29167029/",
+                                    "Revisione sistematica di 43 studi randomizzati consultata per i limiti delle evidenze sugli interventi e la necessità di misure coerenti; non sostiene promesse di efficacia individuale."
+                            )
+                    )
             )
     );
 

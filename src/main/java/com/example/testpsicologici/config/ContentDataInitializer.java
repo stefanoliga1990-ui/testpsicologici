@@ -65,6 +65,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedFomoInformationTest();
         seedLinguisticIntelligenceInformationTest();
         seedIntrapersonalIntelligenceInformationTest();
+        seedPsychologicalResilienceInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -1891,6 +1892,100 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Le risposte descrivono un frequente uso di priorità, limiti, strategie e verifica degli esiti nelle scelte. Non misura efficacia, produttività, autocontrollo o qualità oggettiva delle decisioni.");
     }
 
+    private void seedPsychologicalResilienceInformationTest() {
+        String id = "resilienza-psicologica";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Resilienza psicologica",
+                "Autovalutazione informativa",
+                "Esplora come hai recuperato, adattato strategie, usato supporti e mantenuto una direzione davanti a difficoltà recenti.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Esplora la frequenza di alcuni comportamenti riferiti davanti a difficoltà, pressioni o cambiamenti realmente incontrati negli ultimi sei mesi. La resilienza è qui considerata un processo dinamico e contestuale, non una forza personale fissa, un obbligo a stare bene o una capacità di non soffrire. Natura, intensità e durata delle difficoltà, salute, sicurezza, condizioni materiali, discriminazioni, responsabilità e risorse esterne possono ampliare o ridurre ciò che è possibile fare. Chiedere aiuto, avere bisogno di tempo o provare sofferenza non indica assenza di resilienza. Se negli ultimi sei mesi non hai incontrato difficoltà significative o hai avuto poche occasioni pertinenti, il risultato ha un significato molto limitato. Il questionario originale non misura il processo completo di resilienza, non valuta l'esito delle azioni, non predice come reagirai in futuro e non diagnostica condizioni. Se una difficoltà causa disagio persistente o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato. In caso di pericolo immediato per te o per altre persone, contatta il 112 o i servizi di emergenza.",
+                version, false,
+                "Frequenza complessiva dei comportamenti di adattamento riferiti",
+                "Frequenza dei comportamenti riferiti",
+                true, 21).withSeo(
+                "Test resilienza psicologica online | Spazio Test",
+                "Questionario informativo di 24 domande su recupero, flessibilità, supporti e continuità davanti a difficoltà recenti. Non misura un tratto fisso.")
+                .withResponseInstruction("Pensando agli ultimi sei mesi e alle difficoltà, pressioni o cambiamenti che hai realmente incontrato, con quale frequenza ti è capitato di comportarti in questo modo?"));
+
+        saveReference(id, "Psychological Resilience: A Review and Critique — Fletcher e Sarkar",
+                "https://doi.org/10.1027/1016-9040/a000124", 1);
+        saveReference(id, "Resilience definitions, theory, and challenges — Southwick e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/25317257/", 2);
+        saveReference(id, "The Resilience Scale for Adults in Italy — Bonfiglio e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/27031088/", 3);
+        saveReference(id, "Italian version of the 14-item Resilience Scale — Cuoco e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/34850301/", 4);
+        saveReference(id, "A methodological review of resilience measurement scales — Windle e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/21294858/", 5);
+
+        saveArea(id, "recupero", "Recupero e regolazione dopo la difficoltà", 1);
+        saveArea(id, "flessibilita", "Adattamento e revisione delle strategie", 2);
+        saveArea(id, "risorse", "Accesso alle risorse relazionali e contestuali", 3);
+        saveArea(id, "continuita", "Continuità personale e orientamento", 4);
+
+        saveQuestions(id, List.of(
+                q("recupero", "Dopo una difficoltà, riconosco ciò di cui ho bisogno nell'immediato."),
+                q("recupero", "Quando la tensione aumenta, mi fermo per ridurre l'attivazione."),
+                q("recupero", "Dopo un momento destabilizzante, riprendo gradualmente una routine."),
+                q("recupero", "Mi concedo tempo per recuperare dopo uno sforzo intenso."),
+                q("recupero", "Regolo il ritmo delle attività in base alle energie disponibili."),
+                q("recupero", "Dopo una battuta d'arresto, torno a occuparmi di un'attività quotidiana."),
+                q("flessibilita", "Distinguo la parte di un problema su cui posso intervenire."),
+                q("flessibilita", "Divido una difficoltà complessa in passi affrontabili."),
+                q("flessibilita", "Modifico un piano quando le condizioni cambiano."),
+                q("flessibilita", "Provo un approccio diverso quando il primo non funziona."),
+                q("flessibilita", "Aggiorno le mie aspettative alla luce di nuove informazioni."),
+                q("flessibilita", "Ricavo da un tentativo non riuscito un'informazione per il passo successivo."),
+                q("risorse", "Individuo una persona a cui posso rivolgermi per una difficoltà."),
+                q("risorse", "Chiedo un aiuto specifico quando ne ho bisogno."),
+                q("risorse", "Accetto un aiuto pertinente quando mi viene offerto."),
+                q("risorse", "Condivido un carico quando supera le energie disponibili."),
+                q("risorse", "Cerco informazioni affidabili quando non so come procedere."),
+                q("risorse", "Uso una risorsa del contesto quando è pertinente alla difficoltà."),
+                q("continuita", "Mantengo una piccola attività per me importante durante un periodo difficile."),
+                q("continuita", "Scelgo un passo successivo coerente con le mie priorità."),
+                q("continuita", "Rivedo un obiettivo quando la situazione lo richiede."),
+                q("continuita", "Riconosco un progresso anche se il problema non è risolto."),
+                q("continuita", "Distinguo l'esito di una situazione dal mio valore personale."),
+                q("continuita", "Costruisco una nuova routine quando quella precedente non è più praticabile.")));
+
+        saveGlobal(id, "LOW", "Le risorse di resilienza percepite sembrano poco espresse",
+                "Nelle risposte, i comportamenti di recupero, adattamento, accesso ai supporti e continuità risultano poco frequenti in tutte e quattro le aree. Questo andamento descrive soltanto le occasioni e le difficoltà considerate negli ultimi sei mesi.",
+                "Una frequenza contenuta non dimostra una scarsa resilienza e non esclude risposte efficaci non coperte dalle domande, difficoltà circoscritte o periodi con poche occasioni pertinenti. Osserva anche intensità e durata del carico, sicurezza, salute, condizioni materiali e supporti realmente disponibili: non tutto dipende dall'iniziativa individuale. Il questionario non misura il processo completo di resilienza, non valuta gli esiti e non predice come reagirai in futuro; le soglie sono esclusivamente editoriali. Se una difficoltà causa disagio persistente o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato. In caso di pericolo immediato, contatta il 112 o i servizi di emergenza.");
+        saveGlobal(id, "MIXED", "Le risorse di resilienza percepite sembrano espresse in modo variabile",
+                "Le risposte descrivono frequenze diverse tra recupero, adattamento, supporti e continuità, senza aree al livello editoriale più alto. Alcuni comportamenti possono quindi essere stati accessibili in certe situazioni e meno presenti o praticabili in altre.",
+                "La variabilità può riflettere il tipo di difficoltà, il momento, le energie, il margine di scelta e le risorse del contesto, non una qualità personale incoerente. Confronta le schede d'area con episodi concreti e considera quali condizioni hanno favorito o ostacolato ciascuna risposta, senza ordinare le aree come una classifica. Il questionario non misura il processo completo di resilienza, non valuta gli esiti e non predice come reagirai in futuro; le soglie sono esclusivamente editoriali. Se una difficoltà causa disagio persistente o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato. In caso di pericolo immediato, contatta il 112 o i servizi di emergenza.");
+        saveGlobal(id, "FOCUSED", "Le risorse di resilienza percepite sembrano più espresse in una o due aree",
+                "Una o due aree raccolgono comportamenti riferiti con maggiore frequenza, mentre le altre risultano più contenute. Le risorse descritte appaiono quindi concentrate su alcune modalità o condizioni, non generalizzate a ogni difficoltà.",
+                "Consulta le schede d'area per distinguere dove recupero, flessibilità, supporti o continuità sono comparsi più spesso e dove il contesto ha lasciato meno possibilità. Un'area emergente non certifica efficacia, invulnerabilità o capacità stabile; un'area contenuta non attribuisce responsabilità individuale quando mancano sicurezza, tempo o risorse. Il questionario non misura il processo completo di resilienza, non valuta gli esiti e non predice come reagirai in futuro; le soglie sono esclusivamente editoriali. Se una difficoltà causa disagio persistente o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato. In caso di pericolo immediato, contatta il 112 o i servizi di emergenza.");
+        saveGlobal(id, "BROAD", "Le risorse di resilienza percepite sembrano frequentemente espresse in più aree",
+                "Le risposte indicano comportamenti riferiti con maggiore frequenza in almeno tre delle quattro aree esplorate. Recupero, adattamento, uso dei supporti e continuità possono quindi essere comparsi in modo ampio davanti alle difficoltà considerate.",
+                "L'ampiezza riguarda frequenze autoriferite e non dimostra che le azioni abbiano avuto l'esito desiderato, che la sofferenza sia assente o che queste risorse saranno disponibili in ogni situazione futura. Osserva quali richieste, relazioni e condizioni materiali hanno reso praticabili le risposte e dove rimangono costi, limiti o bisogni di supporto. Il questionario non misura il processo completo di resilienza, non certifica una forza personale e non predice come reagirai in futuro; le soglie sono esclusivamente editoriali. Se una difficoltà causa disagio persistente o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato. In caso di pericolo immediato, contatta il 112 o i servizi di emergenza.");
+
+        saveAreaInsights(id, "recupero",
+                "Riconoscere bisogni immediati, ridurre l'attivazione, regolare il ritmo e riprendere gradualmente attività risulta poco frequente nelle difficoltà considerate. Carico, salute, sicurezza e tempo disponibile possono limitarlo senza indicare una mancanza personale.",
+                "I comportamenti di recupero e regolazione compaiono con frequenza intermedia o dipendono dalla situazione. Osserva quali segnali, pause, ritmi e routine sono stati accessibili e quali condizioni hanno reso il recupero più difficile.",
+                "Le risposte descrivono un frequente uso di pause, regolazione del ritmo e ripresa graduale dopo la difficoltà. La frequenza non misura rapidità, assenza di sofferenza o qualità del recupero e non impone di tornare alla situazione precedente.");
+        saveAreaInsights(id, "flessibilita",
+                "Distinguere margini d'azione, suddividere problemi e modificare strategie risulta poco frequente nelle situazioni considerate. Alcuni problemi hanno pochi margini reali o richiedono risorse esterne e non possono essere risolti con la sola flessibilità individuale.",
+                "L'adattamento delle strategie compare in alcune situazioni più che in altre. Nota quando informazioni nuove, passi più piccoli o approcci diversi hanno ampliato il margine d'azione e quando il contesto è rimasto vincolante.",
+                "Le risposte descrivono un frequente adattamento di piani, aspettative e strategie davanti ai cambiamenti. Questo non prova che ogni modifica sia stata efficace né che insistere o adattarsi sia sempre la scelta più appropriata.");
+        saveAreaInsights(id, "risorse",
+                "Individuare, chiedere, accettare o usare supporti relazionali e contestuali risulta poco frequente nelle difficoltà considerate. Il dato può riflettere indisponibilità, inaccessibilità o scarsa sicurezza delle risorse, non soltanto una scelta personale.",
+                "L'accesso ai supporti compare con frequenza intermedia o varia tra contesti. Osserva quali persone, informazioni e servizi erano realmente disponibili, pertinenti e sicuri e quali ostacoli hanno limitato il loro utilizzo.",
+                "Le risposte descrivono un frequente ricorso a persone, informazioni e risorse del contesto quando pertinenti. La frequenza non misura qualità, adeguatezza o continuità del supporto e non significa che ogni bisogno sia stato soddisfatto.");
+        saveAreaInsights(id, "continuita",
+                "Mantenere attività significative, rivedere obiettivi e riconoscere progressi risulta poco frequente nelle difficoltà considerate. In fasi acute, proteggersi o sospendere attività può essere appropriato e non indica minore resilienza.",
+                "La continuità personale e l'orientamento compaiono in alcune situazioni. Nota quali priorità, piccoli passi e nuove routine hanno mantenuto un filo con ciò che conta e quando è stato necessario fermarsi o cambiare direzione.",
+                "Le risposte descrivono un frequente mantenimento o adattamento di attività, obiettivi e routine significative. Questo non misura produttività, ottimismo o successo e non richiede di attribuire un significato positivo a ogni difficoltà.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -1978,6 +2073,12 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Beyond g: Putting multiple intelligences theory to the test — Visser, Ashton e Vernon", "https://doi.org/10.1016/j.intell.2006.02.004"),
                 ref("The Self-Reflection and Insight Scale — Italian Version — Di Fabio e Svicher", "https://doi.org/10.14605/CS1532206"),
                 ref("Interoceptive accuracy and awareness in an Italian sample — Calì e colleghi", "https://pubmed.ncbi.nlm.nih.gov/26379571/")));
+        syncReferences("resilienza-psicologica", List.of(
+                ref("Psychological Resilience: A Review and Critique — Fletcher e Sarkar", "https://doi.org/10.1027/1016-9040/a000124"),
+                ref("Resilience definitions, theory, and challenges — Southwick e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25317257/"),
+                ref("The Resilience Scale for Adults in Italy — Bonfiglio e colleghi", "https://pubmed.ncbi.nlm.nih.gov/27031088/"),
+                ref("Italian version of the 14-item Resilience Scale — Cuoco e colleghi", "https://pubmed.ncbi.nlm.nih.gov/34850301/"),
+                ref("A methodological review of resilience measurement scales — Windle e colleghi", "https://pubmed.ncbi.nlm.nih.gov/21294858/")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

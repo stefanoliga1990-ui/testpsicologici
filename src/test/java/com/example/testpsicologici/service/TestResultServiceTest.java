@@ -928,10 +928,78 @@ class TestResultServiceTest {
     }
 
     @Test
+    void psychologicalResilienceTestIsLoadedWithTwentyFourOriginalQuestionsAndContextLimits() {
+        PsychologicalTest test = catalogue.findById("resilienza-psicologica");
+
+        assertThat(test.title()).isEqualTo("Resilienza psicologica");
+        assertThat(test.questions()).hasSize(24).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code())
+                .containsExactly("recupero", "flessibilita", "risorse", "continuita");
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.responseInstruction()).contains("ultimi sei mesi", "difficoltà", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "processo dinamico e contestuale",
+                "non indica assenza di resilienza",
+                "significato molto limitato",
+                "non predice come reagirai in futuro",
+                "professionista qualificato",
+                "112");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva dei comportamenti di adattamento riferiti");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza dei comportamenti riferiti");
+        assertThat(test.references()).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.1027/1016-9040/a000124",
+                "https://pubmed.ncbi.nlm.nih.gov/25317257/",
+                "https://pubmed.ncbi.nlm.nih.gov/27031088/",
+                "https://pubmed.ncbi.nlm.nih.gov/34850301/",
+                "https://pubmed.ncbi.nlm.nih.gov/21294858/");
+    }
+
+    @Test
+    void psychologicalResilienceFocusedProfileKeepsTheoreticalOrderAndPositiveDirection() {
+        TestResult result = analyzeWithAnswersForTest("resilienza-psicologica", 1, 1, 5, 1);
+
+        assertThat(result.general().title()).isEqualTo("Le risorse di resilienza percepite sembrano più espresse in una o due aree");
+        assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Recupero e regolazione dopo la difficoltà",
+                "Adattamento e revisione delle strategie",
+                "Accesso alle risorse relazionali e contestuali",
+                "Continuità personale e orientamento");
+        assertThat(result.areaResults().get(2).description()).contains("frequente ricorso", "non misura qualità");
+        assertThat(result.areaResults().get(2).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(0).percentage()).isZero();
+    }
+
+    @Test
+    void psychologicalResilienceProfilesFollowEditorialRulesAndRetainContextAndSafetyLimits() {
+        TestResult low = analyzeWithAnswersForTest("resilienza-psicologica", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("resilienza-psicologica", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("resilienza-psicologica", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("resilienza-psicologica", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).isEqualTo("Le risorse di resilienza percepite sembrano poco espresse");
+        assertThat(mixed.general().title()).isEqualTo("Le risorse di resilienza percepite sembrano espresse in modo variabile");
+        assertThat(focused.general().title()).isEqualTo("Le risorse di resilienza percepite sembrano più espresse in una o due aree");
+        assertThat(broad.general().title()).isEqualTo("Le risorse di resilienza percepite sembrano frequentemente espresse in più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non misura il processo completo di resilienza",
+                        "non predice come reagirai in futuro",
+                        "professionista qualificato",
+                        "112"));
+        assertThat(low.general().detail()).contains("non dimostra una scarsa resilienza", "poche occasioni pertinenti");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

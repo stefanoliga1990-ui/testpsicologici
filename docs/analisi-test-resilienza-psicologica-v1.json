@@ -1,0 +1,134 @@
+{
+  "test": {
+    "id": "resilienza-psicologica",
+    "titolo": "Resilienza psicologica",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione esclusivamente informativa di alcuni comportamenti e risorse riferiti davanti a difficoltà recenti",
+    "periodo_riferimento": "Ultimi sei mesi, considerando difficoltà, pressioni o cambiamenti realmente incontrati",
+    "direzione_punteggio": "Valori più alti descrivono maggiore frequenza dei comportamenti formulati, non maggiore forza personale, migliore esito o capacità futura",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non misura il processo completo di resilienza, non valuta gli esiti, non predice il futuro e non diagnostica condizioni."
+  },
+  "istruzione_risposta": "Pensando agli ultimi sei mesi e alle difficoltà, pressioni o cambiamenti che hai realmente incontrato, con quale frequenza ti è capitato di comportarti in questo modo?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; rappresenta frequenza relativa delle risposte, non percentuale di resilienza, efficacia, probabilità, percentile o confronto normativo",
+    "ordine_aree_risultato": "Ordine teorico stabile: recupero, flessibilita, risorse, continuita",
+    "caveat_opportunita": "Se negli ultimi sei mesi non vi sono state difficoltà significative o occasioni pertinenti, qualsiasi profilo ha significato molto limitato"
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le risorse di resilienza percepite sembrano poco espresse",
+      "sottotitolo": "Recupero, adattamento, accesso ai supporti e continuità risultano poco frequenti in tutte le aree considerate.",
+      "descrizione": "Non indica scarsa resilienza e non esclude risposte efficaci non coperte dagli item. Richiede di considerare intensità e durata del carico, sicurezza, salute, condizioni materiali, supporti e numero di occasioni pertinenti. Il test non misura esiti o capacità futura."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le risorse di resilienza percepite sembrano espresse in modo variabile",
+      "sottotitolo": "Le frequenze differiscono tra le aree senza livelli editoriali alti; alcune risposte possono essere accessibili soltanto in determinate situazioni.",
+      "descrizione": "La variabilità può dipendere dal tipo di difficoltà, dalle energie, dal margine di scelta e dalle risorse disponibili. Le aree non sono una classifica e le soglie restano editoriali."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le risorse di resilienza percepite sembrano più espresse in una o due aree",
+      "sottotitolo": "Una o due modalità sono riferite con maggiore frequenza, mentre le altre risultano più contenute o meno praticabili.",
+      "descrizione": "Le aree emergenti non certificano efficacia, invulnerabilità o una qualità stabile. Le aree contenute vanno lette insieme a sicurezza, tempo, disponibilità di supporti e caratteristiche concrete della difficoltà."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le risorse di resilienza percepite sembrano frequentemente espresse in più aree",
+      "sottotitolo": "Almeno tre aree raccolgono comportamenti riferiti con maggiore frequenza davanti alle difficoltà considerate.",
+      "descrizione": "L'ampiezza non dimostra esiti positivi, assenza di sofferenza o disponibilità delle stesse risorse in futuro. Invita a osservare richieste, relazioni, condizioni materiali, costi e bisogni ancora presenti."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "recupero",
+      "nome_area": "Recupero e regolazione dopo la difficoltà",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Bisogni immediati, pause, ritmo e ripresa graduale risultano poco frequenti; carico, salute, sicurezza e tempo possono limitarli."},
+        {"livello": "MEDIUM", "descrizione": "Recupero e regolazione compaiono in alcune situazioni; sono rilevanti segnali, pause, ritmi, routine e condizioni disponibili."},
+        {"livello": "HIGH", "descrizione": "Pause, regolazione del ritmo e ripresa graduale sono riferite spesso; non misura rapidità, assenza di sofferenza o qualità del recupero."}
+      ]
+    },
+    {
+      "area_code": "flessibilita",
+      "nome_area": "Adattamento e revisione delle strategie",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Distinguere margini d'azione e modificare strategie risulta poco frequente; alcuni problemi hanno pochi margini reali e richiedono risorse esterne."},
+        {"livello": "MEDIUM", "descrizione": "L'adattamento compare in alcune situazioni; informazioni nuove, passi più piccoli e vincoli del contesto possono fare la differenza."},
+        {"livello": "HIGH", "descrizione": "Piani, aspettative e strategie vengono adattati spesso; non prova che ogni modifica sia stata efficace o sempre appropriata."}
+      ]
+    },
+    {
+      "area_code": "risorse",
+      "nome_area": "Accesso alle risorse relazionali e contestuali",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Individuare o usare supporti risulta poco frequente; il dato può riflettere indisponibilità, inaccessibilità o scarsa sicurezza delle risorse."},
+        {"livello": "MEDIUM", "descrizione": "L'accesso ai supporti varia; vanno osservate disponibilità, pertinenza, sicurezza e barriere concrete."},
+        {"livello": "HIGH", "descrizione": "Persone, informazioni e risorse vengono usate spesso quando pertinenti; non misura qualità, continuità o soddisfazione dei bisogni."}
+      ]
+    },
+    {
+      "area_code": "continuita",
+      "nome_area": "Continuità personale e orientamento",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Mantenere attività significative o rivedere obiettivi risulta poco frequente; in fasi acute fermarsi o proteggersi può essere appropriato."},
+        {"livello": "MEDIUM", "descrizione": "Continuità e orientamento compaiono in alcune situazioni; priorità, piccoli passi e nuove routine possono variare con il contesto."},
+        {"livello": "HIGH", "descrizione": "Attività, obiettivi e routine significative vengono mantenuti o adattati spesso; non misura produttività, ottimismo o successo."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {
+      "titolo": "Psychological Resilience: A Review and Critique",
+      "url": "https://doi.org/10.1027/1016-9040/a000124",
+      "apporto": "Definizione attraverso difficoltà e adattamento e natura dinamica del costrutto; non stabilisce una misura universale."
+    },
+    {
+      "titolo": "Resilience definitions, theory, and challenges",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25317257/",
+      "apporto": "Distinzione tra tratto, processo ed esito e integrazione di livelli individuali, sociali e culturali."
+    },
+    {
+      "titolo": "The Resilience Scale for Adults in Italy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27031088/",
+      "apporto": "Evidenza italiana sull'inclusione di risorse personali, familiari e sociali; strumento e campioni diversi non validano l'app."
+    },
+    {
+      "titolo": "Italian version of the 14-item Resilience Scale",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34850301/",
+      "apporto": "Studio italiano sulla struttura di una scala differente; fattori e punteggi non vengono trasferiti."
+    },
+    {
+      "titolo": "A methodological review of resilience measurement scales",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21294858/",
+      "apporto": "Eterogeneità delle misure e assenza di un gold standard; sostiene la cautela sulle interpretazioni."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia separata, documentata in docs/test-resilienza-psicologica-v1.md e nel GuideCatalogue.",
+  "limite": "Non esistono dati che validino nella popolazione adulta italiana questo specifico set di 24 item, le quattro aree, la media generale, le soglie o le interpretazioni."
+}
