@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import Brand from '../components/Brand';
+import InstagramLink from '../components/InstagramLink';
 
 const ranges = [7, 30, 90, 365];
 
@@ -102,10 +103,13 @@ export default function MonitoringPage({ initialSnapshot, csrfParameterName, csr
     <main className="monitoring-shell">
       <header className="monitoring-nav">
         <Brand />
-        <form action="/monitoring/logout" method="post">
-          <input type="hidden" name={csrfParameterName} value={csrfToken} />
-          <button type="submit">Esci</button>
-        </form>
+        <div className="monitoring-actions">
+          <InstagramLink />
+          <form action="/monitoring/logout" method="post">
+            <input type="hidden" name={csrfParameterName} value={csrfToken} />
+            <button type="submit">Esci</button>
+          </form>
+        </div>
       </header>
 
       <section className="monitoring-heading">

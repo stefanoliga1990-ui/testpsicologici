@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import AsyncError from '../components/AsyncError';
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import useAsyncAction from '../hooks/useAsyncAction';
 import { saveAnswer } from '../services/api';
@@ -51,6 +52,7 @@ export default function QuestionPage({ answers, progress, question, questionCoun
           <AsyncError message={error} />
         </form>
       </section>
+      <Footer />
     </main>
   );
 }

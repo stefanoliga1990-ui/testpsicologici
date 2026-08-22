@@ -1,4 +1,5 @@
 import Brand from './Brand';
+import InstagramLink from './InstagramLink';
 
 export default function Footer() {
   return (
@@ -10,6 +11,7 @@ export default function Footer() {
         <a href="/il-progetto">Il progetto</a>
         <a href="/privacy-e-cookie">Privacy e cookie</a>
         <a href="/">Tutti i test</a>
+        <InstagramLink className="footer-social-link" />
       </nav>
       <p>Questionari e guide informative per l'auto-osservazione. I contenuti non costituiscono diagnosi o valutazioni cliniche.</p>
     </footer>

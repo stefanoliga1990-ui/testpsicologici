@@ -69,7 +69,13 @@ class PageRenderingTest {
                         "href=\"/test/tratti-autistici-adulti\"")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti\"")))
                 .andExpect(content().string(containsString("href=\"/metodo-e-fonti\"")))
-                .andExpect(content().string(containsString("href=\"/il-progetto\"")));
+                .andExpect(content().string(containsString("href=\"/il-progetto\"")))
+                .andExpect(content().string(containsString(
+                        "href=\"https://www.instagram.com/spazio.test/\"")))
+                .andExpect(content().string(containsString(
+                        "src=\"/images/brand/instagram-spazio-test.png\"")))
+                .andExpect(content().string(containsString(
+                        "aria-label=\"Visita Spazio Test su Instagram (si apre in una nuova scheda)\"")));
     }
 
     @Test
@@ -87,6 +93,9 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith("image/png"));
         mockMvc.perform(get("/images/brand/og-spazio-test.png"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith("image/png"));
+        mockMvc.perform(get("/images/brand/instagram-spazio-test.png"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith("image/png"));
     }
@@ -171,7 +180,7 @@ class PageRenderingTest {
                         "<title>Approfondimenti su psicologia e benessere | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Un argomento alla volta")))
                 .andExpect(content().string(containsString("/js/guides.js")))
-                .andExpect(content().string(containsString("/react/assets/app.js?v=react-3")))
+                .andExpect(content().string(containsString("/react/assets/app.js?v=react-4")))
                 .andExpect(content().string(containsString("id=\"guide-search-input\"")))
                 .andExpect(content().string(containsString("data-guide-card")))
                 .andExpect(content().string(containsString("data-guide-empty")))

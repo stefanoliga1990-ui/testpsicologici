@@ -1,4 +1,5 @@
 import Button from '../components/Button';
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProgressBar from '../components/ProgressBar';
 import { withSessionId } from '../utils/urls';
@@ -46,6 +47,7 @@ export default function ResultPage({ areaResults, percentage, result, score, tes
         </div>
       </section>
       <p className="disclaimer">Questo questionario è informativo e non clinicamente validato: non conferma né esclude una diagnosi e non sostituisce una valutazione professionale.</p>
+      <Footer />
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import Brand from './Brand';
+import InstagramLink from './InstagramLink';
 
 const links = [
   { href: '/approfondimenti', label: 'Approfondimenti' },
@@ -21,6 +22,7 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
+        <InstagramLink />
       </div>
     </nav>
   );
