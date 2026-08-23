@@ -183,7 +183,7 @@ class PageRenderingTest {
                         "<title>Approfondimenti su psicologia e benessere | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Un argomento alla volta")))
                 .andExpect(content().string(containsString("/js/guides.js")))
-                .andExpect(content().string(containsString("/react/assets/app.js?v=react-6")))
+                .andExpect(content().string(containsString("/react/assets/app.js?v=react-7")))
                 .andExpect(content().string(containsString("id=\"guide-search-input\"")))
                 .andExpect(content().string(containsString("data-guide-card")))
                 .andExpect(content().string(containsString("data-guide-empty")))

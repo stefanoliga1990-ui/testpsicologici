@@ -1,13 +1,18 @@
 package com.example.testpsicologici.controller;
 
 import com.example.testpsicologici.persistence.DailySiteVisitRepository;
+import com.example.testpsicologici.persistence.DailyTestCompletionRepository;
+import com.example.testpsicologici.model.PsychologicalTest;
+import com.example.testpsicologici.model.TestAttempt;
 import com.example.testpsicologici.service.DailyVisitCookieService;
+import com.example.testpsicologici.service.TestCatalogue;
 import jakarta.servlet.http.Cookie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
+import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.web.context.WebApplicationContext;
@@ -38,11 +43,18 @@ class VisitorMonitoringTest {
     @Autowired
     private DailySiteVisitRepository repository;
 
+    @Autowired
+    private DailyTestCompletionRepository completionRepository;
+
+    @Autowired
+    private TestCatalogue catalogue;
+
     private MockMvc mockMvc;
 
     @BeforeEach
     void setUp() {
         repository.deleteAll();
+        completionRepository.deleteAll();
         mockMvc = webAppContextSetup(context).apply(springSecurity()).build();
     }
 
@@ -118,7 +130,8 @@ class VisitorMonitoringTest {
                 .andExpect(header().string("X-Robots-Tag", "noindex, nofollow, noarchive"))
                 .andExpect(header().string(HttpHeaders.CACHE_CONTROL, containsString("no-store")))
                 .andExpect(content().string(containsString("Monitoraggio visite")))
-                .andExpect(content().string(containsString("Visitatori distinti oggi")));
+                .andExpect(content().string(containsString("Visitatori distinti oggi")))
+                .andExpect(content().string(containsString("Completamenti per test")));
 
         mockMvc.perform(get("/monitoring/api/visite?days=7")
                         .with(user("owner").roles("MONITORING")))
@@ -126,6 +139,73 @@ class VisitorMonitoringTest {
                 .andExpect(header().string(HttpHeaders.CACHE_CONTROL, containsString("no-store")))
                 .andExpect(jsonPath("$.todayVisitors").value(1))
                 .andExpect(jsonPath("$.days.length()").value(7));
+    }
+
+    @Test
+    void completedTestIsCountedOncePerAttemptWithoutAdditionalCookies() throws Exception {
+        String testId = "autostima";
+        PsychologicalTest test = catalogue.findById(testId);
+        int lastQuestion = test.questions().size();
+        MockHttpSession firstAttempt = almostCompletedAttempt(test);
+
+        mockMvc.perform(post("/test/{testId}/domanda/{questionNumber}", testId, lastQuestion)
+                        .session(firstAttempt)
+                        .param("answer", "3"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/test/" + testId + "/risultato"))
+                .andExpect(header().doesNotExist(HttpHeaders.SET_COOKIE));
+
+        mockMvc.perform(get("/test/{testId}/risultato", testId).session(firstAttempt))
+                .andExpect(status().isOk());
+        mockMvc.perform(post("/test/{testId}/domanda/{questionNumber}", testId, lastQuestion)
+                        .session(firstAttempt)
+                        .param("answer", "4"))
+                .andExpect(status().is3xxRedirection());
+
+        assertThat(completionRepository.findAll()).singleElement()
+                .extracting(completion -> completion.getCompletionCount())
+                .isEqualTo(1L);
+
+        MockHttpSession secondAttempt = almostCompletedAttempt(test);
+        mockMvc.perform(post("/test/{testId}/domanda/{questionNumber}", testId, lastQuestion)
+                        .session(secondAttempt)
+                        .param("answer", "2"))
+                .andExpect(status().is3xxRedirection());
+
+        assertThat(completionRepository.findAll()).singleElement()
+                .extracting(completion -> completion.getCompletionCount())
+                .isEqualTo(2L);
+    }
+
+    @Test
+    void authenticatedOwnerCanOpenOneTestCompletionChartAtATime() throws Exception {
+        String testId = "autostima";
+        PsychologicalTest test = catalogue.findById(testId);
+        MockHttpSession attempt = almostCompletedAttempt(test);
+        mockMvc.perform(post("/test/{testId}/domanda/{questionNumber}",
+                        testId, test.questions().size())
+                        .session(attempt)
+                        .param("answer", "3"))
+                .andExpect(status().is3xxRedirection());
+
+        mockMvc.perform(get("/monitoring/api/test-completamenti")
+                        .with(user("owner").roles("MONITORING")))
+                .andExpect(status().isOk())
+                .andExpect(header().string(HttpHeaders.CACHE_CONTROL, containsString("no-store")))
+                .andExpect(content().string(containsString("\"testId\":\"autostima\"")))
+                .andExpect(content().string(containsString("\"totalCompletions\":1")));
+
+        mockMvc.perform(get("/monitoring/api/test-completamenti/{testId}?days=7", testId)
+                        .with(user("owner").roles("MONITORING")))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.testId").value(testId))
+                .andExpect(jsonPath("$.todayCompletions").value(1))
+                .andExpect(jsonPath("$.totalCompletions").value(1))
+                .andExpect(jsonPath("$.days.length()").value(7));
+
+        mockMvc.perform(get("/monitoring/api/test-completamenti/non-esistente")
+                        .with(user("owner").roles("MONITORING")))
+                .andExpect(status().isNotFound());
     }
 
     @Test
@@ -150,5 +230,15 @@ class VisitorMonitoringTest {
                 .andExpect(content().string(containsString("Privacy e cookie")))
                 .andExpect(content().string(containsString("__Host-st_visit_day")))
                 .andExpect(content().string(containsString("privacy@example.test")));
+    }
+
+    private MockHttpSession almostCompletedAttempt(PsychologicalTest test) {
+        TestAttempt attempt = new TestAttempt(test.questions().size());
+        for (int question = 0; question < test.questions().size() - 1; question++) {
+            attempt.answer(question, 3);
+        }
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-" + test.id(), attempt);
+        return session;
     }
 }

@@ -9,6 +9,7 @@ import com.example.testpsicologici.service.GuideCatalogue;
 import com.example.testpsicologici.service.PdfResultService;
 import com.example.testpsicologici.service.SiteUrlService;
 import com.example.testpsicologici.service.TestResultService;
+import com.example.testpsicologici.service.TestCompletionAnalyticsService;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -25,6 +26,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
@@ -33,6 +36,7 @@ import java.util.List;
 @Controller
 public class TestController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestController.class);
     private static final String ATTEMPT_PREFIX = "test-attempt-";
     private static final List<String> ANSWER_OPTIONS =
             List.of("Mai", "Raramente", "A volte", "Spesso", "Quasi sempre");
@@ -42,15 +46,18 @@ public class TestController {
     private final PdfResultService pdfResultService;
     private final SiteUrlService siteUrlService;
     private final GuideCatalogue guideCatalogue;
+    private final TestCompletionAnalyticsService completionAnalyticsService;
 
     public TestController(TestCatalogue catalogue, TestResultService resultService,
                           PdfResultService pdfResultService, SiteUrlService siteUrlService,
-                          GuideCatalogue guideCatalogue) {
+                          GuideCatalogue guideCatalogue,
+                          TestCompletionAnalyticsService completionAnalyticsService) {
         this.catalogue = catalogue;
         this.resultService = resultService;
         this.pdfResultService = pdfResultService;
         this.siteUrlService = siteUrlService;
         this.guideCatalogue = guideCatalogue;
+        this.completionAnalyticsService = completionAnalyticsService;
     }
 
     @GetMapping("/")
@@ -123,6 +130,13 @@ public class TestController {
         if (attempt == null) return "redirect:/test/" + testId;
 
         attempt.answer(questionIndex, answer);
+        if (attempt.markCompletionRecorded()) {
+            try {
+                completionAnalyticsService.recordCompletion(testId);
+            } catch (RuntimeException exception) {
+                LOGGER.warn("Conteggio completamento non riuscito per il test {}", testId, exception);
+            }
+        }
         return questionNumber == test.questions().size()
                 ? "redirect:/test/" + testId + "/risultato"
                 : "redirect:/test/" + testId + "/domanda/" + (questionNumber + 1);

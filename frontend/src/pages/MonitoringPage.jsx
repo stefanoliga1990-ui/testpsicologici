@@ -21,13 +21,13 @@ function formatUpdatedAt(value) {
   }).format(new Date(value));
 }
 
-function VisitChart({ days }) {
+function DailyChart({ days, valueKey, unitLabel, ariaLabel }) {
   const width = 960;
   const height = 330;
   const padding = { top: 24, right: 22, bottom: 52, left: 48 };
   const chartWidth = width - padding.left - padding.right;
   const chartHeight = height - padding.top - padding.bottom;
-  const maxValue = Math.max(1, ...days.map((day) => day.visitors));
+  const maxValue = Math.max(1, ...days.map((day) => day[valueKey]));
   const barSlot = chartWidth / Math.max(days.length, 1);
   const barWidth = Math.max(2, Math.min(24, barSlot * 0.68));
   const labelEvery = Math.max(1, Math.ceil(days.length / 8));
@@ -36,7 +36,7 @@ function VisitChart({ days }) {
   return (
     <div className="monitoring-chart-scroll">
       <svg className="monitoring-chart" viewBox={`0 0 ${width} ${height}`} role="img"
-        aria-label="Grafico dei visitatori distinti giornalieri">
+        aria-label={ariaLabel}>
         {gridValues.map((value) => {
           const y = padding.top + chartHeight - (value / maxValue) * chartHeight;
           return (
@@ -47,14 +47,15 @@ function VisitChart({ days }) {
           );
         })}
         {days.map((day, index) => {
-          const barHeight = (day.visitors / maxValue) * chartHeight;
+          const value = day[valueKey];
+          const barHeight = (value / maxValue) * chartHeight;
           const x = padding.left + index * barSlot + (barSlot - barWidth) / 2;
           const y = padding.top + chartHeight - barHeight;
           const showLabel = index % labelEvery === 0 || index === days.length - 1;
           return (
             <g className="monitoring-bar" key={day.date}>
-              <title>{`${formatLongDate(day.date)}: ${day.visitors} visitatori`}</title>
-              <rect x={x} y={y} width={barWidth} height={Math.max(barHeight, day.visitors ? 2 : 0)} rx="4" />
+              <title>{`${formatLongDate(day.date)}: ${value} ${unitLabel}`}</title>
+              <rect x={x} y={y} width={barWidth} height={Math.max(barHeight, value ? 2 : 0)} rx="4" />
               {showLabel && <text className="monitoring-axis-date" x={x + barWidth / 2}
                 y={height - 19} textAnchor="middle">{formatDate(day.date)}</text>}
             </g>
@@ -65,10 +66,17 @@ function VisitChart({ days }) {
   );
 }
 
-export default function MonitoringPage({ initialSnapshot, csrfParameterName, csrfToken }) {
+export default function MonitoringPage({
+  initialSnapshot, initialTestCompletions = [], csrfParameterName, csrfToken
+}) {
   const [range, setRange] = useState(30);
   const [snapshot, setSnapshot] = useState(initialSnapshot);
   const [error, setError] = useState('');
+  const [testCompletions, setTestCompletions] = useState(initialTestCompletions);
+  const [selectedTestId, setSelectedTestId] = useState(null);
+  const [testRange, setTestRange] = useState(30);
+  const [testSnapshot, setTestSnapshot] = useState(null);
+  const [testError, setTestError] = useState('');
   const total = useMemo(
     () => snapshot.days.reduce((sum, day) => sum + day.visitors, 0),
     [snapshot.days]
@@ -98,6 +106,59 @@ export default function MonitoringPage({ initialSnapshot, csrfParameterName, csr
       window.clearInterval(timer);
     };
   }, [range]);
+
+  useEffect(() => {
+    let active = true;
+    async function refreshTestList() {
+      try {
+        const response = await fetch('/monitoring/api/test-completamenti', {
+          credentials: 'same-origin', cache: 'no-store'
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        if (active) setTestCompletions(data);
+      } catch {
+        // Il grafico visitatori deve restare utilizzabile anche se questa sezione non risponde.
+      }
+    }
+    const timer = window.setInterval(refreshTestList, 15000);
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!selectedTestId) {
+      setTestSnapshot(null);
+      setTestError('');
+      return undefined;
+    }
+    let active = true;
+    async function refreshTestChart() {
+      try {
+        const response = await fetch(
+          `/monitoring/api/test-completamenti/${encodeURIComponent(selectedTestId)}?days=${testRange}`,
+          { credentials: 'same-origin', cache: 'no-store' }
+        );
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        if (active) {
+          setTestSnapshot(data);
+          setTestError('');
+        }
+      } catch {
+        if (active) setTestError('Dati del test non disponibili. Riproverò automaticamente.');
+      }
+    }
+    setTestSnapshot(null);
+    refreshTestChart();
+    const timer = window.setInterval(refreshTestChart, 15000);
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
+  }, [selectedTestId, testRange]);
 
   return (
     <main className="monitoring-shell">
@@ -143,8 +204,67 @@ export default function MonitoringPage({ initialSnapshot, csrfParameterName, csr
           </div>
         </div>
         {error && <p className="monitoring-error" role="status">{error}</p>}
-        <VisitChart days={snapshot.days} />
+        <DailyChart days={snapshot.days} valueKey="visitors" unitLabel="visitatori"
+          ariaLabel="Grafico dei visitatori distinti giornalieri" />
       </section>
+
+      <section className="monitoring-tests-panel">
+        <div className="monitoring-panel-heading">
+          <div>
+            <p className="eyebrow">Questionari conclusi</p>
+            <h2>Completamenti per test</h2>
+          </div>
+          <p>Seleziona un test per aprire il grafico giornaliero.</p>
+        </div>
+        <div className="monitoring-test-list">
+          {testCompletions.map((testCompletion) => {
+            const selected = selectedTestId === testCompletion.testId;
+            return (
+              <button className={selected ? 'active' : ''} type="button"
+                key={testCompletion.testId} aria-expanded={selected}
+                onClick={() => setSelectedTestId(selected ? null : testCompletion.testId)}>
+                <span className="monitoring-test-name">{testCompletion.testTitle}</span>
+                <span className="monitoring-test-counts">
+                  <span><strong>{testCompletion.todayCompletions}</strong> oggi</span>
+                  <span><strong>{testCompletion.totalCompletions}</strong> totali</span>
+                </span>
+                <span className="monitoring-test-chevron" aria-hidden="true">{selected ? '−' : '+'}</span>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      {selectedTestId && (
+        <section className="monitoring-panel monitoring-test-chart-panel">
+          <div className="monitoring-panel-heading">
+            <div>
+              <p className="eyebrow">Andamento del test</p>
+              <h2>{testSnapshot?.testTitle
+                || testCompletions.find((item) => item.testId === selectedTestId)?.testTitle}</h2>
+            </div>
+            <div className="monitoring-ranges" aria-label="Intervallo del grafico completamenti">
+              {ranges.map((days) => (
+                <button className={testRange === days ? 'active' : ''} type="button" key={days}
+                  aria-pressed={testRange === days} onClick={() => setTestRange(days)}>
+                  {days === 365 ? '1 anno' : `${days} gg`}
+                </button>
+              ))}
+            </div>
+          </div>
+          {testError && <p className="monitoring-error" role="status">{testError}</p>}
+          {testSnapshot
+            ? <>
+              <div className="monitoring-test-chart-summary">
+                <span><strong>{testSnapshot.todayCompletions}</strong> completati oggi</span>
+                <span><strong>{testSnapshot.totalCompletions}</strong> completati dall’attivazione</span>
+              </div>
+              <DailyChart days={testSnapshot.days} valueKey="completions"
+                unitLabel="completamenti" ariaLabel={`Grafico dei completamenti giornalieri di ${testSnapshot.testTitle}`} />
+            </>
+            : !testError && <p className="monitoring-loading" role="status">Caricamento del grafico…</p>}
+        </section>
+      )}
 
       <section className="monitoring-table-panel">
         <h2>Dettaglio giornaliero</h2>

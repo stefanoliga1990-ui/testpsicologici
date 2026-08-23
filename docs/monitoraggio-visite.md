@@ -8,7 +8,7 @@ La giornata è calcolata nel fuso `Europe/Rome`. Il valore odierno indica il tot
 
 ## Dati trattati
 
-Il database contiene soltanto la tabella `daily_site_visit`:
+Per il conteggio dei visitatori il database usa la tabella `daily_site_visit`:
 
 | Campo | Contenuto |
 | --- | --- |
@@ -16,6 +16,8 @@ Il database contiene soltanto la tabella `daily_site_visit`:
 | `visitor_count` | totale aggregato dei browser conteggiati quel giorno |
 
 Non vengono salvati IP, User-Agent, URL, referrer, argomento consultato, risposte ai questionari, ID di sessione o identificatori del visitatore. Lo User-Agent viene soltanto letto durante la richiesta per escludere i crawler più comuni e non viene registrato.
+
+La tabella `daily_test_completion` contiene invece soltanto l'identificativo editoriale del test, la data e il numero aggregato di completamenti. Non conserva risposte, punteggio, profilo risultante, sessione o browser e non permette di collegare tra loro due completamenti. Il conteggio parte dal deploy della funzionalità e non ricostruisce dati storici.
 
 ## Cookie giornaliero
 
@@ -30,6 +32,8 @@ La chiave HMAC è fornita da `VISITOR_COOKIE_SECRET`. Se manca, l'applicazione g
 3. Per un nuovo browser incrementa atomicamente la riga della data e restituisce il cookie giornaliero.
 4. Errori del monitoraggio vengono ignorati dal frontend e non impediscono la navigazione.
 
+Il completamento di un test viene registrato separatamente quando il relativo tentativo passa per la prima volta da incompleto a completo. Ricaricare il risultato, scaricare il PDF o modificare successivamente una risposta nello stesso tentativo non incrementa il contatore. Iniziare un nuovo tentativo e completarlo produce invece un nuovo `+1`, anche dallo stesso browser e nella stessa giornata; non vengono creati cookie specifici per questo conteggio.
+
 Healthcheck, asset, sitemap, PDF, login e dashboard non generano l'evento. La dashboard non espone pagine visitate perché queste informazioni non vengono raccolte.
 
 ## Dashboard e sicurezza
@@ -38,7 +42,7 @@ La dashboard è disponibile su `/monitoring`, con login su `/monitoring/login`. 
 
 Le credenziali sono lette da `MONITORING_USERNAME` e `MONITORING_PASSWORD`. Se una delle due manca, viene creato un account casuale non conoscibile e la dashboard resta di fatto disabilitata. La password configurata viene trasformata in BCrypt all'avvio e non è salvata nel repository o nel database.
 
-Le risposte della dashboard usano `Cache-Control: no-store` e `X-Robots-Tag: noindex, nofollow, noarchive`. Il grafico interroga l'API protetta ogni 15 secondi e permette intervalli di 7, 30, 90 e 365 giorni.
+Le risposte della dashboard usano `Cache-Control: no-store` e `X-Robots-Tag: noindex, nofollow, noarchive`. I grafici interrogano le API protette ogni 15 secondi e permettono intervalli di 7, 30, 90 e 365 giorni. I test sono mostrati come elenco con conteggio odierno e totale; il grafico giornaliero viene caricato soltanto dopo aver selezionato un test.
 
 ## Informativa
 

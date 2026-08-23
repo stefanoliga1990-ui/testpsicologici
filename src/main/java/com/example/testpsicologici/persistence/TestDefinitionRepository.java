@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface TestDefinitionRepository extends JpaRepository<TestDefinitionEntity, String> {
     List<TestDefinitionEntity> findByActiveTrueOrderByDisplayOrderAsc();
+    List<TestDefinitionEntity> findAllByOrderByDisplayOrderAsc();
 }
