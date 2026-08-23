@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav class="site-nav" aria-label="Navigazione principale" th:fragment="siteHeader">
+    <a class="brand" th:href="@{/}"><img class="brand-mark" th:src="@{/images/brand/logo-mark.svg}" alt="" width="27" height="27"> Spazio Test</a>
+    <div class="nav-links">
+        <a th:href="@{/approfondimenti}">Approfondimenti</a>
+        <a th:href="@{/metodo-e-fonti}">Metodo e fonti</a>
+        <a th:href="@{/il-progetto}">Il progetto</a>
+        <th:block th:replace="~{fragments/social-link :: instagramLink}"></th:block>
+    </div>
+    <details class="mobile-nav">
+        <summary class="nav-toggle" aria-label="Apri il menu di navigazione">
+            <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </summary>
+        <div class="mobile-nav-menu">
+            <a th:href="@{/approfondimenti}">Approfondimenti</a>
+            <a th:href="@{/metodo-e-fonti}">Metodo e fonti</a>
+            <a th:href="@{/il-progetto}">Il progetto</a>
+            <a class="social-link mobile-instagram-link" href="https://www.instagram.com/spazio.test/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Visita Spazio Test su Instagram (si apre in una nuova scheda)">
+                <img th:src="@{/images/brand/instagram-spazio-test.png}" alt="" width="24" height="24">
+                <span>Instagram</span>
+            </a>
+        </div>
+    </details>
+</nav>
+</body>
+</html>

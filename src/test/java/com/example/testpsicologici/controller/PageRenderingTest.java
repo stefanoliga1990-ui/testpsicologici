@@ -75,7 +75,10 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "src=\"/images/brand/instagram-spazio-test.png\"")))
                 .andExpect(content().string(containsString(
-                        "aria-label=\"Visita Spazio Test su Instagram (si apre in una nuova scheda)\"")));
+                        "aria-label=\"Visita Spazio Test su Instagram (si apre in una nuova scheda)\"")))
+                .andExpect(content().string(containsString("class=\"mobile-nav\"")))
+                .andExpect(content().string(containsString("class=\"nav-toggle\"")))
+                .andExpect(content().string(containsString("<span>Instagram</span>")));
     }
 
     @Test
@@ -180,7 +183,7 @@ class PageRenderingTest {
                         "<title>Approfondimenti su psicologia e benessere | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Un argomento alla volta")))
                 .andExpect(content().string(containsString("/js/guides.js")))
-                .andExpect(content().string(containsString("/react/assets/app.js?v=react-4")))
+                .andExpect(content().string(containsString("/react/assets/app.js?v=react-5")))
                 .andExpect(content().string(containsString("id=\"guide-search-input\"")))
                 .andExpect(content().string(containsString("data-guide-card")))
                 .andExpect(content().string(containsString("data-guide-empty")))

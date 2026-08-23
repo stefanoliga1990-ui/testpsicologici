@@ -11,16 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/app.css(v='social-1')}">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='mobile-nav-1')}">
     <link rel="stylesheet" th:href="@{/react/assets/app.css(v='monitoring-1')}">
 </head>
 <body class="editorial-body">
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
 <main class="editorial-shell privacy-shell">
-    <nav class="site-nav" aria-label="Navigazione principale">
-        <a class="brand" th:href="@{/}"><img class="brand-mark" th:src="@{/images/brand/logo-mark.svg}" alt="" width="27" height="27"> Spazio Test</a>
-        <div class="nav-links"><th:block th:replace="~{fragments/social-link :: instagramLink}"></th:block></div>
-    </nav>
+    <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
     <header class="editorial-hero privacy-hero"><p class="eyebrow">Trasparenza</p><h1>Privacy e cookie</h1><p>Spazio Test limita la raccolta ai dati necessari al funzionamento e a una statistica giornaliera aggregata.</p></header>
     <section class="privacy-content">
         <article><h2>Dati dei questionari</h2><p>Le risposte sono mantenute soltanto nella sessione tecnica del browser e non sono salvate nel database delle statistiche.</p></article>

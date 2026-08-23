@@ -1,6 +1,6 @@
 const INSTAGRAM_URL = 'https://www.instagram.com/spazio.test/';
 
-export default function InstagramLink({ className = '' }) {
+export default function InstagramLink({ className = '', showLabel = false }) {
   const classes = ['social-link', className].filter(Boolean).join(' ');
 
   return (
@@ -13,6 +13,7 @@ export default function InstagramLink({ className = '' }) {
       title="Spazio Test su Instagram"
     >
       <img src="/images/brand/instagram-spazio-test.png" alt="" width="24" height="24" />
+      {showLabel ? <span>Instagram</span> : null}
     </a>
   );
 }
