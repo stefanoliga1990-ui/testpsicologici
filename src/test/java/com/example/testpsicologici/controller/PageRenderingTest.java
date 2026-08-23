@@ -183,7 +183,7 @@ class PageRenderingTest {
                         "<title>Approfondimenti su psicologia e benessere | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Un argomento alla volta")))
                 .andExpect(content().string(containsString("/js/guides.js")))
-                .andExpect(content().string(containsString("/react/assets/app.js?v=react-5")))
+                .andExpect(content().string(containsString("/react/assets/app.js?v=react-6")))
                 .andExpect(content().string(containsString("id=\"guide-search-input\"")))
                 .andExpect(content().string(containsString("data-guide-card")))
                 .andExpect(content().string(containsString("data-guide-empty")))
@@ -1038,7 +1038,11 @@ class PageRenderingTest {
                         "class=\"overall-presence-track\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("aria-valuenow=\"50\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
-                        "href=\"/test/tratti-adhd-adulti/risultato/pdf\"")));
+                        "href=\"/test/tratti-adhd-adulti/risultato/pdf\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString(
+                        "Approfondisci l'argomento")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString(
+                        "href=\"/approfondimenti/adhd-adulti\"")));
     }
 
     @Test

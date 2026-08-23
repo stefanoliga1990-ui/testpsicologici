@@ -55,6 +55,8 @@
         <div class="score-line" th:if="${test.scoreVisible}" aria-hidden="true"><span th:style="|width:${percentage}%|"></span></div>
         <div class="result-actions">
             <a class="button button-primary" th:href="@{/test/{id}/risultato/pdf(id=${test.id})}">Download PDF <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" th:if="${guide != null}"
+               th:href="@{/approfondimenti/{slug}(slug=${guide.slug})}">Approfondisci l'argomento <span aria-hidden="true">→</span></a>
             <a class="button button-secondary" th:href="@{/test/{id}(id=${test.id})}">Rifai il test <span aria-hidden="true">↻</span></a>
             <a class="button button-secondary" th:href="@{/}">Torna alla home</a>
         </div>

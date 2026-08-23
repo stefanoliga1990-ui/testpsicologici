@@ -137,7 +137,9 @@ public class TestController {
         if (attempt == null || !attempt.isComplete()) return "redirect:/test/" + testId;
 
         TestResult result = resultService.analyze(test, attempt);
+        InformationGuide guide = guideCatalogue.findByTestId(testId).orElse(null);
         model.addAttribute("test", test);
+        model.addAttribute("guide", guide);
         model.addAttribute("score", result.score());
         model.addAttribute("percentage", result.percentage());
         model.addAttribute("result", result.general());
@@ -148,7 +150,8 @@ public class TestController {
                 "score", result.score(),
                 "percentage", result.percentage(),
                 "result", result.general(),
-                "areaResults", result.areaResults()));
+                "areaResults", result.areaResults(),
+                "guide", guide));
         return "result";
     }
 

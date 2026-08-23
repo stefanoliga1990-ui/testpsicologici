@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import ProgressBar from '../components/ProgressBar';
 import { withSessionId } from '../utils/urls';
 
-export default function ResultPage({ areaResults, percentage, result, score, test }) {
+export default function ResultPage({ areaResults, guide, percentage, result, score, test }) {
   return (
     <main className="result-shell">
       <Navbar />
@@ -42,6 +42,7 @@ export default function ResultPage({ areaResults, percentage, result, score, tes
         {test.scoreVisible && <div className="score-line" aria-hidden="true"><span style={{ width: `${percentage}%` }} /></div>}
         <div className="result-actions">
           <Button as="a" className="button-primary" href={withSessionId(`/test/${test.id}/risultato/pdf`)}>Download PDF <span aria-hidden="true">↓</span></Button>
+          {guide && <Button as="a" className="button-secondary" href={`/approfondimenti/${guide.slug}`}>Approfondisci l'argomento <span aria-hidden="true">→</span></Button>}
           <Button as="a" className="button-secondary" href={`/test/${test.id}`}>Rifai il test <span aria-hidden="true">↻</span></Button>
           <Button as="a" className="button-secondary" href="/">Torna alla home</Button>
         </div>
