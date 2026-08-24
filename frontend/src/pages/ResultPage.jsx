@@ -1,10 +1,43 @@
+import { useCallback, useEffect, useState } from 'react';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProgressBar from '../components/ProgressBar';
+import SupportContributionCard from '../components/SupportContributionCard';
+import SupportIntroDialog from '../components/SupportIntroDialog';
 import { withSessionId } from '../utils/urls';
 
-export default function ResultPage({ areaResults, guide, percentage, result, score, test }) {
+function shouldShowSupportIntro(enabled, testId) {
+  if (!enabled) return false;
+  try {
+    return window.sessionStorage.getItem(`spazio-test:support-intro:${testId}`) !== 'seen';
+  } catch {
+    return true;
+  }
+}
+
+export default function ResultPage({ areaResults, contributionsEnabled = false, guide, percentage, result, score, test }) {
+  const [showSupportIntro, setShowSupportIntro] = useState(
+    () => shouldShowSupportIntro(contributionsEnabled, test.id)
+  );
+
+  useEffect(() => {
+    try {
+      window.sessionStorage.setItem('spazio-test:last-result', window.location.pathname);
+    } catch {
+      // Il collegamento di ritorno è un miglioramento facoltativo: il risultato resta accessibile.
+    }
+  }, []);
+
+  const dismissSupportIntro = useCallback(() => {
+    try {
+      window.sessionStorage.setItem(`spazio-test:support-intro:${test.id}`, 'seen');
+    } catch {
+      // La chiusura del dialogo non dipende dalla disponibilità dello storage del browser.
+    }
+    setShowSupportIntro(false);
+  }, [test.id]);
+
   return (
     <main className="result-shell">
       <Navbar />
@@ -47,8 +80,10 @@ export default function ResultPage({ areaResults, guide, percentage, result, sco
           <Button as="a" className="button-secondary" href="/">Torna alla home</Button>
         </div>
       </section>
+      {contributionsEnabled && <SupportContributionCard />}
       <p className="disclaimer">Questo questionario è informativo e non clinicamente validato: non conferma né esclude una diagnosi e non sostituisce una valutazione professionale.</p>
       <Footer />
+      <SupportIntroDialog open={showSupportIntro} onDismiss={dismissSupportIntro} />
     </main>
   );
 }

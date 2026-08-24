@@ -15,7 +15,7 @@ body.react-mounted > main {
   display: none;
 }
 
-#react-root > :is(.shell, .editorial-shell, .guide-shell, .intro-shell, .result-shell, .test-shell) {
+#react-root > :is(.shell, .editorial-shell, .guide-shell, .intro-shell, .result-shell, .support-return-shell, .test-shell) {
   width: min(1120px, calc(100% - 48px));
 }
 
@@ -81,13 +81,303 @@ body.react-mounted > main {
   animation: spin .7s linear infinite;
 }
 
+.support-card {
+  position: relative;
+  max-width: 860px;
+  margin: 20px auto 0;
+  padding: clamp(28px, 5vw, 48px);
+  overflow: hidden;
+  border: 1px solid rgba(36, 92, 76, .16);
+  border-radius: 24px;
+  background: var(--green-dark);
+  box-shadow: 0 16px 42px rgba(24, 63, 52, .12);
+  color: var(--paper);
+  text-align: center;
+}
+
+.support-card::before {
+  content: "";
+  position: absolute;
+  width: 190px;
+  aspect-ratio: 1;
+  top: -115px;
+  right: -70px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 50%;
+}
+
+.support-card .eyebrow {
+  color: #b9d7c7;
+}
+
+.support-card h2 {
+  margin: 0;
+  font: 700 clamp(2rem, 5vw, 3.2rem)/1.02 var(--serif);
+  letter-spacing: -.045em;
+}
+
+.support-card-copy > p:last-child {
+  max-width: 620px;
+  margin: 17px auto 0;
+  color: #d4e3da;
+  line-height: 1.65;
+}
+
+.support-amount-form {
+  max-width: 520px;
+  margin: 30px auto 0;
+}
+
+.support-amount-form fieldset {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.support-amount-form legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.support-amount {
+  min-height: 74px;
+  display: grid;
+  place-content: center;
+  gap: 3px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 14px;
+  color: var(--green-dark);
+  background: var(--paper);
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.support-amount:hover {
+  transform: translateY(-3px);
+  background: var(--mint);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .15);
+}
+
+.support-amount:focus-visible,
+.support-intro-close:focus-visible {
+  outline: 3px solid #e9b999;
+  outline-offset: 3px;
+}
+
+.support-amount > span {
+  font: 700 1.45rem/1 var(--serif);
+}
+
+.support-amount small {
+  color: var(--green);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.support-amount-suggested {
+  border-color: #efc1a1;
+  background: var(--peach);
+}
+
+.support-card-note {
+  max-width: 610px;
+  margin: 20px auto 0;
+  color: #abc5b7;
+  font-size: .74rem;
+  line-height: 1.5;
+}
+
+body.support-dialog-open {
+  overflow: hidden;
+}
+
+.support-intro-dialog {
+  width: min(560px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: clamp(30px, 6vw, 48px);
+  overflow: auto;
+  border: 1px solid rgba(36, 92, 76, .18);
+  border-radius: 25px;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 0 30px 90px rgba(17, 44, 36, .3);
+  text-align: center;
+}
+
+.support-intro-dialog::backdrop {
+  background: rgba(18, 38, 32, .66);
+  backdrop-filter: blur(4px);
+}
+
+.support-intro-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(36, 92, 76, .15);
+  border-radius: 50%;
+  color: var(--green);
+  background: var(--mint);
+  cursor: pointer;
+  font: 500 1.8rem/1 var(--sans);
+}
+
+.support-intro-close:hover {
+  background: var(--peach);
+}
+
+.support-intro-symbol {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: var(--peach);
+  font-size: 1.8rem;
+}
+
+.support-intro-dialog h2 {
+  max-width: 430px;
+  margin: 0 auto;
+  font: 700 clamp(2rem, 6vw, 3rem)/1.02 var(--serif);
+  letter-spacing: -.045em;
+}
+
+.support-intro-dialog > p:not(.eyebrow) {
+  max-width: 440px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.support-intro-dialog .support-intro-free {
+  margin-top: 12px;
+  color: var(--green);
+  font-size: .83rem;
+  font-weight: 700;
+}
+
+.support-intro-dialog .support-intro-action {
+  min-width: 190px;
+  margin-top: 25px;
+}
+
+.support-return-shell {
+  width: min(1040px, calc(100% - 48px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 26px 0 0;
+}
+
+.support-return-card {
+  max-width: 680px;
+  margin: clamp(60px, 12vh, 120px) auto 0;
+  padding: clamp(32px, 7vw, 62px);
+  border: 1px solid var(--line);
+  border-radius: 27px;
+  background: var(--paper);
+  box-shadow: 0 16px 45px rgba(28, 54, 43, .08);
+  text-align: center;
+}
+
+.support-return-icon {
+  width: 86px;
+  height: 86px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  color: var(--paper);
+  background: var(--green);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.support-return-icon-muted {
+  color: var(--green);
+  background: var(--mint);
+}
+
+.support-return-card h1 {
+  margin: 0;
+  font: 700 clamp(2.4rem, 6vw, 4rem)/1 var(--serif);
+  letter-spacing: -.05em;
+}
+
+.support-return-card > p:last-of-type {
+  max-width: 530px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.65;
+}
+
+.support-return-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 30px;
+}
+
+.support-return-actions .button {
+  margin: 0;
+}
+
 @media (max-width: 680px) {
-  #react-root > :is(.shell, .editorial-shell, .guide-shell, .intro-shell, .result-shell, .test-shell) {
+  #react-root > :is(.shell, .editorial-shell, .guide-shell, .intro-shell, .result-shell, .support-return-shell, .test-shell) {
     width: min(100% - 32px, 1120px);
   }
 
   #react-root .site-nav {
     min-height: 0;
     padding: 13px 14px;
+  }
+
+  .support-card {
+    padding-inline: 21px;
+  }
+
+  .support-amount-form fieldset {
+    grid-template-columns: 1fr;
+  }
+
+  .support-amount {
+    min-height: 61px;
+  }
+
+  .support-intro-dialog {
+    padding: 38px 22px 28px;
+  }
+
+  .support-intro-symbol {
+    margin-top: 14px;
+  }
+
+  .support-intro-action,
+  .support-return-actions .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .support-amount {
+    transition: none;
   }
 }

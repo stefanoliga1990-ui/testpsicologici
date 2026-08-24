@@ -61,6 +61,22 @@
             <a class="button button-secondary" th:href="@{/}">Torna alla home</a>
         </div>
     </section>
+    <section class="support-card" aria-labelledby="support-card-title-fallback" th:if="${contributionsEnabled}">
+        <div class="support-card-copy">
+            <p class="eyebrow">Sostieni Spazio Test</p>
+            <h2 id="support-card-title-fallback">Ti va di offrirci un caffè?</h2>
+            <p>Spazio Test resta gratuito. Se il progetto ti è stato utile, puoi contribuire volontariamente ai suoi costi. Il contributo non sblocca contenuti o funzionalità.</p>
+        </div>
+        <form class="support-amount-form" th:action="@{/supporto/checkout}" method="post">
+            <fieldset>
+                <legend>Scegli l'importo del contributo</legend>
+                <button class="support-amount" type="submit" name="amount" value="1"><span>€1</span></button>
+                <button class="support-amount support-amount-suggested" type="submit" name="amount" value="3"><span>€3</span><small>Suggerito</small></button>
+                <button class="support-amount" type="submit" name="amount" value="5"><span>€5</span></button>
+            </fieldset>
+        </form>
+        <p class="support-card-note">Pagamento sicuro tramite Stripe. Nessun dato relativo al test o al risultato viene inviato al gestore del pagamento.</p>
+    </section>
     <p class="disclaimer">Questo questionario è informativo e non clinicamente validato: non conferma né esclude una diagnosi e non sostituisce una valutazione professionale.</p>
     <div th:replace="~{fragments/site-footer :: siteFooter}"></div>
 </main>

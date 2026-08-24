@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Informazioni su privacy, cookie tecnici e conteggio aggregato delle visite di Spazio Test.">
+    <meta name="description" content="Informazioni su privacy, cookie tecnici, pagamenti e conteggio aggregato delle visite di Spazio Test.">
     <meta name="robots" content="index, follow">
     <title>Privacy e cookie | Spazio Test</title>
     <link rel="canonical" th:href="${canonicalUrl}">
@@ -18,9 +18,10 @@
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
 <main class="editorial-shell privacy-shell">
     <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
-    <header class="editorial-hero privacy-hero"><p class="eyebrow">Trasparenza</p><h1>Privacy e cookie</h1><p>Spazio Test limita la raccolta ai dati necessari al funzionamento e a una statistica giornaliera aggregata.</p></header>
+    <header class="editorial-hero privacy-hero"><p class="eyebrow">Trasparenza</p><h1>Privacy e cookie</h1><p>Spazio Test limita la raccolta ai dati necessari al funzionamento, alle statistiche aggregate e, quando scegli di contribuire, alla gestione del pagamento.</p></header>
     <section class="privacy-content">
         <article><h2>Dati dei questionari</h2><p>Le risposte sono mantenute soltanto nella sessione tecnica del browser e non sono salvate nel database delle statistiche.</p></article>
+        <article><h2>Contributi e pagamenti tramite Stripe</h2><p>Se scegli di lasciare un contributo volontario, vieni reindirizzato a una pagina di pagamento ospitata da Stripe. Stripe tratta i dati di contatto, del metodo di pagamento, della transazione e quelli tecnici necessari a elaborare il pagamento, prevenire frodi e gestire eventuali contestazioni secondo la propria <a href="https://stripe.com/privacy">informativa sulla privacy</a>. I dati completi della carta o degli altri metodi di pagamento non transitano nei server di Spazio Test.</p><p>Nel database di Spazio Test vengono registrati soltanto gli identificativi tecnici della sessione e dell'evento Stripe, l'eventuale identificativo del pagamento, l'importo, la valuta, lo stato, la modalità di test o reale e le relative date. Non vengono associati al questionario svolto, alle risposte o al risultato. Le informazioni di contatto e della transazione necessarie alla gestione del pagamento possono restare consultabili nell'account Stripe.</p></article>
         <article><h2>Conteggio delle visite</h2><p>Viene conservato soltanto il numero complessivo giornaliero di browser distinti, senza IP, pagine visitate o identificatori individuali.</p></article>
         <article><h2>Completamenti dei questionari</h2><p>Quando un questionario viene concluso viene incrementato il relativo totale giornaliero, senza collegarlo al browser, alle risposte o al risultato ottenuto e senza cookie aggiuntivi.</p></article>
         <article><h2>Cookie</h2><p>Il cookie tecnico giornaliero di prima parte <strong>__Host-st_visit_day</strong> evita conteggi ripetuti e scade alla mezzanotte. JSESSIONID mantiene temporaneamente la sessione necessaria ai questionari e all'area riservata.</p></article>

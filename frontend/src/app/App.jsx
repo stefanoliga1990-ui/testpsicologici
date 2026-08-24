@@ -8,6 +8,7 @@ import ProjectPage from '../pages/ProjectPage';
 import PrivacyPage from '../pages/PrivacyPage';
 import QuestionPage from '../pages/QuestionPage';
 import ResultPage from '../pages/ResultPage';
+import SupportReturnPage from '../pages/SupportReturnPage';
 import MonitoringPage from '../pages/MonitoringPage';
 import { recordDailyVisit } from '../services/visits';
 
@@ -21,7 +22,8 @@ const pages = {
   privacy: PrivacyPage,
   project: ProjectPage,
   question: QuestionPage,
-  result: ResultPage
+  result: ResultPage,
+  supportReturn: SupportReturnPage
 };
 
 class ErrorBoundary extends Component {

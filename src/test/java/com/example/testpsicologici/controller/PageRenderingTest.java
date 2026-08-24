@@ -183,7 +183,7 @@ class PageRenderingTest {
                         "<title>Approfondimenti su psicologia e benessere | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Un argomento alla volta")))
                 .andExpect(content().string(containsString("/js/guides.js")))
-                .andExpect(content().string(containsString("/react/assets/app.js?v=react-7")))
+                .andExpect(content().string(containsString("/react/assets/app.js?v=react-8")))
                 .andExpect(content().string(containsString("id=\"guide-search-input\"")))
                 .andExpect(content().string(containsString("data-guide-card")))
                 .andExpect(content().string(containsString("data-guide-empty")))
@@ -921,6 +921,21 @@ class PageRenderingTest {
         mockMvc.perform(get("/test/{testId}/risultato", testId).session(completedAttempt(testId, 3)))
                 .andExpect(status().isOk())
                 .andExpect(header().string("X-Robots-Tag", "noindex, follow, noarchive"));
+    }
+
+    @Test
+    void contributionReturnPagesRenderExpectedMessagesAndAreNotIndexed() throws Exception {
+        mockMvc.perform(get("/supporto/grazie"))
+                .andExpect(status().isOk())
+                .andExpect(header().string("X-Robots-Tag", "noindex, nofollow, noarchive"))
+                .andExpect(content().string(containsString("Grazie per il tuo sostegno")))
+                .andExpect(content().string(containsString("\"status\":\"success\"")));
+
+        mockMvc.perform(get("/supporto/annullato"))
+                .andExpect(status().isOk())
+                .andExpect(header().string("X-Robots-Tag", "noindex, nofollow, noarchive"))
+                .andExpect(content().string(containsString("Pagamento annullato")))
+                .andExpect(content().string(containsString("I test e i risultati restano gratuiti")));
     }
 
     @Test

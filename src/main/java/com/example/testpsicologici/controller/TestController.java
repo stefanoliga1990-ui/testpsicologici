@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
@@ -47,17 +48,20 @@ public class TestController {
     private final SiteUrlService siteUrlService;
     private final GuideCatalogue guideCatalogue;
     private final TestCompletionAnalyticsService completionAnalyticsService;
+    private final boolean contributionsEnabled;
 
     public TestController(TestCatalogue catalogue, TestResultService resultService,
                           PdfResultService pdfResultService, SiteUrlService siteUrlService,
                           GuideCatalogue guideCatalogue,
-                          TestCompletionAnalyticsService completionAnalyticsService) {
+                          TestCompletionAnalyticsService completionAnalyticsService,
+                          @Value("${app.payments.stripe.enabled:false}") boolean contributionsEnabled) {
         this.catalogue = catalogue;
         this.resultService = resultService;
         this.pdfResultService = pdfResultService;
         this.siteUrlService = siteUrlService;
         this.guideCatalogue = guideCatalogue;
         this.completionAnalyticsService = completionAnalyticsService;
+        this.contributionsEnabled = contributionsEnabled;
     }
 
     @GetMapping("/")
@@ -165,7 +169,9 @@ public class TestController {
                 "percentage", result.percentage(),
                 "result", result.general(),
                 "areaResults", result.areaResults(),
-                "guide", guide));
+                "guide", guide,
+                "contributionsEnabled", contributionsEnabled));
+        model.addAttribute("contributionsEnabled", contributionsEnabled);
         return "result";
     }
 
