@@ -40,7 +40,15 @@ export default function SupportIntroDialog({ onDismiss, open }) {
       >
         <span aria-hidden="true">×</span>
       </button>
-      <div className="support-intro-symbol" aria-hidden="true">☕</div>
+      <div className="support-intro-symbol" aria-hidden="true">
+        <svg viewBox="0 0 48 48" focusable="false">
+          <path d="M11 18h23v9a11 11 0 0 1-11 11h-1a11 11 0 0 1-11-11v-9Z" />
+          <path d="M34 21h3a5 5 0 0 1 0 10h-3" />
+          <path d="M9 41h30" />
+          <path d="M18 13c-2-2-2-4 0-6" />
+          <path d="M26 13c-2-2-2-4 0-6" />
+        </svg>
+      </div>
       <p className="eyebrow">Prima del risultato</p>
       <h2 id="support-intro-title">I test e i risultati sono gratuiti</h2>
       <p id="support-intro-description">

@@ -186,8 +186,8 @@ body.react-mounted > main {
 }
 
 .support-amount-suggested {
-  border-color: #efc1a1;
-  background: var(--peach);
+  border-color: #b9d1c2;
+  background: #edf6ef;
 }
 
 .support-card-note {
@@ -248,8 +248,18 @@ body.support-dialog-open {
   place-items: center;
   margin: 0 auto 22px;
   border-radius: 50%;
-  background: var(--peach);
-  font-size: 1.8rem;
+  color: var(--green);
+  background: var(--mint);
+}
+
+.support-intro-symbol svg {
+  width: 43px;
+  height: 43px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .support-intro-dialog h2 {
