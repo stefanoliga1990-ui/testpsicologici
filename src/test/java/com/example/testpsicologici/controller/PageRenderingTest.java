@@ -254,7 +254,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/resilienza-psicologica\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Resilienza psicologica</h3>")));
+                        "<h3>Resilienza psicologica</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/gelosia-partner\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Gelosia nella relazione</h3>")));
     }
 
     @Test
@@ -761,6 +765,25 @@ class PageRenderingTest {
     }
 
     @Test
+    void partnerJealousyGuideRendersMultidimensionalModelConsentSafetyAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/gelosia-partner"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Gelosia verso il partner: significato e confini | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/gelosia-partner\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è la gelosia romantica")))
+                .andExpect(content().string(containsString("Gelosia, invidia e paura dell&#39;abbandono non coincidono")))
+                .andExpect(content().string(containsString("Pensieri, emozioni e comportamenti possono seguire andamenti diversi")))
+                .andExpect(content().string(containsString("Provare gelosia non autorizza il controllo")))
+                .andExpect(content().string(containsString("2.928 adulti")))
+                .andExpect(content().string(containsString("fpsyg.2022.1013584")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString("1522")))
+                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")));
+    }
+
+    @Test
     void testLinksToItsPublishedGuide() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -897,6 +920,16 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/resilienza-psicologica\"")));
+
+        mockMvc.perform(get("/test/gelosia-partner"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("non stabilisce se i sospetti siano fondati")))
+                .andExpect(content().string(containsString("non giustifica accedere senza consenso")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString("1522")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/gelosia-partner\"")));
     }
 
     @Test
@@ -1028,6 +1061,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/intelligenza-intrapersonale")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/resilienza-psicologica")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/gelosia-partner")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1036,6 +1071,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/intelligenza-linguistica")))
                 .andExpect(content().string(containsString("http://localhost/test/intelligenza-intrapersonale")))
                 .andExpect(content().string(containsString("http://localhost/test/resilienza-psicologica")))
+                .andExpect(content().string(containsString("http://localhost/test/gelosia-partner")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

@@ -2088,6 +2088,136 @@ public class GuideCatalogue {
                                     "Revisione sistematica di 43 studi randomizzati consultata per i limiti delle evidenze sugli interventi e la necessità di misure coerenti; non sostiene promesse di efficacia individuale."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "gelosia-partner",
+                    "gelosia-partner",
+                    "Gelosia nella relazione",
+                    "Gelosia verso il partner: emozioni, verifiche e confini",
+                    "Gelosia verso il partner: significato e confini | Spazio Test",
+                    "Una guida alla gelosia nella relazione, alle sue componenti cognitive, emotive e comportamentali e al confine tra vissuto, verifica e controllo.",
+                    "La gelosia verso il partner può comprendere interpretazioni, emozioni e azioni davanti a una minaccia percepita alla relazione. La minaccia può essere reale, possibile o immaginata: riconoscere il vissuto non permette di stabilire i fatti e non rende accettabile limitare l'autonomia dell'altra persona.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è la gelosia romantica",
+                                    List.of(
+                                            "La ricerca descrive la gelosia romantica come una risposta complessa a una minaccia percepita verso una relazione importante. Può coinvolgere l'idea che il partner sia interessato a un'altra persona, emozioni come paura, rabbia o insicurezza e azioni rivolte a ottenere informazioni o proteggere il legame.",
+                                            "La parola “percepita” non significa necessariamente falsa: una preoccupazione può nascere da un cambiamento ambiguo, da una violazione reale degli accordi o da esperienze precedenti. Un questionario sulle reazioni della persona non può decidere quale di queste spiegazioni corrisponda ai fatti."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Gelosia, invidia e paura dell'abbandono non coincidono",
+                                    List.of(
+                                            "La gelosia riguarda una relazione percepita come minacciata dalla possibile presenza di un'altra persona. L'invidia riguarda invece qualcosa che un'altra persona possiede o rappresenta; confronto e invidia possono accompagnare la gelosia, ma non sono lo stesso processo.",
+                                            "Anche paura dell'abbandono, attaccamento, dipendenza affettiva, fiducia e autostima possono associarsi alle risposte senza essere equivalenti. Le associazioni osservate nei gruppi non identificano la causa della gelosia nel singolo caso e non permettono di descrivere uno stile o una condizione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Componenti",
+                                    "Pensieri, emozioni e comportamenti possono seguire andamenti diversi",
+                                    List.of(
+                                            "La Multidimensional Jealousy Scale ha organizzato la gelosia in componenti cognitive, emotive e comportamentali. Una validazione italiana del 2022 su 2.928 adulti ha sostenuto una forma breve a tre fattori e l'invarianza di misura per genere, usando formulazioni non limitate alle sole coppie eterosessuali.",
+                                            "Questa evidenza riguarda uno strumento diverso: non rende le tre componenti categorie cliniche e non valida Spazio Test. Una persona può riferire una forte reazione emotiva senza controllare il partner, oppure verificare spesso pur descrivendo emozioni meno frequenti."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree",
+                                    "Perché il questionario mostra quattro prospettive",
+                                    List.of(
+                                            "L'app divide la componente comportamentale in rassicurazione/verifica e controllo/interferenza. La separazione serve a rendere visibili consenso, autonomia e impatto, ma è una scelta editoriale originale: non dimostra un quarto fattore e dovrà essere confrontata empiricamente con la struttura tridimensionale."
+                                    ),
+                                    List.of(
+                                            "Interpretazioni e preoccupazione: significati attribuiti a cambiamenti, segnali, informazioni mancanti e possibili rivali.",
+                                            "Reazioni emotive: agitazione, insicurezza, rabbia, esclusione, paura della perdita e tempo per calmarsi.",
+                                            "Rassicurazione e verifica: domande, conferme, segnali online, ritorno sugli episodi e confronto delle informazioni.",
+                                            "Controllo e interferenza: richieste sulle frequentazioni o sulla posizione, monitoraggio e conseguenze sulle attività quotidiane."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Fatti e accordi",
+                                    "Una preoccupazione non dimostra né esclude un problema reale",
+                                    List.of(
+                                            "Per comprendere una situazione occorre conoscere gli accordi effettivi della relazione, ciò che è stato osservato, le spiegazioni disponibili e la storia del rapporto. Monogamia, non monogamia consensuale e altre configurazioni possono avere confini differenti: non è la forma della relazione a determinare da sola fiducia o rispetto.",
+                                            "Ridurre ogni dubbio a insicurezza personale può ignorare una violazione concreta; trattare ogni ambiguità come prova può invece rendere certe interpretazioni non verificate. Il test misura soltanto frequenze autoriferite e non valuta il partner, la verità dei fatti o la compatibilità degli accordi."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Autonomia e consenso",
+                                    "Provare gelosia non autorizza il controllo",
+                                    List.of(
+                                            "Emozione e azione non coincidono. Chiedere chiarimenti in una conversazione condivisa è diverso dall'accedere senza consenso a dispositivi o account, localizzare o seguire una persona, imporre dove possa andare o chi possa frequentare, minacciare, umiliare o costringere.",
+                                            "L'Organizzazione Mondiale della Sanità include isolamento, monitoraggio degli spostamenti e restrizioni delle risorse tra i comportamenti di controllo rilevanti nella violenza di coppia. La gelosia non ne costituisce una giustificazione e il livello del test non sostituisce una valutazione specifica della sicurezza."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Auto-osservazione",
+                                    "Separare evento, interpretazione, emozione, azione ed effetto",
+                                    List.of(
+                                            "Per esaminare un episodio può essere utile annotare cinque passaggi: il fatto osservabile, ciò che hai interpretato, l'emozione percepita, l'azione compiuta e l'effetto su entrambi. La separazione non decide chi abbia ragione, ma rende più chiaro dove mancano informazioni e dove esiste una possibilità di scelta.",
+                                            "Puoi inoltre chiederti se una conversazione ha prodotto informazioni nuove, se il dubbio ritorna invariato e se l'azione rispetta consenso e autonomia. È uno spunto descrittivo, non una tecnica che garantisce fiducia, fedeltà o sicurezza e non va usato per affrontare insieme una persona quando temi una reazione violenta."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Quando serve un aiuto diverso dal questionario",
+                                    List.of(
+                                            "Se pensieri o emozioni sono persistenti, interferiscono con la vita quotidiana o il ciclo di verifica e conflitto è difficile da interrompere, puoi parlarne con uno psicologo, psicoterapeuta, medico o altro professionista qualificato. Se temi di poter agire in modo intimidatorio, coercitivo o aggressivo, interrompi l'escalation, crea distanza immediata quando possibile e cerca un supporto competente.",
+                                            "In caso di pericolo immediato per te o altre persone, contatta il 112. Per aiuto o anche solo consiglio su violenza e stalking, il 1522 è un servizio pubblico gratuito attivo 24 ore su 24; non è un numero di emergenza. Le 24 domande, le quattro aree e le soglie di Spazio Test sono originali e non validate e non accertano infedeltà, violenza o sicurezza."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato descrive la frequenza riferita di interpretazioni, reazioni emotive, verifiche e interferenza verso il partner attuale. Non stabilisce se i sospetti siano fondati, non accerta infedeltà e non classifica gelosia, violenza o sicurezza.",
+                    List.of(
+                            new GuideReference(
+                                    "Validation study of the Italian brief Multidimensional Jealousy Scale — Diotaiuti e colleghi",
+                                    "https://doi.org/10.3389/fpsyg.2022.1013584",
+                                    "Validazione italiana su 2.928 adulti consultata per la struttura cognitiva, emotiva e comportamentale e l'invarianza per genere; campionamento e strumento diversi non validano l'app."
+                            ),
+                            new GuideReference(
+                                    "The romantic jealousy as multidimensional construct — Tani e Ponti",
+                                    "https://doi.org/10.2174/1874350101609010111",
+                                    "Primo adattamento italiano breve consultato per la multidimensionalità; il campione di 361 persone, il reclutamento e la scala differente limitano la trasferibilità."
+                            ),
+                            new GuideReference(
+                                    "Multidimensional Jealousy — Pfeiffer e Wong",
+                                    "https://doi.org/10.1177/026540758900600203",
+                                    "Studio originario consultato per distinguere componenti cognitive, emotive e comportamentali; nessun item è stato copiato e la struttura non dimostra categorie cliniche."
+                            ),
+                            new GuideReference(
+                                    "A systematic review of romantic jealousy in relationships — Martínez-León e colleghi",
+                                    "https://doi.org/10.4067/S0718-48082017000200203",
+                                    "Revisione consultata per fattori personali, interpersonali e socioculturali; studi soprattutto ex post facto e universitari e ricerca limitata ai titoli riducono la generalizzabilità."
+                            ),
+                            new GuideReference(
+                                    "Measuring jealousy in intimate relationships — Mancini e colleghi",
+                                    "https://doi.org/10.1007/s12144-025-08635-9",
+                                    "Revisione sistematica recente consultata per eterogeneità degli strumenti, copertura e qualità psicometrica; non individua una misura universale né valida il questionario originale."
+                            ),
+                            new GuideReference(
+                                    "Infidelity, romantic jealousy and intimate partner violence — Pichon e colleghi",
+                                    "https://doi.org/10.3390/ijerph17165682",
+                                    "Revisione mixed-methods di 51 studi consultata per distinguere infedeltà reale, sospetta e accusata e per l'associazione con violenza; non consente causalità o previsione individuale."
+                            ),
+                            new GuideReference(
+                                    "Understanding and addressing intimate partner violence — WHO",
+                                    "https://www.who.int/publications/i/item/WHO-RHR-12.36",
+                                    "Fonte istituzionale consultata per distinguere isolamento, monitoraggio e restrizioni come comportamenti di controllo; non è una scala di gelosia né classifica il singolo episodio."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero antiviolenza e antistalking",
+                                    "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/",
+                                    "Pagina ufficiale italiana consultata per destinazione, gratuità e disponibilità continuativa del servizio; il 1522 offre aiuto e consiglio ma non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

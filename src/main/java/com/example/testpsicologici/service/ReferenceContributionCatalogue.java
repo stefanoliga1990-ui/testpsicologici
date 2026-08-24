@@ -150,7 +150,19 @@ public class ReferenceContributionCatalogue {
             entry("https://pubmed.ncbi.nlm.nih.gov/34850301/",
                     "Validazione italiana della RS-14 su volontari adulti consultata per l'eterogeneità della struttura; fattori, proprietà e punteggi dello strumento non sono trasferiti all'app."),
             entry("https://pubmed.ncbi.nlm.nih.gov/21294858/",
-                    "Revisione metodologica consultata per differenze tra le scale di resilienza, qualità psicometriche variabili e assenza di un unico standard; non autorizza soglie normative nell'app."));
+                    "Revisione metodologica consultata per differenze tra le scale di resilienza, qualità psicometriche variabili e assenza di un unico standard; non autorizza soglie normative nell'app."),
+            entry("https://doi.org/10.3389/fpsyg.2022.1013584",
+                    "Validazione italiana della MJS breve consultata per le componenti cognitiva, emotiva e comportamentale e l'invarianza per genere; campione, item e punteggi non validano il questionario dell'app."),
+            entry("https://doi.org/10.1177/026540758900600203",
+                    "Studio originario della Multidimensional Jealousy Scale consultato per la distinzione tra pensieri, emozioni e comportamenti; gli item non sono stati copiati né adattati."),
+            entry("https://doi.org/10.4067/S0718-48082017000200203",
+                    "Revisione sistematica consultata per la natura multideterminata e culturalmente contestuale della gelosia romantica; prevalenza di studi ex post facto e campioni universitari limita le conclusioni."),
+            entry("https://doi.org/10.3390/ijerph17165682",
+                    "Revisione mixed-methods consultata per distinguere infedeltà reale, sospetta e accusata e per l'associazione con violenza di coppia; non consente causalità o previsione individuale."),
+            entry("https://www.who.int/publications/i/item/WHO-RHR-12.36",
+                    "Fonte WHO consultata per distinguere isolamento, monitoraggio degli spostamenti e restrizioni come comportamenti di controllo; non è una misura di gelosia né classifica il singolo caso."),
+            entry("https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/",
+                    "Pagina ufficiale consultata per indicare correttamente il servizio pubblico gratuito 1522 per aiuto e consiglio su violenza e stalking, distinguendolo dal 112 per le emergenze."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

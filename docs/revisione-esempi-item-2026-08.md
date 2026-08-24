@@ -2,9 +2,9 @@
 
 ## Scopo e perimetro
 
-Sono stati riesaminati tutti i 504 item dei 21 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
+Sono stati riesaminati tutti i 528 item dei 22 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
 
-L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 452 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
+L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 476 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
 
 Gli esempi non sono elenchi esaustivi e non costituiscono condizioni aggiuntive: l'utente deve rispondere alla domanda principale considerando anche situazioni equivalenti non nominate.
 
@@ -159,6 +159,10 @@ Non sono stati aggiunti esempi ai 24 item. Esempi legati a diario, terapia, medi
 ### Resilienza psicologica
 
 Non sono stati aggiunti esempi ai 24 item. Nominare eventi, reti familiari, servizi o risorse economiche specifiche potrebbe restringere il richiamo a un solo tipo di difficoltà e suggerire come dovrebbe apparire un adattamento corretto. La scelta è documentata nella specifica v1.0 e richiede interviste cognitive con adulti esposti a carichi e condizioni contestuali differenti.
+
+### Gelosia verso il partner
+
+Non sono stati aggiunti esempi ai 24 item. Nominare social network, messaggi, luoghi, forme della relazione o possibili rivali potrebbe restringere il richiamo, suggerire comportamenti di verifica o escludere esperienze equivalenti. La scelta è documentata nella specifica v1.0 e richiede interviste cognitive attente a consenso, configurazioni relazionali, genere e orientamento.
 
 ## Limiti e verifica successiva
 

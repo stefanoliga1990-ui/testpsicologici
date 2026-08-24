@@ -1,0 +1,138 @@
+{
+  "test": {
+    "id": "gelosia-partner",
+    "titolo": "Sono geloso/a nella relazione?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano pensando al partner attuale",
+    "finalita": "Auto-osservazione esclusivamente informativa delle esperienze di gelosia riferite nella relazione attuale",
+    "periodo_riferimento": "Ultimi tre mesi",
+    "direzione_punteggio": "Valori più alti descrivono maggiore frequenza delle esperienze formulate, non fondatezza dei sospetti, infedeltà, danno o pericolosità",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non accerta infedeltà, non classifica la gelosia come normale o patologica e non valuta violenza, stalking o sicurezza."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi e alla tua relazione attuale, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; rappresenta frequenza relativa delle risposte, non percentuale di gelosia, fondatezza, infedeltà, danno, sicurezza, probabilità o confronto normativo",
+    "ordine_aree_risultato": "Ordine teorico stabile: minaccia, attivazione, verifica, controllo"
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le esperienze di gelosia verso il partner sembrano poco presenti",
+      "sottotitolo": "Interpretazioni di minaccia, reazioni emotive, verifiche e interferenza risultano poco frequenti in tutte le aree.",
+      "descrizione": "Non esclude episodi circoscritti, preoccupazioni fondate, accordi violati o situazioni non coperte. Il profilo mantiene distinti fatti e interpretazioni e conserva i messaggi su consenso, autonomia, 112 e 1522 indipendentemente dalla media."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le esperienze di gelosia verso il partner sembrano presenti in modo variabile",
+      "sottotitolo": "Le frequenze differiscono tra pensieri, emozioni, verifiche e interferenza senza aree al livello editoriale più alto.",
+      "descrizione": "La variabilità può dipendere da situazioni, accordi, eventi precedenti e ambiguità. Le aree non sono una classifica e non stabiliscono fatti sul partner; sicurezza e accettabilità richiedono una valutazione separata."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le esperienze di gelosia verso il partner sembrano più presenti in una o due aree",
+      "sottotitolo": "Una o due modalità sono riferite con maggiore frequenza, mentre le altre risultano più contenute.",
+      "descrizione": "Il profilo orienta alle aree emergenti senza generalizzare all'intera relazione. Distingue vissuto interno, richiesta condivisa e possibile impatto su privacy o autonomia e ricorda che una reazione frequente non rende inevitabile un'azione."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le esperienze di gelosia verso il partner sembrano frequentemente presenti in più aree",
+      "sottotitolo": "Almeno tre aree raccolgono esperienze riferite con maggiore frequenza negli ultimi tre mesi.",
+      "descrizione": "L'ampiezza invita a osservare persistenza, contesti ed effetti senza classificare gelosia o pericolosità. Il risultato non accerta infedeltà e mantiene supporto professionale, autonomia, 112 e 1522 indipendenti dal profilo."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "minaccia",
+      "nome_area": "Interpretazioni e preoccupazione per possibili rivali",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Interpretare segnali o informazioni mancanti come interesse verso altri risulta poco frequente; non stabilisce che ogni preoccupazione sia infondata."},
+        {"livello": "MEDIUM", "descrizione": "Le interpretazioni compaiono in alcune situazioni; è utile distinguere fatto osservato, informazione mancante e significato attribuito."},
+        {"livello": "HIGH", "descrizione": "L'attenzione a possibili rivali è riferita spesso; non misura accuratezza, infedeltà, intenzioni del partner o carattere delirante dei pensieri."}
+      ]
+    },
+    {
+      "area_code": "attivazione",
+      "nome_area": "Reazioni emotive alla minaccia percepita",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Le reazioni emotive risultano poco frequenti; un singolo episodio intenso può comunque avere rilievo e non è rappresentato dalla sola frequenza."},
+        {"livello": "MEDIUM", "descrizione": "Le emozioni compaiono in alcune situazioni; si possono osservare evento, intensità, durata, recupero e azione successiva."},
+        {"livello": "HIGH", "descrizione": "Le reazioni emotive sono riferite spesso; non rendono inevitabili verifiche o controllo e non stabiliscono la fondatezza della situazione."}
+      ]
+    },
+    {
+      "area_code": "verifica",
+      "nome_area": "Ricerca di rassicurazione e verifica",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Rassicurazioni, dettagli e conferme vengono cercati poco spesso; non misura fiducia, trasparenza o qualità della comunicazione."},
+        {"livello": "MEDIUM", "descrizione": "Rassicurazione e verifica compaiono in alcune situazioni; sono rilevanti informazioni nuove, ritorno del dubbio, consenso e privacy."},
+        {"livello": "HIGH", "descrizione": "Rassicurazioni e conferme vengono cercate spesso; non dimostra inganno né autorizza accessi senza consenso o sorveglianza."}
+      ]
+    },
+    {
+      "area_code": "controllo",
+      "nome_area": "Controllo e interferenza nella quotidianità",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Controllo e interferenza risultano poco frequenti; anche un episodio raro può incidere su autonomia o sicurezza."},
+        {"livello": "MEDIUM", "descrizione": "Controllo o interferenza compaiono in alcune situazioni; vanno osservati consenso, pressione, libertà e impatto."},
+        {"livello": "HIGH", "descrizione": "Richieste o verifiche con possibile interferenza sono riferite spesso; non classifica violenza ma richiede attenzione distinta ad autonomia, consenso e sicurezza."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {
+      "titolo": "Validation study of the Italian brief Multidimensional Jealousy Scale",
+      "url": "https://doi.org/10.3389/fpsyg.2022.1013584",
+      "apporto": "Evidenza italiana sulle componenti cognitiva, emotiva e comportamentale e sull'invarianza per genere; scala e campione non validano l'app."
+    },
+    {
+      "titolo": "Multidimensional Jealousy",
+      "url": "https://doi.org/10.1177/026540758900600203",
+      "apporto": "Studio originario della struttura multidimensionale; nessun item è stato copiato o adattato."
+    },
+    {
+      "titolo": "A systematic review of romantic jealousy in relationships",
+      "url": "https://doi.org/10.4067/S0718-48082017000200203",
+      "apporto": "Contesto personale, interpersonale e socioculturale; letteratura soprattutto osservazionale e universitaria."
+    },
+    {
+      "titolo": "Infidelity, romantic jealousy and intimate partner violence",
+      "url": "https://doi.org/10.3390/ijerph17165682",
+      "apporto": "Distinzione tra infedeltà reale, sospetta e accusata e associazioni con violenza; nessuna causalità o previsione individuale."
+    },
+    {
+      "titolo": "Understanding and addressing intimate partner violence",
+      "url": "https://www.who.int/publications/i/item/WHO-RHR-12.36",
+      "apporto": "Definizione istituzionale dei comportamenti di controllo; non è una scala di gelosia."
+    },
+    {
+      "titolo": "1522 — Numero antiviolenza e antistalking",
+      "url": "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/",
+      "apporto": "Destinazione ufficiale del servizio pubblico gratuito, distinto dal 112 per le emergenze."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia separata, documentata in docs/test-gelosia-partner-v1.md e nel GuideCatalogue.",
+  "limite": "Non esistono dati che validino nella popolazione adulta italiana questo specifico set di 24 item, la divisione comportamentale in due aree, la media generale, le soglie o le interpretazioni."
+}

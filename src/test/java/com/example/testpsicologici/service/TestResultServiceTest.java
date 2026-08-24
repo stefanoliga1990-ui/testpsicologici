@@ -996,10 +996,82 @@ class TestResultServiceTest {
     }
 
     @Test
+    void partnerJealousyTestIsLoadedWithTwentyFourOriginalQuestionsAndSafetyLimits() {
+        PsychologicalTest test = catalogue.findById("gelosia-partner");
+
+        assertThat(test.title()).isEqualTo("Sono geloso/a nella relazione?");
+        assertThat(test.questions()).hasSize(24).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code())
+                .containsExactly("minaccia", "attivazione", "verifica", "controllo");
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "relazione attuale", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "minaccia reale, possibile o immaginata",
+                "non stabilisce se i sospetti siano fondati",
+                "non accerta un'infedeltà",
+                "non giustifica accedere senza consenso",
+                "non valuta violenza, stalking o sicurezza",
+                "112",
+                "1522");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze di gelosia riferite");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze riferite");
+        assertThat(test.references()).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.3389/fpsyg.2022.1013584",
+                "https://doi.org/10.1177/026540758900600203",
+                "https://doi.org/10.4067/S0718-48082017000200203",
+                "https://doi.org/10.3390/ijerph17165682",
+                "https://www.who.int/publications/i/item/WHO-RHR-12.36",
+                "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/");
+    }
+
+    @Test
+    void partnerJealousyFocusedProfileKeepsTheoreticalOrderAndDifficultyDirection() {
+        TestResult result = analyzeWithAnswersForTest("gelosia-partner", 1, 1, 1, 5);
+
+        assertThat(result.general().title()).isEqualTo("Le esperienze di gelosia verso il partner sembrano più presenti in una o due aree");
+        assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Interpretazioni e preoccupazione per possibili rivali",
+                "Reazioni emotive alla minaccia percepita",
+                "Ricerca di rassicurazione e verifica",
+                "Controllo e interferenza nella quotidianità");
+        assertThat(result.areaResults().get(3).description()).contains("frequenti richieste", "autonomia", "sicurezza");
+        assertThat(result.areaResults().get(3).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(0).percentage()).isZero();
+    }
+
+    @Test
+    void partnerJealousyProfilesFollowEditorialRulesAndAlwaysRetainConsentAndSafetyMessages() {
+        TestResult low = analyzeWithAnswersForTest("gelosia-partner", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("gelosia-partner", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("gelosia-partner", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("gelosia-partner", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).isEqualTo("Le esperienze di gelosia verso il partner sembrano poco presenti");
+        assertThat(mixed.general().title()).isEqualTo("Le esperienze di gelosia verso il partner sembrano presenti in modo variabile");
+        assertThat(focused.general().title()).isEqualTo("Le esperienze di gelosia verso il partner sembrano più presenti in una o due aree");
+        assertThat(broad.general().title()).isEqualTo("Le esperienze di gelosia verso il partner sembrano frequentemente presenti in più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non stabilisce se i sospetti siano fondati",
+                        "non accerta un'infedeltà",
+                        "non valuta violenza o sicurezza",
+                        "La gelosia non giustifica",
+                        "112",
+                        "1522"));
+        assertThat(low.general().detail()).contains("non esclude preoccupazioni fondate", "singolo episodio");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

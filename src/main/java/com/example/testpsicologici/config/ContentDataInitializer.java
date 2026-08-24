@@ -66,6 +66,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedLinguisticIntelligenceInformationTest();
         seedIntrapersonalIntelligenceInformationTest();
         seedPsychologicalResilienceInformationTest();
+        seedPartnerJealousyInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -1986,6 +1987,102 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Le risposte descrivono un frequente mantenimento o adattamento di attività, obiettivi e routine significative. Questo non misura produttività, ottimismo o successo e non richiede di attribuire un significato positivo a ogni difficoltà.");
     }
 
+    private void seedPartnerJealousyInformationTest() {
+        String id = "gelosia-partner";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Sono geloso/a nella relazione?",
+                "Autovalutazione informativa",
+                "Esplora pensieri, emozioni e comportamenti di gelosia riferiti verso il partner attuale.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti che desiderano riflettere sulla relazione sentimentale attuale e ha finalità esclusivamente informative. Esplora la frequenza con cui, negli ultimi tre mesi, hai riferito interpretazioni di possibile minaccia, reazioni emotive, ricerca di rassicurazione o verifica e comportamenti di controllo o interferenza collegati alla gelosia. La gelosia può comparire davanti a una minaccia reale, possibile o immaginata: il questionario non stabilisce se i sospetti siano fondati, non accerta un'infedeltà e non valuta intenzioni, sincerità o comportamenti del partner. Accordi della coppia, precedenti rotture della fiducia, comunicazione, contesto, stress ed esperienze passate possono influire sulle risposte. La frequenza non indica intensità, motivazione, danno o accettabilità. Provare gelosia non giustifica accedere senza consenso a dispositivi o account, sorvegliare, seguire, limitare relazioni o movimenti, minacciare, umiliare, costringere o aggredire. Il questionario originale non classifica la gelosia come normale o patologica, non diagnostica condizioni e non valuta violenza, stalking o sicurezza. Se temi di poter agire in modo intimidatorio, coercitivo o aggressivo, interrompi l'escalation e rivolgiti a un professionista o servizio qualificato. In caso di pericolo immediato per te o altre persone, contatta il 112. Per aiuto o consiglio su violenza e stalking è disponibile il servizio pubblico gratuito 1522, attivo 24 ore su 24.",
+                version, false,
+                "Frequenza complessiva delle esperienze di gelosia riferite",
+                "Frequenza delle esperienze riferite",
+                true, 22).withSeo(
+                "Test gelosia di coppia: sono geloso/a? | Spazio Test",
+                "Questionario informativo di 24 domande sulla gelosia verso il partner: pensieri, emozioni, verifiche e interferenza. Non accerta infedeltà.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e alla tua relazione attuale, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "Validation of the Italian brief Multidimensional Jealousy Scale — Diotaiuti e colleghi",
+                "https://doi.org/10.3389/fpsyg.2022.1013584", 1);
+        saveReference(id, "Multidimensional Jealousy — Pfeiffer e Wong",
+                "https://doi.org/10.1177/026540758900600203", 2);
+        saveReference(id, "A systematic review of romantic jealousy in relationships — Martínez-León e colleghi",
+                "https://doi.org/10.4067/S0718-48082017000200203", 3);
+        saveReference(id, "Infidelity, romantic jealousy and intimate partner violence — Pichon e colleghi",
+                "https://doi.org/10.3390/ijerph17165682", 4);
+        saveReference(id, "Understanding and addressing intimate partner violence — WHO",
+                "https://www.who.int/publications/i/item/WHO-RHR-12.36", 5);
+        saveReference(id, "1522 — Numero antiviolenza e antistalking",
+                "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/", 6);
+
+        saveArea(id, "minaccia", "Interpretazioni e preoccupazione per possibili rivali", 1);
+        saveArea(id, "attivazione", "Reazioni emotive alla minaccia percepita", 2);
+        saveArea(id, "verifica", "Ricerca di rassicurazione e verifica", 3);
+        saveArea(id, "controllo", "Controllo e interferenza nella quotidianità", 4);
+
+        saveQuestions(id, List.of(
+                q("minaccia", "Interpreto un cambiamento nel modo di comunicare del partner come possibile interesse per un'altra persona."),
+                q("minaccia", "Mi soffermo su segnali che potrebbero indicare attrazione del partner verso un'altra persona."),
+                q("minaccia", "Immagino che il partner possa preferire un'altra persona a me."),
+                q("minaccia", "Ripenso alle interazioni del partner cercando indizi di interesse reciproco."),
+                q("minaccia", "Mi preoccupo quando non so con chi si trova il partner."),
+                q("minaccia", "Collego una minore disponibilità del partner alla possibile presenza di un'altra persona."),
+                q("attivazione", "Provo agitazione quando il partner dedica attenzione a una persona che considero un possibile rivale."),
+                q("attivazione", "Mi sento insicuro/a quando il partner mostra ammirazione per un'altra persona."),
+                q("attivazione", "Provo rabbia quando percepisco intimità tra il partner e un'altra persona."),
+                q("attivazione", "Mi sento escluso/a quando il partner condivide un momento significativo con un'altra persona."),
+                q("attivazione", "Il pensiero di poter perdere la relazione mi provoca paura."),
+                q("attivazione", "Fatico a calmarmi dopo una situazione che ha attivato la mia gelosia."),
+                q("verifica", "Chiedo al partner di rassicurarmi sul nostro rapporto."),
+                q("verifica", "Chiedo dettagli sulle interazioni del partner con una persona che mi preoccupa."),
+                q("verifica", "Controllo segnali online per capire con chi interagisce il partner."),
+                q("verifica", "Cerco conferme da altre persone su ciò che fa il partner."),
+                q("verifica", "Torno sullo stesso episodio dopo aver ricevuto una spiegazione."),
+                q("verifica", "Confronto ciò che il partner mi dice con le informazioni che ho già."),
+                q("controllo", "Chiedo al partner di ridurre i contatti con una persona che mi preoccupa."),
+                q("controllo", "Insisto perché il partner mi comunichi dove si trova."),
+                q("controllo", "Cerco di influenzare con chi il partner trascorre il proprio tempo."),
+                q("controllo", "Mi presento in una situazione per verificare ciò che fa il partner."),
+                q("controllo", "Rinuncio a una mia attività per controllare cosa sta facendo il partner."),
+                q("controllo", "La gelosia riduce la mia concentrazione in un'attività quotidiana.")));
+
+        saveGlobal(id, "LOW", "Le esperienze di gelosia verso il partner sembrano poco presenti",
+                "Nelle risposte, interpretazioni di minaccia, reazioni emotive, verifiche e interferenza risultano poco frequenti in tutte e quattro le aree. Questo andamento descrive gli ultimi tre mesi e non esclude episodi circoscritti o situazioni non coperte dalle domande.",
+                "Una frequenza contenuta non stabilisce che la relazione sia priva di difficoltà e non esclude preoccupazioni fondate, accordi violati o un singolo episodio con grande impatto. Distingui ciò che hai osservato direttamente dalle interpretazioni e considera quali accordi, spiegazioni e condizioni di sicurezza sono presenti. Il risultato non stabilisce se i sospetti siano fondati, non accerta un'infedeltà e non valuta violenza o sicurezza; le soglie sono esclusivamente editoriali. La gelosia non giustifica accessi senza consenso, sorveglianza, limitazioni, minacce o aggressioni. Se temi di poter agire in modo coercitivo o aggressivo, rivolgiti a un professionista qualificato; in caso di pericolo immediato contatta il 112. Per aiuto o consiglio su violenza e stalking è disponibile il 1522.");
+        saveGlobal(id, "MIXED", "Le esperienze di gelosia verso il partner sembrano presenti in modo variabile",
+                "Le risposte descrivono frequenze diverse tra interpretazioni, emozioni, verifiche e interferenza, senza aree al livello editoriale più alto. La gelosia può quindi comparire in alcune situazioni o modalità e restare meno presente in altre.",
+                "La variabilità può dipendere dal tipo di situazione, dagli accordi della relazione, da eventi precedenti, dal grado di ambiguità e dal modo in cui cerchi informazioni o rassicurazione. Consulta le aree senza trasformarle in una classifica e separa fatti osservati, significati attribuiti, emozioni, azioni ed effetti. Il risultato non stabilisce se i sospetti siano fondati, non accerta un'infedeltà e non valuta violenza o sicurezza; le soglie sono esclusivamente editoriali. La gelosia non giustifica accessi senza consenso, sorveglianza, limitazioni, minacce o aggressioni. Se temi di poter agire in modo coercitivo o aggressivo, rivolgiti a un professionista qualificato; in caso di pericolo immediato contatta il 112. Per aiuto o consiglio su violenza e stalking è disponibile il 1522.");
+        saveGlobal(id, "FOCUSED", "Le esperienze di gelosia verso il partner sembrano più presenti in una o due aree",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo è quindi concentrato su specifiche interpretazioni, emozioni o azioni e non descrive ogni aspetto della relazione.",
+                "Osserva quali situazioni attivano le aree emergenti e se la risposta resta un vissuto interno, diventa una richiesta condivisa oppure incide su privacy, autonomia e quotidianità. Una reazione emotiva frequente non rende inevitabile un comportamento; una verifica frequente non dimostra che il sospetto sia corretto. Il risultato non stabilisce se i sospetti siano fondati, non accerta un'infedeltà e non valuta violenza o sicurezza; le soglie sono esclusivamente editoriali. La gelosia non giustifica accessi senza consenso, sorveglianza, limitazioni, minacce o aggressioni. Se temi di poter agire in modo coercitivo o aggressivo, rivolgiti a un professionista qualificato; in caso di pericolo immediato contatta il 112. Per aiuto o consiglio su violenza e stalking è disponibile il 1522.");
+        saveGlobal(id, "BROAD", "Le esperienze di gelosia verso il partner sembrano frequentemente presenti in più aree",
+                "Le risposte indicano esperienze riferite con maggiore frequenza in almeno tre delle quattro aree esplorate. Negli ultimi tre mesi, la gelosia può quindi aver coinvolto in modo ampio pensieri, emozioni, ricerca di informazioni o interferenza nella quotidianità.",
+                "L'ampiezza invita a osservare persistenza, contesti ed effetti sulla tua vita e sulla libertà del partner, ma non definisce la gelosia come patologica e non indica automaticamente pericolosità. Può essere utile ricostruire episodi concreti distinguendo eventi, interpretazioni, emozioni, azioni e conseguenze e parlarne con un professionista qualificato se il ciclo è difficile da interrompere. Il risultato non stabilisce se i sospetti siano fondati, non accerta un'infedeltà e non valuta violenza o sicurezza; le soglie sono esclusivamente editoriali. La gelosia non giustifica accessi senza consenso, sorveglianza, limitazioni, minacce o aggressioni. Se temi di poter agire in modo coercitivo o aggressivo, cerca supporto; in caso di pericolo immediato contatta il 112. Per aiuto o consiglio su violenza e stalking è disponibile il 1522.");
+
+        saveAreaInsights(id, "minaccia",
+                "Interpretare segnali, disponibilità o informazioni mancanti come possibile interesse per un'altra persona risulta poco frequente. Questo non stabilisce che ogni preoccupazione sia infondata né che gli accordi della relazione siano rispettati.",
+                "Le interpretazioni di possibile minaccia compaiono in alcune situazioni più che in altre. Può essere utile distinguere il fatto osservato, le informazioni mancanti e il significato attribuito, senza pretendere certezza dal punteggio.",
+                "Le risposte descrivono una frequente attenzione a possibili segnali di interesse o preferenza verso altre persone. La frequenza non misura accuratezza, infedeltà, intenzioni del partner o carattere delirante dei pensieri.");
+        saveAreaInsights(id, "attivazione",
+                "Agitazione, insicurezza, rabbia, esclusione o paura della perdita risultano poco frequenti nelle situazioni considerate. Un singolo episodio intenso può comunque avere rilievo e non viene rappresentato dalla sola frequenza.",
+                "Le reazioni emotive compaiono con frequenza intermedia o dipendono dalla situazione. Osserva evento, intensità, durata, tempo necessario per calmarti e azione successiva, ricordando che emozione e comportamento non coincidono.",
+                "Le risposte descrivono frequenti reazioni emotive davanti a possibili minacce alla relazione. Questo non rende inevitabili verifiche o controllo e non misura regolazione emotiva generale, attaccamento o fondatezza della situazione.");
+        saveAreaInsights(id, "verifica",
+                "Richiedere rassicurazioni, dettagli o conferme e confrontare informazioni risulta poco frequente. Il dato non misura fiducia, trasparenza o qualità della comunicazione e non esclude domande pertinenti su eventi concreti.",
+                "Rassicurazione e verifica compaiono in alcune situazioni. Nota se una domanda produce informazioni nuove e condivise o se il dubbio ritorna invariato, mantenendo consenso e privacy come limiti distinti dalla gelosia.",
+                "Le risposte descrivono una frequente ricerca di rassicurazioni, dettagli o conferme. La frequenza non dimostra inganno né autorizza accessi senza consenso, investigazioni o sorveglianza del partner.");
+        saveAreaInsights(id, "controllo",
+                "Richieste che limitano contatti, monitoraggio e interferenza nella quotidianità risultano poco frequenti. Un comportamento raro può comunque incidere su autonomia o sicurezza e va considerato per ciò che accade, non soltanto per il livello dell'area.",
+                "Controllo o interferenza compaiono in alcune situazioni. Osserva consenso, pressione esercitata, libertà del partner, impatto sulle attività e possibilità di interrompere il comportamento senza usare la gelosia come giustificazione.",
+                "Le risposte descrivono frequenti richieste, verifiche o rinunce che possono interferire con la quotidianità. Il livello non classifica violenza o pericolosità, ma rende importante valutare separatamente autonomia, consenso, impatto e sicurezza.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -2079,6 +2176,13 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("The Resilience Scale for Adults in Italy — Bonfiglio e colleghi", "https://pubmed.ncbi.nlm.nih.gov/27031088/"),
                 ref("Italian version of the 14-item Resilience Scale — Cuoco e colleghi", "https://pubmed.ncbi.nlm.nih.gov/34850301/"),
                 ref("A methodological review of resilience measurement scales — Windle e colleghi", "https://pubmed.ncbi.nlm.nih.gov/21294858/")));
+        syncReferences("gelosia-partner", List.of(
+                ref("Validation of the Italian brief Multidimensional Jealousy Scale — Diotaiuti e colleghi", "https://doi.org/10.3389/fpsyg.2022.1013584"),
+                ref("Multidimensional Jealousy — Pfeiffer e Wong", "https://doi.org/10.1177/026540758900600203"),
+                ref("A systematic review of romantic jealousy in relationships — Martínez-León e colleghi", "https://doi.org/10.4067/S0718-48082017000200203"),
+                ref("Infidelity, romantic jealousy and intimate partner violence — Pichon e colleghi", "https://doi.org/10.3390/ijerph17165682"),
+                ref("Understanding and addressing intimate partner violence — WHO", "https://www.who.int/publications/i/item/WHO-RHR-12.36"),
+                ref("1522 — Numero antiviolenza e antistalking", "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {
