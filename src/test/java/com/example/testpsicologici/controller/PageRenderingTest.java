@@ -920,7 +920,9 @@ class PageRenderingTest {
 
         mockMvc.perform(get("/test/{testId}/risultato", testId).session(completedAttempt(testId, 3)))
                 .andExpect(status().isOk())
-                .andExpect(header().string("X-Robots-Tag", "noindex, follow, noarchive"));
+                .andExpect(header().string("X-Robots-Tag", "noindex, follow, noarchive"))
+                .andExpect(content().string(containsString(
+                        "/react/assets/app.css?v=react-3")));
     }
 
     @Test
@@ -928,6 +930,8 @@ class PageRenderingTest {
         mockMvc.perform(get("/supporto/grazie"))
                 .andExpect(status().isOk())
                 .andExpect(header().string("X-Robots-Tag", "noindex, nofollow, noarchive"))
+                .andExpect(content().string(containsString(
+                        "/react/assets/app.css?v=react-3")))
                 .andExpect(content().string(containsString("Grazie per il tuo sostegno")))
                 .andExpect(content().string(containsString("\"status\":\"success\"")));
 
