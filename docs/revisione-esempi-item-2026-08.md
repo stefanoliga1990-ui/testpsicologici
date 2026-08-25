@@ -2,9 +2,9 @@
 
 ## Scopo e perimetro
 
-Sono stati riesaminati tutti i 528 item dei 22 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
+Sono stati riesaminati tutti i 552 item dei 23 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
 
-L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 476 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
+L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 500 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
 
 Gli esempi non sono elenchi esaustivi e non costituiscono condizioni aggiuntive: l'utente deve rispondere alla domanda principale considerando anche situazioni equivalenti non nominate.
 
@@ -163,6 +163,10 @@ Non sono stati aggiunti esempi ai 24 item. Nominare eventi, reti familiari, serv
 ### Gelosia verso il partner
 
 Non sono stati aggiunti esempi ai 24 item. Nominare social network, messaggi, luoghi, forme della relazione o possibili rivali potrebbe restringere il richiamo, suggerire comportamenti di verifica o escludere esperienze equivalenti. La scelta è documentata nella specifica v1.0 e richiede interviste cognitive attente a consenso, configurazioni relazionali, genere e orientamento.
+
+### Soddisfazione per la propria vita
+
+Non sono stati aggiunti esempi ai 24 item. Nominare lavoro, coppia, famiglia, salute, denaro o altri ambiti potrebbe imporre criteri non condivisi, escludere configurazioni di vita differenti e trasformare un giudizio globale in una lista prescrittiva. La scelta è documentata nella specifica v1.0 e richiede interviste cognitive sulla differenza tra frequenza e grado di soddisfazione.
 
 ## Limiti e verifica successiva
 

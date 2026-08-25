@@ -258,7 +258,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/gelosia-partner\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Gelosia nella relazione</h3>")));
+                        "<h3>Gelosia nella relazione</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/soddisfazione-vita\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Soddisfazione di vita</h3>")));
     }
 
     @Test
@@ -784,6 +788,24 @@ class PageRenderingTest {
     }
 
     @Test
+    void lifeSatisfactionGuideRendersConstructMeasurementLimitsSafetyAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/soddisfazione-vita"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Soddisfazione di vita: significato e misura | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/soddisfazione-vita\"")))
+                .andExpect(content().string(containsString("Che cos&#39;è la soddisfazione di vita")))
+                .andExpect(content().string(containsString("Soddisfazione, felicità e salute mentale non coincidono")))
+                .andExpect(content().string(containsString("La vita nel complesso non è la somma automatica dei suoi ambiti")))
+                .andExpect(content().string(containsString("Frequenza e grado di soddisfazione sono domande diverse")))
+                .andExpect(content().string(containsString("676 lavoratori adulti")))
+                .andExpect(content().string(containsString("flore.unifi.it")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString("href=\"/test/soddisfazione-vita\"")));
+    }
+
+    @Test
     void testLinksToItsPublishedGuide() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -930,6 +952,15 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("1522")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/gelosia-partner\"")));
+
+        mockMvc.perform(get("/test/soddisfazione-vita"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("non è la Satisfaction With Life Scale")))
+                .andExpect(content().string(containsString("non fattori psicometrici dimostrati")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/soddisfazione-vita\"")));
     }
 
     @Test
@@ -1063,6 +1094,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/resilienza-psicologica")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/gelosia-partner")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/soddisfazione-vita")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1072,6 +1105,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/intelligenza-intrapersonale")))
                 .andExpect(content().string(containsString("http://localhost/test/resilienza-psicologica")))
                 .andExpect(content().string(containsString("http://localhost/test/gelosia-partner")))
+                .andExpect(content().string(containsString("http://localhost/test/soddisfazione-vita")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

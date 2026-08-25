@@ -1068,10 +1068,80 @@ class TestResultServiceTest {
     }
 
     @Test
+    void lifeSatisfactionTestIsLoadedWithTwentyFourOriginalQuestionsAndMeasurementLimits() {
+        PsychologicalTest test = catalogue.findById("soddisfazione-vita");
+
+        assertThat(test.title()).isEqualTo("Sono soddisfatto/a della mia vita?");
+        assertThat(test.questions()).hasSize(24).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code())
+                .containsExactly("complessiva", "quotidianita", "coerenza", "direzione");
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "frequenza", "valutazione della tua vita");
+        assertThat(test.introductoryText()).contains(
+                "giudizio soggettivo e cognitivo",
+                "non è la Satisfaction With Life Scale",
+                "non fattori psicometrici dimostrati",
+                "non indica fallimento, ingratitudine o incapacità",
+                "non diagnostica depressione",
+                "112");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle valutazioni positive riferite");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle valutazioni positive riferite");
+        assertThat(test.references()).extracting(reference -> reference.url()).containsExactly(
+                "https://flore.unifi.it/handle/2158/656647",
+                "https://www.istat.it/comunicato-stampa/soddisfazione-dei-cittadini-anno-2024/",
+                "https://pubmed.ncbi.nlm.nih.gov/16367493/",
+                "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/measuring-subjective-well-being_b4b53f27.html",
+                "https://pubmed.ncbi.nlm.nih.gov/28324322/",
+                "https://doi.org/10.1371/journal.pone.0313107");
+    }
+
+    @Test
+    void lifeSatisfactionFocusedProfileKeepsTheoreticalOrderAndPositiveDirection() {
+        TestResult result = analyzeWithAnswersForTest("soddisfazione-vita", 1, 1, 5, 1);
+
+        assertThat(result.general().title()).isEqualTo("La soddisfazione percepita per la propria vita sembra più espressa in una o due aree");
+        assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Valutazione complessiva della propria vita",
+                "Soddisfazione per la vita quotidiana",
+                "Coerenza con priorità e criteri personali",
+                "Soddisfazione per direzione e percorso recente");
+        assertThat(result.areaResults().get(2).description()).contains("viene spesso percepita", "non certifica");
+        assertThat(result.areaResults().get(2).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(0).percentage()).isZero();
+    }
+
+    @Test
+    void lifeSatisfactionProfilesFollowEditorialRulesAndAlwaysRetainContextAndSafetyLimits() {
+        TestResult low = analyzeWithAnswersForTest("soddisfazione-vita", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("soddisfazione-vita", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("soddisfazione-vita", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("soddisfazione-vita", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).isEqualTo("La soddisfazione percepita per la propria vita sembra poco espressa nelle risposte");
+        assertThat(mixed.general().title()).isEqualTo("La soddisfazione percepita per la propria vita sembra espressa in modo variabile tra le aree");
+        assertThat(focused.general().title()).isEqualTo("La soddisfazione percepita per la propria vita sembra più espressa in una o due aree");
+        assertThat(broad.general().title()).isEqualTo("La soddisfazione percepita per la propria vita sembra ampiamente espressa in più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non equivale alla SWLS o a una domanda 0–10",
+                        "non misura felicità o salute mentale",
+                        "non valuta la sicurezza",
+                        "professionista qualificato",
+                        "112"));
+        assertThat(low.general().detail()).contains("non dimostra fallimento, ingratitudine o incapacità");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

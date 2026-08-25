@@ -49,6 +49,7 @@ Ogni titolo globale deve:
 | Intelligenza intrapersonale | Le risorse intrapersonali percepite sembrano poco espresse | Le risorse intrapersonali percepite sembrano espresse in modo variabile | Le risorse intrapersonali percepite sembrano più espresse in una o due aree | Le risorse intrapersonali percepite sembrano frequentemente espresse in più aree |
 | Resilienza psicologica | Le risorse di resilienza percepite sembrano poco espresse | Le risorse di resilienza percepite sembrano espresse in modo variabile | Le risorse di resilienza percepite sembrano più espresse in una o due aree | Le risorse di resilienza percepite sembrano frequentemente espresse in più aree |
 | Gelosia verso il partner | Le esperienze di gelosia verso il partner sembrano poco presenti | Le esperienze di gelosia verso il partner sembrano presenti in modo variabile | Le esperienze di gelosia verso il partner sembrano più presenti in una o due aree | Le esperienze di gelosia verso il partner sembrano frequentemente presenti in più aree |
+| Soddisfazione per la propria vita | La soddisfazione percepita per la propria vita sembra poco espressa nelle risposte | La soddisfazione percepita per la propria vita sembra espressa in modo variabile tra le aree | La soddisfazione percepita per la propria vita sembra più espressa in una o due aree | La soddisfazione percepita per la propria vita sembra ampiamente espressa in più aree |
 
 ## Versionamento e verifiche
 

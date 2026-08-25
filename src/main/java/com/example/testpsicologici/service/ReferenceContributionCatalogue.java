@@ -162,7 +162,19 @@ public class ReferenceContributionCatalogue {
             entry("https://www.who.int/publications/i/item/WHO-RHR-12.36",
                     "Fonte WHO consultata per distinguere isolamento, monitoraggio degli spostamenti e restrizioni come comportamenti di controllo; non è una misura di gelosia né classifica il singolo caso."),
             entry("https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/",
-                    "Pagina ufficiale consultata per indicare correttamente il servizio pubblico gratuito 1522 per aiuto e consiglio su violenza e stalking, distinguendolo dal 112 per le emergenze."));
+                    "Pagina ufficiale consultata per indicare correttamente il servizio pubblico gratuito 1522 per aiuto e consiglio su violenza e stalking, distinguendolo dal 112 per le emergenze."),
+            entry("https://flore.unifi.it/handle/2158/656647",
+                    "Validazione italiana della SWLS su 676 lavoratori adulti consultata per la struttura unidimensionale; campione, item, scala e punteggi non validano il questionario originale dell'app."),
+            entry("https://www.istat.it/comunicato-stampa/soddisfazione-dei-cittadini-anno-2024/",
+                    "Fonte statistica ufficiale italiana consultata per distinguere soddisfazione complessiva e ambiti specifici; scala 0–10, soglie e stime di popolazione non sono trasferite all'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/16367493/",
+                    "Studio fondativo della SWLS consultato per definire la soddisfazione globale come valutazione cognitiva distinta da affetti e solitudine; nessun item è stato copiato o adattato."),
+            entry("https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/measuring-subjective-well-being_b4b53f27.html",
+                    "Linee guida OECD consultate per distinguere life evaluation, affetti, eudaimonia e benessere oggettivo; il formato di frequenza e le quattro aree dell'app restano scelte originali non validate."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/28324322/",
+                    "Revisione di 27 studi d'invarianza della SWLS consultata per la cautela nei confronti tra culture ed età; non fornisce norme o interpretazioni per il questionario dell'app."),
+            entry("https://doi.org/10.1371/journal.pone.0313107",
+                    "Studio multicentrico della SWLS in 65 nazioni e 40 lingue consultato per i limiti di trasferibilità culturale; non valida item, aree, soglie o confronti individuali nell'app."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

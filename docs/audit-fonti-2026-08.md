@@ -2,7 +2,7 @@
 
 ## Obiettivo e perimetro
 
-Questo documento definisce la revisione delle fonti dei 22 questionari e delle 22 schede di approfondimento di Spazio Test. L'audit riguarda:
+Questo documento definisce la revisione delle fonti dei 23 questionari e delle 23 schede di approfondimento di Spazio Test. L'audit riguarda:
 
 - autorevolezza scientifica o istituzionale;
 - solidità metodologica e aggiornamento;
@@ -79,6 +79,7 @@ Sono necessari interventi mirati:
 | Intelligenza intrapersonale | sintesi ufficiale Project Zero, confronto empirico sui domini MI, versione italiana SRIS e studio italiano su consapevolezza e accuratezza interocettiva | definizione prudente della cornice di Gardner e distinzione tra auto-osservazione, insight, uso dichiarato e accuratezza | nessuna validazione italiana pertinente del self-report originale; studi italiani con campioni specifici e costrutti differenti, senza punteggi o strutture trasferibili |
 | Resilienza psicologica | revisioni internazionali sul costrutto e sulle misure; validazioni italiane RSA e RS-14 | distinzione tra risorse, processo ed esito; inclusione di fattori personali, relazionali e contestuali; cautela sulle misure | strumenti e campioni italiani differenti non validano gli item dell'app; nessun fattore, punteggio, soglia o esito è trasferibile |
 | Gelosia verso il partner | validazione italiana ampia della MJS breve, studio fondativo multidimensionale, revisioni internazionali, WHO e servizio pubblico 1522 | distinzione cognitiva, emotiva e comportamentale; separazione tra infedeltà reale, sospetta e accusata; autonomia, controllo e corretta indicazione ai servizi | la divisione del comportamento in verifica e controllo è editoriale; scale, campioni e associazioni non validano item, soglie, fatti sul partner o previsioni individuali |
+| Soddisfazione per la propria vita | validazione italiana SWLS su lavoratori adulti, dati ufficiali ISTAT, linee guida OECD, studio fondativo e revisioni d'invarianza | definizione come valutazione cognitiva globale; distinzione da affetti, eudaimonia e ambiti specifici; differenza tra frequenza e grado 0–10 | la SWLS italiana è unidimensionale; le quattro aree e la scala di frequenza sono editoriali e non producono punteggi o confronti ufficiali |
 
 ## Decisioni sui testi
 
@@ -104,9 +105,9 @@ Questa revisione non modifica item, opzioni, scoring, pesi, soglie o interpretaz
 
 ## Esito dell'implementazione
 
-- Fonti dei 22 questionari sincronizzate come metadati; per i nuovi questionari item, scoring e interpretazioni sono documentati nelle rispettive specifiche v1.0.
-- Fonti e contributi delle 22 schede integrati; i collegamenti scientifici ospitati da terzi sono stati sostituiti con DOI o pagine primarie.
+- Fonti dei 23 questionari sincronizzate come metadati; per i nuovi questionari item, scoring e interpretazioni sono documentati nelle rispettive specifiche v1.0.
+- Fonti e contributi delle 23 schede integrati; i collegamenti scientifici ospitati da terzi sono stati sostituiti con DOI o pagine primarie.
 - Schede su dinamiche narcisistiche, people pleasing e fenomeno dell'impostore corrette nei punti in cui associazioni, cultura o limiti di misura richiedevano maggiore cautela.
 - Pagina “Metodo e fonti” aggiornata con priorità italiana/europea e divieto di trasferire automaticamente norme, prevalenze e cut-off.
 - `AGENTS.md` e `docs/standard-psicometrico.md` aggiornati come standard riutilizzabile.
-- Suite completa eseguita il 24 agosto 2026: 147 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.
+- Suite completa eseguita il 25 agosto 2026: 151 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.

@@ -2218,6 +2218,136 @@ public class GuideCatalogue {
                                     "Pagina ufficiale italiana consultata per destinazione, gratuità e disponibilità continuativa del servizio; il 1522 offre aiuto e consiglio ma non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "soddisfazione-vita",
+                    "soddisfazione-vita",
+                    "Soddisfazione di vita",
+                    "Soddisfazione di vita: giudizio personale, contesto e limiti",
+                    "Soddisfazione di vita: significato e misura | Spazio Test",
+                    "Una guida alla soddisfazione per la propria vita, alla distinzione da felicità e salute mentale e ai limiti delle misure autoriferite.",
+                    "La soddisfazione di vita è una valutazione riflessiva e soggettiva della propria vita. Dipende dai criteri che la persona considera pertinenti e dalle condizioni concrete, e non coincide con un'emozione momentanea, con l'assenza di difficoltà o con una diagnosi di salute mentale.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cos'è la soddisfazione di vita",
+                                    List.of(
+                                            "Nella ricerca sul benessere soggettivo, la soddisfazione di vita indica il giudizio cognitivo che una persona formula sulla propria vita nel complesso. È un'autovalutazione: non richiede che un osservatore esterno stabilisca quale vita dovrebbe essere considerata soddisfacente.",
+                                            "Il giudizio può tenere conto della situazione attuale, del percorso e di criteri personali. Non è però una fotografia completa di salute, relazioni, condizioni materiali o funzionamento e non permette, da solo, di spiegare perché una persona risponda in un certo modo."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Soddisfazione, felicità e salute mentale non coincidono",
+                                    List.of(
+                                            "L'OECD distingue la valutazione della vita dagli affetti, cioè dalle emozioni piacevoli o spiacevoli vissute in un certo momento, e dall'eudaimonia, che riguarda significato, scopo e funzionamento percepito. Queste componenti possono associarsi ma non sono intercambiabili.",
+                                            "Una persona può valutare positivamente la propria vita e attraversare dolore, stress o un problema circoscritto; può anche provare emozioni piacevoli e restare insoddisfatta della direzione complessiva. Un risultato basso non diagnostica depressione e uno alto non dimostra salute mentale o assenza di bisogno."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Criteri e contesto",
+                                    "Il giudizio è personale, ma non nasce nel vuoto",
+                                    List.of(
+                                            "Le persone possono confrontare la propria vita con criteri che ritengono appropriati: priorità, aspettative, esperienze precedenti o condizioni desiderate. Questi criteri non sono sempre espliciti e possono cambiare con età, cultura, eventi e nuove informazioni.",
+                                            "Salute, dolore, lutto, relazioni, reddito, abitazione, lavoro, discriminazione, cura di altre persone, sicurezza e accesso ai servizi incidono sulle possibilità concrete. Invitare semplicemente a essere più positivi o grati può oscurare difficoltà reali e attribuire all'individuo responsabilità che appartengono anche al contesto."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Globale e specifico",
+                                    "La vita nel complesso non è la somma automatica dei suoi ambiti",
+                                    List.of(
+                                            "ISTAT rileva sia la soddisfazione per la vita nel complesso sia giudizi su relazioni, salute, tempo libero, lavoro e situazione economica. Le valutazioni dei singoli ambiti possono contribuire al bilancio generale, ma il peso assegnato a ciascuno varia tra persone e periodi.",
+                                            "Un'area difficile può avere un impatto importante senza cancellare tutto ciò che funziona; allo stesso modo, un ambito soddisfacente non rende irrilevanti gli altri. Il questionario non calcola un indice oggettivo dei domini e non decide quali parti della vita dovrebbero contare di più."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree del questionario",
+                                    "Perché Spazio Test mostra quattro prospettive",
+                                    List.of(
+                                            "La validazione italiana della SWLS su 676 lavoratori adulti ha sostenuto una struttura unidimensionale. Spazio Test usa quattro prospettive soltanto per rendere la restituzione più leggibile: non sono fattori scientificamente confermati e la loro media non equivale al punteggio SWLS."
+                                    ),
+                                    List.of(
+                                            "Valutazione complessiva: il bilancio riferito sulla vita nel suo insieme.",
+                                            "Vita quotidiana: il giudizio su giornate, attività, ritmo e organizzazione.",
+                                            "Coerenza personale: quanto la vita viene percepita in accordo con priorità e criteri propri.",
+                                            "Direzione recente: il giudizio sul percorso e sul punto attuale, senza prevedere il futuro."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Come si misura",
+                                    "Frequenza e grado di soddisfazione sono domande diverse",
+                                    List.of(
+                                            "OECD e ISTAT chiedono generalmente quanto una persona sia soddisfatta della propria vita su una scala da 0 a 10; la SWLS usa più affermazioni valutative con un proprio formato. Queste misure non sono convertibili nella barra di Spazio Test.",
+                                            "L'app chiede invece con quale frequenza, negli ultimi tre mesi, siano state riconosciute alcune valutazioni positive. La barra rappresenta soltanto la trasformazione delle cinque risposte da Mai a Quasi sempre: non è una percentuale di soddisfazione, un percentile o un confronto con la popolazione italiana."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Auto-osservazione",
+                                    "Separare giudizio, criterio, contesto e cambiamento",
+                                    List.of(
+                                            "Per approfondire una risposta puoi annotare quale giudizio hai formulato, quale criterio stavi usando, quali condizioni concrete erano presenti e se qualcosa è cambiato nel periodo considerato. Questo aiuta a distinguere un bilancio globale da una difficoltà specifica senza imporre una lettura positiva.",
+                                            "Può essere utile osservare anche ciò che vorresti proteggere, modificare o discutere con qualcuno. È uno spunto descrittivo: non garantisce un aumento della soddisfazione e non sostituisce interventi su salute, sicurezza, relazioni o condizioni materiali."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Quando il questionario non basta",
+                                    List.of(
+                                            "Se insoddisfazione o sofferenza persistono, interferiscono con la vita quotidiana oppure si accompagnano a cambiamenti importanti di sonno, energia, interesse o funzionamento, puoi parlarne con uno psicologo, psicoterapeuta, medico o altro professionista qualificato. Il livello del test non determina da solo la necessità di aiuto.",
+                                            "In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta subito il 112 o recati al pronto soccorso. Le 24 domande, la scala di frequenza, le quattro aree e le soglie di Spazio Test sono originali e non validate e non valutano rischio o sicurezza."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato descrive la frequenza riferita di valutazioni positive sulla propria vita negli ultimi tre mesi. Non è la SWLS, non replica la domanda ufficiale 0–10 e non misura felicità, salute mentale, qualità di vita o sicurezza.",
+                    List.of(
+                            new GuideReference(
+                                    "La Satisfaction With Life Scale: un contributo alla validazione italiana con lavoratori adulti — Di Fabio e Palazzeschi",
+                                    "https://flore.unifi.it/handle/2158/656647",
+                                    "Studio su 676 lavoratori italiani consultato per la struttura unidimensionale della SWLS; campione, item, scala e punteggi differenti non validano le quattro aree dell'app."
+                            ),
+                            new GuideReference(
+                                    "La soddisfazione dei cittadini per le condizioni di vita — Anno 2024 — ISTAT",
+                                    "https://www.istat.it/comunicato-stampa/soddisfazione-dei-cittadini-anno-2024/",
+                                    "Fonte statistica ufficiale italiana consultata per distinguere valutazione complessiva e ambiti specifici; scala 0–10, soglie e stime di popolazione non sono trasferite."
+                            ),
+                            new GuideReference(
+                                    "The Satisfaction With Life Scale — Diener e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/16367493/",
+                                    "Studio fondativo consultato per la definizione della soddisfazione globale come componente cognitiva distinta da affetti e solitudine; nessun item è stato copiato."
+                            ),
+                            new GuideReference(
+                                    "OECD Guidelines on Measuring Subjective Well-being — 2025 Update",
+                                    "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/measuring-subjective-well-being_b4b53f27.html",
+                                    "Linee guida consultate per distinguere valutazione della vita, affetti, eudaimonia e benessere oggettivo; non sostengono il formato di frequenza originale dell'app."
+                            ),
+                            new GuideReference(
+                                    "Core and extended survey modules — OECD Guidelines 2025",
+                                    "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/core-and-extended-survey-modules_37f842ef.html",
+                                    "Modulo metodologico consultato per la domanda globale 0–10, il contesto di somministrazione e la distinzione dalle valutazioni di dominio; non fornisce conversioni per l'app."
+                            ),
+                            new GuideReference(
+                                    "Review of the Satisfaction With Life Scale — Pavot e Diener",
+                                    "https://doi.org/10.1037/1040-3590.5.2.164",
+                                    "Revisione consultata per il ruolo dei criteri personali nel giudizio riflessivo e per i limiti della misura; non definisce le quattro prospettive editoriali."
+                            ),
+                            new GuideReference(
+                                    "Measurement invariance of the Satisfaction with Life Scale — Emerson e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/28324322/",
+                                    "Revisione di 27 studi consultata per la cautela nei confronti tra culture ed età; riguarda la SWLS e non consente inferenze normative individuali nell'app."
+                            ),
+                            new GuideReference(
+                                    "Life satisfaction around the world — Jebb e colleghi",
+                                    "https://doi.org/10.1371/journal.pone.0313107",
+                                    "Studio recente in 65 nazioni e 40 lingue consultato per la trasferibilità culturale della misura; campioni e strumento differenti non validano questo questionario."
+                            )
+                    )
             )
     );
 

@@ -1,0 +1,139 @@
+{
+  "test": {
+    "id": "soddisfazione-vita",
+    "titolo": "Sono soddisfatto/a della mia vita?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa della frequenza di valutazioni positive riferite sulla propria vita",
+    "periodo_riferimento": "Ultimi tre mesi",
+    "direzione_punteggio": "Valori più alti descrivono maggiore frequenza delle valutazioni positive formulate, non un livello validato di soddisfazione, felicità, salute mentale o qualità di vita",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non è la SWLS, non replica le domande ufficiali 0–10 e non diagnostica condizioni o valuta la sicurezza."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi, con quale frequenza hai riconosciuto questa valutazione della tua vita?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; rappresenta frequenza relativa delle risposte, non percentuale o livello validato di soddisfazione, percentile, salute mentale, qualità di vita o previsione",
+    "ordine_aree_risultato": "Ordine editoriale stabile: complessiva, quotidianita, coerenza, direzione",
+    "limite_strutturale": "La SWLS italiana ha sostenuto una struttura unidimensionale; le quattro aree dell'app sono prospettive editoriali correlate e non fattori dimostrati"
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "La soddisfazione percepita per la propria vita sembra poco espressa nelle risposte",
+      "sottotitolo": "Le valutazioni positive formulate risultano poco frequenti nel bilancio complessivo, nella quotidianità, nella coerenza personale e nella direzione recente.",
+      "descrizione": "Questo non attribuisce fallimento, ingratitudine o incapacità e non esclude aspetti circoscritti di soddisfazione. Condizioni concrete, salute, perdite, vincoli e momento della compilazione possono contribuire alle risposte. Il risultato non equivale alla SWLS, a una domanda 0–10 o a una valutazione della salute mentale."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "La soddisfazione percepita per la propria vita sembra espressa in modo variabile tra le aree",
+      "sottotitolo": "Le valutazioni positive compaiono con frequenze diverse tra le prospettive esplorate, senza aree al livello editoriale più alto.",
+      "descrizione": "La variabilità può riflettere differenze tra bilancio generale, giornate, criteri personali e percorso recente. Le aree non sono una classifica e la media non dimostra una struttura psicometrica multidimensionale."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "La soddisfazione percepita per la propria vita sembra più espressa in una o due aree",
+      "sottotitolo": "Una o due prospettive raccolgono valutazioni positive più frequenti, mentre le altre risultano meno presenti o più dipendenti dal contesto.",
+      "descrizione": "Le aree emergenti indicano dove la soddisfazione viene riconosciuta più spesso, senza estenderla automaticamente all'intera vita. È utile considerare opportunità, vincoli e criteri personali nelle aree più contenute."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "La soddisfazione percepita per la propria vita sembra ampiamente espressa in più aree",
+      "sottotitolo": "Almeno tre prospettive raccolgono valutazioni positive riferite con maggiore frequenza negli ultimi tre mesi.",
+      "descrizione": "L'ampiezza descrive le risposte e non dimostra assenza di sofferenza, condizioni oggettivamente favorevoli o stabilità futura. Problemi circoscritti e bisogni di supporto possono coesistere con un giudizio complessivamente positivo."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "complessiva",
+      "nome_area": "Valutazione complessiva della propria vita",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Le valutazioni positive della vita nel suo insieme risultano poco frequenti; questo non definisce valore personale né causa delle risposte."},
+        {"livello": "MEDIUM", "descrizione": "Il bilancio complessivo positivo compare in alcuni momenti; contesto, criteri e stato attuale possono modificarlo."},
+        {"livello": "HIGH", "descrizione": "La vita nel suo insieme viene valutata positivamente con frequenza; non equivale a felicità costante o assenza di problemi."}
+      ]
+    },
+    {
+      "area_code": "quotidianita",
+      "nome_area": "Soddisfazione per la vita quotidiana",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Giornate, attività, ritmo e organizzazione risultano poco spesso soddisfacenti; vincoli e opportunità concrete sono essenziali per leggere il dato."},
+        {"livello": "MEDIUM", "descrizione": "La soddisfazione quotidiana varia tra momenti o aspetti; è utile osservare quali condizioni la sostengono o la limitano."},
+        {"livello": "HIGH", "descrizione": "Le valutazioni positive della quotidianità sono frequenti; non misurano produttività, equilibrio ideale o qualità oggettiva delle condizioni di vita."}
+      ]
+    },
+    {
+      "area_code": "coerenza",
+      "nome_area": "Coerenza con priorità e criteri personali",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "La vita viene raramente valutata come coerente con priorità e criteri personali; il margine di scelta può essere limitato dal contesto."},
+        {"livello": "MEDIUM", "descrizione": "La coerenza percepita compare in alcune scelte o situazioni; priorità concorrenti e vincoli possono produrre variazioni."},
+        {"livello": "HIGH", "descrizione": "La vita viene spesso percepita in accordo con priorità e criteri personali; non certifica correttezza delle scelte o autonomia completa."}
+      ]
+    },
+    {
+      "area_code": "direzione",
+      "nome_area": "Soddisfazione per direzione e percorso recente",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Direzione, passi e percorso recente risultano poco spesso soddisfacenti; questo non predice l'andamento futuro né implica immobilità."},
+        {"livello": "MEDIUM", "descrizione": "La soddisfazione per il percorso varia; cambiamenti, attese e possibilità reali possono incidere sul giudizio."},
+        {"livello": "HIGH", "descrizione": "Direzione e percorso recente vengono valutati positivamente con frequenza; non dimostra conseguimento oggettivo o successo futuro."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {
+      "titolo": "La Satisfaction With Life Scale: un contributo alla validazione italiana con lavoratori adulti",
+      "url": "https://flore.unifi.it/handle/2158/656647",
+      "apporto": "Validazione italiana su 676 lavoratori e sostegno alla struttura unidimensionale; campione e strumento diversi non validano l'app."
+    },
+    {
+      "titolo": "La soddisfazione dei cittadini per le condizioni di vita — Anno 2024",
+      "url": "https://www.istat.it/comunicato-stampa/soddisfazione-dei-cittadini-anno-2024/",
+      "apporto": "Misura ufficiale italiana della soddisfazione complessiva 0–10 e distinzione da ambiti specifici; stime e soglie non vengono trasferite."
+    },
+    {
+      "titolo": "The Satisfaction With Life Scale",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16367493/",
+      "apporto": "Definizione della soddisfazione globale come componente cognitiva distinta; nessun item viene copiato."
+    },
+    {
+      "titolo": "OECD Guidelines on Measuring Subjective Well-being — 2025 Update",
+      "url": "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/measuring-subjective-well-being_b4b53f27.html",
+      "apporto": "Distinzione tra life evaluation, affetti ed eudaimonia e indicazioni sulla misura; il formato di frequenza dell'app resta differente."
+    },
+    {
+      "titolo": "Measurement invariance of the Satisfaction with Life Scale: reviewing three decades of research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28324322/",
+      "apporto": "Limiti dei confronti tra culture ed età e cautela sulle inferenze di gruppo."
+    },
+    {
+      "titolo": "Life satisfaction around the world: measurement invariance across 65 nations",
+      "url": "https://doi.org/10.1371/journal.pone.0313107",
+      "apporto": "Evidenza multicentrica recente sulla misurazione in 40 lingue; non fornisce norme o validazione per il questionario originale."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia separata, documentata in docs/test-soddisfazione-vita-v1.md e nel GuideCatalogue.",
+  "limite": "Non esistono dati che validino nella popolazione adulta italiana questo specifico set di 24 item, la scala di frequenza, le quattro aree, la media generale, le soglie o le interpretazioni."
+}
