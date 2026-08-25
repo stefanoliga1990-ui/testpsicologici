@@ -35,4 +35,5 @@
     };
 
     searchInput.addEventListener('input', filterTests);
+    filterTests();
 })();

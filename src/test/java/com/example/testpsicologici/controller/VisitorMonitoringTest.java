@@ -2,10 +2,12 @@ package com.example.testpsicologici.controller;
 
 import com.example.testpsicologici.persistence.DailySiteVisitRepository;
 import com.example.testpsicologici.persistence.DailyTestCompletionRepository;
+import com.example.testpsicologici.persistence.NotFoundPathRepository;
 import com.example.testpsicologici.model.PsychologicalTest;
 import com.example.testpsicologici.model.TestAttempt;
 import com.example.testpsicologici.service.DailyVisitCookieService;
 import com.example.testpsicologici.service.TestCatalogue;
+import com.example.testpsicologici.service.NotFoundPathAnalyticsService;
 import jakarta.servlet.http.Cookie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -49,6 +51,12 @@ class VisitorMonitoringTest {
     private DailyTestCompletionRepository completionRepository;
 
     @Autowired
+    private NotFoundPathRepository notFoundPathRepository;
+
+    @Autowired
+    private NotFoundPathAnalyticsService notFoundAnalyticsService;
+
+    @Autowired
     private TestCatalogue catalogue;
 
     @Autowired
@@ -60,6 +68,7 @@ class VisitorMonitoringTest {
     void setUp() {
         repository.deleteAll();
         completionRepository.deleteAll();
+        notFoundPathRepository.deleteAll();
         mockMvc = webAppContextSetup(context).apply(springSecurity()).build();
     }
 
@@ -137,6 +146,8 @@ class VisitorMonitoringTest {
     void authenticatedOwnerCanReadDashboardAndFreshSnapshot() throws Exception {
         mockMvc.perform(post("/internal/visita").header(HttpHeaders.USER_AGENT, BROWSER_USER_AGENT))
                 .andExpect(status().isNoContent());
+        notFoundAnalyticsService.record("/vecchio-link");
+        notFoundAnalyticsService.record("/vecchio-link?query=non-salvata");
 
         mockMvc.perform(get("/monitoring").with(user("owner").roles("MONITORING")))
                 .andExpect(status().isOk())
@@ -144,7 +155,9 @@ class VisitorMonitoringTest {
                 .andExpect(header().string(HttpHeaders.CACHE_CONTROL, containsString("no-store")))
                 .andExpect(content().string(containsString("Monitoraggio visite")))
                 .andExpect(content().string(containsString("Visitatori distinti oggi")))
-                .andExpect(content().string(containsString("Completamenti per test")));
+                .andExpect(content().string(containsString("Completamenti per test")))
+                .andExpect(content().string(containsString("URL 404 più frequenti")))
+                .andExpect(content().string(containsString("/vecchio-link")));
 
         mockMvc.perform(get("/monitoring/api/visite?days=7")
                         .with(user("owner").roles("MONITORING")))
@@ -152,6 +165,14 @@ class VisitorMonitoringTest {
                 .andExpect(header().string(HttpHeaders.CACHE_CONTROL, containsString("no-store")))
                 .andExpect(jsonPath("$.todayVisitors").value(1))
                 .andExpect(jsonPath("$.days.length()").value(7));
+
+        mockMvc.perform(get("/monitoring/api/not-found-paths")
+                        .with(user("owner").roles("MONITORING")))
+                .andExpect(status().isOk())
+                .andExpect(header().string(HttpHeaders.CACHE_CONTROL, containsString("no-store")))
+                .andExpect(header().string("X-Robots-Tag", "noindex, nofollow, noarchive"))
+                .andExpect(jsonPath("$[0].path").value("/vecchio-link"))
+                .andExpect(jsonPath("$[0].hits").value(2));
     }
 
     @Test

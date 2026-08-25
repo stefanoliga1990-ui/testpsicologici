@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La pagina richiesta non è disponibile. Cerca un test oppure consulta gli approfondimenti principali di Spazio Test.">
+    <meta name="robots" content="noindex, follow">
+    <title>Pagina non trovata | Spazio Test</title>
+    <th:block th:replace="~{fragments/brand-head :: icons}"></th:block>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='not-found-1')}">
+</head>
+<body class="editorial-body not-found-body">
+<main class="editorial-shell not-found-shell">
+    <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
+
+    <header class="not-found-hero">
+        <p class="not-found-code" aria-hidden="true">404</p>
+        <div>
+            <p class="eyebrow">Pagina non trovata</p>
+            <h1>Qui non c’è la pagina che cercavi.</h1>
+            <p>Il collegamento potrebbe essere cambiato oppure l’indirizzo potrebbe contenere un errore. Puoi cercare un test o continuare da uno dei contenuti qui sotto.</p>
+            <p class="not-found-requested-path">Percorso richiesto: <code th:text="${requestedPath}">/pagina-non-esistente</code></p>
+        </div>
+    </header>
+
+    <section class="not-found-search" aria-labelledby="not-found-search-title">
+        <div>
+            <p class="eyebrow">Ricerca</p>
+            <h2 id="not-found-search-title">Cerca tra i test</h2>
+        </div>
+        <form action="/#test-disponibili" method="get">
+            <label class="visually-hidden" for="not-found-search-input">Titolo o argomento del test</label>
+            <div class="test-search-field">
+                <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                    <circle cx="11" cy="11" r="6.5"></circle>
+                    <path d="m16 16 4 4"></path>
+                </svg>
+                <input id="not-found-search-input" name="q" type="search"
+                       placeholder="Per esempio: ansia, autostima, relazioni…" required>
+            </div>
+            <button class="button button-primary" type="submit">Cerca un test</button>
+        </form>
+    </section>
+
+    <section class="not-found-suggestions" aria-labelledby="not-found-tests-title">
+        <div class="section-heading">
+            <div><p class="eyebrow">Puoi iniziare da qui</p><h2 id="not-found-tests-title">Test principali</h2></div>
+            <a class="text-link" href="/#test-disponibili">Vedi tutti i test <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="not-found-card-grid">
+            <a class="not-found-card" th:each="test : ${featuredTests}"
+               th:href="@{/test/{id}(id=${test.id})}">
+                <span th:text="${test.eyebrow}">Questionario informativo</span>
+                <h3 th:text="${test.title}">Titolo del test</h3>
+                <p th:text="${test.description}">Descrizione del test.</p>
+                <strong>Apri il test <span aria-hidden="true">→</span></strong>
+            </a>
+        </div>
+    </section>
+
+    <section class="not-found-suggestions" aria-labelledby="not-found-guides-title">
+        <div class="section-heading">
+            <div><p class="eyebrow">Per approfondire</p><h2 id="not-found-guides-title">Guide principali</h2></div>
+            <a class="text-link" th:href="@{/approfondimenti}">Vedi tutte le guide <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="not-found-card-grid">
+            <a class="not-found-card not-found-guide-card" th:each="guide : ${featuredGuides}"
+               th:href="@{/approfondimenti/{slug}(slug=${guide.slug})}">
+                <span>Approfondimento</span>
+                <h3 th:text="${guide.cardTitle}">Titolo della guida</h3>
+                <p th:text="${guide.summary}">Sintesi della guida.</p>
+                <strong>Leggi la guida <span aria-hidden="true">→</span></strong>
+            </a>
+        </div>
+    </section>
+
+    <div th:replace="~{fragments/site-footer :: siteFooter}"></div>
+</main>
+</body>
+</html>

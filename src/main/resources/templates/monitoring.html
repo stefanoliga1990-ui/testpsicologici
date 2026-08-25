@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/app.css(v='test-completions-1')}">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='not-found-monitoring-1')}">
     <link rel="stylesheet" th:href="@{/react/assets/app.css(v='react-5')}">
 </head>
 <body class="monitoring-body">
@@ -34,6 +34,22 @@
                 <span class="monitoring-test-counts"><span><strong th:text="${completion.todayCompletions}">0</strong> oggi</span><span><strong th:text="${completion.totalCompletions}">0</strong> totali</span></span>
                 <span class="monitoring-test-chevron" aria-hidden="true">+</span>
             </button>
+        </div>
+    </section>
+    <section class="monitoring-table-panel">
+        <div class="monitoring-panel-heading"><div><p class="eyebrow">Collegamenti da correggere</p><h2>URL 404 più frequenti</h2></div><p>Solo percorso, senza query string, IP o dati del visitatore.</p></div>
+        <div class="monitoring-table-scroll">
+            <table>
+                <thead><tr><th>Percorso</th><th>Ultima richiesta</th><th>Richieste</th></tr></thead>
+                <tbody>
+                    <tr th:if="${#lists.isEmpty(notFoundPaths)}"><td class="monitoring-empty-row" colspan="3">Nessun URL 404 registrato.</td></tr>
+                    <tr th:each="entry : ${notFoundPaths}">
+                        <td class="monitoring-not-found-path" th:text="${entry.path}">/pagina-inesistente</td>
+                        <td th:text="${entry.lastSeenAt}">2026-08-26T12:00:00Z</td>
+                        <td th:text="${entry.hits}">1</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 </main>

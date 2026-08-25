@@ -21,6 +21,12 @@ function formatUpdatedAt(value) {
   }).format(new Date(value));
 }
 
+function formatTimestamp(value) {
+  return new Intl.DateTimeFormat('it-IT', {
+    day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit'
+  }).format(new Date(value));
+}
+
 function DailyChart({ days, valueKey, unitLabel, ariaLabel }) {
   const width = 960;
   const height = 330;
@@ -67,7 +73,8 @@ function DailyChart({ days, valueKey, unitLabel, ariaLabel }) {
 }
 
 export default function MonitoringPage({
-  initialSnapshot, initialTestCompletions = [], csrfParameterName, csrfToken
+  initialSnapshot, initialTestCompletions = [], initialNotFoundPaths = [],
+  csrfParameterName, csrfToken
 }) {
   const [range, setRange] = useState(30);
   const [snapshot, setSnapshot] = useState(initialSnapshot);
@@ -77,6 +84,7 @@ export default function MonitoringPage({
   const [testRange, setTestRange] = useState(30);
   const [testSnapshot, setTestSnapshot] = useState(null);
   const [testError, setTestError] = useState('');
+  const [notFoundPaths, setNotFoundPaths] = useState(initialNotFoundPaths);
   const total = useMemo(
     () => snapshot.days.reduce((sum, day) => sum + day.visitors, 0),
     [snapshot.days]
@@ -122,6 +130,27 @@ export default function MonitoringPage({
       }
     }
     const timer = window.setInterval(refreshTestList, 15000);
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    async function refreshNotFoundPaths() {
+      try {
+        const response = await fetch('/monitoring/api/not-found-paths', {
+          credentials: 'same-origin', cache: 'no-store'
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        if (active) setNotFoundPaths(data);
+      } catch {
+        // Gli altri dati di monitoraggio restano disponibili se questa sezione non risponde.
+      }
+    }
+    const timer = window.setInterval(refreshNotFoundPaths, 15000);
     return () => {
       active = false;
       window.clearInterval(timer);
@@ -265,6 +294,29 @@ export default function MonitoringPage({
             : !testError && <p className="monitoring-loading" role="status">Caricamento del grafico…</p>}
         </section>
       )}
+
+      <section className="monitoring-table-panel">
+        <div className="monitoring-panel-heading">
+          <div><p className="eyebrow">Collegamenti da correggere</p><h2>URL 404 più frequenti</h2></div>
+          <p>Solo percorso, senza query string, IP o dati del visitatore.</p>
+        </div>
+        <div className="monitoring-table-scroll">
+          <table>
+            <thead><tr><th>Percorso</th><th>Ultima richiesta</th><th>Richieste</th></tr></thead>
+            <tbody>
+              {notFoundPaths.length === 0
+                ? <tr><td className="monitoring-empty-row" colSpan="3">Nessun URL 404 registrato.</td></tr>
+                : notFoundPaths.map((entry) => (
+                  <tr key={entry.path}>
+                    <td className="monitoring-not-found-path">{entry.path}</td>
+                    <td>{formatTimestamp(entry.lastSeenAt)}</td>
+                    <td>{entry.hits.toLocaleString('it-IT')}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       <section className="monitoring-table-panel">
         <h2>Dettaglio giornaliero</h2>

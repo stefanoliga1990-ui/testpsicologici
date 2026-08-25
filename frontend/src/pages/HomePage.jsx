@@ -4,8 +4,8 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { normalizeSearch } from '../utils/text';
 
-export default function HomePage({ tests }) {
-  const [query, setQuery] = useState('');
+export default function HomePage({ initialQuery = '', tests }) {
+  const [query, setQuery] = useState(initialQuery);
   const visibleTests = useMemo(() => {
     const normalized = normalizeSearch(query);
     return tests.filter((test) => normalizeSearch(test.title).includes(normalized));

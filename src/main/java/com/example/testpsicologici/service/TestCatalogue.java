@@ -5,6 +5,7 @@ import com.example.testpsicologici.model.ResultContent;
 import com.example.testpsicologici.model.TestArea;
 import com.example.testpsicologici.model.TestQuestion;
 import com.example.testpsicologici.model.TestReference;
+import com.example.testpsicologici.model.TestSuggestion;
 import com.example.testpsicologici.persistence.InterpretationEntity;
 import com.example.testpsicologici.persistence.InterpretationRepository;
 import com.example.testpsicologici.persistence.TestAreaRepository;
@@ -42,6 +43,13 @@ public class TestCatalogue {
 
     public List<PsychologicalTest> findAll() {
         return testRepository.findByActiveTrueOrderByDisplayOrderAsc().stream().map(this::toModel).toList();
+    }
+
+    public List<TestSuggestion> findFeatured() {
+        return testRepository.findTop3ByActiveTrueOrderByDisplayOrderAsc().stream()
+                .map(test -> new TestSuggestion(
+                        test.getId(), test.getTitle(), test.getEyebrow(), test.getDescription()))
+                .toList();
     }
 
     public PsychologicalTest findById(String id) {

@@ -39,6 +39,7 @@ public class TestController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TestController.class);
     private static final String ATTEMPT_PREFIX = "test-attempt-";
+    private static final int MAX_SEARCH_QUERY_LENGTH = 120;
     private static final List<String> ANSWER_OPTIONS =
             List.of("Mai", "Raramente", "A volte", "Spesso", "Quasi sempre");
     private static final List<String> AGREEMENT_ANSWER_OPTIONS =
@@ -68,10 +69,15 @@ public class TestController {
     }
 
     @GetMapping("/")
-    public String home(HttpServletRequest request, Model model) {
+    public String home(@RequestParam(name = "q", defaultValue = "") String searchQuery,
+                       HttpServletRequest request, Model model) {
+        String initialQuery = searchQuery.length() <= MAX_SEARCH_QUERY_LENGTH
+                ? searchQuery : searchQuery.substring(0, MAX_SEARCH_QUERY_LENGTH);
         List<PsychologicalTest> tests = catalogue.findAll();
         model.addAttribute("tests", tests);
-        model.addAttribute("reactPageData", ReactPageData.of("home", "tests", tests));
+        model.addAttribute("searchQuery", initialQuery);
+        model.addAttribute("reactPageData", ReactPageData.of(
+                "home", "tests", tests, "initialQuery", initialQuery));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/"));
         model.addAttribute("projectUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
         return "home";

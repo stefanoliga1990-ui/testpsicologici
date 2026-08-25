@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/app.css(v='mobile-nav-1')}">
     <link rel="stylesheet" th:href="@{/react/assets/app.css(v='react-5')}">
-    <script defer th:src="@{/js/home.js(v='home-search-1')}"></script>
+    <script defer th:src="@{/js/home.js(v='home-search-2')}"></script>
     <script type="application/ld+json" th:inline="javascript">
     {
       "@context": "https://schema.org",
@@ -89,6 +89,7 @@
                     <path d="m16 16 4 4"></path>
                 </svg>
                 <input id="test-search-input" type="search" placeholder="Scrivi il titolo del test..."
+                       th:value="${searchQuery}"
                        autocomplete="off" spellcheck="false">
             </div>
         </div>
