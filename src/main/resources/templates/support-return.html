@@ -14,7 +14,7 @@
 </head>
 <body class="editorial-body">
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
-<main class="support-return-shell">
+<main class="support-return-shell" data-react-fallback>
     <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
     <section class="support-return-card" th:if="${status == 'success'}">
         <div class="support-return-icon" aria-hidden="true">&#10003;</div>

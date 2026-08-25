@@ -14,7 +14,7 @@
 </head>
 <body class="result-body">
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
-<main class="result-shell">
+<main class="result-shell" data-react-fallback>
     <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
 
     <section class="result-card">

@@ -16,7 +16,7 @@
 </head>
 <body class="editorial-body">
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
-<main class="editorial-shell privacy-shell">
+<main class="editorial-shell privacy-shell" data-react-fallback>
     <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
     <header class="editorial-hero privacy-hero"><p class="eyebrow">Trasparenza</p><h1>Privacy e cookie</h1><p>Spazio Test limita la raccolta ai dati necessari al funzionamento, alle statistiche aggregate e, quando scegli di contribuire, alla gestione del pagamento.</p></header>
     <section class="privacy-content">

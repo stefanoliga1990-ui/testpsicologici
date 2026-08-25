@@ -1,4 +1,4 @@
-import { Component, useEffect } from 'react';
+import { Component, useEffect, useLayoutEffect } from 'react';
 import GuidePage from '../pages/GuidePage';
 import GuidesPage from '../pages/GuidesPage';
 import HomePage from '../pages/HomePage';
@@ -11,6 +11,7 @@ import ResultPage from '../pages/ResultPage';
 import SupportReturnPage from '../pages/SupportReturnPage';
 import MonitoringPage from '../pages/MonitoringPage';
 import { recordDailyVisit } from '../services/visits';
+import { removeServerRenderedFallback } from './removeServerRenderedFallback';
 
 const pages = {
   guide: GuidePage,
@@ -61,6 +62,10 @@ function PageRenderer({ pageData }) {
 }
 
 export default function App({ pageData }) {
+  useLayoutEffect(() => {
+    removeServerRenderedFallback();
+  }, []);
+
   useEffect(() => {
     if (pageData.page !== 'monitoring') {
       recordDailyVisit();

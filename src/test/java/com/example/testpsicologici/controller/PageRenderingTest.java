@@ -46,6 +46,8 @@ class PageRenderingTest {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString(
+                        "<main class=\"shell home-shell\" data-react-fallback")))
+                .andExpect(content().string(containsString(
                         "<title>Test psicologici online informativi | Spazio Test</title>")))
                 .andExpect(content().string(containsString(
                         "<link rel=\"canonical\" href=\"http://localhost\"")))
@@ -107,6 +109,8 @@ class PageRenderingTest {
     void introductionRendersUniqueSeoMetadataEditorialContentAndReferences() throws Exception {
         mockMvc.perform(get("/test/{testId}", "tratti-adhd-adulti"))
                 .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<main class=\"intro-shell\" data-react-fallback")))
                 .andExpect(content().string(containsString(
                         "<title>Test ADHD adulti online: questionario | Spazio Test</title>")))
                 .andExpect(content().string(containsString("name=\"description\"")))

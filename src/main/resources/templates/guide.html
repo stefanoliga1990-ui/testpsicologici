@@ -61,7 +61,7 @@
 </head>
 <body class="guide-body">
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
-<main class="guide-shell">
+<main class="guide-shell" data-react-fallback>
     <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
 
     <nav class="breadcrumbs" aria-label="Percorso di navigazione">

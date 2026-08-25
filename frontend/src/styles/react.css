@@ -11,10 +11,6 @@ body {
   background: rgba(247, 245, 240, .82);
 }
 
-body.react-mounted > main {
-  display: none;
-}
-
 #react-root > :is(.shell, .editorial-shell, .guide-shell, .intro-shell, .result-shell, .support-return-shell, .test-shell) {
   width: min(1120px, calc(100% - 48px));
 }

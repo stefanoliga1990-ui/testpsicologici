@@ -17,5 +17,3 @@ createRoot(rootElement).render(
     <App pageData={pageData} />
   </StrictMode>
 );
-
-document.body.classList.add('react-mounted');

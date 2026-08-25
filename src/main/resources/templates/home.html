@@ -47,7 +47,7 @@
 </head>
 <body>
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
-<main class="shell home-shell">
+<main class="shell home-shell" data-react-fallback>
     <section class="home-panel">
     <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
 

@@ -14,7 +14,7 @@
 </head>
 <body class="monitoring-body">
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
-<main class="monitoring-shell">
+<main class="monitoring-shell" data-react-fallback>
     <header class="monitoring-nav">
         <a class="brand" th:href="@{/}"><img class="brand-mark" th:src="@{/images/brand/logo-mark.svg}" alt="" width="27" height="27"> Spazio Test</a>
         <div class="monitoring-actions"><th:block th:replace="~{fragments/social-link :: instagramLink}"></th:block><form th:action="@{/monitoring/logout}" method="post"><button type="submit">Esci</button></form></div>

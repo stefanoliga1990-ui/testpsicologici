@@ -44,7 +44,7 @@
 </head>
 <body class="intro-body">
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
-<main class="intro-shell">
+<main class="intro-shell" data-react-fallback>
     <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
     <article class="intro-card">
         <p class="eyebrow" th:text="${test.eyebrow}">Autovalutazione informativa</p>

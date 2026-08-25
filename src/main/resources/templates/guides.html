@@ -40,7 +40,7 @@
 </head>
 <body class="editorial-body">
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
-<main class="editorial-shell guides-shell">
+<main class="editorial-shell guides-shell" data-react-fallback>
     <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
 
     <header class="editorial-hero guides-hero">
