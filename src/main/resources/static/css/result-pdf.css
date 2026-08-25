@@ -41,6 +41,11 @@ h1 { margin: 0 0 11pt; color: #263330; font-family: Georgia, "Times New Roman", 
 .area-card { margin: 0 0 10pt; padding: 14pt 16pt; border: 1px solid #d5e0d8; border-radius: 9pt; background: #fbfcfa; page-break-inside: avoid; }
 .area-card h3 { margin: 0 0 10pt; font-family: Georgia, "Times New Roman", serif; font-size: 13pt; line-height: 1.25; }
 .area-description { margin: 10pt 0 0; color: #53615b; }
+.style-heading { margin-top: 20pt; }
+.style-card { margin: 0 0 8pt; padding: 12pt 15pt; border: 1px solid #d5e0d8; border-radius: 9pt; background: #fbfcfa; page-break-inside: avoid; }
+.style-card-primary { border-color: #a9c5b5; background: #edf5f0; }
+.style-rank { margin: 0 0 5pt; color: #245c4c; font-size: 7.5pt; font-weight: bold; letter-spacing: .7pt; text-transform: uppercase; }
+.style-card h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 13pt; line-height: 1.25; }
 .notice { margin-top: 17pt; padding: 12pt 14pt; border: 1px solid #ead7ca; border-radius: 8pt; color: #654f42; background: #f8eee8; page-break-inside: avoid; }
 .notice strong { font-size: 9pt; }
 .notice p { margin: 4pt 0 0; font-size: 8.5pt; line-height: 1.45; }

@@ -1,0 +1,132 @@
+{
+  "test": {
+    "id": "stili-attaccamento",
+    "titolo": "Qual è il mio stile di attaccamento nelle relazioni?",
+    "versione": "1.0",
+    "popolazione": "Adulti che scelgono una relazione sentimentale attuale oppure la relazione significativa più recente",
+    "finalita": "Auto-osservazione informativa di ansia ed evitamento nella relazione e vicinanza descrittiva a quattro prototipi adulto-romantici",
+    "direzione_punteggio": "Valori maggiori descrivono maggiore rappresentatività di ansia o evitamento; non esiste un punteggio complessivo",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non assegna uno stile vero o permanente, non valuta il partner, la qualità della relazione o la sicurezza."
+  },
+  "istruzione_risposta": "Pensando alla relazione che hai scelto come riferimento, quanto questa affermazione descrive il tuo modo abituale di viverla?",
+  "calcolo": {
+    "risposte": {
+      "Per nulla vero per me": 1,
+      "Poco vero per me": 2,
+      "In parte vero per me": 3,
+      "Molto vero per me": 4,
+      "Del tutto vero per me": 5
+    },
+    "domande": 24,
+    "dimensioni": [
+      {"codice": "ansia", "item": 12, "significato": "preoccupazione per disponibilità, rifiuto o perdita e ricerca di vicinanza/rassicurazione"},
+      {"codice": "evitamento", "item": 12, "significato": "disagio con intimità, vulnerabilità e dipendenza reciproca e tendenza alla distanza"}
+    ],
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "barre": "(media_dimensione - 1) / 4 * 100; non sono percentuali di ansia, evitamento o stile",
+    "prototipi": [
+      {"codice": "SECURE", "ansia": 0, "evitamento": 0},
+      {"codice": "ANXIOUS_PREOCCUPIED", "ansia": 1, "evitamento": 0},
+      {"codice": "DISMISSING_AVOIDANT", "ansia": 0, "evitamento": 1},
+      {"codice": "FEARFUL_AVOIDANT", "ansia": 1, "evitamento": 1}
+    ],
+    "vicinanza": "1 - distanza_euclidea((ansia_normalizzata, evitamento_normalizzato), prototipo) / sqrt(2)",
+    "ordinamento": "Vicinanza decrescente, senza mostrare valori numerici",
+    "prevalenza": "Profilo netto se la differenza tra primo e secondo è almeno 0.08; altrimenti caratteristiche intermedie tra i due profili adiacenti",
+    "centro": "Caratteristiche intermedie tra più orientamenti se la differenza tra vicinanza massima e minima non supera 0.05",
+    "limite": "Distanza, margini e profili sono scelte editoriali originali, non regole ECR validate"
+  },
+  "analisi_generali": [
+    {
+      "codice": "SECURE",
+      "titolo": "Le risposte sono più compatibili con un orientamento sicuro nelle relazioni",
+      "sottotitolo": "Rispetto alla relazione scelta, ansia ed evitamento risultano più vicini al vertice basso-basso del modello editoriale.",
+      "descrizione": "Questo può corrispondere a minore preoccupazione persistente per il legame e minore bisogno di proteggersi dalla vicinanza. Non certifica fiducia, abilità relazionali, qualità o sicurezza della relazione e non esclude difficoltà circoscritte."
+    },
+    {
+      "codice": "ANXIOUS_PREOCCUPIED",
+      "titolo": "Le risposte sono più compatibili con un orientamento ansioso-preoccupato nelle relazioni",
+      "sottotitolo": "Ansia di attaccamento più espressa ed evitamento più contenuto avvicinano le risposte al prototipo ansioso-preoccupato.",
+      "descrizione": "Può emergere maggiore attenzione a disponibilità, continuità e segnali di distanza insieme al desiderio di vicinanza. Non stabilisce che il timore sia infondato né attribuisce cause alla persona o al partner."
+    },
+    {
+      "codice": "DISMISSING_AVOIDANT",
+      "titolo": "Le risposte sono più compatibili con un orientamento evitante-distanziante nelle relazioni",
+      "sottotitolo": "Evitamento più espresso e ansia più contenuta avvicinano le risposte al prototipo evitante-distanziante.",
+      "descrizione": "Può emergere maggiore protezione dell'autonomia attraverso distanza, minore condivisione o riluttanza ad affidarsi. Non significa assenza di emozioni, incapacità di amare o scelta sbagliata e può dipendere dal contesto della relazione."
+    },
+    {
+      "codice": "FEARFUL_AVOIDANT",
+      "titolo": "Le risposte sono più compatibili con un orientamento timoroso-evitante nelle relazioni",
+      "sottotitolo": "Ansia ed evitamento più espressi avvicinano le risposte al prototipo timoroso-evitante.",
+      "descrizione": "Possono coesistere desiderio di vicinanza, preoccupazione per il legame e protezione attraverso la distanza. Questo non equivale ad attaccamento disorganizzato, trauma, diagnosi o impossibilità di costruire relazioni soddisfacenti."
+    },
+    {
+      "codice": "INTERMEDIATE_SECURE_ANXIOUS",
+      "titolo": "Le risposte mostrano caratteristiche intermedie tra orientamento sicuro e ansioso-preoccupato",
+      "sottotitolo": "I due prototipi risultano troppo vicini per indicarne uno come nettamente prevalente; l'evitamento appare relativamente contenuto.",
+      "descrizione": "Il bisogno di vicinanza può accompagnarsi a una sicurezza variabile rispetto a disponibilità e continuità del legame. Situazioni specifiche e comportamento dell'altra persona possono spostare temporaneamente le risposte."
+    },
+    {
+      "codice": "INTERMEDIATE_SECURE_DISMISSING",
+      "titolo": "Le risposte mostrano caratteristiche intermedie tra orientamento sicuro ed evitante-distanziante",
+      "sottotitolo": "I due prototipi risultano troppo vicini per indicarne uno come nettamente prevalente; l'ansia appare relativamente contenuta.",
+      "descrizione": "La vicinanza può risultare accessibile in alcuni momenti e accompagnarsi in altri a una maggiore protezione dell'autonomia. Contesto, fiducia e storia della relazione sono necessari per comprendere questa variabilità."
+    },
+    {
+      "codice": "INTERMEDIATE_ANXIOUS_FEARFUL",
+      "titolo": "Le risposte mostrano caratteristiche intermedie tra orientamento ansioso-preoccupato e timoroso-evitante",
+      "sottotitolo": "I due prototipi risultano troppo vicini per indicarne uno come nettamente prevalente; l'ansia appare più espressa.",
+      "descrizione": "La ricerca di vicinanza può alternarsi a una maggiore distanza quando aumenta vulnerabilità o incertezza. Il test non determina se questa risposta dipenda dalla persona, dall'altra parte o dalla situazione reale."
+    },
+    {
+      "codice": "INTERMEDIATE_DISMISSING_FEARFUL",
+      "titolo": "Le risposte mostrano caratteristiche intermedie tra orientamento evitante-distanziante e timoroso-evitante",
+      "sottotitolo": "I due prototipi risultano troppo vicini per indicarne uno come nettamente prevalente; l'evitamento appare più espresso.",
+      "descrizione": "La distanza può accompagnarsi a livelli variabili di preoccupazione per perdita o rifiuto. Non stabilisce disinteresse, intenzioni o qualità della relazione e non va usato per assegnare un'identità stabile."
+    },
+    {
+      "codice": "INTERMEDIATE_MULTIPLE",
+      "titolo": "Le risposte mostrano caratteristiche intermedie tra più orientamenti di attaccamento",
+      "sottotitolo": "La posizione è vicina al centro del modello e le distanze tra i quattro prototipi sono troppo simili per una prevalenza leggibile.",
+      "descrizione": "Può riflettere risposte dipendenti dalle situazioni, una combinazione non ben rappresentata dai prototipi o i limiti degli item. Non è un risultato incoerente e non deve essere forzato in una categoria."
+    }
+  ],
+  "analisi_dimensioni": [
+    {
+      "codice": "ansia",
+      "nome": "Ansia di attaccamento nella relazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Preoccupazione per disponibilità, rifiuto o perdita e ricerca urgente di rassicurazione risultano poco rappresentative; questo non certifica sicurezza né esclude timori circoscritti."},
+        {"livello": "MEDIUM", "descrizione": "Preoccupazione e ricerca di rassicurazione descrivono in parte il modo di vivere la relazione e possono variare secondo situazioni e segnali ricevuti."},
+        {"livello": "HIGH", "descrizione": "Preoccupazione per il legame, vigilanza ai segnali e bisogno di rassicurazione risultano molto rappresentativi; il dato non stabilisce se i timori siano fondati."}
+      ]
+    },
+    {
+      "codice": "evitamento",
+      "nome": "Evitamento della vicinanza nella relazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Distanza, disagio con intimità e difficoltà ad affidarsi risultano poco rappresentativi; questo non certifica apertura, reciprocità o qualità della relazione."},
+        {"livello": "MEDIUM", "descrizione": "Protezione dell'autonomia e disponibilità alla vicinanza variano tra situazioni; fiducia, conflitto e sicurezza reale possono incidere."},
+        {"livello": "HIGH", "descrizione": "Distanza, limitazione della vulnerabilità e riluttanza ad affidarsi risultano molto rappresentative; il dato non implica assenza di affetto o incapacità relazionale."}
+      ]
+    }
+  ],
+  "descrizioni_stili": [
+    {"codice": "SECURE", "titolo": "Orientamento sicuro", "descrizione": "Prototipo caratterizzato da ansia ed evitamento contenuti; descrive maggiore agio con vicinanza e affidamento senza certificare qualità o sicurezza del legame."},
+    {"codice": "ANXIOUS_PREOCCUPIED", "titolo": "Orientamento ansioso-preoccupato", "descrizione": "Prototipo con ansia più espressa ed evitamento contenuto; descrive attenzione alla disponibilità e ricerca di vicinanza senza stabilire cause o fondatezza dei timori."},
+    {"codice": "DISMISSING_AVOIDANT", "titolo": "Orientamento evitante-distanziante", "descrizione": "Prototipo con ansia contenuta ed evitamento più espresso; descrive protezione attraverso autonomia e distanza senza implicare disinteresse o assenza di emozioni."},
+    {"codice": "FEARFUL_AVOIDANT", "titolo": "Orientamento timoroso-evitante", "descrizione": "Prototipo con ansia ed evitamento più espressi; descrive possibile coesistenza di bisogno di vicinanza e protezione attraverso distanza, senza equivalere a disorganizzazione o diagnosi."}
+  ],
+  "limiti_comuni": "Il risultato riguarda la relazione scelta, non assegna uno stile vero o permanente, non valuta l'altra persona, non spiega cause e non misura qualità, compatibilità, violenza o sicurezza. Nessun profilo giustifica controllo, pressioni o violazioni del consenso. In pericolo immediato contatta il 112; per aiuto o consiglio su violenza e stalking è disponibile il 1522.",
+  "fonti_questionario": [
+    {"titolo": "Attachment styles among young adults — Bartholomew e Horowitz", "url": "https://pubmed.ncbi.nlm.nih.gov/1920064/", "apporto": "Modello fondativo dei quattro prototipi; campioni e classificazioni non validano l'algoritmo dell'app."},
+    {"titolo": "Italian ECR-R validation — Busonera e colleghi", "url": "https://pubmed.ncbi.nlm.nih.gov/25074302/", "apporto": "Struttura italiana ansia/evitamento in 1.363 adulti; item, scala e punteggi non vengono trasferiti."},
+    {"titolo": "Italian ECR-12 validation — Brugnera e colleghi", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/", "apporto": "Due dimensioni in 1.197 adulti italiani; campione giovane e strumento differente."},
+    {"titolo": "Are adult attachment styles categorical or dimensional? — Fraley e colleghi", "url": "https://pubmed.ncbi.nlm.nih.gov/25559192/", "apporto": "Evidenza taxometrica favorevole alle dimensioni continue; non definisce soglie editoriali."},
+    {"titolo": "Adult Attachment, Stress, and Romantic Relationships — Simpson e Rholes", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4845754/", "apporto": "Sintesi di ansia, evitamento e strategie sotto stress; associazioni non spiegano il singolo caso."},
+    {"titolo": "Within-person variation in attachment — Girme e colleghi", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5820166/", "apporto": "Variazioni nel tempo e nella relazione specifica; campioni internazionali non sono norme italiane."}
+  ],
+  "bibliografia_scheda": "La scheda mantiene una bibliografia separata e più ampia, documentata nella specifica psicometrica e nel GuideCatalogue."
+}

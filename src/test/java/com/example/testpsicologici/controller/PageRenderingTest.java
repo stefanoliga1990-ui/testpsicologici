@@ -183,7 +183,7 @@ class PageRenderingTest {
                         "<title>Approfondimenti su psicologia e benessere | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Un argomento alla volta")))
                 .andExpect(content().string(containsString("/js/guides.js")))
-                .andExpect(content().string(containsString("/react/assets/app.js?v=react-9")))
+                .andExpect(content().string(containsString("/react/assets/app.js?v=react-10")))
                 .andExpect(content().string(containsString("id=\"guide-search-input\"")))
                 .andExpect(content().string(containsString("data-guide-card")))
                 .andExpect(content().string(containsString("data-guide-empty")))
@@ -266,7 +266,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/ptsd-adulti\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Disturbo post-traumatico da stress</h3>")));
+                        "<h3>Disturbo post-traumatico da stress</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/stili-attaccamento\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Stili di attaccamento nelle relazioni</h3>")));
     }
 
     @Test
@@ -829,6 +833,83 @@ class PageRenderingTest {
     }
 
     @Test
+    void attachmentStylesGuideRendersDimensionsPrototypesContextAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/stili-attaccamento"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>Stili di attaccamento nelle relazioni | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/stili-attaccamento\"")))
+                .andExpect(content().string(containsString("Ansia ed evitamento sono continui, non interruttori")))
+                .andExpect(content().string(containsString("Quattro prototipi derivati dalle combinazioni")))
+                .andExpect(content().string(containsString("Timoroso-evitante non significa automaticamente disorganizzato")))
+                .andExpect(content().string(containsString("Due barre e quattro vicinanze, senza un punteggio generale")))
+                .andExpect(content().string(containsString("1.363 adulti italiani")))
+                .andExpect(content().string(containsString("1522")))
+                .andExpect(content().string(containsString("href=\"/test/stili-attaccamento\"")));
+    }
+
+    @Test
+    void attachmentStylesIntroductionAndQuestionExposeTheDedicatedReferenceAndAnswerScale() throws Exception {
+        mockMvc.perform(get("/test/stili-attaccamento"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("relazione sentimentale attuale")))
+                .andExpect(content().string(containsString("Orientamento sicuro")))
+                .andExpect(content().string(containsString("Orientamento timoroso-evitante")))
+                .andExpect(content().string(containsString("Per nulla vero per me")))
+                .andExpect(content().string(containsString("caratteristiche intermedie")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/stili-attaccamento\"")));
+
+        MockHttpSession inProgress = new MockHttpSession();
+        inProgress.setAttribute("test-attempt-stili-attaccamento",
+                new TestAttempt(catalogue.findById("stili-attaccamento").questions().size()));
+        mockMvc.perform(get("/test/stili-attaccamento/domanda/1").session(inProgress))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("relazione che hai scelto")))
+                .andExpect(content().string(containsString("Per nulla vero per me")))
+                .andExpect(content().string(containsString("Del tutto vero per me")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString(">Quasi sempre<"))));
+    }
+
+    @Test
+    void attachmentStylesResultShowsTwoDimensionsAndFourOrderedOrientationsWithoutOverallBar() throws Exception {
+        MockHttpSession session = completedAttempt("stili-attaccamento", 3);
+
+        mockMvc.perform(get("/test/stili-attaccamento/risultato").session(session))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("caratteristiche intermedie tra più orientamenti")))
+                .andExpect(content().string(containsString("Le due dimensioni")))
+                .andExpect(content().string(containsString("Dal più vicino al meno vicino")))
+                .andExpect(content().string(containsString("Orientamento sicuro")))
+                .andExpect(content().string(containsString("Orientamento ansioso-preoccupato")))
+                .andExpect(content().string(containsString("Orientamento evitante-distanziante")))
+                .andExpect(content().string(containsString("Orientamento timoroso-evitante")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("class=\"overall-presence\""))))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString(">Le quattro aree<"))));
+    }
+
+    @Test
+    void attachmentStylesResultPdfUsesTheDedicatedLayout() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/test/stili-attaccamento/risultato/pdf")
+                        .session(completedAttempt("stili-attaccamento", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-stili-attaccamento.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Come si distribuiscono le risposte")
+                    .contains("Dal più vicino al meno vicino")
+                    .contains("Orientamento sicuro")
+                    .contains("Orientamento timoroso-evitante")
+                    .doesNotContain("LE QUATTRO AREE")
+                    .doesNotContain("La barra sintetizza la media");
+        }
+    }
+
+    @Test
     void testLinksToItsPublishedGuide() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -1020,7 +1101,7 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(header().string("X-Robots-Tag", "noindex, follow, noarchive"))
                 .andExpect(content().string(containsString(
-                        "/react/assets/app.css?v=react-4")));
+                        "/react/assets/app.css?v=react-5")));
     }
 
     @Test
@@ -1029,7 +1110,7 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(header().string("X-Robots-Tag", "noindex, nofollow, noarchive"))
                 .andExpect(content().string(containsString(
-                        "/react/assets/app.css?v=react-4")))
+                        "/react/assets/app.css?v=react-5")))
                 .andExpect(content().string(containsString("Grazie per il tuo sostegno")))
                 .andExpect(content().string(containsString("\"status\":\"success\"")));
 
@@ -1132,6 +1213,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/soddisfazione-vita")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/ptsd-adulti")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/stili-attaccamento")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1143,6 +1226,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/gelosia-partner")))
                 .andExpect(content().string(containsString("http://localhost/test/soddisfazione-vita")))
                 .andExpect(content().string(containsString("http://localhost/test/ptsd-adulti")))
+                .andExpect(content().string(containsString("http://localhost/test/stili-attaccamento")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

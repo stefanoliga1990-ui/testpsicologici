@@ -186,7 +186,17 @@ public class ReferenceContributionCatalogue {
             entry("https://www.nice.org.uk/guidance/ng116/chapter/Recommendations",
                     "Linea guida consultata per riconoscimento, valutazione, dissociazione, condizioni complesse, sicurezza e trattamento; il contesto britannico e le raccomandazioni cliniche non validano l'autovalutazione originale."),
             entry("https://www.who.int/publications-detail-redirect/9789241505406",
-                    "Linea guida WHO consultata per distinguere stress acuto, PTSD e lutto e delimitare la gestione clinica; non fornisce soglie, pesi o interpretazioni per l'app."));
+                    "Linea guida WHO consultata per distinguere stress acuto, PTSD e lutto e delimitare la gestione clinica; non fornisce soglie, pesi o interpretazioni per l'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/1920064/",
+                    "Studio fondativo consultato per i quattro prototipi adulto-romantici e la combinazione dei modelli di sé e degli altri; campioni storici e metodo diverso non validano item o algoritmo dell'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/25074302/",
+                    "Validazione ECR-R su 1.363 adulti italiani consultata per la struttura bifattoriale ansia/evitamento; i 36 item, la scala a sette categorie e i punteggi non vengono trasferiti."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/25559192/",
+                    "Analisi taxometrica consultata perché favorisce una rappresentazione dimensionale rispetto a categorie naturali degli orientamenti generali e specifici; non definisce soglie o distanze per l'app."),
+            entry("https://pmc.ncbi.nlm.nih.gov/articles/PMC4845754/",
+                    "Revisione consultata per ansia, evitamento e strategie di iperattivazione o disattivazione sotto stress relazionale; associazioni di gruppo non spiegano il singolo caso."),
+            entry("https://pmc.ncbi.nlm.nih.gov/articles/PMC5820166/",
+                    "Studi longitudinali consultati per variazioni entro la persona e rispetto a una relazione specifica; non producono previsioni o classificazioni per l'utente italiano."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

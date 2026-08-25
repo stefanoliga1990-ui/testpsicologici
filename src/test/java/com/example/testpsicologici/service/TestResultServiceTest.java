@@ -1213,10 +1213,72 @@ class TestResultServiceTest {
     }
 
     @Test
+    void attachmentStylesTestUsesTwoBalancedDimensionsAndDedicatedMetadata() {
+        PsychologicalTest test = catalogue.findById("stili-attaccamento");
+
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly("ansia", "evitamento");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(12));
+        assertThat(test.scoringModel()).isEqualTo("ATTACHMENT_DIMENSIONAL");
+        assertThat(test.answerScale()).isEqualTo("AGREEMENT");
+        assertThat(test.responseInstruction()).contains("relazione che hai scelto", "descrive");
+        assertThat(test.references()).hasSize(6).extracting(reference -> reference.url())
+                .contains("https://pubmed.ncbi.nlm.nih.gov/25074302/",
+                        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/");
+    }
+
+    @Test
+    void attachmentCornersSelectEachPrototypeAndOrderAllFourStyles() {
+        TestResult secure = analyzeWithAnswersForTest("stili-attaccamento", 1, 1, 1, 1);
+        TestResult anxious = analyzeWithAnswersForTest("stili-attaccamento", 5, 1, 1, 1);
+        TestResult dismissing = analyzeWithAnswersForTest("stili-attaccamento", 1, 5, 1, 1);
+        TestResult fearful = analyzeWithAnswersForTest("stili-attaccamento", 5, 5, 1, 1);
+
+        assertThat(secure.general().title()).contains("orientamento sicuro");
+        assertThat(anxious.general().title()).contains("orientamento ansioso-preoccupato");
+        assertThat(dismissing.general().title()).contains("orientamento evitante-distanziante");
+        assertThat(fearful.general().title()).contains("orientamento timoroso-evitante");
+        assertThat(List.of(secure, anxious, dismissing, fearful)).allSatisfy(result -> {
+            assertThat(result.percentage()).isZero();
+            assertThat(result.areaResults()).hasSize(2);
+            assertThat(result.styleResults()).hasSize(4)
+                    .extracting(style -> style.rank()).containsExactly(1, 2, 3, 4);
+            assertThat(result.styleResults()).extracting(style -> style.code()).doesNotHaveDuplicates();
+            assertThat(result.general().detail()).contains(
+                    "relazione scelta", "scelte editoriali", "non producono probabilità", "112", "1522");
+        });
+        assertThat(secure.styleResults().get(0).code()).isEqualTo("SECURE");
+        assertThat(anxious.styleResults().get(0).code()).isEqualTo("ANXIOUS_PREOCCUPIED");
+        assertThat(dismissing.styleResults().get(0).code()).isEqualTo("DISMISSING_AVOIDANT");
+        assertThat(fearful.styleResults().get(0).code()).isEqualTo("FEARFUL_AVOIDANT");
+        assertThat(secure.areaResults()).allSatisfy(area -> assertThat(area.percentage()).isZero());
+        assertThat(fearful.areaResults()).allSatisfy(area -> assertThat(area.percentage()).isEqualTo(100));
+    }
+
+    @Test
+    void attachmentNearProfilesUseIntermediateWordingInsteadOfForcedPrevalence() {
+        TestResult secureAnxious = analyzeWithAnswersForTest("stili-attaccamento", 3, 1, 1, 1);
+        TestResult secureDismissing = analyzeWithAnswersForTest("stili-attaccamento", 1, 3, 1, 1);
+        TestResult anxiousFearful = analyzeWithAnswersForTest("stili-attaccamento", 5, 3, 1, 1);
+        TestResult dismissingFearful = analyzeWithAnswersForTest("stili-attaccamento", 3, 5, 1, 1);
+        TestResult multiple = analyzeWithAnswersForTest("stili-attaccamento", 3, 3, 1, 1);
+
+        assertThat(secureAnxious.general().title()).contains("caratteristiche intermedie", "sicuro", "ansioso-preoccupato");
+        assertThat(secureDismissing.general().title()).contains("caratteristiche intermedie", "sicuro", "evitante-distanziante");
+        assertThat(anxiousFearful.general().title()).contains("caratteristiche intermedie", "ansioso-preoccupato", "timoroso-evitante");
+        assertThat(dismissingFearful.general().title()).contains("caratteristiche intermedie", "evitante-distanziante", "timoroso-evitante");
+        assertThat(multiple.general().title()).contains("caratteristiche intermedie tra più orientamenti");
+        assertThat(multiple.areaResults()).allSatisfy(area -> assertThat(area.percentage()).isEqualTo(50));
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

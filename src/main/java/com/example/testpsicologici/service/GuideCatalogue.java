@@ -2478,6 +2478,136 @@ public class GuideCatalogue {
                                     "Pagina ufficiale italiana consultata per destinazione, gratuità e disponibilità continuativa del servizio; il 1522 non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "stili-attaccamento",
+                    "stili-attaccamento",
+                    "Stili di attaccamento nelle relazioni",
+                    "Stili di attaccamento nelle relazioni: due dimensioni, quattro orientamenti",
+                    "Stili di attaccamento nelle relazioni | Spazio Test",
+                    "Una guida ad ansia, evitamento e quattro prototipi dell'attaccamento romantico adulto, con limiti dei test online e attenzione al contesto.",
+                    "Nell'adulto l'attaccamento romantico viene spesso descritto attraverso ansia ed evitamento. I noti stili sicuro, ansioso-preoccupato, evitante-distanziante e timoroso-evitante sono prototipi utili per leggere combinazioni delle due dimensioni, non identità rigide o diagnosi.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Che cosa descrive l'attaccamento romantico adulto",
+                                    List.of(
+                                            "La teoria dell'attaccamento studia come le persone cercano vicinanza, sostegno e sicurezza nelle relazioni significative, soprattutto quando avvertono minaccia, separazione o incertezza. Nell'età adulta queste aspettative possono riguardare partner romantici, ma non coincidono automaticamente con le classificazioni dell'attaccamento infantile.",
+                                            "Un orientamento descrive tendenze in pensieri, emozioni e strategie relazionali. Non stabilisce quanto una persona sappia amare, se una coppia sia compatibile o quale partner abbia ragione in un conflitto."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le due dimensioni",
+                                    "Ansia ed evitamento sono continui, non interruttori",
+                                    List.of(
+                                            "L'ansia di attaccamento riguarda preoccupazione per disponibilità, rifiuto o perdita e tendenza ad aumentare vigilanza, contatto o rassicurazione quando il legame sembra minacciato. L'evitamento riguarda disagio con intimità, vulnerabilità e dipendenza reciproca e tendenza a proteggersi attraverso distanza o minore condivisione.",
+                                            "Entrambe variano lungo un continuum. Le validazioni italiane ECR-R ed ECR-12 hanno sostenuto questa organizzazione bifattoriale, ma riguardano strumenti diversi: non validano le 24 domande, la scala a cinque categorie o lo scoring di Spazio Test."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "I quattro orientamenti",
+                                    "Quattro prototipi derivati dalle combinazioni",
+                                    List.of(
+                                            "Il modello a quattro prototipi combina livelli relativamente bassi o alti delle due dimensioni. La ricerca taxometrica favorisce però una lettura dimensionale: due persone collocate nello stesso quadrante possono avere valori e vissuti molto diversi, mentre una persona può trovarsi tra due prototipi."
+                                    ),
+                                    List.of(
+                                            "Sicuro: ansia ed evitamento relativamente contenuti; maggiore agio con vicinanza e affidamento nel modello prototipico.",
+                                            "Ansioso-preoccupato: ansia più espressa ed evitamento contenuto; maggiore attenzione a disponibilità, continuità e rassicurazione.",
+                                            "Evitante-distanziante: ansia contenuta ed evitamento più espresso; maggiore protezione attraverso autonomia, riservatezza o distanza.",
+                                            "Timoroso-evitante: ansia ed evitamento più espressi; possibile coesistenza di desiderio di vicinanza e protezione attraverso distanza."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Una distinzione importante",
+                                    "Timoroso-evitante non significa automaticamente disorganizzato",
+                                    List.of(
+                                            "Nella divulgazione il profilo timoroso-evitante viene talvolta chiamato disorganizzato. È una semplificazione problematica: la disorganizzazione è studiata anche con procedure osservative o interviste e non può essere accertata dalla posizione alta-alta di un self-report originale.",
+                                            "Spazio Test usa quindi il nome timoroso-evitante e lo presenta soltanto come prototipo adulto-romantico. Il risultato non permette di dedurre trauma, dissociazione, diagnosi o storia infantile."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Relazione e contesto",
+                                    "Lo stesso modo di stare in relazione non emerge sempre allo stesso modo",
+                                    List.of(
+                                            "Rappresentazioni generali, orientamenti nel dominio romantico e risposte verso una persona specifica non sono identici. Studi longitudinali mostrano relativa stabilità ma anche fluttuazioni con partner, eventi, durata del legame, transizioni e momenti di stress.",
+                                            "Per questo il questionario chiede di scegliere una sola relazione attuale o recente. Il risultato non deve essere esteso automaticamente ad altre relazioni e non descrive un'identità permanente."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Alternative e confini",
+                                    "Il contesto reale può cambiare il significato delle risposte",
+                                    List.of(
+                                            "Richiedere rassicurazione può rispondere a comunicazione ambigua, separazione o indisponibilità reale. Creare distanza può essere una scelta di autonomia, una reazione a richieste eccessive oppure una protezione necessaria in un contesto non sicuro.",
+                                            "Il test non misura comportamento o intenzioni del partner, qualità della relazione, tradimento, gelosia, dipendenza affettiva, disturbi di personalità o compatibilità. Nessun profilo spiega da solo un comportamento concreto."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Come leggere il risultato",
+                                    "Due barre e quattro vicinanze, senza un punteggio generale",
+                                    List.of(
+                                            "Spazio Test calcola separatamente la media dei dodici item di ansia e dei dodici item di evitamento. La posizione viene confrontata con i quattro vertici del modello e gli orientamenti vengono ordinati per vicinanza; se i primi sono troppo simili, il titolo parla di caratteristiche intermedie invece di forzare una prevalenza.",
+                                            "Le barre e l'ordine sono trasformazioni editoriali, non percentuali della persona, probabilità, percentili o cut-off ECR. Un profilo vicino al vertice sicuro deriva da ansia ed evitamento contenuti negli item e non certifica tutte le risorse, la reciprocità o la sicurezza di una relazione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Un orientamento non giustifica controllo o violenza",
+                                    List.of(
+                                            "Nessuno stile giustifica sorveglianza, isolamento, pressioni, minacce, aggressioni o violazioni del consenso. Se esiste un pericolo immediato per te o altre persone, contatta il 112; per aiuto o consiglio su violenza e stalking è disponibile il servizio pubblico gratuito 1522, che non sostituisce il 112 nelle emergenze.",
+                                            "Se preoccupazione, distanza o conflitti persistono e interferiscono con la vita, puoi parlarne con uno psicologo, psicoterapeuta, medico o altro professionista qualificato. Il livello del questionario non decide da solo se chiedere supporto."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 24 item originali, una scala di rappresentatività e uno scoring dimensionale editoriale. Non è l'ECR-R o l'ECR-12, non assegna uno stile permanente e non valuta partner, qualità o sicurezza della relazione.",
+                    List.of(
+                            new GuideReference(
+                                    "Attachment styles among young adults — Bartholomew e Horowitz",
+                                    "https://pubmed.ncbi.nlm.nih.gov/1920064/",
+                                    "Studio fondativo consultato per quattro prototipi derivati dai modelli di sé e degli altri; campioni storici e metodo diverso non validano l'algoritmo dell'app."
+                            ),
+                            new GuideReference(
+                                    "Psychometric properties of an Italian ECR-R — Busonera e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/25074302/",
+                                    "Validazione su 1.363 adulti italiani consultata per la struttura ansia/evitamento; i 36 item, la scala a sette categorie e i punteggi non vengono trasferiti."
+                            ),
+                            new GuideReference(
+                                    "Italian version of the ECR-12 — Brugnera e colleghi",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/",
+                                    "Validazione su 1.197 adulti italiani consultata per la forma breve bifattoriale e l'invarianza di genere; campione giovane e strumento diverso limitano il trasferimento."
+                            ),
+                            new GuideReference(
+                                    "Are adult attachment styles categorical or dimensional? — Fraley e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/25559192/",
+                                    "Analisi taxometrica in due campioni consultata per preferire dimensioni continue a tipi naturali; non definisce vertici, margini o classificazioni per l'app."
+                            ),
+                            new GuideReference(
+                                    "Adult Attachment, Stress, and Romantic Relationships — Simpson e Rholes",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4845754/",
+                                    "Revisione consultata per strategie associate ad ansia ed evitamento sotto stress; associazioni di gruppo non spiegano il comportamento individuale."
+                            ),
+                            new GuideReference(
+                                    "The Ebbs and Flows of Attachment — Girme e colleghi",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5820166/",
+                                    "Studi longitudinali consultati per variazioni entro la persona e verso partner specifici; risultati internazionali non sono norme per gli utenti italiani."
+                            ),
+                            new GuideReference(
+                                    "Testing within-subject variation in attachment security — Dugan e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/38059981/",
+                                    "Studio longitudinale su 1.741 adulti consultato per relazione tra durata del legame e fluttuazioni specifiche; non produce previsioni individuali."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero antiviolenza e antistalking",
+                                    "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/",
+                                    "Pagina ufficiale consultata per destinazione, gratuità e disponibilità continuativa del servizio; il 1522 non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

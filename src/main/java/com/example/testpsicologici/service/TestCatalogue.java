@@ -57,6 +57,13 @@ public class TestCatalogue {
                 .orElseThrow(() -> new IllegalStateException("Analisi generale non configurata: " + profileCode));
     }
 
+    public String findStyleInterpretation(String testId, String styleCode) {
+        return interpretationRepository.findByTestIdAndScopeAndAreaCodeAndCode(
+                        testId, "STYLE", styleCode, "PROFILE")
+                .map(InterpretationEntity::getDescription)
+                .orElseThrow(() -> new IllegalStateException("Descrizione dello stile non configurata: " + styleCode));
+    }
+
     private PsychologicalTest toModel(TestDefinitionEntity entity) {
         List<TestArea> areas = areaRepository.findByTestIdOrderByDisplayOrderAsc(entity.getId()).stream()
                 .map(area -> new TestArea(
@@ -76,7 +83,8 @@ public class TestCatalogue {
                 entity.getId(), entity.getTitle(), entity.getSeoTitle(), entity.getEyebrow(),
                 entity.getDescription(), entity.getSeoDescription(), entity.getDuration(),
                 entity.getIntroductoryText(), entity.getResponseInstruction(), entity.getVersion(), entity.isScoreVisible(),
-                entity.getOverallMetricLabel(), entity.getAreaMetricLabel(), areas, questions, references);
+                entity.getOverallMetricLabel(), entity.getAreaMetricLabel(), entity.getScoringModel(),
+                entity.getAnswerScale(), areas, questions, references);
     }
 
     private String areaInsight(String testId, String areaCode, String level) {

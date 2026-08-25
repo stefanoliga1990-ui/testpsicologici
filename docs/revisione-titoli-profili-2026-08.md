@@ -52,6 +52,10 @@ Ogni titolo globale deve:
 | Soddisfazione per la propria vita | La soddisfazione percepita per la propria vita sembra poco espressa nelle risposte | La soddisfazione percepita per la propria vita sembra espressa in modo variabile tra le aree | La soddisfazione percepita per la propria vita sembra più espressa in una o due aree | La soddisfazione percepita per la propria vita sembra ampiamente espressa in più aree |
 | Esperienze associate al PTSD | Le esperienze post-traumatiche esplorate sembrano poco presenti nelle risposte | Le esperienze post-traumatiche esplorate sembrano presenti in modo variabile tra le aree | Le esperienze post-traumatiche esplorate sembrano più presenti in una o due aree | Le esperienze post-traumatiche esplorate sembrano frequentemente presenti in più aree |
 
+## Eccezione documentata: stili di attaccamento
+
+Il questionario sugli stili di attaccamento non usa i quattro profili basati sulle aree. I titoli nominano sempre l'orientamento e distinguono quattro vertici (`sicuro`, `ansioso-preoccupato`, `evitante-distanziante`, `timoroso-evitante`), quattro coppie adiacenti con la formula «caratteristiche intermedie tra…» e un centro «tra più orientamenti di attaccamento». La specifica `test-stili-attaccamento-v1.md` definisce algoritmo, margini editoriali e limiti; nessun titolo assegna un'identità o una categoria diagnostica.
+
 ## Versionamento e verifiche
 
 La modifica interessa un elemento visibile dell'interpretazione e richiede un incremento di versione per tutti i questionari, così l'inizializzatore aggiorna anche le installazioni con dati già presenti. I test automatici devono verificare che:

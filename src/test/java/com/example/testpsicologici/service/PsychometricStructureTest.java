@@ -42,7 +42,8 @@ class PsychometricStructureTest {
             Map.entry("resilienza-psicologica", "risorse di resilienza percepite"),
             Map.entry("gelosia-partner", "esperienze di gelosia verso il partner"),
             Map.entry("soddisfazione-vita", "soddisfazione percepita per la propria vita"),
-            Map.entry("ptsd-adulti", "esperienze post-traumatiche esplorate"));
+            Map.entry("ptsd-adulti", "esperienze post-traumatiche esplorate"),
+            Map.entry("stili-attaccamento", "orientament"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -52,15 +53,25 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(24).allSatisfy(test -> {
-            assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
-            assertThat(test.areas()).hasSize(4);
+        assertThat(catalogue.findAll()).hasSize(25).allSatisfy(test -> {
             assertThat(test.questions()).hasSize(24);
             assertThat(new HashSet<>(test.questions())).hasSize(24);
 
-            test.areas().forEach(area -> assertThat(test.questions())
-                    .filteredOn(question -> question.areaCode().equals(area.code()))
-                    .hasSize(6));
+            if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
+                assertThat(test.responseInstruction()).containsIgnoringCase("descrive");
+                assertThat(test.answerScale()).isEqualTo("AGREEMENT");
+                assertThat(test.areas()).hasSize(2);
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code()))
+                        .hasSize(12));
+            } else {
+                assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).hasSize(4);
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code()))
+                        .hasSize(6));
+            }
 
             for (int index = 1; index < test.questions().size(); index++) {
                 assertThat(test.questions().get(index).areaCode())
@@ -151,10 +162,17 @@ class PsychometricStructureTest {
             assertThat(subject).as("Descrittore del titolo di %s", test.id()).isNotBlank();
             assertThat(profiles).allSatisfy(result ->
                     assertThat(result.general().title()).containsIgnoringCase(subject));
-            assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
-            assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
-            assertThat(profiles.get(2).general().title()).containsIgnoringCase("una o due aree");
-            assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
+            if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("sicuro");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("intermedie");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("ansioso-preoccupato");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("timoroso-evitante");
+            } else {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("una o due aree");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
+            }
         });
     }
 

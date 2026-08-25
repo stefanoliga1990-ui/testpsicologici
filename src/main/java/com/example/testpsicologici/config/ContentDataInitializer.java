@@ -69,6 +69,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedPartnerJealousyInformationTest();
         seedLifeSatisfactionInformationTest();
         seedPtsdInformationTest();
+        seedAttachmentStylesInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -2271,6 +2272,116 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Attivazione o reattività risultano frequenti. Questo non misura pericolosità e non distingue PTSD, ansia, insonnia, ADHD, dolore o cause mediche.");
     }
 
+    private void seedAttachmentStylesInformationTest() {
+        String id = "stili-attaccamento";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Qual è il mio stile di attaccamento nelle relazioni?",
+                "Autovalutazione informativa",
+                "Esplora ansia ed evitamento in una relazione e la vicinanza delle risposte a quattro orientamenti di attaccamento adulto.",
+                "7 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Prima di iniziare scegli mentalmente la relazione sentimentale attuale oppure, se non ne hai una, la relazione sentimentale significativa più recente: tutte le risposte devono riferirsi alla stessa relazione. Le domande originali esplorano due dimensioni continue, ansia di attaccamento ed evitamento della vicinanza; da queste viene calcolata la vicinanza descrittiva ai prototipi sicuro, ansioso-preoccupato, evitante-distanziante e timoroso-evitante. I prototipi non sono quattro tipi naturali, diagnosi o identità permanenti e il profilo timoroso-evitante non equivale ad attaccamento disorganizzato. Il risultato riguarda soltanto la relazione scelta e può variare con persona, periodo, fiducia, conflitti e sicurezza. Non valuta l'altra persona, non misura qualità, compatibilità o futuro della relazione e non accerta disponibilità, rifiuto, tradimento, violenza o cause delle risposte. Un bisogno di distanza può proteggere in un contesto pericoloso e una richiesta di rassicurazione può rispondere a indisponibilità reale. Nessun orientamento giustifica sorveglianza, isolamento, pressioni, minacce, violenza o violazioni del consenso. Se una difficoltà persiste o interferisce con la vita, puoi rivolgerti a uno psicologo, psicoterapeuta, medico o altro professionista qualificato. In caso di pericolo immediato contatta il 112; per aiuto o consiglio su violenza e stalking è disponibile il servizio pubblico gratuito 1522, che non sostituisce il 112 nelle emergenze.",
+                version, false,
+                "",
+                "Rappresentatività nella relazione scelta",
+                true, 25).withSeo(
+                "Test stile di attaccamento nelle relazioni | Spazio Test",
+                "Questionario informativo di 24 domande su ansia, evitamento e quattro orientamenti di attaccamento adulto. Non assegna diagnosi o stili permanenti.")
+                .withResponseInstruction("Pensando alla relazione che hai scelto come riferimento, quanto questa affermazione descrive il tuo modo abituale di viverla?")
+                .withScoringModel("ATTACHMENT_DIMENSIONAL")
+                .withAnswerScale("AGREEMENT"));
+
+        saveReference(id, "Attachment styles among young adults — Bartholomew e Horowitz",
+                "https://pubmed.ncbi.nlm.nih.gov/1920064/", 1);
+        saveReference(id, "Italian validation of the ECR-R — Busonera e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/25074302/", 2);
+        saveReference(id, "Italian validation of the ECR-12 — Brugnera e colleghi",
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/", 3);
+        saveReference(id, "Are adult attachment styles categorical or dimensional? — Fraley e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/25559192/", 4);
+        saveReference(id, "Adult Attachment, Stress, and Romantic Relationships — Simpson e Rholes",
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC4845754/", 5);
+        saveReference(id, "Within-person variation in attachment — Girme e colleghi",
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC5820166/", 6);
+
+        saveArea(id, "ansia", "Ansia di attaccamento nella relazione", 1);
+        saveArea(id, "evitamento", "Evitamento della vicinanza nella relazione", 2);
+
+        saveQuestions(id, List.of(
+                q("ansia", "Temo che l'altra persona possa smettere di volere la relazione."),
+                q("ansia", "Un segnale di distanza mi porta a dubitare della stabilità del legame."),
+                q("ansia", "Ho bisogno di conferme che la relazione continuerà."),
+                q("ansia", "Quando non ricevo risposta, penso che l'altra persona si stia allontanando."),
+                q("ansia", "Cerco rassicurazioni sul valore che ho per l'altra persona."),
+                q("ansia", "Durante un conflitto sento urgente ristabilire subito la vicinanza."),
+                q("ansia", "Se percepisco freddezza, aumento i tentativi di contatto."),
+                q("ansia", "Fatico a calmarmi finché non ricevo un segnale di disponibilità."),
+                q("ansia", "Confronto l'affetto che ricevo con quello che vorrei ricevere."),
+                q("ansia", "Interpreto una minore iniziativa come segnale di minore interesse."),
+                q("ansia", "Il mio valore nella relazione dipende molto da come l'altra persona mi considera."),
+                q("ansia", "Rimango attento/a ai possibili segnali di rifiuto."),
+                q("evitamento", "Mi sento a disagio quando la vicinanza emotiva diventa intensa."),
+                q("evitamento", "Tengo per me vissuti personali anche quando vorrei essere compreso/a."),
+                q("evitamento", "Limito ciò che mostro di vulnerabile all'altra persona."),
+                q("evitamento", "Quando l'altra persona cerca maggiore intimità, sento il bisogno di creare distanza."),
+                q("evitamento", "Preferisco affrontare da solo/a una difficoltà anziché affidarmi all'altra persona."),
+                q("evitamento", "Mi è difficile chiedere conforto all'altra persona."),
+                q("evitamento", "Evito di dipendere dall'altra persona anche quando potrebbe aiutarmi."),
+                q("evitamento", "Quando l'altra persona conta su di me emotivamente, mi sento sotto pressione."),
+                q("evitamento", "Durante un conflitto mi chiudo invece di condividere ciò che provo."),
+                q("evitamento", "Ridimensiono l'importanza della relazione quando mi sento molto coinvolto/a."),
+                q("evitamento", "Dopo un momento di forte vicinanza, cerco più distanza."),
+                q("evitamento", "Quando sento di aver bisogno dell'altra persona, cerco di non pensarci.")));
+
+        String commonLimit = "Il risultato riguarda soltanto la relazione scelta e non assegna uno stile vero, esclusivo o permanente. Non valuta l'altra persona, non spiega le cause e non misura qualità, compatibilità, violenza o sicurezza della relazione; distanza e rassicurazione possono avere significati diversi secondo il contesto reale. Le distanze dai prototipi e i margini usati sono scelte editoriali originali, non cut-off delle ECR e non producono probabilità, percentili o diagnosi. Nessun orientamento giustifica controllo, pressioni o violazioni del consenso; per una difficoltà persistente puoi rivolgerti a un professionista qualificato. In caso di pericolo immediato contatta il 112; per aiuto o consiglio su violenza e stalking è disponibile il 1522.";
+
+        saveGlobal(id, "SECURE", "Le risposte sono più compatibili con un orientamento sicuro nelle relazioni",
+                "Rispetto alla relazione scelta, ansia ed evitamento risultano più vicini al vertice basso-basso del modello editoriale. Le affermazioni su preoccupazione persistente e protezione attraverso la distanza descrivono quindi meno il modo abituale riferito di vivere questo legame.",
+                "La vicinanza al prototipo sicuro può corrispondere a minore preoccupazione persistente per la disponibilità e minore bisogno di proteggersi dall'intimità. Non certifica fiducia, reciprocità, abilità relazionali o assenza di difficoltà: il questionario contiene item di insicurezza e un valore contenuto non misura direttamente tutte le risorse di una relazione. " + commonLimit);
+        saveGlobal(id, "ANXIOUS_PREOCCUPIED", "Le risposte sono più compatibili con un orientamento ansioso-preoccupato nelle relazioni",
+                "Ansia di attaccamento più espressa ed evitamento più contenuto avvicinano le risposte al prototipo ansioso-preoccupato. Nella relazione scelta possono risultare più rappresentative attenzione alla disponibilità, timore della distanza e ricerca di vicinanza o rassicurazione.",
+                "Questo andamento può emergere soprattutto quando il legame sembra incerto o la risposta dell'altra persona è difficile da leggere. Non stabilisce che le preoccupazioni siano infondate e non attribuisce automaticamente il loro significato alla storia o alla personalità di chi compila. " + commonLimit);
+        saveGlobal(id, "DISMISSING_AVOIDANT", "Le risposte sono più compatibili con un orientamento evitante-distanziante nelle relazioni",
+                "Evitamento più espresso e ansia più contenuta avvicinano le risposte al prototipo evitante-distanziante. Nella relazione scelta possono risultare più rappresentativi protezione dell'autonomia, minore condivisione della vulnerabilità e riluttanza ad affidarsi.",
+                "La distanza può essere una strategia abituale, una risposta al contesto o una protezione davanti a una relazione poco affidabile o non sicura. Il profilo non implica assenza di emozioni, incapacità di amare, introversione o scelta relazionale sbagliata. " + commonLimit);
+        saveGlobal(id, "FEARFUL_AVOIDANT", "Le risposte sono più compatibili con un orientamento timoroso-evitante nelle relazioni",
+                "Ansia ed evitamento più espressi avvicinano le risposte al prototipo timoroso-evitante. Nella relazione scelta possono coesistere desiderio di vicinanza, preoccupazione per disponibilità o perdita e protezione attraverso distanza o minore vulnerabilità.",
+                "La compresenza delle due dimensioni può tradursi in avvicinamento e allontanamento secondo situazione, fiducia e segnali ricevuti. Non equivale ad attaccamento disorganizzato, trauma, disturbo di personalità o impossibilità di costruire relazioni soddisfacenti. " + commonLimit);
+        saveGlobal(id, "INTERMEDIATE_SECURE_ANXIOUS", "Le risposte mostrano caratteristiche intermedie tra orientamento sicuro e ansioso-preoccupato",
+                "I prototipi sicuro e ansioso-preoccupato risultano troppo vicini per indicarne uno come nettamente prevalente. L'evitamento appare relativamente contenuto, mentre preoccupazione e bisogno di rassicurazione possono descrivere la relazione in modo variabile.",
+                "La vicinanza può essere generalmente accessibile e accompagnarsi in alcune situazioni a maggiore vigilanza sulla disponibilità o continuità del legame. Comportamento dell'altra persona, conflitti e momenti di separazione possono spostare le risposte senza trasformarle in un'identità. " + commonLimit);
+        saveGlobal(id, "INTERMEDIATE_SECURE_DISMISSING", "Le risposte mostrano caratteristiche intermedie tra orientamento sicuro ed evitante-distanziante",
+                "I prototipi sicuro ed evitante-distanziante risultano troppo vicini per indicarne uno come nettamente prevalente. L'ansia appare relativamente contenuta, mentre apertura alla vicinanza e protezione dell'autonomia possono cambiare tra situazioni.",
+                "Alcuni momenti possono essere vissuti con agio nella vicinanza e altri con maggiore bisogno di distanza, riservatezza o autosufficienza. Fiducia, richieste reciproche e sicurezza reale sono necessari per comprendere il significato della variazione. " + commonLimit);
+        saveGlobal(id, "INTERMEDIATE_ANXIOUS_FEARFUL", "Le risposte mostrano caratteristiche intermedie tra orientamento ansioso-preoccupato e timoroso-evitante",
+                "I prototipi ansioso-preoccupato e timoroso-evitante risultano troppo vicini per indicarne uno come nettamente prevalente. L'ansia appare più espressa, mentre la tendenza a cercare o evitare la vicinanza può dipendere dalle situazioni.",
+                "La ricerca di rassicurazione può accompagnarsi a maggiore distanza quando aumentano vulnerabilità, conflitto o incertezza. Il questionario non determina se questo andamento dipenda dalla persona, dall'altra parte, dalla loro interazione o da un pericolo reale. " + commonLimit);
+        saveGlobal(id, "INTERMEDIATE_DISMISSING_FEARFUL", "Le risposte mostrano caratteristiche intermedie tra orientamento evitante-distanziante e timoroso-evitante",
+                "I prototipi evitante-distanziante e timoroso-evitante risultano troppo vicini per indicarne uno come nettamente prevalente. L'evitamento appare più espresso, mentre preoccupazione per perdita o rifiuto può essere contenuta o cambiare secondo il contesto.",
+                "La distanza può essere accompagnata da livelli variabili di attenzione alla disponibilità dell'altra persona, anche se tali preoccupazioni non sono sempre mostrate o ricercate consapevolmente. Questo non stabilisce disinteresse, intenzioni o qualità del legame. " + commonLimit);
+        saveGlobal(id, "INTERMEDIATE_MULTIPLE", "Le risposte mostrano caratteristiche intermedie tra più orientamenti di attaccamento",
+                "La posizione è vicina al centro del modello e le distanze tra i quattro prototipi risultano troppo simili per indicare una prevalenza leggibile. Ansia ed evitamento descrivono quindi in parte la relazione senza avvicinarla nettamente a un singolo vertice.",
+                "Questo può riflettere risposte dipendenti dalle situazioni, una combinazione non ben rappresentata dai quattro prototipi o i limiti del set originale di item. Non è un risultato incoerente e non deve essere forzato in una categoria soltanto per ottenere un'etichetta. " + commonLimit);
+
+        saveAreaInsights(id, "ansia",
+                "Preoccupazione per disponibilità, rifiuto o perdita e ricerca urgente di rassicurazione risultano poco rappresentative. Questo non certifica sicurezza né esclude timori circoscritti o segnali reali della relazione.",
+                "Preoccupazione e ricerca di rassicurazione descrivono in parte il modo di vivere la relazione. Possono variare secondo situazioni, conflitti, separazioni e segnali ricevuti dall'altra persona.",
+                "Preoccupazione per il legame, vigilanza ai segnali e bisogno di rassicurazione risultano molto rappresentativi. Il dato non stabilisce se i timori siano fondati né identifica la loro causa.");
+        saveAreaInsights(id, "evitamento",
+                "Distanza, disagio con intimità e difficoltà ad affidarsi risultano poco rappresentativi. Questo non certifica apertura, reciprocità, fiducia o qualità della relazione.",
+                "Protezione dell'autonomia e disponibilità alla vicinanza descrivono la relazione in modo variabile. Fiducia, conflitto, richieste reciproche e sicurezza reale possono incidere.",
+                "Distanza, limitazione della vulnerabilità e riluttanza ad affidarsi risultano molto rappresentative. Il dato non implica assenza di affetto, introversione o incapacità relazionale.");
+
+        saveStyle(id, "SECURE", "Prototipo con ansia ed evitamento contenuti: descrive maggiore agio con vicinanza e affidamento senza certificare qualità, reciprocità o sicurezza del legame.");
+        saveStyle(id, "ANXIOUS_PREOCCUPIED", "Prototipo con ansia più espressa ed evitamento contenuto: descrive attenzione alla disponibilità e ricerca di vicinanza senza stabilire cause o fondatezza dei timori.");
+        saveStyle(id, "DISMISSING_AVOIDANT", "Prototipo con ansia contenuta ed evitamento più espresso: descrive protezione attraverso autonomia e distanza senza implicare disinteresse o assenza di emozioni.");
+        saveStyle(id, "FEARFUL_AVOIDANT", "Prototipo con ansia ed evitamento più espressi: descrive possibile coesistenza di bisogno di vicinanza e protezione attraverso distanza, senza equivalere a disorganizzazione o diagnosi.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -2385,6 +2496,13 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Post-traumatic stress disorder — World Health Organization", "https://www.who.int/news-room/fact-sheets/detail/post-traumatic-stress-disorder"),
                 ref("Post-traumatic stress disorder — NICE NG116", "https://www.nice.org.uk/guidance/ng116/chapter/Recommendations"),
                 ref("Guidelines for conditions specifically related to stress — World Health Organization", "https://www.who.int/publications-detail-redirect/9789241505406")));
+        syncReferences("stili-attaccamento", List.of(
+                ref("Attachment styles among young adults — Bartholomew e Horowitz", "https://pubmed.ncbi.nlm.nih.gov/1920064/"),
+                ref("Italian validation of the ECR-R — Busonera e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25074302/"),
+                ref("Italian validation of the ECR-12 — Brugnera e colleghi", "https://pmc.ncbi.nlm.nih.gov/articles/PMC7453162/"),
+                ref("Are adult attachment styles categorical or dimensional? — Fraley e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25559192/"),
+                ref("Adult Attachment, Stress, and Romantic Relationships — Simpson e Rholes", "https://pmc.ncbi.nlm.nih.gov/articles/PMC4845754/"),
+                ref("Within-person variation in attachment — Girme e colleghi", "https://pmc.ncbi.nlm.nih.gov/articles/PMC5820166/")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {
@@ -2455,6 +2573,10 @@ public class ContentDataInitializer implements ApplicationRunner {
         interpretationRepository.save(new InterpretationEntity(testId, "AREA", areaCode, "LOW", null, low, null));
         interpretationRepository.save(new InterpretationEntity(testId, "AREA", areaCode, "MEDIUM", null, medium, null));
         interpretationRepository.save(new InterpretationEntity(testId, "AREA", areaCode, "HIGH", null, high, null));
+    }
+    private void saveStyle(String testId, String styleCode, String description) {
+        interpretationRepository.save(new InterpretationEntity(
+                testId, "STYLE", styleCode, "PROFILE", null, description, null));
     }
 
     private record QuestionSeed(String areaCode, String text, String example) {

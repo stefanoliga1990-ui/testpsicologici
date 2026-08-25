@@ -41,6 +41,9 @@ public class TestController {
     private static final String ATTEMPT_PREFIX = "test-attempt-";
     private static final List<String> ANSWER_OPTIONS =
             List.of("Mai", "Raramente", "A volte", "Spesso", "Quasi sempre");
+    private static final List<String> AGREEMENT_ANSWER_OPTIONS =
+            List.of("Per nulla vero per me", "Poco vero per me", "In parte vero per me",
+                    "Molto vero per me", "Del tutto vero per me");
 
     private final TestCatalogue catalogue;
     private final TestResultService resultService;
@@ -108,7 +111,8 @@ public class TestController {
         model.addAttribute("questionNumber", questionNumber);
         model.addAttribute("questionCount", test.questions().size());
         model.addAttribute("progress", (questionNumber - 1) * 100 / test.questions().size());
-        model.addAttribute("answers", ANSWER_OPTIONS);
+        List<String> answerOptions = answerOptionsFor(test);
+        model.addAttribute("answers", answerOptions);
         model.addAttribute("selectedAnswer", attempt.answerAt(questionIndex));
         model.addAttribute("reactPageData", ReactPageData.of(
                 "question",
@@ -117,7 +121,7 @@ public class TestController {
                 "questionNumber", questionNumber,
                 "questionCount", test.questions().size(),
                 "progress", (questionNumber - 1) * 100 / test.questions().size(),
-                "answers", ANSWER_OPTIONS,
+                "answers", answerOptions,
                 "selectedAnswer", attempt.answerAt(questionIndex)));
         return "question";
     }
@@ -127,7 +131,7 @@ public class TestController {
                              @RequestParam(required = false) Integer answer, HttpSession session) {
         PsychologicalTest test = findTest(testId);
         int questionIndex = validQuestionIndex(questionNumber, test);
-        if (answer == null || answer < 1 || answer > ANSWER_OPTIONS.size()) {
+        if (answer == null || answer < 1 || answer > answerOptionsFor(test).size()) {
             return "redirect:/test/" + testId + "/domanda/" + questionNumber;
         }
         TestAttempt attempt = findAttempt(testId, session);
@@ -162,6 +166,7 @@ public class TestController {
         model.addAttribute("percentage", result.percentage());
         model.addAttribute("result", result.general());
         model.addAttribute("areaResults", result.areaResults());
+        model.addAttribute("styleResults", result.styleResults());
         model.addAttribute("reactPageData", ReactPageData.of(
                 "result",
                 "test", test,
@@ -169,6 +174,7 @@ public class TestController {
                 "percentage", result.percentage(),
                 "result", result.general(),
                 "areaResults", result.areaResults(),
+                "styleResults", result.styleResults(),
                 "guide", guide,
                 "contributionsEnabled", contributionsEnabled));
         model.addAttribute("contributionsEnabled", contributionsEnabled);
@@ -224,5 +230,9 @@ public class TestController {
 
     private String attemptKey(String testId) {
         return ATTEMPT_PREFIX + testId;
+    }
+
+    private List<String> answerOptionsFor(PsychologicalTest test) {
+        return "AGREEMENT".equals(test.answerScale()) ? AGREEMENT_ANSWER_OPTIONS : ANSWER_OPTIONS;
     }
 }

@@ -2,7 +2,7 @@
 
 ## Obiettivo e perimetro
 
-Questo documento definisce la revisione delle fonti dei 24 questionari e delle 24 schede di approfondimento di Spazio Test. L'audit riguarda:
+Questo documento definisce la revisione delle fonti dei 25 questionari e delle 25 schede di approfondimento di Spazio Test. L'audit riguarda:
 
 - autorevolezza scientifica o istituzionale;
 - solidità metodologica e aggiornamento;
@@ -81,6 +81,7 @@ Sono necessari interventi mirati:
 | Gelosia verso il partner | validazione italiana ampia della MJS breve, studio fondativo multidimensionale, revisioni internazionali, WHO e servizio pubblico 1522 | distinzione cognitiva, emotiva e comportamentale; separazione tra infedeltà reale, sospetta e accusata; autonomia, controllo e corretta indicazione ai servizi | la divisione del comportamento in verifica e controllo è editoriale; scale, campioni e associazioni non validano item, soglie, fatti sul partner o previsioni individuali |
 | Soddisfazione per la propria vita | validazione italiana SWLS su lavoratori adulti, dati ufficiali ISTAT, linee guida OECD, studio fondativo e revisioni d'invarianza | definizione come valutazione cognitiva globale; distinzione da affetti, eudaimonia e ambiti specifici; differenza tra frequenza e grado 0–10 | la SWLS italiana è unidimensionale; le quattro aree e la scala di frequenza sono editoriali e non producono punteggi o confronti ufficiali |
 | Esperienze associate al PTSD | validazione italiana PCL-5, indagine epidemiologica italiana, WHO, NICE e National Center for PTSD | delimitazione di esposizione, quattro cluster, ultimo mese, interferenza, alternative, trattamento e sicurezza | il modello italiano migliore era a sette fattori; l'app non copia la PCL-5, non accerta l'esposizione e non trasferisce item, punteggi, soglie o struttura |
+| Stili di attaccamento nelle relazioni | validazioni italiane ECR-R ed ECR-12, modello fondativo a quattro prototipi, analisi taxometrica e studi longitudinali | scelta delle dimensioni ansia/evitamento, lettura prototipica non categoriale, relazione specifica e possibilità di variazione | l'app non copia ECR-R/ECR-12, usa una scala e un algoritmo originali e non eredita validità, cut-off o classificazioni |
 
 ## Decisioni sui testi
 
@@ -106,9 +107,9 @@ Questa revisione non modifica item, opzioni, scoring, pesi, soglie o interpretaz
 
 ## Esito dell'implementazione
 
-- Fonti dei 24 questionari sincronizzate come metadati; per i nuovi questionari item, scoring e interpretazioni sono documentati nelle rispettive specifiche v1.0.
-- Fonti e contributi delle 24 schede integrati; i collegamenti scientifici ospitati da terzi sono stati sostituiti con DOI o pagine primarie.
+- Fonti dei 25 questionari sincronizzate come metadati; per i nuovi questionari item, scoring e interpretazioni sono documentati nelle rispettive specifiche v1.0.
+- Fonti e contributi delle 25 schede integrati; i collegamenti scientifici ospitati da terzi sono stati sostituiti con DOI o pagine primarie.
 - Schede su dinamiche narcisistiche, people pleasing e fenomeno dell'impostore corrette nei punti in cui associazioni, cultura o limiti di misura richiedevano maggiore cautela.
 - Pagina “Metodo e fonti” aggiornata con priorità italiana/europea e divieto di trasferire automaticamente norme, prevalenze e cut-off.
 - `AGENTS.md` e `docs/standard-psicometrico.md` aggiornati come standard riutilizzabile.
-- Suite completa eseguita il 25 agosto 2026: 155 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.
+- Suite completa eseguita il 25 agosto 2026: 162 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.

@@ -55,6 +55,7 @@ Output: tabella `dimensione → indicatori → item candidati → esclusioni`.
 - Le medie di item ordinali sono usate soltanto per comporre una restituzione editoriale comprensibile.
 - Soglie correnti, allineate ai punti medi tra categorie: `LOW < 2,5`, `MEDIUM 2,5–<3,5`, `HIGH ≥ 3,5`.
 - Profilo `LOW`: tutte le aree LOW; `MIXED`: nessuna area HIGH ma almeno un'area MEDIUM; `FOCUSED`: una o due aree HIGH; `BROAD`: almeno tre aree HIGH.
+- Un questionario con un modello teorico diverso può usare uno scoring dedicato soltanto se specifica prima del codice dimensioni, trasformazioni, profili, gestione dell'ambiguità e limiti, senza riutilizzare impropriamente media generale o profili `LOW/MIXED/FOCUSED/BROAD`.
 - Le barre sono trasformazioni lineari da 1–5 a 0–100. Non sono percentuali della persona, percentili, probabilità, gravità clinica o confronti normativi.
 - Le interpretazioni devono descrivere le risposte, includere contesto e alternative, evitare diagnosi e indicare quando rivolgersi a professionisti o servizi di emergenza.
 - Ogni profilo complessivo deve includere una sintesi di almeno due frasi e un approfondimento di almeno tre: distribuzione tra aree, significato possibile, fattori contestuali o alternativi, cosa osservare e limite inferenziale. Le analisi per area restano separate e più specifiche.
@@ -82,7 +83,7 @@ Prima di pubblicare coefficienti o cut-off:
 - [ ] Un solo contenuto principale per item.
 - [ ] Periodo di riferimento e scala coerenti.
 - [ ] Direzione dello scoring uniforme e documentata.
-- [ ] Sei item per area nell'architettura corrente; item intercalati.
+- [ ] Copertura prevista dalla specifica (standard corrente: quattro aree da sei item; eccezioni teoriche documentate); item intercalati.
 - [ ] Soglie e interpretazioni testate ai confini.
 - [ ] Titoli globali specifici, autonomamente comprensibili e coerenti con la direzione del test.
 - [ ] Nessuna classifica delle aree né linguaggio normativo.

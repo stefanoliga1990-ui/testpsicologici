@@ -36,6 +36,7 @@ public class PdfResultService {
         context.setVariable("result", result.general());
         context.setVariable("percentage", result.percentage());
         context.setVariable("areaResults", result.areaResults());
+        context.setVariable("styleResults", result.styleResults());
         context.setVariable("generatedOn", DATE_FORMATTER.format(LocalDate.now()));
         context.setVariable("pdfStylesheet", pdfStylesheet);
 

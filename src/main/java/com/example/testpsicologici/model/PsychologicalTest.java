@@ -16,6 +16,8 @@ public record PsychologicalTest(
         boolean scoreVisible,
         String overallMetricLabel,
         String areaMetricLabel,
+        String scoringModel,
+        String answerScale,
         List<TestArea> areas,
         List<TestQuestion> questions,
         List<TestReference> references

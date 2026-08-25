@@ -23,18 +23,18 @@
     <p class="detail" th:text="${result.detail}">Approfondimento generale.</p>
 </div>
 
-<div class="overall-block">
+<div class="overall-block" th:unless="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL'}">
     <p class="bar-label" th:text="${test.overallMetricLabel}">Presenza complessiva del tratto</p>
     <div class="bar-track overall-track">
         <span th:style="|width: ${percentage}%|"></span>
     </div>
-    <p class="bar-note">La barra sintetizza la media delle risposte date alle 24 domande.</p>
+    <p class="bar-note" th:text="|La barra sintetizza la media delle risposte date alle ${test.questions.size()} domande.|">La barra sintetizza la media delle risposte.</p>
 </div>
 
 <div class="areas-heading">
-    <p class="eyebrow">Le quattro aree</p>
-    <h2>Una lettura più completa</h2>
-    <p>Le barre rappresentano quanto spesso hai riconosciuto le esperienze esplorate in ciascuna area.</p>
+    <p class="eyebrow" th:text="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' ? 'Le due dimensioni' : 'Le quattro aree'}">Le aree</p>
+    <h2 th:text="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' ? 'Come si distribuiscono le risposte' : 'Una lettura più completa'}">Una lettura più completa</h2>
+    <p th:text="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' ? 'Le barre sintetizzano quanto le affermazioni di ansia relazionale e di evitamento descrivono la relazione scelta. Non sono percentili o confronti con altre persone.' : 'Le barre rappresentano quanto spesso hai riconosciuto le esperienze esplorate in ciascuna area.'}">Lettura delle aree.</p>
 </div>
 
 <div class="area-card" th:each="area : ${areaResults}">
@@ -45,6 +45,19 @@
     </div>
     <p class="area-description" th:text="${area.description}">Descrizione dell'area.</p>
 </div>
+
+<th:block th:if="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL'}">
+    <div class="areas-heading style-heading">
+        <p class="eyebrow">I quattro orientamenti</p>
+        <h2>Dal più vicino al meno vicino</h2>
+        <p>L'ordine deriva dalla combinazione delle due dimensioni e non definisce un'identità stabile.</p>
+    </div>
+    <div class="style-card" th:each="style : ${styleResults}" th:classappend="${style.rank == 1 ? ' style-card-primary' : ''}">
+        <p class="style-rank" th:text="${style.rank == 1 ? 'Più vicino' : style.rank + '° nell’ordine'}">Posizione</p>
+        <h3 th:text="${style.title}">Orientamento</h3>
+        <p class="area-description" th:text="${style.description}">Descrizione.</p>
+    </div>
+</th:block>
 
 <div class="notice">
     <strong>Nota importante</strong>

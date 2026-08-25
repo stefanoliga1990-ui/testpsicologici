@@ -31,6 +31,10 @@ public class TestDefinitionEntity {
     private String overallMetricLabel;
     @Column(name = "area_metric_label")
     private String areaMetricLabel;
+    @Column(name = "scoring_model")
+    private String scoringModel;
+    @Column(name = "answer_scale")
+    private String answerScale;
     private boolean active;
     @Column(name = "display_order")
     private int displayOrder;
@@ -74,6 +78,16 @@ public class TestDefinitionEntity {
         return this;
     }
 
+    public TestDefinitionEntity withScoringModel(String scoringModel) {
+        this.scoringModel = scoringModel;
+        return this;
+    }
+
+    public TestDefinitionEntity withAnswerScale(String answerScale) {
+        this.answerScale = answerScale;
+        return this;
+    }
+
     public String getId() { return id; }
     public String getTitle() { return title; }
     public String getSeoTitle() { return seoTitle == null || seoTitle.isBlank() ? title + " · Spazio Test" : seoTitle; }
@@ -94,6 +108,12 @@ public class TestDefinitionEntity {
     }
     public String getAreaMetricLabel() {
         return areaMetricLabel == null ? "Presenza del tratto" : areaMetricLabel;
+    }
+    public String getScoringModel() {
+        return scoringModel == null || scoringModel.isBlank() ? "AREA_PROFILE" : scoringModel;
+    }
+    public String getAnswerScale() {
+        return answerScale == null || answerScale.isBlank() ? "FREQUENCY" : answerScale;
     }
     public boolean isActive() { return active; }
     public int getDisplayOrder() { return displayOrder; }

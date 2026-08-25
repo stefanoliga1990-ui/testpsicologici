@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/app.css(v='mobile-nav-1')}">
-    <link rel="stylesheet" th:href="@{/react/assets/app.css(v='react-4')}">
+    <link rel="stylesheet" th:href="@{/react/assets/app.css(v='react-5')}">
 </head>
 <body class="result-body">
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
@@ -25,7 +25,7 @@
         <h1 th:text="${result.title}">Sì, decisamente!</h1>
         <p class="result-description" th:text="${result.description}">Hai l'energia di una vera web app.</p>
         <p class="result-detail" th:text="${result.detail}">Design, ritmo e praticità sono dalla tua parte.</p>
-        <div class="overall-presence" th:if="${!#lists.isEmpty(areaResults)}">
+        <div class="overall-presence" th:if="${!#lists.isEmpty(areaResults) and test.scoringModel != 'ATTACHMENT_DIMENSIONAL'}">
             <div class="overall-presence-label" th:text="${test.overallMetricLabel}">Presenza complessiva del tratto</div>
             <div class="overall-presence-track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
                  th:aria-label="${test.overallMetricLabel}"
@@ -35,9 +35,9 @@
         </div>
         <div class="area-results" th:if="${!#lists.isEmpty(areaResults)}">
             <div class="area-results-heading">
-                <p class="eyebrow">Le quattro aree</p>
-                <h2>Una lettura più completa</h2>
-                <p>Le barre riassumono le risposte agli item di ciascuna area. Non sono percentili, probabilità diagnostiche o confronti con altre persone.</p>
+                <p class="eyebrow" th:text="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' ? 'Le due dimensioni' : 'Le quattro aree'}">Le aree</p>
+                <h2 th:text="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' ? 'Come si distribuiscono le risposte' : 'Una lettura più completa'}">Una lettura più completa</h2>
+                <p th:text="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' ? 'Le barre sintetizzano quanto le affermazioni di ansia relazionale e di evitamento descrivono la relazione scelta. Non sono percentili, probabilità o confronti con altre persone.' : 'Le barre riassumono le risposte agli item di ciascuna area. Non sono percentili, probabilità diagnostiche o confronti con altre persone.'}">Lettura delle aree.</p>
             </div>
             <div class="area-result-grid">
                 <article class="area-result-card" th:each="area : ${areaResults}">
@@ -52,6 +52,21 @@
                 </article>
             </div>
         </div>
+        <section class="attachment-style-results" th:if="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL'}">
+            <div class="area-results-heading">
+                <p class="eyebrow">I quattro orientamenti</p>
+                <h2>Dal più vicino al meno vicino</h2>
+                <p>L'ordine deriva dalla combinazione delle due dimensioni. Una posizione non definisce chi sei e può cambiare in relazioni o momenti diversi.</p>
+            </div>
+            <div class="attachment-style-grid">
+                <article class="attachment-style-card" th:each="style : ${styleResults}"
+                         th:classappend="${style.rank == 1 ? ' attachment-style-card-primary' : ''}">
+                    <span class="attachment-style-rank" th:text="${style.rank == 1 ? 'Più vicino' : style.rank + '° nell’ordine'}">Posizione</span>
+                    <h3 th:text="${style.title}">Orientamento</h3>
+                    <p th:text="${style.description}">Descrizione.</p>
+                </article>
+            </div>
+        </section>
         <div class="score-line" th:if="${test.scoreVisible}" aria-hidden="true"><span th:style="|width:${percentage}%|"></span></div>
         <div class="result-actions">
             <a class="button button-primary" th:href="@{/test/{id}/risultato/pdf(id=${test.id})}">Download PDF <span aria-hidden="true">↓</span></a>
