@@ -41,7 +41,8 @@ class PsychometricStructureTest {
             Map.entry("intelligenza-intrapersonale", "risorse intrapersonali percepite"),
             Map.entry("resilienza-psicologica", "risorse di resilienza percepite"),
             Map.entry("gelosia-partner", "esperienze di gelosia verso il partner"),
-            Map.entry("soddisfazione-vita", "soddisfazione percepita per la propria vita"));
+            Map.entry("soddisfazione-vita", "soddisfazione percepita per la propria vita"),
+            Map.entry("ptsd-adulti", "esperienze post-traumatiche esplorate"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -51,7 +52,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(23).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(24).allSatisfy(test -> {
             assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
             assertThat(test.areas()).hasSize(4);
             assertThat(test.questions()).hasSize(24);

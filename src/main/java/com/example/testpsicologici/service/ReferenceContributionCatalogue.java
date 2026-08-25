@@ -174,7 +174,19 @@ public class ReferenceContributionCatalogue {
             entry("https://pubmed.ncbi.nlm.nih.gov/28324322/",
                     "Revisione di 27 studi d'invarianza della SWLS consultata per la cautela nei confronti tra culture ed età; non fornisce norme o interpretazioni per il questionario dell'app."),
             entry("https://doi.org/10.1371/journal.pone.0313107",
-                    "Studio multicentrico della SWLS in 65 nazioni e 40 lingue consultato per i limiti di trasferibilità culturale; non valida item, aree, soglie o confronti individuali nell'app."));
+                    "Studio multicentrico della SWLS in 65 nazioni e 40 lingue consultato per i limiti di trasferibilità culturale; non valida item, aree, soglie o confronti individuali nell'app."),
+            entry("https://doi.org/10.3390/ijerph19095282",
+                    "Validazione italiana della PCL-5 su 601 adulti consultata per finestra dell'ultimo mese e complessità fattoriale; item, punteggi e migliore adattamento del modello a sette fattori non validano le quattro aree originali dell'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/25266475/",
+                    "Indagine probabilistica sulla popolazione adulta italiana consultata per il contesto di esposizione e PTSD; stime epidemiologiche di gruppo e criteri dello studio non spiegano il singolo caso."),
+            entry("https://www.ptsd.va.gov/professional/treat/essentials/dsm5_ptsd.asp",
+                    "Sintesi istituzionale consultata per esposizione, quattro famiglie di esperienze, durata, interferenza ed esclusioni; non sostituisce una valutazione clinica e non valida il questionario."),
+            entry("https://www.who.int/news-room/fact-sheets/detail/post-traumatic-stress-disorder",
+                    "Fonte WHO consultata per varietà delle reazioni dopo eventi potenzialmente traumatici, esperienze principali, interferenza e disponibilità di trattamenti; dati globali non sono stime individuali."),
+            entry("https://www.nice.org.uk/guidance/ng116/chapter/Recommendations",
+                    "Linea guida consultata per riconoscimento, valutazione, dissociazione, condizioni complesse, sicurezza e trattamento; il contesto britannico e le raccomandazioni cliniche non validano l'autovalutazione originale."),
+            entry("https://www.who.int/publications-detail-redirect/9789241505406",
+                    "Linea guida WHO consultata per distinguere stress acuto, PTSD e lutto e delimitare la gestione clinica; non fornisce soglie, pesi o interpretazioni per l'app."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

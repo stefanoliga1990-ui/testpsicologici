@@ -2348,6 +2348,136 @@ public class GuideCatalogue {
                                     "Studio recente in 65 nazioni e 40 lingue consultato per la trasferibilità culturale della misura; campioni e strumento differenti non validano questo questionario."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "ptsd-adulti",
+                    "ptsd-adulti",
+                    "Disturbo post-traumatico da stress",
+                    "PTSD nell'adulto: esperienze, valutazione e supporto",
+                    "PTSD nell'adulto: sintomi e supporto | Spazio Test",
+                    "Una guida prudente a evento potenzialmente traumatico, quattro famiglie di esperienze, valutazione professionale, supporto e limiti dei test online.",
+                    "Il disturbo post-traumatico da stress può comparire dopo specifiche forme di esposizione a eventi traumatici. Reazioni di sofferenza dopo un evento molto minaccioso o sconvolgente sono possibili e non equivalgono automaticamente a PTSD: esposizione, andamento, durata, interferenza, sicurezza e spiegazioni alternative richiedono una valutazione complessiva.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Evento, reazione e PTSD non sono la stessa cosa",
+                                    List.of(
+                                            "Molte persone attraversano ricordi disturbanti, allerta, difficoltà del sonno o bisogno di evitare alcuni richiami dopo eventi molto minacciosi. Secondo la WHO, la maggior parte delle persone esposte a eventi potenzialmente traumatici non sviluppa PTSD; la presenza di una singola esperienza non permette quindi una conclusione diagnostica.",
+                                            "Il significato delle reazioni dipende anche dal tipo di esposizione, dal tempo trascorso, da eventuali eventi ripetuti, dalla sicurezza attuale, dalla salute e dal sostegno disponibile. Le associazioni osservate nei gruppi non spiegano automaticamente il singolo caso."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Valutazione",
+                                    "Che cosa deve considerare una valutazione del PTSD",
+                                    List.of(
+                                            "Una valutazione professionale verifica la natura dell'esposizione, le diverse famiglie di sintomi, la durata superiore a un mese, il disagio o l'interferenza e possibili spiegazioni alternative. Considera inoltre decorso, condizioni concomitanti, dissociazione, sostanze, farmaci, salute fisica e situazione di sicurezza.",
+                                            "Un questionario online non può accertare da solo che l'evento scelto soddisfi i criteri di esposizione, collegare causalmente ogni esperienza a quell'evento o distinguere PTSD da altre condizioni. Anche un risultato contenuto non esclude un episodio intenso, interferenza significativa o bisogno di supporto."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Esperienze possibili",
+                                    "Quattro famiglie usate per orientare il colloquio clinico",
+                                    List.of(
+                                            "Le descrizioni diagnostiche raggruppano molte esperienze in intrusioni, evitamento, cambiamenti nei pensieri e nell'umore, attivazione e reattività. Questa suddivisione aiuta a organizzare le informazioni, ma non significa che ogni persona presenti lo stesso profilo o che i gruppi abbiano tutti lo stesso peso."
+                                    ),
+                                    List.of(
+                                            "Intrusioni: ricordi involontari, sogni, sensazione di rivivere e reazioni emotive o fisiche ai richiami.",
+                                            "Evitamento: tentativi di allontanare pensieri ed emozioni o di evitare persone, attività, luoghi e conversazioni associate.",
+                                            "Pensieri e umore: cambiamenti nel modo di valutare sé, mondo ed evento, interesse, vicinanza e accesso a emozioni piacevoli.",
+                                            "Attivazione e reattività: allerta, spavento, irritabilità, rabbia e difficoltà di concentrazione o sonno."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Esperienze simili possono avere spiegazioni diverse",
+                                    List.of(
+                                            "Nelle prime settimane dopo l'evento si considerano anche reazioni acute. PTSD complesso e presentazioni dissociative richiedono valutazioni specifiche; depressione, ansia, lutto, dolore, insonnia, sostanze, lesioni cerebrali e condizioni mediche possono produrre esperienze sovrapposte.",
+                                            "Per questo non basta sommare frequenze. Servono storia, sequenza temporale, interferenza e osservazione delle alternative, evitando di interpretare colpa, memoria, rabbia o distanza relazionale come prove isolate di una condizione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Sicurezza attuale",
+                                    "Quando allerta ed evitamento possono essere protettivi",
+                                    List.of(
+                                            "Se una minaccia, una violenza o uno stalking sono ancora presenti, controllare l'ambiente o evitare una situazione può avere una funzione di sicurezza. In questi casi la priorità non è ridurre automaticamente allerta o evitamento, ma valutare il pericolo e costruire supporto senza affrontare la persona o la situazione sulla base di un test.",
+                                            "Il questionario non classifica violenza o pericolosità. In caso di pericolo immediato, pensieri di farti del male o di fare del male a qualcuno, o impossibilità di mantenerti al sicuro, contatta il 112 o recati al pronto soccorso; per aiuto e consiglio su violenza e stalking è disponibile il servizio pubblico gratuito 1522, che non sostituisce il 112 nelle emergenze."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aree del questionario",
+                                    "Perché Spazio Test mostra quattro aree",
+                                    List.of(
+                                            "Le quattro aree riprendono un'organizzazione teorica dei sintomi e rendono leggibile la restituzione, ma non sono state confermate per i 24 item originali. Nella validazione italiana della PCL-5 su 601 adulti, il modello DSM a quattro fattori aveva un adattamento adeguato, mentre un modello ibrido a sette fattori risultava migliore: la struttura può quindi essere più articolata.",
+                                            "Spazio Test non copia la PCL-5 e assegna sei item a ciascuna area soltanto per equilibrio editoriale. Le medie non rappresentano criteri clinici equivalenti, le soglie sono descrittive e la barra non è probabilità, gravità, rischio, percentile o confronto con la popolazione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Auto-osservazione",
+                                    "Non è necessario raccontare o rivivere l'evento",
+                                    List.of(
+                                            "Per compilare il questionario basta scegliere mentalmente un riferimento: non viene richiesto di scrivere dettagli. Se una domanda aumenta troppo il disagio, puoi interrompere, guardare ciò che ti circonda, riconoscere dove ti trovi e cercare una persona o un luogo sicuro; completare il test non è necessario.",
+                                            "Non usare il risultato per esporti da solo/a ai ricordi, visitare luoghi non sicuri o confrontare una persona pericolosa. La Psychological First Aid della WHO raccomanda un aiuto rispettoso e pratico senza fare pressione perché una persona racconti l'evento."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto",
+                                    "Trattamenti e aiuto richiedono una valutazione personale",
+                                    List.of(
+                                            "Esistono trattamenti psicologici con evidenze per il PTSD, tra cui interventi focalizzati sul trauma svolti da professionisti formati. Una linea guida non prescrive però automaticamente il percorso adatto a una singola persona: preferenze, sicurezza, condizioni concomitanti, accessibilità e valutazione clinica contano.",
+                                            "Se le esperienze persistono, causano forte disagio o interferiscono con sonno, relazioni, studio, lavoro o attività quotidiane, puoi rivolgerti a uno psicologo, psicoterapeuta, medico, psichiatra o servizio qualificato. La richiesta di aiuto non dipende dal livello ottenuto nel test."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato descrive la frequenza nell'ultimo mese di esperienze riferite a un evento scelto mentalmente. Non accerta l'esposizione, non è la PCL-5, non diagnostica il PTSD e non valuta durata complessiva, interferenza o sicurezza.",
+                    List.of(
+                            new GuideReference(
+                                    "Italian validation of the PTSD Checklist for DSM-5 — Di Tella e colleghi",
+                                    "https://doi.org/10.3390/ijerph19095282",
+                                    "Studio su 601 adulti italiani consultato per finestra temporale e struttura dei sintomi; il migliore adattamento del modello ibrido a sette fattori invita a non assumere universale la divisione in quattro aree."
+                            ),
+                            new GuideReference(
+                                    "Trauma exposure and post-traumatic stress disorder in Italy — Carmassi e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/25266475/",
+                                    "Indagine probabilistica italiana consultata per esposizione e contesto epidemiologico; stime di gruppo e procedura CIDI non producono inferenze sul singolo utente."
+                            ),
+                            new GuideReference(
+                                    "Post-traumatic stress disorder — World Health Organization",
+                                    "https://www.who.int/news-room/fact-sheets/detail/post-traumatic-stress-disorder",
+                                    "Sintesi istituzionale consultata per esposizione, famiglie di esperienze, interferenza, varietà delle reazioni e possibilità di trattamento; i dati globali non sono norme individuali."
+                            ),
+                            new GuideReference(
+                                    "PTSD and DSM-5 — National Center for PTSD",
+                                    "https://www.ptsd.va.gov/professional/treat/essentials/dsm5_ptsd.asp",
+                                    "Sintesi istituzionale consultata per esposizione, quattro cluster, durata, interferenza ed esclusioni; non sostituisce una valutazione clinica italiana."
+                            ),
+                            new GuideReference(
+                                    "Post-traumatic stress disorder — NICE NG116",
+                                    "https://www.nice.org.uk/guidance/ng116/chapter/Recommendations",
+                                    "Linea guida consultata per riconoscimento, valutazione, dissociazione, contesto, sicurezza e interventi; l'organizzazione sanitaria britannica limita la trasferibilità diretta."
+                            ),
+                            new GuideReference(
+                                    "Psychological interventions for adults with PTSD — World Health Organization",
+                                    "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/conditions-related-to-stress/posttraumatic-stress-disorder-%28ptsd%29--psychological-interventions---adults",
+                                    "Raccomandazioni consultate per l'esistenza di interventi psicologici con evidenze; non prescrivono una tecnica al singolo utente dell'app."
+                            ),
+                            new GuideReference(
+                                    "Psychological first aid: Guide for field workers — World Health Organization",
+                                    "https://www.who.int/publications/i/item/9789241548205",
+                                    "Guida consultata per un approccio rispettoso che non faccia pressione a raccontare l'evento; non è un trattamento del PTSD né una validazione del questionario."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero antiviolenza e antistalking",
+                                    "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/",
+                                    "Pagina ufficiale italiana consultata per destinazione, gratuità e disponibilità continuativa del servizio; il 1522 non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

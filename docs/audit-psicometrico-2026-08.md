@@ -2,7 +2,7 @@
 
 ## Perimetro e conclusione
 
-Sono stati esaminati tutti i 23 questionari attivi: 552 item, 92 sottoscale editoriali, opzioni di risposta, scoring, soglie, profili generali, testi per area, disclaimer e messaggi di sicurezza. L'implementazione è prudente: item originali, quattro aree equilibrate da sei item, punteggi numerici nascosti, fonti tracciabili e assenza di affermazioni diagnostiche.
+Sono stati esaminati tutti i 24 questionari attivi: 576 item, 96 sottoscale editoriali, opzioni di risposta, scoring, soglie, profili generali, testi per area, disclaimer e messaggi di sicurezza. L'implementazione è prudente: item originali, quattro aree equilibrate da sei item, punteggi numerici nascosti, fonti tracciabili e assenza di affermazioni diagnostiche.
 
 Non esistono però dati di somministrazione o studi sullo specifico strumento. Non è quindi possibile stimare in modo responsabile struttura fattoriale, omega/alpha, errore di misura, validità, invarianza o cut-off. Le modifiche migliorano validità di contenuto attesa e qualità della somministrazione, ma non trasformano i questionari in strumenti validati.
 
@@ -47,6 +47,7 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 | Resilienza psicologica — recupero; flessibilità; risorse relazionali e contestuali; continuità | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali riferiti agli ultimi sei mesi e a difficoltà realmente incontrate, con scoring positivo e distinzione esplicita tra frequenza delle risorse, processo ed esito. Carico, sicurezza, condizioni materiali, supporti e poche occasioni restano limiti indipendenti dal profilo; il risultato non attribuisce fragilità né predice adattamento futuro. |
 | Gelosia verso il partner — interpretazioni; reazioni emotive; rassicurazione/verifica; controllo/interferenza | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali riferiti agli ultimi tre mesi e alla relazione attuale, con distinzione tra fatti, interpretazioni, emozioni e azioni. La struttura scientifica a tre componenti è adattata all'architettura in quattro aree separando verifica e controllo come scelta editoriale; il risultato non accerta infedeltà, non classifica gelosia o violenza e mantiene consenso, autonomia, 112 e 1522 indipendenti dal profilo. |
 | Soddisfazione per la propria vita — bilancio complessivo; quotidianità; coerenza personale; direzione recente | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali chiedono la frequenza di valutazioni positive negli ultimi tre mesi, distinguendola dalle misure convenzionali di grado o accordo. La struttura unidimensionale della SWLS italiana è resa esplicita: le quattro prospettive sono editoriali, non fattori dimostrati; risultato e barre non misurano felicità, salute mentale o qualità di vita e mantengono contesto, supporto e 112 indipendenti dal profilo. |
+| Esperienze associate al PTSD — intrusioni; evitamento; pensieri e umore; attivazione | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali riferiti all'ultimo mese e a un singolo evento scelto mentalmente, senza richiesta di descriverlo. Le quattro aree sono teorico-editoriali: la validazione italiana PCL-5 ha favorito un modello più articolato. Il risultato non accerta l'esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e mantiene interruzione, supporto, 112 e 1522 indipendenti dal profilo. |
 
 ## Scoring e interpretazione risultanti
 
@@ -60,4 +61,4 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 
 ## Verifiche automatiche aggiunte
 
-I test impediscono regressioni su: 23 questionari attivi, 24 item, quattro aree, sei item per area, assenza di duplicati, intercalazione delle aree, presenza dell'istruzione temporale, ancore di risposta, soglie, logica dei quattro profili e presenza del soggetto specifico in tutti i 92 titoli globali. Le modifiche ai contenuti esistenti incrementano la versione; i nuovi questionari partono dalla versione `1.0`.
+I test impediscono regressioni su: 24 questionari attivi, 24 item, quattro aree, sei item per area, assenza di duplicati, intercalazione delle aree, presenza dell'istruzione temporale, ancore di risposta, soglie, logica dei quattro profili e presenza del soggetto specifico in tutti i 96 titoli globali. Le modifiche ai contenuti esistenti incrementano la versione; i nuovi questionari partono dalla versione `1.0`.

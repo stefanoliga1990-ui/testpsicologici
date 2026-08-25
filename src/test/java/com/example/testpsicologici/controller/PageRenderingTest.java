@@ -262,7 +262,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/soddisfazione-vita\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Soddisfazione di vita</h3>")));
+                        "<h3>Soddisfazione di vita</h3>")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/ptsd-adulti\"")))
+                .andExpect(content().string(containsString(
+                        "<h3>Disturbo post-traumatico da stress</h3>")));
     }
 
     @Test
@@ -806,6 +810,25 @@ class PageRenderingTest {
     }
 
     @Test
+    void ptsdGuideRendersExposureClustersTraumaInformedLimitsSafetyAndBidirectionalLink() throws Exception {
+        mockMvc.perform(get("/approfondimenti/ptsd-adulti"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "<title>PTSD nell&#39;adulto: sintomi e supporto | Spazio Test</title>")))
+                .andExpect(content().string(containsString(
+                        "href=\"http://localhost/approfondimenti/ptsd-adulti\"")))
+                .andExpect(content().string(containsString("Evento, reazione e PTSD non sono la stessa cosa")))
+                .andExpect(content().string(containsString("Quattro famiglie usate per orientare il colloquio clinico")))
+                .andExpect(content().string(containsString("Quando allerta ed evitamento possono essere protettivi")))
+                .andExpect(content().string(containsString("Non è necessario raccontare o rivivere l&#39;evento")))
+                .andExpect(content().string(containsString("modello ibrido a sette fattori")))
+                .andExpect(content().string(containsString("ijerph19095282")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString("1522")))
+                .andExpect(content().string(containsString("href=\"/test/ptsd-adulti\"")));
+    }
+
+    @Test
     void testLinksToItsPublishedGuide() throws Exception {
         mockMvc.perform(get("/test/tratti-autistici-adulti"))
                 .andExpect(status().isOk())
@@ -961,6 +984,17 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/soddisfazione-vita\"")));
+
+        mockMvc.perform(get("/test/ptsd-adulti"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Approfondisci l'argomento")))
+                .andExpect(content().string(containsString("senza scriverlo né descriverlo")))
+                .andExpect(content().string(containsString("puoi interrompere")))
+                .andExpect(content().string(containsString("non diagnostica il PTSD")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString("1522")))
+                .andExpect(content().string(containsString(
+                        "href=\"/approfondimenti/ptsd-adulti\"")));
     }
 
     @Test
@@ -1096,6 +1130,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/gelosia-partner")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/soddisfazione-vita")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/ptsd-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1106,6 +1142,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/resilienza-psicologica")))
                 .andExpect(content().string(containsString("http://localhost/test/gelosia-partner")))
                 .andExpect(content().string(containsString("http://localhost/test/soddisfazione-vita")))
+                .andExpect(content().string(containsString("http://localhost/test/ptsd-adulti")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

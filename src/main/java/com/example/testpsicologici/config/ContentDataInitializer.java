@@ -68,6 +68,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedPsychologicalResilienceInformationTest();
         seedPartnerJealousyInformationTest();
         seedLifeSatisfactionInformationTest();
+        seedPtsdInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -2180,6 +2181,96 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Direzione e percorso recente vengono valutati positivamente con frequenza. Il dato non dimostra conseguimento oggettivo, successo futuro o assenza di cambiamenti ancora desiderati.");
     }
 
+    private void seedPtsdInformationTest() {
+        String id = "ptsd-adulti";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Disturbo post-traumatico da stress (PTSD)",
+                "Autovalutazione informativa",
+                "Esplora la frequenza di esperienze post-traumatiche riferite a un evento o periodo scelto mentalmente come riferimento.",
+                "6 min · 24 domande",
+                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Prima di iniziare, scegli mentalmente un solo evento o periodo molto minaccioso o sconvolgente come riferimento, senza scriverlo né descriverlo: può essere stato vissuto direttamente, osservato, conosciuto attraverso il coinvolgimento di una persona vicina oppure incontrato ripetutamente nel lavoro. Il questionario non accerta se l'esperienza soddisfi i criteri diagnostici di esposizione e, se non riconosci un evento di riferimento, non è adatto e il risultato avrebbe significato molto limitato. Le domande esplorano nell'ultimo mese ricordi e reazioni intrusive, evitamento, cambiamenti nei pensieri e nell'umore, attivazione e reattività. Le quattro aree sono un'organizzazione teorico-editoriale e non fattori confermati per questi item; le sei domande per area non riproducono il peso dei criteri clinici. Il questionario originale non è la PCL-5, non diagnostica il PTSD, non distingue reazioni acute, PTSD complesso, dissociazione, depressione, ansia, lutto, disturbi del sonno o condizioni mediche e non valuta durata complessiva, interferenza o sicurezza. Se le domande aumentano troppo il disagio, puoi interrompere e orientarti al presente: completare il test non è necessario e non devi esporti autonomamente ai ricordi. Se le esperienze persistono o interferiscono con sonno, relazioni, studio, lavoro o attività quotidiane, puoi rivolgerti a uno psicologo, psicoterapeuta, medico, psichiatra o altro professionista qualificato. Se sei in pericolo immediato, temi di farti del male o di fare del male a qualcuno oppure non riesci a mantenerti al sicuro, contatta subito il 112 o recati al pronto soccorso. Per aiuto o consiglio su violenza e stalking è disponibile il servizio pubblico gratuito 1522; non sostituisce il 112 nelle emergenze.",
+                version, false,
+                "Frequenza complessiva delle esperienze post-traumatiche riferite",
+                "Frequenza delle esperienze riferite",
+                true, 24).withSeo(
+                "Test PTSD per adulti: esperienze post-traumatiche | Spazio Test",
+                "Questionario informativo di 24 domande su intrusioni, evitamento, pensieri e umore, attivazione nell'ultimo mese. Non diagnostica il PTSD.")
+                .withResponseInstruction("Pensando all'ultimo mese e all'evento o periodo che hai scelto come riferimento, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "Italian validation of the PTSD Checklist for DSM-5 — Di Tella e colleghi", "https://doi.org/10.3390/ijerph19095282", 1);
+        saveReference(id, "Trauma exposure and post-traumatic stress disorder in Italy — Carmassi e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25266475/", 2);
+        saveReference(id, "PTSD and DSM-5 — National Center for PTSD", "https://www.ptsd.va.gov/professional/treat/essentials/dsm5_ptsd.asp", 3);
+        saveReference(id, "Post-traumatic stress disorder — World Health Organization", "https://www.who.int/news-room/fact-sheets/detail/post-traumatic-stress-disorder", 4);
+        saveReference(id, "Post-traumatic stress disorder — NICE NG116", "https://www.nice.org.uk/guidance/ng116/chapter/Recommendations", 5);
+        saveReference(id, "Guidelines for conditions specifically related to stress — World Health Organization", "https://www.who.int/publications-detail-redirect/9789241505406", 6);
+
+        saveArea(id, "intrusioni", "Ricordi e reazioni intrusive", 1);
+        saveArea(id, "evitamento", "Evitamento di contenuti e richiami", 2);
+        saveArea(id, "pensieri_umore", "Cambiamenti nei pensieri e nell'umore", 3);
+        saveArea(id, "attivazione", "Attivazione e reattività", 4);
+
+        saveQuestions(id, List.of(
+                q("intrusioni", "Ricordi dell'evento sono comparsi senza che volessi richiamarli."),
+                q("intrusioni", "Ho fatto sogni disturbanti collegati all'evento."),
+                q("intrusioni", "Per alcuni momenti ho avuto la sensazione che l'evento stesse accadendo di nuovo."),
+                q("intrusioni", "Davanti a un richiamo dell'evento ho provato una forte reazione emotiva."),
+                q("intrusioni", "Davanti a un richiamo dell'evento il mio corpo ha reagito con forte attivazione."),
+                q("intrusioni", "Un'immagine legata all'evento ha interrotto ciò che stavo facendo."),
+                q("evitamento", "Ho cercato di non pensare all'evento."),
+                q("evitamento", "Ho evitato di parlare dell'evento."),
+                q("evitamento", "Ho cercato di allontanare le emozioni collegate all'evento."),
+                q("evitamento", "Ho evitato luoghi che mi ricordavano l'evento."),
+                q("evitamento", "Ho evitato attività che richiamavano l'evento."),
+                q("evitamento", "Ho evitato persone associate al ricordo dell'evento."),
+                q("pensieri_umore", "Mi sono giudicato/a negativamente a causa dell'evento."),
+                q("pensieri_umore", "Ho percepito il mondo come meno sicuro dopo l'evento."),
+                q("pensieri_umore", "Mi sono attribuito/a la colpa per ciò che è accaduto."),
+                q("pensieri_umore", "Ho perso interesse per attività che prima erano importanti per me."),
+                q("pensieri_umore", "Mi sono sentito/a distante dalle persone importanti per me."),
+                q("pensieri_umore", "Ho faticato a provare emozioni piacevoli."),
+                q("attivazione", "Sono rimasto/a in allerta anche senza segnali immediati di pericolo."),
+                q("attivazione", "Ho reagito con forte spavento a uno stimolo improvviso."),
+                q("attivazione", "Mi sono irritato/a più facilmente."),
+                q("attivazione", "Ho avuto reazioni di rabbia difficili da fermare."),
+                q("attivazione", "Ho avuto difficoltà a concentrarmi."),
+                q("attivazione", "Ho avuto difficoltà a mantenere un sonno regolare.")));
+
+        saveGlobal(id, "LOW", "Le esperienze post-traumatiche esplorate sembrano poco presenti nelle risposte",
+                "Ricordi e reazioni intrusive, evitamento, cambiamenti nei pensieri e nell'umore e attivazione risultano poco frequenti nell'ultimo mese. Questo andamento non esclude un singolo episodio intenso, dissociazione, disagio, interferenza o esperienze non coperte dagli item.",
+                "Una frequenza contenuta può dipendere dal tempo trascorso, dai richiami incontrati e dal contesto e non dimostra che l'evento non abbia avuto effetti importanti. Osserva eventuali episodi intensi, limitazioni, sonno e sicurezza senza costringerti a ricostruire l'accaduto o a esporti ai ricordi. Il risultato non stabilisce se l'evento soddisfi i criteri di esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e non valuta la sicurezza; le soglie sono esclusivamente editoriali. Se il disagio persiste o interferisce con la vita quotidiana, puoi rivolgerti a un professionista qualificato. In caso di pericolo immediato o impossibilità di mantenerti al sicuro contatta il 112; per aiuto o consiglio su violenza e stalking è disponibile il 1522.");
+        saveGlobal(id, "MIXED", "Le esperienze post-traumatiche esplorate sembrano presenti in modo variabile tra le aree",
+                "Le esperienze compaiono con frequenze diverse tra intrusioni, evitamento, pensieri e umore, attivazione, senza aree al livello editoriale più alto. La variabilità descrive l'ultimo mese e può riflettere situazioni o richiami differenti.",
+                "Il profilo può cambiare con il contesto, il tempo dall'evento, la sicurezza attuale, il sonno, la salute e le condizioni concomitanti. Consulta le aree nel loro ordine teorico senza trasformarle in una classifica o attribuire significato clinico a differenze piccole. Il risultato non stabilisce se l'evento soddisfi i criteri di esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e non valuta la sicurezza; le soglie sono esclusivamente editoriali. Se il disagio persiste o interferisce con la vita quotidiana, puoi rivolgerti a un professionista qualificato. In caso di pericolo immediato o impossibilità di mantenerti al sicuro contatta il 112; per aiuto o consiglio su violenza e stalking è disponibile il 1522.");
+        saveGlobal(id, "FOCUSED", "Le esperienze post-traumatiche esplorate sembrano più presenti in una o due aree",
+                "Una o due famiglie di esperienze risultano più frequenti, mentre le altre sono più contenute o dipendenti dal contesto. Il profilo orienta l'osservazione verso aree specifiche e non descrive automaticamente un quadro generale.",
+                "Può essere utile osservare quando compaiono le aree emergenti, da quanto persistono e se incidono su sonno, relazioni, studio, lavoro o attività quotidiane. Un'area frequente non equivale a un criterio clinico e le quattro aree originali non sostituiscono una valutazione di esposizione, durata, interferenza e alternative. Il risultato non stabilisce se l'evento soddisfi i criteri di esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e non valuta la sicurezza; le soglie sono esclusivamente editoriali. Se il disagio persiste o interferisce, puoi rivolgerti a un professionista qualificato. In caso di pericolo immediato o impossibilità di mantenerti al sicuro contatta il 112; per aiuto o consiglio su violenza e stalking è disponibile il 1522.");
+        saveGlobal(id, "BROAD", "Le esperienze post-traumatiche esplorate sembrano frequentemente presenti in più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro famiglie esplorate. Nell'ultimo mese, l'andamento appare quindi ampio tra intrusioni, evitamento, pensieri e umore oppure attivazione, senza rappresentare una misura di gravità.",
+                "L'ampiezza rende utile considerare persistenza, interferenza, contesto e sicurezza con un professionista qualificato, senza dedurre una diagnosi o una probabilità dal profilo. Esistono interventi con evidenze per il PTSD, ma richiedono valutazione e professionisti formati: il test non prescrive tecniche e non invita a esporsi autonomamente ai ricordi. Il risultato non stabilisce se l'evento soddisfi i criteri di esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e non valuta la sicurezza; le soglie sono esclusivamente editoriali. In caso di pericolo immediato o impossibilità di mantenerti al sicuro contatta il 112; per aiuto o consiglio su violenza e stalking è disponibile il 1522.");
+
+        saveAreaInsights(id, "intrusioni",
+                "Ricordi involontari, sogni, sensazione di rivivere e reazioni ai richiami risultano poco frequenti. Un episodio isolato intenso può comunque essere importante e non viene rappresentato dalla sola media.",
+                "Ricordi o reazioni intrusive compaiono in alcune occasioni. La frequenza può dipendere dai richiami incontrati e non stabilisce accuratezza del ricordo, dissociazione o causa delle esperienze.",
+                "Ricordi o reazioni intrusive risultano frequenti. Questo descrive le risposte nell'ultimo mese e non equivale al relativo criterio diagnostico né distingue PTSD, dissociazione o altre spiegazioni.");
+        saveAreaInsights(id, "evitamento",
+                "Tentativi di evitare pensieri, emozioni, conversazioni, luoghi, attività o persone associate risultano poco frequenti. Il dato non stabilisce se i richiami siano sicuri né esclude un episodio circoscritto.",
+                "L'evitamento compare in alcune situazioni. Può proteggere da un pericolo attuale oppure limitare la vita in contesti ormai sicuri, distinzione che il questionario non effettua.",
+                "L'evitamento di contenuti interni o richiami esterni risulta frequente. Non affrontare autonomamente situazioni pericolose o ricordi intensi sulla base del livello mostrato.");
+        saveAreaInsights(id, "pensieri_umore",
+                "Giudizi negativi, colpa, riduzione dell'interesse, distanza e difficoltà con emozioni piacevoli risultano poco frequenti. Questo non esclude depressione, lutto, dissociazione o altre difficoltà.",
+                "Cambiamenti nei pensieri o nell'umore compaiono con frequenza intermedia. Contesto, perdite, salute e altre condizioni possono contribuire senza identificare una causa.",
+                "Cambiamenti nei pensieri o nell'umore risultano frequenti. L'area non distingue PTSD, depressione, lutto, dolore, dissociazione o condizioni mediche.");
+        saveAreaInsights(id, "attivazione",
+                "Allerta, spavento, irritabilità, rabbia, difficoltà di concentrazione e sonno risultano poco frequenti. Il dato non esclude problemi circoscritti o cause diverse.",
+                "Attivazione o reattività compaiono in alcune situazioni. Sicurezza attuale, sonno, sostanze, farmaci, dolore e salute possono influire sulle risposte.",
+                "Attivazione o reattività risultano frequenti. Questo non misura pericolosità e non distingue PTSD, ansia, insonnia, ADHD, dolore o cause mediche.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -2287,6 +2378,13 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("OECD Guidelines on Measuring Subjective Well-being — 2025 Update", "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/measuring-subjective-well-being_b4b53f27.html"),
                 ref("Measurement invariance of the Satisfaction With Life Scale — Emerson e colleghi", "https://pubmed.ncbi.nlm.nih.gov/28324322/"),
                 ref("Life satisfaction around the world — Jebb e colleghi", "https://doi.org/10.1371/journal.pone.0313107")));
+        syncReferences("ptsd-adulti", List.of(
+                ref("Italian validation of the PTSD Checklist for DSM-5 — Di Tella e colleghi", "https://doi.org/10.3390/ijerph19095282"),
+                ref("Trauma exposure and post-traumatic stress disorder in Italy — Carmassi e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25266475/"),
+                ref("PTSD and DSM-5 — National Center for PTSD", "https://www.ptsd.va.gov/professional/treat/essentials/dsm5_ptsd.asp"),
+                ref("Post-traumatic stress disorder — World Health Organization", "https://www.who.int/news-room/fact-sheets/detail/post-traumatic-stress-disorder"),
+                ref("Post-traumatic stress disorder — NICE NG116", "https://www.nice.org.uk/guidance/ng116/chapter/Recommendations"),
+                ref("Guidelines for conditions specifically related to stress — World Health Organization", "https://www.who.int/publications-detail-redirect/9789241505406")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

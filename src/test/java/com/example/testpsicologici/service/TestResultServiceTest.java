@@ -1138,10 +1138,85 @@ class TestResultServiceTest {
     }
 
     @Test
+    void ptsdTestIsLoadedWithTwentyFourOriginalQuestionsAndTraumaInformedLimits() {
+        PsychologicalTest test = catalogue.findById("ptsd-adulti");
+
+        assertThat(test.title()).isEqualTo("Disturbo post-traumatico da stress (PTSD)");
+        assertThat(test.questions()).hasSize(24).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code())
+                .containsExactly("intrusioni", "evitamento", "pensieri_umore", "attivazione");
+        assertThat(test.areas()).allSatisfy(area ->
+                assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+        assertThat(test.scoreVisible()).isFalse();
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.responseInstruction()).contains("ultimo mese", "evento o periodo", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "senza scriverlo né descriverlo",
+                "non accerta se l'esperienza soddisfi i criteri diagnostici di esposizione",
+                "puoi interrompere",
+                "non devi esporti autonomamente ai ricordi",
+                "non diagnostica il PTSD",
+                "non valuta durata complessiva, interferenza o sicurezza",
+                "112",
+                "1522");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle esperienze post-traumatiche riferite");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle esperienze riferite");
+        assertThat(test.references()).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.3390/ijerph19095282",
+                "https://pubmed.ncbi.nlm.nih.gov/25266475/",
+                "https://www.ptsd.va.gov/professional/treat/essentials/dsm5_ptsd.asp",
+                "https://www.who.int/news-room/fact-sheets/detail/post-traumatic-stress-disorder",
+                "https://www.nice.org.uk/guidance/ng116/chapter/Recommendations",
+                "https://www.who.int/publications-detail-redirect/9789241505406");
+    }
+
+    @Test
+    void ptsdFocusedProfileKeepsTheoreticalOrderAndDifficultyDirection() {
+        TestResult result = analyzeWithAnswersForTest("ptsd-adulti", 1, 5, 1, 1);
+
+        assertThat(result.general().title()).isEqualTo("Le esperienze post-traumatiche esplorate sembrano più presenti in una o due aree");
+        assertThat(result.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Ricordi e reazioni intrusive",
+                "Evitamento di contenuti e richiami",
+                "Cambiamenti nei pensieri e nell'umore",
+                "Attivazione e reattività");
+        assertThat(result.areaResults().get(1).description()).contains("risulta frequente", "Non affrontare autonomamente");
+        assertThat(result.areaResults().get(1).percentage()).isEqualTo(100);
+        assertThat(result.areaResults().get(0).percentage()).isZero();
+    }
+
+    @Test
+    void ptsdProfilesFollowEditorialRulesAndAlwaysRetainExposureSafetyAndDifferentialLimits() {
+        TestResult low = analyzeWithAnswersForTest("ptsd-adulti", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("ptsd-adulti", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("ptsd-adulti", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("ptsd-adulti", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).isEqualTo("Le esperienze post-traumatiche esplorate sembrano poco presenti nelle risposte");
+        assertThat(mixed.general().title()).isEqualTo("Le esperienze post-traumatiche esplorate sembrano presenti in modo variabile tra le aree");
+        assertThat(focused.general().title()).isEqualTo("Le esperienze post-traumatiche esplorate sembrano più presenti in una o due aree");
+        assertThat(broad.general().title()).isEqualTo("Le esperienze post-traumatiche esplorate sembrano frequentemente presenti in più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non stabilisce se l'evento soddisfi i criteri di esposizione",
+                        "non diagnostica il PTSD",
+                        "non distingue reazioni acute o altre condizioni",
+                        "non valuta la sicurezza",
+                        "professionista qualificato",
+                        "112",
+                        "1522"));
+        assertThat(low.general().detail()).contains("episodi intensi", "sicurezza");
+        assertThat(low.general().description()).contains("dissociazione", "interferenza");
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

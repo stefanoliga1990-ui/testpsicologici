@@ -2,9 +2,9 @@
 
 ## Scopo e perimetro
 
-Sono stati riesaminati tutti i 552 item dei 23 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
+Sono stati riesaminati tutti i 576 item dei 24 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala di frequenza.
 
-L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 500 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
+L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 524 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
 
 Gli esempi non sono elenchi esaustivi e non costituiscono condizioni aggiuntive: l'utente deve rispondere alla domanda principale considerando anche situazioni equivalenti non nominate.
 
@@ -167,6 +167,10 @@ Non sono stati aggiunti esempi ai 24 item. Nominare social network, messaggi, lu
 ### Soddisfazione per la propria vita
 
 Non sono stati aggiunti esempi ai 24 item. Nominare lavoro, coppia, famiglia, salute, denaro o altri ambiti potrebbe imporre criteri non condivisi, escludere configurazioni di vita differenti e trasformare un giudizio globale in una lista prescrittiva. La scelta è documentata nella specifica v1.0 e richiede interviste cognitive sulla differenza tra frequenza e grado di soddisfazione.
+
+### Esperienze associate al PTSD
+
+Non sono stati aggiunti esempi ai 24 item. Nominare incidenti, violenza, guerra, abuso, parto, malattia o esposizioni professionali potrebbe attivare ricordi, restringere l'evento di riferimento o suggerire che soltanto alcune esperienze siano pertinenti. La scelta trauma-informed è documentata nella specifica v1.0 e richiede interviste cognitive che non facciano pressione a raccontare dettagli dell'evento.
 
 ## Limiti e verifica successiva
 

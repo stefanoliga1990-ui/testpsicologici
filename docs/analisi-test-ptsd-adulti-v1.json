@@ -1,0 +1,141 @@
+{
+  "test": {
+    "id": "ptsd-adulti",
+    "titolo": "Disturbo post-traumatico da stress (PTSD)",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano e scelgono mentalmente un singolo evento o periodo molto minaccioso o sconvolgente",
+    "finalita": "Auto-osservazione informativa della frequenza, nell'ultimo mese, di esperienze post-traumatiche riferite all'evento scelto",
+    "periodo_riferimento": "Ultimo mese",
+    "direzione_punteggio": "Valori più alti descrivono maggiore frequenza delle esperienze formulate, non probabilità, gravità o diagnosi di PTSD",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non accerta che l'evento soddisfi i criteri di esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e non valuta la sicurezza."
+  },
+  "prima_della_compilazione": "Scegli mentalmente un solo evento o periodo molto minaccioso o sconvolgente, senza scriverlo né descriverlo. Se non riconosci un evento di riferimento, questo questionario non è adatto; se le domande aumentano troppo il disagio, puoi interrompere senza completarlo.",
+  "istruzione_risposta": "Pensando all'ultimo mese e all'evento o periodo che hai scelto come riferimento, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; rappresenta la frequenza relativa delle risposte, non una percentuale di PTSD, probabilità, gravità, rischio, percentile o confronto normativo",
+    "ordine_aree_risultato": "Ordine teorico stabile: intrusioni, evitamento, pensieri_umore, attivazione",
+    "limite_strutturale": "Le quattro aree riprendono un'organizzazione teorica dei sintomi ma non sono fattori confermati per gli item originali; sei item per area è una scelta editoriale e le medie non sono confrontabili come ampiezza clinica"
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le esperienze post-traumatiche esplorate sembrano poco presenti nelle risposte",
+      "sottotitolo": "Ricordi e reazioni intrusive, evitamento, cambiamenti nei pensieri e nell'umore e attivazione risultano poco frequenti nell'ultimo mese.",
+      "descrizione": "Un andamento contenuto non esclude un singolo episodio intenso, dissociazione, disagio o interferenza non rappresentati dalla frequenza media. Tempo dall'evento, sicurezza attuale, sonno, salute e altre condizioni possono modificare le risposte. Il risultato non stabilisce se l'evento soddisfi i criteri di esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e non valuta la sicurezza."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le esperienze post-traumatiche esplorate sembrano presenti in modo variabile tra le aree",
+      "sottotitolo": "Le esperienze compaiono con frequenze diverse tra le quattro aree, senza raggiungere il livello editoriale più alto in una singola area.",
+      "descrizione": "La variabilità può dipendere dai richiami incontrati, dal contesto, dal momento trascorso dall'evento e da condizioni concomitanti. Le aree non sono una classifica e differenze piccole non identificano un nucleo clinico. Il risultato non stabilisce se l'evento soddisfi i criteri di esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e non valuta la sicurezza."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le esperienze post-traumatiche esplorate sembrano più presenti in una o due aree",
+      "sottotitolo": "Una o due famiglie di esperienze risultano più frequenti, mentre le altre sono più contenute o dipendenti dal contesto.",
+      "descrizione": "Le aree emergenti orientano l'osservazione verso esperienze specifiche senza generalizzare all'intero quadro. È utile considerare durata, situazioni, disagio e interferenza mediante una valutazione separata. Il risultato non stabilisce se l'evento soddisfi i criteri di esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e non valuta la sicurezza."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le esperienze post-traumatiche esplorate sembrano frequentemente presenti in più aree",
+      "sottotitolo": "Almeno tre famiglie di esperienze risultano frequenti nell'ultimo mese e il profilo appare distribuito tra più aree.",
+      "descrizione": "L'ampiezza invita a considerare persistenza, disagio, interferenza, sicurezza e condizioni concomitanti con un professionista qualificato, ma non rappresenta gravità o probabilità diagnostica. Non occorre esporsi autonomamente ai ricordi per comprendere il risultato. Il risultato non stabilisce se l'evento soddisfi i criteri di esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e non valuta la sicurezza."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "intrusioni",
+      "nome_area": "Ricordi e reazioni intrusive",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Ricordi involontari, sogni, sensazione di rivivere e reazioni ai richiami risultano poco frequenti. Un episodio isolato intenso può comunque essere importante."},
+        {"livello": "MEDIUM", "descrizione": "Ricordi o reazioni intrusive compaiono in alcune occasioni. La frequenza può dipendere dai richiami incontrati e non stabilisce accuratezza del ricordo o dissociazione."},
+        {"livello": "HIGH", "descrizione": "Ricordi o reazioni intrusive risultano frequenti. Questo descrive le risposte e non equivale al relativo criterio diagnostico né distingue altre spiegazioni."}
+      ]
+    },
+    {
+      "area_code": "evitamento",
+      "nome_area": "Evitamento di contenuti e richiami",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Tentativi di evitare pensieri, emozioni, conversazioni, luoghi, attività o persone associate risultano poco frequenti. Il dato non stabilisce se i richiami siano sicuri."},
+        {"livello": "MEDIUM", "descrizione": "L'evitamento compare in alcune situazioni. Può proteggere da un pericolo attuale oppure limitare la vita in contesti sicuri, distinzione che il test non effettua."},
+        {"livello": "HIGH", "descrizione": "L'evitamento di contenuti interni o richiami esterni risulta frequente. Non affrontare autonomamente situazioni pericolose o ricordi intensi sulla base di questo risultato."}
+      ]
+    },
+    {
+      "area_code": "pensieri_umore",
+      "nome_area": "Cambiamenti nei pensieri e nell'umore",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Giudizi negativi, colpa, riduzione dell'interesse, distanza e difficoltà con emozioni piacevoli risultano poco frequenti. Questo non esclude depressione, lutto o altre difficoltà."},
+        {"livello": "MEDIUM", "descrizione": "Cambiamenti nei pensieri o nell'umore compaiono con frequenza intermedia. Contesto, perdite, salute e altre condizioni possono contribuire senza identificare una causa."},
+        {"livello": "HIGH", "descrizione": "Cambiamenti nei pensieri o nell'umore risultano frequenti. L'area non distingue PTSD, depressione, lutto, dolore, dissociazione o condizioni mediche."}
+      ]
+    },
+    {
+      "area_code": "attivazione",
+      "nome_area": "Attivazione e reattività",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Allerta, spavento, irritabilità, rabbia, difficoltà di concentrazione e sonno risultano poco frequenti. Il dato non esclude problemi circoscritti o cause diverse."},
+        {"livello": "MEDIUM", "descrizione": "Attivazione o reattività compaiono in alcune situazioni. Sicurezza attuale, sonno, sostanze, farmaci, dolore e salute possono influire sulle risposte."},
+        {"livello": "HIGH", "descrizione": "Attivazione o reattività risultano frequenti. Questo non misura pericolosità e non distingue PTSD, ansia, insonnia, ADHD, dolore o cause mediche."}
+      ]
+    }
+  ],
+  "sicurezza": "In caso di pericolo immediato, pensieri di farti del male o di fare del male a qualcuno, o impossibilità di mantenerti al sicuro, contatta subito il 112 o recati al pronto soccorso. Per aiuto o consiglio su violenza e stalking è disponibile il servizio pubblico gratuito 1522; non sostituisce il 112 nelle emergenze.",
+  "fonti_questionario": [
+    {
+      "titolo": "Italian validation of the PTSD Checklist for DSM-5",
+      "url": "https://doi.org/10.3390/ijerph19095282",
+      "apporto": "Studio su 601 adulti italiani utile per finestra dell'ultimo mese e complessità fattoriale; strumento, item e punteggi non sono trasferibili."
+    },
+    {
+      "titolo": "Trauma exposure and post-traumatic stress disorder in Italy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25266475/",
+      "apporto": "Indagine rappresentativa italiana utile per il contesto epidemiologico; stime di gruppo e criteri non spiegano il singolo caso."
+    },
+    {
+      "titolo": "PTSD and DSM-5 — National Center for PTSD",
+      "url": "https://www.ptsd.va.gov/professional/treat/essentials/dsm5_ptsd.asp",
+      "apporto": "Sintesi istituzionale di esposizione, quattro cluster, durata, interferenza ed esclusioni; non sostituisce la valutazione clinica."
+    },
+    {
+      "titolo": "Post-traumatic stress disorder — WHO",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/post-traumatic-stress-disorder",
+      "apporto": "Sintesi internazionale su reazioni, sintomi, funzionamento e possibilità di trattamento; dati globali non sono stime individuali."
+    },
+    {
+      "titolo": "Post-traumatic stress disorder — NICE NG116",
+      "url": "https://www.nice.org.uk/guidance/ng116/chapter/Recommendations",
+      "apporto": "Linea guida per riconoscimento, valutazione, dissociazione, sicurezza e trattamento; il contesto britannico non valida l'app."
+    },
+    {
+      "titolo": "Guidelines for the management of conditions specifically related to stress — WHO",
+      "url": "https://www.who.int/publications-detail-redirect/9789241505406",
+      "apporto": "Linea guida che distingue stress acuto, PTSD e lutto; non fornisce soglie o una specifica psicometrica per il questionario."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia separata, documentata in docs/test-ptsd-adulti-v1.md e nel GuideCatalogue.",
+  "limite": "Non esistono dati che validino nella popolazione adulta italiana questi 24 item originali, le quattro aree equilibrate, la scala di frequenza, la media generale, le soglie o le interpretazioni."
+}
