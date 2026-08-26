@@ -82,7 +82,7 @@ export default function HomePage({ initialQuery = '', tests, topicClusters }) {
             return (
               <section className="topic-cluster" id={`cluster-${cluster.slug}`} key={cluster.slug}>
                 <header className="topic-cluster-heading">
-                  <div><p className="eyebrow">Macro-argomento</p><h3>{cluster.title}</h3><p>{cluster.description}</p></div>
+                  <div><h3>{cluster.title}</h3><p>{cluster.description}</p></div>
                   <span>{clusterTests.length} {clusterTests.length === 1 ? 'test' : 'test'}</span>
                 </header>
                 <div className="test-grid">

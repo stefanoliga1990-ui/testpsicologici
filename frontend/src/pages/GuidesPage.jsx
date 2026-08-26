@@ -64,7 +64,7 @@ export default function GuidesPage({ guides, topicClusters }) {
             return (
               <section className="topic-cluster guide-topic-cluster" id={`cluster-${cluster.slug}`} key={cluster.slug}>
                 <header className="topic-cluster-heading">
-                  <div><p className="eyebrow">Macro-argomento</p><h3>{cluster.title}</h3><p>{cluster.description}</p></div>
+                  <div><h3>{cluster.title}</h3><p>{cluster.description}</p></div>
                   <span>{clusterGuides.length} {clusterGuides.length === 1 ? 'guida' : 'guide'}</span>
                 </header>
                 <div className="guide-card-grid">
