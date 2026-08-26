@@ -1,0 +1,133 @@
+{
+  "test": {
+    "id": "limerenza",
+    "titolo": "Limerenza: quando l'innamoramento diventa ossessivo?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione esclusivamente informativa",
+    "periodo_riferimento": "Ultimi tre mesi, riferendo tutte le risposte alla stessa persona",
+    "direzione_punteggio": "Valori più alti descrivono una maggiore frequenza delle esperienze formulate",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non diagnostica limerenza, OCD, dipendenza o altre condizioni e non accerta reciprocità, consenso, intenzioni dell'altra persona o pericolosità."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi e alla stessa persona, con quale frequenza ti è capitato?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale di limerenza, un percentile, una probabilità o una misura clinica",
+    "ordine_aree_risultato": "Ordine teorico stabile: focalizzazione, reciprocità, idealizzazione, impatto"
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le dinamiche associate alla limerenza sembrano molto poco presenti nelle tue risposte",
+      "sottotitolo": "Pensieri intrusivi, bisogno di reciprocità, idealizzazione e impatto risultano poco frequenti in tutte e quattro le aree. Negli ultimi tre mesi non emerge quindi una configurazione diffusa delle esperienze esplorate verso la persona scelta.",
+      "descrizione": "Questo andamento non esclude un episodio intenso, una difficoltà circoscritta o comportamenti non rappresentati dalla media. Considera eventuali momenti specifici, cambiamenti recenti e l'effetto concreto su attenzione, sonno, responsabilità e relazioni. Il risultato non diagnostica limerenza, OCD o dipendenza, non accerta reciprocità o consenso e usa soglie esclusivamente editoriali. Se pensieri o azioni causano sofferenza, interferenza o difficoltà a rispettare confini e rifiuti, confrontati con un professionista e interrompi i contatti non desiderati; in caso di pericolo immediato chiama il 112. Se subisci controllo, contatti indesiderati o stalking, puoi rivolgerti al 1522."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le dinamiche associate alla limerenza sembrano presenti in modo variabile",
+      "sottotitolo": "Le risposte descrivono frequenze diverse tra focalizzazione, reciprocità, idealizzazione e impatto, senza aree al livello editoriale più alto. Le esperienze possono quindi dipendere da momenti, segnali o contesti specifici.",
+      "descrizione": "La variabilità può riguardare ciò che accade internamente, le informazioni disponibili o il modo in cui reagisci a vicinanza e distanza percepite. Osserva la sequenza tra evento, interpretazione, impulso e conseguenza senza dedurre le intenzioni dell'altra persona. Il risultato non diagnostica limerenza, OCD o dipendenza, non accerta reciprocità o consenso e usa soglie esclusivamente editoriali. Se pensieri o azioni causano sofferenza, interferenza o difficoltà a rispettare confini e rifiuti, confrontati con un professionista e interrompi i contatti non desiderati; in caso di pericolo immediato chiama il 112. Se subisci controllo, contatti indesiderati o stalking, puoi rivolgerti al 1522."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le dinamiche associate alla limerenza sembrano più presenti in una o due aree",
+      "sottotitolo": "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta quindi verso aspetti specifici senza descrivere ogni pensiero, emozione o comportamento allo stesso modo.",
+      "descrizione": "Consulta le aree emergenti per distinguere focalizzazione mentale, bisogno di reciprocità, interpretazioni e conseguenze concrete. È utile osservare persistenza, possibilità di spostare l'attenzione e rispetto dei limiti, senza trasformare una differenza tra barre in una spiegazione clinica. Il risultato non diagnostica limerenza, OCD o dipendenza, non accerta reciprocità o consenso e usa soglie esclusivamente editoriali. Se pensieri o azioni causano sofferenza, interferenza o difficoltà a rispettare confini e rifiuti, confrontati con un professionista e interrompi i contatti non desiderati; in caso di pericolo immediato chiama il 112. Se subisci controllo, contatti indesiderati o stalking, puoi rivolgerti al 1522."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le dinamiche associate alla limerenza sembrano molto presenti in più aree",
+      "sottotitolo": "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Focalizzazione, bisogno di reciprocità, idealizzazione oppure impatto possono quindi formare una configurazione ampia negli ultimi tre mesi, senza rappresentare una misura di gravità.",
+      "descrizione": "Considera quanto l'andamento persista, quali situazioni lo attivino e se limiti sonno, responsabilità, relazioni o libertà di scelta. Un confronto professionale può aiutare a distinguere innamoramento intenso, ruminazione, ansia, OCD, difficoltà relazionali e altre spiegazioni senza presupporre una causa. Il risultato non diagnostica limerenza, OCD o dipendenza, non accerta reciprocità o consenso e usa soglie esclusivamente editoriali. Se temi di non riuscire a rispettare confini o un rifiuto, interrompi i contatti non desiderati e cerca subito supporto; in caso di pericolo immediato chiama il 112. Se subisci controllo, contatti indesiderati o stalking, puoi rivolgerti al 1522."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "focalizzazione",
+      "nome_area": "Pensieri intrusivi e focalizzazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Pensieri involontari, ripasso mentale e difficoltà a spostare l'attenzione risultano poco frequenti. Un episodio circoscritto può comunque essere significativo e non viene rappresentato dalla sola media."},
+        {"livello": "MEDIUM", "descrizione": "La persona occupa l'attenzione in alcune situazioni o periodi. Osserva durata, trigger e possibilità di tornare intenzionalmente alle attività senza chiamare questi pensieri ossessioni cliniche."},
+        {"livello": "HIGH", "descrizione": "Pensieri, fantasie o ripassi mentali risultano frequenti e possono assorbire molto spazio attentivo. L'area non diagnostica OCD e non stabilisce cause, controllo volontario o interferenza clinica."}
+      ]
+    },
+    {
+      "area_code": "reciprocita",
+      "nome_area": "Reciprocità e oscillazioni emotive",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Attesa, rassicurazione e variazioni emotive legate alla reciprocità percepita risultano poco frequenti. Questo non accerta ciò che l'altra persona prova o comunica."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni momenti vicinanza, distanza o attesa influenzano il tono emotivo. È utile distinguere fatti osservabili, interpretazioni e bisogno di certezza senza dedurre intenzioni."},
+        {"livello": "HIGH", "descrizione": "Il bisogno di reciprocità e le reazioni a segnali percepiti risultano frequenti. Il punteggio non dimostra dipendenza, attaccamento ansioso o reciprocità reale e non sostituisce il consenso esplicito."}
+      ]
+    },
+    {
+      "area_code": "idealizzazione",
+      "nome_area": "Idealizzazione e interpretazione dei segnali",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Scenari immaginati, lettura di segnali ambigui e selezione degli indizi risultano poco frequenti. Non indica che ogni interpretazione sia accurata."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni l'immagine desiderata della relazione orienta la lettura delle informazioni. Osserva quanto conosci direttamente e quali alternative restano possibili."},
+        {"livello": "HIGH", "descrizione": "Idealizzazione, scenari anticipati o attenzione selettiva ai segnali risultano frequenti. L'area non diagnostica delirio e non giudica la sincerità dei sentimenti, ma invita a separare desiderio e informazioni disponibili."}
+      ]
+    },
+    {
+      "area_code": "impatto",
+      "nome_area": "Azioni, confini e impatto quotidiano",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Controlli, ricerca di contatto e conseguenze su attività o sonno risultano poco frequenti. Anche un singolo contatto non desiderato o il mancato rispetto di un limite resta importante indipendentemente dalla media."},
+        {"livello": "MEDIUM", "descrizione": "In alcune occasioni attenzione e azioni verso la persona incidono su programmi, contatti o quotidianità. Considera intenzionalità, conseguenze e confini espressi senza usare il livello come autorizzazione."},
+        {"livello": "HIGH", "descrizione": "Controlli, tentativi di contatto o interferenze quotidiane risultano frequenti. Il dato non predice stalking o pericolosità: contatti, sorveglianza o avvicinamenti non desiderati vanno interrotti e discussi subito con un professionista."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {
+      "titolo": "Development and Validation of the Limerence Questionnaire (LQ-11)",
+      "url": "https://doi.org/10.1177/00332941251394980",
+      "apporto": "Definizione emergente, bisogno intenso di attaccamento e trascuratezza di sé/altri in due campioni internazionali autoselezionati; nessun item, fattore o punteggio viene trasferito."
+    },
+    {
+      "titolo": "Limerence, Hidden Obsession, Fixation, and Rumination: A Scoping Review",
+      "url": "https://doi.org/10.1007/s11896-024-09674-x",
+      "apporto": "Stato limitato della letteratura e necessità di distinguere ruminazione interna da comportamenti persistenti e indesiderati; non consente previsioni individuali."
+    },
+    {
+      "titolo": "Exploring the Lived-Experience of Limerence",
+      "url": "https://doi.org/10.46743/2160-3715/2015.1420",
+      "apporto": "Temi qualitativi di ruminazione, idealizzazione e perdita di centralità del sé in sei partecipanti; non fornisce fattori o prevalenze."
+    },
+    {
+      "titolo": "What fuels passion? An integrative review of competing theories of romantic passion",
+      "url": "https://doi.org/10.1111/spc3.12629",
+      "apporto": "Distingue teoria della limerenza e più ampia passione romantica e documenta evidenze miste sul ruolo causale dell'incertezza."
+    },
+    {
+      "titolo": "La rete dei servizi per la salute mentale — Ministero della Salute",
+      "url": "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/",
+      "apporto": "Riferimento istituzionale italiano per orientare ai servizi territoriali in presenza di sofferenza o interferenza; non è evidenza sul costrutto."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia separata e include fonti istituzionali italiane su confini, servizi e sicurezza.",
+  "limite": "Non esistono dati che validino in adulti italiani questo specifico set di 24 item, le quattro aree, la scala, le soglie o le interpretazioni."
+}

@@ -29,6 +29,7 @@ public class TopicClusterCatalogue {
                     List.of(
                             "stili-attaccamento",
                             "paura-abbandono",
+                            "limerenza",
                             "dipendenza-affettiva",
                             "gelosia-partner",
                             "dinamiche-narcisistiche-partner",

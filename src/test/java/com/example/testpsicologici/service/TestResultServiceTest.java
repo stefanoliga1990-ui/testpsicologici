@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(25).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(26).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1296,10 +1296,59 @@ class TestResultServiceTest {
     }
 
     @Test
+    void limerenceTestLoadsItsOriginalBalancedStructureAndSafetyMetadata() {
+        PsychologicalTest test = catalogue.findById("limerenza");
+
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "focalizzazione", "reciprocita", "idealizzazione", "impatto");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(6));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "focalizzazione", "reciprocita", "idealizzazione", "impatto");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "stessa persona", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "informativo", "non diagnostico", "OCD", "reciprocità", "consenso", "112", "1522");
+        assertThat(test.references()).hasSize(5).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.1177/00332941251394980",
+                "https://doi.org/10.1007/s11896-024-09674-x",
+                "https://doi.org/10.46743/2160-3715/2015.1420",
+                "https://doi.org/10.1111/spc3.12629",
+                "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/");
+    }
+
+    @Test
+    void limerenceProfilesUseAreaPatternsAndKeepConsentAndSafetyIndependentFromLevel() {
+        TestResult low = analyzeWithAnswersForTest("limerenza", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("limerenza", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("limerenza", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("limerenza", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).contains("limerenza", "molto poco presenti");
+        assertThat(mixed.general().title()).contains("limerenza", "modo variabile");
+        assertThat(focused.general().title()).contains("limerenza", "una o due aree");
+        assertThat(broad.general().title()).contains("limerenza", "molto presenti", "più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(4);
+            assertThat(result.general().detail()).contains(
+                    "non diagnostica limerenza", "OCD", "reciprocità", "consenso",
+                    "confini", "112", "1522");
+        });
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

@@ -2612,6 +2612,131 @@ public class GuideCatalogue {
                                     "Pagina ufficiale consultata per destinazione, gratuità e disponibilità continuativa del servizio; il 1522 non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "limerenza",
+                    "limerenza",
+                    "Limerenza e innamoramento ossessivo",
+                    "Limerenza: quando una persona occupa quasi tutto lo spazio mentale",
+                    "Limerenza e innamoramento ossessivo | Spazio Test",
+                    "Che cosa indica la limerenza, come distinguerla dall'innamoramento intenso e perché reciprocità, consenso, confini e impatto contano più di un'etichetta.",
+                    "Limerenza è un termine descrittivo per una focalizzazione intensa e persistente verso una persona, spesso accompagnata da desiderio di reciprocità, pensieri intrusivi e oscillazioni emotive. Non è una diagnosi autonoma e la ricerca, soprattutto nella popolazione italiana, è ancora limitata.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Un costrutto emergente, non una diagnosi",
+                                    List.of(
+                                            "Il termine limerenza è stato proposto per descrivere un'esperienza in cui l'attenzione si concentra fortemente su una persona e la possibilità di essere ricambiati diventa centrale. Possono comparire fantasie, ripasso delle interazioni, ricerca di significati e forti reazioni alla vicinanza o alla distanza percepite.",
+                                            "Non esiste però una diagnosi autonoma di limerenza. Gli studi sono ancora pochi, usano definizioni e campioni differenti e non consentono di stabilire criteri clinici, prevalenze affidabili o una traiettoria valida per ogni persona."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Esperienza e contesto",
+                                    "Innamoramento intenso e limerenza non sono separati da una linea netta",
+                                    List.of(
+                                            "All'inizio di un innamoramento sono comuni attenzione intensa, desiderio, energia e pensieri frequenti. Un singolo segnale non rende patologico un sentimento: acquistano rilievo la configurazione complessiva, la persistenza, la capacità di tornare alle attività, l'interferenza e il rispetto della realtà relazionale.",
+                                            "La teoria della limerenza attribuisce un ruolo importante all'incertezza sulla reciprocità, ma la revisione delle teorie della passione romantica trova risultati empirici misti. L'ambiguità può alimentare il pensiero in alcune situazioni, ma non è una causa necessaria o sufficiente."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le quattro aree",
+                                    "Come è organizzato il questionario",
+                                    List.of(
+                                            "Spazio Test divide le domande in quattro aree per rendere la restituzione più leggibile. Questa organizzazione è editoriale: non riproduce l'LQ-11 e non è stata confermata come struttura fattoriale in adulti italiani."
+                                    ),
+                                    List.of(
+                                            "Pensieri intrusivi e focalizzazione: comparsa involontaria, ripasso mentale, fantasie e difficoltà a spostare l'attenzione.",
+                                            "Reciprocità e oscillazioni emotive: attesa, bisogno di sapere, rassicurazione e reazioni a vicinanza o distanza percepite.",
+                                            "Idealizzazione e interpretazione: scenari immaginati, lettura di segnali ambigui e maggiore peso agli indizi coerenti con il desiderio.",
+                                            "Azioni, confini e impatto: controlli, ricerca di contatto, cambiamenti dei programmi e conseguenze su attività o sonno."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Non coincide con OCD, attaccamento ansioso o dipendenza affettiva",
+                                    List.of(
+                                            "Pensieri ripetitivi possono comparire nella limerenza e nell'OCD, ma la somiglianza non permette una diagnosi. Una valutazione dell'OCD considera natura delle ossessioni e compulsioni, disagio, tempo, interferenza, storia e alternative; il questionario non svolge questa valutazione.",
+                                            "Paura del rifiuto e ricerca di rassicurazione possono sovrapporsi all'ansia di attaccamento, mentre trascurare sé e altre relazioni può ricordare ciò che viene chiamato dipendenza affettiva. Sono costrutti distinti e non intercambiabili. Limerenza non equivale inoltre all'erotomania: il test non valuta convinzioni deliranti né accerta ciò che l'altra persona prova."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Fatti e interpretazioni",
+                                    "Desiderare reciprocità non dimostra reciprocità",
+                                    List.of(
+                                            "Un messaggio, un sorriso, una pausa o un contatto possono avere più significati. Quando l'attenzione è molto focalizzata, gli indizi favorevoli possono risultare più salienti e gli scenari immaginati possono riempire le informazioni mancanti.",
+                                            "Questo non significa che i sentimenti siano falsi o che ogni interpretazione sia sbagliata. Significa che desiderio, fatti osservabili e comunicazione esplicita sono livelli diversi: il risultato non può parlare a nome dell'altra persona."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Consenso e confini",
+                                    "L'esperienza interna non autorizza azioni verso l'altra persona",
+                                    List.of(
+                                            "Pensare spesso a qualcuno non equivale a perseguitarlo. Diventano però rilevanti contatti ripetuti e indesiderati, sorveglianza, ricerca insistente di informazioni, appostamenti, pressioni o mancato rispetto di un rifiuto: il desiderio di chiarire o essere ricambiati non rende queste condotte accettabili.",
+                                            "Se temi di non riuscire a rispettare una richiesta di distanza, interrompi i contatti non richiesti e cerca subito il sostegno di un professionista o di una persona affidabile che possa aiutarti a mantenere i confini. Non usare un risultato basso come rassicurazione sulla liceità o sull'effetto di un comportamento concreto."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Auto-osservazione",
+                                    "Guardare la sequenza, non soltanto l'intensità",
+                                    List.of(
+                                            "Può essere utile annotare in quali situazioni compare la focalizzazione, quali informazioni erano disponibili, quale interpretazione è emersa, quale impulso è seguito e che effetto ha avuto su attenzione, sonno, responsabilità o relazioni. Questo aiuta a distinguere esperienza interna e comportamento senza attribuire automaticamente una causa.",
+                                            "Osserva anche cosa consente di tornare alle attività, quali contesti aumentano l'incertezza e se la relazione immaginata occupa più spazio della conoscenza diretta. Sono spunti di riflessione, non una tecnica terapeutica o una promessa di cambiamento."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Quando parlarne con un professionista",
+                                    List.of(
+                                            "Se i pensieri persistono, causano sofferenza o interferiscono con sonno, studio, lavoro, responsabilità o altre relazioni, puoi parlarne con uno psicologo, psicoterapeuta, medico o Centro di Salute Mentale. Una valutazione può considerare il contesto e distinguere tra innamoramento intenso, ruminazione, ansia, OCD, umore, trauma e altre spiegazioni.",
+                                            "In caso di pericolo immediato per te o altre persone chiama il 112. Se subisci contatti indesiderati, controllo, minacce o stalking, il servizio pubblico 1522 offre aiuto e consiglio gratuitamente, anche via chat; non sostituisce il 112 nelle emergenze."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 24 item originali, quattro aree editoriali e soglie descrittive. Non è l'LQ-11, non diagnostica limerenza, OCD o dipendenza e non accerta reciprocità, consenso, intenzioni dell'altra persona o pericolosità.",
+                    List.of(
+                            new GuideReference(
+                                    "Development and Validation of the Limerence Questionnaire (LQ-11) — Marshall e colleghi",
+                                    "https://doi.org/10.1177/00332941251394980",
+                                    "Studio di sviluppo in due campioni internazionali autoselezionati consultato per definizione e temi generali; item, due fattori e punteggi non vengono trasferiti all'app."
+                            ),
+                            new GuideReference(
+                                    "Limerence, Hidden Obsession, Fixation, and Rumination — Bradbury, Short e Bleakley",
+                                    "https://doi.org/10.1007/s11896-024-09674-x",
+                                    "Rapid scoping review consultata per limiti della letteratura e distinzione tra focalizzazione e condotte intrusive; non dimostra una progressione individuale verso stalking."
+                            ),
+                            new GuideReference(
+                                    "Exploring the Lived-Experience of Limerence — Willmott e Bentley",
+                                    "https://doi.org/10.46743/2160-3715/2015.1420",
+                                    "Studio qualitativo su sei partecipanti consultato per ruminazione, idealizzazione e vissuto del sé; campione piccolo e autoselezionato non consente generalizzazioni."
+                            ),
+                            new GuideReference(
+                                    "What fuels passion? — Carswell e Impett",
+                                    "https://doi.org/10.1111/spc3.12629",
+                                    "Revisione integrativa consultata per distinguere limerenza e passione romantica e per le evidenze miste sul ruolo dell'incertezza nella reciprocità."
+                            ),
+                            new GuideReference(
+                                    "La rete dei servizi per la salute mentale — Ministero della Salute",
+                                    "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/",
+                                    "Pagina istituzionale italiana consultata per Centri di Salute Mentale e rete territoriale; non fornisce una valutazione o un trattamento personalizzato."
+                            ),
+                            new GuideReference(
+                                    "Vademecum anti-stalking — Polizia di Stato",
+                                    "https://questure.poliziadistato.it/it/LAquila/articolo/5730df743d5ea375992994",
+                                    "Fonte istituzionale consultata per distinguere pensieri da condotte ripetute, intrusive e indesiderate; non è uno strumento psicometrico e non predice il singolo caso."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero antiviolenza e antistalking",
+                                    "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/",
+                                    "Pagina ufficiale consultata per destinazione, gratuità e disponibilità continuativa del servizio; il 1522 non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

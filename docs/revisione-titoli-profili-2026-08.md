@@ -51,6 +51,7 @@ Ogni titolo globale deve:
 | Gelosia verso il partner | Le esperienze di gelosia verso il partner sembrano poco presenti | Le esperienze di gelosia verso il partner sembrano presenti in modo variabile | Le esperienze di gelosia verso il partner sembrano più presenti in una o due aree | Le esperienze di gelosia verso il partner sembrano frequentemente presenti in più aree |
 | Soddisfazione per la propria vita | La soddisfazione percepita per la propria vita sembra poco espressa nelle risposte | La soddisfazione percepita per la propria vita sembra espressa in modo variabile tra le aree | La soddisfazione percepita per la propria vita sembra più espressa in una o due aree | La soddisfazione percepita per la propria vita sembra ampiamente espressa in più aree |
 | Esperienze associate al PTSD | Le esperienze post-traumatiche esplorate sembrano poco presenti nelle risposte | Le esperienze post-traumatiche esplorate sembrano presenti in modo variabile tra le aree | Le esperienze post-traumatiche esplorate sembrano più presenti in una o due aree | Le esperienze post-traumatiche esplorate sembrano frequentemente presenti in più aree |
+| Limerenza | Le dinamiche associate alla limerenza sembrano molto poco presenti nelle tue risposte | Le dinamiche associate alla limerenza sembrano presenti in modo variabile | Le dinamiche associate alla limerenza sembrano più presenti in una o due aree | Le dinamiche associate alla limerenza sembrano molto presenti in più aree |
 
 ## Eccezione documentata: stili di attaccamento
 

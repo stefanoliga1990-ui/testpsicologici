@@ -1177,6 +1177,67 @@ class PageRenderingTest {
     }
 
     @Test
+    void limerenceIntroductionAndGuideExposeCategoryRelatedContentAndSafetyLimits() throws Exception {
+        mockMvc.perform(get("/test/limerenza"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Limerenza: quando l'innamoramento diventa ossessivo?")))
+                .andExpect(content().string(containsString("Pensieri intrusivi e focalizzazione")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/limerenza\"")))
+                .andExpect(content().string(containsString("href=\"/test/paura-abbandono\"")))
+                .andExpect(content().string(containsString("href=\"/test/dipendenza-affettiva\"")))
+                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
+                .andExpect(content().string(containsString("112")))
+                .andExpect(content().string(containsString("1522")));
+
+        mockMvc.perform(get("/approfondimenti/limerenza"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Un costrutto emergente, non una diagnosi")))
+                .andExpect(content().string(containsString("Desiderare reciprocità non dimostra reciprocità")))
+                .andExpect(content().string(containsString("L'esperienza interna non autorizza azioni")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/test/limerenza\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void limerenceResultRendersOverallAndFourAreaAnalysesWithRelatedTests() throws Exception {
+        mockMvc.perform(get("/test/limerenza/risultato").session(completedAttempt("limerenza", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le dinamiche associate alla limerenza sembrano molto presenti in più aree")))
+                .andExpect(content().string(containsString("Pensieri intrusivi e focalizzazione")))
+                .andExpect(content().string(containsString("Reciprocità e oscillazioni emotive")))
+                .andExpect(content().string(containsString("Idealizzazione e interpretazione dei segnali")))
+                .andExpect(content().string(containsString("Azioni, confini e impatto quotidiano")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/limerenza/risultato/pdf\"")))
+                .andExpect(content().string(containsString("Test correlati")))
+                .andExpect(content().string(containsString("href=\"/test/dipendenza-affettiva\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/limerenza\"")));
+    }
+
+    @Test
+    void limerenceResultCanBeDownloadedAsReadablePdf() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/test/limerenza/risultato/pdf")
+                        .session(completedAttempt("limerenza", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-limerenza.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Limerenza")
+                    .contains("Pensieri intrusivi e focalizzazione")
+                    .contains("Reciprocità e oscillazioni emotive")
+                    .contains("non diagnostica limerenza")
+                    .contains("consenso");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -1238,6 +1299,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/ptsd-adulti")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/stili-attaccamento")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/limerenza")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1250,6 +1313,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/soddisfazione-vita")))
                 .andExpect(content().string(containsString("http://localhost/test/ptsd-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/stili-attaccamento")))
+                .andExpect(content().string(containsString("http://localhost/test/limerenza")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

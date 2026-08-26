@@ -70,6 +70,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedLifeSatisfactionInformationTest();
         seedPtsdInformationTest();
         seedAttachmentStylesInformationTest();
+        seedLimerenceInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -2382,6 +2383,108 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveStyle(id, "FEARFUL_AVOIDANT", "Prototipo con ansia ed evitamento più espressi: descrive possibile coesistenza di bisogno di vicinanza e protezione attraverso distanza, senza equivalere a disorganizzazione o diagnosi.");
     }
 
+    private void seedLimerenceInformationTest() {
+        String id = "limerenza";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Limerenza: quando l'innamoramento diventa ossessivo?",
+                "Autovalutazione informativa",
+                "Esplora quanto pensieri persistenti, bisogno di reciprocità, idealizzazione e impatto quotidiano siano presenti verso una persona specifica.",
+                "6 min · 24 domande",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato: riferisci tutte le risposte alla stessa persona e agli ultimi tre mesi. Non stabilisce limerenza, OCD, dipendenza, reciprocità o consenso e un innamoramento intenso non è di per sé patologico. Se temi di non rispettare confini o un rifiuto, interrompi i contatti non desiderati e cerca supporto; in caso di pericolo immediato chiama il 112, mentre chi subisce stalking può rivolgersi al 1522.",
+                version, false,
+                "Presenza complessiva delle dinamiche esplorate",
+                "Presenza delle esperienze nell'area",
+                true, 26).withSeo(
+                "Test sulla limerenza online: 24 domande | Spazio Test",
+                "Questionario informativo sulla limerenza: pensieri persistenti, reciprocità, idealizzazione e impatto quotidiano. 24 domande; non diagnostico.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e alla stessa persona, con quale frequenza ti è capitato?"));
+
+        saveReference(id, "Development and Validation of the Limerence Questionnaire (LQ-11) — Marshall e colleghi",
+                "https://doi.org/10.1177/00332941251394980", 1);
+        saveReference(id, "Limerence, Hidden Obsession, Fixation, and Rumination — Bradbury, Short e Bleakley",
+                "https://doi.org/10.1007/s11896-024-09674-x", 2);
+        saveReference(id, "Exploring the Lived-Experience of Limerence — Willmott e Bentley",
+                "https://doi.org/10.46743/2160-3715/2015.1420", 3);
+        saveReference(id, "What fuels passion? — Carswell e Impett",
+                "https://doi.org/10.1111/spc3.12629", 4);
+        saveReference(id, "La rete dei servizi per la salute mentale — Ministero della Salute",
+                "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/", 5);
+
+        saveArea(id, "focalizzazione", "Pensieri intrusivi e focalizzazione", 1);
+        saveArea(id, "reciprocita", "Reciprocità e oscillazioni emotive", 2);
+        saveArea(id, "idealizzazione", "Idealizzazione e interpretazione dei segnali", 3);
+        saveArea(id, "impatto", "Azioni, confini e impatto quotidiano", 4);
+
+        saveQuestions(id, List.of(
+                q("focalizzazione", "I pensieri su questa persona hanno interrotto ciò che stavo facendo."),
+                q("focalizzazione", "Ho ripercorso mentalmente conversazioni avute con questa persona."),
+                q("focalizzazione", "Questa persona è comparsa nei miei pensieri senza che lo decidessi."),
+                q("focalizzazione", "Ho faticato a riportare l'attenzione su altro dopo aver pensato a questa persona."),
+                q("focalizzazione", "Ho dedicato molto tempo a immaginare possibili incontri con questa persona."),
+                q("focalizzazione", "Mi sono accorto/a che gran parte del mio spazio mentale era occupato da questa persona."),
+                q("reciprocita", "Ho sentito un bisogno urgente di sapere cosa provasse questa persona per me."),
+                q("reciprocita", "L'attesa di un suo messaggio o contatto mi ha tenuto in tensione."),
+                q("reciprocita", "Il mio umore è cambiato in base ai segnali di interesse che percepivo."),
+                q("reciprocita", "Un suo gesto di attenzione ha prodotto in me uno slancio emotivo molto forte."),
+                q("reciprocita", "Una sua distanza percepita mi ha fatto sentire respinto/a."),
+                q("reciprocita", "Ho cercato rassicurazioni sulla possibilità che i miei sentimenti fossero ricambiati."),
+                q("idealizzazione", "Ho attribuito un significato romantico a segnali che potevano avere più interpretazioni."),
+                q("idealizzazione", "Ho immaginato qualità di questa persona che conoscevo solo in parte."),
+                q("idealizzazione", "Ho costruito nella mente scene di una relazione che non erano ancora accadute."),
+                q("idealizzazione", "Ho dato più peso agli indizi favorevoli che a quelli contrari alla relazione desiderata."),
+                q("idealizzazione", "Ho confrontato altre persone con l'immagine che avevo di questa persona."),
+                q("idealizzazione", "Ho mantenuto speranza in una relazione nonostante informazioni che la rendevano poco plausibile."),
+                q("impatto", "Ho controllato profili, chat o aggiornamenti per sapere cosa facesse questa persona."),
+                q("impatto", "Ho cercato informazioni su questa persona attraverso conoscenze comuni."),
+                q("impatto", "Ho modificato i miei programmi sperando di incontrare o sentire questa persona."),
+                q("impatto", "Ho cercato un nuovo contatto anche quando quello precedente non aveva ricevuto risposta."),
+                q("impatto", "Ho trascurato un'attività importante perché la mia attenzione era rivolta a questa persona."),
+                q("impatto", "I pensieri su questa persona hanno reso più difficile dormire.")));
+
+        String commonSafety = "Il risultato non diagnostica limerenza, OCD o dipendenza, non accerta reciprocità o consenso e usa soglie esclusivamente editoriali. "
+                + "Se pensieri o azioni causano sofferenza, interferenza o difficoltà a rispettare confini e rifiuti, confrontati con un professionista e interrompi i contatti non desiderati; in caso di pericolo immediato chiama il 112. "
+                + "Se subisci controllo, contatti indesiderati o stalking, puoi rivolgerti al 1522.";
+
+        saveGlobal(id, "LOW",
+                "Le dinamiche associate alla limerenza sembrano molto poco presenti nelle tue risposte",
+                "Pensieri intrusivi, bisogno di reciprocità, idealizzazione e impatto risultano poco frequenti in tutte e quattro le aree. Negli ultimi tre mesi non emerge quindi una configurazione diffusa delle esperienze esplorate verso la persona scelta.",
+                "Questo andamento non esclude un episodio intenso, una difficoltà circoscritta o comportamenti non rappresentati dalla media. Considera eventuali momenti specifici, cambiamenti recenti e l'effetto concreto su attenzione, sonno, responsabilità e relazioni. " + commonSafety);
+        saveGlobal(id, "MIXED",
+                "Le dinamiche associate alla limerenza sembrano presenti in modo variabile",
+                "Le risposte descrivono frequenze diverse tra focalizzazione, reciprocità, idealizzazione e impatto, senza aree al livello editoriale più alto. Le esperienze possono quindi dipendere da momenti, segnali o contesti specifici.",
+                "La variabilità può riguardare ciò che accade internamente, le informazioni disponibili o il modo in cui reagisci a vicinanza e distanza percepite. Osserva la sequenza tra evento, interpretazione, impulso e conseguenza senza dedurre le intenzioni dell'altra persona. " + commonSafety);
+        saveGlobal(id, "FOCUSED",
+                "Le dinamiche associate alla limerenza sembrano più presenti in una o due aree",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta quindi verso aspetti specifici senza descrivere ogni pensiero, emozione o comportamento allo stesso modo.",
+                "Consulta le aree emergenti per distinguere focalizzazione mentale, bisogno di reciprocità, interpretazioni e conseguenze concrete. È utile osservare persistenza, possibilità di spostare l'attenzione e rispetto dei limiti, senza trasformare una differenza tra barre in una spiegazione clinica. " + commonSafety);
+        saveGlobal(id, "BROAD",
+                "Le dinamiche associate alla limerenza sembrano molto presenti in più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Focalizzazione, bisogno di reciprocità, idealizzazione oppure impatto possono quindi formare una configurazione ampia negli ultimi tre mesi, senza rappresentare una misura di gravità.",
+                "Considera quanto l'andamento persista, quali situazioni lo attivino e se limiti sonno, responsabilità, relazioni o libertà di scelta. Un confronto professionale può aiutare a distinguere innamoramento intenso, ruminazione, ansia, OCD, difficoltà relazionali e altre spiegazioni senza presupporre una causa. " + commonSafety);
+
+        saveAreaInsights(id, "focalizzazione",
+                "Pensieri involontari, ripasso mentale e difficoltà a spostare l'attenzione risultano poco frequenti. Un episodio circoscritto può comunque essere significativo e non viene rappresentato dalla sola media.",
+                "La persona occupa l'attenzione in alcune situazioni o periodi. Osserva durata, trigger e possibilità di tornare intenzionalmente alle attività senza chiamare questi pensieri ossessioni cliniche.",
+                "Pensieri, fantasie o ripassi mentali risultano frequenti e possono assorbire molto spazio attentivo. L'area non diagnostica OCD e non stabilisce cause, controllo volontario o interferenza clinica.");
+        saveAreaInsights(id, "reciprocita",
+                "Attesa, rassicurazione e variazioni emotive legate alla reciprocità percepita risultano poco frequenti. Questo non accerta ciò che l'altra persona prova o comunica.",
+                "In alcuni momenti vicinanza, distanza o attesa influenzano il tono emotivo. È utile distinguere fatti osservabili, interpretazioni e bisogno di certezza senza dedurre intenzioni.",
+                "Il bisogno di reciprocità e le reazioni a segnali percepiti risultano frequenti. Il punteggio non dimostra dipendenza, attaccamento ansioso o reciprocità reale e non sostituisce il consenso esplicito.");
+        saveAreaInsights(id, "idealizzazione",
+                "Scenari immaginati, lettura di segnali ambigui e selezione degli indizi risultano poco frequenti. Non indica che ogni interpretazione sia accurata.",
+                "In alcune situazioni l'immagine desiderata della relazione orienta la lettura delle informazioni. Osserva quanto conosci direttamente e quali alternative restano possibili.",
+                "Idealizzazione, scenari anticipati o attenzione selettiva ai segnali risultano frequenti. L'area non diagnostica delirio e non giudica la sincerità dei sentimenti, ma invita a separare desiderio e informazioni disponibili.");
+        saveAreaInsights(id, "impatto",
+                "Controlli, ricerca di contatto e conseguenze su attività o sonno risultano poco frequenti. Anche un singolo contatto non desiderato o il mancato rispetto di un limite resta importante indipendentemente dalla media.",
+                "In alcune occasioni attenzione e azioni verso la persona incidono su programmi, contatti o quotidianità. Considera intenzionalità, conseguenze e confini espressi senza usare il livello come autorizzazione.",
+                "Controlli, tentativi di contatto o interferenze quotidiane risultano frequenti. Il dato non predice stalking o pericolosità: contatti, sorveglianza o avvicinamenti non desiderati vanno interrotti e discussi subito con un professionista.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -2503,6 +2606,12 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Are adult attachment styles categorical or dimensional? — Fraley e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25559192/"),
                 ref("Adult Attachment, Stress, and Romantic Relationships — Simpson e Rholes", "https://pmc.ncbi.nlm.nih.gov/articles/PMC4845754/"),
                 ref("Within-person variation in attachment — Girme e colleghi", "https://pmc.ncbi.nlm.nih.gov/articles/PMC5820166/")));
+        syncReferences("limerenza", List.of(
+                ref("Development and Validation of the Limerence Questionnaire (LQ-11) — Marshall e colleghi", "https://doi.org/10.1177/00332941251394980"),
+                ref("Limerence, Hidden Obsession, Fixation, and Rumination — Bradbury, Short e Bleakley", "https://doi.org/10.1007/s11896-024-09674-x"),
+                ref("Exploring the Lived-Experience of Limerence — Willmott e Bentley", "https://doi.org/10.46743/2160-3715/2015.1420"),
+                ref("What fuels passion? — Carswell e Impett", "https://doi.org/10.1111/spc3.12629"),
+                ref("La rete dei servizi per la salute mentale — Ministero della Salute", "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

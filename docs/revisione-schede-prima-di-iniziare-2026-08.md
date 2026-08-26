@@ -2,7 +2,7 @@
 
 ## Scopo
 
-Questa revisione riduce il carico di lettura delle schede introduttive dei 25 questionari senza modificare item, opzioni di risposta, scoring, soglie o interpretazioni. Le schede restano istruzioni informative non validate e non sostituiscono una valutazione professionale.
+Questa revisione definisce il carico di lettura delle schede introduttive dei 26 questionari senza modificare item, opzioni di risposta, scoring, soglie o interpretazioni. Le schede restano istruzioni informative non validate e non sostituiscono una valutazione professionale.
 
 ## Regola editoriale
 
@@ -45,6 +45,7 @@ La sintesi non aggiunge nuove affermazioni scientifiche: seleziona soltanto le i
 | Soddisfazione di vita | 1.0 | 1.1 |
 | Esperienze associate al PTSD | 1.0 | 1.1 |
 | Stili di attaccamento | 1.0 | 1.1 |
+| Limerenza | nuova pubblicazione | 1.0 |
 
 ## Controlli automatici
 

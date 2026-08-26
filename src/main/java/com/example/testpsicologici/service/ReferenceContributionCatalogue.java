@@ -196,7 +196,17 @@ public class ReferenceContributionCatalogue {
             entry("https://pmc.ncbi.nlm.nih.gov/articles/PMC4845754/",
                     "Revisione consultata per ansia, evitamento e strategie di iperattivazione o disattivazione sotto stress relazionale; associazioni di gruppo non spiegano il singolo caso."),
             entry("https://pmc.ncbi.nlm.nih.gov/articles/PMC5820166/",
-                    "Studi longitudinali consultati per variazioni entro la persona e rispetto a una relazione specifica; non producono previsioni o classificazioni per l'utente italiano."));
+                    "Studi longitudinali consultati per variazioni entro la persona e rispetto a una relazione specifica; non producono previsioni o classificazioni per l'utente italiano."),
+            entry("https://doi.org/10.1177/00332941251394980",
+                    "Sviluppo dell'LQ-11 consultato per la definizione emergente, il bisogno intenso di attaccamento e la trascuratezza di sé e altri; campioni autoselezionati, item, fattori e punteggi non sono trasferiti all'app."),
+            entry("https://doi.org/10.1007/s11896-024-09674-x",
+                    "Rapid scoping review consultata per lo stato limitato della letteratura e per distinguere focalizzazione interna da condotte persistenti e indesiderate; non consente di prevedere stalking o violenza nel singolo caso."),
+            entry("https://doi.org/10.46743/2160-3715/2015.1420",
+                    "Studio fenomenologico consultato per ruminazione, idealizzazione e perdita di centralità del sé; i sei partecipanti internazionali non forniscono fattori, frequenze o generalizzazioni."),
+            entry("https://doi.org/10.1111/spc3.12629",
+                    "Revisione integrativa consultata per distinguere teoria della limerenza e più ampia passione romantica e per le evidenze miste sul ruolo causale dell'incertezza."),
+            entry("https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/",
+                    "Fonte istituzionale italiana consultata per orientare ai servizi territoriali quando sofferenza o interferenza richiedono una valutazione; non è evidenza sul costrutto di limerenza."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);
