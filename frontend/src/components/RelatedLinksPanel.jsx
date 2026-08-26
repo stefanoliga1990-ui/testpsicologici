@@ -1,8 +1,8 @@
-export default function RelatedLinksPanel({ actionLabel, cluster, contextHref, items, title, urlFor }) {
+export default function RelatedLinksPanel({ actionLabel, className = '', cluster, contextHref, items, title, urlFor }) {
   if (!cluster || !items?.length) return null;
 
   return (
-    <aside className="related-content" aria-label={title}>
+    <aside className={`related-content${className ? ` ${className}` : ''}`} aria-label={title}>
       <p className="eyebrow">Nello stesso tema</p>
       <h2>{title}</h2>
       <a className="related-cluster-link" href={contextHref}>{cluster.title} <span aria-hidden="true">→</span></a>

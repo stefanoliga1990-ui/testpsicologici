@@ -23,7 +23,6 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
   return (
     <main className="intro-shell">
       <Navbar />
-      <div className="primary-related-layout intro-primary-layout">
       <Card className="intro-card">
         <p className="eyebrow">{test.eyebrow}</p>
         <h1>{test.title}</h1>
@@ -46,8 +45,7 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
           </Button>
         )}
       </Card>
-      <RelatedTests relatedTests={relatedTests} topicCluster={topicCluster} />
-      </div>
+      <RelatedTests className="intro-related-content" relatedTests={relatedTests} topicCluster={topicCluster} />
 
       <section className="intro-editorial" aria-label="Informazioni sul questionario">
         <div className="editorial-heading">

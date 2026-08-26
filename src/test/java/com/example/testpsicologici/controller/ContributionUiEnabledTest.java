@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -48,12 +50,18 @@ class ContributionUiEnabledTest {
         MockHttpSession session = new MockHttpSession();
         session.setAttribute("test-attempt-" + testId, attempt);
 
-        mockMvc.perform(get("/test/{testId}/risultato", testId).session(session))
+        MvcResult renderedResult = mockMvc.perform(get("/test/{testId}/risultato", testId).session(session))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Ti va di offrirci un caffè?")))
                 .andExpect(content().string(containsString("name=\"amount\" value=\"1\"")))
                 .andExpect(content().string(containsString("name=\"amount\" value=\"3\"")))
                 .andExpect(content().string(containsString("name=\"amount\" value=\"5\"")))
-                .andExpect(content().string(containsString("\"contributionsEnabled\":true")));
+                .andExpect(content().string(containsString("\"contributionsEnabled\":true")))
+                .andReturn();
+
+        String html = renderedResult.getResponse().getContentAsString();
+        assertThat(html.indexOf("class=\"related-content result-related-content\""))
+                .isGreaterThan(0)
+                .isLessThan(html.indexOf("class=\"support-card\""));
     }
 }

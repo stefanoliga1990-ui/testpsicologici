@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="it" xmlns:th="http://www.thymeleaf.org">
 <body>
-<aside th:fragment="tests(items, cluster)" class="related-content" aria-label="Test correlati"
+<aside th:fragment="tests(items, cluster, extraClass)" class="related-content" th:classappend="${extraClass}" aria-label="Test correlati"
        th:if="${cluster != null and !#lists.isEmpty(items)}">
     <p class="eyebrow">Nello stesso tema</p>
     <h2>Test correlati</h2>
@@ -16,7 +16,7 @@
     </nav>
 </aside>
 
-<aside th:fragment="guides(items, cluster)" class="related-content" aria-label="Approfondimenti collegati"
+<aside th:fragment="guides(items, cluster, extraClass)" class="related-content" th:classappend="${extraClass}" aria-label="Approfondimenti collegati"
        th:if="${cluster != null and !#lists.isEmpty(items)}">
     <p class="eyebrow">Nello stesso tema</p>
     <h2>Approfondimenti collegati</h2>

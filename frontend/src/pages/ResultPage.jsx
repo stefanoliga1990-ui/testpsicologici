@@ -43,7 +43,6 @@ export default function ResultPage({ areaResults, contributionsEnabled = false, 
   return (
     <main className="result-shell">
       <Navbar />
-      <div className="primary-related-layout result-primary-layout">
       <section className="result-card">
         <p className="eyebrow">Il tuo risultato</p>
         {test.scoreVisible ? <div className="score-badge"><span>{score}</span><small>/100</small></div> : <div className="result-symbol" aria-hidden="true">✦</div>}
@@ -119,8 +118,7 @@ export default function ResultPage({ areaResults, contributionsEnabled = false, 
           <Button as="a" className="button-secondary" href="/">Torna alla home</Button>
         </div>
       </section>
-      <RelatedTests relatedTests={relatedTests} topicCluster={topicCluster} />
-      </div>
+      <RelatedTests className="result-related-content" relatedTests={relatedTests} topicCluster={topicCluster} />
       {contributionsEnabled && <SupportContributionCard />}
       <p className="disclaimer">Questo questionario è informativo e non clinicamente validato: non conferma né esclude una diagnosi e non sostituisce una valutazione professionale.</p>
       <Footer />

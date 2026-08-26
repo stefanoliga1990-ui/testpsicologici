@@ -226,11 +226,9 @@ a { color: inherit; text-decoration: none; }
 .guide-topic-cluster .topic-cluster-heading div > p:last-child { color: #c9dbd1; }
 .guide-topic-cluster .topic-cluster-heading > span { color: var(--paper); background: rgba(255, 255, 255, .12); }
 
-.intro-shell, .result-shell, .guide-shell { width: min(1240px, calc(100% - 48px)); }
-.primary-related-layout { display: grid; align-items: start; justify-content: center; gap: 24px; }
-.intro-primary-layout { grid-template-columns: minmax(0, 650px) minmax(250px, 290px); margin-top: clamp(55px, 11vh, 110px); }
-.result-primary-layout { grid-template-columns: minmax(0, 860px) minmax(250px, 290px); margin-top: clamp(60px, 12vh, 120px); }
-.primary-related-layout > .intro-card, .primary-related-layout > .result-card { max-width: none; margin: 0; }
+.intro-shell { width: min(920px, calc(100% - 48px)); }
+.result-shell { width: min(1040px, calc(100% - 48px)); }
+.guide-shell { width: min(1040px, calc(100% - 48px)); }
 .related-content { position: sticky; top: 24px; padding: 25px; border: 1px solid var(--line); border-radius: 21px; background: rgba(255, 254, 250, .9); box-shadow: 0 13px 34px rgba(28, 54, 43, .07); }
 .related-content h2 { margin: 0; font: 700 clamp(1.75rem, 3vw, 2.25rem)/1.04 var(--serif); letter-spacing: -.04em; }
 .related-cluster-link { display: inline-flex; gap: 5px; margin-top: 13px; color: var(--green); font-size: .77rem; font-weight: 700; line-height: 1.4; }
@@ -239,17 +237,16 @@ a { color: inherit; text-decoration: none; }
 .related-link:hover { transform: translateX(3px); border-color: rgba(36, 92, 76, .3); background: var(--mint); }
 .related-link strong { color: var(--ink); font: 700 1.06rem/1.25 var(--serif); }
 .related-link > span { color: var(--green); font-size: .72rem; font-weight: 700; }
+.intro-related-content, .result-related-content, .guide-related-content { position: static; }
+.intro-related-content { max-width: 650px; margin: 20px auto 0; }
+.result-related-content { max-width: 860px; margin: 20px auto 0; }
+.intro-related-content .related-links, .result-related-content .related-links, .guide-related-content .related-links { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
 
-.guide-article { max-width: 1180px; }
-.guide-hero-layout { display: grid; grid-template-columns: minmax(0, 860px) minmax(250px, 290px); align-items: start; gap: 30px; }
-.guide-hero-layout .related-content { margin-top: clamp(60px, 10vh, 105px); }
-.guide-content { max-width: 860px; }
+.guide-article { max-width: 880px; }
+.guide-content { max-width: none; }
 
 @media (max-width: 1050px) {
-    .primary-related-layout, .guide-hero-layout { grid-template-columns: minmax(0, 860px); }
     .related-content { position: static; }
-    .guide-hero-layout .related-content { margin-top: 0; }
-    .guide-content { margin: 0 auto; }
 }
 
 @media (max-width: 680px) {
