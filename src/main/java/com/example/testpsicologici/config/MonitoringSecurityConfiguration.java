@@ -31,7 +31,7 @@ public class MonitoringSecurityConfiguration {
                 .formLogin(form -> form
                         .loginPage("/monitoring/login")
                         .loginProcessingUrl("/monitoring/login")
-                        .defaultSuccessUrl("/monitoring", true)
+                        .defaultSuccessUrl("/monitoring", false)
                         .failureUrl("/monitoring/login?error"))
                 .logout(logout -> logout
                         .logoutUrl("/monitoring/logout")

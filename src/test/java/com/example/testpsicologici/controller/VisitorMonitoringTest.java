@@ -176,6 +176,48 @@ class VisitorMonitoringTest {
     }
 
     @Test
+    void ownerCanPreviewTheRealLowSelfEsteemResultWithoutCompletingTheTest() throws Exception {
+        String previewUrl = "/monitoring/anteprima/test/autostima/risultato/low";
+
+        mockMvc.perform(get(previewUrl))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/monitoring/login"));
+
+        mockMvc.perform(get(previewUrl).with(user("owner").roles("MONITORING")))
+                .andExpect(status().isOk())
+                .andExpect(header().string(HttpHeaders.CACHE_CONTROL, containsString("no-store")))
+                .andExpect(header().string("X-Robots-Tag", "noindex, nofollow, noarchive"))
+                .andExpect(content().string(containsString("Risultato · Autostima · Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "Le difficoltà legate all'autostima sembrano poco presenti")))
+                .andExpect(content().string(containsString("\"page\":\"result\"")));
+
+        assertThat(completionRepository.count()).isZero();
+        mockMvc.perform(get("/test/autostima/risultato"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/test/autostima"));
+    }
+
+    @Test
+    void loginReturnsOwnerToTheRequestedResultPreview() throws Exception {
+        String previewUrl = "/monitoring/anteprima/test/autostima/risultato/low";
+        MvcResult protectedRequest = mockMvc.perform(get(previewUrl))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/monitoring/login"))
+                .andReturn();
+        MockHttpSession session = (MockHttpSession) protectedRequest.getRequest().getSession(false);
+        assertThat(session).isNotNull();
+
+        mockMvc.perform(post("/monitoring/login")
+                        .session(session)
+                        .with(csrf())
+                        .param("username", "monitoring-test")
+                        .param("password", "monitoring-test-password"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost" + previewUrl + "?continue"));
+    }
+
+    @Test
     void completedTestIsCountedOncePerAttemptWithoutAdditionalCookies() throws Exception {
         String testId = "autostima";
         PsychologicalTest test = catalogue.findById(testId);

@@ -43,6 +43,7 @@ public class TestController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TestController.class);
     private static final String ATTEMPT_PREFIX = "test-attempt-";
+    private static final String RESULT_PREVIEW_TEST_ID = "autostima";
     private static final int MAX_SEARCH_QUERY_LENGTH = 120;
     private static final List<String> ANSWER_OPTIONS =
             List.of("Mai", "Raramente", "A volte", "Spesso", "Quasi sempre");
@@ -182,11 +183,28 @@ public class TestController {
         TestAttempt attempt = findAttempt(testId, session);
         if (attempt == null || !attempt.isComplete()) return "redirect:/test/" + testId;
 
+        return renderResult(test, attempt, model);
+    }
+
+    @GetMapping("/monitoring/anteprima/test/autostima/risultato/low")
+    public String lowSelfEsteemResultPreview(HttpServletResponse response, Model model) {
+        response.setHeader(HttpHeaders.CACHE_CONTROL, "no-store");
+        response.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive");
+        PsychologicalTest test = findTest(RESULT_PREVIEW_TEST_ID);
+        TestAttempt attempt = new TestAttempt(test.questions().size());
+        for (int questionIndex = 0; questionIndex < test.questions().size(); questionIndex++) {
+            attempt.answer(questionIndex, 1);
+        }
+
+        return renderResult(test, attempt, model);
+    }
+
+    private String renderResult(PsychologicalTest test, TestAttempt attempt, Model model) {
         TestResult result = resultService.analyze(test, attempt);
-        InformationGuide guide = guideCatalogue.findByTestId(testId).orElse(null);
-        var topicCluster = topicClusterCatalogue.findByTestId(testId).orElse(null);
+        InformationGuide guide = guideCatalogue.findByTestId(test.id()).orElse(null);
+        var topicCluster = topicClusterCatalogue.findByTestId(test.id()).orElse(null);
         var relatedTests = catalogue.findSuggestionsByIds(
-                topicClusterCatalogue.findRelatedTestIds(testId, 3));
+                topicClusterCatalogue.findRelatedTestIds(test.id(), 3));
         model.addAttribute("test", test);
         model.addAttribute("guide", guide);
         model.addAttribute("topicCluster", topicCluster);
