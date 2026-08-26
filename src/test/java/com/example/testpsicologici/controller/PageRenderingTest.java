@@ -67,6 +67,11 @@ class PageRenderingTest {
                         "src=\"/images/brand/logo-mark.svg\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("id=\"test-search-input\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("data-test-card")))
+                .andExpect(content().string(containsString("Ansia, umore e trauma")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("Autostima, approvazione e obiettivi")))
+                .andExpect(content().string(containsString("Emozioni, risorse e benessere")))
+                .andExpect(content().string(containsString("Neurosviluppo, attenzione e linguaggio")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
                         "href=\"/test/tratti-autistici-adulti\"")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti\"")))
@@ -121,7 +126,11 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("A cura di Spazio Test")))
                 .andExpect(content().string(containsString("Riferimento informativo per attenzione")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione editoriale"))))
-                .andExpect(content().string(containsString("ADHD in adults — NHS")));
+                .andExpect(content().string(containsString("ADHD in adults — NHS")))
+                .andExpect(content().string(containsString("Test correlati")))
+                .andExpect(content().string(containsString("href=\"/test/tratti-autistici-adulti\"")))
+                .andExpect(content().string(containsString("href=\"/test/intelligenza-linguistica\"")));
+
     }
 
     @Test
@@ -187,9 +196,14 @@ class PageRenderingTest {
                         "<title>Approfondimenti su psicologia e benessere | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Un argomento alla volta")))
                 .andExpect(content().string(containsString("/js/guides.js")))
-                .andExpect(content().string(containsString("/react/assets/app.js?v=react-11")))
+                .andExpect(content().string(containsString("/react/assets/app.js?v=react-12")))
                 .andExpect(content().string(containsString("id=\"guide-search-input\"")))
                 .andExpect(content().string(containsString("data-guide-card")))
+                .andExpect(content().string(containsString("Ansia, umore e trauma")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("Autostima, approvazione e obiettivi")))
+                .andExpect(content().string(containsString("Emozioni, risorse e benessere")))
+                .andExpect(content().string(containsString("Neurosviluppo, attenzione e linguaggio")))
                 .andExpect(content().string(containsString("data-guide-empty")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/autismo-adulti\"")))
                 .andExpect(content().string(containsString("Autismo nell&#39;adulto")))
@@ -292,6 +306,9 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("A cura di Spazio Test")))
                 .andExpect(content().string(containsString("Signs of autism in adults — NHS")))
                 .andExpect(content().string(containsString("href=\"/test/tratti-autistici-adulti\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/adhd-adulti\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/intelligenza-linguistica\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
@@ -1105,7 +1122,7 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(header().string("X-Robots-Tag", "noindex, follow, noarchive"))
                 .andExpect(content().string(containsString(
-                        "/react/assets/app.css?v=react-5")));
+                        "/react/assets/app.css?v=topic-clusters-1")));
     }
 
     @Test
@@ -1255,6 +1272,11 @@ class PageRenderingTest {
                         "href=\"/test/tratti-adhd-adulti/risultato/pdf\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
                         "Approfondisci l'argomento")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Test correlati")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString(
+                        "href=\"/test/tratti-autistici-adulti\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString(
+                        "href=\"/test/intelligenza-linguistica\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
                         "href=\"/approfondimenti/adhd-adulti\"")));
     }

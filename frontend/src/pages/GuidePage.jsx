@@ -2,8 +2,9 @@ import Button from '../components/Button';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ReferenceList from '../components/ReferenceList';
+import RelatedGuides from '../components/RelatedGuides';
 
-export default function GuidePage({ guide, test }) {
+export default function GuidePage({ guide, relatedGuides, test, topicCluster }) {
   return (
     <main className="guide-shell">
       <Navbar />
@@ -11,10 +12,13 @@ export default function GuidePage({ guide, test }) {
         <a href="/">Home</a><span aria-hidden="true">/</span><a href="/approfondimenti">Approfondimenti</a><span aria-hidden="true">/</span><span aria-current="page">{guide.cardTitle}</span>
       </nav>
       <article className="guide-article">
+        <div className="guide-hero-layout">
         <header className="guide-hero">
           <p className="eyebrow">Guida informativa</p><h1>{guide.title}</h1><p className="guide-lead">{guide.summary}</p>
           <a className="editorial-byline" href="/il-progetto">A cura di Spazio Test</a>
         </header>
+        <RelatedGuides relatedGuides={relatedGuides} topicCluster={topicCluster} />
+        </div>
         <div className="guide-content">
           {guide.sections.map((section) => (
             <section className="guide-section" key={`${section.eyebrow}-${section.title}`}>

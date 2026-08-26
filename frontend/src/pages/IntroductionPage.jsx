@@ -5,10 +5,11 @@ import Card from '../components/Card';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ReferenceList from '../components/ReferenceList';
+import RelatedTests from '../components/RelatedTests';
 import useAsyncAction from '../hooks/useAsyncAction';
 import { startTest } from '../services/api';
 
-export default function IntroductionPage({ guide, test }) {
+export default function IntroductionPage({ guide, relatedTests, test, topicCluster }) {
   const action = useCallback((signal) => startTest(test.id, signal), [test.id]);
   const { error, loading, run } = useAsyncAction(action);
   const isAttachmentStyles = test.scoringModel === 'ATTACHMENT_DIMENSIONAL';
@@ -22,6 +23,7 @@ export default function IntroductionPage({ guide, test }) {
   return (
     <main className="intro-shell">
       <Navbar />
+      <div className="primary-related-layout intro-primary-layout">
       <Card className="intro-card">
         <p className="eyebrow">{test.eyebrow}</p>
         <h1>{test.title}</h1>
@@ -44,6 +46,8 @@ export default function IntroductionPage({ guide, test }) {
           </Button>
         )}
       </Card>
+      <RelatedTests relatedTests={relatedTests} topicCluster={topicCluster} />
+      </div>
 
       <section className="intro-editorial" aria-label="Informazioni sul questionario">
         <div className="editorial-heading">

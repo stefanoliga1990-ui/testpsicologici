@@ -17,6 +17,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional(readOnly = true)
@@ -47,6 +50,18 @@ public class TestCatalogue {
 
     public List<TestSuggestion> findFeatured() {
         return testRepository.findTop3ByActiveTrueOrderByDisplayOrderAsc().stream()
+                .map(test -> new TestSuggestion(
+                        test.getId(), test.getTitle(), test.getEyebrow(), test.getDescription()))
+                .toList();
+    }
+
+    public List<TestSuggestion> findSuggestionsByIds(List<String> ids) {
+        Map<String, TestDefinitionEntity> testsById = testRepository.findAllById(ids).stream()
+                .filter(TestDefinitionEntity::isActive)
+                .collect(Collectors.toMap(TestDefinitionEntity::getId, Function.identity()));
+        return ids.stream()
+                .map(testsById::get)
+                .filter(java.util.Objects::nonNull)
                 .map(test -> new TestSuggestion(
                         test.getId(), test.getTitle(), test.getEyebrow(), test.getDescription()))
                 .toList();

@@ -19,9 +19,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/app.css(v='mobile-nav-1')}">
-    <link rel="stylesheet" th:href="@{/react/assets/app.css(v='react-5')}">
-    <script defer th:src="@{/js/guides.js(v='guide-search-1')}"></script>
+    <link rel="stylesheet" th:href="@{/css/app.css(v='topic-clusters-1')}">
+    <link rel="stylesheet" th:href="@{/react/assets/app.css(v='topic-clusters-1')}">
+    <script defer th:src="@{/js/guides.js(v='guide-search-2')}"></script>
     <script type="application/ld+json" th:inline="javascript">
     {
       "@context": "https://schema.org",
@@ -71,17 +71,32 @@
                        autocomplete="off" spellcheck="false" aria-controls="guide-card-grid">
             </div>
         </div>
-        <div class="guide-card-grid" id="guide-card-grid">
-            <a class="guide-card" th:each="guide : ${guides}"
-               th:href="@{/approfondimenti/{slug}(slug=${guide.slug})}"
-               data-guide-card th:attr="data-guide-title=${guide.cardTitle}">
-                <div>
-                    <p class="eyebrow">Guida informativa</p>
-                    <h3 th:text="${guide.cardTitle}">Titolo della guida</h3>
-                    <p th:text="${guide.summary}">Descrizione della guida.</p>
+        <div class="topic-clusters guide-topic-clusters" id="guide-card-grid">
+            <section class="topic-cluster guide-topic-cluster" th:each="cluster : ${topicClusters}"
+                     th:id="|cluster-${cluster.slug}|" data-topic-cluster>
+                <header class="topic-cluster-heading">
+                    <div>
+                        <p class="eyebrow">Macro-argomento</p>
+                        <h3 th:text="${cluster.title}">Titolo del macro-argomento</h3>
+                        <p th:text="${cluster.description}">Descrizione del macro-argomento.</p>
+                    </div>
+                    <span data-cluster-count th:text="|${#lists.size(cluster.testIds)} guide|">1 guida</span>
+                </header>
+                <div class="guide-card-grid">
+                    <th:block th:each="testId : ${cluster.testIds}" th:with="guide=${guidesByTestId.get(testId)}">
+                    <a class="guide-card" th:if="${guide != null}"
+                       th:href="@{/approfondimenti/{slug}(slug=${guide.slug})}"
+                       data-guide-card th:attr="data-guide-title=${guide.cardTitle}">
+                        <div>
+                            <p class="eyebrow">Guida informativa</p>
+                            <h3 th:text="${guide.cardTitle}">Titolo della guida</h3>
+                            <p th:text="${guide.summary}">Descrizione della guida.</p>
+                        </div>
+                        <span>Leggi l'approfondimento <span aria-hidden="true">→</span></span>
+                    </a>
+                    </th:block>
                 </div>
-                <span>Leggi l'approfondimento <span aria-hidden="true">→</span></span>
-            </a>
+            </section>
         </div>
         <p class="test-search-empty guide-search-empty" data-guide-empty hidden>Nessun approfondimento corrisponde alla ricerca.</p>
     </section>

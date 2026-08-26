@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<body>
+<aside th:fragment="tests(items, cluster)" class="related-content" aria-label="Test correlati"
+       th:if="${cluster != null and !#lists.isEmpty(items)}">
+    <p class="eyebrow">Nello stesso tema</p>
+    <h2>Test correlati</h2>
+    <a class="related-cluster-link" th:href="|/#cluster-${cluster.slug}|">
+        <span th:text="${cluster.title}">Macro-argomento</span> <span aria-hidden="true">→</span>
+    </a>
+    <nav class="related-links" th:aria-label="|Test correlati: ${cluster.title}|">
+        <a class="related-link" th:each="item : ${items}" th:href="@{/test/{id}(id=${item.id})}">
+            <strong th:text="${item.title}">Titolo del test</strong>
+            <span>Apri il test <span aria-hidden="true">→</span></span>
+        </a>
+    </nav>
+</aside>
+
+<aside th:fragment="guides(items, cluster)" class="related-content" aria-label="Approfondimenti collegati"
+       th:if="${cluster != null and !#lists.isEmpty(items)}">
+    <p class="eyebrow">Nello stesso tema</p>
+    <h2>Approfondimenti collegati</h2>
+    <a class="related-cluster-link" th:href="|/approfondimenti#cluster-${cluster.slug}|">
+        <span th:text="${cluster.title}">Macro-argomento</span> <span aria-hidden="true">→</span>
+    </a>
+    <nav class="related-links" th:aria-label="|Approfondimenti collegati: ${cluster.title}|">
+        <a class="related-link" th:each="item : ${items}"
+           th:href="@{/approfondimenti/{slug}(slug=${item.slug})}">
+            <strong th:text="${item.title}">Titolo dell'approfondimento</strong>
+            <span>Leggi l'approfondimento <span aria-hidden="true">→</span></span>
+        </a>
+    </nav>
+</aside>
+</body>
+</html>

@@ -3,6 +3,7 @@
     const testCards = [...document.querySelectorAll('[data-test-card]')];
     const testCount = document.querySelector('[data-test-count]');
     const emptyMessage = document.querySelector('[data-test-empty]');
+    const topicClusters = [...document.querySelectorAll('[data-topic-cluster]')];
 
     if (!searchInput || testCards.length === 0) {
         return;
@@ -23,6 +24,16 @@
             card.hidden = !matches;
             if (matches) {
                 visibleTests += 1;
+            }
+        });
+
+        topicClusters.forEach((cluster) => {
+            const visibleCards = [...cluster.querySelectorAll('[data-test-card]')]
+                .filter((card) => !card.hidden).length;
+            cluster.hidden = visibleCards === 0;
+            const clusterCount = cluster.querySelector('[data-cluster-count]');
+            if (clusterCount) {
+                clusterCount.textContent = `${visibleCards} test`;
             }
         });
 

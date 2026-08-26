@@ -19,9 +19,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/app.css(v='mobile-nav-1')}">
-    <link rel="stylesheet" th:href="@{/react/assets/app.css(v='react-5')}">
-    <script defer th:src="@{/js/home.js(v='home-search-2')}"></script>
+    <link rel="stylesheet" th:href="@{/css/app.css(v='topic-clusters-1')}">
+    <link rel="stylesheet" th:href="@{/react/assets/app.css(v='topic-clusters-1')}">
+    <script defer th:src="@{/js/home.js(v='home-search-3')}"></script>
     <script type="application/ld+json" th:inline="javascript">
     {
       "@context": "https://schema.org",
@@ -101,19 +101,34 @@
             <span class="test-count" data-test-count aria-live="polite"
                   th:text="|${#lists.size(tests)} test|">1 test</span>
         </div>
-        <div class="test-grid">
-            <a class="test-card" th:each="test : ${tests}"
-               th:href="@{/test/{id}(id=${test.id})}"
-               th:aria-label="|Apri il test: ${test.title}|"
-               data-test-card th:attr="data-test-title=${test.title}">
-                <div class="card-topline"><span class="card-icon">⌘</span><span th:text="${test.eyebrow}">Autovalutazione informativa</span></div>
-                <h3 th:text="${test.title}">Tratti associati all'ADHD nell'adulto</h3>
-                <p th:text="${test.description}">Un questionario informativo per adulti.</p>
-                <div class="card-footer">
-                    <span th:text="${test.duration}">6 min · 24 domande</span>
-                    <span class="round-link" aria-hidden="true">→</span>
+        <div class="topic-clusters">
+            <section class="topic-cluster" th:each="cluster : ${topicClusters}"
+                     th:id="|cluster-${cluster.slug}|" data-topic-cluster>
+                <header class="topic-cluster-heading">
+                    <div>
+                        <p class="eyebrow">Macro-argomento</p>
+                        <h3 th:text="${cluster.title}">Titolo del macro-argomento</h3>
+                        <p th:text="${cluster.description}">Descrizione del macro-argomento.</p>
+                    </div>
+                    <span data-cluster-count th:text="|${#lists.size(cluster.testIds)} test|">1 test</span>
+                </header>
+                <div class="test-grid">
+                    <th:block th:each="testId : ${cluster.testIds}" th:with="test=${testsById.get(testId)}">
+                    <a class="test-card" th:if="${test != null}"
+                       th:href="@{/test/{id}(id=${test.id})}"
+                       th:aria-label="|Apri il test: ${test.title}|"
+                       data-test-card th:attr="data-test-title=${test.title}">
+                        <div class="card-topline"><span class="card-icon">⌘</span><span th:text="${test.eyebrow}">Autovalutazione informativa</span></div>
+                        <h3 th:text="${test.title}">Tratti associati all'ADHD nell'adulto</h3>
+                        <p th:text="${test.description}">Un questionario informativo per adulti.</p>
+                        <div class="card-footer">
+                            <span th:text="${test.duration}">6 min · 24 domande</span>
+                            <span class="round-link" aria-hidden="true">→</span>
+                        </div>
+                    </a>
+                    </th:block>
                 </div>
-            </a>
+            </section>
         </div>
         <p class="test-search-empty" data-test-empty hidden>Nessun test corrisponde alla ricerca.</p>
     </section>

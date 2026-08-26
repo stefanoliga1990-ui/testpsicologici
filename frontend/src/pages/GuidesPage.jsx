@@ -4,12 +4,20 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { normalizeSearch } from '../utils/text';
 
-export default function GuidesPage({ guides }) {
+export default function GuidesPage({ guides, topicClusters }) {
   const [query, setQuery] = useState('');
   const visibleGuides = useMemo(() => {
     const normalized = normalizeSearch(query);
     return guides.filter((guide) => normalizeSearch(guide.cardTitle).includes(normalized));
   }, [guides, query]);
+  const visibleGuideIds = useMemo(
+    () => new Set(visibleGuides.map((guide) => guide.testId)),
+    [visibleGuides]
+  );
+  const guidesByTestId = useMemo(
+    () => new Map(guides.map((guide) => [guide.testId, guide])),
+    [guides]
+  );
 
   return (
     <main className="editorial-shell guides-shell">
@@ -46,13 +54,30 @@ export default function GuidesPage({ guides }) {
             />
           </div>
         </div>
-        <div className="guide-card-grid" id="guide-card-grid">
-          {visibleGuides.map((guide) => (
-            <Card as="a" className="guide-card" href={`/approfondimenti/${guide.slug}`} key={guide.slug}>
-              <div><p className="eyebrow">Guida informativa</p><h3>{guide.cardTitle}</h3><p>{guide.summary}</p></div>
-              <span>Leggi l'approfondimento <span aria-hidden="true">→</span></span>
-            </Card>
-          ))}
+        <div className="topic-clusters guide-topic-clusters" id="guide-card-grid">
+          {topicClusters.map((cluster) => {
+            const clusterGuides = cluster.testIds
+              .filter((id) => visibleGuideIds.has(id))
+              .map((id) => guidesByTestId.get(id))
+              .filter(Boolean);
+            if (clusterGuides.length === 0) return null;
+            return (
+              <section className="topic-cluster guide-topic-cluster" id={`cluster-${cluster.slug}`} key={cluster.slug}>
+                <header className="topic-cluster-heading">
+                  <div><p className="eyebrow">Macro-argomento</p><h3>{cluster.title}</h3><p>{cluster.description}</p></div>
+                  <span>{clusterGuides.length} {clusterGuides.length === 1 ? 'guida' : 'guide'}</span>
+                </header>
+                <div className="guide-card-grid">
+                  {clusterGuides.map((guide) => (
+                    <Card as="a" className="guide-card" href={`/approfondimenti/${guide.slug}`} key={guide.slug}>
+                      <div><p className="eyebrow">Guida informativa</p><h3>{guide.cardTitle}</h3><p>{guide.summary}</p></div>
+                      <span>Leggi l'approfondimento <span aria-hidden="true">→</span></span>
+                    </Card>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
         </div>
         {visibleGuides.length === 0 && <p className="test-search-empty guide-search-empty">Nessun approfondimento corrisponde alla ricerca.</p>}
       </section>

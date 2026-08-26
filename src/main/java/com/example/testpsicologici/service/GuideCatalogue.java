@@ -3,10 +3,14 @@ package com.example.testpsicologici.service;
 import com.example.testpsicologici.model.GuideReference;
 import com.example.testpsicologici.model.GuideSection;
 import com.example.testpsicologici.model.InformationGuide;
+import com.example.testpsicologici.model.GuideSuggestion;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 public class GuideCatalogue {
@@ -2621,5 +2625,16 @@ public class GuideCatalogue {
 
     public Optional<InformationGuide> findByTestId(String testId) {
         return guides.stream().filter(guide -> guide.testId().equals(testId)).findFirst();
+    }
+
+    public List<GuideSuggestion> findSuggestionsByTestIds(List<String> testIds) {
+        Map<String, InformationGuide> guidesByTestId = guides.stream()
+                .collect(Collectors.toMap(InformationGuide::testId, Function.identity()));
+        return testIds.stream()
+                .map(guidesByTestId::get)
+                .filter(java.util.Objects::nonNull)
+                .map(guide -> new GuideSuggestion(
+                        guide.slug(), guide.testId(), guide.cardTitle(), guide.summary()))
+                .toList();
     }
 }

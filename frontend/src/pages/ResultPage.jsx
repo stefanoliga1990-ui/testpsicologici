@@ -3,6 +3,7 @@ import Button from '../components/Button';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProgressBar from '../components/ProgressBar';
+import RelatedTests from '../components/RelatedTests';
 import SupportContributionCard from '../components/SupportContributionCard';
 import SupportIntroDialog from '../components/SupportIntroDialog';
 import { withSessionId } from '../utils/urls';
@@ -16,7 +17,7 @@ function shouldShowSupportIntro(enabled, testId) {
   }
 }
 
-export default function ResultPage({ areaResults, contributionsEnabled = false, guide, percentage, result, score, styleResults = [], test }) {
+export default function ResultPage({ areaResults, contributionsEnabled = false, guide, percentage, relatedTests, result, score, styleResults = [], test, topicCluster }) {
   const [showSupportIntro, setShowSupportIntro] = useState(
     () => shouldShowSupportIntro(contributionsEnabled, test.id)
   );
@@ -42,6 +43,7 @@ export default function ResultPage({ areaResults, contributionsEnabled = false, 
   return (
     <main className="result-shell">
       <Navbar />
+      <div className="primary-related-layout result-primary-layout">
       <section className="result-card">
         <p className="eyebrow">Il tuo risultato</p>
         {test.scoreVisible ? <div className="score-badge"><span>{score}</span><small>/100</small></div> : <div className="result-symbol" aria-hidden="true">✦</div>}
@@ -117,6 +119,8 @@ export default function ResultPage({ areaResults, contributionsEnabled = false, 
           <Button as="a" className="button-secondary" href="/">Torna alla home</Button>
         </div>
       </section>
+      <RelatedTests relatedTests={relatedTests} topicCluster={topicCluster} />
+      </div>
       {contributionsEnabled && <SupportContributionCard />}
       <p className="disclaimer">Questo questionario è informativo e non clinicamente validato: non conferma né esclude una diagnosi e non sostituisce una valutazione professionale.</p>
       <Footer />

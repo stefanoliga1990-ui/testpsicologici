@@ -10,6 +10,7 @@ import com.example.testpsicologici.service.PdfResultService;
 import com.example.testpsicologici.service.SiteUrlService;
 import com.example.testpsicologici.service.TestResultService;
 import com.example.testpsicologici.service.TestCompletionAnalyticsService;
+import com.example.testpsicologici.service.TopicClusterCatalogue;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -33,6 +34,9 @@ import org.springframework.beans.factory.annotation.Value;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Controller
 public class TestController {
@@ -52,12 +56,14 @@ public class TestController {
     private final SiteUrlService siteUrlService;
     private final GuideCatalogue guideCatalogue;
     private final TestCompletionAnalyticsService completionAnalyticsService;
+    private final TopicClusterCatalogue topicClusterCatalogue;
     private final boolean contributionsEnabled;
 
     public TestController(TestCatalogue catalogue, TestResultService resultService,
                           PdfResultService pdfResultService, SiteUrlService siteUrlService,
                           GuideCatalogue guideCatalogue,
                           TestCompletionAnalyticsService completionAnalyticsService,
+                          TopicClusterCatalogue topicClusterCatalogue,
                           @Value("${app.payments.stripe.enabled:false}") boolean contributionsEnabled) {
         this.catalogue = catalogue;
         this.resultService = resultService;
@@ -65,6 +71,7 @@ public class TestController {
         this.siteUrlService = siteUrlService;
         this.guideCatalogue = guideCatalogue;
         this.completionAnalyticsService = completionAnalyticsService;
+        this.topicClusterCatalogue = topicClusterCatalogue;
         this.contributionsEnabled = contributionsEnabled;
     }
 
@@ -74,10 +81,14 @@ public class TestController {
         String initialQuery = searchQuery.length() <= MAX_SEARCH_QUERY_LENGTH
                 ? searchQuery : searchQuery.substring(0, MAX_SEARCH_QUERY_LENGTH);
         List<PsychologicalTest> tests = catalogue.findAll();
+        var topicClusters = topicClusterCatalogue.findAll();
         model.addAttribute("tests", tests);
+        model.addAttribute("topicClusters", topicClusters);
+        model.addAttribute("testsById", tests.stream().collect(Collectors.toMap(
+                PsychologicalTest::id, Function.identity(), (first, ignored) -> first, LinkedHashMap::new)));
         model.addAttribute("searchQuery", initialQuery);
         model.addAttribute("reactPageData", ReactPageData.of(
-                "home", "tests", tests, "initialQuery", initialQuery));
+                "home", "tests", tests, "topicClusters", topicClusters, "initialQuery", initialQuery));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/"));
         model.addAttribute("projectUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
         return "home";
@@ -87,9 +98,16 @@ public class TestController {
     public String introduction(@PathVariable String testId, HttpServletRequest request, Model model) {
         PsychologicalTest test = findTest(testId);
         InformationGuide guide = guideCatalogue.findByTestId(testId).orElse(null);
+        var topicCluster = topicClusterCatalogue.findByTestId(testId).orElse(null);
+        var relatedTests = catalogue.findSuggestionsByIds(
+                topicClusterCatalogue.findRelatedTestIds(testId, 3));
         model.addAttribute("test", test);
         model.addAttribute("guide", guide);
-        model.addAttribute("reactPageData", ReactPageData.of("introduction", "test", test, "guide", guide));
+        model.addAttribute("topicCluster", topicCluster);
+        model.addAttribute("relatedTests", relatedTests);
+        model.addAttribute("reactPageData", ReactPageData.of(
+                "introduction", "test", test, "guide", guide,
+                "topicCluster", topicCluster, "relatedTests", relatedTests));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/test/" + testId));
         model.addAttribute("projectUrl", siteUrlService.canonicalUrl(request, "/il-progetto"));
         model.addAttribute("methodUrl", siteUrlService.canonicalUrl(request, "/metodo-e-fonti"));
@@ -166,8 +184,13 @@ public class TestController {
 
         TestResult result = resultService.analyze(test, attempt);
         InformationGuide guide = guideCatalogue.findByTestId(testId).orElse(null);
+        var topicCluster = topicClusterCatalogue.findByTestId(testId).orElse(null);
+        var relatedTests = catalogue.findSuggestionsByIds(
+                topicClusterCatalogue.findRelatedTestIds(testId, 3));
         model.addAttribute("test", test);
         model.addAttribute("guide", guide);
+        model.addAttribute("topicCluster", topicCluster);
+        model.addAttribute("relatedTests", relatedTests);
         model.addAttribute("score", result.score());
         model.addAttribute("percentage", result.percentage());
         model.addAttribute("result", result.general());
@@ -182,6 +205,8 @@ public class TestController {
                 "areaResults", result.areaResults(),
                 "styleResults", result.styleResults(),
                 "guide", guide,
+                "topicCluster", topicCluster,
+                "relatedTests", relatedTests,
                 "contributionsEnabled", contributionsEnabled));
         model.addAttribute("contributionsEnabled", contributionsEnabled);
         return "result";

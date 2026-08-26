@@ -4,6 +4,7 @@ import com.example.testpsicologici.model.InformationGuide;
 import com.example.testpsicologici.service.GuideCatalogue;
 import com.example.testpsicologici.service.SiteUrlService;
 import com.example.testpsicologici.service.TestCatalogue;
+import com.example.testpsicologici.service.TopicClusterCatalogue;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -18,19 +19,28 @@ public class GuideController {
     private final GuideCatalogue guideCatalogue;
     private final TestCatalogue testCatalogue;
     private final SiteUrlService siteUrlService;
+    private final TopicClusterCatalogue topicClusterCatalogue;
 
     public GuideController(GuideCatalogue guideCatalogue, TestCatalogue testCatalogue,
-                           SiteUrlService siteUrlService) {
+                           SiteUrlService siteUrlService,
+                           TopicClusterCatalogue topicClusterCatalogue) {
         this.guideCatalogue = guideCatalogue;
         this.testCatalogue = testCatalogue;
         this.siteUrlService = siteUrlService;
+        this.topicClusterCatalogue = topicClusterCatalogue;
     }
 
     @GetMapping("/approfondimenti")
     public String index(HttpServletRequest request, Model model) {
         var guides = guideCatalogue.findAll();
+        var topicClusters = topicClusterCatalogue.findAll();
         model.addAttribute("guides", guides);
-        model.addAttribute("reactPageData", ReactPageData.of("guides", "guides", guides));
+        model.addAttribute("topicClusters", topicClusters);
+        model.addAttribute("guidesByTestId", guides.stream().collect(java.util.stream.Collectors.toMap(
+                InformationGuide::testId, java.util.function.Function.identity(),
+                (first, ignored) -> first, java.util.LinkedHashMap::new)));
+        model.addAttribute("reactPageData", ReactPageData.of(
+                "guides", "guides", guides, "topicClusters", topicClusters));
         model.addAttribute("canonicalUrl", siteUrlService.canonicalUrl(request, "/approfondimenti"));
         model.addAttribute("siteUrl", siteUrlService.canonicalUrl(request, "/"));
         return "guides";
@@ -42,8 +52,15 @@ public class GuideController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Approfondimento non trovato"));
         model.addAttribute("guide", guide);
         var test = testCatalogue.findById(guide.testId());
+        var topicCluster = topicClusterCatalogue.findByTestId(guide.testId()).orElse(null);
+        var relatedGuides = guideCatalogue.findSuggestionsByTestIds(
+                topicClusterCatalogue.findRelatedTestIds(guide.testId(), 3));
         model.addAttribute("test", test);
-        model.addAttribute("reactPageData", ReactPageData.of("guide", "guide", guide, "test", test));
+        model.addAttribute("topicCluster", topicCluster);
+        model.addAttribute("relatedGuides", relatedGuides);
+        model.addAttribute("reactPageData", ReactPageData.of(
+                "guide", "guide", guide, "test", test,
+                "topicCluster", topicCluster, "relatedGuides", relatedGuides));
         model.addAttribute("canonicalUrl",
                 siteUrlService.canonicalUrl(request, "/approfondimenti/" + guide.slug()));
         model.addAttribute("siteUrl", siteUrlService.canonicalUrl(request, "/"));

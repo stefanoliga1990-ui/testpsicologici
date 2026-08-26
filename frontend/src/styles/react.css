@@ -15,6 +15,10 @@ body {
   width: min(1120px, calc(100% - 48px));
 }
 
+#react-root > :is(.guide-shell, .intro-shell, .result-shell) {
+  width: min(1240px, calc(100% - 48px));
+}
+
 #react-root .site-nav {
   position: relative;
   z-index: 2;

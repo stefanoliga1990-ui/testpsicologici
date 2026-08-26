@@ -4,12 +4,20 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { normalizeSearch } from '../utils/text';
 
-export default function HomePage({ initialQuery = '', tests }) {
+export default function HomePage({ initialQuery = '', tests, topicClusters }) {
   const [query, setQuery] = useState(initialQuery);
   const visibleTests = useMemo(() => {
     const normalized = normalizeSearch(query);
     return tests.filter((test) => normalizeSearch(test.title).includes(normalized));
   }, [query, tests]);
+  const visibleTestIds = useMemo(
+    () => new Set(visibleTests.map((test) => test.id)),
+    [visibleTests]
+  );
+  const testsById = useMemo(
+    () => new Map(tests.map((test) => [test.id, test])),
+    [tests]
+  );
 
   return (
     <main className="shell home-shell">
@@ -64,21 +72,38 @@ export default function HomePage({ initialQuery = '', tests }) {
           <div><p className="eyebrow">Inizia da qui</p><h2>Test disponibili</h2></div>
           <span className="test-count" aria-live="polite">{visibleTests.length} test</span>
         </div>
-        <div className="test-grid">
-          {visibleTests.map((test) => (
-            <Card
-              as="a"
-              className="test-card"
-              href={`/test/${test.id}`}
-              aria-label={`Apri il test: ${test.title}`}
-              key={test.id}
-            >
-              <div className="card-topline"><span className="card-icon">⌘</span><span>{test.eyebrow}</span></div>
-              <h3>{test.title}</h3>
-              <p>{test.description}</p>
-              <div className="card-footer"><span>{test.duration}</span><span className="round-link" aria-hidden="true">→</span></div>
-            </Card>
-          ))}
+        <div className="topic-clusters">
+          {topicClusters.map((cluster) => {
+            const clusterTests = cluster.testIds
+              .filter((id) => visibleTestIds.has(id))
+              .map((id) => testsById.get(id))
+              .filter(Boolean);
+            if (clusterTests.length === 0) return null;
+            return (
+              <section className="topic-cluster" id={`cluster-${cluster.slug}`} key={cluster.slug}>
+                <header className="topic-cluster-heading">
+                  <div><p className="eyebrow">Macro-argomento</p><h3>{cluster.title}</h3><p>{cluster.description}</p></div>
+                  <span>{clusterTests.length} {clusterTests.length === 1 ? 'test' : 'test'}</span>
+                </header>
+                <div className="test-grid">
+                  {clusterTests.map((test) => (
+                    <Card
+                      as="a"
+                      className="test-card"
+                      href={`/test/${test.id}`}
+                      aria-label={`Apri il test: ${test.title}`}
+                      key={test.id}
+                    >
+                      <div className="card-topline"><span className="card-icon">⌘</span><span>{test.eyebrow}</span></div>
+                      <h3>{test.title}</h3>
+                      <p>{test.description}</p>
+                      <div className="card-footer"><span>{test.duration}</span><span className="round-link" aria-hidden="true">→</span></div>
+                    </Card>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
         </div>
         {visibleTests.length === 0 && <p className="test-search-empty">Nessun test corrisponde alla ricerca.</p>}
       </section>

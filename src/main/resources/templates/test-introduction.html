@@ -19,8 +19,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/app.css(v='mobile-nav-1')}">
-    <link rel="stylesheet" th:href="@{/react/assets/app.css(v='react-5')}">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='topic-clusters-1')}">
+    <link rel="stylesheet" th:href="@{/react/assets/app.css(v='topic-clusters-1')}">
     <script type="application/ld+json" th:inline="javascript">
     {
       "@context": "https://schema.org",
@@ -46,6 +46,7 @@
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
 <main class="intro-shell" data-react-fallback>
     <th:block th:replace="~{fragments/site-header :: siteHeader}"></th:block>
+    <div class="primary-related-layout intro-primary-layout">
     <article class="intro-card">
         <p class="eyebrow" th:text="${test.eyebrow}">Autovalutazione informativa</p>
         <h1 th:text="${test.title}">Tratti autistici nell'adulto</h1>
@@ -62,6 +63,8 @@
         <a class="button button-secondary intro-guide-link" th:if="${guide != null}"
            th:href="@{/approfondimenti/{slug}(slug=${guide.slug})}">Approfondisci l'argomento <span aria-hidden="true">→</span></a>
     </article>
+    <th:block th:replace="~{fragments/related-content :: tests(${relatedTests}, ${topicCluster})}"></th:block>
+    </div>
 
     <section class="intro-editorial" aria-label="Informazioni sul questionario">
         <div class="editorial-heading">
