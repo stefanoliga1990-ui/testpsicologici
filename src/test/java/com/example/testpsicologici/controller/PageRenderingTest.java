@@ -1042,7 +1042,7 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Approfondisci l'argomento")))
                 .andExpect(content().string(containsString("online e fuori dai social")))
-                .andExpect(content().string(containsString("non valuta né dimostra un uso problematico")))
+                .andExpect(content().string(containsString("non dimostra un uso problematico")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/fomo\"")));
 
         mockMvc.perform(get("/test/intelligenza-linguistica"))
@@ -1057,15 +1057,15 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Approfondisci l'argomento")))
                 .andExpect(content().string(containsString("non misura un'intelligenza indipendente")))
-                .andExpect(content().string(containsString("Riflettere spesso non equivale")))
+                .andExpect(content().string(containsString("riflettere spesso non equivale")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/intelligenza-intrapersonale\"")));
 
         mockMvc.perform(get("/test/resilienza-psicologica"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Approfondisci l'argomento")))
-                .andExpect(content().string(containsString("processo dinamico e contestuale")))
-                .andExpect(content().string(containsString("significato molto limitato")))
+                .andExpect(content().string(containsString("processo legato al contesto")))
+                .andExpect(content().string(containsString("poco informativo")))
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/resilienza-psicologica\"")));
@@ -1074,7 +1074,7 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Approfondisci l'argomento")))
                 .andExpect(content().string(containsString("non stabilisce se i sospetti siano fondati")))
-                .andExpect(content().string(containsString("non giustifica accedere senza consenso")))
+                .andExpect(content().string(containsString("non giustifica controllare dispositivi")))
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString("1522")))
                 .andExpect(content().string(containsString(
@@ -1084,7 +1084,7 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Approfondisci l'argomento")))
                 .andExpect(content().string(containsString("non è la Satisfaction With Life Scale")))
-                .andExpect(content().string(containsString("non fattori psicometrici dimostrati")))
+                .andExpect(content().string(containsString("non consente confronti con norme")))
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/soddisfazione-vita\"")));

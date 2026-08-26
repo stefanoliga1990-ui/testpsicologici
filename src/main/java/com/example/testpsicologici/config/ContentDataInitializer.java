@@ -75,7 +75,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAutismInformationTest() {
         String id = "tratti-autistici-adulti";
-        String version = "2.5";
+        String version = "2.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -85,7 +85,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Questionario informativo per adulti su comunicazione sociale, segnali impliciti, routine, flessibilità, interessi e sensibilità sensoriale.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato: le esperienze descritte possono avere molte spiegazioni diverse. Per una valutazione dell'autismo è necessario rivolgersi a professionisti qualificati.",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato. Le esperienze descritte possono avere spiegazioni diverse e il risultato non conferma né esclude l'autismo. Per una valutazione è necessario rivolgersi a professionisti qualificati.",
                 version, false, true, 1).withSeo(
                 "Test autismo adulti online: questionario | Spazio Test",
                 "Questionario informativo per adulti su comunicazione sociale, routine e sensibilità sensoriale. 24 domande, 6 minuti, senza registrazione; non diagnostico.")
@@ -164,7 +164,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAdhdInformationTest() {
         String id = "tratti-adhd-adulti";
-        String version = "2.5";
+        String version = "2.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -174,7 +174,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora difficoltà ricorrenti relative ad attenzione, organizzazione, gestione del tempo, impulsività e irrequietezza nell'adulto.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato: difficoltà simili possono dipendere da stress, sonno, ansia, depressione, altre condizioni o circostanze personali. Una diagnosi di ADHD richiede una valutazione specialistica della storia dello sviluppo, dell'impatto quotidiano e della presenza delle difficoltà in più contesti.",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato. Rispondi pensando agli ultimi sei mesi; difficoltà simili possono dipendere anche da sonno, stress o altre condizioni. Una diagnosi di ADHD richiede una valutazione specialistica della storia e dell'impatto in più contesti.",
                 version, false, true, 2).withSeo(
                 "Test ADHD adulti online: questionario | Spazio Test",
                 "Questionario informativo per adulti su attenzione, organizzazione, impulsività e irrequietezza. 24 domande, 6 minuti, senza registrazione; non diagnostico.")
@@ -252,7 +252,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedObsessiveCompulsiveInformationTest() {
         String id = "tratti-ossessivo-compulsivi";
-        String version = "1.6";
+        String version = "1.7";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -262,7 +262,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora pensieri intrusivi, dubbio, bisogno di certezza, contaminazione, controlli e rituali nella vita quotidiana.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato: pensieri indesiderati, dubbi e abitudini ripetitive possono comparire in molte persone e non indicano l'intenzione di agire su un pensiero. Una valutazione del disturbo ossessivo-compulsivo considera anche disagio, tempo occupato, interferenza con la vita quotidiana e possibili spiegazioni alternative.",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato. Rispondi pensando all'ultimo mese; pensieri indesiderati o dubbi non indicano l'intenzione di agire. Una valutazione del DOC considera anche disagio, tempo occupato, interferenza e spiegazioni alternative.",
                 version, false, true, 3).withSeo(
                 "Test disturbo ossessivo-compulsivo (DOC) online | Spazio Test",
                 "Questionario informativo su pensieri ossessivi, compulsioni, dubbi, controlli e rituali. 24 domande, circa 6 minuti, senza registrazione; non diagnostico.")
@@ -340,7 +340,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSelfEsteemInformationTest() {
         String id = "autostima";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -350,7 +350,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora il rapporto con il valore personale, la fiducia in sé, gli errori, le critiche e il confronto con gli altri.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento clinicamente validato e non misura il tuo valore come persona. L'autostima può cambiare nel tempo e nei diversi contesti; le risposte descrivono soltanto quanto spesso riconosci alcune difficoltà legate al rapporto con te stesso.",
+                "Questo questionario per adulti è informativo e non clinicamente validato. Non misura il tuo valore come persona: descrive soltanto quanto spesso, negli ultimi tre mesi, hai riconosciuto alcune difficoltà nel rapporto con te stesso. Le risposte possono cambiare nel tempo e nei diversi contesti.",
                 version, false,
                 "Difficoltà complessive relative all'autostima",
                 "Frequenza delle difficoltà",
@@ -431,7 +431,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedEmotionalDependenceInformationTest() {
         String id = "dipendenza-affettiva";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -441,7 +441,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora paura dell'abbandono, bisogno di rassicurazione, rinunce personali, autonomia e confini nelle relazioni affettive.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non stabilisce se una relazione sia sana o patologica. Rispondi pensando alla relazione attuale o, se non ne hai una, a una relazione affettiva significativa recente. Il legame e l'interdipendenza fanno parte delle relazioni: qui si esplora soltanto quanto alcune dinamiche diventano frequenti, rigide o limitanti. Il questionario non rileva gli abusi e la violenza non è mai responsabilità di chi la subisce. In presenza di controllo, minacce o violenza, cerca un aiuto sicuro; per le donne vittime di violenza e stalking il 1522 è gratuito e attivo 24 ore su 24.",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato; non stabilisce se una relazione sia sana. Rispondi pensando alla relazione attuale o a una relazione affettiva significativa recente. Non rileva abusi: controllo, minacce e violenza non sono responsabilità di chi li subisce; il 1522 offre aiuto gratuito alle donne vittime di violenza e stalking.",
                 version, false,
                 "Frequenza complessiva delle dinamiche esplorate",
                 "Frequenza delle dinamiche",
@@ -522,7 +522,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAssertivenessInformationTest() {
         String id = "assertivita";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -532,7 +532,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora quanto riesci a esprimere opinioni e bisogni, dire di no, proteggere i tuoi confini e affrontare i disaccordi.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non misura il tuo valore, la tua forza o il tuo coraggio. Rispondi pensando a quanto spesso riesci davvero a mettere in pratica ciascun comportamento nei diversi contesti, non a quanto lo ritieni desiderabile. L'assertività può cambiare in base alla situazione, alla relazione, alla cultura e alla sicurezza percepita; non esporsi in un contesto minaccioso o con un forte squilibrio di potere può essere una scelta protettiva, non una carenza personale.",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato. Rispondi in base a ciò che fai davvero nei diversi contesti, non a ciò che ritieni desiderabile. L'assertività dipende anche da cultura, relazioni e sicurezza: non esporsi in una situazione minacciosa può essere una scelta protettiva.",
                 version, false,
                 "Frequenza complessiva dei comportamenti assertivi",
                 "Frequenza dei comportamenti assertivi",
@@ -613,7 +613,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedEmotionalIntelligenceInformationTest() {
         String id = "intelligenza-emotiva";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -623,7 +623,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora come riconosci, comprendi, utilizzi e regoli le emozioni proprie e altrui nella vita quotidiana.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non misura un quoziente di intelligenza emotiva o un'abilità oggettiva. Essendo un'autovalutazione, descrive soprattutto quanto riconosci e metti in pratica alcuni comportamenti legati alle emozioni; è possibile sottovalutarsi o sopravvalutarsi. Rispondi pensando a ciò che fai abitualmente nei diversi contesti. Le emozioni non sono giuste o sbagliate e regolarle non significa reprimerle. Cultura, esperienze personali, neurodiversità e sicurezza del contesto possono influenzare percezione ed espressione emotiva.",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato. Non misura un quoziente o un'abilità oggettiva: descrive come valuti alcuni tuoi comportamenti abituali legati alle emozioni. Cultura, esperienze, neurodiversità e contesto possono influenzare le risposte.",
                 version, false,
                 "Frequenza complessiva delle competenze emotive esplorate",
                 "Frequenza delle competenze emotive",
@@ -705,7 +705,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPerfectionismInformationTest() {
         String id = "perfezionismo";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -715,7 +715,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora standard personali, paura degli errori, pressione del giudizio, dubbi e bisogno di controllo.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non stabilisce la presenza di un disturbo. Avere obiettivi ambiziosi, cura per i dettagli e desiderio di migliorare non è di per sé problematico: qui si esplora quanto gli standard diventino rigidi, quanto il valore personale dipenda dai risultati e quanto errori, dubbi o controllo producano fatica e limitazioni. Rispondi pensando alla frequenza reale nei diversi ambiti della tua vita, non soltanto al lavoro o allo studio.",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato. Obiettivi ambiziosi e cura dei dettagli non sono di per sé problematici: qui si osserva quanto gli standard diventino rigidi o limitanti. Rispondi pensando alla frequenza reale nei diversi ambiti, non soltanto nel lavoro o nello studio.",
                 version, false,
                 "Frequenza complessiva delle dinamiche perfezionistiche",
                 "Frequenza delle dinamiche perfezionistiche",
@@ -796,7 +796,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSocialAnxietyInformationTest() {
         String id = "ansia-sociale";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -806,7 +806,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora paura del giudizio, tensione nelle interazioni, autocontrollo, situazioni sotto osservazione ed evitamento sociale.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non permette di stabilire la presenza di un disturbo d'ansia sociale. Timidezza, riservatezza e disagio occasionale sono esperienze comuni; una valutazione clinica considera durata, intensità, proporzione rispetto al rischio reale e impatto sulla vita. Esperienze simili possono dipendere anche da stress, depressione, trauma, neurodiversità, difficoltà comunicative o contesti realmente ostili e discriminatori. Rispondi pensando alla frequenza delle esperienze negli ultimi mesi e nei diversi contesti. Se ansia o evitamento limitano relazioni, studio, lavoro o attività importanti, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato. Rispondi pensando agli ultimi mesi e a contesti diversi; timidezza o disagio occasionale non indicano da soli un disturbo. Se ansia o evitamento limitano attività importanti, puoi parlarne con un professionista qualificato.",
                 version, false,
                 "Frequenza complessiva delle esperienze di ansia sociale",
                 "Frequenza delle esperienze",
@@ -886,7 +886,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPerceivedNarcissisticRelationshipDynamicsTest() {
         String id = "dinamiche-narcisistiche-partner";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -896,7 +896,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Riflessione sulla relazione",
                 "Osserva la tua percezione di reciprocità, gestione del confronto, confini e impatto emotivo nella relazione, senza diagnosticare il partner.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Descrive la tua percezione di alcune dinamiche nella relazione e non può stabilire se il partner abbia tratti narcisistici o un disturbo narcisistico di personalità. Una diagnosi richiede una valutazione clinica diretta, completa e condotta da un professionista qualificato; singoli comportamenti possono avere spiegazioni diverse. Rispondi pensando a episodi concreti e ricorrenti degli ultimi mesi, non a un singolo litigio. Il risultato serve a riflettere su reciprocità, rispetto e impatto della relazione, non a etichettare il partner. Comportamenti di controllo, umiliazione, minaccia o violenza vanno presi sul serio indipendentemente da qualsiasi diagnosi: se temi per la tua sicurezza, cerca supporto da una persona fidata o da servizi qualificati; in un'emergenza chiama il 112. Se sei una donna vittima di violenza o stalking, il 1522 offre gratuitamente ascolto e orientamento 24 ore su 24.",
+                "Questo questionario per adulti è informativo e descrive la tua percezione: non può diagnosticare né etichettare il partner. Rispondi pensando a episodi concreti e ricorrenti degli ultimi mesi, non a un singolo litigio. Controllo, umiliazioni, minacce o violenza richiedono attenzione indipendentemente da diagnosi: nelle emergenze chiama il 112; il 1522 aiuta gratuitamente le donne vittime di violenza e stalking.",
                 version, false,
                 "Frequenza complessiva delle dinamiche osservate",
                 "Frequenza delle dinamiche osservate",
@@ -977,7 +977,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedGeneralizedAnxietyInformationTest() {
         String id = "ansia-generalizzata";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -987,7 +987,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora preoccupazione difficile da controllare, tensione, affaticamento, sonno e interferenza nella vita quotidiana.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non permette di stabilire la presenza di un disturbo d'ansia generalizzata. Preoccuparsi in alcuni periodi è una normale risposta alle difficoltà; una valutazione clinica considera invece durata, intensità, difficoltà di controllo, presenza in diversi ambiti e impatto sulla vita. Rispondi pensando alla frequenza delle esperienze negli ultimi sei mesi. Sintomi simili possono dipendere anche da stress, depressione, altri disturbi d'ansia, esperienze traumatiche, problemi del sonno, condizioni mediche, farmaci o sostanze. Se l'ansia limita la tua vita o i sintomi fisici sono nuovi, intensi o preoccupanti, parlane con uno psicologo, psicoterapeuta o medico qualificato.",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato. Rispondi pensando agli ultimi sei mesi; esperienze simili possono dipendere anche da stress, sonno, farmaci o condizioni mediche. Se l'ansia limita la tua vita o i sintomi fisici sono nuovi o intensi, parlane con un professionista qualificato.",
                 version, false,
                 "Frequenza complessiva delle esperienze di ansia",
                 "Frequenza delle esperienze",
@@ -1068,7 +1068,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedDepressedMoodInformationTest() {
         String id = "umore-depresso";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1078,7 +1078,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora umore, perdita di interesse, energia, pensieri su di sé e funzionamento quotidiano nelle ultime due settimane.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Non è uno strumento diagnostico o clinicamente validato e non permette di stabilire la presenza di un disturbo depressivo. Tristezza, stanchezza e calo della motivazione possono comparire durante stress, lutti o cambiamenti importanti; una valutazione clinica considera durata, intensità, storia personale, funzionamento, eventuali periodi di umore insolitamente elevato e possibili cause mediche, farmacologiche o legate a sostanze. Rispondi pensando alla frequenza delle esperienze nelle ultime due settimane. Questo questionario non valuta il rischio suicidario: se stai pensando di farti del male o non ti senti al sicuro, non attendere il risultato; chiama subito il 112 o vai al Pronto Soccorso. Se le difficoltà persistono o interferiscono con la tua vita, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
+                "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato. Rispondi pensando alle ultime due settimane; il risultato non stabilisce un disturbo depressivo e non valuta il rischio suicidario. Se pensi di farti del male o non ti senti al sicuro, non attendere il risultato: chiama il 112 o vai al Pronto Soccorso.",
                 version, false,
                 "Frequenza complessiva delle esperienze legate all'umore",
                 "Frequenza delle esperienze",
@@ -1158,7 +1158,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPeoplePleasingInformationTest() {
         String id = "people-pleasing";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1168,7 +1168,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora bisogno di approvazione, difficoltà a dire di no, paura del conflitto e spazio riservato ai propri bisogni.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. “People pleaser” è un'espressione comune, non una diagnosi o una categoria clinica. Gentilezza, collaborazione e disponibilità non sono di per sé problematiche: il questionario esplora quanto spesso l'attenzione agli altri comporti silenziare bisogni, superare limiti o dipendere dalla loro approvazione. Rispondi pensando agli ultimi mesi e a relazioni diverse. Cultura, ruoli di cura, ambiente, dipendenza economica e differenze di potere possono influenzare le risposte. In una relazione minacciosa o poco sicura, adattarsi ed evitare il conflitto può essere una strategia protettiva, non una mancanza di assertività. Se questi schemi causano sofferenza, risentimento, esaurimento o relazioni sbilanciate, puoi parlarne con uno psicologo o psicoterapeuta qualificato.",
+                "Questo questionario per adulti è informativo: “people pleaser” è un'espressione comune, non una diagnosi. Rispondi pensando agli ultimi mesi e a relazioni diverse; contesto e differenze di potere possono influenzare le risposte. In una relazione minacciosa, adattarsi o evitare il conflitto può essere una strategia protettiva.",
                 version, false,
                 "Frequenza complessiva delle dinamiche di compiacenza",
                 "Frequenza delle dinamiche",
@@ -1249,7 +1249,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedImpostorPhenomenonInformationTest() {
         String id = "sindrome-impostore";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1259,7 +1259,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora difficoltà a riconoscere i successi, dubbi sulla propria competenza, perfezionismo e paura di essere smascherati.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. L'espressione comune “sindrome dell'impostore” indica ciò che nella letteratura scientifica è spesso chiamato fenomeno dell'impostore: non è una diagnosi né un disturbo riconosciuto e questo questionario non è uno strumento clinico o validato. Rispondi pensando agli ultimi mesi e ai contesti di studio, lavoro o responsabilità per te significativi. Il risultato descrive la frequenza di alcune esperienze soggettive, non misura la tua competenza reale. Dubbi e bisogno di preparazione possono essere appropriati quando un ruolo è nuovo, mancano conoscenze o le aspettative non sono chiare. Esclusione, discriminazione, scarsa rappresentazione, feedback ambigui e ambienti molto competitivi possono inoltre creare o amplificare il senso di non appartenenza: non tutto va attribuito alla persona. Se questi vissuti limitano opportunità, riposo o benessere, puoi parlarne con uno psicologo o psicoterapeuta qualificato.",
+                "Questo questionario per adulti è informativo: il fenomeno dell'impostore non è una diagnosi e lo strumento non è clinicamente validato. Rispondi pensando agli ultimi mesi nello studio, nel lavoro o in responsabilità significative. Il risultato non misura la tua competenza reale; ruoli nuovi, aspettative poco chiare, esclusione o discriminazione possono influenzare le risposte.",
                 version, false,
                 "Frequenza complessiva delle esperienze di impostore",
                 "Frequenza delle esperienze",
@@ -1340,7 +1340,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedSelfSabotageInformationTest() {
         String id = "autosabotaggio";
-        String version = "1.5";
+        String version = "1.6";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1350,7 +1350,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora procrastinazione, evitamento e altri ostacoli ricorrenti tra intenzioni, scelte e obiettivi personalmente importanti.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. “Autosabotaggio” è un'espressione comune, non una diagnosi né un singolo costrutto clinico: qui indica schemi ricorrenti che possono aumentare ostacoli o costi rispetto a obiettivi personalmente importanti. Non implica che tali comportamenti siano deliberati e il questionario non misura volontà, disciplina o valore personale. Rispondi pensando agli ultimi mesi e a obiettivi che hai scelto davvero tu. Rimandare, ridurre l'impegno o abbandonare può essere adattivo quando un obiettivo è irrealistico, non più significativo, imposto, poco sicuro o incompatibile con le risorse disponibili. Carichi di cura, difficoltà economiche o ambientali, problemi di salute, stress, sonno insufficiente, ansia, umore depresso, trauma, ADHD o altre difficoltà esecutive possono produrre esperienze simili e richiedono una lettura distinta, non moralistica. Se questi schemi causano sofferenza o compromettono ripetutamente benessere, relazioni, studio o lavoro, puoi parlarne con uno psicologo o psicoterapeuta qualificato.",
+                "Questo questionario per adulti è informativo: “autosabotaggio” è un'espressione comune, non una diagnosi, e non misura volontà o disciplina. Rispondi pensando agli ultimi mesi e a obiettivi scelti davvero da te. Rimandare o abbandonare può essere adattivo quando un obiettivo è imposto, poco sicuro o incompatibile con le risorse disponibili.",
                 version, false,
                 "Frequenza complessiva degli ostacoli autoalimentati",
                 "Frequenza degli ostacoli",
@@ -1432,7 +1432,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedBorderlineTraitsInformationTest() {
         String id = "tratti-borderline-adulti";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1442,7 +1442,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora esperienze recenti legate a emozioni, relazioni, immagine di sé, impulsività e reazioni sotto stress.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Esplora la frequenza recente di alcune esperienze associate al funzionamento borderline, ma non è uno strumento validato, non conta criteri clinici e non può confermare, escludere o stimare la presenza di un disturbo borderline di personalità. Una valutazione professionale considera storia nel tempo, presenza in più contesti, interferenza concreta, condizioni concomitanti e spiegazioni alternative. Stress intenso, lutto, conflitti, esperienze traumatiche, ansia, depressione, disturbi dell'umore, ADHD, uso di sostanze, condizioni dissociative, neurodivergenza o relazioni non sicure possono produrre esperienze simili. Il questionario non valuta autolesionismo, pensieri suicidari o situazioni di pericolo. Se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o raggiungi il Pronto Soccorso più vicino; se le esperienze causano sofferenza o interferiscono con la vita quotidiana, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
+                "Questo questionario per adulti è informativo e non validato: non può confermare, escludere o stimare un disturbo borderline di personalità. Rispondi pensando agli ultimi tre mesi; esperienze simili possono avere spiegazioni alternative. Non valuta autolesionismo o pensieri suicidari: se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o vai al Pronto Soccorso.",
                 version, false,
                 "Frequenza complessiva delle esperienze esplorate",
                 "Frequenza delle esperienze",
@@ -1528,7 +1528,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedFearOfAbandonmentInformationTest() {
         String id = "paura-abbandono";
-        String version = "1.2";
+        String version = "1.3";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1538,7 +1538,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora come vivi segnali di distanza, bisogno di rassicurazione, separazioni temporanee e confini nelle relazioni importanti.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Esplora la frequenza con cui, negli ultimi tre mesi, segnali di distanza, separazioni e timore di perdere relazioni importanti sono stati accompagnati da preoccupazione, ricerca di rassicurazione o cambiamenti nei propri confini. La paura dell'abbandono non è qui una diagnosi e il risultato non classifica uno stile di attaccamento, non stabilisce cause e non valuta la qualità reale delle relazioni. Esperienze simili possono comparire dopo perdite, tradimenti o cambiamenti, in relazioni incoerenti o non sicure, durante stress, lutto, ansia o umore depresso, oppure insieme ad altri modi di vivere i legami. La paura di perdere un legame non giustifica né rende accettabili controllo, coercizione o violenza, subiti o agiti. Se c'è un pericolo immediato chiama il 112; il 1522 è il servizio pubblico gratuito per le donne vittime di violenza e stalking. Se queste esperienze causano sofferenza o interferiscono con la vita quotidiana, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
+                "Questo questionario per adulti è informativo: non formula diagnosi, non classifica uno stile di attaccamento e non valuta la qualità reale delle relazioni. Rispondi pensando agli ultimi tre mesi e alle relazioni per te importanti. La paura di perdere un legame non giustifica controllo, coercizione o violenza: nelle emergenze chiama il 112; il 1522 aiuta gratuitamente le donne vittime di violenza e stalking.",
                 version, false,
                 "Frequenza complessiva delle esperienze esplorate",
                 "Frequenza delle esperienze",
@@ -1622,7 +1622,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedFomoInformationTest() {
         String id = "fomo";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1632,7 +1632,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora la preoccupazione di perdere esperienze, il confronto con alternative e il bisogno di restare aggiornati.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Esplora la frequenza con cui, nell'ultimo mese, la possibilità che altre persone stessero vivendo esperienze rilevanti in tua assenza è stata accompagnata da preoccupazione, confronto, bisogno di aggiornamenti o interferenza sulle tue scelte. La FOMO può comparire online e fuori dai social, ma non è una diagnosi e questo risultato non valuta né dimostra un uso problematico di social media, Internet o smartphone. Le risposte possono cambiare durante transizioni, periodi con molte occasioni, isolamento reale, cambiamenti nei gruppi, stress o uso più intenso delle piattaforme. Le associazioni osservate negli studi non stabiliscono che la tecnologia o una caratteristica personale siano la causa delle esperienze. Se queste esperienze incidono in modo rilevante su sonno, concentrazione, attività o relazioni, puoi parlarne con uno psicologo, psicoterapeuta o medico qualificato.",
+                "Questo questionario per adulti è informativo: la FOMO può comparire online e fuori dai social, ma non è una diagnosi. Rispondi pensando all'ultimo mese; il risultato non dimostra un uso problematico di social, Internet o smartphone. Se queste esperienze incidono su sonno, concentrazione, attività o relazioni, puoi parlarne con un professionista qualificato.",
                 version, false,
                 "Frequenza complessiva delle esperienze FOMO",
                 "Frequenza delle esperienze",
@@ -1714,7 +1714,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedLinguisticIntelligenceInformationTest() {
         String id = "intelligenza-linguistica";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1724,7 +1724,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora come percepisci e usi comprensione, espressione orale, scrittura e flessibilità linguistica.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Riprende l'idea di intelligenza linguistica proposta da Howard Gardner, ma non misura un'intelligenza indipendente, il quoziente intellettivo o una competenza linguistica oggettiva. Esplora soltanto la frequenza con cui, negli ultimi tre mesi e nelle occasioni disponibili, hai riconosciuto alcuni comportamenti di comprensione, espressione, revisione e uso flessibile della lingua. Istruzione, lingue usate, modalità comunicativa, disabilità, neurodivergenza, professione, abitudini e opportunità possono influire sulle risposte. Il risultato non certifica un talento o un limite, non valuta disturbi del linguaggio o dell'apprendimento e non sostituisce prove di prestazione o una valutazione qualificata. Se un cambiamento o una difficoltà nella comprensione o nell'espressione persiste e interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.",
+                "Questo questionario per adulti è informativo e riprende la cornice di Howard Gardner, ma non misura un'intelligenza indipendente, il QI o una competenza linguistica oggettiva. Rispondi pensando agli ultimi tre mesi e alle occasioni disponibili. Il risultato non certifica un talento o un limite e può risentire di istruzione, lingue usate, modalità comunicativa e opportunità.",
                 version, false,
                 "Frequenza complessiva delle risorse linguistiche riferite",
                 "Frequenza delle risorse riferite",
@@ -1806,7 +1806,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedIntrapersonalIntelligenceInformationTest() {
         String id = "intelligenza-intrapersonale";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1816,7 +1816,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora come riconosci stati interni, bisogni, valori e schemi personali e come riferisci di usarli nelle scelte.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Riprende l'idea di intelligenza intrapersonale proposta da Howard Gardner, ma non misura un'intelligenza indipendente, il quoziente intellettivo o l'accuratezza della conoscenza di sé. Esplora soltanto la frequenza con cui, negli ultimi tre mesi e nelle occasioni disponibili, hai riconosciuto alcuni stati interni, chiarito bisogni e valori, riflettuto su schemi personali e riferito di usare queste informazioni nelle scelte. Tempo, privacy, sicurezza, cultura, lingua, stress, umore, neurodivergenza, disabilità, abitudini e opportunità possono influire sulle risposte. Riflettere spesso non equivale necessariamente ad avere insight accurati o a prendere decisioni efficaci. Il risultato non certifica un talento o un limite, non valuta personalità o salute mentale e non diagnostica condizioni. Se un cambiamento nella percezione di te, confusione, pensieri ripetitivi o difficoltà nelle decisioni causa disagio o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato.",
+                "Questo questionario per adulti è informativo e riprende la cornice di Howard Gardner, ma non misura un'intelligenza indipendente, il QI o l'accuratezza della conoscenza di sé. Rispondi pensando agli ultimi tre mesi e alle occasioni disponibili. Il risultato non certifica un talento o un limite: riflettere spesso non equivale necessariamente ad avere una conoscenza accurata di sé.",
                 version, false,
                 "Frequenza complessiva delle risorse intrapersonali riferite",
                 "Frequenza delle risorse riferite",
@@ -1898,7 +1898,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPsychologicalResilienceInformationTest() {
         String id = "resilienza-psicologica";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1908,7 +1908,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora come hai recuperato, adattato strategie, usato supporti e mantenuto una direzione davanti a difficoltà recenti.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Esplora la frequenza di alcuni comportamenti riferiti davanti a difficoltà, pressioni o cambiamenti realmente incontrati negli ultimi sei mesi. La resilienza è qui considerata un processo dinamico e contestuale, non una forza personale fissa, un obbligo a stare bene o una capacità di non soffrire. Natura, intensità e durata delle difficoltà, salute, sicurezza, condizioni materiali, discriminazioni, responsabilità e risorse esterne possono ampliare o ridurre ciò che è possibile fare. Chiedere aiuto, avere bisogno di tempo o provare sofferenza non indica assenza di resilienza. Se negli ultimi sei mesi non hai incontrato difficoltà significative o hai avuto poche occasioni pertinenti, il risultato ha un significato molto limitato. Il questionario originale non misura il processo completo di resilienza, non valuta l'esito delle azioni, non predice come reagirai in futuro e non diagnostica condizioni. Se una difficoltà causa disagio persistente o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato. In caso di pericolo immediato per te o per altre persone, contatta il 112 o i servizi di emergenza.",
+                "Questo questionario per adulti è informativo e descrive alcuni comportamenti riferiti davanti a difficoltà reali degli ultimi sei mesi. La resilienza è un processo legato al contesto, non una forza fissa: chiedere aiuto o soffrire non significa esserne privi; senza difficoltà recenti il risultato è poco informativo. Non predice reazioni future né formula diagnosi; in caso di pericolo immediato contatta il 112.",
                 version, false,
                 "Frequenza complessiva dei comportamenti di adattamento riferiti",
                 "Frequenza dei comportamenti riferiti",
@@ -1992,7 +1992,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPartnerJealousyInformationTest() {
         String id = "gelosia-partner";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -2002,7 +2002,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora pensieri, emozioni e comportamenti di gelosia riferiti verso il partner attuale.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti che desiderano riflettere sulla relazione sentimentale attuale e ha finalità esclusivamente informative. Esplora la frequenza con cui, negli ultimi tre mesi, hai riferito interpretazioni di possibile minaccia, reazioni emotive, ricerca di rassicurazione o verifica e comportamenti di controllo o interferenza collegati alla gelosia. La gelosia può comparire davanti a una minaccia reale, possibile o immaginata: il questionario non stabilisce se i sospetti siano fondati, non accerta un'infedeltà e non valuta intenzioni, sincerità o comportamenti del partner. Accordi della coppia, precedenti rotture della fiducia, comunicazione, contesto, stress ed esperienze passate possono influire sulle risposte. La frequenza non indica intensità, motivazione, danno o accettabilità. Provare gelosia non giustifica accedere senza consenso a dispositivi o account, sorvegliare, seguire, limitare relazioni o movimenti, minacciare, umiliare, costringere o aggredire. Il questionario originale non classifica la gelosia come normale o patologica, non diagnostica condizioni e non valuta violenza, stalking o sicurezza. Se temi di poter agire in modo intimidatorio, coercitivo o aggressivo, interrompi l'escalation e rivolgiti a un professionista o servizio qualificato. In caso di pericolo immediato per te o altre persone, contatta il 112. Per aiuto o consiglio su violenza e stalking è disponibile il servizio pubblico gratuito 1522, attivo 24 ore su 24.",
+                "Questo questionario per adulti è informativo e riguarda la relazione attuale negli ultimi tre mesi; non stabilisce se i sospetti siano fondati né accerta un'infedeltà. Provare gelosia non giustifica controllare dispositivi, sorvegliare, limitare, minacciare o aggredire. In caso di pericolo immediato chiama il 112; il 1522 offre aiuto gratuito alle donne vittime di violenza e stalking.",
                 version, false,
                 "Frequenza complessiva delle esperienze di gelosia riferite",
                 "Frequenza delle esperienze riferite",
@@ -2088,7 +2088,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedLifeSatisfactionInformationTest() {
         String id = "soddisfazione-vita";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -2098,7 +2098,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora con quale frequenza riconosci valutazioni positive della tua vita, della quotidianità e del percorso recente.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Esplora la frequenza con cui, negli ultimi tre mesi, hai riconosciuto valutazioni positive della tua vita nel complesso, della quotidianità, della coerenza con le tue priorità e della direzione recente. La soddisfazione di vita è un giudizio soggettivo e cognitivo: non coincide con felicità momentanea, assenza di emozioni spiacevoli, salute mentale, qualità di vita oggettiva, successo o valore personale. Le misure scientifiche e istituzionali più consolidate usano domande sul grado di soddisfazione, spesso su scala 0–10 o di accordo; questa scala di frequenza originale non è la Satisfaction With Life Scale (SWLS) e non produce un livello confrontabile con dati ISTAT, norme o altre persone. Le quattro aree sono prospettive editoriali correlate e non fattori psicometrici dimostrati. Salute, lutti, relazioni, condizioni economiche e abitative, lavoro, discriminazione, responsabilità di cura, sicurezza e altri vincoli reali possono influire sulle risposte: una frequenza bassa non indica fallimento, ingratitudine o incapacità, mentre una frequenza alta può coesistere con sofferenza e problemi circoscritti. Il questionario non diagnostica depressione o altre condizioni e non valuta la sicurezza. Se emerge sofferenza persistente o una difficoltà che interferisce con la vita quotidiana, puoi rivolgerti a uno psicologo, psicoterapeuta, medico o altro professionista qualificato. In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta subito il 112 o recati al pronto soccorso.",
+                "Questo questionario per adulti è informativo e riguarda le valutazioni positive riconosciute negli ultimi tre mesi. Esplora un giudizio soggettivo: non è la Satisfaction With Life Scale, non consente confronti con norme e una frequenza bassa non indica fallimento personale. Non formula diagnosi; se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o vai al Pronto Soccorso.",
                 version, false,
                 "Frequenza complessiva delle valutazioni positive riferite",
                 "Frequenza delle valutazioni positive riferite",
@@ -2184,7 +2184,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPtsdInformationTest() {
         String id = "ptsd-adulti";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -2194,7 +2194,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora la frequenza di esperienze post-traumatiche riferite a un evento o periodo scelto mentalmente come riferimento.",
                 "6 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Prima di iniziare, scegli mentalmente un solo evento o periodo molto minaccioso o sconvolgente come riferimento, senza scriverlo né descriverlo: può essere stato vissuto direttamente, osservato, conosciuto attraverso il coinvolgimento di una persona vicina oppure incontrato ripetutamente nel lavoro. Il questionario non accerta se l'esperienza soddisfi i criteri diagnostici di esposizione e, se non riconosci un evento di riferimento, non è adatto e il risultato avrebbe significato molto limitato. Le domande esplorano nell'ultimo mese ricordi e reazioni intrusive, evitamento, cambiamenti nei pensieri e nell'umore, attivazione e reattività. Le quattro aree sono un'organizzazione teorico-editoriale e non fattori confermati per questi item; le sei domande per area non riproducono il peso dei criteri clinici. Il questionario originale non è la PCL-5, non diagnostica il PTSD, non distingue reazioni acute, PTSD complesso, dissociazione, depressione, ansia, lutto, disturbi del sonno o condizioni mediche e non valuta durata complessiva, interferenza o sicurezza. Se le domande aumentano troppo il disagio, puoi interrompere e orientarti al presente: completare il test non è necessario e non devi esporti autonomamente ai ricordi. Se le esperienze persistono o interferiscono con sonno, relazioni, studio, lavoro o attività quotidiane, puoi rivolgerti a uno psicologo, psicoterapeuta, medico, psichiatra o altro professionista qualificato. Se sei in pericolo immediato, temi di farti del male o di fare del male a qualcuno oppure non riesci a mantenerti al sicuro, contatta subito il 112 o recati al pronto soccorso. Per aiuto o consiglio su violenza e stalking è disponibile il servizio pubblico gratuito 1522; non sostituisce il 112 nelle emergenze.",
+                "Questo questionario per adulti è informativo e non diagnostica il PTSD: scegli mentalmente un solo evento o periodo molto minaccioso, senza scriverlo né descriverlo, e riferisci le risposte all'ultimo mese; senza un evento di riferimento il test non è adatto. Se aumenta troppo il disagio puoi interrompere e non devi esporti autonomamente ai ricordi. In caso di pericolo immediato chiama il 112; per violenza o stalking il 1522 offre aiuto gratuito alle donne.",
                 version, false,
                 "Frequenza complessiva delle esperienze post-traumatiche riferite",
                 "Frequenza delle esperienze riferite",
@@ -2274,7 +2274,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAttachmentStylesInformationTest() {
         String id = "stili-attaccamento";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -2284,7 +2284,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autovalutazione informativa",
                 "Esplora ansia ed evitamento in una relazione e la vicinanza delle risposte a quattro orientamenti di attaccamento adulto.",
                 "7 min · 24 domande",
-                "Questo questionario è rivolto ad adulti e ha finalità esclusivamente informative. Prima di iniziare scegli mentalmente la relazione sentimentale attuale oppure, se non ne hai una, la relazione sentimentale significativa più recente: tutte le risposte devono riferirsi alla stessa relazione. Le domande originali esplorano due dimensioni continue, ansia di attaccamento ed evitamento della vicinanza; da queste viene calcolata la vicinanza descrittiva ai prototipi sicuro, ansioso-preoccupato, evitante-distanziante e timoroso-evitante. I prototipi non sono quattro tipi naturali, diagnosi o identità permanenti e il profilo timoroso-evitante non equivale ad attaccamento disorganizzato. Il risultato riguarda soltanto la relazione scelta e può variare con persona, periodo, fiducia, conflitti e sicurezza. Non valuta l'altra persona, non misura qualità, compatibilità o futuro della relazione e non accerta disponibilità, rifiuto, tradimento, violenza o cause delle risposte. Un bisogno di distanza può proteggere in un contesto pericoloso e una richiesta di rassicurazione può rispondere a indisponibilità reale. Nessun orientamento giustifica sorveglianza, isolamento, pressioni, minacce, violenza o violazioni del consenso. Se una difficoltà persiste o interferisce con la vita, puoi rivolgerti a uno psicologo, psicoterapeuta, medico o altro professionista qualificato. In caso di pericolo immediato contatta il 112; per aiuto o consiglio su violenza e stalking è disponibile il servizio pubblico gratuito 1522, che non sostituisce il 112 nelle emergenze.",
+                "Questo questionario per adulti è informativo: scegli la relazione sentimentale attuale o quella significativa più recente e riferisci tutte le risposte alla stessa relazione. Il risultato descrive ansia ed evitamento, non una diagnosi, un'identità fissa o la qualità della relazione. Nessun orientamento giustifica controllo, minacce o violenza: nelle emergenze chiama il 112; il 1522 aiuta gratuitamente le donne vittime di violenza e stalking.",
                 version, false,
                 "",
                 "Rappresentatività nella relazione scelta",

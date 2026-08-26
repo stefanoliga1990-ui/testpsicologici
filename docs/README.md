@@ -5,6 +5,7 @@
 - `revisione-analisi-globali-2026-08.md` definisce struttura e requisiti delle restituzioni complessive più dettagliate.
 - `revisione-titoli-profili-2026-08.md` definisce i titoli globali specifici per tutti i test e la convenzione obbligatoria per i questionari futuri.
 - `revisione-esempi-item-2026-08.md` documenta l'audit dei 600 item e gli esempi facoltativi aggiunti agli item più astratti.
+- `revisione-schede-prima-di-iniziare-2026-08.md` definisce la sintesi delle istruzioni introduttive, gli incrementi di versione e i controlli di sicurezza per tutti i questionari.
 - `standard-psicometrico.md` definisce il processo obbligatorio per revisioni e nuovi questionari.
 - `test-dbp-v1.md` è la specifica psicometrica corrente del questionario sui tratti associati al disturbo borderline di personalità e documenta separatamente le fonti del test e della scheda.
 - `test-paura-abbandono-v1.md` è la specifica psicometrica corrente del questionario sulla paura dell'abbandono e documenta separatamente le fonti del test e della scheda.
