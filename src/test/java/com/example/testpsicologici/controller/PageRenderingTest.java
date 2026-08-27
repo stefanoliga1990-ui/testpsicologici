@@ -1238,6 +1238,69 @@ class PageRenderingTest {
     }
 
     @Test
+    void parentificationIntroductionAndGuideExposeCategoryRelatedContentAndRetrospectiveLimits() throws Exception {
+        mockMvc.perform(get("/test/parentificazione"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Parentificazione: eri il genitore dei tuoi genitori?")))
+                .andExpect(content().string(containsString("Responsabilità pratiche e organizzative")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/parentificazione\"")))
+                .andExpect(content().string(containsString("href=\"/test/paura-abbandono\"")))
+                .andExpect(content().string(containsString("href=\"/test/stili-attaccamento\"")))
+                .andExpect(content().string(containsString("href=\"/test/limerenza\"")))
+                .andExpect(content().string(containsString("prima dei 18 anni")))
+                .andExpect(content().string(containsString("non attribuisce colpe")));
+
+        mockMvc.perform(get("/approfondimenti/parentificazione"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Responsabilità da adulto durante la crescita")))
+                .andExpect(content().string(containsString("Non ogni responsabilità familiare è parentificazione")))
+                .andExpect(content().string(containsString("La memoria non è una registrazione completa")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/test/parentificazione\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void parentificationResultRendersOverallAndFourAreaAnalysesWithRelatedTests() throws Exception {
+        mockMvc.perform(get("/test/parentificazione/risultato")
+                        .session(completedAttempt("parentificazione", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le esperienze associate alla parentificazione sembrano molto presenti in più aree")))
+                .andExpect(content().string(containsString("Responsabilità pratiche e organizzative")))
+                .andExpect(content().string(containsString("Accudimento emotivo e mediazione")))
+                .andExpect(content().string(containsString("Inversione dei ruoli e obbligo percepito")))
+                .andExpect(content().string(containsString("Spazio per i propri bisogni e riconoscimento")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/parentificazione/risultato/pdf\"")))
+                .andExpect(content().string(containsString("Test correlati")))
+                .andExpect(content().string(containsString("href=\"/test/paura-abbandono\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/parentificazione\"")));
+    }
+
+    @Test
+    void parentificationResultCanBeDownloadedAsReadablePdf() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/test/parentificazione/risultato/pdf")
+                        .session(completedAttempt("parentificazione", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-parentificazione.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Parentificazione")
+                    .contains("Responsabilità pratiche e organizzative")
+                    .contains("Accudimento emotivo e mediazione")
+                    .contains("ricordi")
+                    .contains("retrospettivi")
+                    .contains("dimostra parentificazione");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -1301,6 +1364,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/stili-attaccamento")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/limerenza")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/parentificazione")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1314,6 +1379,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/ptsd-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/stili-attaccamento")))
                 .andExpect(content().string(containsString("http://localhost/test/limerenza")))
+                .andExpect(content().string(containsString("http://localhost/test/parentificazione")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

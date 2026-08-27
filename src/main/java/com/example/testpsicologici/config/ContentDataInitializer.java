@@ -71,6 +71,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedPtsdInformationTest();
         seedAttachmentStylesInformationTest();
         seedLimerenceInformationTest();
+        seedParentificationInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -2485,6 +2486,112 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Controlli, tentativi di contatto o interferenze quotidiane risultano frequenti. Il dato non predice stalking o pericolosità: contatti, sorveglianza o avvicinamenti non desiderati vanno interrotti e discussi subito con un professionista.");
     }
 
+    private void seedParentificationInformationTest() {
+        String id = "parentificazione";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Parentificazione: eri il genitore dei tuoi genitori?",
+                "Autovalutazione informativa",
+                "Ripensa alle responsabilità pratiche ed emotive assunte verso genitori o caregiver durante la crescita e allo spazio rimasto per i tuoi bisogni.",
+                "6 min · 24 domande",
+                "Questo questionario per adulti è informativo e non validato: ripensa al periodo prima dei 18 anni in cui vivevi con genitori o caregiver. Esplora responsabilità pratiche ed emotive, confini e spazio per i tuoi bisogni; aiutare in famiglia non equivale da solo a parentificazione e il ricordo può essere incompleto. Non formula diagnosi, non attribuisce colpe né dimostra cause degli eventuali vissuti attuali; puoi interromperti e cercare supporto se emergono disagio o ricordi difficili.",
+                version, false,
+                "Presenza complessiva delle esperienze esplorate",
+                "Presenza delle esperienze nell'area",
+                true, 27).withSeo(
+                "Test sulla parentificazione: 24 domande | Spazio Test",
+                "Questionario informativo per adulti sulle responsabilità familiari assunte durante la crescita, l'inversione dei ruoli e lo spazio per i propri bisogni.")
+                .withResponseInstruction("Ripensando al periodo prima dei 18 anni in cui vivevi con genitori o caregiver, con quale frequenza ti capitava?"));
+
+        saveReference(id, "Parentification Vulnerability, Reactivity, Resilience, and Thriving — Dariotis e colleghi",
+                "https://doi.org/10.3390/ijerph20136197", 1);
+        saveReference(id, "Parentification Among Young Carers: A Concept Analysis — Hendricks e colleghi",
+                "https://doi.org/10.1007/s10560-021-00784-7", 2);
+        saveReference(id, "Assessing Family Caregiving — Hooper e Doehler",
+                "https://doi.org/10.1111/j.1752-0606.2011.00258.x", 3);
+        saveReference(id, "Polish Parentification Inventory — Borchet e colleghi",
+                "https://doi.org/10.1007/s10826-022-02338-6", 4);
+        saveReference(id, "Parentification and distress in Italian adult siblings — Levante e colleghi",
+                "https://doi.org/10.3389/fpsyt.2022.1079608", 5);
+        saveReference(id, "Positive and negative aspects of parentification — Khafi e colleghi",
+                "https://doi.org/10.1016/j.childyouth.2022.106709", 6);
+        saveReference(id, "La rete dei servizi per la salute mentale — Ministero della Salute",
+                "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/", 7);
+
+        saveArea(id, "pratica", "Responsabilità pratiche e organizzative", 1);
+        saveArea(id, "emotiva", "Accudimento emotivo e mediazione", 2);
+        saveArea(id, "ruoli", "Inversione dei ruoli e obbligo percepito", 3);
+        saveArea(id, "spazio", "Spazio per i propri bisogni e riconoscimento", 4);
+
+        saveQuestions(id, List.of(
+                q("pratica", "Gestivo in autonomia attività necessarie al funzionamento della casa."),
+                q("pratica", "Mi occupavo di risolvere problemi pratici di un genitore o caregiver."),
+                q("pratica", "Gestivo appuntamenti, documenti o pagamenti per la famiglia."),
+                q("pratica", "Organizzavo aspetti della vita quotidiana di un genitore o caregiver."),
+                q("pratica", "Gli adulti contavano su di me per far funzionare le routine familiari."),
+                q("pratica", "Prendevo decisioni sulla casa che di solito spettavano agli adulti."),
+                q("emotiva", "Un genitore o caregiver mi confidava preoccupazioni personali."),
+                q("emotiva", "Cercavo di calmare un genitore o caregiver quando era in crisi."),
+                q("emotiva", "Mi occupavo di sostenere emotivamente un genitore o caregiver."),
+                q("emotiva", "Facevo da mediatore nei conflitti tra adulti della famiglia."),
+                q("emotiva", "Un genitore o caregiver cercava da me rassicurazione."),
+                q("emotiva", "Ascoltavo problemi di coppia o familiari come se fossi un adulto."),
+                q("ruoli", "Mi sentivo responsabile del benessere di un genitore o caregiver."),
+                q("ruoli", "Sentivo di dover essere io la persona forte in famiglia."),
+                q("ruoli", "Mi veniva chiesto di capire problemi che superavano la mia età."),
+                q("ruoli", "Un genitore o caregiver si affidava a me per decidere cosa fare."),
+                q("ruoli", "Sentivo di non potermi sottrarre alle responsabilità familiari."),
+                q("ruoli", "Il sostegno nella relazione andava soprattutto da me verso il genitore o caregiver."),
+                q("spazio", "Mettevo da parte le mie preoccupazioni per non pesare su un genitore o caregiver."),
+                q("spazio", "Rinunciavo ad attività adatte alla mia età per occuparmi della famiglia."),
+                q("spazio", "Le responsabilità familiari riducevano il tempo per le attività della mia età."),
+                q("spazio", "I miei bisogni passavano dopo quelli di un genitore o caregiver."),
+                q("spazio", "Sentivo che le responsabilità erano troppo pesanti per la mia età."),
+                q("spazio", "Il mio impegno per la famiglia riceveva poco riconoscimento dagli adulti.")));
+
+        String commonSafety = "Il risultato descrive ricordi retrospettivi e non dimostra parentificazione, trauma, abuso, neglect, colpa o intenzioni familiari, né spiega eventuali difficoltà adulte. "
+                + "Aiutare in famiglia può essere adeguato all'età e al contesto: contano durata, obbligo, sostegno, riconoscimento e spazio per i bisogni. "
+                + "Se emergono forte disagio o responsabilità attuali che limitano autonomia e benessere, puoi parlarne con un professionista o un Centro di Salute Mentale; in caso di pericolo immediato chiama il 112 e, per violenza o controllo attuali, puoi contattare il 1522.";
+
+        saveGlobal(id, "LOW",
+                "Le esperienze associate alla parentificazione sembrano molto poco presenti nelle tue risposte",
+                "Responsabilità pratiche, accudimento emotivo, inversione dei ruoli e riduzione dello spazio personale risultano poco frequenti in tutte le aree. Nel ricordo della crescita non emerge quindi una configurazione diffusa delle esperienze esplorate.",
+                "Questo andamento non esclude un periodo circoscritto, un compito molto impegnativo o un episodio importante non rappresentato dalla media. Età, durata, scelta, sostegno, riconoscimento e contesto culturale possono cambiare il significato dell'aiuto familiare. " + commonSafety);
+        saveGlobal(id, "MIXED",
+                "Le esperienze associate alla parentificazione sembrano presenti in modo variabile",
+                "Le risposte cambiano tra responsabilità pratiche, sostegno emotivo, inversione dei ruoli e spazio per i propri bisogni, senza aree al livello editoriale più alto. Il vissuto può quindi essere dipeso da compiti, età o fasi familiari differenti.",
+                "Osserva quali responsabilità erano occasionali e quali ricorrenti, se erano scelte o obbligate e quale sostegno adulto le accompagnava. Una distribuzione variabile non permette di ricostruire l'intera famiglia né di stabilire conseguenze nel presente. " + commonSafety);
+        saveGlobal(id, "FOCUSED",
+                "Le esperienze associate alla parentificazione sembrano più presenti in una o due aree",
+                "Una o due aree raccolgono esperienze ricordate con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso aspetti specifici senza estenderli automaticamente a tutta la crescita o a ogni relazione familiare.",
+                "Consulta le aree emergenti per distinguere compiti pratici, cura emotiva, responsabilità per l'adulto e rinunce personali. Considera quando accadevano, quanto duravano e se esistevano scelta, supporto, riconoscimento e possibilità di tornare a un ruolo adeguato all'età. " + commonSafety);
+        saveGlobal(id, "BROAD",
+                "Le esperienze associate alla parentificazione sembrano molto presenti in più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Nel ricordo della crescita, responsabilità concrete ed emotive possono quindi essersi accompagnate a una marcata inversione dei ruoli o a meno spazio per bisogni e attività dell'età.",
+                "Considera ampiezza e durata delle responsabilità, il margine di scelta, il sostegno disponibile e ciò che accadeva quando esprimevi un bisogno. Un confronto professionale può aiutare a ricostruire la storia con più contesto, distinguendo aiuto familiare, necessità temporanee, norme culturali e possibili confini intergenerazionali fragili senza partire da un'etichetta. " + commonSafety);
+
+        saveAreaInsights(id, "pratica",
+                "Gestione della casa, problemi, documenti, routine e decisioni adulte risultano poco frequenti. Un singolo compito intenso o un periodo circoscritto può comunque essere importante.",
+                "Alcune responsabilità pratiche erano presenti durante la crescita. Il loro significato dipende da età, durata, autonomia richiesta, sostegno adulto e compatibilità con le attività dell'età.",
+                "Responsabilità pratiche e organizzative normalmente sostenute dagli adulti risultano frequenti. L'area non stabilisce da sola parentificazione né giudica le necessità della famiglia.");
+        saveAreaInsights(id, "emotiva",
+                "Confidenze adulte, rassicurazione, regolazione emotiva e mediazione risultano poco frequenti. Questo non misura affetto, empatia o qualità complessiva dei rapporti.",
+                "In alcune situazioni offrivi sostegno emotivo o mediazione agli adulti. Osserva contenuto, continuità, possibilità di sottrarti e presenza di altri adulti disponibili.",
+                "Sostegno emotivo, rassicurazione o mediazione verso gli adulti risultano frequenti. L'area non diagnostica il caregiver e non dimostra che tu fossi responsabile delle sue emozioni.");
+        saveAreaInsights(id, "ruoli",
+                "Responsabilità per l'adulto, obbligo e direzione invertita del sostegno risultano poco frequenti. Non certifica che ogni confine familiare fosse adeguato.",
+                "In alcune fasi potevi sentirti la persona forte o necessaria per un adulto. Considera età, scelta, aspettative e possibilità reale di affidarti a qualcuno.",
+                "Obbligo, responsabilità per il benessere dell'adulto e direzione invertita del sostegno risultano frequenti. Il dato descrive il tuo ricordo e non attribuisce colpa o intenzioni.");
+        saveAreaInsights(id, "spazio",
+                "Rinunce, bisogni messi da parte, carico e scarso riconoscimento risultano poco frequenti. Non esclude episodi importanti o bisogni rimasti senza risposta.",
+                "In alcune situazioni le responsabilità riducevano spazio, tempo o riconoscimento. Osserva quali attività o bisogni venivano rimandati e quali sostegni erano disponibili.",
+                "Rinunce, priorità date ai bisogni dell'adulto e peso percepito risultano frequenti. L'area non dimostra trauma o neglect e non stabilisce automaticamente conseguenze adulte.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -2611,6 +2718,14 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Limerence, Hidden Obsession, Fixation, and Rumination — Bradbury, Short e Bleakley", "https://doi.org/10.1007/s11896-024-09674-x"),
                 ref("Exploring the Lived-Experience of Limerence — Willmott e Bentley", "https://doi.org/10.46743/2160-3715/2015.1420"),
                 ref("What fuels passion? — Carswell e Impett", "https://doi.org/10.1111/spc3.12629"),
+                ref("La rete dei servizi per la salute mentale — Ministero della Salute", "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/")));
+        syncReferences("parentificazione", List.of(
+                ref("Parentification Vulnerability, Reactivity, Resilience, and Thriving — Dariotis e colleghi", "https://doi.org/10.3390/ijerph20136197"),
+                ref("Parentification Among Young Carers: A Concept Analysis — Hendricks e colleghi", "https://doi.org/10.1007/s10560-021-00784-7"),
+                ref("Assessing Family Caregiving — Hooper e Doehler", "https://doi.org/10.1111/j.1752-0606.2011.00258.x"),
+                ref("Polish Parentification Inventory — Borchet e colleghi", "https://doi.org/10.1007/s10826-022-02338-6"),
+                ref("Parentification and distress in Italian adult siblings — Levante e colleghi", "https://doi.org/10.3389/fpsyt.2022.1079608"),
+                ref("Positive and negative aspects of parentification — Khafi e colleghi", "https://doi.org/10.1016/j.childyouth.2022.106709"),
                 ref("La rete dei servizi per la salute mentale — Ministero della Salute", "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/")));
     }
 

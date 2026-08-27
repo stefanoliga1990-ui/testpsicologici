@@ -2737,6 +2737,136 @@ public class GuideCatalogue {
                                     "Pagina ufficiale consultata per destinazione, gratuità e disponibilità continuativa del servizio; il 1522 non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "parentificazione",
+                    "parentificazione",
+                    "Parentificazione e inversione dei ruoli",
+                    "Quando un figlio si sente responsabile dei propri genitori",
+                    "Parentificazione: significato e limiti | Spazio Test",
+                    "Che cosa indica la parentificazione, come distinguerla dal normale aiuto familiare e perché età, obbligo, sostegno e spazio per i bisogni cambiano il significato dell'esperienza.",
+                    "La parentificazione descrive una possibile inversione delle responsabilità durante la crescita, quando un figlio sostiene compiti o bisogni dell'adulto in modo non adeguato alla propria età. Non è una diagnosi e non ogni aiuto dato in famiglia ha questo significato.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Responsabilità da adulto durante la crescita",
+                                    List.of(
+                                            "La letteratura usa il termine parentificazione per descrivere situazioni in cui bambini o adolescenti assumono ruoli pratici, emotivi o decisionali normalmente sostenuti dagli adulti. Può riguardare la cura di un genitore, la gestione della casa, la mediazione dei conflitti o il sentirsi responsabili della stabilità familiare.",
+                                            "Il termine descrive una dinamica relazionale, non una diagnosi della persona o della famiglia. Un questionario retrospettivo non può accertare che cosa sia realmente accaduto, stabilire intenzioni o attribuire colpe."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Aiuto o inversione dei ruoli",
+                                    "Non ogni responsabilità familiare è parentificazione",
+                                    List.of(
+                                            "Collaborare in casa, imparare compiti pratici o aiutare un familiare può essere adeguato e perfino valorizzante. Contano l'età, la durata, la possibilità di scegliere o fermarsi, il sostegno degli adulti, il riconoscimento e la compatibilità con scuola, riposo, amicizie e sviluppo.",
+                                            "La parentificazione diventa una lente più pertinente quando la responsabilità è persistente, obbligata o sproporzionata e quando il figlio deve sostenere l'adulto mettendo regolarmente da parte i propri bisogni. Anche in quel caso il contesto va ricostruito, non dedotto da un singolo comportamento."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le quattro aree",
+                                    "Come è organizzato il questionario",
+                                    List.of(
+                                            "Spazio Test organizza 24 item originali in quattro aree editoriali per rendere leggibile la restituzione. Le aree non riproducono PQ, PI, FRS-A o altre scale e non sono state confermate come struttura fattoriale negli adulti italiani."
+                                    ),
+                                    List.of(
+                                            "Responsabilità pratiche e organizzative: casa, problemi, documenti, routine e decisioni normalmente sostenute dagli adulti.",
+                                            "Accudimento emotivo e mediazione: confidenze, rassicurazione, regolazione delle crisi e conflitti tra adulti.",
+                                            "Inversione dei ruoli e obbligo percepito: sentirsi responsabili, indispensabili o impossibilitati a sottrarsi.",
+                                            "Spazio per i propri bisogni e riconoscimento: rinunce, tempo sottratto, peso percepito e risposta degli adulti all'impegno."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Famiglia e cultura",
+                                    "Lo stesso compito può avere significati diversi",
+                                    List.of(
+                                            "Condizioni economiche, migrazione, malattia, disabilità, separazioni o assenze possono modificare la distribuzione delle responsabilità. Norme culturali e familiari influenzano inoltre ciò che viene considerato normale, doveroso o valorizzante.",
+                                            "Questi fattori non rendono automaticamente innocua o dannosa un'esperienza. Le revisioni indicano che supporto, equità percepita, riconoscimento, relazioni positive e adeguatezza all'età possono modificare le associazioni osservate, ma non permettono una previsione sul singolo caso."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricordo retrospettivo",
+                                    "La memoria non è una registrazione completa",
+                                    List.of(
+                                            "Rispondere da adulti richiede di sintetizzare anni e fasi familiari diverse. I ricordi possono essere incompleti, cambiare con nuove informazioni o essere interpretati alla luce delle relazioni presenti; questo non li rende falsi, ma limita ciò che un punteggio può concludere.",
+                                            "Può essere più utile distinguere periodi, persone, compiti e conseguenze concrete che cercare un'unica etichetta per tutta l'infanzia. Il risultato rappresenta il modo in cui oggi ricordi la frequenza delle esperienze formulate."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Possibili associazioni",
+                                    "Gli esiti non sono uguali per tutti e non dimostrano causalità",
+                                    List.of(
+                                            "Gli studi hanno esaminato associazioni con distress, relazioni, identità, sintomi internalizzanti, competenze e benefici percepiti. I risultati variano secondo tipo di responsabilità, campione, misura, sostegno e contesto; gran parte delle ricerche è trasversale o retrospettiva.",
+                                            "Un vissuto attuale di iper-responsabilità, difficoltà a chiedere aiuto o attenzione costante ai bisogni altrui può avere molte origini. La parentificazione passata non può essere considerata la causa senza una valutazione più ampia."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Spunti di osservazione",
+                                    "Ricostruire responsabilità, possibilità e sostegni",
+                                    List.of(
+                                            "Puoi annotare in quale periodo assumevi una responsabilità, chi avrebbe dovuto sostenerla, quanto margine avevi per rifiutare e che cosa accadeva ai tuoi bisogni. Può essere utile distinguere ciò che facevi da ciò che sentivi di dover fare.",
+                                            "Osserva anche le risorse: adulti disponibili, riconoscimento, momenti in cui potevi tornare a essere figlio o figlia, attività preservate e competenze sviluppate. Sono elementi di contesto, non prove a favore o contro un'etichetta."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Quando può essere utile parlarne",
+                                    List.of(
+                                            "Se i ricordi suscitano forte disagio, incidono sul presente o le responsabilità familiari attuali limitano autonomia e benessere, puoi parlarne con uno psicologo, psicoterapeuta, medico o Centro di Salute Mentale. Un professionista può aiutare a ricostruire contesto, bisogni, risorse e confini senza partire da una conclusione automatica.",
+                                            "In caso di pericolo immediato chiama il 112. Se vivi violenza, minacce o controllo in una relazione familiare o di coppia, il servizio pubblico 1522 offre aiuto e consiglio gratuitamente, anche via chat; non sostituisce il 112 nelle emergenze."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 24 item originali, una finestra retrospettiva e quattro aree editoriali. Non è una scala clinica, non diagnostica parentificazione o trauma, non attribuisce colpe e non dimostra cause degli eventuali vissuti adulti.",
+                    List.of(
+                            new GuideReference(
+                                    "Parentification Vulnerability, Reactivity, Resilience, and Thriving — Dariotis e colleghi",
+                                    "https://doi.org/10.3390/ijerph20136197",
+                                    "Revisione sistematica mixed-methods di 95 studi consultata per multidimensionalità, contesto, sostegno e risultati eterogenei; non valida aree o soglie dell'app."
+                            ),
+                            new GuideReference(
+                                    "Parentification Among Young Carers: A Concept Analysis — Hendricks e colleghi",
+                                    "https://doi.org/10.1007/s10560-021-00784-7",
+                                    "Concept analysis consultata per responsabilità emotive e strumentali, obbligo, equità, riconoscimento e cultura; il perimetro riguarda soprattutto giovani caregiver."
+                            ),
+                            new GuideReference(
+                                    "Assessing Family Caregiving — Hooper e Doehler",
+                                    "https://doi.org/10.1111/j.1752-0606.2011.00258.x",
+                                    "Confronto di tre misure retrospettive consultato per eterogeneità degli strumenti e limiti psicometrici; item e punteggi non vengono trasferiti."
+                            ),
+                            new GuideReference(
+                                    "An Investigation of a Polish Version of the Parentification Inventory — Borchet e colleghi",
+                                    "https://doi.org/10.1007/s10826-022-02338-6",
+                                    "Adattamento in due campioni polacchi consultato per dipendenza culturale e necessità di riverifica; non dimostra equivalenza linguistica o culturale italiana."
+                            ),
+                            new GuideReference(
+                                    "Parentification and distress in Italian adult siblings — Levante e colleghi",
+                                    "https://doi.org/10.3389/fpsyt.2022.1079608",
+                                    "Studio su 605 giovani adulti italiani fratelli di persone con disabilità consultato per distress, sostegno e benefici; campione speciale e disegno correlazionale limitano la generalizzazione."
+                            ),
+                            new GuideReference(
+                                    "The positive and negative aspects of parentification — Khafi e colleghi",
+                                    "https://doi.org/10.1016/j.childyouth.2022.106709",
+                                    "Revisione integrata consultata per distinguere responsabilità gravose da compiti adeguati, sostenuti e riconosciuti; non fornisce criteri individuali."
+                            ),
+                            new GuideReference(
+                                    "La rete dei servizi per la salute mentale — Ministero della Salute",
+                                    "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/",
+                                    "Pagina istituzionale italiana consultata per Centri di Salute Mentale e rete territoriale; non fornisce una valutazione personalizzata."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero antiviolenza e antistalking",
+                                    "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/",
+                                    "Pagina ufficiale consultata per destinazione, gratuità e disponibilità continuativa del servizio; il 1522 non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

@@ -2,7 +2,7 @@
 
 ## Perimetro e conclusione
 
-Sono stati esaminati tutti i 26 questionari attivi: 624 item, 102 dimensioni o sottoscale editoriali, opzioni di risposta, scoring, soglie, profili generali, testi dimensionali, disclaimer e messaggi di sicurezza. Venticinque questionari mantengono quattro aree equilibrate da sei item; il questionario sugli stili di attaccamento usa due dimensioni da dodici item e uno scoring dedicato documentato. L'implementazione mantiene item originali, punteggi numerici nascosti, fonti tracciabili e assenza di affermazioni diagnostiche.
+Sono stati esaminati tutti i 27 questionari attivi: 648 item, 106 dimensioni o sottoscale editoriali, opzioni di risposta, scoring, soglie, profili generali, testi dimensionali, disclaimer e messaggi di sicurezza. Ventisei questionari mantengono quattro aree equilibrate da sei item; il questionario sugli stili di attaccamento usa due dimensioni da dodici item e uno scoring dedicato documentato. L'implementazione mantiene item originali, punteggi numerici nascosti, fonti tracciabili e assenza di affermazioni diagnostiche.
 
 Non esistono però dati di somministrazione o studi sullo specifico strumento. Non è quindi possibile stimare in modo responsabile struttura fattoriale, omega/alpha, errore di misura, validità, invarianza o cut-off. Le modifiche migliorano validità di contenuto attesa e qualità della somministrazione, ma non trasformano i questionari in strumenti validati.
 
@@ -18,7 +18,7 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 | Aree nel risultato | Le aree erano ordinate per media, trasformando differenze minime e non validate in una classifica. | Ordine teorico stabile. Ogni area conserva testo e barra. |
 | Barre | La trasformazione 0–100 poteva sembrare percentuale normativa o probabilità. | Nota esplicita nel risultato: non sono percentili, probabilità o confronti. |
 | Pesi | Non vi erano dati per giustificare pesi diversi. | Pesi uguali confermati; ogni area continua ad avere sei item. |
-| Titoli globali | Formule come “Un profilo variabile” o “Dubbi che emergono in alcuni contesti” non nominavano il contenuto del test se lette isolatamente. | I 100 titoli dei questionari standard nominano costrutto, esperienze o risorse e distinguono `LOW`, `MIXED`, `FOCUSED` e `BROAD`; i nove titoli dell'attaccamento nominano il prototipo o le caratteristiche intermedie, senza formulare diagnosi. |
+| Titoli globali | Formule come “Un profilo variabile” o “Dubbi che emergono in alcuni contesti” non nominavano il contenuto del test se lette isolatamente. | I 104 titoli dei questionari standard nominano costrutto, esperienze o risorse e distinguono `LOW`, `MIXED`, `FOCUSED` e `BROAD`; i nove titoli dell'attaccamento nominano il prototipo o le caratteristiche intermedie, senza formulare diagnosi. |
 
 ## Audit per questionario
 
@@ -50,11 +50,12 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 | Esperienze associate al PTSD — intrusioni; evitamento; pensieri e umore; attivazione | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali riferiti all'ultimo mese e a un singolo evento scelto mentalmente, senza richiesta di descriverlo. Le quattro aree sono teorico-editoriali: la validazione italiana PCL-5 ha favorito un modello più articolato. Il risultato non accerta l'esposizione, non diagnostica il PTSD, non distingue reazioni acute o altre condizioni e mantiene interruzione, supporto, 112 e 1522 indipendenti dal profilo. |
 | Stili di attaccamento nelle relazioni — ansia; evitamento; quattro prototipi derivati | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali e intercalati si riferiscono a una singola relazione scelta e usano una scala di rappresentatività. Le due medie vengono confrontate con quattro vertici descrittivi; margini editoriali producono profili netti o «caratteristiche intermedie tra…». Non esistono media generale, barra generale o profili `LOW/MIXED/FOCUSED/BROAD`; il risultato non assegna uno stile permanente, non equivale a ECR-R/ECR-12 e non valuta partner, qualità o sicurezza del legame. |
 | Limerenza — focalizzazione; reciprocità; idealizzazione; azioni/confini/impatto | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali si riferiscono agli ultimi tre mesi e alla stessa persona, distinguendo pensieri, interpretazioni, azioni e conseguenze. Le quattro aree sono editoriali e non riproducono i due fattori LQ-11; il risultato non diagnostica limerenza, OCD o dipendenza, non accerta reciprocità o consenso e mantiene confini, 112 e 1522 indipendenti dal profilo. |
+| Parentificazione — responsabilità pratiche; accudimento emotivo; inversione dei ruoli; spazio per i bisogni | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali chiedono agli adulti di ripensare al periodo prima dei 18 anni con genitori o caregiver. Le quattro aree sono editoriali e non copiano PQ, PI o FRS-A; il risultato non diagnostica parentificazione o trauma, non attribuisce colpe, non deduce cause adulte e distingue responsabilità gravose da aiuto familiare adeguato, sostenuto e riconosciuto. |
 
 ## Scoring e interpretazione risultanti
 
 - Ogni risposta vale 1–5 e ogni item ha lo stesso peso.
-- Nei 25 questionari standard ogni media di area deriva da sei item e la media generale da 24 item.
+- Nei 26 questionari standard ogni media di area deriva da sei item e la media generale da 24 item.
 - Nel questionario sugli stili di attaccamento ciascuna dimensione deriva da dodici item; non viene calcolata una media generale e i quattro prototipi sono ordinati per distanza editoriale con gestione esplicita dei profili vicini.
 - `LOW < 2,5`, `MEDIUM 2,5–<3,5`, `HIGH ≥ 3,5` sono categorie editoriali ancorate ai punti medi, non cut-off.
 - `LOW`: quattro aree LOW; `MIXED`: nessuna HIGH e almeno una MEDIUM; `FOCUSED`: una o due HIGH; `BROAD`: almeno tre HIGH.
@@ -64,4 +65,4 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 
 ## Verifiche automatiche aggiunte
 
-I test impediscono regressioni su: 26 questionari attivi e 624 item; per i 25 questionari standard, quattro aree da sei item, scala di frequenza e quattro profili; per gli stili di attaccamento, due dimensioni da dodici, scala dedicata, quattro vertici, quattro coppie intermedie e centro multiplo. Verificano inoltre assenza di duplicati, intercalazione, istruzioni, ancore, direzione, titoli specifici, sicurezza, fonti, UI, PDF, categorie, correlati e sitemap. I 109 profili globali sono distinti e comprensibili isolatamente. Le modifiche ai contenuti esistenti incrementano la versione; i nuovi questionari partono dalla versione `1.0`.
+I test impediscono regressioni su: 27 questionari attivi e 648 item; per i 26 questionari standard, quattro aree da sei item, scala di frequenza e quattro profili; per gli stili di attaccamento, due dimensioni da dodici, scala dedicata, quattro vertici, quattro coppie intermedie e centro multiplo. Verificano inoltre assenza di duplicati, intercalazione, istruzioni, ancore, direzione, titoli specifici, sicurezza, fonti, UI, PDF, categorie, correlati e sitemap. I 113 profili globali sono distinti e comprensibili isolatamente. Le modifiche ai contenuti esistenti incrementano la versione; i nuovi questionari partono dalla versione `1.0`.

@@ -1,10 +1,10 @@
 # Documentazione dei questionari
 
-- `audit-psicometrico-2026-08.md` descrive l'audit trasversale e lo stato corrente dei 26 questionari.
+- `audit-psicometrico-2026-08.md` descrive l'audit trasversale e lo stato corrente dei 27 questionari.
 - `audit-fonti-2026-08.md` documenta criteri, decisioni e limiti della revisione delle fonti per la popolazione italiana.
 - `revisione-analisi-globali-2026-08.md` definisce struttura e requisiti delle restituzioni complessive più dettagliate.
 - `revisione-titoli-profili-2026-08.md` definisce i titoli globali specifici per tutti i test e la convenzione obbligatoria per i questionari futuri.
-- `revisione-esempi-item-2026-08.md` documenta l'audit dei 624 item e gli esempi facoltativi aggiunti agli item più astratti.
+- `revisione-esempi-item-2026-08.md` documenta l'audit dei 648 item e gli esempi facoltativi aggiunti agli item più astratti.
 - `revisione-schede-prima-di-iniziare-2026-08.md` definisce la sintesi delle istruzioni introduttive, gli incrementi di versione e i controlli di sicurezza per tutti i questionari.
 - `standard-psicometrico.md` definisce il processo obbligatorio per revisioni e nuovi questionari.
 - `test-dbp-v1.md` è la specifica psicometrica corrente del questionario sui tratti associati al disturbo borderline di personalità e documenta separatamente le fonti del test e della scheda.
@@ -18,6 +18,7 @@
 - `test-ptsd-adulti-v1.md` è la specifica psicometrica corrente del questionario sulle esperienze associate al PTSD e documenta evento di riferimento, approccio trauma-informed, quattro aree teoriche, sicurezza e limiti diagnostici.
 - `test-stili-attaccamento-v1.md` è la specifica psicometrica corrente del questionario sugli stili di attaccamento adulto-romantici e documenta due dimensioni, quattro prototipi, profili intermedi e scoring dedicato.
 - `test-limerenza-v1.md` è la specifica psicometrica corrente del questionario sulla limerenza e documenta costrutto emergente, quattro aree editoriali, consenso, confini e assenza di validazione italiana.
+- `test-parentificazione-v1.md` è la specifica psicometrica corrente del questionario retrospettivo sulla parentificazione e documenta responsabilità pratiche ed emotive, inversione dei ruoli, contesto e limiti del ricordo.
 - Gli altri file `analisi-test-*-v1.json`, `test-autismo-v2.md`, `test-adhd-v2.md` e `test-ocd-v1.md` sono specifiche delle versioni indicate nel nome. Restano nel repository per tracciabilità e non descrivono necessariamente soglie, ancore o ordine di somministrazione correnti.
 
 Il codice e i test automatici sono la fonte operativa per la versione pubblicata. Qualunque nuova versione deve aggiornare anche l'audit o aggiungere una specifica di revisione equivalente.

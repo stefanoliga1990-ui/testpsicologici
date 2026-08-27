@@ -205,8 +205,20 @@ public class ReferenceContributionCatalogue {
                     "Studio fenomenologico consultato per ruminazione, idealizzazione e perdita di centralità del sé; i sei partecipanti internazionali non forniscono fattori, frequenze o generalizzazioni."),
             entry("https://doi.org/10.1111/spc3.12629",
                     "Revisione integrativa consultata per distinguere teoria della limerenza e più ampia passione romantica e per le evidenze miste sul ruolo causale dell'incertezza."),
+            entry("https://doi.org/10.3390/ijerph20136197",
+                    "Revisione sistematica mixed-methods di 95 studi consultata per multidimensionalità, contesto, sostegno e risultati eterogenei della parentificazione; non valida aree o soglie dell'app."),
+            entry("https://doi.org/10.1007/s10560-021-00784-7",
+                    "Concept analysis consultata per responsabilità emotive e strumentali, obbligo, equità, riconoscimento e cultura tra giovani caregiver; gli attributi non sono fattori psicometrici."),
+            entry("https://doi.org/10.1111/j.1752-0606.2011.00258.x",
+                    "Confronto psicometrico di tre misure retrospettive consultato per l'eterogeneità della misurazione; campione statunitense e strumenti diversi non validano l'app."),
+            entry("https://doi.org/10.1007/s10826-022-02338-6",
+                    "Adattamento polacco del Parentification Inventory consultato per dipendenza culturale e necessità di riverificare struttura e item; non dimostra equivalenza italiana."),
+            entry("https://doi.org/10.3389/fpsyt.2022.1079608",
+                    "Studio su 605 giovani adulti italiani fratelli di persone con disabilità consultato per distress, supporto e benefici percepiti; campione speciale e disegno correlazionale limitano il trasferimento."),
+            entry("https://doi.org/10.1016/j.childyouth.2022.106709",
+                    "Revisione integrata consultata per distinguere responsabilità gravose da compiti adeguati, sostenuti e riconosciuti; non fornisce criteri o previsioni individuali."),
             entry("https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/",
-                    "Fonte istituzionale italiana consultata per orientare ai servizi territoriali quando sofferenza o interferenza richiedono una valutazione; non è evidenza sul costrutto di limerenza."));
+                    "Fonte istituzionale italiana consultata per orientare ai servizi territoriali quando sofferenza o interferenza richiedono una valutazione; non è evidenza sui costrutti dei questionari."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

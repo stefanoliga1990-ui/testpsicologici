@@ -2,7 +2,7 @@
 
 ## Obiettivo e perimetro
 
-Questo documento definisce la revisione delle fonti dei 26 questionari e delle 26 schede di approfondimento di Spazio Test. L'audit riguarda:
+Questo documento definisce la revisione delle fonti dei 27 questionari e delle 27 schede di approfondimento di Spazio Test. L'audit riguarda:
 
 - autorevolezza scientifica o istituzionale;
 - solidità metodologica e aggiornamento;
@@ -83,6 +83,7 @@ Sono necessari interventi mirati:
 | Esperienze associate al PTSD | validazione italiana PCL-5, indagine epidemiologica italiana, WHO, NICE e National Center for PTSD | delimitazione di esposizione, quattro cluster, ultimo mese, interferenza, alternative, trattamento e sicurezza | il modello italiano migliore era a sette fattori; l'app non copia la PCL-5, non accerta l'esposizione e non trasferisce item, punteggi, soglie o struttura |
 | Stili di attaccamento nelle relazioni | validazioni italiane ECR-R ed ECR-12, modello fondativo a quattro prototipi, analisi taxometrica e studi longitudinali | scelta delle dimensioni ansia/evitamento, lettura prototipica non categoriale, relazione specifica e possibilità di variazione | l'app non copia ECR-R/ECR-12, usa una scala e un algoritmo originali e non eredita validità, cut-off o classificazioni |
 | Limerenza | LQ-11, rapid scoping review, studio fenomenologico, revisione sulla passione romantica e fonti istituzionali italiane | definizione prudente, focalizzazione, reciprocità, idealizzazione, impatto, distinzione tra pensieri e condotte e orientamento ai servizi | nessuna validazione italiana specifica; campo giovane, campioni autoselezionati e nessun item, fattore, punteggio o traiettoria trasferibile |
+| Parentificazione | revisione sistematica mixed-methods, concept analysis, confronto tra misure, adattamento polacco, studio italiano su fratelli di persone con disabilità e revisione integrata | multidimensionalità, responsabilità pratiche ed emotive, obbligo, equità, supporto, cultura e distinzione dal normale aiuto familiare | nessuna validazione italiana generale; studio italiano su campione speciale, misure eterogenee e prevalenza di disegni retrospettivi o correlazionali |
 
 ## Decisioni sui testi
 
@@ -108,9 +109,9 @@ Questa revisione non modifica item, opzioni, scoring, pesi, soglie o interpretaz
 
 ## Esito dell'implementazione
 
-- Fonti dei 26 questionari sincronizzate come metadati; per i nuovi questionari item, scoring e interpretazioni sono documentati nelle rispettive specifiche v1.0.
-- Fonti e contributi delle 26 schede integrati; i collegamenti scientifici ospitati da terzi sono stati sostituiti con DOI o pagine primarie.
+- Fonti dei 27 questionari sincronizzate come metadati; per i nuovi questionari item, scoring e interpretazioni sono documentati nelle rispettive specifiche v1.0.
+- Fonti e contributi delle 27 schede integrati; i collegamenti scientifici ospitati da terzi sono stati sostituiti con DOI o pagine primarie.
 - Schede su dinamiche narcisistiche, people pleasing e fenomeno dell'impostore corrette nei punti in cui associazioni, cultura o limiti di misura richiedevano maggiore cautela.
 - Pagina “Metodo e fonti” aggiornata con priorità italiana/europea e divieto di trasferire automaticamente norme, prevalenze e cut-off.
 - `AGENTS.md` e `docs/standard-psicometrico.md` aggiornati come standard riutilizzabile.
-- Suite completa eseguita il 26 agosto 2026: 176 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.
+- Suite completa eseguita il 27 agosto 2026: 181 test superati, nessun fallimento; build frontend Vite inclusa e completata con successo.

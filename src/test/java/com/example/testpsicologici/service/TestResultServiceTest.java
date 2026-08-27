@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(26).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(27).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1345,10 +1345,61 @@ class TestResultServiceTest {
     }
 
     @Test
+    void parentificationTestLoadsItsOriginalRetrospectiveBalancedStructureAndSources() {
+        PsychologicalTest test = catalogue.findById("parentificazione");
+
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "pratica", "emotiva", "ruoli", "spazio");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(6));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "pratica", "emotiva", "ruoli", "spazio");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains("prima dei 18 anni", "genitori o caregiver", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "informativo", "non validato", "aiutare in famiglia", "ricordo", "non attribuisce colpe");
+        assertThat(test.references()).hasSize(7).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.3390/ijerph20136197",
+                "https://doi.org/10.1007/s10560-021-00784-7",
+                "https://doi.org/10.1111/j.1752-0606.2011.00258.x",
+                "https://doi.org/10.1007/s10826-022-02338-6",
+                "https://doi.org/10.3389/fpsyt.2022.1079608",
+                "https://doi.org/10.1016/j.childyouth.2022.106709",
+                "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/");
+    }
+
+    @Test
+    void parentificationProfilesUseAreaPatternsAndKeepRetrospectiveLimitsIndependentFromLevel() {
+        TestResult low = analyzeWithAnswersForTest("parentificazione", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("parentificazione", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("parentificazione", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("parentificazione", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).contains("parentificazione", "molto poco presenti");
+        assertThat(mixed.general().title()).contains("parentificazione", "modo variabile");
+        assertThat(focused.general().title()).contains("parentificazione", "una o due aree");
+        assertThat(broad.general().title()).contains("parentificazione", "molto presenti", "più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(4);
+            assertThat(result.general().detail()).contains(
+                    "ricordi retrospettivi", "non dimostra parentificazione", "trauma", "colpa",
+                    "Aiutare in famiglia", "112", "1522");
+        });
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

@@ -28,6 +28,7 @@ public class TopicClusterCatalogue {
                     "Modi di vivere vicinanza, autonomia, fiducia, confini e sicurezza nelle relazioni.",
                     List.of(
                             "stili-attaccamento",
+                            "parentificazione",
                             "paura-abbandono",
                             "limerenza",
                             "dipendenza-affettiva",

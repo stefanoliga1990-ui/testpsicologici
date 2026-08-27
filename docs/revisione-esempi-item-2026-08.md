@@ -2,9 +2,9 @@
 
 ## Scopo e perimetro
 
-Sono stati riesaminati tutti i 624 item dei 26 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala configurata.
+Sono stati riesaminati tutti i 648 item dei 27 questionari attivi, verificando formulazione, contenuto singolo, concretezza, termini astratti, possibili interpretazioni alternative e corrispondenza con la scala configurata.
 
-L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 572 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
+L'intervento non modifica costrutti, dimensioni, scoring, soglie o interpretazioni. Aggiunge un esempio facoltativo e visivamente separato soltanto a 52 item per i quali una breve situazione concreta può chiarire il significato senza introdurre un nuovo indicatore. Gli altri 596 item restano privi di esempio perché già concreti, già dotati di chiarimenti nel testo oppure esposti a un rischio maggiore di restringimento o suggerimento della risposta.
 
 Gli esempi non sono elenchi esaustivi e non costituiscono condizioni aggiuntive: l'utente deve rispondere alla domanda principale considerando anche situazioni equivalenti non nominate.
 
@@ -179,6 +179,10 @@ Non sono stati aggiunti esempi ai 24 item. Nominare messaggi, tempi di risposta,
 ### Limerenza
 
 Non sono stati aggiunti esempi ai 24 item. Nominare piattaforme, tipi di relazione, forme di contatto o condotte estreme potrebbe suggerire comportamenti, restringere il recupero a un solo canale o confondere frequenza e sicurezza. La specifica v1.0 richiede interviste cognitive su segnali, reciprocità, contatto senza risposta, plausibilità e possibile effetto suggestivo.
+
+### Parentificazione
+
+Non sono stati aggiunti esempi ai 24 item. Nominare malattia, disabilità, migrazione, separazioni, compiti domestici o forme familiari specifiche potrebbe restringere il ricordo, trasformare un contesto in una causa implicita o suggerire che un singolo compito equivalga alla parentificazione. La specifica v1.0 richiede interviste cognitive su età, durata, obbligo, sostegno, cultura e ricostruzione retrospettiva.
 
 ## Limiti e verifica successiva
 

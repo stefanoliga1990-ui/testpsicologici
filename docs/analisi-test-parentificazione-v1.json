@@ -1,0 +1,143 @@
+{
+  "test": {
+    "id": "parentificazione",
+    "titolo": "Parentificazione: eri il genitore dei tuoi genitori?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa e retrospettiva",
+    "periodo_riferimento": "Periodo prima dei 18 anni in cui la persona viveva con genitori o caregiver",
+    "direzione_punteggio": "Valori più alti descrivono una maggiore frequenza delle esperienze formulate",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non diagnostica parentificazione, trauma, abuso, neglect o altre condizioni; non attribuisce colpe o intenzioni e non dimostra cause degli eventuali vissuti attuali."
+  },
+  "istruzione_risposta": "Ripensando al periodo prima dei 18 anni in cui vivevi con genitori o caregiver, con quale frequenza ti capitava?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale di parentificazione, un percentile, una probabilità o una misura clinica",
+    "ordine_aree_risultato": "Ordine teorico stabile: pratica, emotiva, ruoli, spazio"
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le esperienze associate alla parentificazione sembrano molto poco presenti nelle tue risposte",
+      "sottotitolo": "Responsabilità pratiche, accudimento emotivo, inversione dei ruoli e riduzione dello spazio personale risultano poco frequenti in tutte le aree. Nel ricordo della crescita non emerge quindi una configurazione diffusa delle esperienze esplorate.",
+      "descrizione": "Questo andamento non esclude un periodo circoscritto, un compito molto impegnativo o un episodio importante non rappresentato dalla media. Età, durata, scelta, sostegno, riconoscimento e contesto culturale possono cambiare il significato dell'aiuto familiare. Il risultato descrive ricordi retrospettivi e non dimostra parentificazione, trauma, abuso, neglect, colpa o intenzioni familiari, né spiega eventuali difficoltà adulte. Se emergono forte disagio o responsabilità attuali che limitano autonomia e benessere, puoi parlarne con un professionista o un Centro di Salute Mentale; in caso di pericolo immediato chiama il 112 e, per violenza o controllo attuali, puoi contattare il 1522."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le esperienze associate alla parentificazione sembrano presenti in modo variabile",
+      "sottotitolo": "Le risposte cambiano tra responsabilità pratiche, sostegno emotivo, inversione dei ruoli e spazio per i propri bisogni, senza aree al livello editoriale più alto. Il vissuto può quindi essere dipeso da compiti, età o fasi familiari differenti.",
+      "descrizione": "Osserva quali responsabilità erano occasionali e quali ricorrenti, se erano scelte o obbligate e quale sostegno adulto le accompagnava. Una distribuzione variabile non permette di ricostruire l'intera famiglia né di stabilire conseguenze nel presente. Il risultato descrive ricordi retrospettivi e non dimostra parentificazione, trauma, abuso, neglect, colpa o intenzioni familiari, né spiega eventuali difficoltà adulte. Se emergono forte disagio o responsabilità attuali che limitano autonomia e benessere, puoi parlarne con un professionista o un Centro di Salute Mentale; in caso di pericolo immediato chiama il 112 e, per violenza o controllo attuali, puoi contattare il 1522."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le esperienze associate alla parentificazione sembrano più presenti in una o due aree",
+      "sottotitolo": "Una o due aree raccolgono esperienze ricordate con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso aspetti specifici senza estenderli automaticamente a tutta la crescita o a ogni relazione familiare.",
+      "descrizione": "Consulta le aree emergenti per distinguere compiti pratici, cura emotiva, responsabilità per l'adulto e rinunce personali. Considera quando accadevano, quanto duravano e se esistevano scelta, supporto, riconoscimento e possibilità di tornare a un ruolo adeguato all'età. Il risultato descrive ricordi retrospettivi e non dimostra parentificazione, trauma, abuso, neglect, colpa o intenzioni familiari, né spiega eventuali difficoltà adulte. Se emergono forte disagio o responsabilità attuali che limitano autonomia e benessere, puoi parlarne con un professionista o un Centro di Salute Mentale; in caso di pericolo immediato chiama il 112 e, per violenza o controllo attuali, puoi contattare il 1522."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le esperienze associate alla parentificazione sembrano molto presenti in più aree",
+      "sottotitolo": "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Nel ricordo della crescita, responsabilità concrete ed emotive possono quindi essersi accompagnate a una marcata inversione dei ruoli o a meno spazio per bisogni e attività dell'età.",
+      "descrizione": "Considera ampiezza e durata delle responsabilità, il margine di scelta, il sostegno disponibile e ciò che accadeva quando esprimevi un bisogno. Un confronto professionale può aiutare a ricostruire la storia con più contesto, distinguendo aiuto familiare, necessità temporanee, norme culturali e possibili confini intergenerazionali fragili senza partire da un'etichetta. Il risultato descrive ricordi retrospettivi e non dimostra parentificazione, trauma, abuso, neglect, colpa o intenzioni familiari, né spiega eventuali difficoltà adulte. Se emergono forte disagio o responsabilità attuali che limitano autonomia e benessere, puoi parlarne con un professionista o un Centro di Salute Mentale; in caso di pericolo immediato chiama il 112 e, per violenza o controllo attuali, puoi contattare il 1522."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "pratica",
+      "nome_area": "Responsabilità pratiche e organizzative",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Gestione della casa, problemi, documenti, routine e decisioni adulte risultano poco frequenti. Un singolo compito intenso o un periodo circoscritto può comunque essere importante."},
+        {"livello": "MEDIUM", "descrizione": "Alcune responsabilità pratiche erano presenti durante la crescita. Il loro significato dipende da età, durata, autonomia richiesta, sostegno adulto e compatibilità con le attività dell'età."},
+        {"livello": "HIGH", "descrizione": "Responsabilità pratiche e organizzative normalmente sostenute dagli adulti risultano frequenti. L'area non stabilisce da sola parentificazione né giudica le necessità della famiglia."}
+      ]
+    },
+    {
+      "area_code": "emotiva",
+      "nome_area": "Accudimento emotivo e mediazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Confidenze adulte, rassicurazione, regolazione emotiva e mediazione risultano poco frequenti. Questo non misura affetto, empatia o qualità complessiva dei rapporti."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni offrivi sostegno emotivo o mediazione agli adulti. Osserva contenuto, continuità, possibilità di sottrarti e presenza di altri adulti disponibili."},
+        {"livello": "HIGH", "descrizione": "Sostegno emotivo, rassicurazione o mediazione verso gli adulti risultano frequenti. L'area non diagnostica il caregiver e non dimostra che tu fossi responsabile delle sue emozioni."}
+      ]
+    },
+    {
+      "area_code": "ruoli",
+      "nome_area": "Inversione dei ruoli e obbligo percepito",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Responsabilità per l'adulto, obbligo e direzione invertita del sostegno risultano poco frequenti. Non certifica che ogni confine familiare fosse adeguato."},
+        {"livello": "MEDIUM", "descrizione": "In alcune fasi potevi sentirti la persona forte o necessaria per un adulto. Considera età, scelta, aspettative e possibilità reale di affidarti a qualcuno."},
+        {"livello": "HIGH", "descrizione": "Obbligo, responsabilità per il benessere dell'adulto e direzione invertita del sostegno risultano frequenti. Il dato descrive il tuo ricordo e non attribuisce colpa o intenzioni."}
+      ]
+    },
+    {
+      "area_code": "spazio",
+      "nome_area": "Spazio per i propri bisogni e riconoscimento",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Rinunce, bisogni messi da parte, carico e scarso riconoscimento risultano poco frequenti. Non esclude episodi importanti o bisogni rimasti senza risposta."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni le responsabilità riducevano spazio, tempo o riconoscimento. Osserva quali attività o bisogni venivano rimandati e quali sostegni erano disponibili."},
+        {"livello": "HIGH", "descrizione": "Rinunce, priorità date ai bisogni dell'adulto e peso percepito risultano frequenti. L'area non dimostra trauma o neglect e non stabilisce automaticamente conseguenze adulte."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {
+      "titolo": "Parentification Vulnerability, Reactivity, Resilience, and Thriving",
+      "url": "https://doi.org/10.3390/ijerph20136197",
+      "apporto": "Revisione sistematica mixed-methods di 95 studi consultata per multidimensionalità, contesto, sostegno e limiti della letteratura; non valida aree o soglie dell'app."
+    },
+    {
+      "titolo": "Parentification Among Young Carers: A Concept Analysis",
+      "url": "https://doi.org/10.1007/s10560-021-00784-7",
+      "apporto": "Concept analysis consultata per responsabilità emotive e strumentali, obbligo, equità, riconoscimento e cultura; il perimetro riguarda soprattutto giovani caregiver."
+    },
+    {
+      "titolo": "Assessing Family Caregiving: A Comparison of Three Retrospective Parentification Measures",
+      "url": "https://doi.org/10.1111/j.1752-0606.2011.00258.x",
+      "apporto": "Confronto di tre misure retrospettive consultato per eterogeneità della misurazione; item e punteggi non sono copiati o trasferiti."
+    },
+    {
+      "titolo": "An Investigation of a Polish Version of the Parentification Inventory",
+      "url": "https://doi.org/10.1007/s10826-022-02338-6",
+      "apporto": "Studio europeo consultato per dipendenza culturale e necessità di rivalidare struttura e item; non dimostra equivalenza italiana."
+    },
+    {
+      "titolo": "Parentification, distress, and relationship with parents",
+      "url": "https://doi.org/10.3389/fpsyt.2022.1079608",
+      "apporto": "Studio su 605 giovani adulti italiani fratelli di persone con disabilità consultato per ruolo di distress, supporto e benefici; campione speciale e disegno correlazionale."
+    },
+    {
+      "titolo": "The positive and negative aspects of parentification: An integrated review",
+      "url": "https://doi.org/10.1016/j.childyouth.2022.106709",
+      "apporto": "Revisione consultata per distinguere responsabilità gravose da compiti adeguati, sostenuti e riconosciuti; non fornisce criteri individuali."
+    },
+    {
+      "titolo": "La rete dei servizi per la salute mentale — Ministero della Salute",
+      "url": "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/",
+      "apporto": "Riferimento istituzionale italiano per orientare ai servizi territoriali in presenza di disagio; non è evidenza sul costrutto."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia separata e include fonti istituzionali italiane per supporto e sicurezza.",
+  "limite": "Non esistono dati che validino in adulti italiani questo specifico set di 24 item, le quattro aree, la scala, le soglie o le interpretazioni."
+}
