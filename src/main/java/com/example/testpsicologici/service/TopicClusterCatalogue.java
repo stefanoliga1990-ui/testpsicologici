@@ -42,7 +42,8 @@ public class TopicClusterCatalogue {
                     "Dinamiche di comunicazione, attenzione e controllo che possono generare ambiguità, pressione o perdita di autonomia.",
                     List.of(
                             "gaslighting",
-                            "love-bombing"
+                            "love-bombing",
+                            "breadcrumbing"
                     )),
             new TopicCluster(
                     "autostima-approvazione-e-obiettivi",

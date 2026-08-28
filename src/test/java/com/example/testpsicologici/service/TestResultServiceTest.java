@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(29).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(30).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1502,10 +1502,63 @@ class TestResultServiceTest {
     }
 
     @Test
+    void breadcrumbingTestLoadsItsOriginalRelationshipSpecificBalancedStructureAndSources() {
+        PsychologicalTest test = catalogue.findById("breadcrumbing");
+
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "intermittenza", "segnali", "incongruenza", "chiarezza");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(6));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "intermittenza", "segnali", "incongruenza", "chiarezza");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains(
+                "ultimi 12 mesi", "relazione o frequentazione scelta", "più breve", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "informativo", "non validato", "una sola relazione o frequentazione", "non dimostrano da soli breadcrumbing", "interromperti");
+        assertThat(test.references()).hasSize(8).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.3390/ijerph17031116",
+                "https://doi.org/10.24310/espsiescpsi.v13i2.9960",
+                "https://doi.org/10.3390/ijerph17249548",
+                "https://doi.org/10.34192/cienciaysalud.v7i3.688",
+                "https://doi.org/10.1080/01639625.2025.2516636",
+                "https://doi.org/10.3390/soc13020041",
+                "https://doi.org/10.1016/j.chb.2025.108637",
+                "https://www.1522.eu/cose-1522/");
+    }
+
+    @Test
+    void breadcrumbingProfilesUseAreaPatternsAndKeepInterpretiveAndSafetyLimitsIndependentFromLevel() {
+        TestResult low = analyzeWithAnswersForTest("breadcrumbing", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("breadcrumbing", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("breadcrumbing", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("breadcrumbing", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).contains("breadcrumbing", "molto poco presenti");
+        assertThat(mixed.general().title()).contains("breadcrumbing", "modo variabile");
+        assertThat(focused.general().title()).contains("breadcrumbing", "una o due aree");
+        assertThat(broad.general().title()).contains("breadcrumbing", "molto presenti", "più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(4);
+            assertThat(result.general().detail()).contains(
+                    "non dimostra breadcrumbing", "manipolazione", "intenzioni",
+                    "aspettative non esplicitate", "sicuro", "112", "1522");
+        });
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

@@ -1428,6 +1428,69 @@ class PageRenderingTest {
     }
 
     @Test
+    void breadcrumbingIntroductionAndGuideExposeCategoryRelatedContentAndSafetyLimits() throws Exception {
+        mockMvc.perform(get("/test/breadcrumbing"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Ho subito breadcrumbing?")))
+                .andExpect(content().string(containsString("Intermittenza dei contatti e riattivazioni")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/breadcrumbing\"")))
+                .andExpect(content().string(containsString("href=\"/test/love-bombing\"")))
+                .andExpect(content().string(containsString("una sola relazione o frequentazione")))
+                .andExpect(content().string(containsString("non dimostrano da soli breadcrumbing")));
+
+        mockMvc.perform(get("/approfondimenti/breadcrumbing"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Un andamento osservabile, non una lettura delle intenzioni")))
+                .andExpect(content().string(containsString("Breadcrumbing, ghosting e disponibilità variabile non sono sinonimi")))
+                .andExpect(content().string(containsString("Non esiste una soglia validata per gli adulti italiani")))
+                .andExpect(content().string(containsString("Il bisogno di aiuto non dipende dal punteggio")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
+                .andExpect(content().string(containsString("href=\"/test/breadcrumbing\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/love-bombing\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void breadcrumbingResultRendersOverallAndFourAreaAnalysesWithRelatedTests() throws Exception {
+        mockMvc.perform(get("/test/breadcrumbing/risultato")
+                        .session(completedAttempt("breadcrumbing", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le dinamiche associate al breadcrumbing sembrano molto presenti in più aree")))
+                .andExpect(content().string(containsString("Intermittenza dei contatti e riattivazioni")))
+                .andExpect(content().string(containsString("Segnali di interesse e aspettative")))
+                .andExpect(content().string(containsString("Coerenza tra parole e azioni")))
+                .andExpect(content().string(containsString("Chiarezza, reciprocità e progressione")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/breadcrumbing/risultato/pdf\"")))
+                .andExpect(content().string(containsString("Test correlati")))
+                .andExpect(content().string(containsString("href=\"/test/love-bombing\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/breadcrumbing\"")));
+    }
+
+    @Test
+    void breadcrumbingResultCanBeDownloadedAsReadablePdf() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/test/breadcrumbing/risultato/pdf")
+                        .session(completedAttempt("breadcrumbing", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-breadcrumbing.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Ho subito breadcrumbing?")
+                    .contains("Intermittenza dei contatti e riattivazioni")
+                    .contains("Coerenza tra parole e azioni")
+                    .contains("non dimostra", "breadcrumbing")
+                    .contains("intenzioni")
+                    .contains("1522");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -1497,6 +1560,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/gaslighting")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/love-bombing")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/breadcrumbing")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1512,6 +1577,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/limerenza")))
                 .andExpect(content().string(containsString("http://localhost/test/parentificazione")))
                 .andExpect(content().string(containsString("http://localhost/test/gaslighting")))
+                .andExpect(content().string(containsString("http://localhost/test/breadcrumbing")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

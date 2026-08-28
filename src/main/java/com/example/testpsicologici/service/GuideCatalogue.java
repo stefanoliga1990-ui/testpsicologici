@@ -3109,6 +3109,127 @@ public class GuideCatalogue {
                                     "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "breadcrumbing",
+                    "breadcrumbing",
+                    "Breadcrumbing nelle relazioni",
+                    "Quando i segnali di interesse restano intermittenti e ambigui",
+                    "Breadcrumbing: significato, segnali e limiti | Spazio Test",
+                    "Che cosa indica il breadcrumbing, come distinguerlo da altre dinamiche relazionali e perché sequenza, reciprocità, seguito concreto e chiarezza contano più di un singolo messaggio.",
+                    "Breadcrumbing è un termine emergente usato per descrivere contatti o segnali di interesse intermittenti che possono mantenere aperta un'aspettativa senza una progressione chiara e condivisa. Non è una diagnosi e da un questionario non si possono conoscere le intenzioni dell'altra persona.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Un andamento osservabile, non una lettura delle intenzioni",
+                                    List.of(
+                                            "La ricerca descrive il breadcrumbing attraverso comunicazioni sporadiche, ritorni e segnali di interesse che possono sostenere un'aspettativa mentre la relazione resta poco definita o non progredisce. Il fenomeno può avvenire tramite messaggi e social, ma non è limitato ai canali digitali.",
+                                            "Definizioni comuni includono talvolta lo scopo di mantenere interessata l'altra persona. Chi riceve i contatti, però, può osservare soltanto comportamenti e sequenze: il test non attribuisce una strategia, una motivazione o una colpa."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni utili",
+                                    "Breadcrumbing, ghosting e disponibilità variabile non sono sinonimi",
+                                    List.of(
+                                            "Nel ghosting la comunicazione viene interrotta unilateralmente; nel breadcrumbing il contatto tende invece a riapparire in forma intermittente. L'orbiting indica soprattutto una presenza periferica online dopo un allontanamento e può sovrapporsi ad alcuni episodi, senza essere automaticamente lo stesso fenomeno.",
+                                            "Ritardi, rinvii, periodi impegnativi o una frequentazione casuale concordata possono produrre singoli segnali simili. Sono più informativi l'andamento ripetuto, la corrispondenza tra parole e azioni, la possibilità di chiarire aspettative e la libertà di scegliere, non un gesto isolato."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le aree esplorate",
+                                    "Come è organizzato il questionario",
+                                    List.of(
+                                            "Spazio Test usa 24 item originali e quattro lenti editoriali. Non riproducono BREAD-ASR o CEB, non sono fattori confermati negli adulti italiani e le barre non rappresentano percentuali o prove di breadcrumbing."
+                                    ),
+                                    List.of(
+                                            "Intermittenza dei contatti e riattivazioni: alternanza, ritorni, messaggi isolati e conversazioni interrotte.",
+                                            "Segnali di interesse e aspettative: proposte, espressioni affettuose e riferimenti a una possibile vicinanza futura.",
+                                            "Coerenza tra parole e azioni: seguito concreto di incontri, ricontatti, progetti e disponibilità annunciata.",
+                                            "Chiarezza, reciprocità e progressione: risposte alle richieste di definire aspettative e modalità di proseguimento."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Non esiste una soglia validata per gli adulti italiani",
+                                    List.of(
+                                            "Gli studi disponibili riguardano soprattutto giovani adulti spagnoli, un piccolo campione qualitativo, adolescenti che riferivano condotte agite e scale preliminari sviluppate in Argentina o Spagna. Le strutture delle misure non coincidono e gli effetti osservati sono associazioni di gruppo, non spiegazioni causali del singolo caso.",
+                                            "Non è stata individuata una validazione peer-reviewed italiana specifica per il breadcrumbing ricevuto. Fonti e misure esistenti hanno guidato confini e cautele, ma non validano i 24 item, le quattro aree, le soglie editoriali o le interpretazioni di Spazio Test."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Cosa osservare",
+                                    "Sequenza, seguito concreto e possibilità di scegliere",
+                                    List.of(
+                                            "Può essere utile ricostruire episodi concreti: quando il contatto riprendeva, quali aspettative si formavano, che cosa accadeva alle proposte e se era possibile ottenere una risposta comprensibile sul rapporto. Un singolo messaggio affettuoso dice meno della sequenza ripetuta.",
+                                            "Osserva anche se entrambe le persone potevano proporre tempi e modalità, se gli accordi venivano rispettati e se l'incertezza limitava altre scelte. I segnali di interesse, anche frequenti, non indicano da soli breadcrumbing quando esistono reciprocità, chiarezza e seguito."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto e alternative",
+                                    "Comportamenti simili possono avere significati diversi",
+                                    List.of(
+                                            "Aspettative non esplicitate, distanza, lavoro, salute, eventi personali, difficoltà comunicative, cambiamento di interesse o una relazione casuale reciprocamente concordata possono contribuire a un andamento discontinuo. Queste alternative richiedono contesto e non sono automaticamente spiegazioni corrette.",
+                                            "Allo stesso modo, ansia, solitudine o dubbi su di sé non provano che il rapporto ne sia la causa unica. Il questionario non diagnostica la persona indicata, non valuta sincerità o stile di attaccamento e non decide quale forma avrebbe dovuto assumere la relazione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Il bisogno di aiuto non dipende dal punteggio",
+                                    List.of(
+                                            "Se l'incertezza ti provoca sofferenza, interferisce con le tue scelte o rende difficile rispettare i tuoi confini, puoi parlarne con una persona fidata, uno psicologo, psicoterapeuta, medico o servizio competente. Non è necessario ottenere un'etichetta per chiedere supporto.",
+                                            "Paura, minacce, controllo, stalking o violenza meritano attenzione indipendentemente dal risultato. In caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 è gratuito, attivo 24 ore su 24 e disponibile anche via chat."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 24 item originali riferiti a una sola relazione o frequentazione e quattro aree editoriali. Non dimostra breadcrumbing, manipolazione o abuso, non attribuisce intenzioni o diagnosi e non sostituisce una valutazione o un supporto professionale.",
+                    List.of(
+                            new GuideReference(
+                                    "Psychological Correlates of Ghosting and Breadcrumbing Experiences — Navarro e colleghi",
+                                    "https://doi.org/10.3390/ijerph17031116",
+                                    "Studio trasversale su adulti spagnoli consultato per definizione e associazioni con benessere; il disegno non prova causalità e il criterio di frequenza non diventa un cutoff dell'app."
+                            ),
+                            new GuideReference(
+                                    "Ghosting and breadcrumbing: prevalence and association with online dating — Navarro e colleghi",
+                                    "https://doi.org/10.24310/espsiescpsi.v13i2.9960",
+                                    "Studio spagnolo consultato per finestra annuale e contesto digitale; campione e metodo non producono stime o soglie per gli adulti italiani."
+                            ),
+                            new GuideReference(
+                                    "Development and Validation of BREAD-ASR — Rodríguez-García e colleghi",
+                                    "https://doi.org/10.3390/ijerph17249548",
+                                    "Strumento sulle condotte agite sviluppato in adolescenti spagnoli; ruolo, popolazione e costrutto operativo sono diversi e nessun item viene trasferito."
+                            ),
+                            new GuideReference(
+                                    "Construcción de una escala de experiencias de breadcrumbing — Simil",
+                                    "https://doi.org/10.34192/cienciaysalud.v7i3.688",
+                                    "Prima CEB su adulti giovani argentini consultata per esperienza, aspettative ed emozioni; campione locale e struttura non validano le aree dell'app."
+                            ),
+                            new GuideReference(
+                                    "Breadcrumbing Experience Scale: Preliminary Validation in Spain — Navarro e Simil",
+                                    "https://doi.org/10.1080/01639625.2025.2516636",
+                                    "Tre studi su adulti emergenti spagnoli consultati per la struttura preliminare differente; non dimostrano equivalenza italiana né soglie individuali."
+                            ),
+                            new GuideReference(
+                                    "Breadcrumbing in Young Adults: A Qualitative Study — Khattar e colleghi",
+                                    "https://doi.org/10.3390/soc13020041",
+                                    "Studio qualitativo consultato per intermittenza, aspettative, incongruenza e incertezza; nove partecipanti non rappresentano la popolazione generale."
+                            ),
+                            new GuideReference(
+                                    "Ghosting, orbiting and breadcrumbing: conceptual distinctions — Schokkenbroek e colleghi",
+                                    "https://doi.org/10.1016/j.chb.2025.108637",
+                                    "Analisi teorica consultata per distinguere fenomeni correlati; non valida item, fattori o interpretazioni individuali."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

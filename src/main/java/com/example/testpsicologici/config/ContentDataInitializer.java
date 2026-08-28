@@ -74,6 +74,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedParentificationInformationTest();
         seedGaslightingInformationTest();
         seedLoveBombingInformationTest();
+        seedBreadcrumbingInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -2810,6 +2811,114 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Instabilità delle attenzioni, senso di debito o cambiamenti delle tue scelte risultano frequenti. L'area non dimostra causalità, dipendenza o un ciclo di abuso.");
     }
 
+    private void seedBreadcrumbingInformationTest() {
+        String id = "breadcrumbing";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Ho subito breadcrumbing?",
+                "Autovalutazione informativa",
+                "Osserva in una relazione o frequentazione specifica intermittenza dei contatti, segnali di interesse, coerenza tra parole e azioni e possibilità di chiarire il rapporto.",
+                "6 min · 24 domande",
+                "Questo questionario per adulti è informativo e non validato. Scegli una sola relazione o frequentazione romantica degli ultimi 12 mesi e pensa sempre alla stessa persona: segnali intermittenti o ambigui non dimostrano da soli breadcrumbing. Il risultato non accerta manipolazione, abuso, intenzioni o diagnosi; puoi interromperti e cercare supporto se emergono disagio o problemi di sicurezza.",
+                version, false,
+                "Presenza complessiva delle dinamiche esplorate",
+                "Presenza delle dinamiche nell'area",
+                true, 30).withSeo(
+                "Test breadcrumbing: 24 domande informative | Spazio Test",
+                "Questionario informativo per adulti su contatti intermittenti, segnali, seguito concreto e chiarezza in una relazione; non diagnostico.")
+                .withResponseInstruction("Pensando agli ultimi 12 mesi della relazione o frequentazione scelta, o all'intero periodo se più breve, con quale frequenza accadeva?"));
+
+        saveReference(id, "Psychological Correlates of Ghosting and Breadcrumbing Experiences — Navarro e colleghi",
+                "https://doi.org/10.3390/ijerph17031116", 1);
+        saveReference(id, "Ghosting and breadcrumbing: prevalence and association with online dating — Navarro e colleghi",
+                "https://doi.org/10.24310/espsiescpsi.v13i2.9960", 2);
+        saveReference(id, "Development and Validation of BREAD-ASR — Rodríguez-García e colleghi",
+                "https://doi.org/10.3390/ijerph17249548", 3);
+        saveReference(id, "Construcción de una escala de experiencias de breadcrumbing — Simil",
+                "https://doi.org/10.34192/cienciaysalud.v7i3.688", 4);
+        saveReference(id, "Breadcrumbing Experience Scale: Preliminary Validation in Spain — Navarro e Simil",
+                "https://doi.org/10.1080/01639625.2025.2516636", 5);
+        saveReference(id, "Breadcrumbing in Young Adults: A Qualitative Study — Khattar e colleghi",
+                "https://doi.org/10.3390/soc13020041", 6);
+        saveReference(id, "Ghosting, orbiting and breadcrumbing: conceptual distinctions — Schokkenbroek e colleghi",
+                "https://doi.org/10.1016/j.chb.2025.108637", 7);
+        saveReference(id, "1522 — Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 8);
+
+        saveArea(id, "intermittenza", "Intermittenza dei contatti e riattivazioni", 1);
+        saveArea(id, "segnali", "Segnali di interesse e aspettative", 2);
+        saveArea(id, "incongruenza", "Coerenza tra parole e azioni", 3);
+        saveArea(id, "chiarezza", "Chiarezza, reciprocità e progressione", 4);
+
+        saveQuestions(id, List.of(
+                q("intermittenza", "La persona alternava periodi di contatto frequente a periodi di silenzio."),
+                q("intermittenza", "Dopo essersi allontanata, la persona riprendeva il contatto."),
+                q("intermittenza", "La persona inviava brevi messaggi dopo lunghi intervalli senza contatti."),
+                q("intermittenza", "Quando smettevo di cercarla, la persona tornava a farsi sentire."),
+                q("intermittenza", "La persona manteneva il contatto tramite reazioni occasionali ai miei contenuti online."),
+                q("intermittenza", "La persona avviava una conversazione e poi interrompeva le risposte."),
+                q("segnali", "La persona esprimeva interesse romantico nei miei confronti."),
+                q("segnali", "La persona diceva che avrebbe voluto incontrarmi presto."),
+                q("segnali", "La persona parlava della possibilità di una relazione tra noi."),
+                q("segnali", "La persona proponeva attività future da fare insieme."),
+                q("segnali", "La persona usava espressioni affettuose dopo periodi di distanza."),
+                q("segnali", "La persona accennava a una maggiore vicinanza futura."),
+                q("incongruenza", "Le proposte di incontro della persona rimanevano senza seguito."),
+                q("incongruenza", "La persona annullava incontri senza proporre una nuova occasione."),
+                q("incongruenza", "Le promesse di ricontatto della persona rimanevano senza seguito."),
+                q("incongruenza", "Le attività future nominate dalla persona non venivano poi organizzate."),
+                q("incongruenza", "Le dichiarazioni di interesse non portavano a una maggiore continuità nei contatti."),
+                q("incongruenza", "La disponibilità annunciata cambiava quando arrivava il momento di incontrarsi."),
+                q("chiarezza", "Quando chiedevo che significato avesse il rapporto, la persona rispondeva in modo vago."),
+                q("chiarezza", "La persona rimandava le conversazioni su cosa desiderava dal rapporto."),
+                q("chiarezza", "Alle domande sul proseguimento della frequentazione, la persona non dava una risposta definita."),
+                q("chiarezza", "La persona cambiava argomento quando parlavo delle aspettative reciproche."),
+                q("chiarezza", "Gli accordi sul tipo di rapporto restavano indefiniti dopo i nostri confronti."),
+                q("chiarezza", "Le mie richieste di decidere come proseguire rimanevano senza risposta.")));
+
+        String commonSafety = "Il risultato descrive soltanto le risposte riferite: non dimostra breadcrumbing, manipolazione, abuso, intenzioni, diagnosi o colpe, e comportamenti simili possono dipendere anche da aspettative non esplicitate, disponibilità variabile o difficoltà comunicative. "
+                + "Se l'incertezza ti provoca sofferenza o limita le tue scelte, puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. "
+                + "Paura, minacce, controllo, stalking o violenza meritano attenzione indipendentemente dal punteggio: in caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 offre orientamento gratuito anche via chat.";
+
+        saveGlobal(id, "LOW",
+                "Le dinamiche associate al breadcrumbing sembrano molto poco presenti nelle tue risposte",
+                "Intermittenza, segnali mantenuti senza seguito, incongruenza e difficoltà di chiarimento risultano poco frequenti in tutte le aree. Nella relazione scelta non emerge quindi una configurazione diffusa delle dinamiche esplorate.",
+                "Questo andamento non esclude un episodio importante, una condotta non inclusa o una difficoltà circoscritta. Relazioni casuali concordate, disponibilità variabile e aspettative diverse possono produrre alcuni degli stessi segnali: contano sequenza, accordi e conseguenze concrete. " + commonSafety);
+        saveGlobal(id, "MIXED",
+                "Le dinamiche associate al breadcrumbing sembrano presenti in modo variabile",
+                "Le risposte cambiano tra intermittenza, segnali di interesse, seguito concreto e possibilità di chiarire il rapporto, senza aree al livello editoriale più alto. Alcune esperienze possono quindi comparire in momenti specifici mentre altre risultano contenute.",
+                "Osserva quali episodi alimentavano aspettative e quali portavano invece ad accordi chiari o azioni concrete. La variabilità può riflettere un rapporto casuale concordato, disponibilità mutevole, aspettative non condivise oppure un andamento ambiguo che richiede più contesto. " + commonSafety);
+        saveGlobal(id, "FOCUSED",
+                "Le dinamiche associate al breadcrumbing sembrano più presenti in una o due aree",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso nuclei specifici senza definire l'intera relazione o le motivazioni dell'altra persona.",
+                "Consulta le aree emergenti per distinguere ritorni intermittenti, segnali di interesse, incongruenza tra parole e azioni e possibilità di ottenere chiarezza. Considera durata, sequenza, reciprocità e libertà di scegliere senza restare sospeso nell'attesa. " + commonSafety);
+        saveGlobal(id, "BROAD",
+                "Le dinamiche associate al breadcrumbing sembrano molto presenti in più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Intermittenza e segnali di interesse possono quindi accompagnarsi a scarso seguito concreto o difficoltà di chiarimento, formando una configurazione ampia nel periodo considerato.",
+                "Considera se il rapporto lasciasse spazio a scelte reciproche e accordi chiari oppure mantenesse a lungo aspettative senza progressione condivisa. Un professionista può aiutarti a ricostruire sequenza, contesto, effetti e opzioni senza partire da un'etichetta; non affrontare direttamente la situazione se non è sicuro. " + commonSafety);
+
+        saveAreaInsights(id, "intermittenza",
+                "Alternanza tra contatti e silenzi, ritorni e conversazioni interrotte risultano poco frequenti. Non esclude un singolo episodio confuso o importante.",
+                "In alcune occasioni il contatto si interrompeva e riprendeva. Osserva la sequenza, le spiegazioni disponibili e se l'andamento era condiviso o lasciava in attesa.",
+                "Alternanza, riattivazioni o contatti isolati risultano frequenti. L'area descrive un andamento riferito e non dimostra una strategia, un'intenzione o il breadcrumbing.");
+        saveAreaInsights(id, "segnali",
+                "Dichiarazioni di interesse, proposte e riferimenti a una vicinanza futura risultano poco frequenti. Non stabilisce che cosa provasse l'altra persona.",
+                "In alcuni momenti erano presenti segnali affettuosi o prospettive future. Considerali insieme a reciprocità, chiarezza e seguito concreto.",
+                "Segnali di interesse, proposte o aspettative future risultano frequenti. Da soli non indicano breadcrumbing e possono appartenere a una relazione chiara e reciproca.");
+        saveAreaInsights(id, "incongruenza",
+                "Proposte, promesse o disponibilità senza seguito risultano poco frequenti. Non valuta ogni cambiamento di programma o impedimento possibile.",
+                "In alcune situazioni parole e seguito concreto non coincidevano. Osserva ricorrenza, motivi comunicati e possibilità di concordare alternative.",
+                "Proposte, promesse o dichiarazioni senza seguito concreto risultano frequenti. L'area non dimostra menzogna, colpa o intenzione manipolativa.");
+        saveAreaInsights(id, "chiarezza",
+                "Risposte vaghe, rinvii e accordi rimasti indefiniti risultano poco frequenti. Non stabilisce quale forma avrebbe dovuto avere il rapporto.",
+                "In alcuni confronti era difficile ottenere una posizione condivisa sul rapporto. Considera se tempi, aspettative e possibilità di scelta venivano esplicitati.",
+                "Vaghezza, rinvii o richieste di chiarimento senza risposta risultano frequenti. L'area non impone un modello di relazione e non attribuisce intenzioni.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -2962,6 +3071,15 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Coercive control in intimate partner violence — Hamberger e colleghi", "https://doi.org/10.1016/j.avb.2017.08.003"),
                 ref("Definizioni e indicatori sulla violenza psicologica — Istat", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/"),
                 ref("Understanding Psychological Violence against Women — EIGE", "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu"),
+                ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
+        syncReferences("breadcrumbing", List.of(
+                ref("Psychological Correlates of Ghosting and Breadcrumbing Experiences — Navarro e colleghi", "https://doi.org/10.3390/ijerph17031116"),
+                ref("Ghosting and breadcrumbing: prevalence and association with online dating — Navarro e colleghi", "https://doi.org/10.24310/espsiescpsi.v13i2.9960"),
+                ref("Development and Validation of BREAD-ASR — Rodríguez-García e colleghi", "https://doi.org/10.3390/ijerph17249548"),
+                ref("Construcción de una escala de experiencias de breadcrumbing — Simil", "https://doi.org/10.34192/cienciaysalud.v7i3.688"),
+                ref("Breadcrumbing Experience Scale: Preliminary Validation in Spain — Navarro e Simil", "https://doi.org/10.1080/01639625.2025.2516636"),
+                ref("Breadcrumbing in Young Adults: A Qualitative Study — Khattar e colleghi", "https://doi.org/10.3390/soc13020041"),
+                ref("Ghosting, orbiting and breadcrumbing: conceptual distinctions — Schokkenbroek e colleghi", "https://doi.org/10.1016/j.chb.2025.108637"),
                 ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
     }
 

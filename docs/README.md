@@ -21,6 +21,7 @@
 - `test-parentificazione-v1.md` è la specifica psicometrica corrente del questionario retrospettivo sulla parentificazione e documenta responsabilità pratiche ed emotive, inversione dei ruoli, contesto e limiti del ricordo.
 - `test-gaslighting-v1.md` è la specifica psicometrica corrente del questionario sulle esperienze associate al gaslighting e documenta unità relazionale, tattiche epistemiche, potere, autodubbio e limiti nell'accertamento dei fatti.
 - `test-love-bombing-v1.md` è la specifica psicometrica corrente del questionario sulle dinamiche associate al love bombing e documenta fase relazionale, intensità, accelerazione, confini, alternanza, sicurezza e limiti delle evidenze disponibili.
+- `test-breadcrumbing-v1.md` è la specifica psicometrica corrente del questionario sulle dinamiche associate al breadcrumbing e documenta intermittenza, segnali, incongruenza, chiarezza, sicurezza e limiti delle evidenze disponibili.
 - Gli altri file `analisi-test-*-v1.json`, `test-autismo-v2.md`, `test-adhd-v2.md` e `test-ocd-v1.md` sono specifiche delle versioni indicate nel nome. Restano nel repository per tracciabilità e non descrivono necessariamente soglie, ancore o ordine di somministrazione correnti.
 
 Il codice e i test automatici sono la fonte operativa per la versione pubblicata. Qualunque nuova versione deve aggiornare anche l'audit o aggiungere una specifica di revisione equivalente.

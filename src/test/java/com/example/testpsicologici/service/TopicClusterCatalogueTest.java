@@ -51,9 +51,10 @@ class TopicClusterCatalogueTest {
 
         assertThat(cluster.slug()).isEqualTo("ambiguita-e-manipolazione-relazionale");
         assertThat(cluster.title()).isEqualTo("Ambiguità e manipolazione relazionale");
-        assertThat(cluster.testIds()).containsExactly("gaslighting", "love-bombing");
+        assertThat(cluster.testIds()).containsExactly("gaslighting", "love-bombing", "breadcrumbing");
+        assertThat(topicClusterCatalogue.findByTestId("breadcrumbing")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("love-bombing")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("limerenza").orElseThrow().testIds())
-                .doesNotContain("gaslighting", "love-bombing");
+                .doesNotContain("gaslighting", "love-bombing", "breadcrumbing");
     }
 }

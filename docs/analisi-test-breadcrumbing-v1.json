@@ -1,0 +1,111 @@
+{
+  "test": {
+    "id": "breadcrumbing",
+    "titolo": "Ho subito breadcrumbing?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa riferita a una relazione o frequentazione romantica specifica",
+    "periodo_riferimento": "Ultimi 12 mesi della relazione o frequentazione scelta, o intero periodo se più breve",
+    "direzione_punteggio": "Valori più alti descrivono una maggiore frequenza delle dinamiche formulate",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non dimostra breadcrumbing, manipolazione, abuso o controllo e non attribuisce intenzioni, colpe o diagnosi alla persona indicata."
+  },
+  "istruzione_risposta": "Pensando agli ultimi 12 mesi della relazione o frequentazione scelta, o all'intero periodo se più breve, con quale frequenza accadeva?",
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno una è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale, probabilità, gravità o prova di breadcrumbing",
+    "ordine_aree_risultato": "intermittenza, segnali, incongruenza, chiarezza",
+    "limite_aggregazione": "I segnali da soli possono appartenere a relazioni reciproche; media e aree richiedono una lettura congiunta e contestuale."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le dinamiche associate al breadcrumbing sembrano molto poco presenti nelle tue risposte",
+      "sottotitolo": "Intermittenza, segnali mantenuti senza seguito, incongruenza e difficoltà di chiarimento risultano poco frequenti in tutte le aree. Nella relazione scelta non emerge quindi una configurazione diffusa delle dinamiche esplorate.",
+      "descrizione": "Questo andamento non esclude un episodio importante, una condotta non inclusa o una difficoltà circoscritta. Relazioni casuali concordate, disponibilità variabile e aspettative diverse possono produrre alcuni degli stessi segnali: contano sequenza, accordi e conseguenze concrete. Il risultato non dimostra breadcrumbing, manipolazione, abuso, intenzioni, diagnosi o colpe. Se l'incertezza ti provoca sofferenza puoi parlarne con una persona fidata o un professionista; in caso di pericolo immediato chiama il 112 e, per donne che vivono violenza o stalking, è disponibile il 1522."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le dinamiche associate al breadcrumbing sembrano presenti in modo variabile",
+      "sottotitolo": "Le risposte cambiano tra intermittenza, segnali di interesse, seguito concreto e possibilità di chiarire il rapporto, senza aree al livello editoriale più alto. Alcune esperienze possono quindi comparire in momenti specifici mentre altre risultano contenute.",
+      "descrizione": "Osserva quali episodi alimentavano aspettative e quali portavano invece ad accordi chiari o azioni concrete. La variabilità può riflettere un rapporto casuale concordato, disponibilità mutevole, aspettative non condivise oppure un andamento ambiguo che richiede più contesto. Il risultato non dimostra breadcrumbing, manipolazione, abuso, intenzioni, diagnosi o colpe. Se l'incertezza ti provoca sofferenza puoi parlarne con una persona fidata o un professionista; in caso di pericolo immediato chiama il 112 e, per donne che vivono violenza o stalking, è disponibile il 1522."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le dinamiche associate al breadcrumbing sembrano più presenti in una o due aree",
+      "sottotitolo": "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso nuclei specifici senza definire l'intera relazione o le motivazioni dell'altra persona.",
+      "descrizione": "Consulta le aree emergenti per distinguere ritorni intermittenti, segnali di interesse, incongruenza tra parole e azioni e possibilità di ottenere chiarezza. Considera durata, sequenza, reciprocità e libertà di scegliere senza restare sospeso nell'attesa. Il risultato non dimostra breadcrumbing, manipolazione, abuso, intenzioni, diagnosi o colpe. Se l'incertezza ti provoca sofferenza puoi parlarne con una persona fidata o un professionista; in caso di pericolo immediato chiama il 112 e, per donne che vivono violenza o stalking, è disponibile il 1522."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le dinamiche associate al breadcrumbing sembrano molto presenti in più aree",
+      "sottotitolo": "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Intermittenza e segnali di interesse possono quindi accompagnarsi a scarso seguito concreto o difficoltà di chiarimento, formando una configurazione ampia nel periodo considerato.",
+      "descrizione": "Considera se il rapporto lasciasse spazio a scelte reciproche e accordi chiari oppure mantenesse a lungo aspettative senza progressione condivisa. Un professionista può aiutarti a ricostruire sequenza, contesto, effetti e opzioni senza partire da un'etichetta. Il risultato non dimostra breadcrumbing, manipolazione, abuso, intenzioni, diagnosi o colpe; non affrontare direttamente la situazione se non è sicuro. In caso di pericolo immediato chiama il 112 e, per donne che vivono violenza o stalking, è disponibile il 1522."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "intermittenza",
+      "nome_area": "Intermittenza dei contatti e riattivazioni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Alternanza tra contatti e silenzi, ritorni e conversazioni interrotte risultano poco frequenti. Non esclude un singolo episodio confuso o importante."},
+        {"livello": "MEDIUM", "descrizione": "In alcune occasioni il contatto si interrompeva e riprendeva. Osserva la sequenza, le spiegazioni disponibili e se l'andamento era condiviso o lasciava in attesa."},
+        {"livello": "HIGH", "descrizione": "Alternanza, riattivazioni o contatti isolati risultano frequenti. L'area descrive un andamento riferito e non dimostra una strategia, un'intenzione o il breadcrumbing."}
+      ]
+    },
+    {
+      "area_code": "segnali",
+      "nome_area": "Segnali di interesse e aspettative",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Dichiarazioni di interesse, proposte e riferimenti a una vicinanza futura risultano poco frequenti. Non stabilisce che cosa provasse l'altra persona."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni momenti erano presenti segnali affettuosi o prospettive future. Considerali insieme a reciprocità, chiarezza e seguito concreto."},
+        {"livello": "HIGH", "descrizione": "Segnali di interesse, proposte o aspettative future risultano frequenti. Da soli non indicano breadcrumbing e possono appartenere a una relazione chiara e reciproca."}
+      ]
+    },
+    {
+      "area_code": "incongruenza",
+      "nome_area": "Coerenza tra parole e azioni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Proposte, promesse o disponibilità senza seguito risultano poco frequenti. Non valuta ogni cambiamento di programma o impedimento possibile."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni parole e seguito concreto non coincidevano. Osserva ricorrenza, motivi comunicati e possibilità di concordare alternative."},
+        {"livello": "HIGH", "descrizione": "Proposte, promesse o dichiarazioni senza seguito concreto risultano frequenti. L'area non dimostra menzogna, colpa o intenzione manipolativa."}
+      ]
+    },
+    {
+      "area_code": "chiarezza",
+      "nome_area": "Chiarezza, reciprocità e progressione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Risposte vaghe, rinvii e accordi rimasti indefiniti risultano poco frequenti. Non stabilisce quale forma avrebbe dovuto avere il rapporto."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni confronti era difficile ottenere una posizione condivisa sul rapporto. Considera se tempi, aspettative e possibilità di scelta venivano esplicitati."},
+        {"livello": "HIGH", "descrizione": "Vaghezza, rinvii o richieste di chiarimento senza risposta risultano frequenti. L'area non impone un modello di relazione e non attribuisce intenzioni."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {"titolo": "Psychological Correlates of Ghosting and Breadcrumbing Experiences", "url": "https://doi.org/10.3390/ijerph17031116", "apporto": "Studio spagnolo consultato per definizione operativa e associazioni; il disegno trasversale non prova causalità e il criterio di frequenza non è trasferito."},
+    {"titolo": "Ghosting and breadcrumbing: prevalence and association with online dating behavior", "url": "https://doi.org/10.24310/espsiescpsi.v13i2.9960", "apporto": "Studio spagnolo consultato per finestra annuale e contesto digitale; non fornisce soglie per adulti italiani."},
+    {"titolo": "Development and Validation of the Breadcrumbing in Affective-Sexual Relationships Questionnaire", "url": "https://doi.org/10.3390/ijerph17249548", "apporto": "BREAD-ASR consultato per condotte agite; adolescenti, ruolo e strumento diversi, nessun item trasferito."},
+    {"titolo": "Construcción de una escala de experiencias de breadcrumbing", "url": "https://doi.org/10.34192/cienciaysalud.v7i3.688", "apporto": "CEB argentina consultata per esperienza, aspettativa ed emozioni; campione locale e struttura non validano le aree dell'app."},
+    {"titolo": "Breadcrumbing Experience Scale: Preliminary Validation in Spain", "url": "https://doi.org/10.1080/01639625.2025.2516636", "apporto": "Valutazione europea preliminare consultata per la struttura differente; adulti emergenti spagnoli, non equivalenza italiana."},
+    {"titolo": "Breadcrumbing in Young Adults: A Qualitative Study", "url": "https://doi.org/10.3390/soc13020041", "apporto": "Studio qualitativo consultato per intermittenza, aspettative, incongruenza e incertezza; campione di nove persone, non generalizzabile."},
+    {"titolo": "Ghosting, orbiting and breadcrumbing: conceptual distinctions", "url": "https://doi.org/10.1016/j.chb.2025.108637", "apporto": "Analisi teorica consultata per distinguere concetti correlati; non valida item, fattori o risultati individuali."},
+    {"titolo": "1522 — Numero Anti Violenza e Stalking", "url": "https://www.1522.eu/cose-1522/", "apporto": "Pagina istituzionale italiana consultata per destinatari, gratuità e orientamento; non è evidenza sul costrutto e non sostituisce il 112."}
+  ],
+  "bibliografia_scheda": "La scheda mantiene fonti e limiti espliciti, distinguendo definizione, misure, ricerca qualitativa, confini concettuali e sicurezza.",
+  "limite": "Non esistono dati che validino in adulti italiani questo specifico set di 24 item, le quattro aree, la scala, le soglie, l'aggregazione o le interpretazioni."
+}
