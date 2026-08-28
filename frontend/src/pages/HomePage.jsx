@@ -36,7 +36,7 @@ export default function HomePage({ initialQuery = '', tests, topicClusters }) {
                 <div className="hero-orbit" aria-hidden="true">
                   <div className="orbit-ring orbit-ring-one" />
                   <div className="orbit-ring orbit-ring-two" />
-                  <div className="orbit-core">24<br /><span>domande</span></div>
+                  <div className="orbit-core">test<br /><span>informativi</span></div>
                   <span className="spark spark-one">✦</span><span className="spark spark-two">✦</span>
                 </div>
               </section>

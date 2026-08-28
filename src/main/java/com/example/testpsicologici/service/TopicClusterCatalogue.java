@@ -32,11 +32,17 @@ public class TopicClusterCatalogue {
                             "paura-abbandono",
                             "limerenza",
                             "dipendenza-affettiva",
-                            "love-bombing",
                             "gelosia-partner",
-                            "gaslighting",
                             "dinamiche-narcisistiche-partner",
                             "tratti-borderline-adulti"
+                    )),
+            new TopicCluster(
+                    "ambiguita-e-manipolazione-relazionale",
+                    "Ambiguità e manipolazione relazionale",
+                    "Dinamiche di comunicazione, attenzione e controllo che possono generare ambiguità, pressione o perdita di autonomia.",
+                    List.of(
+                            "gaslighting",
+                            "love-bombing"
                     )),
             new TopicCluster(
                     "autostima-approvazione-e-obiettivi",

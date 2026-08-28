@@ -58,7 +58,7 @@ export default function ResultPage({ areaResults, contributionsEnabled = false, 
             </div>
             <div className="area-results">
               <div className="area-results-heading">
-                <p className="eyebrow">Le quattro aree</p><h2>Una lettura più completa</h2>
+                <p className="eyebrow">Le aree esplorate</p><h2>Una lettura più completa</h2>
                 <p>Le barre riassumono le risposte agli item di ciascuna area. Non sono percentili, probabilità diagnostiche o confronti con altre persone.</p>
               </div>
               <div className="area-result-grid">

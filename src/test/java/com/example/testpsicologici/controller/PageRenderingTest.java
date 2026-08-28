@@ -69,6 +69,7 @@ class PageRenderingTest {
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("data-test-card")))
                 .andExpect(content().string(containsString("Ansia, umore e trauma")))
                 .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
                 .andExpect(content().string(containsString("Autostima, approvazione e obiettivi")))
                 .andExpect(content().string(containsString("Emozioni, risorse e benessere")))
                 .andExpect(content().string(containsString("Neurosviluppo, attenzione e linguaggio")))
@@ -197,11 +198,12 @@ class PageRenderingTest {
                         "<title>Approfondimenti su psicologia e benessere | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Un argomento alla volta")))
                 .andExpect(content().string(containsString("/js/guides.js")))
-                .andExpect(content().string(containsString("/react/assets/app.js?v=react-13")))
+                .andExpect(content().string(containsString("/react/assets/app.js?v=react-14")))
                 .andExpect(content().string(containsString("id=\"guide-search-input\"")))
                 .andExpect(content().string(containsString("data-guide-card")))
                 .andExpect(content().string(containsString("Ansia, umore e trauma")))
                 .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
                 .andExpect(content().string(containsString("Autostima, approvazione e obiettivi")))
                 .andExpect(content().string(containsString("Emozioni, risorse e benessere")))
                 .andExpect(content().string(containsString("Neurosviluppo, attenzione e linguaggio")))
@@ -1186,7 +1188,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/approfondimenti/limerenza\"")))
                 .andExpect(content().string(containsString("href=\"/test/paura-abbandono\"")))
                 .andExpect(content().string(containsString("href=\"/test/dipendenza-affettiva\"")))
-                .andExpect(content().string(containsString("href=\"/test/love-bombing\"")))
+                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString("1522")));
 
@@ -1306,11 +1308,9 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Ho subito gaslighting?")))
                 .andExpect(content().string(containsString("Negazione e alterazione degli eventi")))
-                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/gaslighting\"")))
-                .andExpect(content().string(containsString("href=\"/test/dinamiche-narcisistiche-partner\"")))
-                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
-                .andExpect(content().string(containsString("href=\"/test/tratti-borderline-adulti\"")))
+                .andExpect(content().string(containsString("href=\"/test/love-bombing\"")))
                 .andExpect(content().string(containsString("una sola persona")))
                 .andExpect(content().string(containsString("non dimostra gaslighting")));
 
@@ -1319,8 +1319,9 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Un andamento relazionale, non una singola frase")))
                 .andExpect(content().string(containsString("Disaccordo, inganno e gaslighting non sono sinonimi")))
                 .andExpect(content().string(containsString("Il bisogno di aiuto non dipende dal punteggio")))
-                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
                 .andExpect(content().string(containsString("href=\"/test/gaslighting\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/love-bombing\"")))
                 .andExpect(content().string(containsString("Approfondimenti collegati")));
     }
 
@@ -1338,7 +1339,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
                 .andExpect(content().string(containsString("href=\"/test/gaslighting/risultato/pdf\"")))
                 .andExpect(content().string(containsString("Test correlati")))
-                .andExpect(content().string(containsString("href=\"/test/dinamiche-narcisistiche-partner\"")))
+                .andExpect(content().string(containsString("href=\"/test/love-bombing\"")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/gaslighting\"")));
     }
 
@@ -1369,10 +1370,8 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Ho subito love bombing?")))
                 .andExpect(content().string(containsString("Intensità di attenzioni e idealizzazione")))
-                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/love-bombing\"")))
-                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
-                .andExpect(content().string(containsString("href=\"/test/dipendenza-affettiva\"")))
                 .andExpect(content().string(containsString("href=\"/test/gaslighting\"")))
                 .andExpect(content().string(containsString("una sola relazione romantica")))
                 .andExpect(content().string(containsString("non dimostrano da soli love bombing")));
@@ -1383,8 +1382,9 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Affetto intenso e love bombing non sono sinonimi")))
                 .andExpect(content().string(containsString("Le evidenze disponibili non offrono una soglia italiana")))
                 .andExpect(content().string(containsString("Il bisogno di aiuto non dipende dal punteggio")))
-                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
                 .andExpect(content().string(containsString("href=\"/test/love-bombing\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/gaslighting\"")))
                 .andExpect(content().string(containsString("Approfondimenti collegati")));
     }
 
@@ -1402,7 +1402,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
                 .andExpect(content().string(containsString("href=\"/test/love-bombing/risultato/pdf\"")))
                 .andExpect(content().string(containsString("Test correlati")))
-                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
+                .andExpect(content().string(containsString("href=\"/test/gaslighting\"")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/love-bombing\"")));
     }
 
@@ -1531,6 +1531,10 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
                         "class=\"overall-presence-track\"")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString(
+                        "Le aree esplorate")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString(
+                        ">Le quattro aree<"))))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("aria-valuenow=\"50\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString(
                         "href=\"/test/tratti-adhd-adulti/risultato/pdf\"")))
