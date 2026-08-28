@@ -1491,6 +1491,68 @@ class PageRenderingTest {
     }
 
     @Test
+    void orbitingIntroductionAndGuideExposeTwoComponentsCategoryRelatedContentAndLimits() throws Exception {
+        mockMvc.perform(get("/test/orbiting"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Ho subito orbiting?")))
+                .andExpect(content().string(containsString("Interruzione e assenza di comunicazione diretta")))
+                .andExpect(content().string(containsString("Presenza digitale visibile senza contatto diretto")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/orbiting\"")))
+                .andExpect(content().string(containsString("href=\"/test/breadcrumbing\"")))
+                .andExpect(content().string(containsString("una sola relazione o frequentazione romantica")))
+                .andExpect(content().string(containsString("significato limitato")));
+
+        mockMvc.perform(get("/approfondimenti/orbiting"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Due componenti che devono essere lette insieme")))
+                .andExpect(content().string(containsString("Orbiting, ghosting, breadcrumbing e cyberstalking non sono sinonimi")))
+                .andExpect(content().string(containsString("Esistono studi italiani, ma non una scala validata")))
+                .andExpect(content().string(containsString("Confini digitali e aiuto non dipendono dal risultato")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
+                .andExpect(content().string(containsString("href=\"/test/orbiting\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/breadcrumbing\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void orbitingResultRendersOverallAndTwoAreaAnalysesWithRelatedTests() throws Exception {
+        mockMvc.perform(get("/test/orbiting/risultato")
+                        .session(completedAttempt("orbiting", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le dinamiche associate all'orbiting sembrano molto presenti in entrambe le aree")))
+                .andExpect(content().string(containsString("Interruzione e assenza di comunicazione diretta")))
+                .andExpect(content().string(containsString("Presenza digitale visibile senza contatto diretto")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/orbiting/risultato/pdf\"")))
+                .andExpect(content().string(containsString("Test correlati")))
+                .andExpect(content().string(containsString("href=\"/test/breadcrumbing\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/orbiting\"")));
+    }
+
+    @Test
+    void orbitingResultCanBeDownloadedAsReadablePdf() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/test/orbiting/risultato/pdf")
+                        .session(completedAttempt("orbiting", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-orbiting.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Ho subito orbiting?")
+                    .contains("Interruzione e assenza di comunicazione diretta")
+                    .contains("Presenza digitale visibile senza contatto diretto")
+                    .contains("non dimostra", "orbiting")
+                    .contains("cyberstalking")
+                    .contains("1522");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -1562,6 +1624,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/love-bombing")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/breadcrumbing")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/orbiting")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1578,6 +1642,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/parentificazione")))
                 .andExpect(content().string(containsString("http://localhost/test/gaslighting")))
                 .andExpect(content().string(containsString("http://localhost/test/breadcrumbing")))
+                .andExpect(content().string(containsString("http://localhost/test/orbiting")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

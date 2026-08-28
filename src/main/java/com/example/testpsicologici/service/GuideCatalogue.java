@@ -3230,6 +3230,115 @@ public class GuideCatalogue {
                                     "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "orbiting",
+                    "orbiting",
+                    "Orbiting dopo una relazione",
+                    "Quando il contatto diretto finisce ma la presenza sui social continua",
+                    "Orbiting: significato, segnali e limiti | Spazio Test",
+                    "Che cosa indica l'orbiting, come distinguerlo da ghosting, normale presenza online e cyberstalking e perché sono necessarie due componenti osservabili.",
+                    "Orbiting è un termine emergente per descrivere una situazione in cui una persona interrompe la comunicazione diretta dopo una relazione o frequentazione, ma rimane visibilmente presente attraverso visualizzazioni o interazioni sui social. Non è una diagnosi e l'attività online non rivela da sola intenzioni, interesse o sorveglianza.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Due componenti che devono essere lette insieme",
+                                    List.of(
+                                            "Gli studi italiani disponibili descrivono l'orbiting come molto vicino al ghosting, con una differenza centrale: dopo aver cessato il contatto diretto, la persona continua a comparire in modo visibile nella vita social dell'altra attraverso storie, reazioni, condivisioni o “Mi piace”.",
+                                            "Una sola componente non basta. La cessazione della comunicazione può descrivere ghosting o una conclusione già compresa; continuare a seguire o vedere contenuti può essere un comportamento online ordinario, concordato o favorito dalla piattaforma."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni utili",
+                                    "Orbiting, ghosting, breadcrumbing e cyberstalking non sono sinonimi",
+                                    List.of(
+                                            "Nel ghosting prevale la cessazione della comunicazione; nell'orbiting questa si accompagna a una presenza social visibile senza ripresa del contatto diretto. Nel breadcrumbing ricompaiono invece segnali diretti o proposte intermittenti che mantengono aperta un'aspettativa.",
+                                            "Il cyberstalking comprende condotte intrusive o minacciose più ampie e non può essere accertato o escluso da questo test. Paura, contatti indesiderati ripetuti, minacce, impersonificazione o sorveglianza invasiva meritano attenzione indipendentemente dall'etichetta e dal punteggio."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le aree esplorate",
+                                    "Perché questo questionario è più breve",
+                                    List.of(
+                                            "Spazio Test usa 12 item originali e due lenti editoriali perché il fenomeno è ristretto e la ricerca specifica è ancora scarsa. Le aree non sono fattori validati e le barre non rappresentano percentuali o prove di orbiting."
+                                    ),
+                                    List.of(
+                                            "Interruzione e assenza di comunicazione diretta: messaggi, chiamate, conversazioni e richieste di chiarimento dopo la conclusione o l'allontanamento.",
+                                            "Presenza digitale visibile senza contatto diretto: visualizzazioni, reazioni, “Mi piace”, condivisioni e connessioni social osservabili nello stesso periodo."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Esistono studi italiani, ma non una scala validata",
+                                    List.of(
+                                            "Una ricerca qualitativa e un successivo confronto tra orbiting, ghosting e rifiuto sono stati condotti da ricercatori di università italiane. I campioni erano giovani, i compiti chiedevano di ricordare episodi e includevano anche relazioni amicali; non è stata costruita o validata una misura di frequenza per adulti italiani.",
+                                            "La letteratura non dimostra soglie, fattori, prevalenze individuali o conseguenze specifiche e inevitabili. Gli studi guidano la definizione e le cautele, ma non validano i 12 item, le due aree o le interpretazioni di Spazio Test."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Cosa osservare",
+                                    "Attività visibile, sequenza e impostazioni della piattaforma",
+                                    List.of(
+                                            "Ricostruisci una fase concreta: quando è cessato il contatto diretto, se vi era stata una conclusione esplicita e quali interazioni online comparivano davvero dopo quel momento. Conta ciò che era osservabile, non supposizioni su visite al profilo o accessi che la piattaforma non mostra.",
+                                            "Considera anche frequenza, durata, canale, reti condivise e impostazioni di privacy. Suggerimenti automatici, visualizzazioni accidentali o uso abituale possono influenzare singoli episodi e non permettono di conoscere il significato attribuito dall'altra persona."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto e alternative",
+                                    "Una presenza online può avere significati differenti",
+                                    List.of(
+                                            "Alcune persone mantengono volontariamente una connessione social dopo una separazione; altre non modificano le liste dei contatti o incontrano contenuti attraverso amici e interessi comuni. Una chiusura esplicita e accordi reciproci cambiano il contesto anche quando le attività visibili sono frequenti.",
+                                            "Confusione, speranza, rabbia o tristezza sono reazioni possibili, ma non rivelano la motivazione dell'altra persona e non dimostrano che i social ne siano l'unica causa. Per questo tali vissuti non entrano nel punteggio del questionario."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Confini digitali e aiuto non dipendono dal risultato",
+                                    List.of(
+                                            "Silenziare, rimuovere, bloccare o modificare le impostazioni di privacy sono possibilità personali, non prescrizioni. Se la situazione interferisce con il benessere o rende difficile sentirti libero nelle tue scelte, puoi parlarne con una persona fidata o un professionista.",
+                                            "Paura, minacce, contatti indesiderati o sorveglianza meritano attenzione anche con un risultato basso; evita confronti diretti se potrebbero aumentare il pericolo. In caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 è gratuito, attivo 24 ore su 24 e disponibile anche via chat."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 12 item originali riferiti ai primi sei mesi dopo l'interruzione di una sola relazione o frequentazione e due aree editoriali congiunte. Non dimostra orbiting, ghosting, manipolazione o cyberstalking, non attribuisce intenzioni e non sostituisce un supporto professionale.",
+                    List.of(
+                            new GuideReference(
+                                    "Ghosting and orbiting: An analysis of victims' experiences — Pancani e colleghi",
+                                    "https://doi.org/10.1177/02654075211000417",
+                                    "Studio qualitativo condotto da ricercatori di università italiane consultato per definizione, presenza visibile sui social e reazioni riferite; campione giovane e nessuna scala validata."
+                            ),
+                            new GuideReference(
+                                    "Relationship dissolution strategies: Comparing ghosting, orbiting, and rejection — Pancani e colleghi",
+                                    "https://doi.org/10.5817/CP2022-2-9",
+                                    "Studio su giovani adulti soprattutto italiani consultato per le due componenti e il confronto degli esiti; compito di richiamo, episodi anche amicali e nessuna soglia individuale."
+                            ),
+                            new GuideReference(
+                                    "What is (not) ghosting? — Schokkenbroek e colleghi",
+                                    "https://doi.org/10.1016/j.chb.2025.108637",
+                                    "Analisi teorica consultata per distinguere ghosting e concetti vicini come orbiting e breadcrumbing; non è una validazione psicometrica."
+                            ),
+                            new GuideReference(
+                                    "Unwanted and unfollowed: Defining ghosting and social media unfollowing — Collins e colleghi",
+                                    "https://doi.org/10.1111/pere.12492",
+                                    "Studio statunitense consultato per cessazione della comunicazione e connessioni social post-rottura; riguarda il ghosting e un campione soprattutto studentesco."
+                            ),
+                            new GuideReference(
+                                    "Facebook surveillance of former romantic partners — Marshall",
+                                    "https://pubmed.ncbi.nlm.nih.gov/22946958/",
+                                    "Studio britannico consultato per il contesto dell'osservazione social post-rottura; riguarda chi osserva l'ex, non chi riceve la presenza digitale, e non dimostra causalità."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

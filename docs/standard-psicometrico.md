@@ -54,7 +54,7 @@ Output: tabella `dimensione → indicatori → item candidati → esclusioni`.
 - Gli item hanno peso uguale salvo evidenza empirica replicata per una diversa ponderazione.
 - Le medie di item ordinali sono usate soltanto per comporre una restituzione editoriale comprensibile.
 - Soglie correnti, allineate ai punti medi tra categorie: `LOW < 2,5`, `MEDIUM 2,5–<3,5`, `HIGH ≥ 3,5`.
-- Profilo `LOW`: tutte le aree LOW; `MIXED`: nessuna area HIGH ma almeno un'area MEDIUM; `FOCUSED`: una o due aree HIGH; `BROAD`: almeno tre aree HIGH.
+- Profilo `LOW`: tutte le aree LOW; `MIXED`: nessuna area HIGH ma almeno un'area MEDIUM; `FOCUSED`: almeno un'area HIGH ma meno della soglia `BROAD`; `BROAD`: almeno `max(2, numero_aree - 1)` aree HIGH. La regola equivale ad almeno tre aree HIGH nei test a quattro aree, almeno due nei test a tre aree ed entrambe nei test a due aree.
 - Un questionario con un modello teorico diverso può usare uno scoring dedicato soltanto se specifica prima del codice dimensioni, trasformazioni, profili, gestione dell'ambiguità e limiti, senza riutilizzare impropriamente media generale o profili `LOW/MIXED/FOCUSED/BROAD`.
 - Le barre sono trasformazioni lineari da 1–5 a 0–100. Non sono percentuali della persona, percentili, probabilità, gravità clinica o confronti normativi.
 - Le interpretazioni devono descrivere le risposte, includere contesto e alternative, evitare diagnosi e indicare quando rivolgersi a professionisti o servizi di emergenza.

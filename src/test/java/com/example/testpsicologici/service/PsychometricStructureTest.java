@@ -48,7 +48,8 @@ class PsychometricStructureTest {
             Map.entry("parentificazione", "esperienze associate alla parentificazione"),
             Map.entry("gaslighting", "esperienze associate al gaslighting"),
             Map.entry("love-bombing", "dinamiche associate al love bombing"),
-            Map.entry("breadcrumbing", "dinamiche associate al breadcrumbing"));
+            Map.entry("breadcrumbing", "dinamiche associate al breadcrumbing"),
+            Map.entry("orbiting", "dinamiche associate all'orbiting"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -58,18 +59,27 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(30).allSatisfy(test -> {
-            assertThat(test.questions()).hasSize(24);
-            assertThat(new HashSet<>(test.questions())).hasSize(24);
+        assertThat(catalogue.findAll()).hasSize(31).allSatisfy(test -> {
+            assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
+                assertThat(test.questions()).hasSize(24);
                 assertThat(test.responseInstruction()).containsIgnoringCase("descrive");
                 assertThat(test.answerScale()).isEqualTo("AGREEMENT");
                 assertThat(test.areas()).hasSize(2);
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(12));
+            } else if ("orbiting".equals(test.id())) {
+                assertThat(test.questions()).hasSize(12);
+                assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).hasSize(2);
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code()))
+                        .hasSize(6));
             } else {
+                assertThat(test.questions()).hasSize(24);
                 assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
                 assertThat(test.answerScale()).isEqualTo("FREQUENCY");
                 assertThat(test.areas()).hasSize(4);
@@ -92,6 +102,12 @@ class PsychometricStructureTest {
         assertThat(resultService.profileCode(0, 3, 4)).isEqualTo("MIXED");
         assertThat(resultService.profileCode(1, 3, 4)).isEqualTo("FOCUSED");
         assertThat(resultService.profileCode(3, 1, 4)).isEqualTo("BROAD");
+        assertThat(resultService.profileCode(0, 2, 2)).isEqualTo("LOW");
+        assertThat(resultService.profileCode(0, 1, 2)).isEqualTo("MIXED");
+        assertThat(resultService.profileCode(1, 1, 2)).isEqualTo("FOCUSED");
+        assertThat(resultService.profileCode(2, 0, 2)).isEqualTo("BROAD");
+        assertThat(resultService.profileCode(1, 2, 3)).isEqualTo("FOCUSED");
+        assertThat(resultService.profileCode(2, 1, 3)).isEqualTo("BROAD");
     }
 
     @Test
@@ -172,6 +188,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("intermedie");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("ansioso-preoccupato");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("timoroso-evitante");
+            } else if ("orbiting".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("una delle due aree");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("entrambe le aree");
             } else {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");

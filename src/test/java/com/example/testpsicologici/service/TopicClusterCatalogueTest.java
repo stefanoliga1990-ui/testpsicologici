@@ -46,15 +46,16 @@ class TopicClusterCatalogueTest {
     }
 
     @Test
-    void gaslightingAndLoveBombingBelongToTheRelationalAmbiguityCluster() {
+    void relationalAmbiguityTestsBelongToTheirDedicatedCluster() {
         var cluster = topicClusterCatalogue.findByTestId("gaslighting").orElseThrow();
 
         assertThat(cluster.slug()).isEqualTo("ambiguita-e-manipolazione-relazionale");
         assertThat(cluster.title()).isEqualTo("Ambiguità e manipolazione relazionale");
-        assertThat(cluster.testIds()).containsExactly("gaslighting", "love-bombing", "breadcrumbing");
+        assertThat(cluster.testIds()).containsExactly("gaslighting", "love-bombing", "breadcrumbing", "orbiting");
         assertThat(topicClusterCatalogue.findByTestId("breadcrumbing")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("love-bombing")).contains(cluster);
+        assertThat(topicClusterCatalogue.findByTestId("orbiting")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("limerenza").orElseThrow().testIds())
-                .doesNotContain("gaslighting", "love-bombing", "breadcrumbing");
+                .doesNotContain("gaslighting", "love-bombing", "breadcrumbing", "orbiting");
     }
 }

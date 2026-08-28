@@ -132,7 +132,8 @@ public class TestResultService {
     }
 
     String profileCode(long highAreaCount, long lowAreaCount, int areaCount) {
-        if (highAreaCount >= 3) return "BROAD";
+        long broadThreshold = Math.max(2, areaCount - 1L);
+        if (highAreaCount >= broadThreshold) return "BROAD";
         if (highAreaCount >= 1) return "FOCUSED";
         if (lowAreaCount == areaCount) return "LOW";
         return "MIXED";

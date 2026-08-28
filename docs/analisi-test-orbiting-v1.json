@@ -1,0 +1,91 @@
+{
+  "test": {
+    "id": "orbiting",
+    "titolo": "Ho subito orbiting?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa riferita alla conclusione o interruzione di una relazione o frequentazione romantica specifica",
+    "periodo_riferimento": "Primi sei mesi dopo l'interruzione del contatto diretto, o intero periodo se più breve",
+    "direzione_punteggio": "Valori più alti descrivono una maggiore frequenza delle dinamiche formulate",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non dimostra orbiting, ghosting, manipolazione, cyberstalking o abuso e non attribuisce intenzioni, colpe o diagnosi."
+  },
+  "istruzione_risposta": "Pensando ai primi sei mesi dopo l'interruzione del contatto diretto con la persona scelta, o all'intero periodo se più breve, con quale frequenza accadeva?",
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
+    "domande": 12,
+    "aree": 2,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "entrambe le aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una sola area è HIGH"},
+      {"codice": "BROAD", "condizione": "entrambe le aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale, probabilità, gravità o prova di orbiting",
+    "ordine_aree_risultato": "interruzione, presenza-digitale",
+    "limite_aggregazione": "L'orbiting richiede la lettura congiunta delle due componenti; una sola area elevata descrive una configurazione parziale."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le dinamiche associate all'orbiting sembrano molto poco presenti nelle tue risposte",
+      "sottotitolo": "Interruzione della comunicazione senza chiarimento e presenza digitale visibile risultano poco frequenti in entrambe le aree. Nella fase scelta non emerge quindi una compresenza diffusa delle due componenti esplorate.",
+      "descrizione": "Questo andamento non esclude un episodio importante, un canale non osservabile o un contatto indesiderato non incluso. Una conclusione già chiarita, accordi sul mantenere un contatto online e modalità d'uso dei social possono influire sulle risposte. Il risultato non dimostra orbiting, ghosting, manipolazione, cyberstalking, abuso, intenzioni o colpe. Se la situazione provoca sofferenza o paura puoi parlarne con una persona fidata o un professionista; in caso di pericolo immediato chiama il 112 e, per donne che vivono violenza o stalking, è disponibile il 1522."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le dinamiche associate all'orbiting sembrano presenti in modo variabile",
+      "sottotitolo": "Alcuni aspetti dell'interruzione diretta o della presenza digitale compaiono con frequenza intermedia, ma nessuna area raggiunge il livello editoriale più alto. La configurazione risulta quindi occasionale o variabile nel periodo scelto.",
+      "descrizione": "Osserva se la relazione fosse stata conclusa chiaramente e quali attività online fossero davvero visibili, ripetute e successive alla cessazione del contatto. Algoritmi, reti condivise, abitudini d'uso o accordi reciproci possono contribuire ad alcuni episodi senza spiegarli automaticamente. Il risultato non dimostra orbiting, ghosting, manipolazione, cyberstalking, abuso, intenzioni o colpe. Se la situazione provoca sofferenza o paura puoi parlarne con una persona fidata o un professionista; in caso di pericolo immediato chiama il 112 e, per donne che vivono violenza o stalking, è disponibile il 1522."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le dinamiche associate all'orbiting sembrano più presenti in una delle due aree",
+      "sottotitolo": "Una delle due componenti risulta frequente, mentre l'altra è più contenuta. Può quindi emergere soprattutto un'interruzione del contatto oppure una presenza digitale, senza la compresenza necessaria per descrivere l'intera configurazione esplorata.",
+      "descrizione": "Consulta l'area emergente: la sola cessazione della comunicazione può assomigliare al ghosting o seguire una chiusura già compresa, mentre la sola attività sui social può essere ordinaria o concordata. Conta la sequenza effettiva e non il significato attribuito automaticamente a una visualizzazione o a un “Mi piace”. Il risultato non dimostra orbiting, ghosting, manipolazione, cyberstalking, abuso, intenzioni o colpe. Se la situazione provoca sofferenza o paura puoi parlarne con una persona fidata o un professionista; in caso di pericolo immediato chiama il 112 e, per donne che vivono violenza o stalking, è disponibile il 1522."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le dinamiche associate all'orbiting sembrano molto presenti in entrambe le aree",
+      "sottotitolo": "Le risposte riferiscono sia una frequente interruzione della comunicazione diretta sia una frequente presenza digitale visibile nello stesso periodo. Le due componenti formano quindi una configurazione ampia e compatibile con le dinamiche esplorate.",
+      "descrizione": "Considera quali attività fossero effettivamente visibili, se il rapporto fosse già stato concluso chiaramente e se la presenza online fosse concordata, neutra o indesiderata. La compresenza delle due aree non permette comunque di conoscere intenzioni, visite invisibili al profilo o motivazioni dell'altra persona. Il risultato non dimostra orbiting, ghosting, manipolazione, cyberstalking, abuso o colpe; non affrontare direttamente la persona se non è sicuro. In caso di pericolo immediato chiama il 112 e, per donne che vivono violenza o stalking, è disponibile il 1522."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "interruzione",
+      "nome_area": "Interruzione e assenza di comunicazione diretta",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Messaggi senza risposta, conversazioni cessate e assenza di un chiarimento risultano poco frequenti. Non stabilisce come sia terminato complessivamente il rapporto."},
+        {"livello": "MEDIUM", "descrizione": "In alcune occasioni il contatto diretto si interrompeva o restava senza risposta. Considera se la conclusione fosse già stata comunicata o compresa da entrambe le persone."},
+        {"livello": "HIGH", "descrizione": "Interruzione delle risposte e mancanza di un confronto diretto risultano frequenti. Questa componente da sola non dimostra orbiting e può sovrapporsi al ghosting o ad altre conclusioni relazionali."}
+      ]
+    },
+    {
+      "area_code": "presenza-digitale",
+      "nome_area": "Presenza digitale visibile senza contatto diretto",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Visualizzazioni, reazioni e altre interazioni social visibili risultano poco frequenti. Non esclude attività che la piattaforma non rende osservabile."},
+        {"livello": "MEDIUM", "descrizione": "In alcune occasioni la persona restava visibile attraverso attività sui social. Considera frequenza, canale, reti condivise e accordi sul contatto online."},
+        {"livello": "HIGH", "descrizione": "Visualizzazioni o interazioni periferiche risultano frequenti senza contatto diretto. L'area non dimostra visite al profilo, sorveglianza, interesse residuo o intenzione di tornare."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {"titolo": "Ghosting and orbiting: An analysis of victims' experiences", "url": "https://doi.org/10.1177/02654075211000417", "apporto": "Studio qualitativo italiano consultato per definizione, presenza visibile sui social e reazioni riferite; non sviluppa una scala e include giovani adulti e relazioni amicali."},
+    {"titolo": "Relationship dissolution strategies: Comparing ghosting, orbiting, and rejection", "url": "https://doi.org/10.5817/CP2022-2-9", "apporto": "Studio italiano consultato per le due componenti, il confronto con altre conclusioni e i limiti degli esiti; compito di richiamo e campione giovane non validano l'app."},
+    {"titolo": "What is (not) ghosting?", "url": "https://doi.org/10.1016/j.chb.2025.108637", "apporto": "Analisi teorica consultata per distinguere concetti vicini; non è una validazione psicometrica."},
+    {"titolo": "Unwanted and unfollowed: Defining ghosting and the role of social media unfollowing", "url": "https://doi.org/10.1111/pere.12492", "apporto": "Studio sul ghosting consultato per cessazione e connessioni online; riguarda un altro costrutto e un campione statunitense di convenienza."},
+    {"titolo": "Facebook surveillance of former romantic partners", "url": "https://pubmed.ncbi.nlm.nih.gov/22946958/", "apporto": "Studio britannico consultato per il contesto post-rottura; misura chi osserva l'ex e non chi riceve la presenza digitale, con associazioni non causali."},
+    {"titolo": "1522 — Numero Anti Violenza e Stalking", "url": "https://www.1522.eu/cose-1522/", "apporto": "Pagina istituzionale italiana consultata per destinatari, gratuità e orientamento; non è evidenza sul costrutto e non sostituisce il 112."}
+  ],
+  "bibliografia_scheda": "La scheda mantiene fonti e limiti espliciti, distinguendo definizione dell'orbiting, ricerca italiana, confini con il ghosting, osservazione degli ex e sicurezza.",
+  "limite": "Non esistono dati che validino questo specifico set di 12 item, le due aree, la scala, le soglie, l'aggregazione o le interpretazioni."
+}

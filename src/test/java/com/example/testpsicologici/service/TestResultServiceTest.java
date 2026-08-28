@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(30).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(31).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1555,10 +1555,63 @@ class TestResultServiceTest {
     }
 
     @Test
+    void orbitingTestLoadsItsOriginalTwoComponentStructureAndSpecificSources() {
+        PsychologicalTest test = catalogue.findById("orbiting");
+
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(12);
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "interruzione", "presenza-digitale");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(6));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "interruzione", "presenza-digitale");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains(
+                "primi sei mesi", "interruzione del contatto diretto", "più breve", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "informativo", "non validato", "una sola relazione o frequentazione romantica",
+                "significato limitato", "non dimostrano da sole orbiting", "interromperti");
+        assertThat(test.references()).hasSize(6).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.1177/02654075211000417",
+                "https://doi.org/10.5817/CP2022-2-9",
+                "https://doi.org/10.1016/j.chb.2025.108637",
+                "https://doi.org/10.1111/pere.12492",
+                "https://pubmed.ncbi.nlm.nih.gov/22946958/",
+                "https://www.1522.eu/cose-1522/");
+    }
+
+    @Test
+    void orbitingProfilesRequireBothComponentsForTheBroadProfileAndKeepSafetyIndependentFromLevel() {
+        TestResult low = analyzeWithAnswersForTest("orbiting", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("orbiting", 3, 3, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("orbiting", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("orbiting", 5, 5, 1, 1);
+
+        assertThat(low.general().title()).contains("orbiting", "molto poco presenti");
+        assertThat(mixed.general().title()).contains("orbiting", "modo variabile");
+        assertThat(focused.general().title()).contains("orbiting", "una delle due aree");
+        assertThat(broad.general().title()).contains("orbiting", "molto presenti", "entrambe le aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(2);
+            assertThat(result.general().detail()).contains(
+                    "non dimostra orbiting", "ghosting", "manipolazione", "cyberstalking",
+                    "intenzioni", "sicuro", "112", "1522");
+        });
+        assertThat(low.percentage()).isZero();
+        assertThat(focused.percentage()).isEqualTo(50);
+        assertThat(broad.percentage()).isEqualTo(100);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

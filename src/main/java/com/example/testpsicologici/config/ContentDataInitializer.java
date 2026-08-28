@@ -75,6 +75,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedGaslightingInformationTest();
         seedLoveBombingInformationTest();
         seedBreadcrumbingInformationTest();
+        seedOrbitingInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -2919,6 +2920,88 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Vaghezza, rinvii o richieste di chiarimento senza risposta risultano frequenti. L'area non impone un modello di relazione e non attribuisce intenzioni.");
     }
 
+    private void seedOrbitingInformationTest() {
+        String id = "orbiting";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Ho subito orbiting?",
+                "Autovalutazione informativa",
+                "Osserva, dopo l'interruzione di una relazione o frequentazione, cessazione del contatto diretto e presenza digitale ancora visibile.",
+                "3 min · 12 domande",
+                "Questo breve questionario per adulti è informativo e non validato. Scegli una sola relazione o frequentazione romantica conclusa o interrotta e pensa ai primi sei mesi successivi: se il contatto diretto non è cessato o le attività social non erano visibili, il risultato ha significato limitato. Visualizzazioni o interazioni online non dimostrano da sole orbiting, intenzioni, manipolazione o stalking; puoi interromperti se emerge disagio.",
+                version, false,
+                "Presenza complessiva delle dinamiche esplorate",
+                "Presenza delle dinamiche nell'area",
+                true, 31).withSeo(
+                "Test orbiting: 12 domande informative | Spazio Test",
+                "Questionario informativo per adulti su interruzione del contatto e presenza digitale visibile dopo una relazione; non diagnostico.")
+                .withResponseInstruction("Pensando ai primi sei mesi dopo l'interruzione del contatto diretto con la persona scelta, o all'intero periodo se più breve, con quale frequenza accadeva?"));
+
+        saveReference(id, "Ghosting and orbiting: An analysis of victims' experiences — Pancani e colleghi",
+                "https://doi.org/10.1177/02654075211000417", 1);
+        saveReference(id, "Relationship dissolution strategies: Comparing ghosting, orbiting, and rejection — Pancani e colleghi",
+                "https://doi.org/10.5817/CP2022-2-9", 2);
+        saveReference(id, "What is (not) ghosting? — Schokkenbroek e colleghi",
+                "https://doi.org/10.1016/j.chb.2025.108637", 3);
+        saveReference(id, "Unwanted and unfollowed: Defining ghosting and social media unfollowing — Collins e colleghi",
+                "https://doi.org/10.1111/pere.12492", 4);
+        saveReference(id, "Facebook surveillance of former romantic partners — Marshall",
+                "https://pubmed.ncbi.nlm.nih.gov/22946958/", 5);
+        saveReference(id, "1522 — Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 6);
+
+        saveArea(id, "interruzione", "Interruzione e assenza di comunicazione diretta", 1);
+        saveArea(id, "presenza-digitale", "Presenza digitale visibile senza contatto diretto", 2);
+
+        saveQuestions(id, List.of(
+                q("interruzione", "I miei messaggi diretti rimanevano senza risposta."),
+                q("interruzione", "Le conversazioni tra noi si interrompevano senza una spiegazione conclusiva."),
+                q("interruzione", "La persona smetteva di avviare conversazioni dirette con me."),
+                q("interruzione", "Le mie richieste di chiarire la situazione rimanevano senza risposta."),
+                q("interruzione", "I miei tentativi di contatto telefonico non ricevevano risposta."),
+                q("interruzione", "La conclusione del rapporto non mi veniva comunicata direttamente."),
+                q("presenza-digitale", "La persona visualizzava le mie storie dopo aver interrotto il contatto diretto."),
+                q("presenza-digitale", "La persona metteva “Mi piace” ai miei contenuti dopo l'interruzione del contatto."),
+                q("presenza-digitale", "La persona reagiva ai miei contenuti senza scrivermi direttamente."),
+                q("presenza-digitale", "La persona condivideva contenuti pubblicati da me senza contattarmi direttamente."),
+                q("presenza-digitale", "La persona continuava a seguire il mio profilo dopo aver interrotto il contatto."),
+                q("presenza-digitale", "La persona interagiva con contenuti online in cui ero presente o taggato.")));
+
+        String commonSafety = "Il risultato descrive soltanto attività riferite e visibili: non dimostra orbiting, ghosting, manipolazione, cyberstalking, abuso, intenzioni o colpe e non rivela visite invisibili al profilo. "
+                + "Una conclusione già chiarita, accordi sul contatto online, reti condivise, abitudini d'uso o modalità della piattaforma possono contribuire a esperienze simili. "
+                + "Se la situazione provoca sofferenza, paura o limita le tue scelte puoi parlarne con una persona fidata o un professionista, senza affrontare direttamente la persona se non è sicuro. In caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 offre orientamento gratuito anche via chat.";
+
+        saveGlobal(id, "LOW",
+                "Le dinamiche associate all'orbiting sembrano molto poco presenti nelle tue risposte",
+                "Interruzione della comunicazione senza chiarimento e presenza digitale visibile risultano poco frequenti in entrambe le aree. Nella fase scelta non emerge quindi una compresenza diffusa delle due componenti esplorate.",
+                "Questo andamento non esclude un episodio importante, un canale non osservabile o un contatto indesiderato non incluso. Considera anche se la piattaforma rendesse effettivamente visibili le attività della persona nel periodo scelto. " + commonSafety);
+        saveGlobal(id, "MIXED",
+                "Le dinamiche associate all'orbiting sembrano presenti in modo variabile",
+                "Alcuni aspetti dell'interruzione diretta o della presenza digitale compaiono con frequenza intermedia, ma nessuna area raggiunge il livello editoriale più alto. La configurazione risulta quindi occasionale o variabile nel periodo scelto.",
+                "Osserva se la relazione fosse stata conclusa chiaramente e quali attività online fossero davvero visibili, ripetute e successive alla cessazione del contatto. La variabilità non permette di ricostruire da sola una sequenza coerente. " + commonSafety);
+        saveGlobal(id, "FOCUSED",
+                "Le dinamiche associate all'orbiting sembrano più presenti in una delle due aree",
+                "Una delle due componenti risulta frequente, mentre l'altra è più contenuta. Può quindi emergere soprattutto un'interruzione del contatto oppure una presenza digitale, senza la compresenza necessaria per descrivere l'intera configurazione esplorata.",
+                "Consulta l'area emergente: la sola cessazione della comunicazione può assomigliare al ghosting o seguire una chiusura già compresa, mentre la sola attività sui social può essere ordinaria o concordata. Conta la sequenza effettiva e non il significato attribuito automaticamente a una visualizzazione o a un “Mi piace”. " + commonSafety);
+        saveGlobal(id, "BROAD",
+                "Le dinamiche associate all'orbiting sembrano molto presenti in entrambe le aree",
+                "Le risposte riferiscono sia una frequente interruzione della comunicazione diretta sia una frequente presenza digitale visibile nello stesso periodo. Le due componenti formano quindi una configurazione ampia e compatibile con le dinamiche esplorate.",
+                "Considera quali attività fossero effettivamente visibili, se il rapporto fosse già stato concluso chiaramente e se la presenza online fosse concordata, neutra o indesiderata. La compresenza delle due aree non permette comunque di conoscere intenzioni, visite invisibili al profilo o motivazioni dell'altra persona. " + commonSafety);
+
+        saveAreaInsights(id, "interruzione",
+                "Messaggi senza risposta, conversazioni cessate e assenza di un chiarimento risultano poco frequenti. Non stabilisce come sia terminato complessivamente il rapporto.",
+                "In alcune occasioni il contatto diretto si interrompeva o restava senza risposta. Considera se la conclusione fosse già stata comunicata o compresa da entrambe le persone.",
+                "Interruzione delle risposte e mancanza di un confronto diretto risultano frequenti. Questa componente da sola non dimostra orbiting e può sovrapporsi al ghosting o ad altre conclusioni relazionali.");
+        saveAreaInsights(id, "presenza-digitale",
+                "Visualizzazioni, reazioni e altre interazioni social visibili risultano poco frequenti. Non esclude attività che la piattaforma non rende osservabile.",
+                "In alcune occasioni la persona restava visibile attraverso attività sui social. Considera frequenza, canale, reti condivise e accordi sul contatto online.",
+                "Visualizzazioni o interazioni periferiche risultano frequenti senza contatto diretto. L'area non dimostra visite al profilo, sorveglianza, interesse residuo o intenzione di tornare.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -3080,6 +3163,13 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Breadcrumbing Experience Scale: Preliminary Validation in Spain — Navarro e Simil", "https://doi.org/10.1080/01639625.2025.2516636"),
                 ref("Breadcrumbing in Young Adults: A Qualitative Study — Khattar e colleghi", "https://doi.org/10.3390/soc13020041"),
                 ref("Ghosting, orbiting and breadcrumbing: conceptual distinctions — Schokkenbroek e colleghi", "https://doi.org/10.1016/j.chb.2025.108637"),
+                ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
+        syncReferences("orbiting", List.of(
+                ref("Ghosting and orbiting: An analysis of victims' experiences — Pancani e colleghi", "https://doi.org/10.1177/02654075211000417"),
+                ref("Relationship dissolution strategies: Comparing ghosting, orbiting, and rejection — Pancani e colleghi", "https://doi.org/10.5817/CP2022-2-9"),
+                ref("What is (not) ghosting? — Schokkenbroek e colleghi", "https://doi.org/10.1016/j.chb.2025.108637"),
+                ref("Unwanted and unfollowed: Defining ghosting and social media unfollowing — Collins e colleghi", "https://doi.org/10.1111/pere.12492"),
+                ref("Facebook surveillance of former romantic partners — Marshall", "https://pubmed.ncbi.nlm.nih.gov/22946958/"),
                 ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
     }
 

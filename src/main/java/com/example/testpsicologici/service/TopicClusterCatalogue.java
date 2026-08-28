@@ -43,7 +43,8 @@ public class TopicClusterCatalogue {
                     List.of(
                             "gaslighting",
                             "love-bombing",
-                            "breadcrumbing"
+                            "breadcrumbing",
+                            "orbiting"
                     )),
             new TopicCluster(
                     "autostima-approvazione-e-obiettivi",
