@@ -1553,6 +1553,80 @@ class PageRenderingTest {
     }
 
     @Test
+    void hooveringIntroductionQuestionAndGuideExposeOccurrenceScaleTwoAreasAndLimits() throws Exception {
+        mockMvc.perform(get("/test/hoovering"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Ho subito hoovering?")))
+                .andExpect(content().string(containsString("Tentativi e proposte di riavvicinamento")))
+                .andExpect(content().string(containsString("Persistenza dopo distanza, silenzio o rifiuto")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/hoovering\"")))
+                .andExpect(content().string(containsString("href=\"/test/orbiting\"")))
+                .andExpect(content().string(containsString("una sola relazione o frequentazione romantica")))
+                .andExpect(content().string(containsString("da “Mai” a “Molte volte”")));
+
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-hoovering", new TestAttempt(12));
+        mockMvc.perform(get("/test/hoovering/domanda/1").session(session))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("quante volte è accaduto")))
+                .andExpect(content().string(containsString("Una volta")))
+                .andExpect(content().string(containsString("Poche volte")))
+                .andExpect(content().string(containsString("Diverse volte")))
+                .andExpect(content().string(containsString("Molte volte")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString(">Quasi sempre<"))));
+
+        mockMvc.perform(get("/approfondimenti/hoovering"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Un termine comune, non una categoria clinica")))
+                .andExpect(content().string(containsString("Riavvicinamento e persistenza devono restare distinti")))
+                .andExpect(content().string(containsString("Perché si chiede quante volte è accaduto")))
+                .andExpect(content().string(containsString("Le evidenze riguardano soprattutto costrutti vicini")))
+                .andExpect(content().string(containsString("Un singolo episodio può contare più della media")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
+                .andExpect(content().string(containsString("href=\"/test/hoovering\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/orbiting\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void hooveringResultRendersOverallAndTwoAreaAnalysesWithRelatedTests() throws Exception {
+        mockMvc.perform(get("/test/hoovering/risultato")
+                        .session(completedAttempt("hoovering", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le dinamiche associate all'hoovering sembrano molto presenti in entrambe le aree")))
+                .andExpect(content().string(containsString("Tentativi e proposte di riavvicinamento")))
+                .andExpect(content().string(containsString("Persistenza dopo distanza, silenzio o rifiuto")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/hoovering/risultato/pdf\"")))
+                .andExpect(content().string(containsString("Test correlati")))
+                .andExpect(content().string(containsString("href=\"/test/orbiting\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/hoovering\"")));
+    }
+
+    @Test
+    void hooveringResultCanBeDownloadedAsReadablePdf() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/test/hoovering/risultato/pdf")
+                        .session(completedAttempt("hoovering", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-hoovering.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Ho subito hoovering?")
+                    .contains("Tentativi e proposte di riavvicinamento")
+                    .contains("Persistenza dopo distanza, silenzio o rifiuto")
+                    .contains("dimostra", "hoovering")
+                    .contains("stalking")
+                    .contains("1522");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -1626,6 +1700,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/breadcrumbing")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/orbiting")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/hoovering")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1643,6 +1719,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/gaslighting")))
                 .andExpect(content().string(containsString("http://localhost/test/breadcrumbing")))
                 .andExpect(content().string(containsString("http://localhost/test/orbiting")))
+                .andExpect(content().string(containsString("http://localhost/test/hoovering")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

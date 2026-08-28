@@ -1,0 +1,84 @@
+{
+  "test": {
+    "id": "hoovering",
+    "titolo": "Ho subito hoovering?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa dei tentativi di riavvicinamento riferiti a una relazione o frequentazione romantica specifica",
+    "periodo_riferimento": "Primi sei mesi dopo la conclusione del rapporto o dopo la comunicazione del proprio allontanamento, oppure intero periodo se più breve",
+    "direzione_punteggio": "Valori più alti descrivono un maggior numero riferito di eventi formulati",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non dimostra hoovering, manipolazione, abuso, stalking o intenzioni e non diagnostica l'altra persona."
+  },
+  "istruzione_risposta": "Pensando ai primi sei mesi dopo la conclusione del rapporto o dopo aver comunicato di volerti allontanare, o all'intero periodo se più breve, quante volte è accaduto?",
+  "scala_risposta": {
+    "codice": "OCCURRENCE",
+    "opzioni": {"Mai": 1, "Una volta": 2, "Poche volte": 3, "Diverse volte": 4, "Molte volte": 5},
+    "nota": "Categorie ordinali editoriali di occorrenza percepita; non sono conteggi standardizzati."
+  },
+  "calcolo": {
+    "domande": 12,
+    "aree": 2,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "entrambe le aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una sola area è HIGH"},
+      {"codice": "BROAD", "condizione": "entrambe le aree sono HIGH"}
+    ],
+    "barra": "round(((media - 1) / 4) * 100); trasformazione editoriale, non percentuale o probabilità"
+  },
+  "aree": [
+    {
+      "codice": "riavvicinamento",
+      "titolo": "Tentativi e proposte di riavvicinamento",
+      "descrizioni": {
+        "LOW": "Ricontatti, proposte, promesse, messaggi affettuosi o gesti di riavvicinamento risultano poco numerosi. Non esclude un singolo episodio significativo.",
+        "MEDIUM": "Alcuni tentativi di riavvicinamento sono stati riferiti. Considera se erano reciproci, chiari, coerenti e rispettosi della possibilità di scegliere.",
+        "HIGH": "Tentativi e proposte di riavvicinamento risultano numerosi. L'area non permette di stabilire sincerità, manipolazione o ciò che sarebbe opportuno decidere."
+      }
+    },
+    {
+      "codice": "persistenza",
+      "titolo": "Persistenza dopo distanza, silenzio o rifiuto",
+      "descrizioni": {
+        "LOW": "Contatti dopo distanza, mancata risposta o rifiuto risultano poco numerosi. Non esclude un episodio minaccioso o un canale non considerato.",
+        "MEDIUM": "In alcune occasioni il contatto è proseguito o ha cambiato forma dopo distanza o mancata risposta. Osserva sequenza, necessità pratiche e confini comunicati.",
+        "HIGH": "La persistenza dopo distanza, silenzio o rifiuto risulta numerosa. Questo non accerta intenzioni o stalking, ma i confini e la sicurezza meritano attenzione indipendentemente dall'etichetta."
+      }
+    }
+  ],
+  "profili_globali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le dinamiche associate all'hoovering sembrano molto poco presenti nelle tue risposte",
+      "sottotitolo": "Tentativi di riavvicinamento e persistenza risultano poco numerosi in entrambe le aree. Nel periodo scelto non emerge quindi una ricorrenza diffusa degli eventi esplorati.",
+      "descrizione": "Il risultato non esclude un singolo episodio importante, un contatto avvenuto fuori dai canali considerati o una situazione non inclusa negli item. Ricostruisci soprattutto ciò che è accaduto dopo la conclusione o la tua richiesta di distanza. Il questionario non dimostra hoovering, manipolazione, abuso, stalking, intenzioni, sincerità, narcisismo o diagnosi. Un contatto può riguardare chiarimenti, scuse sincere, responsabilità condivise o una riconciliazione reciproca. Se hai paura, ricevi minacce o i tuoi confini non vengono rispettati, il bisogno di supporto non dipende dal risultato: in pericolo immediato chiama il 112; per donne che vivono violenza o stalking è disponibile il 1522."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le dinamiche associate all'hoovering sembrano presenti in modo variabile",
+      "sottotitolo": "Alcuni eventi compaiono con un numero intermedio, ma nessuna delle due aree raggiunge il livello editoriale più alto. La configurazione risulta quindi occasionale o variabile.",
+      "descrizione": "Osserva se i contatti erano reciproci e concordati, se servivano a questioni pratiche e che cosa accadeva dopo una mancata risposta o un rifiuto. Eventi diversi possono avere significati differenti e la media non ricostruisce da sola la sequenza. Il questionario non dimostra hoovering, manipolazione, abuso, stalking, intenzioni, sincerità, narcisismo o diagnosi. Scuse, promesse o regali non sono prove autonome, mentre un confine non rispettato resta importante anche senza un'etichetta. Se hai paura o ricevi minacce, cerca supporto in sicurezza; in pericolo immediato chiama il 112 e, per donne che vivono violenza o stalking, è disponibile il 1522."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le dinamiche associate all'hoovering sembrano più presenti in una delle due aree",
+      "sottotitolo": "Una componente risulta numerosa mentre l'altra è più contenuta. Può emergere soprattutto il riavvicinamento oppure la persistenza dopo distanza o rifiuto, senza una compresenza ampia.",
+      "descrizione": "Leggi separatamente l'area emergente. Molte proposte di riavvicinamento possono esistere senza pressione, mentre la persistenza può riguardare anche contatti pratici: reciprocità, necessità, risposta ai confini e contesto aiutano a distinguere le situazioni. Il questionario non dimostra hoovering, manipolazione, abuso, stalking, intenzioni, sincerità, narcisismo o diagnosi. Non devi accettare una riconciliazione e non è necessario affrontare direttamente la persona se non ti senti al sicuro. Se vi sono paura o minacce, il bisogno di supporto non dipende dalla barra: in pericolo immediato chiama il 112; per donne che vivono violenza o stalking è disponibile il 1522."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le dinamiche associate all'hoovering sembrano molto presenti in entrambe le aree",
+      "sottotitolo": "Le risposte riferiscono numerosi tentativi di riavvicinamento insieme a numerosi episodi di persistenza dopo distanza, silenzio o rifiuto. Le due componenti formano quindi una configurazione ampia nel periodo scelto.",
+      "descrizione": "Considera la sequenza concreta: quali proposte sono state fatte, come hai risposto, quali confini hai comunicato e se i contatti necessari erano separati da quelli personali. La compresenza non permette comunque di conoscere motivazioni, sincerità o possibilità di cambiamento. Il questionario non dimostra hoovering, manipolazione, abuso, stalking, intenzioni, narcisismo o diagnosi. Puoi valutare confini, privacy e supporto con persone fidate o professionisti senza affrontare direttamente la persona se potrebbe aumentare il pericolo. Se hai paura, ricevi minacce o ti senti sorvegliato, agisci in base alla sicurezza: in pericolo immediato chiama il 112; per donne che vivono violenza o stalking è disponibile il 1522."
+    }
+  ],
+  "nota_sicurezza": "Un livello basso non esclude un singolo episodio pericoloso e un livello alto non dimostra hoovering o stalking. Il bisogno di supporto dipende dall'esperienza e dalla sicurezza, non dalla media."
+}

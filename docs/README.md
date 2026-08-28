@@ -23,6 +23,7 @@
 - `test-love-bombing-v1.md` è la specifica psicometrica corrente del questionario sulle dinamiche associate al love bombing e documenta fase relazionale, intensità, accelerazione, confini, alternanza, sicurezza e limiti delle evidenze disponibili.
 - `test-breadcrumbing-v1.md` è la specifica psicometrica corrente del questionario sulle dinamiche associate al breadcrumbing e documenta intermittenza, segnali, incongruenza, chiarezza, sicurezza e limiti delle evidenze disponibili.
 - `test-orbiting-v1.md` è la specifica psicometrica corrente del questionario sulle dinamiche associate all'orbiting e documenta interruzione del contatto, presenza digitale visibile, scoring a due aree, sicurezza e limiti delle evidenze disponibili.
+- `test-hoovering-v1.md` è la specifica psicometrica corrente del questionario sui tentativi di riavvicinamento post-rottura associati all'hoovering e documenta scala di occorrenza, due aree, scoring, sicurezza e scarsità delle evidenze specifiche.
 - Gli altri file `analisi-test-*-v1.json`, `test-autismo-v2.md`, `test-adhd-v2.md` e `test-ocd-v1.md` sono specifiche delle versioni indicate nel nome. Restano nel repository per tracciabilità e non descrivono necessariamente soglie, ancore o ordine di somministrazione correnti.
 
 Il codice e i test automatici sono la fonte operativa per la versione pubblicata. Qualunque nuova versione deve aggiornare anche l'audit o aggiungere una specifica di revisione equivalente.

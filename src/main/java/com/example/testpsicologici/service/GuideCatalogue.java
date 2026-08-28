@@ -3339,6 +3339,126 @@ public class GuideCatalogue {
                                     "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "hoovering",
+                    "hoovering",
+                    "Hoovering dopo una relazione",
+                    "Quando una persona cerca di riavvicinarsi dopo una rottura o una richiesta di distanza",
+                    "Hoovering: significato, confini e limiti | Spazio Test",
+                    "Che cosa viene chiamato hoovering, perché non è un termine clinico e come distinguere tentativi di riconciliazione, persistenza e situazioni di sicurezza.",
+                    "Hoovering è un'etichetta divulgativa usata per tentativi di riportare una persona in un rapporto o contatto dal quale si era allontanata. Non è una diagnosi né un fenomeno formalmente definito dalla ricerca, e nessun singolo messaggio, regalo, scusa o promessa permette di conoscere le intenzioni dell'altra persona.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Un termine comune, non una categoria clinica",
+                                    List.of(
+                                            "Il termine viene spesso usato online per interpretare il ritorno di un ex partner con messaggi affettuosi, promesse, scuse o richieste di riconciliazione. Le fonti clinico-divulgative precisano però che non è una diagnosi o un concetto psicologico formalmente riconosciuto.",
+                                            "Per questo è più prudente descrivere eventi e sequenze. Spazio Test non decide se la persona volesse manipolare, riprendere il controllo, riparare sinceramente il rapporto o gestire una questione pratica."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le aree esplorate",
+                                    "Riavvicinamento e persistenza devono restare distinti",
+                                    List.of(
+                                            "Il questionario usa 12 item originali e due aree editoriali. La prima raccoglie proposte e gesti di riavvicinamento; la seconda osserva se i contatti proseguivano o cambiavano forma dopo distanza, mancata risposta o rifiuto.",
+                                            "Le aree non sono fattori validati. Una frequenza alta di riavvicinamenti non prova pressione, e una frequenza alta di persistenza non rivela da sola motivazioni, pericolo o un reato."
+                                    ),
+                                    List.of(
+                                            "Tentativi e proposte di riavvicinamento: ricontatti, richieste di riprendere il rapporto, promesse, messaggi affettuosi, regali e proposte di incontro.",
+                                            "Persistenza dopo distanza, silenzio o rifiuto: contatti ripetuti, cambio di canale, ricorso a terze persone o nuove richieste dopo un confine."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Scala di risposta",
+                                    "Perché si chiede quante volte è accaduto",
+                                    List.of(
+                                            "Eventi come un regalo o il coinvolgimento di un'altra persona non hanno un insieme chiaro di occasioni rispetto al quale rispondere “quasi sempre”. Il test usa quindi Mai, Una volta, Poche volte, Diverse volte e Molte volte.",
+                                            "Sono categorie ordinali editoriali, non intervalli numerici standardizzati. La stessa etichetta può essere interpretata diversamente per messaggi, incontri o regali e dovrà essere studiata con interviste cognitive e dati pilota."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni utili",
+                                    "Riconciliazione, hoovering e contatto indesiderato non sono sinonimi",
+                                    List.of(
+                                            "Una riconciliazione può includere scuse, cambiamenti verificabili e contatti reciproci rispettosi di un rifiuto. L'etichetta hoovering viene invece usata quando il riavvicinamento è interpretato come parte di un andamento manipolativo, ma un questionario compilato da una sola persona non può accertare tale intenzione.",
+                                            "Breadcrumbing riguarda soprattutto contatti intermittenti che mantengono aspettative; orbiting indica presenza social senza contatto diretto; stalking e abuso post-separazione hanno perimetri più seri e specifici. Questi concetti possono sovrapporsi, ma non vanno dedotti l'uno dall'altro."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Le evidenze riguardano soprattutto costrutti vicini",
+                                    List.of(
+                                            "Uno studio condotto da ricercatori di università italiane ha esaminato telefonate, messaggi, minacce e invio di oggetti da parte di adulti lasciati nei sei mesi precedenti. Altri studi hanno analizzato tentativi persistenti di riconciliazione e unwanted pursuit, soprattutto dalla prospettiva di chi agisce e in campioni nordamericani o studenteschi.",
+                                            "Non è stata individuata una scala peer-reviewed specifica per l'hoovering ricevuto, italiana o internazionale. Le fonti aiutano a delimitare gli eventi e le cautele, ma non validano item, aree, ancore, soglie o risultati di Spazio Test."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto e alternative",
+                                    "Sequenza, reciprocità e necessità pratiche cambiano la lettura",
+                                    List.of(
+                                            "Considera se il rapporto era stato concluso chiaramente, se desideravi il contatto, come avevi risposto e che cosa accadeva dopo un rifiuto. Scuse sincere, una riconciliazione reciproca, figli, lavoro, beni condivisi o oggetti da restituire possono richiedere contatti senza costituire hoovering.",
+                                            "Promesse e dichiarazioni non dimostrano da sole né cambiamento né inganno. Coerenza nel tempo, responsabilità, libertà di scegliere e rispetto dei confini sono informazioni contestuali che la barra non può riassumere."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Un singolo episodio può contare più della media",
+                                    List.of(
+                                            "Minacce, paura, presenza fisica indesiderata, sorveglianza o contatti che continuano nonostante limiti chiari meritano attenzione indipendentemente dall'etichetta e dal risultato. Non è necessario affrontare direttamente la persona se potrebbe aumentare il pericolo.",
+                                            "Puoi valutare confini, privacy e supporto con persone fidate, professionisti o servizi competenti. In caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 è gratuito, attivo 24 ore su 24 e disponibile anche via chat."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 12 item originali, due aree editoriali e una scala di occorrenza riferita ai primi sei mesi dopo una conclusione o richiesta di distanza. Non dimostra hoovering, manipolazione, abuso o stalking, non attribuisce intenzioni e non sostituisce un supporto professionale.",
+                    List.of(
+                            new GuideReference(
+                                    "What Is Hoovering? — Cleveland Clinic",
+                                    "https://health.clevelandclinic.org/hoovering",
+                                    "Pagina clinico-divulgativa consultata per l'uso corrente del termine e la sua natura non clinica; non definisce fattori, soglie o valutazioni individuali."
+                            ),
+                            new GuideReference(
+                                    "When Love Just Ends — Civilotti e colleghi",
+                                    "https://doi.org/10.3389/fpsyg.2021.662237",
+                                    "Studio di ricercatori di università italiane consultato per comportamenti dopo una rottura recente; prospettiva di chi agisce, eventi eterogenei e nessuna scala sull'hoovering ricevuto."
+                            ),
+                            new GuideReference(
+                                    "Persistence of Attempts to Reconcile a Terminated Romantic Relationship — Cupach e colleghi",
+                                    "https://doi.org/10.1080/08934215.2011.613737",
+                                    "Studio consultato per la persistenza dei tentativi di riconciliazione; modello motivazionale e prospettiva di chi agisce non consentono inferenze sull'ex partner."
+                            ),
+                            new GuideReference(
+                                    "Breaking Up Is Hard to Do: Unwanted Pursuit Behaviors — Langhinrichsen-Rohling e colleghi",
+                                    "https://doi.org/10.1891/0886-6708.15.1.73",
+                                    "Studio statunitense consultato per l'eterogeneità dei contatti post-rottura; campione studentesco e costrutto più ampio non validano il test."
+                            ),
+                            new GuideReference(
+                                    "Relational Goal Pursuit Theory of Intimate Partner Obsessive Relational Intrusion — Brownhalls e colleghi",
+                                    "https://doi.org/10.1177/0886260518822339",
+                                    "Studio nordamericano consultato per tentativi ripetuti e indesiderati; riguarda chi agisce e un fenomeno più ampio, senza equivalenza con l'hoovering."
+                            ),
+                            new GuideReference(
+                                    "Technology-Facilitated Abuse in Intimate Relationships — Rogers e colleghi",
+                                    "https://doi.org/10.1177/15248380221090218",
+                                    "Scoping review consultata per canali digitali, contatti post-separazione e sicurezza; definizioni eterogenee e nessuna equivalenza tra ricontatto e abuso."
+                            ),
+                            new GuideReference(
+                                    "Violenza dentro e fuori la famiglia — Istat",
+                                    "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-fenomeno/violenza-dentro-e-fuori-la-famiglia/il-numero-delle-vittime-e-le-forme-di-violenza/",
+                                    "Fonte istituzionale italiana consultata per distinguere stalking e violenza psicologica; dati sulle donne non sono soglie o valutazioni per l'app."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

@@ -13,6 +13,7 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
   const action = useCallback((signal) => startTest(test.id, signal), [test.id]);
   const { error, loading, run } = useAsyncAction(action);
   const isAttachmentStyles = test.scoringModel === 'ATTACHMENT_DIMENSIONAL';
+  const isOccurrenceScale = test.answerScale === 'OCCURRENCE';
   const attachmentStyles = [
     'Orientamento sicuro',
     'Orientamento ansioso-preoccupato',
@@ -53,17 +54,23 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
           <h2>Che cosa esplora questo questionario</h2>
           <p>{isAttachmentStyles
             ? 'Le affermazioni esplorano ansia relazionale ed evitamento della vicinanza. La loro combinazione permette una lettura orientativa dei quattro stili descritti qui sotto, senza assegnare diagnosi o identità definitive.'
-            : 'Le affermazioni sono organizzate nelle aree indicate qui sotto. La restituzione aiuta a osservare quali esperienze riconosci più spesso, senza assegnare diagnosi o etichette.'}</p>
+            : isOccurrenceScale
+              ? 'Le affermazioni sono organizzate nelle aree indicate qui sotto. La restituzione aiuta a osservare quanti eventi riconosci nel periodo scelto, senza assegnare diagnosi o etichette.'
+              : 'Le affermazioni sono organizzate nelle aree indicate qui sotto. La restituzione aiuta a osservare quali esperienze riconosci più spesso, senza assegnare diagnosi o etichette.'}</p>
         </div>
         <ul className="explored-areas">{(isAttachmentStyles ? attachmentStyles : test.areas.map((area) => area.name))
           .map((name) => <li key={name}>{name}</li>)}</ul>
         <div className="editorial-grid">
           <Card className="editorial-card"><p className="eyebrow">Come funziona</p><h2>Una risposta alla volta</h2><p>{isAttachmentStyles
             ? 'Per ogni affermazione indicherai quanto descrive il tuo modo abituale di vivere la relazione scelta come riferimento, da “Per nulla vero per me” a “Del tutto vero per me”. Puoi tornare alla domanda precedente e completare le 24 domande senza creare un account.'
-            : 'Per ogni affermazione indicherai una frequenza da “Mai” a “Quasi sempre”, riferita al periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'}</p></Card>
+            : isOccurrenceScale
+              ? 'Per ogni affermazione indicherai quante volte è accaduta, da “Mai” a “Molte volte”, nel periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'
+              : 'Per ogni affermazione indicherai una frequenza da “Mai” a “Quasi sempre”, riferita al periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'}</p></Card>
           <Card className="editorial-card"><p className="eyebrow">Il risultato</p><h2>Una lettura orientativa</h2><p>{isAttachmentStyles
             ? 'Il risultato mostra le due dimensioni esplorate e ordina i quattro orientamenti per vicinanza al profilo delle risposte. Se due orientamenti risultano vicini, la restituzione parla di caratteristiche intermedie; non sono percentuali, categorie cliniche o etichette stabili.'
-            : "Il risultato riassume l'andamento generale e le aree esplorate. Le barre descrivono la frequenza delle risposte: non sono percentili, probabilità diagnostiche o misure di gravità clinica."}</p></Card>
+            : isOccurrenceScale
+              ? "Il risultato riassume l'andamento generale e le aree esplorate. Le barre descrivono il numero riferito degli eventi: non sono percentili, probabilità diagnostiche o misure di gravità clinica."
+              : "Il risultato riassume l'andamento generale e le aree esplorate. Le barre descrivono la frequenza delle risposte: non sono percentili, probabilità diagnostiche o misure di gravità clinica."}</p></Card>
         </div>
         <section className="method-card">
           <div><p className="eyebrow">Metodo e trasparenza</p><h2>Contenuto editoriale, non scala clinica</h2></div>

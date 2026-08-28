@@ -44,7 +44,8 @@ public class TopicClusterCatalogue {
                             "gaslighting",
                             "love-bombing",
                             "breadcrumbing",
-                            "orbiting"
+                            "orbiting",
+                            "hoovering"
                     )),
             new TopicCluster(
                     "autostima-approvazione-e-obiettivi",

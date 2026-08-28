@@ -50,6 +50,8 @@ public class TestController {
     private static final List<String> AGREEMENT_ANSWER_OPTIONS =
             List.of("Per nulla vero per me", "Poco vero per me", "In parte vero per me",
                     "Molto vero per me", "Del tutto vero per me");
+    private static final List<String> OCCURRENCE_ANSWER_OPTIONS =
+            List.of("Mai", "Una volta", "Poche volte", "Diverse volte", "Molte volte");
 
     private final TestCatalogue catalogue;
     private final TestResultService resultService;
@@ -282,6 +284,10 @@ public class TestController {
     }
 
     private List<String> answerOptionsFor(PsychologicalTest test) {
-        return "AGREEMENT".equals(test.answerScale()) ? AGREEMENT_ANSWER_OPTIONS : ANSWER_OPTIONS;
+        return switch (test.answerScale()) {
+            case "AGREEMENT" -> AGREEMENT_ANSWER_OPTIONS;
+            case "OCCURRENCE" -> OCCURRENCE_ANSWER_OPTIONS;
+            default -> ANSWER_OPTIONS;
+        };
     }
 }

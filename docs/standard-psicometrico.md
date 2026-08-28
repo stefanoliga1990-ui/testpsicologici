@@ -41,6 +41,7 @@ Output: tabella `dimensione → indicatori → item candidati → esclusioni`.
 - La domanda deve chiedere frequenza se le opzioni sono di frequenza, accordo se sono di accordo e intensità se sono di intensità.
 - Tutte le categorie devono essere etichettate e ordinate nello stesso verso.
 - Per l'attuale scala di frequenza si usa: `Mai=1`, `Raramente=2`, `A volte=3`, `Spesso=4`, `Quasi sempre=5`.
+- Per eventi discreti privi di un denominatore naturale può essere documentata una scala di occorrenza: `Mai=1`, `Una volta=2`, `Poche volte=3`, `Diverse volte=4`, `Molte volte=5`. La domanda deve chiedere quante volte sia accaduto; le categorie restano ordinali e richiedono verifica cognitiva e pilota perché non equivalgono a intervalli numerici standardizzati.
 - Prevedere “non applicabile” solo quando è concettualmente legittimo e definire prima la gestione dei dati mancanti.
 
 ### 4. Struttura e somministrazione

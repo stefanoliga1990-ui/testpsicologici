@@ -76,6 +76,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedLoveBombingInformationTest();
         seedBreadcrumbingInformationTest();
         seedOrbitingInformationTest();
+        seedHooveringInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -3002,6 +3003,93 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Visualizzazioni o interazioni periferiche risultano frequenti senza contatto diretto. L'area non dimostra visite al profilo, sorveglianza, interesse residuo o intenzione di tornare.");
     }
 
+    private void seedHooveringInformationTest() {
+        String id = "hoovering";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Ho subito hoovering?",
+                "Autovalutazione informativa",
+                "Osserva tentativi di riavvicinamento e persistenza dopo la conclusione di una relazione o la richiesta di distanza.",
+                "3 min · 12 domande",
+                "Questo breve questionario per adulti è informativo e non validato. Scegli una sola relazione o frequentazione romantica conclusa, oppure una dalla quale hai comunicato di volerti allontanare, e pensa ai primi sei mesi successivi. Ricontatti, scuse, promesse o regali non dimostrano da soli hoovering, manipolazione o intenzioni; puoi interromperti se emerge disagio.",
+                version, false,
+                "Presenza complessiva delle dinamiche esplorate",
+                "Presenza delle dinamiche nell'area",
+                true, 32).withSeo(
+                "Test hoovering: 12 domande informative | Spazio Test",
+                "Questionario informativo per adulti su tentativi di riavvicinamento e persistenza dopo una rottura; non diagnostico.")
+                .withResponseInstruction("Pensando ai primi sei mesi dopo la conclusione del rapporto o dopo aver comunicato di volerti allontanare, o all'intero periodo se più breve, quante volte è accaduto?")
+                .withAnswerScale("OCCURRENCE"));
+
+        saveReference(id, "What Is Hoovering? — Cleveland Clinic",
+                "https://health.clevelandclinic.org/hoovering", 1);
+        saveReference(id, "When Love Just Ends — Civilotti e colleghi",
+                "https://doi.org/10.3389/fpsyg.2021.662237", 2);
+        saveReference(id, "Persistence of Attempts to Reconcile a Terminated Romantic Relationship — Cupach e colleghi",
+                "https://doi.org/10.1080/08934215.2011.613737", 3);
+        saveReference(id, "Breaking Up Is Hard to Do: Unwanted Pursuit Behaviors — Langhinrichsen-Rohling e colleghi",
+                "https://doi.org/10.1891/0886-6708.15.1.73", 4);
+        saveReference(id, "Relational Goal Pursuit Theory of Intimate Partner Obsessive Relational Intrusion — Brownhalls e colleghi",
+                "https://doi.org/10.1177/0886260518822339", 5);
+        saveReference(id, "Technology-Facilitated Abuse in Intimate Relationships — Rogers e colleghi",
+                "https://doi.org/10.1177/15248380221090218", 6);
+        saveReference(id, "Violenza dentro e fuori la famiglia — Istat",
+                "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-fenomeno/violenza-dentro-e-fuori-la-famiglia/il-numero-delle-vittime-e-le-forme-di-violenza/", 7);
+        saveReference(id, "1522 — Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 8);
+
+        saveArea(id, "riavvicinamento", "Tentativi e proposte di riavvicinamento", 1);
+        saveArea(id, "persistenza", "Persistenza dopo distanza, silenzio o rifiuto", 2);
+
+        saveQuestions(id, List.of(
+                q("riavvicinamento", "Dopo la conclusione o il mio allontanamento, la persona riprendeva il contatto con me."),
+                q("riavvicinamento", "La persona mi chiedeva di riprendere il rapporto."),
+                q("riavvicinamento", "La persona prometteva di cambiare comportamenti che avevano creato difficoltà."),
+                q("riavvicinamento", "La persona mi inviava messaggi affettuosi dopo la conclusione o il mio allontanamento."),
+                q("riavvicinamento", "La persona mi inviava regali dopo la conclusione o il mio allontanamento."),
+                q("riavvicinamento", "La persona proponeva un incontro per parlare di una possibile riconciliazione."),
+                q("persistenza", "La persona continuava a contattarmi dopo che avevo chiesto distanza."),
+                q("persistenza", "La persona ripeteva la proposta di riprendere il rapporto dopo un mio rifiuto."),
+                q("persistenza", "La persona usava un altro canale dopo che non avevo risposto."),
+                q("persistenza", "La persona chiedeva ad altre persone di recapitarmi messaggi dopo che non avevo risposto."),
+                q("persistenza", "La persona si presentava in un luogo in cui sapeva di trovarmi dopo che avevo chiesto distanza."),
+                q("persistenza", "Dopo un nuovo periodo di silenzio, la persona tornava a chiedere un riavvicinamento.")));
+
+        String commonSafety = "Il risultato non dimostra hoovering, manipolazione, abuso, stalking, intenzioni, sincerità, narcisismo o diagnosi dell'altra persona. "
+                + "Scuse, promesse, regali, contatti necessari per figli o questioni condivise e riconciliazioni reciproche possono avere significati differenti. "
+                + "Se hai paura, ricevi minacce o i tuoi confini non vengono rispettati, puoi cercare supporto senza affrontare direttamente la persona se non è sicuro. In caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 offre orientamento gratuito anche via chat.";
+
+        saveGlobal(id, "LOW",
+                "Le dinamiche associate all'hoovering sembrano molto poco presenti nelle tue risposte",
+                "Tentativi di riavvicinamento e persistenza risultano poco numerosi in entrambe le aree. Nel periodo scelto non emerge quindi una ricorrenza diffusa degli eventi esplorati.",
+                "Questo andamento non esclude un singolo episodio importante, un contatto avvenuto fuori dai canali considerati o una situazione non inclusa negli item. Ricostruisci soprattutto ciò che è accaduto dopo la conclusione o la tua richiesta di distanza. " + commonSafety);
+        saveGlobal(id, "MIXED",
+                "Le dinamiche associate all'hoovering sembrano presenti in modo variabile",
+                "Alcuni eventi compaiono con un numero intermedio, ma nessuna delle due aree raggiunge il livello editoriale più alto. La configurazione risulta quindi occasionale o variabile.",
+                "Osserva se i contatti erano reciproci e concordati, se servivano a questioni pratiche e che cosa accadeva dopo una mancata risposta o un rifiuto. Eventi diversi possono avere significati differenti e la media non ricostruisce da sola la sequenza. " + commonSafety);
+        saveGlobal(id, "FOCUSED",
+                "Le dinamiche associate all'hoovering sembrano più presenti in una delle due aree",
+                "Una componente risulta numerosa mentre l'altra è più contenuta. Può emergere soprattutto il riavvicinamento oppure la persistenza dopo distanza o rifiuto, senza una compresenza ampia.",
+                "Leggi separatamente l'area emergente. Molte proposte di riavvicinamento possono esistere senza pressione, mentre la persistenza può riguardare anche contatti pratici: reciprocità, necessità, risposta ai confini e contesto aiutano a distinguere le situazioni. " + commonSafety);
+        saveGlobal(id, "BROAD",
+                "Le dinamiche associate all'hoovering sembrano molto presenti in entrambe le aree",
+                "Le risposte riferiscono numerosi tentativi di riavvicinamento insieme a numerosi episodi di persistenza dopo distanza, silenzio o rifiuto. Le due componenti formano quindi una configurazione ampia nel periodo scelto.",
+                "Considera la sequenza concreta: quali proposte sono state fatte, come hai risposto, quali confini hai comunicato e se i contatti necessari erano separati da quelli personali. La compresenza non permette comunque di conoscere motivazioni, sincerità o possibilità di cambiamento. " + commonSafety);
+
+        saveAreaInsights(id, "riavvicinamento",
+                "Ricontatti, proposte, promesse, messaggi affettuosi o gesti di riavvicinamento risultano poco numerosi. Non esclude un singolo episodio significativo.",
+                "Alcuni tentativi di riavvicinamento sono stati riferiti. Considera se erano reciproci, chiari, coerenti e rispettosi della possibilità di scegliere.",
+                "Tentativi e proposte di riavvicinamento risultano numerosi. L'area non permette di stabilire sincerità, manipolazione o ciò che sarebbe opportuno decidere.");
+        saveAreaInsights(id, "persistenza",
+                "Contatti dopo distanza, mancata risposta o rifiuto risultano poco numerosi. Non esclude un episodio minaccioso o un canale non considerato.",
+                "In alcune occasioni il contatto è proseguito o ha cambiato forma dopo distanza o mancata risposta. Osserva sequenza, necessità pratiche e confini comunicati.",
+                "La persistenza dopo distanza, silenzio o rifiuto risulta numerosa. Questo non accerta intenzioni o stalking, ma i confini e la sicurezza meritano attenzione indipendentemente dall'etichetta.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -3170,6 +3258,15 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("What is (not) ghosting? — Schokkenbroek e colleghi", "https://doi.org/10.1016/j.chb.2025.108637"),
                 ref("Unwanted and unfollowed: Defining ghosting and social media unfollowing — Collins e colleghi", "https://doi.org/10.1111/pere.12492"),
                 ref("Facebook surveillance of former romantic partners — Marshall", "https://pubmed.ncbi.nlm.nih.gov/22946958/"),
+                ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
+        syncReferences("hoovering", List.of(
+                ref("What Is Hoovering? — Cleveland Clinic", "https://health.clevelandclinic.org/hoovering"),
+                ref("When Love Just Ends — Civilotti e colleghi", "https://doi.org/10.3389/fpsyg.2021.662237"),
+                ref("Persistence of Attempts to Reconcile a Terminated Romantic Relationship — Cupach e colleghi", "https://doi.org/10.1080/08934215.2011.613737"),
+                ref("Breaking Up Is Hard to Do: Unwanted Pursuit Behaviors — Langhinrichsen-Rohling e colleghi", "https://doi.org/10.1891/0886-6708.15.1.73"),
+                ref("Relational Goal Pursuit Theory of Intimate Partner Obsessive Relational Intrusion — Brownhalls e colleghi", "https://doi.org/10.1177/0886260518822339"),
+                ref("Technology-Facilitated Abuse in Intimate Relationships — Rogers e colleghi", "https://doi.org/10.1177/15248380221090218"),
+                ref("Violenza dentro e fuori la famiglia — Istat", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-fenomeno/violenza-dentro-e-fuori-la-famiglia/il-numero-delle-vittime-e-le-forme-di-violenza/"),
                 ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
     }
 

@@ -49,7 +49,8 @@ class PsychometricStructureTest {
             Map.entry("gaslighting", "esperienze associate al gaslighting"),
             Map.entry("love-bombing", "dinamiche associate al love bombing"),
             Map.entry("breadcrumbing", "dinamiche associate al breadcrumbing"),
-            Map.entry("orbiting", "dinamiche associate all'orbiting"));
+            Map.entry("orbiting", "dinamiche associate all'orbiting"),
+            Map.entry("hoovering", "dinamiche associate all'hoovering"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -59,7 +60,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(31).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(32).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
@@ -74,6 +75,14 @@ class PsychometricStructureTest {
                 assertThat(test.questions()).hasSize(12);
                 assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
                 assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).hasSize(2);
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code()))
+                        .hasSize(6));
+            } else if ("hoovering".equals(test.id())) {
+                assertThat(test.questions()).hasSize(12);
+                assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("quante volte");
+                assertThat(test.answerScale()).isEqualTo("OCCURRENCE");
                 assertThat(test.areas()).hasSize(2);
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
@@ -188,7 +197,7 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("intermedie");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("ansioso-preoccupato");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("timoroso-evitante");
-            } else if ("orbiting".equals(test.id())) {
+            } else if ("orbiting".equals(test.id()) || "hoovering".equals(test.id())) {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("una delle due aree");

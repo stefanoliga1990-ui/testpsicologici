@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(31).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(32).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1608,10 +1608,65 @@ class TestResultServiceTest {
     }
 
     @Test
+    void hooveringTestLoadsItsOriginalTwoAreaOccurrenceStructureAndSpecificSources() {
+        PsychologicalTest test = catalogue.findById("hoovering");
+
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(12);
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "riavvicinamento", "persistenza");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(6));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "riavvicinamento", "persistenza");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("OCCURRENCE");
+        assertThat(test.responseInstruction()).contains(
+                "primi sei mesi", "conclusione del rapporto", "volerti allontanare", "più breve", "quante volte");
+        assertThat(test.introductoryText()).contains(
+                "informativo", "non validato", "una sola relazione o frequentazione romantica",
+                "non dimostrano da soli hoovering", "interromperti");
+        assertThat(test.references()).hasSize(8).extracting(reference -> reference.url()).containsExactly(
+                "https://health.clevelandclinic.org/hoovering",
+                "https://doi.org/10.3389/fpsyg.2021.662237",
+                "https://doi.org/10.1080/08934215.2011.613737",
+                "https://doi.org/10.1891/0886-6708.15.1.73",
+                "https://doi.org/10.1177/0886260518822339",
+                "https://doi.org/10.1177/15248380221090218",
+                "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-fenomeno/violenza-dentro-e-fuori-la-famiglia/il-numero-delle-vittime-e-le-forme-di-violenza/",
+                "https://www.1522.eu/cose-1522/");
+    }
+
+    @Test
+    void hooveringProfilesRequireBothAreasForBroadAndKeepInterpretiveSafetyLimitsAtEveryLevel() {
+        TestResult low = analyzeWithAnswersForTest("hoovering", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("hoovering", 3, 3, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("hoovering", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("hoovering", 5, 5, 1, 1);
+
+        assertThat(low.general().title()).contains("hoovering", "molto poco presenti");
+        assertThat(mixed.general().title()).contains("hoovering", "modo variabile");
+        assertThat(focused.general().title()).contains("hoovering", "una delle due aree");
+        assertThat(broad.general().title()).contains("hoovering", "molto presenti", "entrambe le aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(2);
+            assertThat(result.general().detail()).contains(
+                    "non dimostra hoovering", "manipolazione", "stalking", "intenzioni",
+                    "narcisismo", "non è sicuro", "112", "1522");
+        });
+        assertThat(low.percentage()).isZero();
+        assertThat(focused.percentage()).isEqualTo(50);
+        assertThat(broad.percentage()).isEqualTo(100);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }
