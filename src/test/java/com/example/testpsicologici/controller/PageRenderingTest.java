@@ -1301,6 +1301,69 @@ class PageRenderingTest {
     }
 
     @Test
+    void gaslightingIntroductionAndGuideExposeCategoryRelatedContentAndSafetyLimits() throws Exception {
+        mockMvc.perform(get("/test/gaslighting"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Ho subito gaslighting?")))
+                .andExpect(content().string(containsString("Negazione e alterazione degli eventi")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/gaslighting\"")))
+                .andExpect(content().string(containsString("href=\"/test/dinamiche-narcisistiche-partner\"")))
+                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
+                .andExpect(content().string(containsString("href=\"/test/tratti-borderline-adulti\"")))
+                .andExpect(content().string(containsString("una sola persona")))
+                .andExpect(content().string(containsString("non dimostra gaslighting")));
+
+        mockMvc.perform(get("/approfondimenti/gaslighting"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Un andamento relazionale, non una singola frase")))
+                .andExpect(content().string(containsString("Disaccordo, inganno e gaslighting non sono sinonimi")))
+                .andExpect(content().string(containsString("Il bisogno di aiuto non dipende dal punteggio")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/test/gaslighting\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void gaslightingResultRendersOverallAndFourAreaAnalysesWithRelatedTests() throws Exception {
+        mockMvc.perform(get("/test/gaslighting/risultato")
+                        .session(completedAttempt("gaslighting", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le esperienze associate al gaslighting sembrano molto presenti in più aree")))
+                .andExpect(content().string(containsString("Negazione e alterazione degli eventi")))
+                .andExpect(content().string(containsString("Svalutazione di percezioni ed emozioni")))
+                .andExpect(content().string(containsString("Ribaltamento della responsabilità e pressione")))
+                .andExpect(content().string(containsString("Autodubbio e riduzione dell'autonomia")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/gaslighting/risultato/pdf\"")))
+                .andExpect(content().string(containsString("Test correlati")))
+                .andExpect(content().string(containsString("href=\"/test/dinamiche-narcisistiche-partner\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/gaslighting\"")));
+    }
+
+    @Test
+    void gaslightingResultCanBeDownloadedAsReadablePdf() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/test/gaslighting/risultato/pdf")
+                        .session(completedAttempt("gaslighting", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-gaslighting.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Ho subito gaslighting?")
+                    .contains("Negazione e alterazione degli eventi")
+                    .contains("Svalutazione di percezioni ed emozioni")
+                    .contains("non accerta i fatti")
+                    .contains("non dimostra gaslighting")
+                    .contains("1522");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -1366,6 +1429,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/limerenza")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/parentificazione")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/gaslighting")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1380,6 +1445,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/stili-attaccamento")))
                 .andExpect(content().string(containsString("http://localhost/test/limerenza")))
                 .andExpect(content().string(containsString("http://localhost/test/parentificazione")))
+                .andExpect(content().string(containsString("http://localhost/test/gaslighting")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

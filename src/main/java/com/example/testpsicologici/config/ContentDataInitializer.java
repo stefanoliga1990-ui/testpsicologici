@@ -72,6 +72,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedAttachmentStylesInformationTest();
         seedLimerenceInformationTest();
         seedParentificationInformationTest();
+        seedGaslightingInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -2592,6 +2593,114 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Rinunce, priorità date ai bisogni dell'adulto e peso percepito risultano frequenti. L'area non dimostra trauma o neglect e non stabilisce automaticamente conseguenze adulte.");
     }
 
+    private void seedGaslightingInformationTest() {
+        String id = "gaslighting";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Ho subito gaslighting?",
+                "Autovalutazione informativa",
+                "Osserva in una relazione specifica negazione degli eventi, svalutazione della tua credibilità, ribaltamento della responsabilità e possibili effetti sulla fiducia nel tuo giudizio.",
+                "6 min · 24 domande",
+                "Questo questionario per adulti è informativo e non validato. Scegli una sola persona e una relazione attuale o passata: esplorerai esperienze riferite, non la verità dei fatti né le intenzioni dell'altra persona. Il risultato non dimostra gaslighting, abuso o violenza e non formula diagnosi; puoi interromperti in qualsiasi momento e cercare supporto se emergono disagio, paura o problemi di sicurezza.",
+                version, false,
+                "Presenza complessiva delle esperienze esplorate",
+                "Presenza delle esperienze nell'area",
+                true, 28).withSeo(
+                "Test gaslighting: 24 domande informative | Spazio Test",
+                "Questionario informativo per adulti su negazione degli eventi, svalutazione, ribaltamento e autodubbio in una relazione specifica; non diagnostico.")
+                .withResponseInstruction("Pensando agli ultimi sei mesi di contatto significativo con la persona scelta, o all'intero periodo se più breve, con quale frequenza accadeva?"));
+
+        saveReference(id, "Defining Gaslighting in Gender-Based Violence — Adair",
+                "https://doi.org/10.1177/15248380251344316", 1);
+        saveReference(id, "The Gaslighting Relationship Exposure Inventory — Tager-Shafrir e colleghi",
+                "https://doi.org/10.1177/02654075241266942", 2);
+        saveReference(id, "A qualitative analysis of gaslighting in romantic relationships — Klein e colleghi",
+                "https://doi.org/10.1111/pere.12510", 3);
+        saveReference(id, "The Sociology of Gaslighting — Sweet",
+                "https://doi.org/10.1177/0003122419874843", 4);
+        saveReference(id, "Gaslighting Exposure During Emerging Adulthood — Bellomare e colleghi",
+                "https://doi.org/10.21500/20112084.6306", 5);
+        saveReference(id, "Definizioni e indicatori sulla violenza psicologica — Istat",
+                "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", 6);
+        saveReference(id, "Understanding Psychological Violence against Women — EIGE",
+                "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu", 7);
+        saveReference(id, "1522 — Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 8);
+
+        saveArea(id, "realta", "Negazione e alterazione degli eventi", 1);
+        saveArea(id, "credibilita", "Svalutazione di percezioni ed emozioni", 2);
+        saveArea(id, "ribaltamento", "Ribaltamento della responsabilità e pressione", 3);
+        saveArea(id, "autonomia", "Autodubbio e riduzione dell'autonomia", 4);
+
+        saveQuestions(id, List.of(
+                q("realta", "La persona negava di aver detto qualcosa che ricordavo."),
+                q("realta", "La persona negava di aver compiuto un'azione che ricordavo."),
+                q("realta", "La persona sosteneva che una sua versione precedente non fosse mai stata diversa."),
+                q("realta", "La persona affermava che avevo immaginato un episodio di cui parlavo."),
+                q("realta", "La persona metteva in dubbio la mia comprensione anche quando citavo messaggi o altre tracce."),
+                q("realta", "La persona presentava una propria incoerenza come prova che io avevo frainteso."),
+                q("credibilita", "La persona descriveva la mia memoria come inaffidabile durante un confronto."),
+                q("credibilita", "La persona definiva esagerate le mie percezioni senza discuterne il contenuto."),
+                q("credibilita", "La persona usava le mie emozioni per sostenere che il mio giudizio non fosse attendibile."),
+                q("credibilita", "La persona richiamava miei errori passati per screditare ciò che osservavo nel presente."),
+                q("credibilita", "La persona sosteneva che anche gli altri mi considerassero confuso o poco credibile."),
+                q("credibilita", "La persona ridicolizzava il modo in cui ricordavo o descrivevo un episodio."),
+                q("ribaltamento", "Quando chiedevo conto di un comportamento, la conversazione si spostava sui miei difetti."),
+                q("ribaltamento", "Dopo aver espresso una preoccupazione, finivo per scusarmi io."),
+                q("ribaltamento", "La persona attribuiva a me la responsabilità delle proprie azioni."),
+                q("ribaltamento", "La persona trattava la mia richiesta di chiarimento come un attacco personale."),
+                q("ribaltamento", "La persona insisteva sulla propria versione finché rinunciavo a esporre la mia."),
+                q("ribaltamento", "La persona interrompeva il confronto quando non accettavo la sua ricostruzione."),
+                q("autonomia", "Dopo i confronti controllavo messaggi o appunti per verificare la mia memoria."),
+                q("autonomia", "Cercavo conferme da altre persone per capire se la mia percezione fosse ragionevole."),
+                q("autonomia", "Esitavo a raccontare un episodio perché temevo di essere definito confuso."),
+                q("autonomia", "Mi affidavo alla persona per decidere se le mie emozioni fossero giustificate."),
+                q("autonomia", "Modificavo le mie scelte per evitare nuove discussioni su ciò che era accaduto."),
+                q("autonomia", "Mi sentivo meno capace di fidarmi del mio giudizio dopo aver parlato con la persona.")));
+
+        String commonSafety = "Il risultato non accerta i fatti e non dimostra gaslighting, abuso, violenza, diagnosi, intenzioni o colpe; differenze di memoria, conflitto e altri contesti possono produrre esperienze simili. "
+                + "Se ti senti confuso, limitato o in difficoltà puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. "
+                + "Minacce, paura, violenza, isolamento o controllo meritano attenzione indipendentemente dal punteggio: in caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 offre orientamento gratuito anche via chat.";
+
+        saveGlobal(id, "LOW",
+                "Le esperienze associate al gaslighting sembrano molto poco presenti nelle tue risposte",
+                "Negazione degli eventi, svalutazione della credibilità, ribaltamento della responsabilità e autodubbio risultano poco frequenti in tutte le aree. Nella relazione scelta non emerge quindi una configurazione diffusa delle esperienze esplorate nel periodo considerato.",
+                "Questo andamento non esclude un singolo episodio importante, una condotta non inclusa o altre forme di controllo o violenza. Disaccordi e differenze di memoria possono avere spiegazioni diverse, ma ciò che provoca paura, limita la libertà o compromette la sicurezza merita attenzione indipendentemente dalla media. " + commonSafety);
+        saveGlobal(id, "MIXED",
+                "Le esperienze associate al gaslighting sembrano presenti in modo variabile",
+                "Le risposte cambiano tra alterazione degli eventi, svalutazione, ribaltamento e possibili effetti sulla fiducia in te, senza aree al livello editoriale più alto. Alcune dinamiche possono quindi comparire in momenti o forme specifiche, mentre altre risultano poco frequenti.",
+                "Osserva quali episodi si ripetono, che cosa accade quando chiedi un chiarimento e se puoi mantenere il tuo punto di vista senza pressioni o conseguenze. Può essere utile distinguere fatti osservabili, interpretazioni e impatto, cercando confronto esterno soltanto quando è sicuro. " + commonSafety);
+        saveGlobal(id, "FOCUSED",
+                "Le esperienze associate al gaslighting sembrano più presenti in una o due aree",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso nuclei specifici senza definire l'intera relazione né stabilire che la persona agisca intenzionalmente.",
+                "Consulta le aree emergenti per distinguere negazione dei fatti, delegittimazione, pressione nel confronto ed effetti sul tuo giudizio. Considera ripetizione, durata, asimmetria di potere, possibilità di verificare le informazioni e conseguenze concrete sulla tua autonomia. " + commonSafety);
+        saveGlobal(id, "BROAD",
+                "Le esperienze associate al gaslighting sembrano molto presenti in più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Negazione o svalutazione possono quindi accompagnarsi a pressione nel confronto e minore fiducia nel tuo giudizio, formando una configurazione ampia nel periodo considerato.",
+                "Considera quanto queste dinamiche siano ripetute, se limitino decisioni, contatti o libertà e se siano presenti paura, minacce o altre forme di controllo. Un professionista o un servizio specializzato può aiutarti a ricostruire episodi, contesto e opzioni senza partire da un'etichetta; non raccogliere prove e non affrontare la persona se questo potrebbe aumentare il pericolo. " + commonSafety);
+
+        saveAreaInsights(id, "realta",
+                "Negazioni, cambi di versione e contraddizioni delle tracce risultano poco frequenti. Non stabilisce che ogni ricordo o disaccordo sia stato chiarito correttamente.",
+                "In alcune situazioni la ricostruzione degli eventi veniva negata o modificata. Osserva ripetizione, risposta alle informazioni verificabili e possibilità di confrontare versioni senza pressione.",
+                "Negazioni, cambi di versione o attribuzioni di fraintendimento risultano frequenti. L'area descrive la tua esperienza e non decide quale versione dei fatti sia oggettivamente corretta.");
+        saveAreaInsights(id, "credibilita",
+                "Svalutazione di memoria, percezioni ed emozioni risulta poco frequente. Un episodio umiliante o importante può comunque meritare attenzione.",
+                "In alcuni confronti la tua credibilità veniva messa in dubbio invece di discutere il contenuto. Considera tono, ricorrenza, potere e conseguenze sulla possibilità di esprimerti.",
+                "La delegittimazione di memoria, percezioni o emozioni risulta frequente. L'area non dimostra intenzione manipolativa né una diagnosi della persona indicata.");
+        saveAreaInsights(id, "ribaltamento",
+                "Spostamento della responsabilità e pressione per abbandonare il confronto risultano poco frequenti. Non valuta la qualità complessiva dei conflitti nella relazione.",
+                "In alcuni confronti la questione si spostava sui tuoi difetti o terminava senza chiarimento. Osserva se puoi porre domande, dissentire e interrompere la conversazione in sicurezza.",
+                "Ribaltamento, attribuzione delle azioni altrui e pressione nel confronto risultano frequenti. L'area non stabilisce colpa, intenzione o presenza di controllo coercitivo nel suo insieme.");
+        saveAreaInsights(id, "autonomia",
+                "Verifiche, ricerca di conferme e minore fiducia nel giudizio risultano poco frequenti. Non esclude disagio, paura o conseguenze non esplorate.",
+                "In alcune situazioni cercavi conferme o modificavi il tuo comportamento dopo i confronti. Considera quanto questi effetti persistano e se riducano libertà, contatti o decisioni.",
+                "Autodubbio, dipendenza da conferme o adattamento delle scelte risultano frequenti. L'area non dimostra che la relazione ne sia l'unica causa e non diagnostica trauma, ansia o depressione.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -2727,6 +2836,15 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Parentification and distress in Italian adult siblings — Levante e colleghi", "https://doi.org/10.3389/fpsyt.2022.1079608"),
                 ref("Positive and negative aspects of parentification — Khafi e colleghi", "https://doi.org/10.1016/j.childyouth.2022.106709"),
                 ref("La rete dei servizi per la salute mentale — Ministero della Salute", "https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/")));
+        syncReferences("gaslighting", List.of(
+                ref("Defining Gaslighting in Gender-Based Violence — Adair", "https://doi.org/10.1177/15248380251344316"),
+                ref("The Gaslighting Relationship Exposure Inventory — Tager-Shafrir e colleghi", "https://doi.org/10.1177/02654075241266942"),
+                ref("A qualitative analysis of gaslighting in romantic relationships — Klein e colleghi", "https://doi.org/10.1111/pere.12510"),
+                ref("The Sociology of Gaslighting — Sweet", "https://doi.org/10.1177/0003122419874843"),
+                ref("Gaslighting Exposure During Emerging Adulthood — Bellomare e colleghi", "https://doi.org/10.21500/20112084.6306"),
+                ref("Definizioni e indicatori sulla violenza psicologica — Istat", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/"),
+                ref("Understanding Psychological Violence against Women — EIGE", "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu"),
+                ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

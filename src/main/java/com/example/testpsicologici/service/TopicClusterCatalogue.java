@@ -33,6 +33,7 @@ public class TopicClusterCatalogue {
                             "limerenza",
                             "dipendenza-affettiva",
                             "gelosia-partner",
+                            "gaslighting",
                             "dinamiche-narcisistiche-partner",
                             "tratti-borderline-adulti"
                     )),

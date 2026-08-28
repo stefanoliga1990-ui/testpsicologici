@@ -2867,6 +2867,127 @@ public class GuideCatalogue {
                                     "Pagina ufficiale consultata per destinazione, gratuità e disponibilità continuativa del servizio; il 1522 non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "gaslighting",
+                    "gaslighting",
+                    "Gaslighting nelle relazioni",
+                    "Quando la fiducia nella propria percezione viene messa in dubbio",
+                    "Gaslighting: significato, segnali e limiti | Spazio Test",
+                    "Che cosa indica il gaslighting, come distinguerlo da un disaccordo e perché ripetizione, potere, conseguenze e sicurezza contano più di una singola frase.",
+                    "Il gaslighting descrive un possibile andamento relazionale ripetuto che mina la fiducia di una persona nei propri ricordi, percezioni o giudizi. Il termine non è una diagnosi e non ogni conflitto, bugia o differenza di memoria rientra in questa dinamica.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Un andamento relazionale, non una singola frase",
+                                    List.of(
+                                            "Nella letteratura il nucleo del gaslighting riguarda il tentativo, riuscito o meno, di rendere l'altra persona meno fiduciosa nella propria capacità di conoscere ciò che è accaduto. Può includere negazioni, riscrittura degli eventi, svalutazione della credibilità e uso del potere per rendere dominante una sola versione.",
+                                            "L'uso comune del termine è diventato molto ampio. Per questo è più prudente descrivere comportamenti, ripetizione, contesto ed effetti che usare subito un'etichetta sulla relazione o sulla persona."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni utili",
+                                    "Disaccordo, inganno e gaslighting non sono sinonimi",
+                                    List.of(
+                                            "Due persone possono ricordare diversamente un episodio o comunicare in modo difensivo senza che una stia cercando di minare il giudizio dell'altra. Anche una bugia o una svalutazione isolata può essere dannosa, ma non dimostra da sola un andamento di gaslighting.",
+                                            "Diventano rilevanti la ripetizione, il rifiuto sistematico di informazioni verificabili, l'attacco alla credibilità invece del contenuto, l'asimmetria di potere e la progressiva difficoltà a fidarsi del proprio giudizio. Nessun singolo indicatore permette comunque di accertare intenzioni o fatti."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le quattro aree",
+                                    "Come è organizzato il questionario",
+                                    List.of(
+                                            "Spazio Test organizza 24 item originali in quattro lenti editoriali. Non riproducono il GREI o altri strumenti, non sono fattori confermati negli adulti italiani e la barra complessiva non rappresenta una percentuale di gaslighting."
+                                    ),
+                                    List.of(
+                                            "Negazione e alterazione degli eventi: parole, azioni, versioni e tracce messe in discussione.",
+                                            "Svalutazione di percezioni ed emozioni: memoria, osservazioni o vissuti usati per ridurre la credibilità.",
+                                            "Ribaltamento della responsabilità e pressione: il confronto si sposta, viene chiuso o porta l'altra persona a rinunciare.",
+                                            "Autodubbio e riduzione dell'autonomia: verifiche, ricerca di conferme, esitazione e minore fiducia nel proprio giudizio."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Potere e contesto",
+                                    "La dinamica non è soltanto individuale",
+                                    List.of(
+                                            "Le analisi sociologiche mostrano che stereotipi, dipendenza economica, isolamento e disuguaglianze istituzionali possono essere usati per rendere meno credibile una persona. Nelle relazioni di coppia il gaslighting può comparire dentro un quadro più ampio di abuso emotivo o controllo, ma i due concetti non sono perfettamente sovrapponibili.",
+                                            "Gran parte della ricerca riguarda donne e relazioni romantiche. Il fenomeno viene discusso anche in famiglie, amicizie, lavoro e assistenza sanitaria, ma le evidenze non sono ugualmente sviluppate e non autorizzano a trasferire automaticamente risultati tra contesti."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Cosa osservare",
+                                    "Episodi, ripetizione, risposta al confronto e conseguenze",
+                                    List.of(
+                                            "Può essere utile distinguere ciò che ricordi, quali informazioni sono disponibili, come l'altra persona risponde a una domanda e che cosa cambia dopo il confronto. Osserva se puoi dissentire, chiedere un chiarimento e parlare con altre persone senza paura o conseguenze.",
+                                            "Appunti o confronti esterni non sono prove definitive e vanno cercati soltanto se è sicuro. Se temi ritorsioni, controllo del telefono, minacce o escalation, privilegia la sicurezza e chiedi orientamento prima di affrontare direttamente la persona."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Effetti e alternative",
+                                    "L'autodubbio può avere più spiegazioni",
+                                    List.of(
+                                            "Confusione, bisogno di verificare, minore fiducia in sé e difficoltà decisionali sono stati descritti nelle ricerche sul gaslighting. Sono però esperienze non specifiche, che possono dipendere anche da stress, ansia, trauma precedente, conflitto, condizioni di salute o altri fattori.",
+                                            "Le associazioni osservate nei gruppi non dimostrano che una relazione sia la causa unica del vissuto individuale. Una ricostruzione professionale considera storia, contesto, risorse, potere e sicurezza senza chiedere al questionario di decidere chi abbia ragione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Il bisogno di aiuto non dipende dal punteggio",
+                                    List.of(
+                                            "Se la relazione ti lascia spesso confuso, impaurito o meno libero, puoi parlarne con uno psicologo, psicoterapeuta, medico, Centro di Salute Mentale o servizio competente. Una persona fidata può offrire un punto di vista esterno, purché contattarla non aumenti il rischio.",
+                                            "In caso di pericolo immediato chiama il 112. Se sei una donna e vivi violenza o stalking, il servizio pubblico 1522 è gratuito, attivo 24 ore su 24 e disponibile anche via chat; può orientarti verso servizi territoriali e non sostituisce il 112 nelle emergenze."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 24 item originali riferiti a una sola relazione e quattro aree editoriali. Non accerta i fatti, non dimostra gaslighting, abuso o violenza, non attribuisce intenzioni o diagnosi e non sostituisce una valutazione o un supporto professionale.",
+                    List.of(
+                            new GuideReference(
+                                    "Defining Gaslighting in Gender-Based Violence — Adair",
+                                    "https://doi.org/10.1177/15248380251344316",
+                                    "Revisione sistematica mixed-methods di 96 record consultata per definizione, tattiche, potere ed effetti; l'eterogeneità e il perimetro di violenza di genere non convalidano il questionario."
+                            ),
+                            new GuideReference(
+                                    "The Gaslighting Relationship Exposure Inventory — Tager-Shafrir e colleghi",
+                                    "https://doi.org/10.1177/02654075241266942",
+                                    "Due studi su partner romantici in Israele e Stati Uniti consultati per misurazione dell'esposizione riferita; il GREI è unifattoriale e item, proprietà e soglie non vengono trasferiti."
+                            ),
+                            new GuideReference(
+                                    "A qualitative analysis of gaslighting in romantic relationships — Klein e colleghi",
+                                    "https://doi.org/10.1111/pere.12510",
+                                    "Studio qualitativo su 65 adulti autoselezionati consultato per fiducia epistemica, contesto, controllo ed effetti riferiti; non stima prevalenza, causalità o criteri individuali."
+                            ),
+                            new GuideReference(
+                                    "The Sociology of Gaslighting — Sweet",
+                                    "https://doi.org/10.1177/0003122419874843",
+                                    "Analisi sociologica consultata per il ruolo di potere, genere, vulnerabilità e istituzioni; non è una misura psicometrica e non prova la dinamica nel singolo rapporto."
+                            ),
+                            new GuideReference(
+                                    "Gaslighting Exposure During Emerging Adulthood — Bellomare e colleghi",
+                                    "https://doi.org/10.21500/20112084.6306",
+                                    "Studio su 177 universitari italiani consultato come evidenza locale limitata; misura non formalmente validata in Italia, campione ristretto e disegno correlazionale."
+                            ),
+                            new GuideReference(
+                                    "Definizioni e indicatori sulla violenza psicologica — Istat",
+                                    "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/",
+                                    "Fonte istituzionale italiana consultata per denigrazione, controllo, isolamento e intimidazione; riguarda soprattutto violenza contro le donne nella coppia e non definisce il gaslighting."
+                            ),
+                            new GuideReference(
+                                    "Understanding Psychological Violence against Women — EIGE",
+                                    "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu",
+                                    "Sintesi europea consultata per collocare il gaslighting nell'abuso emotivo e nel quadro della violenza psicologica; non è una scala né una valutazione individuale."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

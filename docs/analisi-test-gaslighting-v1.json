@@ -1,0 +1,149 @@
+{
+  "test": {
+    "id": "gaslighting",
+    "titolo": "Ho subito gaslighting?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa riferita a una relazione specifica",
+    "periodo_riferimento": "Ultimi sei mesi di contatto significativo con la persona scelta, o intero periodo se più breve",
+    "direzione_punteggio": "Valori più alti descrivono una maggiore frequenza delle esperienze formulate",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non accerta i fatti, non dimostra gaslighting, abuso o violenza e non attribuisce intenzioni, colpe, diagnosi o caratteristiche di personalità alla persona indicata."
+  },
+  "istruzione_risposta": "Pensando agli ultimi sei mesi di contatto significativo con la persona scelta, o all'intero periodo se più breve, con quale frequenza accadeva?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale di gaslighting, un percentile, una probabilità, una misura di gravità o una prova di abuso",
+    "ordine_aree_risultato": "Ordine teorico stabile: realta, credibilita, ribaltamento, autonomia",
+    "limite_aggregazione": "La media unisce condotte riferite e possibili effetti soggettivi; è una sintesi editoriale e le aree devono essere lette separatamente."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le esperienze associate al gaslighting sembrano molto poco presenti nelle tue risposte",
+      "sottotitolo": "Negazione degli eventi, svalutazione della credibilità, ribaltamento della responsabilità e autodubbio risultano poco frequenti in tutte le aree. Nella relazione scelta non emerge quindi una configurazione diffusa delle esperienze esplorate nel periodo considerato.",
+      "descrizione": "Questo andamento non esclude un singolo episodio importante, una condotta non inclusa o altre forme di controllo o violenza. Disaccordi e differenze di memoria possono avere spiegazioni diverse, ma ciò che provoca paura, limita la libertà o compromette la sicurezza merita attenzione indipendentemente dalla media. Il risultato non accerta i fatti e non dimostra gaslighting, abuso, diagnosi, intenzioni o colpe; se ti senti confuso o limitato puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. In caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 offre orientamento gratuito anche via chat."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le esperienze associate al gaslighting sembrano presenti in modo variabile",
+      "sottotitolo": "Le risposte cambiano tra alterazione degli eventi, svalutazione, ribaltamento e possibili effetti sulla fiducia in te, senza aree al livello editoriale più alto. Alcune dinamiche possono quindi comparire in momenti o forme specifiche, mentre altre risultano poco frequenti.",
+      "descrizione": "Osserva quali episodi si ripetono, che cosa accade quando chiedi un chiarimento e se puoi mantenere il tuo punto di vista senza pressioni o conseguenze. Può essere utile distinguere fatti osservabili, interpretazioni e impatto, cercando confronto esterno soltanto quando è sicuro. Il risultato non accerta i fatti e non dimostra gaslighting, abuso, diagnosi, intenzioni o colpe; se ti senti confuso o limitato puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. In caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 offre orientamento gratuito anche via chat."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le esperienze associate al gaslighting sembrano più presenti in una o due aree",
+      "sottotitolo": "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso nuclei specifici senza definire l'intera relazione né stabilire che la persona agisca intenzionalmente.",
+      "descrizione": "Consulta le aree emergenti per distinguere negazione dei fatti, delegittimazione, pressione nel confronto ed effetti sul tuo giudizio. Considera ripetizione, durata, asimmetria di potere, possibilità di verificare le informazioni e conseguenze concrete sulla tua autonomia. Il risultato non accerta i fatti e non dimostra gaslighting, abuso, diagnosi, intenzioni o colpe; se ti senti confuso o limitato puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. In caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 offre orientamento gratuito anche via chat."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le esperienze associate al gaslighting sembrano molto presenti in più aree",
+      "sottotitolo": "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree esplorate. Negazione o svalutazione possono quindi accompagnarsi a pressione nel confronto e minore fiducia nel tuo giudizio, formando una configurazione ampia nel periodo considerato.",
+      "descrizione": "Considera quanto queste dinamiche siano ripetute, se limitino decisioni, contatti o libertà e se siano presenti paura, minacce o altre forme di controllo. Un professionista o un servizio specializzato può aiutarti a ricostruire episodi, contesto e opzioni senza partire da un'etichetta; non raccogliere prove e non affrontare la persona se questo potrebbe aumentare il pericolo. Il risultato non accerta i fatti e non dimostra gaslighting, abuso, diagnosi, intenzioni o colpe. In caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 offre orientamento gratuito anche via chat."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "realta",
+      "nome_area": "Negazione e alterazione degli eventi",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Negazioni, cambi di versione e contraddizioni delle tracce risultano poco frequenti. Non stabilisce che ogni ricordo o disaccordo sia stato chiarito correttamente."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni la ricostruzione degli eventi veniva negata o modificata. Osserva ripetizione, risposta alle informazioni verificabili e possibilità di confrontare versioni senza pressione."},
+        {"livello": "HIGH", "descrizione": "Negazioni, cambi di versione o attribuzioni di fraintendimento risultano frequenti. L'area descrive la tua esperienza e non decide quale versione dei fatti sia oggettivamente corretta."}
+      ]
+    },
+    {
+      "area_code": "credibilita",
+      "nome_area": "Svalutazione di percezioni ed emozioni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Svalutazione di memoria, percezioni ed emozioni risulta poco frequente. Un episodio umiliante o importante può comunque meritare attenzione."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni confronti la tua credibilità veniva messa in dubbio invece di discutere il contenuto. Considera tono, ricorrenza, potere e conseguenze sulla possibilità di esprimerti."},
+        {"livello": "HIGH", "descrizione": "La delegittimazione di memoria, percezioni o emozioni risulta frequente. L'area non dimostra intenzione manipolativa né una diagnosi della persona indicata."}
+      ]
+    },
+    {
+      "area_code": "ribaltamento",
+      "nome_area": "Ribaltamento della responsabilità e pressione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Spostamento della responsabilità e pressione per abbandonare il confronto risultano poco frequenti. Non valuta la qualità complessiva dei conflitti nella relazione."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni confronti la questione si spostava sui tuoi difetti o terminava senza chiarimento. Osserva se puoi porre domande, dissentire e interrompere la conversazione in sicurezza."},
+        {"livello": "HIGH", "descrizione": "Ribaltamento, attribuzione delle azioni altrui e pressione nel confronto risultano frequenti. L'area non stabilisce colpa, intenzione o presenza di controllo coercitivo nel suo insieme."}
+      ]
+    },
+    {
+      "area_code": "autonomia",
+      "nome_area": "Autodubbio e riduzione dell'autonomia",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Verifiche, ricerca di conferme e minore fiducia nel giudizio risultano poco frequenti. Non esclude disagio, paura o conseguenze non esplorate."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni cercavi conferme o modificavi il tuo comportamento dopo i confronti. Considera quanto questi effetti persistano e se riducano libertà, contatti o decisioni."},
+        {"livello": "HIGH", "descrizione": "Autodubbio, dipendenza da conferme o adattamento delle scelte risultano frequenti. L'area non dimostra che la relazione ne sia l'unica causa e non diagnostica trauma, ansia o depressione."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {
+      "titolo": "Defining Gaslighting in Gender-Based Violence: A Mixed-Methods Systematic Review",
+      "url": "https://doi.org/10.1177/15248380251344316",
+      "apporto": "Revisione sistematica consultata per tattiche epistemiche, abuso emotivo, potere e possibili effetti; definizioni eterogenee e contesto soprattutto di violenza di genere non validano le aree dell'app."
+    },
+    {
+      "titolo": "The Gaslighting Relationship Exposure Inventory",
+      "url": "https://doi.org/10.1177/02654075241266942",
+      "apporto": "Validazione iniziale consultata per perimetro relazionale e frequenza delle condotte; campioni israeliano e statunitense, struttura unifattoriale e item non vengono trasferiti."
+    },
+    {
+      "titolo": "A qualitative analysis of gaslighting in romantic relationships",
+      "url": "https://doi.org/10.1111/pere.12510",
+      "apporto": "Studio qualitativo consultato per fiducia epistemica, controllo, contesto ed effetti riferiti; piccolo campione anglofono autoselezionato e nessuna inferenza causale."
+    },
+    {
+      "titolo": "The Sociology of Gaslighting",
+      "url": "https://doi.org/10.1177/0003122419874843",
+      "apporto": "Analisi sociologica consultata per potere, disuguaglianze e contesto; non è una validazione psicometrica e non permette inferenze individuali."
+    },
+    {
+      "titolo": "Gaslighting Exposure During Emerging Adulthood",
+      "url": "https://doi.org/10.21500/20112084.6306",
+      "apporto": "Studio su universitari italiani consultato come evidenza locale limitata; la misura dei comportamenti non era formalmente validata in Italia e le associazioni non spiegano il singolo caso."
+    },
+    {
+      "titolo": "Definizioni e indicatori sulla violenza psicologica — Istat",
+      "url": "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/",
+      "apporto": "Fonte istituzionale italiana consultata per denigrazione, controllo, isolamento e intimidazione; il perimetro riguarda donne e partner e non definisce una scala sul gaslighting."
+    },
+    {
+      "titolo": "Understanding Psychological Violence against Women — EIGE",
+      "url": "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu",
+      "apporto": "Fonte europea consultata per collocare il gaslighting nell'abuso emotivo e distinguerlo dal più ampio quadro della violenza psicologica; non è una misura clinica."
+    },
+    {
+      "titolo": "1522 — Numero Anti Violenza e Stalking",
+      "url": "https://www.1522.eu/cose-1522/",
+      "apporto": "Pagina istituzionale italiana consultata per destinatari, gratuità, continuità e orientamento del servizio; non è evidenza sul costrutto e non sostituisce il 112."
+    }
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia esplicita; distingue fonti del costrutto, contesto italiano/europeo e riferimenti di sicurezza.",
+  "limite": "Non esistono dati che validino in adulti italiani questo specifico set di 24 item, le quattro aree, la scala, le soglie, l'aggregazione o le interpretazioni."
+}

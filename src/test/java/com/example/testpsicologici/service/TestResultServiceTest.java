@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(27).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(28).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1396,10 +1396,63 @@ class TestResultServiceTest {
     }
 
     @Test
+    void gaslightingTestLoadsItsOriginalRelationshipSpecificBalancedStructureAndSources() {
+        PsychologicalTest test = catalogue.findById("gaslighting");
+
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "realta", "credibilita", "ribaltamento", "autonomia");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(6));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "realta", "credibilita", "ribaltamento", "autonomia");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains(
+                "sei mesi", "persona scelta", "periodo se più breve", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "informativo", "non validato", "una sola persona", "non dimostra gaslighting", "interromperti");
+        assertThat(test.references()).hasSize(8).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.1177/15248380251344316",
+                "https://doi.org/10.1177/02654075241266942",
+                "https://doi.org/10.1111/pere.12510",
+                "https://doi.org/10.1177/0003122419874843",
+                "https://doi.org/10.21500/20112084.6306",
+                "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/",
+                "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu",
+                "https://www.1522.eu/cose-1522/");
+    }
+
+    @Test
+    void gaslightingProfilesUseAreaPatternsAndKeepEpistemicAndSafetyLimitsIndependentFromLevel() {
+        TestResult low = analyzeWithAnswersForTest("gaslighting", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("gaslighting", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("gaslighting", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("gaslighting", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).contains("gaslighting", "molto poco presenti");
+        assertThat(mixed.general().title()).contains("gaslighting", "modo variabile");
+        assertThat(focused.general().title()).contains("gaslighting", "una o due aree");
+        assertThat(broad.general().title()).contains("gaslighting", "molto presenti", "più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(4);
+            assertThat(result.general().detail()).contains(
+                    "non accerta i fatti", "non dimostra gaslighting", "intenzioni", "colpe",
+                    "differenze di memoria", "sicuro", "112", "1522");
+        });
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }
