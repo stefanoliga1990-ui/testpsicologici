@@ -73,6 +73,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedLimerenceInformationTest();
         seedParentificationInformationTest();
         seedGaslightingInformationTest();
+        seedLoveBombingInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -2701,6 +2702,114 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Autodubbio, dipendenza da conferme o adattamento delle scelte risultano frequenti. L'area non dimostra che la relazione ne sia l'unica causa e non diagnostica trauma, ansia o depressione.");
     }
 
+    private void seedLoveBombingInformationTest() {
+        String id = "love-bombing";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Ho subito love bombing?",
+                "Autovalutazione informativa",
+                "Osserva in una fase specifica della relazione intensità delle attenzioni, accelerazione del legame, rispetto dei confini e alternanza con possibili effetti sulla tua autonomia.",
+                "6 min · 24 domande",
+                "Questo questionario per adulti è informativo e non validato. Scegli una sola relazione romantica e la sua fase iniziale o un riavvicinamento significativo: affetto ed entusiasmo intensi non dimostrano da soli love bombing. Il risultato non accerta manipolazione, abuso, intenzioni o diagnosi dell'altra persona; puoi interromperti e cercare supporto se emergono disagio, paura o problemi di sicurezza.",
+                version, false,
+                "Presenza complessiva delle dinamiche esplorate",
+                "Presenza delle dinamiche nell'area",
+                true, 29).withSeo(
+                "Test love bombing: 24 domande informative | Spazio Test",
+                "Questionario informativo per adulti su attenzioni intense, accelerazione, confini e alternanza in una fase di una relazione romantica; non diagnostico.")
+                .withResponseInstruction("Pensando ai primi sei mesi della fase scelta, o all'intera fase se più breve, con quale frequenza accadeva?"));
+
+        saveReference(id, "Love-bombing: A Narcissistic Approach to Relationship Formation — Strutzenberg e colleghi",
+                "https://doi.org/10.54119/discovery.zxgc9960", 1);
+        saveReference(id, "Turkish Adaptation Study of Love Bombing Scale — Çalışkan Sarı",
+                "https://doi.org/10.17336/igusbd.1651349", 2);
+        saveReference(id, "Women's Experiences of Coercive Control — Choudhury e colleghi",
+                "https://doi.org/10.1007/s10896-025-00970-6", 3);
+        saveReference(id, "A qualitative analysis of gaslighting in romantic relationships — Klein e colleghi",
+                "https://doi.org/10.1111/pere.12510", 4);
+        saveReference(id, "Coercive control in intimate partner violence — Hamberger e colleghi",
+                "https://doi.org/10.1016/j.avb.2017.08.003", 5);
+        saveReference(id, "Definizioni e indicatori sulla violenza psicologica — Istat",
+                "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", 6);
+        saveReference(id, "Understanding Psychological Violence against Women — EIGE",
+                "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu", 7);
+        saveReference(id, "1522 — Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 8);
+
+        saveArea(id, "intensita", "Intensità di attenzioni e idealizzazione", 1);
+        saveArea(id, "accelerazione", "Accelerazione del legame e promesse", 2);
+        saveArea(id, "confini", "Pressione, esclusività e rispetto dei confini", 3);
+        saveArea(id, "alternanza", "Instabilità delle attenzioni e impatto sull'autonomia", 4);
+
+        saveQuestions(id, List.of(
+                q("intensita", "La persona mi contattava con una frequenza che mi lasciava poco spazio."),
+                q("intensita", "La persona mi faceva complimenti molto intensi rispetto a quanto ci conoscevamo."),
+                q("intensita", "La persona mi dedicava attenzioni continue fin dai primi incontri."),
+                q("intensita", "La persona mi descriveva come eccezionale senza conoscermi ancora in modo approfondito."),
+                q("intensita", "La persona mi faceva regali molto impegnativi nelle prime fasi."),
+                q("intensita", "La persona mi chiedeva di trascorrere insieme gran parte del mio tempo libero."),
+                q("accelerazione", "La persona faceva dichiarazioni d'amore nelle primissime fasi."),
+                q("accelerazione", "La persona proponeva progetti di vita condivisi quando ci conoscevamo da poco."),
+                q("accelerazione", "La persona descriveva il nostro legame come unico o predestinato."),
+                q("accelerazione", "La persona mi chiedeva di impegnarmi subito nella relazione."),
+                q("accelerazione", "La persona chiedeva confidenze molto personali all'inizio della conoscenza."),
+                q("accelerazione", "La persona parlava del nostro futuro come se fosse già deciso."),
+                q("confini", "La persona continuava a cercarmi quando chiedevo un po' di spazio."),
+                q("confini", "La persona manifestava disappunto quando non potevo dedicarle attenzione."),
+                q("confini", "La persona mi chiedeva di rispondere rapidamente ai suoi messaggi."),
+                q("confini", "La persona mi chiedeva di ridurre il tempo con amici o familiari per stare insieme."),
+                q("confini", "La persona diceva che svolgere attività separate indicava mancanza di affetto."),
+                q("confini", "La persona insisteva per ottenere manifestazioni di affetto per cui non mi sentivo pronto."),
+                q("alternanza", "Dopo periodi di attenzioni molto intense, la persona diventava improvvisamente distante."),
+                q("alternanza", "Dopo un conflitto o un mio tentativo di allontanarmi, le attenzioni intense ricominciavano."),
+                q("alternanza", "Le attenzioni della persona cambiavano quando non accettavo una sua richiesta."),
+                q("alternanza", "Mi sentivo in debito per le attenzioni o i gesti ricevuti."),
+                q("alternanza", "Cambiavo programmi o priorità per mantenere la vicinanza intensa."),
+                q("alternanza", "Esitavo a porre un limite perché temevo che le attenzioni diminuissero.")));
+
+        String commonSafety = "Il risultato non dimostra love bombing, manipolazione, abuso, intenzioni, narcisismo, diagnosi o colpe: entusiasmo reciproco, differenze comunicative e altri contesti possono produrre esperienze simili. "
+                + "Se ti senti sotto pressione, meno libero o in difficoltà puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. "
+                + "Minacce, paura, violenza, isolamento o controllo meritano attenzione indipendentemente dal punteggio: in caso di pericolo immediato chiama il 112; se sei una donna e vivi violenza o stalking, il 1522 offre orientamento gratuito anche via chat.";
+
+        saveGlobal(id, "LOW",
+                "Le dinamiche associate al love bombing sembrano molto poco presenti nelle tue risposte",
+                "Attenzioni molto intense, accelerazione del legame, pressione sui confini e alternanza risultano poco frequenti in tutte le aree. Nella fase scelta non emerge quindi una configurazione diffusa delle dinamiche esplorate.",
+                "Questo andamento non esclude un singolo episodio importante, una condotta non inclusa o altre forme di controllo o violenza. Affetto e progetti condivisi possono essere vissuti in modi diversi: contano reciprocità, libertà di rallentare, stabilità e conseguenze concrete. " + commonSafety);
+        saveGlobal(id, "MIXED",
+                "Le dinamiche associate al love bombing sembrano presenti in modo variabile",
+                "Le risposte cambiano tra intensità, accelerazione, rispetto dei confini e alternanza, senza aree al livello editoriale più alto. Alcune dinamiche possono quindi comparire in momenti o forme specifiche, mentre altre risultano poco frequenti.",
+                "Osserva in quali episodi ti sentivi libero di scegliere il ritmo, mantenere i tuoi spazi e dire di no senza perdere affetto o subire pressioni. La variabilità può riflettere entusiasmo reciproco, aspettative diverse oppure un andamento instabile che richiede più contesto. " + commonSafety);
+        saveGlobal(id, "FOCUSED",
+                "Le dinamiche associate al love bombing sembrano più presenti in una o due aree",
+                "Una o due aree raccolgono dinamiche riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso nuclei specifici senza definire l'intera relazione né stabilire le motivazioni dell'altra persona.",
+                "Consulta le aree emergenti per distinguere intensità delle attenzioni, accelerazione, pressione sui confini e instabilità con effetti sulla tua autonomia. Considera sequenza, durata, possibilità di rallentare, risposta al dissenso e conseguenze su relazioni, attività e decisioni. " + commonSafety);
+        saveGlobal(id, "BROAD",
+                "Le dinamiche associate al love bombing sembrano molto presenti in più aree",
+                "Le risposte indicano dinamiche frequenti in almeno tre delle quattro aree esplorate. Attenzioni e promesse intense possono quindi accompagnarsi a pressione sui confini o instabilità, formando una configurazione ampia nella fase considerata.",
+                "Considera se l'intensità fosse reciproca e stabile o se rendesse difficile rallentare, dissentire, mantenere contatti e decidere in autonomia. Un professionista o un servizio specializzato può aiutarti a ricostruire sequenza, contesto e opzioni senza partire da un'etichetta; non affrontare la persona se questo potrebbe aumentare il pericolo. " + commonSafety);
+
+        saveAreaInsights(id, "intensita",
+                "Contatti, complimenti, attenzioni e gesti molto intensi risultano poco frequenti. Non stabilisce la qualità o la sincerità dell'affetto presente nella relazione.",
+                "In alcune situazioni le attenzioni erano particolarmente intense rispetto alla fase della conoscenza. Considera se il ritmo fosse reciproco e lasciasse spazio alle tue attività.",
+                "Contatti, idealizzazione, gesti impegnativi o richieste di tempo risultano frequenti. L'intensità da sola non dimostra love bombing: contano consenso, confini e andamento successivo.");
+        saveAreaInsights(id, "accelerazione",
+                "Dichiarazioni, promesse e progetti molto precoci risultano poco frequenti. Non definisce quanto rapidamente una relazione dovrebbe svilupparsi.",
+                "In alcuni momenti il legame procedeva rapidamente attraverso dichiarazioni, confidenze o progetti. Osserva se potevi scegliere il ritmo senza pressione.",
+                "Dichiarazioni, promesse, confidenze o aspettative di impegno precoce risultano frequenti. L'area non dimostra la sincerità dei sentimenti né intenzioni manipolative.");
+        saveAreaInsights(id, "confini",
+                "Pressione sulla disponibilità, sull'esclusività o sulle manifestazioni di affetto risulta poco frequente. Non valuta ogni confine o forma di controllo possibile.",
+                "In alcune situazioni il bisogno di spazio o attività separate incontrava aspettative o reazioni negative. Considera se i limiti venivano poi rispettati.",
+                "Pressione su contatti, tempo, esclusività o affetto risulta frequente. Il dato non accerta controllo coercitivo o abuso, ma il rispetto dei confini merita attenzione.");
+        saveAreaInsights(id, "alternanza",
+                "Distanza improvvisa, ritorno delle attenzioni e adattamenti per mantenerle risultano poco frequenti. Non esclude altri effetti o cambiamenti della relazione.",
+                "In alcuni momenti le attenzioni cambiavano o influenzavano limiti e priorità. Osserva la sequenza e se potevi restare autonomo senza temere la distanza.",
+                "Instabilità delle attenzioni, senso di debito o cambiamenti delle tue scelte risultano frequenti. L'area non dimostra causalità, dipendenza o un ciclo di abuso.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -2842,6 +2951,15 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("A qualitative analysis of gaslighting in romantic relationships — Klein e colleghi", "https://doi.org/10.1111/pere.12510"),
                 ref("The Sociology of Gaslighting — Sweet", "https://doi.org/10.1177/0003122419874843"),
                 ref("Gaslighting Exposure During Emerging Adulthood — Bellomare e colleghi", "https://doi.org/10.21500/20112084.6306"),
+                ref("Definizioni e indicatori sulla violenza psicologica — Istat", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/"),
+                ref("Understanding Psychological Violence against Women — EIGE", "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu"),
+                ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
+        syncReferences("love-bombing", List.of(
+                ref("Love-bombing: A Narcissistic Approach to Relationship Formation — Strutzenberg e colleghi", "https://doi.org/10.54119/discovery.zxgc9960"),
+                ref("Turkish Adaptation Study of Love Bombing Scale — Çalışkan Sarı", "https://doi.org/10.17336/igusbd.1651349"),
+                ref("Women's Experiences of Coercive Control — Choudhury e colleghi", "https://doi.org/10.1007/s10896-025-00970-6"),
+                ref("A qualitative analysis of gaslighting in romantic relationships — Klein e colleghi", "https://doi.org/10.1111/pere.12510"),
+                ref("Coercive control in intimate partner violence — Hamberger e colleghi", "https://doi.org/10.1016/j.avb.2017.08.003"),
                 ref("Definizioni e indicatori sulla violenza psicologica — Istat", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/"),
                 ref("Understanding Psychological Violence against Women — EIGE", "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu"),
                 ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));

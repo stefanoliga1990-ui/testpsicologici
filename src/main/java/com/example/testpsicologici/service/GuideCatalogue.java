@@ -2988,6 +2988,127 @@ public class GuideCatalogue {
                                     "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "love-bombing",
+                    "love-bombing",
+                    "Love bombing nelle relazioni",
+                    "Quando l'intensità iniziale incontra pressione e perdita di autonomia",
+                    "Love bombing: significato, segnali e limiti | Spazio Test",
+                    "Che cosa indica il love bombing, come distinguerlo da un coinvolgimento intenso e perché consenso, ritmo, confini, stabilità e sicurezza contano più dei singoli gesti.",
+                    "Love bombing è un termine emergente usato per descrivere una possibile configurazione di attenzioni, idealizzazione e promesse molto intense, soprattutto all'inizio di una relazione, che può accompagnarsi a pressione o controllo. Non è una diagnosi e affetto, entusiasmo o romanticismo non sono di per sé prove di manipolazione.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Un'etichetta emergente, non una diagnosi",
+                                    List.of(
+                                            "La ricerca specifica sul love bombing è ancora ridotta. Il primo studio quantitativo ha osservato comunicazione intensa nelle fasi iniziali e associazioni con altre caratteristiche, mentre una revisione qualitativa sul controllo coercitivo ha ritrovato in alcuni studi racconti di affetto travolgente nelle prime settimane o mesi.",
+                                            "Questi risultati aiutano a formulare domande, ma non stabiliscono una definizione clinica, una sequenza universale o un modo per riconoscere le intenzioni di una persona. Per questo è più prudente descrivere comportamenti, ritmo, confini ed effetti che attribuire subito un'etichetta."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni utili",
+                                    "Affetto intenso e love bombing non sono sinonimi",
+                                    List.of(
+                                            "Una relazione può iniziare con molti messaggi, complimenti, regali o progetti ed essere comunque reciproca e rispettosa. Non esiste una velocità universalmente corretta: contano il significato condiviso, la possibilità di rallentare e la libertà di mantenere attività e relazioni proprie.",
+                                            "Diventano più rilevanti una pressione ripetuta, limiti ignorati, esclusività richiesta, attenzioni condizionate al consenso o un'alternanza che rende difficile decidere autonomamente. Anche questi elementi richiedono contesto e non consentono di accertare intenzione, manipolazione o abuso attraverso un test online."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le quattro aree",
+                                    "Come è organizzato il questionario",
+                                    List.of(
+                                            "Spazio Test organizza 24 item originali in quattro lenti editoriali. Non riproducono la Love Bombing Scale, non sono fattori confermati negli adulti italiani e la barra complessiva non rappresenta una percentuale di love bombing."
+                                    ),
+                                    List.of(
+                                            "Intensità di attenzioni e idealizzazione: contatti, complimenti, gesti e richieste di tempo rispetto alla fase della conoscenza.",
+                                            "Accelerazione del legame e promesse: dichiarazioni, confidenze, progetti e aspettative d'impegno molto precoci.",
+                                            "Pressione, esclusività e rispetto dei confini: reazioni allo spazio, alla disponibilità, alle attività separate e alle manifestazioni di affetto.",
+                                            "Instabilità delle attenzioni e impatto sull'autonomia: distanza e ritorno delle attenzioni, senso di debito e adattamento di limiti o priorità."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Le evidenze disponibili non offrono una soglia italiana",
+                                    List.of(
+                                            "La prima scala pubblicata è nata in un campione di studenti di un solo ateneo statunitense. Un adattamento turco del 2026 su adulti emergenti ha eliminato item, trovato una struttura diversa e riportato indici di consistenza interna modesti: segnali che sconsigliano di trattare il costrutto come già stabile.",
+                                            "Non è stata individuata una validazione italiana peer-reviewed specifica sul love bombing. Le fonti italiane ed europee sulla violenza psicologica aiutano a comprendere controllo e sicurezza, ma non validano le quattro aree, gli item o le soglie descrittive di Spazio Test."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Cosa osservare",
+                                    "Sequenza, reciprocità, confini e conseguenze",
+                                    List.of(
+                                            "Può essere utile ricostruire una fase concreta: che cosa accadeva, se potevi scegliere il ritmo, come veniva accolto un no e se le attenzioni restavano stabili quando mantenevi i tuoi spazi. Un gesto isolato dice meno della sequenza e della possibilità effettiva di dissentire.",
+                                            "Osserva anche eventuali cambiamenti nel tempo dedicato ad amici, famiglia, interessi, lavoro o studio e se comparivano paura, senso di debito o pressione. Appunti e confronti con persone fidate vanno cercati soltanto se è sicuro farlo."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto e alternative",
+                                    "L'intensità può avere significati diversi",
+                                    List.of(
+                                            "Entusiasmo reciproco, stili personali o culturali, distanza geografica e aspettative non esplicitate possono produrre comportamenti simili ad alcuni item. D'altra parte, affetto e dichiarazioni positive possono anche comparire dentro dinamiche di controllo: nessuna delle due conclusioni può essere tratta automaticamente.",
+                                            "Le associazioni tra love bombing, narcisismo, attaccamento o autostima sono risultati di gruppo e non spiegano il singolo caso. Il questionario non può diagnosticare il partner, stabilire la sincerità dei sentimenti o attribuire la causa dei tuoi vissuti alla relazione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Il bisogno di aiuto non dipende dal punteggio",
+                                    List.of(
+                                            "Se ti senti spesso sotto pressione, impaurito o meno libero, puoi parlarne con uno psicologo, psicoterapeuta, medico, Centro di Salute Mentale o servizio competente. Una persona fidata può aiutarti a considerare il contesto, purché contattarla non aumenti il rischio.",
+                                            "In caso di pericolo immediato chiama il 112. Se sei una donna e vivi violenza o stalking, il servizio pubblico 1522 è gratuito, attivo 24 ore su 24 e disponibile anche via chat; può orientarti verso servizi territoriali e non sostituisce il 112 nelle emergenze."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 24 item originali riferiti a una sola fase di una relazione romantica e quattro aree editoriali. Non dimostra love bombing, manipolazione, abuso o controllo, non attribuisce intenzioni o diagnosi e non sostituisce una valutazione o un supporto professionale.",
+                    List.of(
+                            new GuideReference(
+                                    "Love-bombing: A Narcissistic Approach to Relationship Formation — Strutzenberg e colleghi",
+                                    "https://doi.org/10.54119/discovery.zxgc9960",
+                                    "Studio trasversale su 484 studenti statunitensi consultato per la prima operazionalizzazione specifica; singolo ateneo, disegno correlazionale e pubblicazione studentesca non provano intenzione né validano l'app."
+                            ),
+                            new GuideReference(
+                                    "Turkish Adaptation Study of Love Bombing Scale — Çalışkan Sarı",
+                                    "https://doi.org/10.17336/igusbd.1651349",
+                                    "Adattamento turco su adulti emergenti consultato per instabilità della struttura e affidabilità modesta; campione non italiano e fascia 18–29 non consentono trasferimenti all'app."
+                            ),
+                            new GuideReference(
+                                    "Women's Experiences of Coercive Control — Choudhury e colleghi",
+                                    "https://doi.org/10.1007/s10896-025-00970-6",
+                                    "Revisione sistematica qualitativa di 31 studi consultata per intensità iniziale, agency e contesto; il sottotema compare in pochi studi su donne che riferiscono controllo coercitivo."
+                            ),
+                            new GuideReference(
+                                    "A qualitative analysis of gaslighting in romantic relationships — Klein e colleghi",
+                                    "https://doi.org/10.1111/pere.12510",
+                                    "Studio qualitativo su 65 adulti autoselezionati consultato per il possibile ritorno delle attenzioni dopo conflitto o distanza; il love bombing non era il costrutto primario."
+                            ),
+                            new GuideReference(
+                                    "Coercive control in intimate partner violence — Hamberger e colleghi",
+                                    "https://doi.org/10.1016/j.avb.2017.08.003",
+                                    "Revisione concettuale consultata per distinguere singoli comportamenti da controllo coercitivo, che richiede intenzionalità, percezione e minaccia; non valida una misura di love bombing."
+                            ),
+                            new GuideReference(
+                                    "Definizioni e indicatori sulla violenza psicologica — Istat",
+                                    "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/",
+                                    "Fonte istituzionale italiana consultata per denigrazione, controllo, isolamento e intimidazione; riguarda soprattutto violenza contro le donne nella coppia e non definisce il love bombing."
+                            ),
+                            new GuideReference(
+                                    "Understanding Psychological Violence against Women — EIGE",
+                                    "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu",
+                                    "Sintesi europea consultata per il quadro più ampio della violenza psicologica; non è una scala, non identifica il love bombing e non copre tutti i generi."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

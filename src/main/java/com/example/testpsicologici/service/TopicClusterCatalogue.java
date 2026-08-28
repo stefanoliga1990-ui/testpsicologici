@@ -32,6 +32,7 @@ public class TopicClusterCatalogue {
                             "paura-abbandono",
                             "limerenza",
                             "dipendenza-affettiva",
+                            "love-bombing",
                             "gelosia-partner",
                             "gaslighting",
                             "dinamiche-narcisistiche-partner",

@@ -1,0 +1,117 @@
+{
+  "test": {
+    "id": "love-bombing",
+    "titolo": "Ho subito love bombing?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa riferita a una fase di una relazione romantica specifica",
+    "periodo_riferimento": "Primi sei mesi della fase iniziale o di un riavvicinamento significativo, o intera fase se più breve",
+    "direzione_punteggio": "Valori più alti descrivono una maggiore frequenza delle dinamiche formulate",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non dimostra love bombing, manipolazione, abuso o controllo e non attribuisce intenzioni, narcisismo, colpe o diagnosi alla persona indicata."
+  },
+  "istruzione_risposta": "Pensando ai primi sei mesi della fase scelta, o all'intera fase se più breve, con quale frequenza accadeva?",
+  "calcolo": {
+    "risposte": {
+      "Mai": 1,
+      "Raramente": 2,
+      "A volte": 3,
+      "Spesso": 4,
+      "Quasi sempre": 5
+    },
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale di love bombing, un percentile, una probabilità, una misura di gravità o una prova di manipolazione",
+    "ordine_aree_risultato": "Ordine teorico stabile: intensita, accelerazione, confini, alternanza",
+    "limite_aggregazione": "La media unisce condotte ed effetti riferiti; è una sintesi editoriale e le aree devono essere lette separatamente insieme a sequenza, reciprocità e contesto."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le dinamiche associate al love bombing sembrano molto poco presenti nelle tue risposte",
+      "sottotitolo": "Attenzioni molto intense, accelerazione del legame, pressione sui confini e alternanza risultano poco frequenti in tutte le aree. Nella fase scelta non emerge quindi una configurazione diffusa delle dinamiche esplorate.",
+      "descrizione": "Questo andamento non esclude un singolo episodio importante, una condotta non inclusa o altre forme di controllo o violenza. Affetto e progetti condivisi possono essere vissuti in modi diversi: contano reciprocità, libertà di rallentare, stabilità e conseguenze concrete. Il risultato non dimostra love bombing, manipolazione, abuso, intenzioni, narcisismo, diagnosi o colpe; se ti senti sotto pressione o meno libero puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. In caso di pericolo immediato chiama il 112; per donne che vivono violenza o stalking è disponibile il 1522."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le dinamiche associate al love bombing sembrano presenti in modo variabile",
+      "sottotitolo": "Le risposte cambiano tra intensità, accelerazione, rispetto dei confini e alternanza, senza aree al livello editoriale più alto. Alcune dinamiche possono quindi comparire in momenti o forme specifiche, mentre altre risultano poco frequenti.",
+      "descrizione": "Osserva in quali episodi ti sentivi libero di scegliere il ritmo, mantenere i tuoi spazi e dire di no senza perdere affetto o subire pressioni. La variabilità può riflettere entusiasmo reciproco, aspettative diverse oppure un andamento instabile che richiede più contesto. Il risultato non dimostra love bombing, manipolazione, abuso, intenzioni, narcisismo, diagnosi o colpe; se ti senti sotto pressione o meno libero puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. In caso di pericolo immediato chiama il 112; per donne che vivono violenza o stalking è disponibile il 1522."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le dinamiche associate al love bombing sembrano più presenti in una o due aree",
+      "sottotitolo": "Una o due aree raccolgono dinamiche riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso nuclei specifici senza definire l'intera relazione né stabilire le motivazioni dell'altra persona.",
+      "descrizione": "Consulta le aree emergenti per distinguere intensità delle attenzioni, accelerazione, pressione sui confini e instabilità con effetti sulla tua autonomia. Considera sequenza, durata, possibilità di rallentare, risposta al dissenso e conseguenze su relazioni, attività e decisioni. Il risultato non dimostra love bombing, manipolazione, abuso, intenzioni, narcisismo, diagnosi o colpe; se ti senti sotto pressione o meno libero puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. In caso di pericolo immediato chiama il 112; per donne che vivono violenza o stalking è disponibile il 1522."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le dinamiche associate al love bombing sembrano molto presenti in più aree",
+      "sottotitolo": "Le risposte indicano dinamiche frequenti in almeno tre delle quattro aree esplorate. Attenzioni e promesse intense possono quindi accompagnarsi a pressione sui confini o instabilità, formando una configurazione ampia nella fase considerata.",
+      "descrizione": "Considera se l'intensità fosse reciproca e stabile o se rendesse difficile rallentare, dissentire, mantenere contatti e decidere in autonomia. Un professionista o un servizio specializzato può aiutarti a ricostruire sequenza, contesto e opzioni senza partire da un'etichetta; non affrontare la persona se questo potrebbe aumentare il pericolo. Il risultato non dimostra love bombing, manipolazione, abuso, intenzioni, narcisismo, diagnosi o colpe. In caso di pericolo immediato chiama il 112; per donne che vivono violenza o stalking è disponibile il 1522."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "intensita",
+      "nome_area": "Intensità di attenzioni e idealizzazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Contatti, complimenti, attenzioni e gesti molto intensi risultano poco frequenti. Non stabilisce la qualità o la sincerità dell'affetto presente nella relazione."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni le attenzioni erano particolarmente intense rispetto alla fase della conoscenza. Considera se il ritmo fosse reciproco e lasciasse spazio alle tue attività."},
+        {"livello": "HIGH", "descrizione": "Contatti, idealizzazione, gesti impegnativi o richieste di tempo risultano frequenti. L'intensità da sola non dimostra love bombing: contano consenso, confini e andamento successivo."}
+      ]
+    },
+    {
+      "area_code": "accelerazione",
+      "nome_area": "Accelerazione del legame e promesse",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Dichiarazioni, promesse e progetti molto precoci risultano poco frequenti. Non definisce quanto rapidamente una relazione dovrebbe svilupparsi."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni momenti il legame procedeva rapidamente attraverso dichiarazioni, confidenze o progetti. Osserva se potevi scegliere il ritmo senza pressione."},
+        {"livello": "HIGH", "descrizione": "Dichiarazioni, promesse, confidenze o aspettative di impegno precoce risultano frequenti. L'area non dimostra la sincerità dei sentimenti né intenzioni manipolative."}
+      ]
+    },
+    {
+      "area_code": "confini",
+      "nome_area": "Pressione, esclusività e rispetto dei confini",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Pressione sulla disponibilità, sull'esclusività o sulle manifestazioni di affetto risulta poco frequente. Non valuta ogni confine o forma di controllo possibile."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni il bisogno di spazio o attività separate incontrava aspettative o reazioni negative. Considera se i limiti venivano poi rispettati."},
+        {"livello": "HIGH", "descrizione": "Pressione su contatti, tempo, esclusività o affetto risulta frequente. Il dato non accerta controllo coercitivo o abuso, ma il rispetto dei confini merita attenzione."}
+      ]
+    },
+    {
+      "area_code": "alternanza",
+      "nome_area": "Instabilità delle attenzioni e impatto sull'autonomia",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Distanza improvvisa, ritorno delle attenzioni e adattamenti per mantenerle risultano poco frequenti. Non esclude altri effetti o cambiamenti della relazione."},
+        {"livello": "MEDIUM", "descrizione": "In alcuni momenti le attenzioni cambiavano o influenzavano limiti e priorità. Osserva la sequenza e se potevi restare autonomo senza temere la distanza."},
+        {"livello": "HIGH", "descrizione": "Instabilità delle attenzioni, senso di debito o cambiamenti delle tue scelte risultano frequenti. L'area non dimostra causalità, dipendenza o un ciclo di abuso."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {"titolo": "Love-bombing: A Narcissistic Approach to Relationship Formation", "url": "https://doi.org/10.54119/discovery.zxgc9960", "apporto": "Primo studio quantitativo specifico consultato per comunicazione intensa e fase iniziale; campione universitario statunitense e disegno correlazionale non provano intenzione o causalità."},
+    {"titolo": "Turkish Adaptation Study of Love Bombing Scale", "url": "https://doi.org/10.17336/igusbd.1651349", "apporto": "Adattamento turco consultato per la struttura modificata e l'affidabilità interna modesta; adulti emergenti non italiani, item e punteggi non sono trasferiti."},
+    {"titolo": "Women's Experiences of Coercive Control in Intimate Partner Relationships", "url": "https://doi.org/10.1007/s10896-025-00970-6", "apporto": "Revisione qualitativa consultata per intensità iniziale, agency e contesto; il sottotema compare in pochi studi su donne che riferiscono controllo coercitivo."},
+    {"titolo": "A qualitative analysis of gaslighting in romantic relationships", "url": "https://doi.org/10.1111/pere.12510", "apporto": "Studio qualitativo consultato per il possibile ritorno ciclico delle attenzioni; il love bombing non era il costrutto principale e il campione era piccolo e autoselezionato."},
+    {"titolo": "Coercive control in intimate partner violence", "url": "https://doi.org/10.1016/j.avb.2017.08.003", "apporto": "Revisione concettuale consultata per distinguere singoli gesti da controllo coercitivo; non valida item o soglie sul love bombing."},
+    {"titolo": "Definizioni e indicatori sulla violenza psicologica — Istat", "url": "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "apporto": "Fonte italiana consultata per controllo, isolamento e intimidazione; il perimetro riguarda soprattutto donne e partner e non definisce il love bombing."},
+    {"titolo": "Understanding Psychological Violence against Women — EIGE", "url": "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu", "apporto": "Fonte europea consultata per il quadro della violenza psicologica; non è una misura del love bombing e non copre tutti i generi."},
+    {"titolo": "1522 — Numero Anti Violenza e Stalking", "url": "https://www.1522.eu/cose-1522/", "apporto": "Pagina istituzionale italiana consultata per destinatari, gratuità, continuità e orientamento; non è evidenza sul costrutto e non sostituisce il 112."}
+  ],
+  "bibliografia_scheda": "La scheda di approfondimento mantiene una bibliografia esplicita; distingue fonti del costrutto, contesto italiano ed europeo e riferimenti di sicurezza.",
+  "limite": "Non esistono dati che validino in adulti italiani questo specifico set di 24 item, le quattro aree, la scala, le soglie, l'aggregazione o le interpretazioni."
+}

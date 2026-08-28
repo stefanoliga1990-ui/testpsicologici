@@ -1186,7 +1186,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/approfondimenti/limerenza\"")))
                 .andExpect(content().string(containsString("href=\"/test/paura-abbandono\"")))
                 .andExpect(content().string(containsString("href=\"/test/dipendenza-affettiva\"")))
-                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
+                .andExpect(content().string(containsString("href=\"/test/love-bombing\"")))
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString("1522")));
 
@@ -1364,6 +1364,70 @@ class PageRenderingTest {
     }
 
     @Test
+    void loveBombingIntroductionAndGuideExposeCategoryRelatedContentAndSafetyLimits() throws Exception {
+        mockMvc.perform(get("/test/love-bombing"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Ho subito love bombing?")))
+                .andExpect(content().string(containsString("Intensità di attenzioni e idealizzazione")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/love-bombing\"")))
+                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
+                .andExpect(content().string(containsString("href=\"/test/dipendenza-affettiva\"")))
+                .andExpect(content().string(containsString("href=\"/test/gaslighting\"")))
+                .andExpect(content().string(containsString("una sola relazione romantica")))
+                .andExpect(content().string(containsString("non dimostrano da soli love bombing")));
+
+        mockMvc.perform(get("/approfondimenti/love-bombing"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Un'etichetta emergente, non una diagnosi")))
+                .andExpect(content().string(containsString("Affetto intenso e love bombing non sono sinonimi")))
+                .andExpect(content().string(containsString("Le evidenze disponibili non offrono una soglia italiana")))
+                .andExpect(content().string(containsString("Il bisogno di aiuto non dipende dal punteggio")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/test/love-bombing\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void loveBombingResultRendersOverallAndFourAreaAnalysesWithRelatedTests() throws Exception {
+        mockMvc.perform(get("/test/love-bombing/risultato")
+                        .session(completedAttempt("love-bombing", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le dinamiche associate al love bombing sembrano molto presenti in più aree")))
+                .andExpect(content().string(containsString("Intensità di attenzioni e idealizzazione")))
+                .andExpect(content().string(containsString("Accelerazione del legame e promesse")))
+                .andExpect(content().string(containsString("Pressione, esclusività e rispetto dei confini")))
+                .andExpect(content().string(containsString("Instabilità delle attenzioni e impatto sull'autonomia")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/love-bombing/risultato/pdf\"")))
+                .andExpect(content().string(containsString("Test correlati")))
+                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/love-bombing\"")));
+    }
+
+    @Test
+    void loveBombingResultCanBeDownloadedAsReadablePdf() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/test/love-bombing/risultato/pdf")
+                        .session(completedAttempt("love-bombing", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-love-bombing.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Ho subito love bombing?")
+                    .contains("Intensità di attenzioni e idealizzazione")
+                    .contains("Accelerazione del legame e promesse")
+                    .contains("non dimostra love bombing")
+                    .contains("narcisismo")
+                    .contains("1522");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -1431,6 +1495,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/parentificazione")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/gaslighting")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/love-bombing")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))

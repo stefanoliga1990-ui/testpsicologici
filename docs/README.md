@@ -1,6 +1,6 @@
 # Documentazione dei questionari
 
-- `audit-psicometrico-2026-08.md` descrive l'audit trasversale e lo stato corrente dei 27 questionari.
+- `audit-psicometrico-2026-08.md` descrive l'audit trasversale dei 27 questionari presenti al momento della revisione; le specifiche aggiunte successivamente documentano i nuovi questionari.
 - `audit-fonti-2026-08.md` documenta criteri, decisioni e limiti della revisione delle fonti per la popolazione italiana.
 - `revisione-analisi-globali-2026-08.md` definisce struttura e requisiti delle restituzioni complessive più dettagliate.
 - `revisione-titoli-profili-2026-08.md` definisce i titoli globali specifici per tutti i test e la convenzione obbligatoria per i questionari futuri.
@@ -19,6 +19,8 @@
 - `test-stili-attaccamento-v1.md` è la specifica psicometrica corrente del questionario sugli stili di attaccamento adulto-romantici e documenta due dimensioni, quattro prototipi, profili intermedi e scoring dedicato.
 - `test-limerenza-v1.md` è la specifica psicometrica corrente del questionario sulla limerenza e documenta costrutto emergente, quattro aree editoriali, consenso, confini e assenza di validazione italiana.
 - `test-parentificazione-v1.md` è la specifica psicometrica corrente del questionario retrospettivo sulla parentificazione e documenta responsabilità pratiche ed emotive, inversione dei ruoli, contesto e limiti del ricordo.
+- `test-gaslighting-v1.md` è la specifica psicometrica corrente del questionario sulle esperienze associate al gaslighting e documenta unità relazionale, tattiche epistemiche, potere, autodubbio e limiti nell'accertamento dei fatti.
+- `test-love-bombing-v1.md` è la specifica psicometrica corrente del questionario sulle dinamiche associate al love bombing e documenta fase relazionale, intensità, accelerazione, confini, alternanza, sicurezza e limiti delle evidenze disponibili.
 - Gli altri file `analisi-test-*-v1.json`, `test-autismo-v2.md`, `test-adhd-v2.md` e `test-ocd-v1.md` sono specifiche delle versioni indicate nel nome. Restano nel repository per tracciabilità e non descrivono necessariamente soglie, ancore o ordine di somministrazione correnti.
 
 Il codice e i test automatici sono la fonte operativa per la versione pubblicata. Qualunque nuova versione deve aggiornare anche l'audit o aggiungere una specifica di revisione equivalente.

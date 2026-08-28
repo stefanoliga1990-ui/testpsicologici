@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(28).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(29).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1449,10 +1449,63 @@ class TestResultServiceTest {
     }
 
     @Test
+    void loveBombingTestLoadsItsOriginalPhaseSpecificBalancedStructureAndSources() {
+        PsychologicalTest test = catalogue.findById("love-bombing");
+
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "intensita", "accelerazione", "confini", "alternanza");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(6));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "intensita", "accelerazione", "confini", "alternanza");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains(
+                "primi sei mesi", "fase scelta", "più breve", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "informativo", "non validato", "una sola relazione", "non dimostrano da soli love bombing", "interromperti");
+        assertThat(test.references()).hasSize(8).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.54119/discovery.zxgc9960",
+                "https://doi.org/10.17336/igusbd.1651349",
+                "https://doi.org/10.1007/s10896-025-00970-6",
+                "https://doi.org/10.1111/pere.12510",
+                "https://doi.org/10.1016/j.avb.2017.08.003",
+                "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/",
+                "https://eige.europa.eu/publications-resources/publications/understanding-psychological-violence-against-women-need-harmonised-definitions-and-data-eu",
+                "https://www.1522.eu/cose-1522/");
+    }
+
+    @Test
+    void loveBombingProfilesUseAreaPatternsAndKeepInterpretiveAndSafetyLimitsIndependentFromLevel() {
+        TestResult low = analyzeWithAnswersForTest("love-bombing", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("love-bombing", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("love-bombing", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("love-bombing", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).contains("love bombing", "molto poco presenti");
+        assertThat(mixed.general().title()).contains("love bombing", "modo variabile");
+        assertThat(focused.general().title()).contains("love bombing", "una o due aree");
+        assertThat(broad.general().title()).contains("love bombing", "molto presenti", "più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(4);
+            assertThat(result.general().detail()).contains(
+                    "non dimostra love bombing", "manipolazione", "intenzioni", "narcisismo",
+                    "entusiasmo reciproco", "sicuro", "112", "1522");
+        });
+        assertThat(low.percentage()).isZero();
+        assertThat(broad.percentage()).isEqualTo(75);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }
