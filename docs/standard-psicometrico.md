@@ -42,6 +42,7 @@ Output: tabella `dimensione → indicatori → item candidati → esclusioni`.
 - Tutte le categorie devono essere etichettate e ordinate nello stesso verso.
 - Per l'attuale scala di frequenza si usa: `Mai=1`, `Raramente=2`, `A volte=3`, `Spesso=4`, `Quasi sempre=5`.
 - Per eventi discreti privi di un denominatore naturale può essere documentata una scala di occorrenza: `Mai=1`, `Una volta=2`, `Poche volte=3`, `Diverse volte=4`, `Molte volte=5`. La domanda deve chiedere quante volte sia accaduto; le categorie restano ordinali e richiedono verifica cognitiva e pilota perché non equivalgono a intervalli numerici standardizzati.
+- Per valutazioni esplicite di soddisfazione può essere documentata la scala di grado: `Per nulla soddisfatto/a=1`, `Poco soddisfatto/a=2`, `Abbastanza soddisfatto/a=3`, `Molto soddisfatto/a=4`, `Pienamente soddisfatto/a=5`. La domanda deve chiedere quanto la persona sia soddisfatta e non con quale frequenza; le categorie e le soglie restano editoriali e non vanno convertite in scale ufficiali 0–10.
 - Prevedere “non applicabile” solo quando è concettualmente legittimo e definire prima la gestione dei dati mancanti.
 
 ### 4. Struttura e somministrazione

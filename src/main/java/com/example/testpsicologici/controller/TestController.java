@@ -52,6 +52,9 @@ public class TestController {
                     "Molto vero per me", "Del tutto vero per me");
     private static final List<String> OCCURRENCE_ANSWER_OPTIONS =
             List.of("Mai", "Una volta", "Poche volte", "Diverse volte", "Molte volte");
+    private static final List<String> SATISFACTION_ANSWER_OPTIONS =
+            List.of("Per nulla soddisfatto/a", "Poco soddisfatto/a", "Abbastanza soddisfatto/a",
+                    "Molto soddisfatto/a", "Pienamente soddisfatto/a");
 
     private final TestCatalogue catalogue;
     private final TestResultService resultService;
@@ -287,6 +290,7 @@ public class TestController {
         return switch (test.answerScale()) {
             case "AGREEMENT" -> AGREEMENT_ANSWER_OPTIONS;
             case "OCCURRENCE" -> OCCURRENCE_ANSWER_OPTIONS;
+            case "SATISFACTION" -> SATISFACTION_ANSWER_OPTIONS;
             default -> ANSWER_OPTIONS;
         };
     }

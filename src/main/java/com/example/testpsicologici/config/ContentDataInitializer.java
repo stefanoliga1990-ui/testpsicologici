@@ -2095,7 +2095,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedLifeSatisfactionInformationTest() {
         String id = "soddisfazione-vita";
-        String version = "1.1";
+        String version = "2.0";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -2103,16 +2103,17 @@ public class ContentDataInitializer implements ApplicationRunner {
                 id,
                 "Sono soddisfatto/a della mia vita?",
                 "Autovalutazione informativa",
-                "Esplora con quale frequenza riconosci valutazioni positive della tua vita, della quotidianità e del percorso recente.",
-                "6 min · 24 domande",
-                "Questo questionario per adulti è informativo e riguarda le valutazioni positive riconosciute negli ultimi tre mesi. Esplora un giudizio soggettivo: non è la Satisfaction With Life Scale, non consente confronti con norme e una frequenza bassa non indica fallimento personale. Non formula diagnosi; se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o vai al Pronto Soccorso.",
+                "Esplora il grado di soddisfazione percepito in otto ambiti: attività, condizioni materiali, legami, salute, equilibrio e futuro.",
+                "8 min · 32 domande",
+                "Questo questionario per adulti è informativo e riguarda gli ultimi tre mesi. Valuta la tua situazione attuale: per attività principale puoi intendere lavoro, studio, ricerca di lavoro, cura o altro ruolo; per vita affettiva considera anche la condizione di essere single e per famiglia anche la distanza scelta o necessaria. Non è una scala validata e non formula diagnosi; se pensi di farti del male o c'è un pericolo immediato, chiama il 112 o vai al Pronto Soccorso.",
                 version, false,
-                "Frequenza complessiva delle valutazioni positive riferite",
-                "Frequenza delle valutazioni positive riferite",
+                "Soddisfazione complessiva negli ambiti esplorati",
+                "Soddisfazione riferita nell'ambito",
                 true, 23).withSeo(
                 "Test soddisfazione di vita: sono soddisfatto/a? | Spazio Test",
-                "Questionario informativo di 24 domande sulle valutazioni positive della propria vita, quotidianità, priorità e percorso. Non è la SWLS.")
-                .withResponseInstruction("Pensando agli ultimi tre mesi, con quale frequenza hai riconosciuto questa valutazione della tua vita?"));
+                "Questionario informativo di 32 domande sulla soddisfazione percepita in otto ambiti della vita. Non è una scala clinica o normativa.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi, indica quanto ti senti soddisfatto/a di ciascun aspetto della tua vita.")
+                .withAnswerScale("SATISFACTION"));
 
         saveReference(id, "La Satisfaction With Life Scale: validazione italiana con lavoratori adulti — Di Fabio e Palazzeschi",
                 "https://flore.unifi.it/handle/2158/656647", 1);
@@ -2122,71 +2123,99 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "https://pubmed.ncbi.nlm.nih.gov/16367493/", 3);
         saveReference(id, "OECD Guidelines on Measuring Subjective Well-being — 2025 Update",
                 "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/measuring-subjective-well-being_b4b53f27.html", 4);
-        saveReference(id, "Measurement invariance of the Satisfaction With Life Scale — Emerson e colleghi",
-                "https://pubmed.ncbi.nlm.nih.gov/28324322/", 5);
-        saveReference(id, "Life satisfaction around the world — Jebb e colleghi",
-                "https://doi.org/10.1371/journal.pone.0313107", 6);
+        saveReference(id, "Core and extended survey modules — OECD Guidelines 2025",
+                "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/core-and-extended-survey-modules_37f842ef.html", 5);
+        saveReference(id, "Validazione italiana del WHOQOL-BREF — De Girolamo e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/10859875/", 6);
 
-        saveArea(id, "complessiva", "Valutazione complessiva della propria vita", 1);
-        saveArea(id, "quotidianita", "Soddisfazione per la vita quotidiana", 2);
-        saveArea(id, "coerenza", "Coerenza con priorità e criteri personali", 3);
-        saveArea(id, "direzione", "Soddisfazione per direzione e percorso recente", 4);
+        saveArea(id, "attivita", "Lavoro, studio e attività principale", 1);
+        saveArea(id, "economia", "Condizioni economiche e materiali", 2);
+        saveArea(id, "affettivita", "Vita affettiva e intima", 3);
+        saveArea(id, "famiglia", "Relazioni familiari", 4);
+        saveArea(id, "socialita", "Amicizie e appartenenza sociale", 5);
+        saveArea(id, "salute", "Salute fisica ed energia", 6);
+        saveArea(id, "equilibrio", "Tempo personale, riposo ed equilibrio con lo stress", 7);
+        saveArea(id, "direzione", "Realizzazione, direzione e futuro", 8);
 
         saveQuestions(id, List.of(
-                q("complessiva", "Considero soddisfacente la mia vita nel suo insieme."),
-                q("complessiva", "Il bilancio che faccio della mia vita è positivo."),
-                q("complessiva", "Valuto favorevolmente la vita che sto conducendo."),
-                q("complessiva", "Mi sento soddisfatto/a della mia situazione complessiva."),
-                q("complessiva", "Riconosco aspetti della mia vita che mi danno soddisfazione."),
-                q("complessiva", "Apprezzo l'assetto attuale della mia vita."),
-                q("quotidianita", "Sono soddisfatto/a di come trascorro le mie giornate."),
-                q("quotidianita", "Trovo soddisfacenti le attività che occupano il mio tempo."),
-                q("quotidianita", "Apprezzo il ritmo delle mie giornate."),
-                q("quotidianita", "Sono soddisfatto/a di come utilizzo il mio tempo quotidiano."),
-                q("quotidianita", "Riconosco momenti soddisfacenti nelle mie giornate."),
-                q("quotidianita", "Valuto positivamente l'organizzazione della mia vita quotidiana."),
-                q("coerenza", "Valuto positivamente quanto la mia vita rispecchia ciò che conta per me."),
-                q("coerenza", "Sono soddisfatto/a dello spazio che riservo alle mie priorità."),
-                q("coerenza", "Il modo in cui vivo è coerente con i miei criteri personali."),
-                q("coerenza", "Mi riconosco nelle scelte che stanno orientando la mia vita."),
-                q("coerenza", "Sono soddisfatto/a di come distribuisco gli impegni rispetto alle mie priorità."),
-                q("coerenza", "Mi sento in accordo con il modo in cui sto conducendo la mia vita."),
-                q("direzione", "Sono soddisfatto/a della direzione attuale della mia vita."),
-                q("direzione", "Valuto positivamente i passi compiuti negli ultimi mesi."),
-                q("direzione", "Il percorso recente della mia vita mi sembra soddisfacente."),
-                q("direzione", "Riconosco continuità tra la vita che conduco e quella che desidero."),
-                q("direzione", "Sono soddisfatto/a dell'andamento recente della mia vita."),
-                q("direzione", "Valuto positivamente il punto in cui mi trovo nel mio percorso.")));
+                q("attivita", "Quanto sei soddisfatto/a dell'attività principale che occupa le tue giornate?"),
+                q("attivita", "Quanto sei soddisfatto/a delle condizioni in cui svolgi la tua attività principale?"),
+                q("attivita", "Quanto sei soddisfatto/a della possibilità di usare le tue competenze nella tua attività principale?"),
+                q("attivita", "Quanto sei soddisfatto/a delle possibilità di imparare attraverso la tua attività principale?"),
+                q("economia", "Quanto sei soddisfatto/a delle risorse economiche disponibili per i bisogni essenziali?"),
+                q("economia", "Quanto sei soddisfatto/a della stabilità della tua situazione economica?"),
+                q("economia", "Quanto sei soddisfatto/a della tua attuale situazione abitativa?"),
+                q("economia", "Quanto sei soddisfatto/a del margine economico disponibile per affrontare un imprevisto?"),
+                q("affettivita", "Quanto sei soddisfatto/a della tua situazione affettiva attuale, che tu sia in coppia o meno?"),
+                q("affettivita", "Quanto sei soddisfatto/a dello spazio che affetto e intimità hanno oggi nella tua vita?"),
+                q("affettivita", "Quanto sei soddisfatto/a del rispetto dei tuoi bisogni e confini nella tua vita affettiva?"),
+                q("affettivita", "Quanto sei soddisfatto/a della possibilità di vivere i legami affettivi nel modo che desideri?"),
+                q("famiglia", "Quanto sei soddisfatto/a della configurazione attuale dei tuoi rapporti familiari?"),
+                q("famiglia", "Quanto sei soddisfatto/a del rispetto che sperimenti nei rapporti familiari?"),
+                q("famiglia", "Quanto sei soddisfatto/a del supporto disponibile nei tuoi rapporti familiari?"),
+                q("famiglia", "Quanto sei soddisfatto/a della possibilità di mantenere i confini che desideri nei rapporti familiari?"),
+                q("socialita", "Quanto sei soddisfatto/a della qualità delle tue amicizie?"),
+                q("socialita", "Quanto sei soddisfatto/a delle occasioni che hai per condividere tempo con altre persone?"),
+                q("socialita", "Quanto sei soddisfatto/a della rete di persone su cui puoi contare?"),
+                q("socialita", "Quanto sei soddisfatto/a del tuo senso di appartenenza a un contesto sociale?"),
+                q("salute", "Quanto sei soddisfatto/a della tua salute fisica attuale?"),
+                q("salute", "Quanto sei soddisfatto/a dell'energia che hai a disposizione nelle tue giornate?"),
+                q("salute", "Quanto sei soddisfatto/a di come la salute ti permette di svolgere le attività quotidiane?"),
+                q("salute", "Quanto sei soddisfatto/a di come riesci a prenderti cura dei tuoi bisogni di salute?"),
+                q("equilibrio", "Quanto sei soddisfatto/a di quanto è gestibile il carico di stress nella tua vita quotidiana?"),
+                q("equilibrio", "Quanto sei soddisfatto/a del tempo che riesci a dedicare al recupero e al riposo?"),
+                q("equilibrio", "Quanto sei soddisfatto/a del tempo libero che hai a disposizione?"),
+                q("equilibrio", "Quanto sei soddisfatto/a dell'equilibrio tra le richieste quotidiane e i tuoi bisogni personali?"),
+                q("direzione", "Quanto sei soddisfatto/a di ciò che stai realizzando nella tua vita?"),
+                q("direzione", "Quanto sei soddisfatto/a dello spazio che riesci a dedicare ai tuoi obiettivi personali?"),
+                q("direzione", "Quanto sei soddisfatto/a delle opportunità che hai di imparare e crescere?"),
+                q("direzione", "Quanto sei soddisfatto/a delle possibilità che intravedi per il tuo futuro?")));
 
-        saveGlobal(id, "LOW", "La soddisfazione percepita per la propria vita sembra poco espressa nelle risposte",
-                "Le valutazioni positive formulate risultano poco frequenti nel bilancio complessivo, nella quotidianità, nella coerenza con le priorità e nella direzione recente. Questo andamento descrive gli ultimi tre mesi e non esclude aspetti soddisfacenti circoscritti o esperienze non coperte dagli item.",
-                "Una frequenza contenuta non dimostra fallimento, ingratitudine o incapacità di apprezzare la vita e può riflettere condizioni concrete, perdite, salute, vincoli o un periodo particolarmente difficile. Osserva quali aspetti pesano sul giudizio e quali bisogni o sostegni potrebbero meritare attenzione, senza trasformare le aree in una classifica. Il risultato non equivale alla SWLS o a una domanda 0–10, non misura felicità o salute mentale e non valuta la sicurezza; le soglie sono esclusivamente editoriali. Se la sofferenza persiste o interferisce con la vita quotidiana, puoi rivolgerti a un professionista qualificato. In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta subito il 112 o recati al pronto soccorso.");
-        saveGlobal(id, "MIXED", "La soddisfazione percepita per la propria vita sembra espressa in modo variabile tra le aree",
-                "Le valutazioni positive compaiono con frequenze diverse tra bilancio complessivo, quotidianità, coerenza personale e percorso recente, senza aree al livello editoriale più alto. La soddisfazione può quindi essere riconosciuta in alcune prospettive o momenti e risultare più contenuta in altri.",
-                "La variabilità può dipendere da criteri personali, condizioni del periodo, opportunità disponibili e differenze tra il giudizio sulla vita nel suo insieme e quello sulle giornate o sulla direzione recente. Consulta ogni area nel suo ordine teorico e osserva le circostanze che sostengono o limitano le valutazioni positive, senza interpretare differenze piccole come gerarchie. Il risultato non equivale alla SWLS o a una domanda 0–10, non misura felicità o salute mentale e non valuta la sicurezza; le soglie sono esclusivamente editoriali. Se la sofferenza persiste o interferisce con la vita quotidiana, puoi rivolgerti a un professionista qualificato. In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta subito il 112 o recati al pronto soccorso.");
-        saveGlobal(id, "FOCUSED", "La soddisfazione percepita per la propria vita sembra più espressa in una o due aree",
-                "Una o due prospettive raccolgono valutazioni positive riferite con maggiore frequenza, mentre le altre risultano più contenute o dipendenti dal contesto. Il profilo descrive quindi specifiche fonti di soddisfazione percepita e non autorizza a generalizzarle all'intera vita.",
-                "Le aree emergenti possono indicare dove riconosci più spesso un bilancio positivo, una quotidianità soddisfacente, coerenza personale o una direzione apprezzata. Nelle aree più contenute considera vincoli, margine di scelta, eventi recenti e criteri utilizzati, senza attribuire la differenza a un deficit personale. Il risultato non equivale alla SWLS o a una domanda 0–10, non misura felicità o salute mentale e non valuta la sicurezza; le soglie sono esclusivamente editoriali. Se la sofferenza persiste o interferisce con la vita quotidiana, puoi rivolgerti a un professionista qualificato. In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta subito il 112 o recati al pronto soccorso.");
-        saveGlobal(id, "BROAD", "La soddisfazione percepita per la propria vita sembra ampiamente espressa in più aree",
-                "Le risposte indicano valutazioni positive più frequenti in almeno tre delle quattro prospettive esplorate. Negli ultimi tre mesi, la soddisfazione percepita appare quindi distribuita tra più modi di valutare la vita, senza implicare che ogni ambito o momento sia positivo.",
-                "L'ampiezza descrive una presenza frequente di giudizi positivi, ma non dimostra condizioni oggettivamente favorevoli, felicità costante, assenza di sofferenza o stabilità futura. Può essere utile riconoscere quali condizioni, relazioni, scelte e risorse sostengono questo andamento e quali difficoltà circoscritte restano comunque importanti. Il risultato non equivale alla SWLS o a una domanda 0–10, non misura felicità o salute mentale e non valuta la sicurezza; le soglie sono esclusivamente editoriali. Se la sofferenza persiste o interferisce con la vita quotidiana, puoi rivolgerti a un professionista qualificato. In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta subito il 112 o recati al pronto soccorso.");
+        saveGlobal(id, "LOW", "La soddisfazione per i principali ambiti della vita sembra poco espressa nelle risposte",
+                "Le risposte esprimono una soddisfazione contenuta in tutti gli ambiti esplorati. Il profilo riguarda gli ultimi tre mesi e non esclude risorse o momenti positivi non coperti dalle domande.",
+                "Un andamento contenuto può riflettere difficoltà reali, transizioni, salute, carichi, relazioni o condizioni materiali e non indica ingratitudine o fallimento. Osserva quali ambiti hanno più peso per te e se alcune domande erano poco applicabili alla tua situazione. Il risultato non è una misura validata, non stabilisce cause e non valuta salute mentale o sicurezza; aree, pesi e soglie sono editoriali. Se la sofferenza persiste o interferisce con la vita quotidiana puoi rivolgerti a un professionista qualificato. In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta il 112 o recati al pronto soccorso.");
+        saveGlobal(id, "MIXED", "La soddisfazione per i principali ambiti della vita sembra moderata o variabile",
+                "Le risposte collocano la soddisfazione tra livelli contenuti e intermedi, senza ambiti al livello editoriale più alto. Il profilo mostra differenze tra parti della vita che non devono essere trasformate in una classifica.",
+                "La variabilità può dipendere da priorità personali, condizioni concrete e differente applicabilità degli ambiti. Considera separatamente ciò che vorresti proteggere, cambiare o comprendere meglio, senza usare la media per cancellare un problema specifico. Le soglie sono editoriali e il risultato non è una misura di felicità, successo, salute mentale o sicurezza. Il bisogno di supporto non dipende dal livello ottenuto. In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta il 112 o recati al pronto soccorso.");
+        saveGlobal(id, "FOCUSED", "La soddisfazione per i principali ambiti della vita sembra più espressa in alcuni ambiti",
+                "Uno o più ambiti raccolgono giudizi di soddisfazione elevati, mentre altri risultano intermedi o contenuti. Le fonti di soddisfazione appaiono quindi specifiche e non vanno generalizzate automaticamente all'intera vita.",
+                "Le aree, i pesi e le soglie sono editoriali. Le aree più positive possono indicare condizioni o relazioni che desideri preservare; quelle più contenute possono riflettere bisogni, vincoli o priorità differenti. Differenze piccole tra barre non hanno significato psicometrico e l'uguale ponderazione non rappresenta ciò che conta di più per te. Il risultato non certifica qualità oggettiva, successo, salute mentale o assenza di sofferenza. Se una difficoltà persiste puoi cercare supporto indipendentemente dalla media. In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta il 112 o recati al pronto soccorso.");
+        saveGlobal(id, "BROAD", "La soddisfazione per i principali ambiti della vita sembra ampiamente espressa",
+                "Le risposte esprimono una soddisfazione elevata in almeno sette degli otto ambiti esplorati. La configurazione è ampia, ma non significa che ogni esperienza sia positiva o che non esistano difficoltà circoscritte.",
+                "Può essere utile riconoscere quali condizioni, relazioni e possibilità sostengono i giudizi espressi e quali aspetti desideri comunque migliorare. Una risposta elevata non dimostra condizioni oggettivamente favorevoli, felicità costante, stabilità futura o assenza di bisogno. Le aree e le soglie sono editoriali e non equivalgono a SWLS, WHOQOL, PWI o statistiche ufficiali. Il supporto resta appropriato quando serve. In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta il 112 o recati al pronto soccorso.");
 
-        saveAreaInsights(id, "complessiva",
-                "Le valutazioni positive della vita nel suo insieme risultano poco frequenti. Questo non stabilisce le cause, non definisce il tuo valore e non esclude aspetti circoscritti che consideri soddisfacenti.",
-                "Il bilancio complessivo positivo compare in alcuni momenti o con frequenza intermedia. Nota quali criteri usi, quale periodo richiami e quanto eventi o condizioni attuali incidono sul giudizio.",
-                "La vita nel suo insieme viene valutata positivamente con frequenza. Il dato non equivale a felicità costante, assenza di problemi o qualità oggettiva delle condizioni di vita.");
-        saveAreaInsights(id, "quotidianita",
-                "Giornate, attività, ritmo e organizzazione risultano poco spesso soddisfacenti. Vincoli, salute, carichi e opportunità concrete sono essenziali per leggere questa frequenza senza attribuirla a una mancanza personale.",
-                "La soddisfazione quotidiana varia tra momenti o aspetti. Osserva quali condizioni del ritmo, delle attività e dell'uso del tempo la sostengono e quali la rendono meno accessibile.",
-                "Le valutazioni positive della quotidianità sono frequenti. Questo non misura produttività, equilibrio ideale o qualità oggettiva e non esclude giornate difficili o bisogni specifici.");
-        saveAreaInsights(id, "coerenza",
-                "La vita viene raramente valutata come coerente con priorità e criteri personali. Il margine di scelta può essere limitato da responsabilità, risorse, sicurezza o altre condizioni del contesto.",
-                "La coerenza percepita compare in alcune scelte o situazioni. Priorità concorrenti, cambiamenti e vincoli possono spiegare variazioni senza indicare che esista un'unica scelta corretta.",
-                "La vita viene spesso percepita in accordo con priorità e criteri personali. La frequenza non certifica correttezza delle scelte, autonomia completa o un significato valido per tutte le persone.");
+        saveAreaInsights(id, "attivita",
+                "La soddisfazione per l'attività principale risulta contenuta. Considera condizioni, possibilità reali e applicabilità senza trasformare il dato in una valutazione della tua produttività.",
+                "La soddisfazione per l'attività principale è intermedia o varia tra i suoi aspetti. Osserva separatamente condizioni, uso delle competenze e opportunità di apprendimento.",
+                "La soddisfazione per l'attività principale risulta elevata. Il dato non certifica prestazione, status, stabilità o assenza di carichi.");
+        saveAreaInsights(id, "economia",
+                "La soddisfazione per condizioni economiche e materiali risulta contenuta. Risorse, abitazione e imprevisti sono condizioni concrete, non indicatori di merito personale.",
+                "La soddisfazione economica e materiale è intermedia o differisce tra bisogni, stabilità, abitazione e margine per imprevisti.",
+                "La soddisfazione economica e materiale risulta elevata. Non misura reddito, patrimonio, sicurezza futura o assenza di vulnerabilità.");
+        saveAreaInsights(id, "affettivita",
+                "La soddisfazione per la vita affettiva attuale risulta contenuta. Il dato non stabilisce se sia desiderabile essere in coppia né valuta consenso o sicurezza.",
+                "La soddisfazione affettiva è intermedia o varia tra situazione, intimità, confini e possibilità relazionali.",
+                "La soddisfazione per la vita affettiva risulta elevata. Non certifica qualità della relazione, compatibilità o sicurezza.");
+        saveAreaInsights(id, "famiglia",
+                "La soddisfazione per i rapporti familiari risulta contenuta. Distanza, confini o assenza di contatti possono essere protettivi e non indicano un modo sbagliato di vivere la famiglia.",
+                "La soddisfazione familiare è intermedia o varia tra configurazione, rispetto, supporto e confini.",
+                "La soddisfazione per i rapporti familiari risulta elevata. Non dimostra che ogni legame sia positivo o che non servano confini.");
+        saveAreaInsights(id, "socialita",
+                "La soddisfazione per amicizie e appartenenza risulta contenuta. Non misura popolarità, estroversione o valore sociale.",
+                "La soddisfazione sociale è intermedia o varia tra qualità dei legami, occasioni, supporto e appartenenza.",
+                "La soddisfazione per amicizie e appartenenza risulta elevata. Il dato non misura quantità ottimale di contatti o qualità oggettiva della rete.");
+        saveAreaInsights(id, "salute",
+                "La soddisfazione per salute ed energia risulta contenuta. Non è una diagnosi e può riflettere condizioni o barriere reali che meritano attenzione appropriata.",
+                "La soddisfazione per salute ed energia è intermedia o varia tra salute percepita, energia, attività quotidiane e cura dei bisogni.",
+                "La soddisfazione per salute ed energia risulta elevata. Non dimostra assenza di malattia, disabilità o necessità di cure.");
+        saveAreaInsights(id, "equilibrio",
+                "La soddisfazione per tempo, riposo ed equilibrio con lo stress risulta contenuta. Carichi e possibilità di recupero dipendono anche dal contesto.",
+                "La soddisfazione per l'equilibrio quotidiano è intermedia o varia tra stress, recupero, tempo libero e bisogni personali.",
+                "La soddisfazione per tempo ed equilibrio risulta elevata. Non certifica capacità di coping né esclude periodi di stress intenso.");
         saveAreaInsights(id, "direzione",
-                "Direzione, passi e percorso recente risultano poco spesso soddisfacenti. Questo non predice l'andamento futuro e può riflettere una fase di cambiamento, attese o possibilità reali limitate.",
-                "La soddisfazione per il percorso varia tra momenti o valutazioni. Nota quali passi riconosci, quali aspettative usi e quali cambiamenti recenti incidono sul giudizio.",
-                "Direzione e percorso recente vengono valutati positivamente con frequenza. Il dato non dimostra conseguimento oggettivo, successo futuro o assenza di cambiamenti ancora desiderati.");
+                "La soddisfazione per realizzazione e futuro risulta contenuta. Il dato non predice ciò che accadrà e non definisce il tuo successo o valore.",
+                "La soddisfazione per direzione e futuro è intermedia o varia tra risultati, obiettivi, crescita e possibilità percepite.",
+                "La soddisfazione per realizzazione e futuro risulta elevata. Non certifica risultati oggettivi, stabilità o successo futuro.");
     }
 
     private void seedPtsdInformationTest() {
@@ -3195,8 +3224,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("La soddisfazione dei cittadini per le condizioni di vita — ISTAT", "https://www.istat.it/comunicato-stampa/soddisfazione-dei-cittadini-anno-2024/"),
                 ref("The Satisfaction With Life Scale — Diener e colleghi", "https://pubmed.ncbi.nlm.nih.gov/16367493/"),
                 ref("OECD Guidelines on Measuring Subjective Well-being — 2025 Update", "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/measuring-subjective-well-being_b4b53f27.html"),
-                ref("Measurement invariance of the Satisfaction With Life Scale — Emerson e colleghi", "https://pubmed.ncbi.nlm.nih.gov/28324322/"),
-                ref("Life satisfaction around the world — Jebb e colleghi", "https://doi.org/10.1371/journal.pone.0313107")));
+                ref("Core and extended survey modules — OECD Guidelines 2025", "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/core-and-extended-survey-modules_37f842ef.html"),
+                ref("Validazione italiana del WHOQOL-BREF — De Girolamo e colleghi", "https://pubmed.ncbi.nlm.nih.gov/10859875/")));
         syncReferences("ptsd-adulti", List.of(
                 ref("Italian validation of the PTSD Checklist for DSM-5 — Di Tella e colleghi", "https://doi.org/10.3390/ijerph19095282"),
                 ref("Trauma exposure and post-traumatic stress disorder in Italy — Carmassi e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25266475/"),

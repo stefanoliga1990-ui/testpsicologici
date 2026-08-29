@@ -41,7 +41,7 @@ class PsychometricStructureTest {
             Map.entry("intelligenza-intrapersonale", "risorse intrapersonali percepite"),
             Map.entry("resilienza-psicologica", "risorse di resilienza percepite"),
             Map.entry("gelosia-partner", "esperienze di gelosia verso il partner"),
-            Map.entry("soddisfazione-vita", "soddisfazione percepita per la propria vita"),
+            Map.entry("soddisfazione-vita", "soddisfazione per i principali ambiti della vita"),
             Map.entry("ptsd-adulti", "esperienze post-traumatiche esplorate"),
             Map.entry("stili-attaccamento", "orientament"),
             Map.entry("limerenza", "dinamiche associate alla limerenza"),
@@ -87,6 +87,14 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(6));
+            } else if ("soddisfazione-vita".equals(test.id())) {
+                assertThat(test.questions()).hasSize(32);
+                assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("quanto ti senti soddisfatto/a");
+                assertThat(test.answerScale()).isEqualTo("SATISFACTION");
+                assertThat(test.areas()).hasSize(8);
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code()))
+                        .hasSize(4));
             } else {
                 assertThat(test.questions()).hasSize(24);
                 assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
@@ -117,6 +125,8 @@ class PsychometricStructureTest {
         assertThat(resultService.profileCode(2, 0, 2)).isEqualTo("BROAD");
         assertThat(resultService.profileCode(1, 2, 3)).isEqualTo("FOCUSED");
         assertThat(resultService.profileCode(2, 1, 3)).isEqualTo("BROAD");
+        assertThat(resultService.profileCode(6, 2, 8)).isEqualTo("FOCUSED");
+        assertThat(resultService.profileCode(7, 1, 8)).isEqualTo("BROAD");
     }
 
     @Test
@@ -202,6 +212,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("una delle due aree");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("entrambe le aree");
+            } else if ("soddisfazione-vita".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("moderata o variabile");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("alcuni ambiti");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("ampiamente");
             } else {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
@@ -219,7 +234,7 @@ class PsychometricStructureTest {
                     .filter(index -> test.areas().get(index).code().equals(areaCode))
                     .findFirst()
                     .orElseThrow();
-            attempt.answer(questionIndex, areaAnswers[areaIndex]);
+            attempt.answer(questionIndex, areaAnswers[Math.min(areaIndex, areaAnswers.length - 1)]);
         }
         return resultService.analyze(test, attempt);
     }

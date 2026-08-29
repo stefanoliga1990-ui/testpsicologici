@@ -14,7 +14,7 @@
 - `test-intelligenza-intrapersonale-v1.md` è la specifica psicometrica corrente del questionario sull'intelligenza intrapersonale e documenta la distinzione tra auto-osservazione, insight e accuratezza.
 - `test-resilienza-psicologica-v1.md` è la specifica psicometrica corrente del questionario sulla resilienza psicologica e documenta la distinzione tra risorse riferite, processo, contesto ed esito.
 - `test-gelosia-partner-v1.md` è la specifica psicometrica corrente del questionario sulla gelosia verso il partner e documenta la distinzione tra minaccia percepita, emozione, verifica, controllo e fatti della relazione.
-- `test-soddisfazione-vita-v1.md` è la specifica psicometrica corrente del questionario sulla soddisfazione per la propria vita e documenta la distinzione tra valutazione globale, frequenza delle valutazioni positive, affetti e salute mentale.
+- `test-soddisfazione-vita-v2.md` è la specifica psicometrica corrente del questionario sulla soddisfazione negli otto principali ambiti della vita; `test-soddisfazione-vita-v1.md` conserva la precedente struttura globale come storico.
 - `test-ptsd-adulti-v1.md` è la specifica psicometrica corrente del questionario sulle esperienze associate al PTSD e documenta evento di riferimento, approccio trauma-informed, quattro aree teoriche, sicurezza e limiti diagnostici.
 - `test-stili-attaccamento-v1.md` è la specifica psicometrica corrente del questionario sugli stili di attaccamento adulto-romantici e documenta due dimensioni, quattro prototipi, profili intermedi e scoring dedicato.
 - `test-limerenza-v1.md` è la specifica psicometrica corrente del questionario sulla limerenza e documenta costrutto emergente, quattro aree editoriali, consenso, confini e assenza di validazione italiana.

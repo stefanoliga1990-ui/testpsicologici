@@ -1,0 +1,70 @@
+{
+  "test": {
+    "id": "soddisfazione-vita",
+    "versione": "2.0",
+    "titolo": "Sono soddisfatto/a della mia vita?",
+    "numero_domande": 32,
+    "numero_aree": 8,
+    "periodo_riferimento": "ultimi tre mesi",
+    "scala": [
+      {"valore": 1, "etichetta": "Per nulla soddisfatto/a"},
+      {"valore": 2, "etichetta": "Poco soddisfatto/a"},
+      {"valore": 3, "etichetta": "Abbastanza soddisfatto/a"},
+      {"valore": 4, "etichetta": "Molto soddisfatto/a"},
+      {"valore": 5, "etichetta": "Pienamente soddisfatto/a"}
+    ],
+    "scoring": {
+      "media_area": "media semplice dei 4 item dell'area",
+      "media_generale": "media semplice dei 32 item",
+      "soglie_editoriali": {"LOW": "< 2.5", "MEDIUM": "2.5–<3.5", "HIGH": ">= 3.5"},
+      "profilo_LOW": "tutte le 8 aree LOW",
+      "profilo_MIXED": "nessuna area HIGH e almeno una MEDIUM",
+      "profilo_FOCUSED": "da 1 a 6 aree HIGH",
+      "profilo_BROAD": "almeno 7 aree HIGH",
+      "barra": "(media - 1) / 4 * 100; trasformazione editoriale non normativa"
+    }
+  },
+  "profili_globali": [
+    {
+      "codice": "LOW",
+      "titolo": "La soddisfazione per i principali ambiti della vita sembra poco espressa nelle risposte",
+      "sintesi": "Le risposte esprimono una soddisfazione contenuta in tutti gli ambiti esplorati. Il profilo riguarda gli ultimi tre mesi e non esclude risorse o momenti positivi non coperti dalle domande.",
+      "approfondimento": "Un andamento contenuto può riflettere difficoltà reali, transizioni, salute, carichi, relazioni o condizioni materiali e non indica ingratitudine o fallimento. Osserva quali ambiti hanno più peso per te e se alcune domande erano poco applicabili alla tua situazione. Il risultato non è una misura validata, non stabilisce cause e non valuta salute mentale o sicurezza. Se la sofferenza persiste o interferisce con la vita quotidiana puoi rivolgerti a un professionista qualificato; in presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato contatta il 112 o recati al pronto soccorso."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "La soddisfazione per i principali ambiti della vita sembra moderata o variabile",
+      "sintesi": "Le risposte collocano la soddisfazione tra livelli contenuti e intermedi, senza ambiti al livello editoriale più alto. Il profilo mostra differenze tra parti della vita che non devono essere trasformate in una classifica.",
+      "approfondimento": "La variabilità può dipendere da priorità personali, condizioni concrete e differente applicabilità degli ambiti. Considera separatamente ciò che vorresti proteggere, cambiare o comprendere meglio, senza usare la media per cancellare un problema specifico. Le soglie sono editoriali e il risultato non è una misura di felicità, successo o salute mentale. Il bisogno di supporto non dipende dal livello; in presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato contatta il 112 o recati al pronto soccorso."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "La soddisfazione per i principali ambiti della vita sembra più espressa in alcuni ambiti",
+      "sintesi": "Uno o più ambiti raccolgono giudizi di soddisfazione elevati, mentre altri risultano intermedi o contenuti. Le fonti di soddisfazione appaiono quindi specifiche e non vanno generalizzate automaticamente all'intera vita.",
+      "approfondimento": "Le aree, i pesi e le soglie sono editoriali. Le aree più positive possono indicare condizioni o relazioni che desideri preservare; quelle più contenute possono riflettere bisogni, vincoli o priorità differenti. Differenze piccole tra barre non hanno significato psicometrico e l'uguale ponderazione non rappresenta ciò che conta di più per te. Il risultato non certifica qualità oggettiva, successo o assenza di sofferenza. Se una difficoltà persiste puoi cercare supporto indipendentemente dalla media; in presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato contatta il 112 o recati al pronto soccorso."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "La soddisfazione per i principali ambiti della vita sembra ampiamente espressa",
+      "sintesi": "Le risposte esprimono una soddisfazione elevata in almeno sette degli otto ambiti esplorati. La configurazione è ampia, ma non significa che ogni esperienza sia positiva o che non esistano difficoltà circoscritte.",
+      "approfondimento": "Può essere utile riconoscere quali condizioni, relazioni e possibilità sostengono i giudizi espressi e quali aspetti desideri comunque migliorare. Una risposta elevata non dimostra condizioni oggettivamente favorevoli, felicità costante, stabilità futura o assenza di bisogno. Le aree e le soglie sono editoriali e non equivalgono a SWLS, WHOQOL, PWI o statistiche ufficiali. Il supporto resta appropriato quando serve; in presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato contatta il 112 o recati al pronto soccorso."
+    }
+  ],
+  "aree": [
+    {"codice": "attivita", "titolo": "Lavoro, studio e attività principale", "LOW": "La soddisfazione per l'attività principale risulta contenuta. Considera condizioni, possibilità reali e applicabilità senza trasformare il dato in una valutazione della tua produttività.", "MEDIUM": "La soddisfazione per l'attività principale è intermedia o varia tra i suoi aspetti. Osserva separatamente condizioni, uso delle competenze e opportunità di apprendimento.", "HIGH": "La soddisfazione per l'attività principale risulta elevata. Il dato non certifica prestazione, status, stabilità o assenza di carichi."},
+    {"codice": "economia", "titolo": "Condizioni economiche e materiali", "LOW": "La soddisfazione per condizioni economiche e materiali risulta contenuta. Risorse, abitazione e imprevisti sono condizioni concrete, non indicatori di merito personale.", "MEDIUM": "La soddisfazione economica e materiale è intermedia o differisce tra bisogni, stabilità, abitazione e margine per imprevisti.", "HIGH": "La soddisfazione economica e materiale risulta elevata. Non misura reddito, patrimonio, sicurezza futura o assenza di vulnerabilità."},
+    {"codice": "affettivita", "titolo": "Vita affettiva e intima", "LOW": "La soddisfazione per la vita affettiva attuale risulta contenuta. Il dato non stabilisce se sia desiderabile essere in coppia né valuta consenso o sicurezza.", "MEDIUM": "La soddisfazione affettiva è intermedia o varia tra situazione, intimità, confini e possibilità relazionali.", "HIGH": "La soddisfazione per la vita affettiva risulta elevata. Non certifica qualità della relazione, compatibilità o sicurezza."},
+    {"codice": "famiglia", "titolo": "Relazioni familiari", "LOW": "La soddisfazione per i rapporti familiari risulta contenuta. Distanza, confini o assenza di contatti possono essere protettivi e non indicano un modo sbagliato di vivere la famiglia.", "MEDIUM": "La soddisfazione familiare è intermedia o varia tra configurazione, rispetto, supporto e confini.", "HIGH": "La soddisfazione per i rapporti familiari risulta elevata. Non dimostra che ogni legame sia positivo o che non servano confini."},
+    {"codice": "socialita", "titolo": "Amicizie e appartenenza sociale", "LOW": "La soddisfazione per amicizie e appartenenza risulta contenuta. Non misura popolarità, estroversione o valore sociale.", "MEDIUM": "La soddisfazione sociale è intermedia o varia tra qualità dei legami, occasioni, supporto e appartenenza.", "HIGH": "La soddisfazione per amicizie e appartenenza risulta elevata. Il dato non misura quantità ottimale di contatti o qualità oggettiva della rete."},
+    {"codice": "salute", "titolo": "Salute fisica ed energia", "LOW": "La soddisfazione per salute ed energia risulta contenuta. Non è una diagnosi e può riflettere condizioni o barriere reali che meritano attenzione appropriata.", "MEDIUM": "La soddisfazione per salute ed energia è intermedia o varia tra salute percepita, energia, attività quotidiane e cura dei bisogni.", "HIGH": "La soddisfazione per salute ed energia risulta elevata. Non dimostra assenza di malattia, disabilità o necessità di cure."},
+    {"codice": "equilibrio", "titolo": "Tempo personale, riposo ed equilibrio con lo stress", "LOW": "La soddisfazione per tempo, riposo ed equilibrio con lo stress risulta contenuta. Carichi e possibilità di recupero dipendono anche dal contesto.", "MEDIUM": "La soddisfazione per l'equilibrio quotidiano è intermedia o varia tra stress, recupero, tempo libero e bisogni personali.", "HIGH": "La soddisfazione per tempo ed equilibrio risulta elevata. Non certifica capacità di coping né esclude periodi di stress intenso."},
+    {"codice": "direzione", "titolo": "Realizzazione, direzione e futuro", "LOW": "La soddisfazione per realizzazione e futuro risulta contenuta. Il dato non predice ciò che accadrà e non definisce il tuo successo o valore.", "MEDIUM": "La soddisfazione per direzione e futuro è intermedia o varia tra risultati, obiettivi, crescita e possibilità percepite.", "HIGH": "La soddisfazione per realizzazione e futuro risulta elevata. Non certifica risultati oggettivi, stabilità o successo futuro."}
+  ],
+  "limiti": [
+    "Questionario originale informativo, non validato e non normato.",
+    "Le otto aree non sono fattori psicometrici dimostrati.",
+    "La media assegna lo stesso peso a tutti gli ambiti, indipendentemente dalla loro importanza personale.",
+    "Non equivale a SWLS, WHOQOL-BREF, PWI o rilevazioni ISTAT/OECD.",
+    "Non misura salute mentale, rischio suicidario o sicurezza."
+  ]
+}

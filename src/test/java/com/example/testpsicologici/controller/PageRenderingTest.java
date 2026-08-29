@@ -831,11 +831,70 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Che cos&#39;è la soddisfazione di vita")))
                 .andExpect(content().string(containsString("Soddisfazione, felicità e salute mentale non coincidono")))
                 .andExpect(content().string(containsString("La vita nel complesso non è la somma automatica dei suoi ambiti")))
-                .andExpect(content().string(containsString("Frequenza e grado di soddisfazione sono domande diverse")))
-                .andExpect(content().string(containsString("676 lavoratori adulti")))
+                .andExpect(content().string(containsString("Perché Spazio Test mostra otto ambiti")))
+                .andExpect(content().string(containsString("Il test chiede un grado di soddisfazione, non una frequenza")))
+                .andExpect(content().string(containsString("Validazione italiana del WHOQOL-BREF")))
+                .andExpect(content().string(containsString("676 lavoratori italiani")))
                 .andExpect(content().string(containsString("flore.unifi.it")))
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString("href=\"/test/soddisfazione-vita\"")));
+    }
+
+    @Test
+    void lifeSatisfactionQuestionAndResultRenderDedicatedScaleAndEightDomains() throws Exception {
+        MockHttpSession inProgress = new MockHttpSession();
+        inProgress.setAttribute("test-attempt-soddisfazione-vita", new TestAttempt(32));
+
+        mockMvc.perform(get("/test/soddisfazione-vita/domanda/1").session(inProgress))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Quanto sei soddisfatto/a dell&#39;attività principale")))
+                .andExpect(content().string(containsString("Per nulla soddisfatto/a")))
+                .andExpect(content().string(containsString("Poco soddisfatto/a")))
+                .andExpect(content().string(containsString("Abbastanza soddisfatto/a")))
+                .andExpect(content().string(containsString("Molto soddisfatto/a")))
+                .andExpect(content().string(containsString("Pienamente soddisfatto/a")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString(">Quasi sempre<"))));
+
+        mockMvc.perform(get("/test/soddisfazione-vita/risultato")
+                        .session(completedAttempt("soddisfazione-vita", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "La soddisfazione per i principali ambiti della vita sembra ampiamente espressa")))
+                .andExpect(content().string(containsString("Lavoro, studio e attività principale")))
+                .andExpect(content().string(containsString("Condizioni economiche e materiali")))
+                .andExpect(content().string(containsString("Vita affettiva e intima")))
+                .andExpect(content().string(containsString("Relazioni familiari")))
+                .andExpect(content().string(containsString("Amicizie e appartenenza sociale")))
+                .andExpect(content().string(containsString("Salute fisica ed energia")))
+                .andExpect(content().string(containsString("Tempo personale, riposo ed equilibrio con lo stress")))
+                .andExpect(content().string(containsString("Realizzazione, direzione e futuro")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/soddisfazione-vita/risultato/pdf\"")));
+    }
+
+    @Test
+    void lifeSatisfactionResultCanBeDownloadedAsReadablePdfWithEightDomains() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/test/soddisfazione-vita/risultato/pdf")
+                        .session(completedAttempt("soddisfazione-vita", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-soddisfazione-vita.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Sono soddisfatto/a della mia vita?")
+                    .contains("Lavoro, studio e attività principale")
+                    .contains("Condizioni economiche e materiali")
+                    .contains("Vita affettiva e intima")
+                    .contains("Relazioni familiari")
+                    .contains("Amicizie e appartenenza sociale")
+                    .contains("Salute fisica ed energia")
+                    .contains("equilibrio con lo stress")
+                    .contains("Realizzazione, direzione e futuro")
+                    .contains("112");
+        }
     }
 
     @Test
@@ -1085,8 +1144,11 @@ class PageRenderingTest {
         mockMvc.perform(get("/test/soddisfazione-vita"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Approfondisci l'argomento")))
-                .andExpect(content().string(containsString("non è la Satisfaction With Life Scale")))
-                .andExpect(content().string(containsString("non consente confronti con norme")))
+                .andExpect(content().string(containsString("Lavoro, studio e attività principale")))
+                .andExpect(content().string(containsString("Vita affettiva e intima")))
+                .andExpect(content().string(containsString("Realizzazione, direzione e futuro")))
+                .andExpect(content().string(containsString("Per nulla soddisfatto/a")))
+                .andExpect(content().string(containsString("Pienamente soddisfatto/a")))
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/soddisfazione-vita\"")));

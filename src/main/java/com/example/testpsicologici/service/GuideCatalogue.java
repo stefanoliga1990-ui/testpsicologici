@@ -2270,23 +2270,24 @@ public class GuideCatalogue {
                             ),
                             new GuideSection(
                                     "Aree del questionario",
-                                    "Perché Spazio Test mostra quattro prospettive",
+                                    "Perché Spazio Test mostra otto ambiti",
                                     List.of(
-                                            "La validazione italiana della SWLS su 676 lavoratori adulti ha sostenuto una struttura unidimensionale. Spazio Test usa quattro prospettive soltanto per rendere la restituzione più leggibile: non sono fattori scientificamente confermati e la loro media non equivale al punteggio SWLS."
+                                            "ISTAT rileva separatamente famiglia, amicizie, salute, tempo libero, lavoro ed economia; il modulo OECD aggiunge tenore di vita, realizzazione, sicurezza, comunità, futuro e ambiente. Spazio Test sintetizza queste cornici in otto ambiti per rendere la restituzione più specifica.",
+                                            "La separazione tra vita affettiva, famiglia e amicizie e l'accorpamento di alcuni temi sono decisioni editoriali. Gli ambiti non sono fattori confermati, non hanno necessariamente la stessa importanza personale e la loro media non equivale a SWLS, WHOQOL-BREF, PWI o statistiche ufficiali."
                                     ),
                                     List.of(
-                                            "Valutazione complessiva: il bilancio riferito sulla vita nel suo insieme.",
-                                            "Vita quotidiana: il giudizio su giornate, attività, ritmo e organizzazione.",
-                                            "Coerenza personale: quanto la vita viene percepita in accordo con priorità e criteri propri.",
-                                            "Direzione recente: il giudizio sul percorso e sul punto attuale, senza prevedere il futuro."
+                                            "Lavoro, studio e attività principale; condizioni economiche e materiali.",
+                                            "Vita affettiva e intima; relazioni familiari; amicizie e appartenenza sociale.",
+                                            "Salute fisica ed energia; tempo personale, riposo ed equilibrio con lo stress.",
+                                            "Realizzazione, direzione e possibilità future."
                                     )
                             ),
                             new GuideSection(
                                     "Come si misura",
-                                    "Frequenza e grado di soddisfazione sono domande diverse",
+                                    "Il test chiede un grado di soddisfazione, non una frequenza",
                                     List.of(
                                             "OECD e ISTAT chiedono generalmente quanto una persona sia soddisfatta della propria vita su una scala da 0 a 10; la SWLS usa più affermazioni valutative con un proprio formato. Queste misure non sono convertibili nella barra di Spazio Test.",
-                                            "L'app chiede invece con quale frequenza, negli ultimi tre mesi, siano state riconosciute alcune valutazioni positive. La barra rappresenta soltanto la trasformazione delle cinque risposte da Mai a Quasi sempre: non è una percentuale di soddisfazione, un percentile o un confronto con la popolazione italiana."
+                                            "La versione 2 dell'app usa cinque categorie da Per nulla soddisfatto/a a Pienamente soddisfatto/a e chiede di considerare gli ultimi tre mesi. La barra è soltanto la trasformazione lineare di queste risposte: non è una percentuale di soddisfazione, un percentile o un confronto con la popolazione italiana."
                                     ),
                                     List.of()
                             ),
@@ -2304,17 +2305,17 @@ public class GuideCatalogue {
                                     "Quando il questionario non basta",
                                     List.of(
                                             "Se insoddisfazione o sofferenza persistono, interferiscono con la vita quotidiana oppure si accompagnano a cambiamenti importanti di sonno, energia, interesse o funzionamento, puoi parlarne con uno psicologo, psicoterapeuta, medico o altro professionista qualificato. Il livello del test non determina da solo la necessità di aiuto.",
-                                            "In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta subito il 112 o recati al pronto soccorso. Le 24 domande, la scala di frequenza, le quattro aree e le soglie di Spazio Test sono originali e non validate e non valutano rischio o sicurezza."
+                                            "In presenza di pensieri di farti del male, intenzione suicidaria o pericolo immediato, contatta subito il 112 o recati al pronto soccorso. Le 32 domande, la scala di soddisfazione, gli otto ambiti e le soglie di Spazio Test sono originali e non validati e non valutano rischio o sicurezza."
                                     ),
                                     List.of()
                             )
                     ),
-                    "Il questionario collegato descrive la frequenza riferita di valutazioni positive sulla propria vita negli ultimi tre mesi. Non è la SWLS, non replica la domanda ufficiale 0–10 e non misura felicità, salute mentale, qualità di vita o sicurezza.",
+                    "Il questionario collegato descrive il grado di soddisfazione riferito in otto ambiti negli ultimi tre mesi. Non è SWLS, WHOQOL-BREF, PWI o una rilevazione ufficiale e non misura felicità, salute mentale, qualità di vita oggettiva o sicurezza.",
                     List.of(
                             new GuideReference(
                                     "La Satisfaction With Life Scale: un contributo alla validazione italiana con lavoratori adulti — Di Fabio e Palazzeschi",
                                     "https://flore.unifi.it/handle/2158/656647",
-                                    "Studio su 676 lavoratori italiani consultato per la struttura unidimensionale della SWLS; campione, item, scala e punteggi differenti non validano le quattro aree dell'app."
+                                    "Studio su 676 lavoratori italiani consultato per distinguere soddisfazione globale e profilo per domini; campione, item, scala e punteggi differenti non validano gli otto ambiti dell'app."
                             ),
                             new GuideReference(
                                     "La soddisfazione dei cittadini per le condizioni di vita — Anno 2024 — ISTAT",
@@ -2329,17 +2330,22 @@ public class GuideCatalogue {
                             new GuideReference(
                                     "OECD Guidelines on Measuring Subjective Well-being — 2025 Update",
                                     "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/measuring-subjective-well-being_b4b53f27.html",
-                                    "Linee guida consultate per distinguere valutazione della vita, affetti, eudaimonia e benessere oggettivo; non sostengono il formato di frequenza originale dell'app."
+                                    "Linee guida consultate per distinguere valutazione della vita, affetti, eudaimonia e benessere oggettivo; non sostengono le aree, i pesi o le soglie originali dell'app."
                             ),
                             new GuideReference(
                                     "Core and extended survey modules — OECD Guidelines 2025",
                                     "https://www.oecd.org/en/publications/oecd-guidelines-on-measuring-subjective-well-being-2025-update_9203632a-en/full-report/core-and-extended-survey-modules_37f842ef.html",
-                                    "Modulo metodologico consultato per la domanda globale 0–10, il contesto di somministrazione e la distinzione dalle valutazioni di dominio; non fornisce conversioni per l'app."
+                                    "Modulo metodologico consultato per tenore di vita, salute, realizzazione, relazioni, sicurezza, comunità, futuro, tempo, ambiente e lavoro; le domande 0–10 non sono copiate o convertite."
+                            ),
+                            new GuideReference(
+                                    "Validazione italiana del WHOQOL-BREF — De Girolamo e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/10859875/",
+                                    "Studio italiano consultato per la distinzione tra domini fisico, psicologico, sociale e ambientale; qualità di vita, campione sanitario e strumento non validano il profilo dell'app."
                             ),
                             new GuideReference(
                                     "Review of the Satisfaction With Life Scale — Pavot e Diener",
                                     "https://doi.org/10.1037/1040-3590.5.2.164",
-                                    "Revisione consultata per il ruolo dei criteri personali nel giudizio riflessivo e per i limiti della misura; non definisce le quattro prospettive editoriali."
+                                    "Revisione consultata per il ruolo dei criteri personali nel giudizio riflessivo e per i limiti della misura; non definisce gli otto ambiti editoriali."
                             ),
                             new GuideReference(
                                     "Measurement invariance of the Satisfaction with Life Scale — Emerson e colleghi",

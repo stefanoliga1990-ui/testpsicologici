@@ -14,6 +14,7 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
   const { error, loading, run } = useAsyncAction(action);
   const isAttachmentStyles = test.scoringModel === 'ATTACHMENT_DIMENSIONAL';
   const isOccurrenceScale = test.answerScale === 'OCCURRENCE';
+  const isSatisfactionScale = test.answerScale === 'SATISFACTION';
   const attachmentStyles = [
     'Orientamento sicuro',
     'Orientamento ansioso-preoccupato',
@@ -54,7 +55,9 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
           <h2>Che cosa esplora questo questionario</h2>
           <p>{isAttachmentStyles
             ? 'Le affermazioni esplorano ansia relazionale ed evitamento della vicinanza. La loro combinazione permette una lettura orientativa dei quattro stili descritti qui sotto, senza assegnare diagnosi o identità definitive.'
-            : isOccurrenceScale
+            : isSatisfactionScale
+              ? 'Le domande sono organizzate negli ambiti indicati qui sotto. La restituzione aiuta a osservare dove la soddisfazione è più o meno espressa, senza stabilire quali parti della vita dovrebbero contare di più.'
+              : isOccurrenceScale
               ? 'Le affermazioni sono organizzate nelle aree indicate qui sotto. La restituzione aiuta a osservare quanti eventi riconosci nel periodo scelto, senza assegnare diagnosi o etichette.'
               : 'Le affermazioni sono organizzate nelle aree indicate qui sotto. La restituzione aiuta a osservare quali esperienze riconosci più spesso, senza assegnare diagnosi o etichette.'}</p>
         </div>
@@ -63,12 +66,16 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
         <div className="editorial-grid">
           <Card className="editorial-card"><p className="eyebrow">Come funziona</p><h2>Una risposta alla volta</h2><p>{isAttachmentStyles
             ? 'Per ogni affermazione indicherai quanto descrive il tuo modo abituale di vivere la relazione scelta come riferimento, da “Per nulla vero per me” a “Del tutto vero per me”. Puoi tornare alla domanda precedente e completare le 24 domande senza creare un account.'
-            : isOccurrenceScale
+            : isSatisfactionScale
+              ? 'Per ogni domanda indicherai il tuo grado di soddisfazione, da “Per nulla soddisfatto/a” a “Pienamente soddisfatto/a”, pensando agli ultimi tre mesi. Puoi tornare alla domanda precedente e completare il percorso senza creare un account.'
+              : isOccurrenceScale
               ? 'Per ogni affermazione indicherai quante volte è accaduta, da “Mai” a “Molte volte”, nel periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'
               : 'Per ogni affermazione indicherai una frequenza da “Mai” a “Quasi sempre”, riferita al periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'}</p></Card>
           <Card className="editorial-card"><p className="eyebrow">Il risultato</p><h2>Una lettura orientativa</h2><p>{isAttachmentStyles
             ? 'Il risultato mostra le due dimensioni esplorate e ordina i quattro orientamenti per vicinanza al profilo delle risposte. Se due orientamenti risultano vicini, la restituzione parla di caratteristiche intermedie; non sono percentuali, categorie cliniche o etichette stabili.'
-            : isOccurrenceScale
+            : isSatisfactionScale
+              ? "Il risultato riassume il grado di soddisfazione generale e negli ambiti esplorati. Le barre sono trasformazioni editoriali delle risposte: non sono percentuali normative, confronti con altre persone o misure di salute mentale."
+              : isOccurrenceScale
               ? "Il risultato riassume l'andamento generale e le aree esplorate. Le barre descrivono il numero riferito degli eventi: non sono percentili, probabilità diagnostiche o misure di gravità clinica."
               : "Il risultato riassume l'andamento generale e le aree esplorate. Le barre descrivono la frequenza delle risposte: non sono percentili, probabilità diagnostiche o misure di gravità clinica."}</p></Card>
         </div>
