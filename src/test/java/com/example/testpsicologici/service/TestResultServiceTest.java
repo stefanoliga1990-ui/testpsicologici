@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(32).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(33).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1665,10 +1665,82 @@ class TestResultServiceTest {
     }
 
     @Test
+    void coupleCompatibilityTestLoadsThirtyTwoInterleavedItemsEightAreasAndAgreementScale() {
+        PsychologicalTest test = catalogue.findById("compatibilita-coppia");
+
+        assertThat(test.title()).isEqualTo("Quanto siamo compatibili come coppia?");
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(32).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "valori", "comunicazione", "conflitto", "sostegno", "intimita",
+                "quotidianita", "denaro", "autonomia");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(4));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "valori", "comunicazione", "conflitto", "sostegno",
+                "intimita", "quotidianita", "denaro", "autonomia");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("AGREEMENT");
+        assertThat(test.responseInstruction()).contains(
+                "ultimi tre mesi", "relazione attuale", "più di recente", "quanto è vera per te");
+        assertThat(test.introductoryText()).contains(
+                "adulti in una relazione romantica attuale", "un solo partner",
+                "tua percezione", "non la voce dell'altra persona", "Non decide", "112", "1522");
+        assertThat(test.references()).hasSize(8).extracting(reference -> reference.url()).containsExactly(
+                "https://iris.unito.it/handle/2318/150383",
+                "https://www.minervamedica.it/it/riviste/minerva-psychiatry/articolo.php?cod=R17Y2002N02A0107",
+                "https://pubmed.ncbi.nlm.nih.gov/21280953/",
+                "https://doi.org/10.1111/jomf.12804",
+                "https://doi.org/10.1177/02654075221128994",
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC9153093/",
+                "https://doi.org/10.1080/01926187.2025.2610780",
+                "https://www.1522.eu/cose-1522/");
+    }
+
+    @Test
+    void coupleCompatibilityProfilesUseEightAreaPatternPositiveDirectionAndSafetyAtEveryLevel() {
+        TestResult low = analyzeWithAnswersForTest("compatibilita-coppia", 1, 1, 1, 1, 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("compatibilita-coppia", 3, 1, 1, 1, 1, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("compatibilita-coppia", 5, 1, 1, 1, 1, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("compatibilita-coppia", 5, 5, 5, 5, 5, 5, 5, 1);
+
+        assertThat(low.general().title()).isEqualTo(
+                "La compatibilità percepita nella coppia sembra poco espressa nelle risposte");
+        assertThat(mixed.general().title()).isEqualTo(
+                "La compatibilità percepita nella coppia sembra moderata o variabile tra gli ambiti");
+        assertThat(focused.general().title()).isEqualTo(
+                "La compatibilità percepita nella coppia sembra più espressa in alcuni ambiti");
+        assertThat(broad.general().title()).isEqualTo(
+                "La compatibilità percepita nella coppia sembra ampiamente espressa");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(8);
+            assertThat(result.general().detail()).contains(
+                    "una sola prospettiva", "non dimostra compatibilità oggettiva",
+                    "non prescrive", "sicurezza", "112", "1522");
+        });
+        assertThat(broad.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Valori, impegno e progetti futuri",
+                "Comunicazione e comprensione reciproca",
+                "Conflitto, riparazione e soluzione dei problemi",
+                "Sostegno emotivo e responsività",
+                "Affetto, intimità e confini",
+                "Vita quotidiana, ruoli e responsabilità",
+                "Denaro e decisioni materiali",
+                "Tempo condiviso, socialità e autonomia");
+        assertThat(low.percentage()).isZero();
+        assertThat(focused.percentage()).isEqualTo(13);
+        assertThat(broad.percentage()).isEqualTo(88);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 100, 100, 100, 100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

@@ -77,6 +77,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedBreadcrumbingInformationTest();
         seedOrbitingInformationTest();
         seedHooveringInformationTest();
+        seedCoupleCompatibilityInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -3119,6 +3120,143 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "La persistenza dopo distanza, silenzio o rifiuto risulta numerosa. Questo non accerta intenzioni o stalking, ma i confini e la sicurezza meritano attenzione indipendentemente dall'etichetta.");
     }
 
+    private void seedCoupleCompatibilityInformationTest() {
+        String id = "compatibilita-coppia";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Quanto siamo compatibili come coppia?",
+                "Autovalutazione informativa",
+                "Esplora la compatibilità che percepisci con il partner in valori, comunicazione, sostegno, intimità e organizzazione della vita.",
+                "8 min · 32 domande",
+                "Questo questionario informativo e non validato è rivolto ad adulti in una relazione romantica attuale. Scegli un solo partner e pensa agli ultimi tre mesi, o all'intera relazione se più recente; rispondi solo in base a ciò che hai osservato, perché il risultato descrive la tua percezione e non la voce dell'altra persona. Non decide se la coppia sia compatibile, debba continuare o sia sicura; in caso di pericolo immediato chiama il 112 e, se sei una donna che vive violenza o stalking, puoi contattare il 1522.",
+                version, false,
+                "Compatibilità complessiva percepita negli ambiti esplorati",
+                "Compatibilità percepita nell'ambito",
+                true, 33).withSeo(
+                "Test compatibilità di coppia: 32 domande | Spazio Test",
+                "Questionario informativo sulla compatibilità percepita nella coppia: valori, comunicazione, conflitti, intimità, quotidianità e autonomia.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi della relazione attuale, o all'intera relazione se è iniziata più di recente, quanto è vera per te questa affermazione?")
+                .withAnswerScale("AGREEMENT"));
+
+        saveReference(id, "Psychometrical Properties of the Dyadic Adjustment Scale with Italian Couples — Garbarini e colleghi",
+                "https://iris.unito.it/handle/2318/150383", 1);
+        saveReference(id, "La Dyadic Adjustment Scale: una misura dell'adattamento di coppia — Gentili e colleghi",
+                "https://www.minervamedica.it/it/riviste/minerva-psychiatry/articolo.php?cod=R17Y2002N02A0107", 2);
+        saveReference(id, "The Relationship Quality Interview — Lawrence e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/21280953/", 3);
+        saveReference(id, "Does couple communication predict later relationship quality and dissolution? — Kanter e colleghi",
+                "https://doi.org/10.1111/jomf.12804", 4);
+        saveReference(id, "Goal interdependence and couples' relationship satisfaction — Toma e colleghi",
+                "https://doi.org/10.1177/02654075221128994", 5);
+        saveReference(id, "Couples' sexual communication and satisfaction — Mallory e colleghi",
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC9153093/", 6);
+        saveReference(id, "Financial factors and couple relationship satisfaction — Wilmarth e colleghi",
+                "https://doi.org/10.1080/01926187.2025.2610780", 7);
+        saveReference(id, "1522 — Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 8);
+
+        saveArea(id, "valori", "Valori, impegno e progetti futuri", 1);
+        saveArea(id, "comunicazione", "Comunicazione e comprensione reciproca", 2);
+        saveArea(id, "conflitto", "Conflitto, riparazione e soluzione dei problemi", 3);
+        saveArea(id, "sostegno", "Sostegno emotivo e responsività", 4);
+        saveArea(id, "intimita", "Affetto, intimità e confini", 5);
+        saveArea(id, "quotidianita", "Vita quotidiana, ruoli e responsabilità", 6);
+        saveArea(id, "denaro", "Denaro e decisioni materiali", 7);
+        saveArea(id, "autonomia", "Tempo condiviso, socialità e autonomia", 8);
+
+        saveQuestions(id, List.of(
+                q("valori", "Condividiamo priorità simili su ciò che conta nella nostra relazione."),
+                q("valori", "Le nostre aspettative sul tipo di impegno desiderato sono conciliabili."),
+                q("valori", "I nostri progetti futuri possono trovare spazio nella stessa relazione."),
+                q("valori", "I percorsi personali di ciascuno possono essere sostenuti senza mettere in discussione il legame."),
+                q("comunicazione", "Riusciamo a dire con chiarezza ciò di cui abbiamo bisogno."),
+                q("comunicazione", "Quando uno di noi parla di qualcosa di importante, l'altro cerca di comprenderlo."),
+                q("comunicazione", "Prima di trarre conclusioni, possiamo chiederci chiarimenti."),
+                q("comunicazione", "Possiamo affrontare argomenti delicati senza evitarli a lungo."),
+                q("conflitto", "Durante un disaccordo riusciamo a mantenere rispetto reciproco."),
+                q("conflitto", "Dopo una pausa riusciamo a riprendere una discussione rimasta aperta."),
+                q("conflitto", "Quando uno di noi ferisce l'altro, può riconoscere la propria responsabilità."),
+                q("conflitto", "Sui problemi concreti riusciamo a trovare soluzioni praticabili per entrambi."),
+                q("sostegno", "Nei momenti difficili posso contare sulla disponibilità del mio partner."),
+                q("sostegno", "Le mie emozioni possono essere accolte senza essere sminuite."),
+                q("sostegno", "Possiamo dirci quale tipo di aiuto sarebbe davvero utile."),
+                q("sostegno", "I successi personali di ciascuno trovano spazio e riconoscimento nella coppia."),
+                q("intimita", "I nostri modi di esprimere affetto sono conciliabili."),
+                q("intimita", "Possiamo parlare del livello di vicinanza fisica che ciascuno desidera."),
+                q("intimita", "I confini espressi nella sfera affettiva o intima vengono rispettati."),
+                q("intimita", "Le differenze nel desiderio di contatto o sessualità possono essere affrontate senza pressione."),
+                q("quotidianita", "La distribuzione delle responsabilità quotidiane ci appare sostenibile."),
+                q("quotidianita", "Possiamo fare affidamento sugli impegni pratici presi reciprocamente."),
+                q("quotidianita", "I nostri ritmi e orari possono essere organizzati senza penalizzare sempre la stessa persona."),
+                q("quotidianita", "Le decisioni pratiche che riguardano entrambi vengono condivise."),
+                q("denaro", "Possiamo parlare apertamente delle questioni economiche che riguardano la coppia."),
+                q("denaro", "Le nostre priorità su spese e risparmio sono conciliabili."),
+                q("denaro", "Gli accordi sulle spese comuni sono abbastanza chiari per entrambi."),
+                q("denaro", "Le differenze nelle risorse economiche possono essere gestite senza trasformarsi in potere sull'altro."),
+                q("autonomia", "La quantità di tempo che trascorriamo insieme è compatibile con i bisogni di entrambi."),
+                q("autonomia", "Ciascuno può mantenere interessi e spazi personali senza minacciare il legame."),
+                q("autonomia", "Riusciamo a conciliare la vita di coppia con amicizie e altre relazioni importanti."),
+                q("autonomia", "Nei periodi di cambiamento possiamo rinegoziare vicinanza e autonomia.")));
+
+        String commonLimits = "Il risultato descrive una sola prospettiva e non dimostra compatibilità oggettiva, reciprocità, soddisfazione del partner, durata futura o sicurezza. "
+                + "Differenze, conflitti e bisogni diversi non rendono automaticamente una coppia incompatibile, mentre aree positive non compensano pressioni, paura o confini non rispettati. "
+                + "Il questionario non prescrive di restare o separarsi; se vuoi comprendere un problema persistente puoi parlarne con un professionista qualificato, individualmente o in coppia quando è sicuro. In caso di pericolo immediato chiama il 112; se sei una donna che vive violenza o stalking, il 1522 offre supporto gratuito anche via chat.";
+
+        saveGlobal(id, "LOW",
+                "La compatibilità percepita nella coppia sembra poco espressa nelle risposte",
+                "Le risposte descrivono una compatibilità percepita contenuta in tutti gli otto ambiti esplorati. Il profilo riguarda il periodo recente e la tua prospettiva, senza stabilire il valore o il futuro della relazione.",
+                "Differenze ampie possono riguardare bisogni, valori, fase del rapporto o condizioni esterne, ma anche temi ancora poco osservati o mai discussi. Considera quali ambiti sono importanti per te, che cosa è negoziabile e che cosa costituisce un confine; aree, pesi e soglie sono editoriali. " + commonLimits);
+        saveGlobal(id, "MIXED",
+                "La compatibilità percepita nella coppia sembra moderata o variabile tra gli ambiti",
+                "Le risposte collocano la compatibilità percepita tra livelli contenuti e intermedi, senza ambiti al livello editoriale più alto. Alcune parti della relazione possono apparire più conciliabili di altre e meritano una lettura separata.",
+                "La variabilità può dipendere da argomenti affrontati in modo diverso, opportunità limitate di osservazione o bisogni che cambiano nel tempo. Può essere utile distinguere una differenza accettata da un accordo solo apparente e osservare se entrambi possono esprimere preferenze; soglie e profili restano editoriali. " + commonLimits);
+        saveGlobal(id, "FOCUSED",
+                "La compatibilità percepita nella coppia sembra più espressa in alcuni ambiti",
+                "Uno o più ambiti raccolgono una compatibilità percepita elevata, mentre altri risultano intermedi o contenuti. Le risorse della coppia appaiono quindi specifiche e non vanno generalizzate automaticamente all'intera relazione.",
+                "Gli ambiti più positivi possono indicare accordi o modi di collaborare da proteggere; quelli più contenuti possono riguardare differenze negoziabili, vincoli esterni o confini non conciliabili. Differenze piccole tra barre non hanno significato psicometrico e gli ambiti non hanno necessariamente lo stesso peso per te; la struttura resta editoriale. " + commonLimits);
+        saveGlobal(id, "BROAD",
+                "La compatibilità percepita nella coppia sembra ampiamente espressa",
+                "Le risposte esprimono una compatibilità percepita elevata in almeno sette degli otto ambiti esplorati. La configurazione appare ampia, pur senza significare accordo perfetto o assenza di difficoltà circoscritte.",
+                "Può essere utile riconoscere quali dialoghi, accordi e condizioni sostengono questa percezione e come vengono rinegoziati quando il contesto cambia. Un profilo ampio non dimostra che ogni differenza sia risolta; aree, pesi e soglie sono editoriali e non predicono stabilità, fedeltà o benessere futuro. " + commonLimits);
+
+        saveAreaInsights(id, "valori",
+                "La conciliabilità percepita di priorità, impegno e progetti risulta contenuta. Può riflettere differenze reali o temi non ancora affrontati e non stabilisce quale scelta sia corretta.",
+                "Valori e progetti appaiono conciliabili in parte o in modo variabile. Osserva quali differenze possono essere negoziate e quali riguardano confini importanti.",
+                "Valori, aspettative di impegno e progetti appaiono ampiamente conciliabili. Il dato non garantisce che resteranno invariati o che il partner li descriverebbe allo stesso modo.");
+        saveAreaInsights(id, "comunicazione",
+                "Chiarezza, ascolto e possibilità di affrontare temi delicati risultano poco riconoscibili. Stress, stile comunicativo e sicurezza del confronto possono influire sulla percezione.",
+                "La comunicazione appare accessibile in alcune situazioni e più difficile in altre. Considera argomenti, tempi e condizioni che facilitano o ostacolano la comprensione.",
+                "Chiarezza, ascolto e confronto sui temi importanti risultano ben riconoscibili. Non significa assenza di incomprensioni o accordo su tutto.");
+        saveAreaInsights(id, "conflitto",
+                "Rispetto nel disaccordo, ripresa del dialogo e riparazione risultano poco riconoscibili. La frequenza dei conflitti da sola non definisce questa area.",
+                "La gestione dei disaccordi appare costruttiva in parte o in modo variabile. Osserva che cosa accade dopo escalation, pause, errori e tentativi di accordo.",
+                "Rispetto, responsabilità e ricerca di soluzioni risultano ampiamente riconoscibili durante i disaccordi. Non esclude conflitti intensi o temi ancora aperti.");
+        saveAreaInsights(id, "sostegno",
+                "Disponibilità, accoglienza emotiva e sostegno adeguato risultano poco riconoscibili. Bisogni diversi o non esplicitati possono contribuire senza rendere irrilevante la mancanza percepita.",
+                "Il sostegno appare presente in alcune circostanze e meno adeguato in altre. Può essere utile distinguere quantità di aiuto e corrispondenza con ciò che serve.",
+                "Disponibilità, accoglienza e riconoscimento risultano ampiamente presenti nella percezione riferita. Il dato non dimostra che ogni bisogno venga compreso o soddisfatto.");
+        saveAreaInsights(id, "intimita",
+                "Modalità affettive, dialogo sulla vicinanza e rispetto dei confini risultano poco conciliabili. Non esiste una quantità universale di contatto o sessualità adeguata a ogni coppia.",
+                "Affetto e intimità appaiono conciliabili in parte o a seconda del momento. Osserva se desideri e limiti possono essere espressi senza pressione.",
+                "Modalità affettive, dialogo sulla vicinanza e rispetto dei confini risultano ampiamente conciliabili. Non certifica consenso in ogni situazione, che deve restare libero e specifico.");
+        saveAreaInsights(id, "quotidianita",
+                "Divisione delle responsabilità, affidabilità e decisioni pratiche risultano poco conciliabili. Condizioni di lavoro, salute o cura possono incidere sulla distribuzione.",
+                "La gestione quotidiana appare sostenibile in parte o con differenze tra compiti e periodi. Considera chiarezza degli accordi e possibilità reale di rinegoziarli.",
+                "Responsabilità, impegni e decisioni pratiche risultano ampiamente conciliabili. Non dimostra che il carico sia oggettivamente uguale o immutabile.");
+        saveAreaInsights(id, "denaro",
+                "Dialogo, priorità e accordi economici risultano poco conciliabili. Le differenze di risorse sono condizioni concrete e non misurano il valore dei partner.",
+                "La gestione economica appare condivisa in alcuni aspetti e meno chiara in altri. Osserva priorità, informazioni disponibili e potere nelle decisioni comuni.",
+                "Dialogo e accordi sulle questioni economiche risultano ampiamente conciliabili. Non misura stabilità finanziaria, reddito o assenza di vulnerabilità.");
+        saveAreaInsights(id, "autonomia",
+                "Tempo insieme, spazi personali e relazioni sociali risultano poco conciliabili. Bisogni diversi non sono di per sé sbagliati, ma possono richiedere accordi espliciti.",
+                "Vicinanza e autonomia appaiono equilibrate in parte o in modo variabile. Considera se entrambi possono esprimere bisogni e mantenere reti importanti.",
+                "Tempo condiviso, socialità e autonomia risultano ampiamente conciliabili. Il dato non stabilisce una quantità ideale né esclude cambiamenti futuri.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -3296,6 +3434,15 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Relational Goal Pursuit Theory of Intimate Partner Obsessive Relational Intrusion — Brownhalls e colleghi", "https://doi.org/10.1177/0886260518822339"),
                 ref("Technology-Facilitated Abuse in Intimate Relationships — Rogers e colleghi", "https://doi.org/10.1177/15248380221090218"),
                 ref("Violenza dentro e fuori la famiglia — Istat", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-fenomeno/violenza-dentro-e-fuori-la-famiglia/il-numero-delle-vittime-e-le-forme-di-violenza/"),
+                ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
+        syncReferences("compatibilita-coppia", List.of(
+                ref("Psychometrical Properties of the Dyadic Adjustment Scale with Italian Couples — Garbarini e colleghi", "https://iris.unito.it/handle/2318/150383"),
+                ref("La Dyadic Adjustment Scale: una misura dell'adattamento di coppia — Gentili e colleghi", "https://www.minervamedica.it/it/riviste/minerva-psychiatry/articolo.php?cod=R17Y2002N02A0107"),
+                ref("The Relationship Quality Interview — Lawrence e colleghi", "https://pubmed.ncbi.nlm.nih.gov/21280953/"),
+                ref("Does couple communication predict later relationship quality and dissolution? — Kanter e colleghi", "https://doi.org/10.1111/jomf.12804"),
+                ref("Goal interdependence and couples' relationship satisfaction — Toma e colleghi", "https://doi.org/10.1177/02654075221128994"),
+                ref("Couples' sexual communication and satisfaction — Mallory e colleghi", "https://pmc.ncbi.nlm.nih.gov/articles/PMC9153093/"),
+                ref("Financial factors and couple relationship satisfaction — Wilmarth e colleghi", "https://doi.org/10.1080/01926187.2025.2610780"),
                 ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
     }
 

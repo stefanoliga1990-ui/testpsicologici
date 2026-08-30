@@ -32,6 +32,7 @@ public class TopicClusterCatalogue {
                             "paura-abbandono",
                             "limerenza",
                             "dipendenza-affettiva",
+                            "compatibilita-coppia",
                             "gelosia-partner",
                             "dinamiche-narcisistiche-partner",
                             "tratti-borderline-adulti"

@@ -59,4 +59,14 @@ class TopicClusterCatalogueTest {
         assertThat(topicClusterCatalogue.findByTestId("limerenza").orElseThrow().testIds())
                 .doesNotContain("gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering");
     }
+
+    @Test
+    void coupleCompatibilityBelongsToRelationshipsAndUsesNearbyRelationalSuggestions() {
+        var cluster = topicClusterCatalogue.findByTestId("compatibilita-coppia").orElseThrow();
+
+        assertThat(cluster.slug()).isEqualTo("relazioni-e-attaccamento");
+        assertThat(cluster.title()).isEqualTo("Relazioni e attaccamento");
+        assertThat(topicClusterCatalogue.findRelatedTestIds("compatibilita-coppia", 3))
+                .containsExactly("gelosia-partner", "dipendenza-affettiva", "dinamiche-narcisistiche-partner");
+    }
 }

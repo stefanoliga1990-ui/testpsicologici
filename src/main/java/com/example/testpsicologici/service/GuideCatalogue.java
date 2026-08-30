@@ -3465,6 +3465,132 @@ public class GuideCatalogue {
                                     "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "compatibilita-coppia",
+                    "compatibilita-coppia",
+                    "Compatibilità di coppia",
+                    "Compatibilità di coppia: differenze, accordi e contesto",
+                    "Compatibilità di coppia: cosa significa | Spazio Test",
+                    "Che cosa può indicare la compatibilità percepita, quali ambiti considerare e perché un risultato individuale non è un verdetto sulla relazione.",
+                    "La compatibilità di coppia non richiede di essere uguali o di non discutere mai. Riguarda il modo in cui differenze, bisogni e progetti risultano conciliabili nella relazione concreta; una sola persona può però descriverne soltanto la propria percezione.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Compatibilità non significa somiglianza perfetta",
+                                    List.of(
+                                            "Nella ricerca non esiste un'unica definizione di compatibilità romantica. Adattamento, qualità e soddisfazione di coppia vengono misurati con strutture diverse e non sono sinonimi perfetti.",
+                                            "Partner con caratteristiche differenti possono costruire accordi soddisfacenti, mentre somiglianze apparenti non garantiscono ascolto, reciprocità o rispetto. Per questo è più utile osservare ambiti concreti che cercare un'etichetta complessiva."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le aree esplorate",
+                                    "Otto ambiti, senza una gerarchia universale",
+                                    List.of(
+                                            "Il questionario usa 32 item originali e otto aree editoriali da quattro item. La struttura integra domini ricorrenti nella DAS studiata in Italia, nella Relationship Quality Interview e nelle ricerche su comunicazione, obiettivi, intimità e denaro, ma non riproduce nessuno di questi strumenti.",
+                                            "Le aree hanno peso uguale solo per rendere trasparente il calcolo. Nella vita reale possono avere importanza diversa per persone e coppie differenti; una media non annulla un confine o una divergenza decisiva."
+                                    ),
+                                    List.of(
+                                            "Valori, impegno e progetti futuri.",
+                                            "Comunicazione e comprensione reciproca.",
+                                            "Conflitto, riparazione e soluzione dei problemi.",
+                                            "Sostegno emotivo e responsività.",
+                                            "Affetto, intimità e confini.",
+                                            "Vita quotidiana, ruoli e responsabilità.",
+                                            "Denaro e decisioni materiali.",
+                                            "Tempo condiviso, socialità e autonomia."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Come leggere il risultato",
+                                    "Una prospettiva individuale, non la voce della coppia",
+                                    List.of(
+                                            "Chi compila risponde in base a ciò che ha osservato negli ultimi tre mesi, o nell'intera relazione se più recente. Il partner potrebbe descrivere gli stessi episodi in modo diverso e il test non misura concordanza tra le due prospettive.",
+                                            "Le barre trasformano le risposte da 1–5 a 0–100 per facilitarne la lettura. Non sono percentuali di compatibilità, probabilità che la relazione duri, confronti normativi o indicazioni su ciò che dovresti decidere."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Differenze e conflitti",
+                                    "Conta anche come una differenza viene gestita",
+                                    List.of(
+                                            "La meta-analisi sulla comunicazione di coppia trova associazioni affidabili ma piccole con la qualità relazionale successiva. Una singola valutazione della comunicazione ha quindi un potere predittivo modesto e non autorizza conclusioni sul futuro della coppia.",
+                                            "Un disaccordo può essere compatibile con una buona relazione quando resta possibile ascoltarsi, fare pause, assumersi responsabilità e cercare accordi. Al contrario, un accordo ottenuto attraverso paura, pressione o rinuncia sistematica non equivale a compatibilità."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Intimità e vita pratica",
+                                    "Non esiste un unico modello corretto di coppia",
+                                    List.of(
+                                            "Affetto e intimità possono includere modalità diverse e non richiedono attività sessuale. È più informativo osservare se desideri e limiti possono essere comunicati senza pressione che confrontare la coppia con una frequenza ideale.",
+                                            "Convivenza, distanza, figli, lavoro, salute e risorse economiche modificano le possibilità concrete. La compatibilità pratica riguarda chiarezza e negoziazione degli accordi, non divisioni identiche, reddito elevato o ruoli prestabiliti."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Le fonti orientano i domini, non validano questo test",
+                                    List.of(
+                                            "Studi italiani hanno esaminato la struttura della Dyadic Adjustment Scale in coppie prevalentemente coniugate. La Relationship Quality Interview ha invece distinto cinque domini attraverso un'intervista, e meta-analisi internazionali hanno studiato comunicazione, obiettivi condivisi, intimità e fattori finanziari.",
+                                            "Non è stata individuata una validazione italiana di una misura identica alla compatibilità proposta qui. Differenze di campione, cultura, forma relazionale e metodo impediscono di trasferire fattori, item, norme o soglie alle otto aree di Spazio Test."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Una barra positiva non rende sicura una relazione",
+                                    List.of(
+                                            "Il test non valuta violenza, controllo coercitivo o consenso. Minacce, paura, isolamento, sorveglianza, pressione sessuale o economica e confini non rispettati meritano attenzione indipendentemente dal punteggio e non vengono compensati da altri ambiti positivi.",
+                                            "Puoi cercare supporto individuale anche senza coinvolgere il partner, soprattutto se un confronto potrebbe aumentare il pericolo. In caso di pericolo immediato chiama il 112; se sei una donna che vive violenza o stalking, il 1522 è gratuito, attivo 24 ore su 24 e disponibile anche via chat."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 32 item originali, otto aree editoriali e una scala di rappresentatività riferita alla relazione attuale. Descrive la prospettiva di chi compila, non stabilisce compatibilità oggettiva, durata o sicurezza e non prescrive decisioni sulla relazione.",
+                    List.of(
+                            new GuideReference(
+                                    "Psychometrical Properties of the Dyadic Adjustment Scale with Italian Couples — Garbarini e colleghi",
+                                    "https://iris.unito.it/handle/2318/150383",
+                                    "Studio psicometrico su 896 partecipanti italiani consultato per consenso, soddisfazione, coesione ed espressione affettiva; la DAS e il campione prevalentemente coniugato non validano le otto aree dell'app."
+                            ),
+                            new GuideReference(
+                                    "La Dyadic Adjustment Scale: una misura dell'adattamento di coppia — Gentili e colleghi",
+                                    "https://www.minervamedica.it/it/riviste/minerva-psychiatry/articolo.php?cod=R17Y2002N02A0107",
+                                    "Precedente contributo italiano consultato per adattamento e misurazione diadica; non autorizza il trasferimento di item, soglie o interpretazioni."
+                            ),
+                            new GuideReference(
+                                    "The Relationship Quality Interview — Lawrence e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/21280953/",
+                                    "Studio consultato per i domini di intimità emotiva, sessualità, sostegno, potere e conflitto; usa un'intervista e coppie sposate statunitensi, non un questionario di compatibilità."
+                            ),
+                            new GuideReference(
+                                    "Does couple communication predict later relationship quality and dissolution? — Kanter e colleghi",
+                                    "https://doi.org/10.1111/jomf.12804",
+                                    "Meta-analisi di 64 studi diadici consultata per comunicazione e limiti predittivi; gli effetti medi piccoli non consentono previsioni sulla singola coppia."
+                            ),
+                            new GuideReference(
+                                    "Goal interdependence and couples' relationship satisfaction — Toma e colleghi",
+                                    "https://doi.org/10.1177/02654075221128994",
+                                    "Meta-analisi consultata per congruenza, sostegno e conflitto tra obiettivi; associazioni di gruppo non definiscono valori corretti o compatibilità individuale."
+                            ),
+                            new GuideReference(
+                                    "Couples' sexual communication and satisfaction — Mallory e colleghi",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9153093/",
+                                    "Meta-analisi consultata per qualità della comunicazione intima; non implica attività sessuale, una frequenza ideale o causalità individuale."
+                            ),
+                            new GuideReference(
+                                    "Financial factors and couple relationship satisfaction — Wilmarth e colleghi",
+                                    "https://doi.org/10.1080/01926187.2025.2610780",
+                                    "Revisione sistematica di 29 studi consultata per il dominio economico; eterogeneità e pubblicazione recente non definiscono soglie o consigli finanziari."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

@@ -1,0 +1,95 @@
+{
+  "testId": "compatibilita-coppia",
+  "versione": "1.0",
+  "direzione": "positiva: valori più alti descrivono maggiore compatibilità percepita nell'area",
+  "soglieEditoriali": {
+    "LOW": "media area < 2.5",
+    "MEDIUM": "media area >= 2.5 e < 3.5",
+    "HIGH": "media area >= 3.5",
+    "BROAD": "almeno 7 delle 8 aree HIGH"
+  },
+  "profiliGenerali": [
+    {
+      "codice": "LOW",
+      "titolo": "La compatibilità percepita nella coppia sembra poco espressa nelle risposte",
+      "sintesi": "Le risposte descrivono una compatibilità percepita contenuta in tutti gli ambiti esplorati. Il profilo riguarda una sola prospettiva e il periodo recente, senza stabilire il valore o il futuro della relazione.",
+      "approfondimento": "Differenze ampie possono riguardare bisogni, valori, fase del rapporto o condizioni esterne, ma possono anche riflettere temi ancora poco osservati o mai discussi. Considera quali ambiti sono davvero importanti per te, che cosa è negoziabile e che cosa costituisce un confine. Aree, pesi e soglie sono editoriali: il risultato non dimostra incompatibilità, non prescrive una separazione e non valuta la prospettiva del partner, consenso o sicurezza."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "La compatibilità percepita nella coppia sembra moderata o variabile tra gli ambiti",
+      "sintesi": "Le risposte collocano la compatibilità percepita tra livelli contenuti e intermedi, senza ambiti al livello editoriale più alto. Alcune parti della relazione possono apparire più conciliabili di altre e meritano una lettura separata.",
+      "approfondimento": "La variabilità può dipendere da argomenti affrontati in modo diverso, opportunità limitate di osservazione o bisogni che cambiano nel tempo. Può essere utile distinguere una differenza accettata da un accordo solo apparente e osservare se entrambi possono esprimere preferenze. Il questionario non raccoglie la voce del partner e non predice durata o soddisfazione futura; supporto e sicurezza restano importanti indipendentemente dalla media."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "La compatibilità percepita nella coppia sembra più espressa in alcuni ambiti",
+      "sintesi": "Uno o più ambiti raccolgono una compatibilità percepita elevata, mentre altri risultano intermedi o contenuti. Le risorse della coppia appaiono quindi specifiche e non vanno generalizzate automaticamente all'intera relazione.",
+      "approfondimento": "Gli ambiti più positivi possono indicare accordi o modi di collaborare da proteggere; quelli più contenuti possono riguardare differenze negoziabili, vincoli esterni o confini non conciliabili. Differenze piccole tra barre non hanno significato psicometrico e gli ambiti non hanno necessariamente lo stesso peso per te. La lettura resta individuale ed editoriale: non certifica compatibilità oggettiva, reciprocità, consenso, sicurezza o probabilità che la relazione duri."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "La compatibilità percepita nella coppia sembra ampiamente espressa",
+      "sintesi": "Le risposte esprimono una compatibilità percepita elevata in almeno sette degli otto ambiti esplorati. La configurazione appare ampia, pur senza significare accordo perfetto o assenza di difficoltà circoscritte.",
+      "approfondimento": "Può essere utile riconoscere quali dialoghi, accordi e condizioni sostengono questa percezione e come vengono rinegoziati quando il contesto cambia. Un profilo ampio non dimostra che il partner risponderebbe allo stesso modo, che ogni differenza sia risolta o che la relazione sia sicura. Le soglie sono editoriali e il risultato non predice stabilità, fedeltà o benessere futuro; un bisogno di supporto resta valido a qualunque livello."
+    }
+  ],
+  "aree": [
+    {
+      "codice": "valori",
+      "titolo": "Valori, impegno e progetti futuri",
+      "LOW": "La conciliabilità percepita di priorità, impegno e progetti risulta contenuta. Può riflettere differenze reali o temi non ancora affrontati e non stabilisce quale scelta sia corretta.",
+      "MEDIUM": "Valori e progetti appaiono conciliabili in parte o in modo variabile. Osserva quali differenze possono essere negoziate e quali riguardano confini importanti.",
+      "HIGH": "Valori, aspettative di impegno e progetti appaiono ampiamente conciliabili. Il dato non garantisce che resteranno invariati o che il partner li descriverebbe allo stesso modo."
+    },
+    {
+      "codice": "comunicazione",
+      "titolo": "Comunicazione e comprensione reciproca",
+      "LOW": "Chiarezza, ascolto e possibilità di affrontare temi delicati risultano poco riconoscibili. Stress, stile comunicativo e sicurezza del confronto possono influire sulla percezione.",
+      "MEDIUM": "La comunicazione appare accessibile in alcune situazioni e più difficile in altre. Considera argomenti, tempi e condizioni che facilitano o ostacolano la comprensione.",
+      "HIGH": "Chiarezza, ascolto e confronto sui temi importanti risultano ben riconoscibili. Non significa assenza di incomprensioni o accordo su tutto."
+    },
+    {
+      "codice": "conflitto",
+      "titolo": "Conflitto, riparazione e soluzione dei problemi",
+      "LOW": "Rispetto nel disaccordo, ripresa del dialogo e riparazione risultano poco riconoscibili. La frequenza dei conflitti da sola non definisce questa area.",
+      "MEDIUM": "La gestione dei disaccordi appare costruttiva in parte o in modo variabile. Osserva che cosa accade dopo escalation, pause, errori e tentativi di accordo.",
+      "HIGH": "Rispetto, responsabilità e ricerca di soluzioni risultano ampiamente riconoscibili durante i disaccordi. Non esclude conflitti intensi o temi ancora aperti."
+    },
+    {
+      "codice": "sostegno",
+      "titolo": "Sostegno emotivo e responsività",
+      "LOW": "Disponibilità, accoglienza emotiva e sostegno adeguato risultano poco riconoscibili. Bisogni diversi o non esplicitati possono contribuire senza rendere irrilevante la mancanza percepita.",
+      "MEDIUM": "Il sostegno appare presente in alcune circostanze e meno adeguato in altre. Può essere utile distinguere quantità di aiuto e corrispondenza con ciò che serve.",
+      "HIGH": "Disponibilità, accoglienza e riconoscimento risultano ampiamente presenti nella percezione riferita. Il dato non dimostra che ogni bisogno venga compreso o soddisfatto."
+    },
+    {
+      "codice": "intimita",
+      "titolo": "Affetto, intimità e confini",
+      "LOW": "Modalità affettive, dialogo sulla vicinanza e rispetto dei confini risultano poco conciliabili. Non esiste una quantità universale di contatto o sessualità adeguata a ogni coppia.",
+      "MEDIUM": "Affetto e intimità appaiono conciliabili in parte o a seconda del momento. Osserva se desideri e limiti possono essere espressi senza pressione.",
+      "HIGH": "Modalità affettive, dialogo sulla vicinanza e rispetto dei confini risultano ampiamente conciliabili. Non certifica consenso in ogni situazione, che deve restare libero e specifico."
+    },
+    {
+      "codice": "quotidianita",
+      "titolo": "Vita quotidiana, ruoli e responsabilità",
+      "LOW": "Divisione delle responsabilità, affidabilità e decisioni pratiche risultano poco conciliabili. Condizioni di lavoro, salute o cura possono incidere sulla distribuzione.",
+      "MEDIUM": "La gestione quotidiana appare sostenibile in parte o con differenze tra compiti e periodi. Considera chiarezza degli accordi e possibilità reale di rinegoziarli.",
+      "HIGH": "Responsabilità, impegni e decisioni pratiche risultano ampiamente conciliabili. Non dimostra che il carico sia oggettivamente uguale o immutabile."
+    },
+    {
+      "codice": "denaro",
+      "titolo": "Denaro e decisioni materiali",
+      "LOW": "Dialogo, priorità e accordi economici risultano poco conciliabili. Le differenze di risorse sono condizioni concrete e non misurano il valore dei partner.",
+      "MEDIUM": "La gestione economica appare condivisa in alcuni aspetti e meno chiara in altri. Osserva priorità, informazioni disponibili e potere nelle decisioni comuni.",
+      "HIGH": "Dialogo e accordi sulle questioni economiche risultano ampiamente conciliabili. Non misura stabilità finanziaria, reddito o assenza di vulnerabilità."
+    },
+    {
+      "codice": "autonomia",
+      "titolo": "Tempo condiviso, socialità e autonomia",
+      "LOW": "Tempo insieme, spazi personali e relazioni sociali risultano poco conciliabili. Bisogni diversi non sono di per sé sbagliati, ma possono richiedere accordi espliciti.",
+      "MEDIUM": "Vicinanza e autonomia appaiono equilibrate in parte o in modo variabile. Considera se entrambi possono esprimere bisogni e mantenere reti importanti.",
+      "HIGH": "Tempo condiviso, socialità e autonomia risultano ampiamente conciliabili. Il dato non stabilisce una quantità ideale né esclude cambiamenti futuri."
+    }
+  ]
+}

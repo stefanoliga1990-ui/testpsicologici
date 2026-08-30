@@ -15,6 +15,7 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
   const isAttachmentStyles = test.scoringModel === 'ATTACHMENT_DIMENSIONAL';
   const isOccurrenceScale = test.answerScale === 'OCCURRENCE';
   const isSatisfactionScale = test.answerScale === 'SATISFACTION';
+  const isAgreementScale = test.answerScale === 'AGREEMENT';
   const attachmentStyles = [
     'Orientamento sicuro',
     'Orientamento ansioso-preoccupato',
@@ -57,6 +58,8 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
             ? 'Le affermazioni esplorano ansia relazionale ed evitamento della vicinanza. La loro combinazione permette una lettura orientativa dei quattro stili descritti qui sotto, senza assegnare diagnosi o identità definitive.'
             : isSatisfactionScale
               ? 'Le domande sono organizzate negli ambiti indicati qui sotto. La restituzione aiuta a osservare dove la soddisfazione è più o meno espressa, senza stabilire quali parti della vita dovrebbero contare di più.'
+              : isAgreementScale
+                ? 'Le affermazioni sono organizzate negli ambiti indicati qui sotto. La restituzione aiuta a osservare quanto descrivono la relazione dalla tua prospettiva, senza trasformare il risultato nella voce del partner o in un verdetto sulla coppia.'
               : isOccurrenceScale
               ? 'Le affermazioni sono organizzate nelle aree indicate qui sotto. La restituzione aiuta a osservare quanti eventi riconosci nel periodo scelto, senza assegnare diagnosi o etichette.'
               : 'Le affermazioni sono organizzate nelle aree indicate qui sotto. La restituzione aiuta a osservare quali esperienze riconosci più spesso, senza assegnare diagnosi o etichette.'}</p>
@@ -68,6 +71,8 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
             ? 'Per ogni affermazione indicherai quanto descrive il tuo modo abituale di vivere la relazione scelta come riferimento, da “Per nulla vero per me” a “Del tutto vero per me”. Puoi tornare alla domanda precedente e completare le 24 domande senza creare un account.'
             : isSatisfactionScale
               ? 'Per ogni domanda indicherai il tuo grado di soddisfazione, da “Per nulla soddisfatto/a” a “Pienamente soddisfatto/a”, pensando agli ultimi tre mesi. Puoi tornare alla domanda precedente e completare il percorso senza creare un account.'
+              : isAgreementScale
+                ? 'Per ogni affermazione indicherai quanto è vera per te, da “Per nulla vero per me” a “Del tutto vero per me”, nel periodo indicato. Puoi tornare alla domanda precedente e completare il percorso senza creare un account.'
               : isOccurrenceScale
               ? 'Per ogni affermazione indicherai quante volte è accaduta, da “Mai” a “Molte volte”, nel periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'
               : 'Per ogni affermazione indicherai una frequenza da “Mai” a “Quasi sempre”, riferita al periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'}</p></Card>
@@ -75,6 +80,8 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
             ? 'Il risultato mostra le due dimensioni esplorate e ordina i quattro orientamenti per vicinanza al profilo delle risposte. Se due orientamenti risultano vicini, la restituzione parla di caratteristiche intermedie; non sono percentuali, categorie cliniche o etichette stabili.'
             : isSatisfactionScale
               ? "Il risultato riassume il grado di soddisfazione generale e negli ambiti esplorati. Le barre sono trasformazioni editoriali delle risposte: non sono percentuali normative, confronti con altre persone o misure di salute mentale."
+              : isAgreementScale
+                ? "Il risultato riassume quanto le affermazioni descrivono la relazione nel complesso e negli ambiti esplorati. Le barre sono trasformazioni editoriali delle tue risposte: non sono percentuali di compatibilità, predizioni o valutazioni condivise dal partner."
               : isOccurrenceScale
               ? "Il risultato riassume l'andamento generale e le aree esplorate. Le barre descrivono il numero riferito degli eventi: non sono percentili, probabilità diagnostiche o misure di gravità clinica."
               : "Il risultato riassume l'andamento generale e le aree esplorate. Le barre descrivono la frequenza delle risposte: non sono percentili, probabilità diagnostiche o misure di gravità clinica."}</p></Card>

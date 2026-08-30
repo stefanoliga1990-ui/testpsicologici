@@ -1250,7 +1250,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/approfondimenti/limerenza\"")))
                 .andExpect(content().string(containsString("href=\"/test/paura-abbandono\"")))
                 .andExpect(content().string(containsString("href=\"/test/dipendenza-affettiva\"")))
-                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
+                .andExpect(content().string(containsString("href=\"/test/compatibilita-coppia\"")))
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString("1522")));
 
@@ -1689,6 +1689,83 @@ class PageRenderingTest {
     }
 
     @Test
+    void coupleCompatibilityIntroductionQuestionAndGuideExposeAgreementScaleEightAreasAndLimits() throws Exception {
+        mockMvc.perform(get("/test/compatibilita-coppia"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Quanto siamo compatibili come coppia?")))
+                .andExpect(content().string(containsString("Valori, impegno e progetti futuri")))
+                .andExpect(content().string(containsString("Denaro e decisioni materiali")))
+                .andExpect(content().string(containsString("Tempo condiviso, socialità e autonomia")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/compatibilita-coppia\"")))
+                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
+                .andExpect(content().string(containsString("non la voce dell'altra persona")))
+                .andExpect(content().string(containsString("da “Per nulla vero per me” a “Del tutto vero per me”")));
+
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-compatibilita-coppia", new TestAttempt(32));
+        mockMvc.perform(get("/test/compatibilita-coppia/domanda/1").session(session))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("quanto è vera per te questa affermazione")))
+                .andExpect(content().string(containsString("Per nulla vero per me")))
+                .andExpect(content().string(containsString("Poco vero per me")))
+                .andExpect(content().string(containsString("In parte vero per me")))
+                .andExpect(content().string(containsString("Molto vero per me")))
+                .andExpect(content().string(containsString("Del tutto vero per me")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString(">Quasi sempre<"))));
+
+        mockMvc.perform(get("/approfondimenti/compatibilita-coppia"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Compatibilità non significa somiglianza perfetta")))
+                .andExpect(content().string(containsString("Otto ambiti, senza una gerarchia universale")))
+                .andExpect(content().string(containsString("Una prospettiva individuale, non la voce della coppia")))
+                .andExpect(content().string(containsString("Una barra positiva non rende sicura una relazione")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/test/compatibilita-coppia\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/gelosia-partner\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void coupleCompatibilityResultRendersOverallAndEightAreaAnalysesWithRelatedTests() throws Exception {
+        mockMvc.perform(get("/test/compatibilita-coppia/risultato")
+                        .session(completedAttempt("compatibilita-coppia", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "La compatibilità percepita nella coppia sembra ampiamente espressa")))
+                .andExpect(content().string(containsString("Valori, impegno e progetti futuri")))
+                .andExpect(content().string(containsString("Comunicazione e comprensione reciproca")))
+                .andExpect(content().string(containsString("Affetto, intimità e confini")))
+                .andExpect(content().string(containsString("Denaro e decisioni materiali")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/compatibilita-coppia/risultato/pdf\"")))
+                .andExpect(content().string(containsString("Test correlati")))
+                .andExpect(content().string(containsString("href=\"/test/gelosia-partner\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/compatibilita-coppia\"")));
+    }
+
+    @Test
+    void coupleCompatibilityResultCanBeDownloadedAsReadablePdf() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/test/compatibilita-coppia/risultato/pdf")
+                        .session(completedAttempt("compatibilita-coppia", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-compatibilita-coppia.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Quanto siamo compatibili come coppia?")
+                    .contains("Valori, impegno e progetti futuri")
+                    .contains("Comunicazione e comprensione reciproca")
+                    .contains("Denaro e decisioni materiali")
+                    .contains("una sola prospettiva")
+                    .contains("112", "1522");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -1764,6 +1841,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/orbiting")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/hoovering")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/compatibilita-coppia")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1782,6 +1861,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/breadcrumbing")))
                 .andExpect(content().string(containsString("http://localhost/test/orbiting")))
                 .andExpect(content().string(containsString("http://localhost/test/hoovering")))
+                .andExpect(content().string(containsString("http://localhost/test/compatibilita-coppia")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }
