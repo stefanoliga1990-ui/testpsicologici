@@ -2,13 +2,13 @@
   "test": {
     "id": "resilienza-psicologica",
     "titolo": "Resilienza psicologica",
-    "versione": "1.0",
+    "versione": "1.2",
     "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
     "finalita": "Auto-osservazione esclusivamente informativa di alcuni comportamenti e risorse riferiti davanti a difficoltà recenti",
     "periodo_riferimento": "Ultimi sei mesi, considerando difficoltà, pressioni o cambiamenti realmente incontrati",
     "direzione_punteggio": "Valori più alti descrivono maggiore frequenza dei comportamenti formulati, non maggiore forza personale, migliore esito o capacità futura",
     "punteggio_numerico_visibile": false,
-    "disclaimer": "Questionario originale non validato e non normato. Non misura il processo completo di resilienza, non valuta gli esiti, non predice il futuro e non diagnostica condizioni."
+    "disclaimer": "Questionario originale non validato e non normato. La revisione editoriale v1.2 di item ed esempi non dimostra comprensibilità o validità senza interviste cognitive. Non misura il processo completo di resilienza, non valuta gli esiti, non predice il futuro e non diagnostica condizioni."
   },
   "istruzione_risposta": "Pensando agli ultimi sei mesi e alle difficoltà, pressioni o cambiamenti che hai realmente incontrato, con quale frequenza ti è capitato di comportarti in questo modo?",
   "calcolo": {

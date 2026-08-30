@@ -1,11 +1,11 @@
-# Resilienza psicologica — specifica psicometrica v1.0
+# Resilienza psicologica — specifica psicometrica v1.2
 
 ## Stato, popolazione e uso previsto
 
 | Campo | Decisione |
 |---|---|
 | Identificativo | `resilienza-psicologica` |
-| Versione iniziale | `1.0` |
+| Versione corrente | `1.2` (`1.0` iniziale; `1.1` revisione precedente dei contenuti di presentazione) |
 | Popolazione | persone adulte che compilano autonomamente il questionario in italiano |
 | Finalità | auto-osservazione informativa della frequenza con cui, davanti a difficoltà recenti, la persona riferisce comportamenti di recupero, adattamento, accesso alle risorse e continuità |
 | Uso escluso | misura di un tratto stabile, forza personale, invulnerabilità, prognosi o capacità futura; diagnosi, valutazione di trauma o rischio, selezione, idoneità e indicazione a un trattamento |
@@ -55,34 +55,34 @@ Le aree seguono un ordine editoriale: recuperare margine, adattare il modo di pr
 
 ## Matrice item–dimensione
 
-Gli item sono originali, in direzione positiva e riferiti a un indicatore principale. Non vengono aggiunti esempi: potrebbero privilegiare specifici eventi, risorse economiche, reti familiari o modalità di adattamento e far sembrare universale ciò che dipende dal contesto. La numerazione teorica è raggruppata per area; la posizione indica l'ordine intercalato di somministrazione.
+Gli item sono originali, in direzione positiva e riferiti a un indicatore principale. Nella versione 1.2 le formulazioni troppo sintetiche o astratte sono state rese più osservabili senza cambiare indicatore, area, periodo di riferimento o direzione dello scoring. Dieci esempi facoltativi sono mostrati separatamente dalla domanda: chiariscono bisogni, routine, margine d'azione, aggiornamento delle aspettative, apprendimento dal tentativo, risorse contestuali, priorità e distinzione tra esito e valore personale. Sono deliberatamente brevi e non esaustivi, ma possono comunque focalizzare il ricordo sugli episodi nominati e richiedono verifica con interviste cognitive. La numerazione teorica è raggruppata per area; la posizione indica l'ordine intercalato di somministrazione.
 
-| Codice | Posizione | Area | Item | Indicatore |
-|---|---:|---|---|---|
-| R1 | 1 | recupero | Dopo una difficoltà, riconosco ciò di cui ho bisogno nell'immediato. | bisogno immediato |
-| F1 | 2 | flessibilita | Distinguo la parte di un problema su cui posso intervenire. | margine di intervento |
-| S1 | 3 | risorse | Individuo una persona a cui posso rivolgermi per una difficoltà. | persona di riferimento |
-| C1 | 4 | continuita | Mantengo una piccola attività per me importante durante un periodo difficile. | attività significativa |
-| R2 | 5 | recupero | Quando la tensione aumenta, mi fermo per ridurre l'attivazione. | riduzione dell'attivazione |
-| F2 | 6 | flessibilita | Divido una difficoltà complessa in passi affrontabili. | scomposizione del problema |
-| S2 | 7 | risorse | Chiedo un aiuto specifico quando ne ho bisogno. | richiesta di aiuto |
-| C2 | 8 | continuita | Scelgo un passo successivo coerente con le mie priorità. | passo orientato |
-| R3 | 9 | recupero | Dopo un momento destabilizzante, riprendo gradualmente una routine. | ripresa graduale |
-| F3 | 10 | flessibilita | Modifico un piano quando le condizioni cambiano. | modifica del piano |
-| S3 | 11 | risorse | Accetto un aiuto pertinente quando mi viene offerto. | accettazione dell'aiuto |
-| C3 | 12 | continuita | Rivedo un obiettivo quando la situazione lo richiede. | revisione dell'obiettivo |
-| R4 | 13 | recupero | Mi concedo tempo per recuperare dopo uno sforzo intenso. | tempo di recupero |
-| F4 | 14 | flessibilita | Provo un approccio diverso quando il primo non funziona. | strategia alternativa |
-| S4 | 15 | risorse | Condivido un carico quando supera le energie disponibili. | condivisione del carico |
-| C4 | 16 | continuita | Riconosco un progresso anche se il problema non è risolto. | progresso parziale |
-| R5 | 17 | recupero | Regolo il ritmo delle attività in base alle energie disponibili. | regolazione del ritmo |
-| F5 | 18 | flessibilita | Aggiorno le mie aspettative alla luce di nuove informazioni. | aggiornamento delle aspettative |
-| S5 | 19 | risorse | Cerco informazioni affidabili quando non so come procedere. | informazione affidabile |
-| C5 | 20 | continuita | Distinguo l'esito di una situazione dal mio valore personale. | esito e valore personale |
-| R6 | 21 | recupero | Dopo una battuta d'arresto, torno a occuparmi di un'attività quotidiana. | ritorno all'attività |
-| F6 | 22 | flessibilita | Ricavo da un tentativo non riuscito un'informazione per il passo successivo. | apprendimento dal tentativo |
-| S6 | 23 | risorse | Uso una risorsa del contesto quando è pertinente alla difficoltà. | risorsa contestuale |
-| C6 | 24 | continuita | Costruisco una nuova routine quando quella precedente non è più praticabile. | ricostruzione della routine |
+| Codice | Posizione | Area | Item v1.2 | Esempio separato | Indicatore |
+|---|---:|---|---|---|---|
+| R1 | 1 | recupero | Dopo una difficoltà, individuo quale bisogno affrontare per primo. | riposo, informazioni, sicurezza o aiuto pratico. | bisogno immediato |
+| F1 | 2 | flessibilita | Davanti a un problema, individuo l'aspetto su cui le mie azioni possono incidere. | non posso cambiare una decisione già presa, ma posso decidere a chi chiedere informazioni. | margine di intervento |
+| S1 | 3 | risorse | Individuo una persona a cui posso rivolgermi per una difficoltà. | — | persona di riferimento |
+| C1 | 4 | continuita | Durante un periodo difficile, continuo a dedicare un po' di tempo a un'attività importante per me. | — | attività significativa |
+| R2 | 5 | recupero | Quando mi accorgo che la tensione sta aumentando, faccio una breve pausa prima di continuare. | — | riduzione dell'attivazione |
+| F2 | 6 | flessibilita | Quando una difficoltà ha più parti, la suddivido in azioni più piccole e concrete. | — | scomposizione del problema |
+| S2 | 7 | risorse | Quando ho bisogno di aiuto, formulo una richiesta precisa su ciò che mi servirebbe. | — | richiesta di aiuto |
+| C2 | 8 | continuita | Davanti a più richieste, scelgo quale azione fare per prima in base alle mie priorità. | con poche energie, do precedenza a un bisogno essenziale o a un impegno urgente. | passo orientato |
+| R3 | 9 | recupero | Dopo un evento che ha interrotto le mie abitudini, riprendo gradualmente almeno una routine quotidiana. | ricomincio da un orario regolare per il sonno, i pasti o un'attività necessaria. | ripresa graduale |
+| F3 | 10 | flessibilita | Quando le condizioni cambiano e un piano non è più praticabile, modifico il modo di procedere. | — | modifica del piano |
+| S3 | 11 | risorse | Accetto l'aiuto offerto quando corrisponde a ciò di cui ho bisogno. | — | accettazione dell'aiuto |
+| C3 | 12 | continuita | Quando un obiettivo non è più realistico nelle condizioni attuali, ne modifico i tempi o le dimensioni. | — | revisione dell'obiettivo |
+| R4 | 13 | recupero | Dopo un'attività che mi ha richiesto molte energie, mi concedo un tempo di recupero. | — | tempo di recupero |
+| F4 | 14 | flessibilita | Quando un primo tentativo non funziona, provo un modo diverso di affrontare lo stesso problema. | — | strategia alternativa |
+| S4 | 15 | risorse | Quando una responsabilità supera le mie energie, chiedo di dividerla con qualcuno. | — | condivisione del carico |
+| C4 | 16 | continuita | Riconosco i passi avanti compiuti anche quando il problema non è ancora risolto. | — | progresso parziale |
+| R5 | 17 | recupero | Adatto il ritmo delle attività alle energie che sento di avere in quel momento. | svolgo un compito alla volta oppure riduco ciò che avevo programmato. | regolazione del ritmo |
+| F5 | 18 | flessibilita | Quando emergono nuove informazioni, rivedo ciò che mi aspettavo dalla situazione. | se servono più tempo o risorse del previsto, modifico le aspettative iniziali. | aggiornamento delle aspettative |
+| S5 | 19 | risorse | Quando non so come procedere, cerco indicazioni presso una fonte competente per quel problema. | — | informazione affidabile |
+| C5 | 20 | continuita | Quando qualcosa va male, valuto l'esito senza usarlo come giudizio sul mio valore personale. | penso “questa scelta non ha funzionato” invece di “io non valgo”. | esito e valore personale |
+| R6 | 21 | recupero | Dopo che qualcosa non è andato come speravo, riprendo un'attività quotidiana che avevo interrotto. | — | ritorno all'attività |
+| F6 | 22 | flessibilita | Quando un tentativo non funziona, individuo che cosa cambiare nel tentativo successivo. | dopo aver mancato una scadenza, rivedo i tempi o i passaggi del piano. | apprendimento dal tentativo |
+| S6 | 23 | risorse | Uso una risorsa disponibile nel contesto in cui mi trovo quando può aiutarmi ad affrontare la difficoltà. | un servizio, un'agevolazione o un supporto offerto nel luogo di studio o lavoro. | risorsa contestuale |
+| C6 | 24 | continuita | Quando le vecchie abitudini non sono più praticabili, organizzo una nuova routine adatta alla situazione attuale. | dopo un cambio di orari, stabilisco nuovi momenti per il riposo o le attività necessarie. | ricostruzione della routine |
 
 L'ordine implementato deve essere round-robin `recupero → flessibilita → risorse → continuita` per sei cicli. Le aree restano nello stesso ordine teorico nel risultato.
 
@@ -126,6 +126,7 @@ Per ogni area sono previsti testi `LOW`, `MEDIUM` e `HIGH` che descrivono soltan
 | Una misura italiana ha rappresentato risorse individuali, familiari e sociali | Bonfiglio et al. (2016), [PubMed](https://pubmed.ncbi.nlm.nih.gov/27031088/) | validazione italiana della RSA e invarianza di genere | 437 persone con disturbo da uso di sostanze e 337 partecipanti non clinici | strumento protetto e diverso; campioni specifici e nessuna struttura trasferibile |
 | Una diversa scala italiana ha mostrato una struttura a due fattori in adulti | Cuoco et al. (2022), [PubMed](https://pubmed.ncbi.nlm.nih.gov/34850301/) | traduzione e studio psicometrico RS-14 | 300 volontari adulti italiani | strumento e definizione differenti; relazioni con umore e qualità di vita non sono causali |
 | Le misure di resilienza differiscono per definizione, popolazione e proprietà | Windle, Bennett e Noyes (2011), [PubMed](https://pubmed.ncbi.nlm.nih.gov/21294858/) | revisione metodologica sistematica delle scale | scale per popolazioni generali e cliniche | audit del 2011; non individua un gold standard universale né valida l'app |
+| La comprensibilità riguarda la formulazione di item e risposte e va valutata con persone della popolazione destinataria | Terwee et al. (2018), [COSMIN](https://pmc.ncbi.nlm.nih.gov/articles/PMC5891557/) | metodologia Delphi internazionale sulla validità di contenuto | strumenti autoriferiti e studi di validità di contenuto | sostiene revisione e interviste cognitive, ma non dimostra che le nuove formulazioni siano comprese come previsto |
 
 Le evidenze italiane riguardano scale diverse e non validano questo questionario originale. Non esistono dati che sostengano i 24 item, le quattro aree, la media generale, le soglie o la capacità di predire adattamento nella popolazione adulta italiana.
 
@@ -158,7 +159,7 @@ La scheda mantiene testi e bibliografia separati dal questionario.
 
 1. revisione di psicometristi, psicologi clinici e di comunità, esperti di trauma, disabilità, servizi e determinanti sociali;
 2. revisione con adulti italiani eterogenei per età, istruzione, area geografica, condizioni economiche, salute, cultura e carichi di cura;
-3. interviste cognitive su “difficoltà”, “attivazione”, “risorsa del contesto”, “energie”, “progresso”, “valore personale” e “routine”;
+3. interviste cognitive sugli item v1.2 e sui dieci esempi separati, verificando comprensione, recupero di episodi pertinenti, scelta della frequenza e rischio che gli esempi restringano la risposta ai soli casi nominati;
 4. verifica del rischio di colpevolizzare persone esposte a vincoli, violenza, discriminazione o mancanza di servizi;
 5. studio pilota con una domanda separata su presenza, tipo, intensità e durata degli stressori e gestione delle poche occasioni;
 6. raccolta longitudinale di stressor load, salute mentale e funzionamento per distinguere risorse ed esito di adattamento;
@@ -171,7 +172,8 @@ La scheda mantiene testi e bibliografia separati dal questionario.
 
 ## Verifiche automatiche richieste
 
-- versione `1.0`, identificativo unico, 24 item, quattro aree da sei item;
+- versione `1.2`, identificativo unico, 24 item, quattro aree da sei item;
+- dieci esempi separati, brevi e non esaustivi; gli altri quattordici item senza esempio;
 - ordine intercalato e ordine teorico stabile;
 - riferimento agli ultimi sei mesi e alle difficoltà effettivamente incontrate; cinque ancore `Mai`–`Quasi sempre`;
 - pesi uguali, assenza di inversioni e casi `LOW`, `MIXED`, `FOCUSED`, `BROAD`;
@@ -183,6 +185,6 @@ La scheda mantiene testi e bibliografia separati dal questionario.
 - fonte italiana pertinente e limiti campionari visibili;
 - collegamenti bidirezionali test–scheda e presenza in sitemap.
 
-## Decisione di pubblicazione v1.0
+## Decisione di pubblicazione v1.2
 
-La versione può essere pubblicata soltanto come auto-osservazione informativa delle risorse e azioni riferite davanti a difficoltà recenti. Non misura il processo completo, non certifica una persona come resiliente o fragile e non predice l'adattamento futuro. Ogni futura modifica a item, esempi, istruzioni, scala, scoring, soglie o interpretazioni richiederà incremento di versione, aggiornamento della specifica e nuovi test automatici.
+La versione può essere pubblicata soltanto come auto-osservazione informativa delle risorse e azioni riferite davanti a difficoltà recenti. La revisione editoriale v1.2 rende gli item più espliciti, ma non dimostra comprensibilità, affidabilità o validità in assenza di revisione con utenti e interviste cognitive. Non misura il processo completo, non certifica una persona come resiliente o fragile e non predice l'adattamento futuro. Ogni futura modifica a item, esempi, istruzioni, scala, scoring, soglie o interpretazioni richiederà incremento di versione, aggiornamento della specifica e nuovi test automatici.

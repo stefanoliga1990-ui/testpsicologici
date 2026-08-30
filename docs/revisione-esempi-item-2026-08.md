@@ -158,7 +158,7 @@ Non sono stati aggiunti esempi ai 24 item. Esempi legati a diario, terapia, medi
 
 ### Resilienza psicologica
 
-Non sono stati aggiunti esempi ai 24 item. Nominare eventi, reti familiari, servizi o risorse economiche specifiche potrebbe restringere il richiamo a un solo tipo di difficoltà e suggerire come dovrebbe apparire un adattamento corretto. La scelta è documentata nella specifica v1.0 e richiede interviste cognitive con adulti esposti a carichi e condizioni contestuali differenti.
+L'audit generale iniziale non aveva aggiunto esempi per evitare di suggerire come dovrebbe apparire un adattamento corretto. La revisione mirata v1.2, richiesta dopo l'uso del test, ha però rilevato dieci concetti ancora troppo astratti: bisogno immediato, margine d'azione, ripresa della routine, priorità, regolazione del ritmo, aggiornamento delle aspettative, distinzione tra esito e valore personale, apprendimento dal tentativo, risorsa contestuale e ricostruzione della routine. Per questi item sono stati aggiunti esempi separati, brevi e non esaustivi, elencati nella matrice di `docs/test-resilienza-psicologica-v1.md`. Rimane necessario verificare con interviste cognitive che gli esempi non restringano il richiamo ai soli casi nominati e non favoriscano persone con specifiche reti, servizi o condizioni materiali.
 
 ### Gelosia verso il partner
 

@@ -1906,7 +1906,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPsychologicalResilienceInformationTest() {
         String id = "resilienza-psicologica";
-        String version = "1.1";
+        String version = "1.2";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -1942,30 +1942,40 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "continuita", "Continuità personale e orientamento", 4);
 
         saveQuestions(id, List.of(
-                q("recupero", "Dopo una difficoltà, riconosco ciò di cui ho bisogno nell'immediato."),
-                q("recupero", "Quando la tensione aumenta, mi fermo per ridurre l'attivazione."),
-                q("recupero", "Dopo un momento destabilizzante, riprendo gradualmente una routine."),
-                q("recupero", "Mi concedo tempo per recuperare dopo uno sforzo intenso."),
-                q("recupero", "Regolo il ritmo delle attività in base alle energie disponibili."),
-                q("recupero", "Dopo una battuta d'arresto, torno a occuparmi di un'attività quotidiana."),
-                q("flessibilita", "Distinguo la parte di un problema su cui posso intervenire."),
-                q("flessibilita", "Divido una difficoltà complessa in passi affrontabili."),
-                q("flessibilita", "Modifico un piano quando le condizioni cambiano."),
-                q("flessibilita", "Provo un approccio diverso quando il primo non funziona."),
-                q("flessibilita", "Aggiorno le mie aspettative alla luce di nuove informazioni."),
-                q("flessibilita", "Ricavo da un tentativo non riuscito un'informazione per il passo successivo."),
+                qe("recupero", "Dopo una difficoltà, individuo quale bisogno affrontare per primo.",
+                        "riposo, informazioni, sicurezza o aiuto pratico."),
+                q("recupero", "Quando mi accorgo che la tensione sta aumentando, faccio una breve pausa prima di continuare."),
+                qe("recupero", "Dopo un evento che ha interrotto le mie abitudini, riprendo gradualmente almeno una routine quotidiana.",
+                        "ricomincio da un orario regolare per il sonno, i pasti o un'attività necessaria."),
+                q("recupero", "Dopo un'attività che mi ha richiesto molte energie, mi concedo un tempo di recupero."),
+                qe("recupero", "Adatto il ritmo delle attività alle energie che sento di avere in quel momento.",
+                        "svolgo un compito alla volta oppure riduco ciò che avevo programmato."),
+                q("recupero", "Dopo che qualcosa non è andato come speravo, riprendo un'attività quotidiana che avevo interrotto."),
+                qe("flessibilita", "Davanti a un problema, individuo l'aspetto su cui le mie azioni possono incidere.",
+                        "non posso cambiare una decisione già presa, ma posso decidere a chi chiedere informazioni."),
+                q("flessibilita", "Quando una difficoltà ha più parti, la suddivido in azioni più piccole e concrete."),
+                q("flessibilita", "Quando le condizioni cambiano e un piano non è più praticabile, modifico il modo di procedere."),
+                q("flessibilita", "Quando un primo tentativo non funziona, provo un modo diverso di affrontare lo stesso problema."),
+                qe("flessibilita", "Quando emergono nuove informazioni, rivedo ciò che mi aspettavo dalla situazione.",
+                        "se servono più tempo o risorse del previsto, modifico le aspettative iniziali."),
+                qe("flessibilita", "Quando un tentativo non funziona, individuo che cosa cambiare nel tentativo successivo.",
+                        "dopo aver mancato una scadenza, rivedo i tempi o i passaggi del piano."),
                 q("risorse", "Individuo una persona a cui posso rivolgermi per una difficoltà."),
-                q("risorse", "Chiedo un aiuto specifico quando ne ho bisogno."),
-                q("risorse", "Accetto un aiuto pertinente quando mi viene offerto."),
-                q("risorse", "Condivido un carico quando supera le energie disponibili."),
-                q("risorse", "Cerco informazioni affidabili quando non so come procedere."),
-                q("risorse", "Uso una risorsa del contesto quando è pertinente alla difficoltà."),
-                q("continuita", "Mantengo una piccola attività per me importante durante un periodo difficile."),
-                q("continuita", "Scelgo un passo successivo coerente con le mie priorità."),
-                q("continuita", "Rivedo un obiettivo quando la situazione lo richiede."),
-                q("continuita", "Riconosco un progresso anche se il problema non è risolto."),
-                q("continuita", "Distinguo l'esito di una situazione dal mio valore personale."),
-                q("continuita", "Costruisco una nuova routine quando quella precedente non è più praticabile.")));
+                q("risorse", "Quando ho bisogno di aiuto, formulo una richiesta precisa su ciò che mi servirebbe."),
+                q("risorse", "Accetto l'aiuto offerto quando corrisponde a ciò di cui ho bisogno."),
+                q("risorse", "Quando una responsabilità supera le mie energie, chiedo di dividerla con qualcuno."),
+                q("risorse", "Quando non so come procedere, cerco indicazioni presso una fonte competente per quel problema."),
+                qe("risorse", "Uso una risorsa disponibile nel contesto in cui mi trovo quando può aiutarmi ad affrontare la difficoltà.",
+                        "un servizio, un'agevolazione o un supporto offerto nel luogo di studio o lavoro."),
+                q("continuita", "Durante un periodo difficile, continuo a dedicare un po' di tempo a un'attività importante per me."),
+                qe("continuita", "Davanti a più richieste, scelgo quale azione fare per prima in base alle mie priorità.",
+                        "con poche energie, do precedenza a un bisogno essenziale o a un impegno urgente."),
+                q("continuita", "Quando un obiettivo non è più realistico nelle condizioni attuali, ne modifico i tempi o le dimensioni."),
+                q("continuita", "Riconosco i passi avanti compiuti anche quando il problema non è ancora risolto."),
+                qe("continuita", "Quando qualcosa va male, valuto l'esito senza usarlo come giudizio sul mio valore personale.",
+                        "penso \"questa scelta non ha funzionato\" invece di \"io non valgo\"."),
+                qe("continuita", "Quando le vecchie abitudini non sono più praticabili, organizzo una nuova routine adatta alla situazione attuale.",
+                        "dopo un cambio di orari, stabilisco nuovi momenti per il riposo o le attività necessarie.")));
 
         saveGlobal(id, "LOW", "Le risorse di resilienza percepite sembrano poco espresse",
                 "Nelle risposte, i comportamenti di recupero, adattamento, accesso ai supporti e continuità risultano poco frequenti in tutte e quattro le aree. Questo andamento descrive soltanto le occasioni e le difficoltà considerate negli ultimi sei mesi.",

@@ -152,7 +152,7 @@ class PsychometricStructureTest {
                 .filter(example -> example != null)
                 .toList();
 
-        assertThat(examples).hasSize(52).allSatisfy(example -> {
+        assertThat(examples).hasSize(62).allSatisfy(example -> {
             assertThat(example)
                     .isNotBlank()
                     .hasSizeLessThanOrEqualTo(180)

@@ -947,18 +947,55 @@ class TestResultServiceTest {
     }
 
     @Test
-    void psychologicalResilienceTestIsLoadedWithTwentyFourOriginalQuestionsAndContextLimits() {
+    void psychologicalResilienceTestIsLoadedWithTwentyFourExplicitQuestionsAndTenSeparateExamples() {
         PsychologicalTest test = catalogue.findById("resilienza-psicologica");
 
         assertThat(test.title()).isEqualTo("Resilienza psicologica");
-        assertThat(test.questions()).hasSize(24).allSatisfy(question ->
-                assertThat(question.example()).isNull());
+        assertThat(test.questions()).hasSize(24);
+        assertThat(test.questions()).extracting(question -> question.text()).containsExactly(
+                "Dopo una difficoltà, individuo quale bisogno affrontare per primo.",
+                "Davanti a un problema, individuo l'aspetto su cui le mie azioni possono incidere.",
+                "Individuo una persona a cui posso rivolgermi per una difficoltà.",
+                "Durante un periodo difficile, continuo a dedicare un po' di tempo a un'attività importante per me.",
+                "Quando mi accorgo che la tensione sta aumentando, faccio una breve pausa prima di continuare.",
+                "Quando una difficoltà ha più parti, la suddivido in azioni più piccole e concrete.",
+                "Quando ho bisogno di aiuto, formulo una richiesta precisa su ciò che mi servirebbe.",
+                "Davanti a più richieste, scelgo quale azione fare per prima in base alle mie priorità.",
+                "Dopo un evento che ha interrotto le mie abitudini, riprendo gradualmente almeno una routine quotidiana.",
+                "Quando le condizioni cambiano e un piano non è più praticabile, modifico il modo di procedere.",
+                "Accetto l'aiuto offerto quando corrisponde a ciò di cui ho bisogno.",
+                "Quando un obiettivo non è più realistico nelle condizioni attuali, ne modifico i tempi o le dimensioni.",
+                "Dopo un'attività che mi ha richiesto molte energie, mi concedo un tempo di recupero.",
+                "Quando un primo tentativo non funziona, provo un modo diverso di affrontare lo stesso problema.",
+                "Quando una responsabilità supera le mie energie, chiedo di dividerla con qualcuno.",
+                "Riconosco i passi avanti compiuti anche quando il problema non è ancora risolto.",
+                "Adatto il ritmo delle attività alle energie che sento di avere in quel momento.",
+                "Quando emergono nuove informazioni, rivedo ciò che mi aspettavo dalla situazione.",
+                "Quando non so come procedere, cerco indicazioni presso una fonte competente per quel problema.",
+                "Quando qualcosa va male, valuto l'esito senza usarlo come giudizio sul mio valore personale.",
+                "Dopo che qualcosa non è andato come speravo, riprendo un'attività quotidiana che avevo interrotto.",
+                "Quando un tentativo non funziona, individuo che cosa cambiare nel tentativo successivo.",
+                "Uso una risorsa disponibile nel contesto in cui mi trovo quando può aiutarmi ad affrontare la difficoltà.",
+                "Quando le vecchie abitudini non sono più praticabili, organizzo una nuova routine adatta alla situazione attuale.");
+        assertThat(test.questions()).extracting(question -> question.example())
+                .filteredOn(example -> example != null)
+                .containsExactly(
+                        "riposo, informazioni, sicurezza o aiuto pratico.",
+                        "non posso cambiare una decisione già presa, ma posso decidere a chi chiedere informazioni.",
+                        "con poche energie, do precedenza a un bisogno essenziale o a un impegno urgente.",
+                        "ricomincio da un orario regolare per il sonno, i pasti o un'attività necessaria.",
+                        "svolgo un compito alla volta oppure riduco ciò che avevo programmato.",
+                        "se servono più tempo o risorse del previsto, modifico le aspettative iniziali.",
+                        "penso \"questa scelta non ha funzionato\" invece di \"io non valgo\".",
+                        "dopo aver mancato una scadenza, rivedo i tempi o i passaggi del piano.",
+                        "un servizio, un'agevolazione o un supporto offerto nel luogo di studio o lavoro.",
+                        "dopo un cambio di orari, stabilisco nuovi momenti per il riposo o le attività necessarie.");
         assertThat(test.areas()).extracting(area -> area.code())
                 .containsExactly("recupero", "flessibilita", "risorse", "continuita");
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("1.1");
+        assertThat(test.version()).isEqualTo("1.2");
         assertThat(test.responseInstruction()).contains("ultimi sei mesi", "difficoltà", "frequenza");
         assertThat(test.introductoryText()).contains(
                 "processo legato al contesto",
