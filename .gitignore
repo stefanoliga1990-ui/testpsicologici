@@ -3,6 +3,7 @@ target/
 frontend/node_modules/
 frontend/dist/
 data/
+marketing/
 settings.xml
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
