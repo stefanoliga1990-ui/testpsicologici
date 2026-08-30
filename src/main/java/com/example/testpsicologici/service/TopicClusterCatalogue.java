@@ -42,6 +42,7 @@ public class TopicClusterCatalogue {
                     "Ambiguità e manipolazione relazionale",
                     "Dinamiche di comunicazione, attenzione e controllo che possono generare ambiguità, pressione o perdita di autonomia.",
                     List.of(
+                            "relazione-dannosa-benessere",
                             "gaslighting",
                             "love-bombing",
                             "breadcrumbing",

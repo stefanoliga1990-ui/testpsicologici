@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(33).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(34).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1774,10 +1774,74 @@ class TestResultServiceTest {
     }
 
     @Test
+    void relationshipWellbeingTestLoadsTwentyFourInterleavedItemsSixAreasAndFrequencyScale() {
+        PsychologicalTest test = catalogue.findById("relazione-dannosa-benessere");
+
+        assertThat(test.title()).isEqualTo("La mia relazione sta danneggiando il mio benessere?");
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(24).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "rispetto", "confini", "controllo", "paura", "reciprocita", "impatto");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(4));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "rispetto", "confini", "controllo", "paura", "reciprocita", "impatto");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains(
+                "ultimi tre mesi", "relazione scelta", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "adulti", "attuale o terminata nell'ultimo anno", "stessa persona",
+                "non stabilisce", "112", "1522");
+        assertThat(test.references()).hasSize(8).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.3390/ijerph182312717",
+                "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/",
+                "https://eige.europa.eu/publications-resources/thesaurus/terms/1241?language_content_entity=en",
+                "https://www.who.int/health-topics/violence-against-women",
+                "https://doi.org/10.1371/journal.pone.0310297",
+                "https://doi.org/10.1177/15248380231162972",
+                "https://doi.org/10.1111/j.1741-3737.2007.00393.x",
+                "https://www.1522.eu/cose-1522/");
+    }
+
+    @Test
+    void relationshipWellbeingProfilesUseSixAreaPatternAndKeepSafetyIndependentOfScore() {
+        TestResult low = analyzeWithAnswersForTest("relazione-dannosa-benessere", 1, 1, 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("relazione-dannosa-benessere", 3, 1, 1, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("relazione-dannosa-benessere", 5, 5, 5, 5, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("relazione-dannosa-benessere", 5, 5, 5, 5, 5, 1);
+
+        assertThat(low.general().title()).contains("esperienze relazionali potenzialmente dannose", "poco presenti");
+        assertThat(mixed.general().title()).contains("esperienze relazionali potenzialmente dannose", "modo variabile");
+        assertThat(focused.general().title()).contains("esperienze relazionali potenzialmente dannose", "alcuni ambiti");
+        assertThat(broad.general().title()).contains("esperienze relazionali potenzialmente dannose", "gran parte degli ambiti");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(6);
+            assertThat(result.general().detail()).contains(
+                    "non stabilisce", "rischio futuro", "indipendentemente dalla media",
+                    "non affrontare il partner", "112", "1522");
+        });
+        assertThat(broad.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Rispetto e svalutazione",
+                "Autonomia, privacy e consenso",
+                "Controllo, isolamento e risorse",
+                "Paura, pressione e conseguenze nel confronto",
+                "Reciprocità, responsabilità e riparazione",
+                "Impatto percepito sul benessere");
+        assertThat(low.percentage()).isZero();
+        assertThat(focused.percentage()).isEqualTo(67);
+        assertThat(broad.percentage()).isEqualTo(83);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 100, 100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

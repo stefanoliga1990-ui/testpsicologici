@@ -3591,6 +3591,139 @@ public class GuideCatalogue {
                                     "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale; il servizio non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "relazione-dannosa-benessere",
+                    "relazione-dannosa-benessere",
+                    "Relazione e benessere",
+                    "Quando una relazione incide sul benessere: segnali, contesto e sicurezza",
+                    "Relazione e benessere: segnali da osservare | Spazio Test",
+                    "Come osservare rispetto, confini, controllo, paura, reciprocità e impatto senza assegnare diagnosi o etichette automatiche alla relazione.",
+                    "«Relazione tossica» è un'espressione colloquiale, non una diagnosi né un verdetto. È più utile osservare comportamenti concreti, ripetizione, conseguenze, libertà di scelta e condizioni di sicurezza, senza aspettare che una media confermi ciò che è già importante.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Non serve un'etichetta per osservare ciò che accade",
+                                    List.of(
+                                            "Conflitti, stress e incompatibilità possono pesare sul benessere, ma non sono equivalenti a controllo, coercizione o violenza. La differenza non dipende da una parola sola: contano comportamenti, contesto, possibilità di dissentire e conseguenze concrete.",
+                                            "Il questionario collegato descrive soltanto ciò che una persona riferisce su una relazione scelta. Non ricostruisce i fatti, non misura il partner e non decide se restare, separarsi o confrontarlo."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le aree esplorate",
+                                    "Sei lenti editoriali, non criteri clinici",
+                                    List.of(
+                                            "I 24 item originali sono distribuiti in sei aree da quattro item. Le aree rendono leggibile il profilo, ma non sono fattori validati e hanno uguale peso solo per trasparenza di calcolo.",
+                                            "L'ordine del risultato resta teorico: differenze minime tra barre non stabiliscono una graduatoria di importanza. Un episodio serio può meritare attenzione anche quando l'area o la media complessiva sono contenute."
+                                    ),
+                                    List.of(
+                                            "Rispetto e svalutazione.",
+                                            "Autonomia, privacy e consenso.",
+                                            "Controllo, isolamento e risorse.",
+                                            "Paura, pressione e conseguenze nel confronto.",
+                                            "Reciprocità, responsabilità e riparazione.",
+                                            "Impatto percepito sul benessere."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Conflitto e danno",
+                                    "Un disaccordo non è automaticamente una dinamica dannosa",
+                                    List.of(
+                                            "In una relazione possono esserci divergenze, emozioni intense e riparazioni imperfette. È informativo osservare se rimane possibile dire no, fare una pausa, mantenere contatti e risorse, esprimere un bisogno e tornare sull'accaduto senza minacce o ritorsioni.",
+                                            "Stress, salute, lavoro o difficoltà economiche possono influire sulle interazioni, ma non rendono accettabili coercizione, sorveglianza, isolamento, umiliazione o violazioni del consenso."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Autonomia e sicurezza",
+                                    "Quando controllo e paura richiedono una lettura separata",
+                                    List.of(
+                                            "Istat ed EIGE includono nella violenza psicologica comportamenti come denigrazione, intimidazione, isolamento e controllo. Queste definizioni orientano il linguaggio, ma il test non è uno screening validato e non può accertare abuso o prevedere pericolo.",
+                                            "Minacce, pressione sessuale, limitazioni economiche, sorveglianza o paura di una reazione non vengono compensate da altre parti positive del rapporto. La sicurezza va considerata indipendentemente dalla barra generale."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Benessere percepito",
+                                    "L'impatto è reale anche quando la causa non è dimostrata",
+                                    List.of(
+                                            "Autodubbio, allerta, difficoltà di concentrazione e rinunce possono accompagnare tensioni relazionali. Le associazioni osservate nella ricerca non dimostrano però che la relazione sia l'unica causa né permettono di diagnosticare ansia, depressione o trauma.",
+                                            "Può aiutare annotare episodi, contesto, frequenza e conseguenze soltanto se farlo è sicuro. Una conversazione con una persona fidata o un professionista può offrire prospettiva senza richiedere subito una decisione definitiva."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Come leggere il risultato",
+                                    "Una media non annulla un episodio importante",
+                                    List.of(
+                                            "Le risposte da 1 a 5 vengono mediate e trasformate in barre da 0 a 100. Le barre non sono percentuali di danno, abuso, sicurezza, gravità o probabilità e le soglie LOW, MIXED, FOCUSED e BROAD sono editoriali.",
+                                            "Il profilo complessivo descrive la distribuzione tra aree; le schede specifiche aiutano a tornare ai comportamenti. Se una risposta riguarda violenza, coercizione o paura, considera quell'esperienza per ciò che è, senza attendere un punteggio elevato."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Le fonti orientano, non validano questo test",
+                                    List.of(
+                                            "Una validazione italiana dell'EAPA-P e fonti istituzionali aiutano a delimitare comportamenti di pressione, manipolazione e controllo. Revisioni internazionali mostrano però che anche gli strumenti di screening esistenti hanno limiti e non autorizzano il trasferimento di item o soglie.",
+                                            "Non esistono dati che validino questi 24 item, le sei aree o le interpretazioni negli adulti italiani. Popolazioni prevalentemente femminili, campioni online e definizioni differenti limitano ulteriormente la trasferibilità."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Cercare aiuto senza aumentare il pericolo",
+                                    List.of(
+                                            "Puoi chiedere un confronto individuale senza coinvolgere il partner. Se temi una reazione, evita confronti, raccolta di prove o cambiamenti visibili che potrebbero aumentare il pericolo e valuta un piano con un servizio competente.",
+                                            "In caso di pericolo immediato chiama il 112. Se sei una donna che vive violenza o stalking, il 1522 offre orientamento gratuito, è attivo 24 ore su 24 ed è disponibile anche via chat."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato è un'autovalutazione informativa originale e non validata. Non stabilisce se la relazione sia tossica, abusante, sicura o da interrompere, non accerta fatti, intenzioni o colpe e non sostituisce supporto professionale o servizi di emergenza.",
+                    List.of(
+                            new GuideReference(
+                                    "Italian Validation of the Scale of Psychological Abuse in Intimate Partner Violence — Lausi e colleghi",
+                                    "https://doi.org/10.3390/ijerph182312717",
+                                    "Validazione italiana consultata per il perimetro di pressione, manipolazione e controllo; strumento, fattori, item e punteggi non vengono trasferiti."
+                            ),
+                            new GuideReference(
+                                    "Definizioni e indicatori sulla violenza psicologica — Istat",
+                                    "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/",
+                                    "Fonte italiana consultata per denigrazione, isolamento, controllo, intimidazione e restrizioni economiche; il perimetro riguarda donne e coppia."
+                            ),
+                            new GuideReference(
+                                    "Psychological violence — EIGE",
+                                    "https://eige.europa.eu/publications-resources/thesaurus/terms/1241?language_content_entity=en",
+                                    "Definizione europea consultata per pattern, coercizione, minacce, isolamento e umiliazione; non è una misura individuale e può essere aggiornata."
+                            ),
+                            new GuideReference(
+                                    "Violence against women — World Health Organization",
+                                    "https://www.who.int/health-topics/violence-against-women",
+                                    "Fonte istituzionale consultata per danno psicologico, coercizione e comportamenti controllanti; riguarda soprattutto violenza contro le donne."
+                            ),
+                            new GuideReference(
+                                    "Evaluation of IPV screening instruments: a COSMIN-based systematic review — Li e colleghi",
+                                    "https://doi.org/10.1371/journal.pone.0310297",
+                                    "Revisione consultata per i limiti di validità di contenuto e criterio degli strumenti di screening disponibili; non valida il questionario dell'app."
+                            ),
+                            new GuideReference(
+                                    "The Trauma and Mental Health Impacts of Coercive Control — Lohmann e colleghi",
+                                    "https://doi.org/10.1177/15248380231162972",
+                                    "Meta-analisi consultata per associazioni tra controllo coercitivo e salute mentale; i disegni osservazionali non dimostrano causalità nel singolo caso."
+                            ),
+                            new GuideReference(
+                                    "Marital Quality and Personal Well-Being: A Meta-Analysis — Proulx e colleghi",
+                                    "https://doi.org/10.1111/j.1741-3737.2007.00393.x",
+                                    "Meta-analisi consultata per l'associazione tra qualità relazionale e benessere; campioni soprattutto coniugati e nessuna inferenza causale individuale."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Pagina istituzionale italiana consultata per destinatari, gratuità, continuità e orientamento; non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

@@ -1766,6 +1766,70 @@ class PageRenderingTest {
     }
 
     @Test
+    void relationshipWellbeingPagesExposeSixAreasFrequencyScaleSafetyAndGuide() throws Exception {
+        mockMvc.perform(get("/test/relazione-dannosa-benessere"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("La mia relazione sta danneggiando il mio benessere?")))
+                .andExpect(content().string(containsString("Rispetto e svalutazione")))
+                .andExpect(content().string(containsString("Paura, pressione e conseguenze nel confronto")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/relazione-dannosa-benessere\"")))
+                .andExpect(content().string(containsString("href=\"/test/gaslighting\"")))
+                .andExpect(content().string(containsString("non stabilisce se la relazione sia tossica")))
+                .andExpect(content().string(containsString("da “Mai” a “Quasi sempre”")));
+
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-relazione-dannosa-benessere", new TestAttempt(24));
+        mockMvc.perform(get("/test/relazione-dannosa-benessere/domanda/1").session(session))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("con quale frequenza ti è capitata questa esperienza")))
+                .andExpect(content().string(containsString("Mai")))
+                .andExpect(content().string(containsString("Quasi sempre")));
+
+        mockMvc.perform(get("/approfondimenti/relazione-dannosa-benessere"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Non serve un'etichetta per osservare ciò che accade")))
+                .andExpect(content().string(containsString("Sei lenti editoriali, non criteri clinici")))
+                .andExpect(content().string(containsString("Una media non annulla un episodio importante")))
+                .andExpect(content().string(containsString("Cercare aiuto senza aumentare il pericolo")))
+                .andExpect(content().string(containsString("href=\"/test/relazione-dannosa-benessere\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void relationshipWellbeingResultAndPdfExposeOverallSixAreasAndSafety() throws Exception {
+        mockMvc.perform(get("/test/relazione-dannosa-benessere/risultato")
+                        .session(completedAttempt("relazione-dannosa-benessere", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le esperienze relazionali potenzialmente dannose sembrano molto presenti in gran parte degli ambiti")))
+                .andExpect(content().string(containsString("Rispetto e svalutazione")))
+                .andExpect(content().string(containsString("Autonomia, privacy e consenso")))
+                .andExpect(content().string(containsString("Impatto percepito sul benessere")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/relazione-dannosa-benessere/risultato/pdf\"")))
+                .andExpect(content().string(containsString("href=\"/test/gaslighting\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/relazione-dannosa-benessere\"")));
+
+        MvcResult mvcResult = mockMvc.perform(get("/test/relazione-dannosa-benessere/risultato/pdf")
+                        .session(completedAttempt("relazione-dannosa-benessere", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-relazione-dannosa-benessere.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("La mia relazione sta danneggiando il mio benessere?")
+                    .contains("Rispetto e svalutazione")
+                    .contains("Paura, pressione e conseguenze nel confronto")
+                    .contains("Impatto percepito sul benessere")
+                    .contains("non stabilisce", "112", "1522");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -1843,6 +1907,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/hoovering")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/compatibilita-coppia")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/relazione-dannosa-benessere")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1862,6 +1928,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/orbiting")))
                 .andExpect(content().string(containsString("http://localhost/test/hoovering")))
                 .andExpect(content().string(containsString("http://localhost/test/compatibilita-coppia")))
+                .andExpect(content().string(containsString("http://localhost/test/relazione-dannosa-benessere")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

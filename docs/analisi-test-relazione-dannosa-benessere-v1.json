@@ -1,0 +1,128 @@
+{
+  "test": {
+    "id": "relazione-dannosa-benessere",
+    "titolo": "La mia relazione sta danneggiando il mio benessere?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa riferita a una relazione romantica specifica, attuale o recente",
+    "periodo_riferimento": "Ultimi tre mesi della relazione scelta, o intero rapporto se durato meno",
+    "direzione_punteggio": "Valori più alti descrivono una maggiore frequenza delle esperienze formulate, non maggiore gravità o pericolo",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale non validato e non normato. Non stabilisce se la relazione sia tossica, abusante, sicura o da interrompere; non accerta fatti, intenzioni, colpe, diagnosi o rischio futuro."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi della relazione scelta, o all'intero rapporto se è durato meno, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
+    "domande": 24,
+    "aree": 6,
+    "domande_per_area": 4,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le sei aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "da una a quattro aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno cinque aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale di danno, abuso, sicurezza, gravità o probabilità",
+    "ordine_aree_risultato": "rispetto, confini, controllo, paura, reciprocita, impatto",
+    "limite_aggregazione": "Condotte ed effetti diversi vengono aggregati solo per una sintesi editoriale; un singolo episodio serio non viene annullato dalla media."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le esperienze relazionali potenzialmente dannose sembrano poco presenti nelle risposte",
+      "sottotitolo": "Le esperienze esplorate risultano poco frequenti in tutte le sei aree. Nel periodo indicato non emerge quindi una configurazione diffusa di svalutazione, pressione, controllo, squilibrio o impatto percepito.",
+      "descrizione": "Questo andamento non esclude un episodio singolo importante, una condotta non inclusa o un cambiamento recente. Minacce, coercizione, paura, violenza o confini violati meritano attenzione indipendentemente dalla media e non vengono compensati dalle parti positive del rapporto. Il risultato non stabilisce se la relazione sia tossica, abusante, sicura o da interrompere e non accerta fatti, intenzioni, colpe o rischio futuro. Se hai bisogno di supporto puoi rivolgerti a una persona fidata o a un professionista, senza affrontare il partner se non è sicuro; in pericolo immediato chiama il 112 e, se sei una donna che vive violenza o stalking, il 1522 offre orientamento gratuito anche via chat."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le esperienze relazionali potenzialmente dannose sembrano presenti in modo variabile",
+      "sottotitolo": "Le risposte cambiano tra le sei aree, senza che una raggiunga il livello editoriale più alto. Alcune esperienze possono comparire in situazioni specifiche, mentre altre risultano poco frequenti nel periodo considerato.",
+      "descrizione": "Osserva episodi concreti, ripetizione, possibilità di dire no, conseguenze e ciò che accade quando esprimi un bisogno o un confine. Stress e conflitti possono influire, ma non rendono accettabili minacce, coercizione, controllo o violazioni del consenso. Il risultato non stabilisce se la relazione sia tossica, abusante, sicura o da interrompere e non accerta fatti, intenzioni, colpe o rischio futuro. Se cerchi un confronto esterno fallo nel modo più sicuro per te; in pericolo immediato chiama il 112 e, se sei una donna che vive violenza o stalking, il 1522 offre orientamento gratuito anche via chat."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le esperienze relazionali potenzialmente dannose sembrano più presenti in alcuni ambiti",
+      "sottotitolo": "Da una a quattro aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso nuclei specifici senza definire automaticamente l'intera relazione.",
+      "descrizione": "Consulta le aree emergenti distinguendo comportamenti del partner, tue reazioni e conseguenze sulla libertà o sul benessere. Conta anche se lo schema persiste, aumenta, coinvolge risorse o contatti e rende difficile esprimere limiti; una singola area può essere importante anche senza un profilo ampio. Il risultato non stabilisce se la relazione sia tossica, abusante, sicura o da interrompere e non accerta intenzioni, colpe o rischio futuro. Valuta supporto individuale e sicuro senza affrontare il partner se questo può aumentare il pericolo; nelle emergenze chiama il 112 e, per donne che vivono violenza o stalking, è disponibile il 1522."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le esperienze relazionali potenzialmente dannose sembrano molto presenti in gran parte degli ambiti",
+      "sottotitolo": "Le risposte indicano esperienze frequenti in almeno cinque delle sei aree. Svalutazione, limiti poco rispettati, controllo o paura possono quindi accompagnarsi a squilibrio e impatto sul benessere nel periodo considerato.",
+      "descrizione": "Un andamento ampio rende utile considerare persistenza, interferenza, accesso a persone e risorse, libertà di scelta e condizioni di sicurezza. Puoi cercare un aiuto individuale o un servizio specializzato senza dover prima assegnare un'etichetta alla relazione; non raccogliere prove e non affrontare il partner se questo potrebbe aumentare il pericolo. Il risultato non accerta abuso, violenza, intenzioni, colpe o rischio futuro e non prescrive di restare o separarti. In pericolo immediato chiama il 112; se sei una donna che vive violenza o stalking, il 1522 è gratuito, attivo ogni giorno e disponibile anche via chat."
+    }
+  ],
+  "analisi_specifiche_per_area": [
+    {
+      "area_code": "rispetto",
+      "nome_area": "Rispetto e svalutazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Insulti, umiliazioni e svalutazione dei bisogni risultano poco frequenti. Non esclude un episodio importante o altre forme di mancanza di rispetto."},
+        {"livello": "MEDIUM", "descrizione": "Svalutazione o umiliazione compaiono in alcune situazioni. Osserva contesto, ripetizione e possibilità di esprimere l'impatto senza ulteriori pressioni."},
+        {"livello": "HIGH", "descrizione": "Insulti, umiliazioni o svalutazione risultano frequenti. L'area descrive le risposte e non stabilisce intenzione, diagnosi o qualità complessiva della relazione."}
+      ]
+    },
+    {
+      "area_code": "confini",
+      "nome_area": "Autonomia, privacy e consenso",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Pressioni su limiti, privacy, tempo o contatto risultano poco frequenti. Il consenso resta necessario in ogni singola situazione."},
+        {"livello": "MEDIUM", "descrizione": "Alcuni limiti sembrano incontrare insistenza o pressione. Considera se puoi cambiare idea e dire no senza paura o conseguenze."},
+        {"livello": "HIGH", "descrizione": "Pressioni su confini, privacy, tempo o consenso risultano frequenti. Non sono rese accettabili da accordi precedenti o da aspetti positivi del rapporto."}
+      ]
+    },
+    {
+      "area_code": "controllo",
+      "nome_area": "Controllo, isolamento e risorse",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Limitazioni di contatti, attività, spostamenti o risorse risultano poco frequenti. Non esclude singole restrizioni o altre forme di controllo."},
+        {"livello": "MEDIUM", "descrizione": "Alcune limitazioni compaiono nel periodo scelto. Osserva conseguenze concrete su relazioni, lavoro, studio, movimenti e accesso al denaro."},
+        {"livello": "HIGH", "descrizione": "Controllo, isolamento o limitazioni delle risorse risultano frequenti. La sicurezza e l'accesso a supporti contano indipendentemente dalla media generale."}
+      ]
+    },
+    {
+      "area_code": "paura",
+      "nome_area": "Paura, pressione e conseguenze nel confronto",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Paura, minacce e adattamento per evitare reazioni risultano poco frequenti. Un singolo episodio può comunque richiedere attenzione e supporto."},
+        {"livello": "MEDIUM", "descrizione": "In alcune situazioni il confronto sembra accompagnato da paura o pressione. Considera se puoi dissentire, dire no e interrompere una conversazione in sicurezza."},
+        {"livello": "HIGH", "descrizione": "Paura, minacce o pressione nel confronto risultano frequenti. Questa area non misura il pericolo futuro: se temi per la sicurezza, cerca aiuto indipendentemente dal punteggio."}
+      ]
+    },
+    {
+      "area_code": "reciprocita",
+      "nome_area": "Reciprocità, responsabilità e riparazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Decisioni unilaterali, responsabilità spostata e rinunce sbilanciate risultano poco frequenti. Non certifica reciprocità in ogni aspetto."},
+        {"livello": "MEDIUM", "descrizione": "Reciprocità e riconoscimento della responsabilità appaiono variabili. Osserva chi può decidere, chi rinuncia e che cosa accade dopo un danno."},
+        {"livello": "HIGH", "descrizione": "Squilibrio nelle decisioni, nelle rinunce o nella responsabilità risulta frequente. L'area non assegna colpa globale né misura la prospettiva del partner."}
+      ]
+    },
+    {
+      "area_code": "impatto",
+      "nome_area": "Impatto percepito sul benessere",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Autodubbio, allerta e rinunce legate alle tensioni risultano poco frequenti. Non esclude sofferenza o conseguenze non esplorate."},
+        {"livello": "MEDIUM", "descrizione": "Le tensioni sembrano incidere in alcune situazioni su attenzione, giudizio o attività. Considera durata, recupero e supporti disponibili."},
+        {"livello": "HIGH", "descrizione": "Autodubbio, allerta o rinunce risultano frequenti. Il questionario non dimostra che la relazione sia l'unica causa e non diagnostica ansia, depressione o trauma."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {"titolo": "Italian Validation of the Scale of Psychological Abuse in Intimate Partner Violence", "url": "https://doi.org/10.3390/ijerph182312717", "apporto": "Validazione italiana consultata per il perimetro di pressione, manipolazione e controllo; strumento, fattori, item e punteggi non vengono trasferiti."},
+    {"titolo": "Definizioni e indicatori sulla violenza psicologica — Istat", "url": "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "apporto": "Fonte italiana consultata per denigrazione, isolamento, controllo, intimidazione e restrizioni economiche; il perimetro riguarda donne e coppia."},
+    {"titolo": "Psychological violence — EIGE", "url": "https://eige.europa.eu/publications-resources/thesaurus/terms/1241?language_content_entity=en", "apporto": "Definizione europea consultata per pattern, coercizione, minacce, isolamento e umiliazione; non è una misura individuale e può essere aggiornata."},
+    {"titolo": "Violence against women — World Health Organization", "url": "https://www.who.int/health-topics/violence-against-women", "apporto": "Fonte istituzionale consultata per il quadro di danno psicologico, coercizione e comportamenti controllanti; riguarda soprattutto violenza contro le donne."},
+    {"titolo": "Evaluation of IPV screening instruments: a COSMIN-based systematic review", "url": "https://doi.org/10.1371/journal.pone.0310297", "apporto": "Revisione consultata per i limiti di validità di contenuto e criterio degli strumenti di screening disponibili; non valida il questionario dell'app."},
+    {"titolo": "The Trauma and Mental Health Impacts of Coercive Control", "url": "https://doi.org/10.1177/15248380231162972", "apporto": "Meta-analisi consultata per associazioni tra controllo coercitivo e salute mentale; non dimostra causalità nel singolo caso."},
+    {"titolo": "Marital Quality and Personal Well-Being: A Meta-Analysis", "url": "https://doi.org/10.1111/j.1741-3737.2007.00393.x", "apporto": "Meta-analisi consultata per l'associazione tra qualità relazionale e benessere; campioni soprattutto coniugati e nessuna inferenza causale individuale."},
+    {"titolo": "1522 — Numero Anti Violenza e Stalking", "url": "https://www.1522.eu/cose-1522/", "apporto": "Pagina istituzionale italiana consultata per destinatari, gratuità, continuità e orientamento; non sostituisce il 112 nelle emergenze."}
+  ],
+  "limite": "Non esistono dati che validino negli adulti italiani questi 24 item originali, le sei aree, la scala, le soglie o le interpretazioni."
+}

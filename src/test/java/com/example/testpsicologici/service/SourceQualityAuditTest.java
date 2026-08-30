@@ -48,7 +48,8 @@ class SourceQualityAuditTest {
             Map.entry("breadcrumbing", "2516636"),
             Map.entry("orbiting", "02654075211000417"),
             Map.entry("hoovering", "662237"),
-            Map.entry("compatibilita-coppia", "iris.unito.it")
+            Map.entry("compatibilita-coppia", "iris.unito.it"),
+            Map.entry("relazione-dannosa-benessere", "ijerph182312717")
     );
 
     @Autowired
@@ -59,7 +60,7 @@ class SourceQualityAuditTest {
 
     @Test
     void everyQuestionnaireHasTraceableSourcesAndDocumentedContextualEvidence() {
-        assertThat(testCatalogue.findAll()).hasSize(33).allSatisfy(test -> {
+        assertThat(testCatalogue.findAll()).hasSize(34).allSatisfy(test -> {
             assertThat(test.references()).hasSizeGreaterThanOrEqualTo(3);
             assertThat(test.references()).extracting(TestReference::url)
                     .allMatch(url -> url.startsWith("https://"))
@@ -73,7 +74,7 @@ class SourceQualityAuditTest {
 
     @Test
     void everyGuideHasTraceableSpecificSourcesAndNoThirdPartyScientificCopies() {
-        assertThat(guideCatalogue.findAll()).hasSize(33).allSatisfy(guide -> {
+        assertThat(guideCatalogue.findAll()).hasSize(34).allSatisfy(guide -> {
             assertThat(guide.references()).hasSizeGreaterThanOrEqualTo(3);
             assertThat(guide.references()).extracting(GuideReference::url)
                     .allMatch(url -> url.startsWith("https://"))

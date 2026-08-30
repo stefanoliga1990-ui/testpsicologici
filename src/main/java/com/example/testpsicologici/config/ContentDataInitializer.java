@@ -78,6 +78,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedOrbitingInformationTest();
         seedHooveringInformationTest();
         seedCoupleCompatibilityInformationTest();
+        seedRelationshipWellbeingInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -3130,6 +3131,124 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "La persistenza dopo distanza, silenzio o rifiuto risulta numerosa. Questo non accerta intenzioni o stalking, ma i confini e la sicurezza meritano attenzione indipendentemente dall'etichetta.");
     }
 
+    private void seedRelationshipWellbeingInformationTest() {
+        String id = "relazione-dannosa-benessere";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "La mia relazione sta danneggiando il mio benessere?",
+                "Auto-osservazione informativa",
+                "Esplora rispetto, confini, autonomia, pressione, reciprocità e impatto percepito in una relazione romantica specifica.",
+                "6 min · 24 domande",
+                "Questo questionario per adulti è informativo e non validato: scegli una relazione romantica attuale o terminata nell'ultimo anno e pensa sempre alla stessa persona; puoi interromperti in qualsiasi momento. Il risultato non stabilisce se la relazione sia tossica, abusante, sicura o da interrompere. In caso di pericolo immediato chiama il 112; se sei una donna che vive violenza o stalking, il 1522 offre orientamento gratuito anche via chat.",
+                version, false,
+                "Presenza complessiva delle esperienze esplorate",
+                "Frequenza delle esperienze nell'area",
+                true, 34).withSeo(
+                "La mia relazione danneggia il mio benessere? | Spazio Test",
+                "Questionario informativo su rispetto, confini, controllo, pressione, reciprocità e impatto percepito nella relazione. 24 domande, senza diagnosi.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi della relazione scelta, o all'intero rapporto se è durato meno, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "Italian Validation of the Scale of Psychological Abuse in Intimate Partner Violence — Lausi e colleghi",
+                "https://doi.org/10.3390/ijerph182312717", 1);
+        saveReference(id, "Definizioni e indicatori sulla violenza psicologica — Istat",
+                "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", 2);
+        saveReference(id, "Psychological violence — EIGE",
+                "https://eige.europa.eu/publications-resources/thesaurus/terms/1241?language_content_entity=en", 3);
+        saveReference(id, "Violence against women — World Health Organization",
+                "https://www.who.int/health-topics/violence-against-women", 4);
+        saveReference(id, "Evaluation of IPV screening instruments: a COSMIN-based systematic review — Li e colleghi",
+                "https://doi.org/10.1371/journal.pone.0310297", 5);
+        saveReference(id, "The Trauma and Mental Health Impacts of Coercive Control — Lohmann e colleghi",
+                "https://doi.org/10.1177/15248380231162972", 6);
+        saveReference(id, "Marital Quality and Personal Well-Being: A Meta-Analysis — Proulx e colleghi",
+                "https://doi.org/10.1111/j.1741-3737.2007.00393.x", 7);
+        saveReference(id, "1522 — Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 8);
+
+        saveArea(id, "rispetto", "Rispetto e svalutazione", 1);
+        saveArea(id, "confini", "Autonomia, privacy e consenso", 2);
+        saveArea(id, "controllo", "Controllo, isolamento e risorse", 3);
+        saveArea(id, "paura", "Paura, pressione e conseguenze nel confronto", 4);
+        saveArea(id, "reciprocita", "Reciprocità, responsabilità e riparazione", 5);
+        saveArea(id, "impatto", "Impatto percepito sul benessere", 6);
+
+        saveQuestions(id, List.of(
+                q("rispetto", "Il partner mi insultava o ridicolizzava durante un disaccordo."),
+                q("rispetto", "Il partner trattava i miei bisogni come poco importanti."),
+                q("rispetto", "Il partner mi umiliava davanti ad altre persone."),
+                q("rispetto", "Il partner usava una mia confidenza per ferirmi."),
+                q("confini", "Il partner insisteva dopo che avevo espresso un limite."),
+                q("confini", "Il partner si aspettava di poter leggere i miei messaggi o controllare i miei dispositivi."),
+                q("confini", "Il partner decideva come avrei dovuto usare il mio tempo."),
+                q("confini", "Il partner faceva pressione perché accettassi un contatto fisico o sessuale che non desideravo."),
+                q("controllo", "Il partner ostacolava i miei contatti con amici o familiari."),
+                q("controllo", "Il partner rendeva difficile dedicarmi al lavoro o allo studio."),
+                q("controllo", "Il partner controllava i miei spostamenti."),
+                q("controllo", "Il partner limitava il mio accesso al denaro o alle decisioni economiche che mi riguardavano."),
+                q("paura", "Modificavo ciò che dicevo per evitare una reazione del partner."),
+                q("paura", "Avevo paura di dire di no al partner."),
+                q("paura", "Il partner mi minacciava per influenzare una mia decisione."),
+                q("paura", "Dopo un disaccordo, la comunicazione riprendeva soltanto quando accettavo la posizione del partner."),
+                q("reciprocita", "Il partner attribuiva a me la responsabilità dei problemi condivisi."),
+                q("reciprocita", "Dopo avermi ferito, il partner evitava di riconoscere l'accaduto."),
+                q("reciprocita", "Le decisioni che riguardavano entrambi venivano prese senza coinvolgermi."),
+                q("reciprocita", "I compromessi richiedevano soprattutto mie rinunce."),
+                q("impatto", "Dopo le interazioni con il partner, dubitavo del mio giudizio."),
+                q("impatto", "Le tensioni della relazione occupavano la mia attenzione durante le attività quotidiane."),
+                q("impatto", "Rimanevo in allerta per anticipare una reazione del partner."),
+                q("impatto", "Rinunciavo ad attività importanti per gestire le tensioni della relazione.")));
+
+        String commonSafety = "Il risultato non stabilisce se la relazione sia tossica, abusante, sicura o da interrompere e non accerta fatti, intenzioni, colpe, diagnosi o rischio futuro. "
+                + "Minacce, coercizione, paura, violenza o confini violati meritano attenzione indipendentemente dalla media e non vengono compensati dalle parti positive del rapporto. "
+                + "Se cerchi supporto, fallo nel modo più sicuro per te e non affrontare il partner se questo potrebbe aumentare il pericolo. In caso di pericolo immediato chiama il 112; se sei una donna che vive violenza o stalking, il 1522 offre orientamento gratuito anche via chat.";
+
+        saveGlobal(id, "LOW",
+                "Le esperienze relazionali potenzialmente dannose sembrano poco presenti nelle risposte",
+                "Le esperienze esplorate risultano poco frequenti in tutte le sei aree. Nel periodo indicato non emerge quindi una configurazione diffusa di svalutazione, pressione, controllo, squilibrio o impatto percepito.",
+                "Questo andamento non esclude un episodio singolo importante, una condotta non inclusa o un cambiamento recente. Un valore contenuto non dimostra che ogni parte della relazione sia rispettosa né sostituisce ciò che sai di un episodio concreto. " + commonSafety);
+        saveGlobal(id, "MIXED",
+                "Le esperienze relazionali potenzialmente dannose sembrano presenti in modo variabile",
+                "Le risposte cambiano tra le sei aree, senza che una raggiunga il livello editoriale più alto. Alcune esperienze possono comparire in situazioni specifiche, mentre altre risultano poco frequenti nel periodo considerato.",
+                "Osserva episodi concreti, ripetizione, possibilità di dire no, conseguenze e ciò che accade quando esprimi un bisogno o un confine. Stress e conflitti possono influire, ma non rendono accettabili minacce, coercizione, controllo o violazioni del consenso. " + commonSafety);
+        saveGlobal(id, "FOCUSED",
+                "Le esperienze relazionali potenzialmente dannose sembrano più presenti in alcuni ambiti",
+                "Da una a quattro aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso nuclei specifici senza definire automaticamente l'intera relazione.",
+                "Consulta le aree emergenti distinguendo comportamenti del partner, tue reazioni e conseguenze sulla libertà o sul benessere. Conta anche se lo schema persiste, aumenta, coinvolge risorse o contatti e rende difficile esprimere limiti; una singola area può essere importante anche senza un profilo ampio. " + commonSafety);
+        saveGlobal(id, "BROAD",
+                "Le esperienze relazionali potenzialmente dannose sembrano molto presenti in gran parte degli ambiti",
+                "Le risposte indicano esperienze frequenti in almeno cinque delle sei aree. Svalutazione, limiti poco rispettati, controllo o paura possono quindi accompagnarsi a squilibrio e impatto sul benessere nel periodo considerato.",
+                "Un andamento ampio rende utile considerare persistenza, interferenza, accesso a persone e risorse, libertà di scelta e condizioni di sicurezza. Puoi cercare un aiuto individuale o un servizio specializzato senza dover prima assegnare un'etichetta alla relazione; non raccogliere prove se questo potrebbe aumentare il pericolo. " + commonSafety);
+
+        saveAreaInsights(id, "rispetto",
+                "Insulti, umiliazioni e svalutazione dei bisogni risultano poco frequenti. Non esclude un episodio importante o altre forme di mancanza di rispetto.",
+                "Svalutazione o umiliazione compaiono in alcune situazioni. Osserva contesto, ripetizione e possibilità di esprimere l'impatto senza ulteriori pressioni.",
+                "Insulti, umiliazioni o svalutazione risultano frequenti. L'area descrive le risposte e non stabilisce intenzione, diagnosi o qualità complessiva della relazione.");
+        saveAreaInsights(id, "confini",
+                "Pressioni su limiti, privacy, tempo o contatto risultano poco frequenti. Il consenso resta necessario in ogni singola situazione.",
+                "Alcuni limiti sembrano incontrare insistenza o pressione. Considera se puoi cambiare idea e dire no senza paura o conseguenze.",
+                "Pressioni su confini, privacy, tempo o consenso risultano frequenti. Non sono rese accettabili da accordi precedenti o da aspetti positivi del rapporto.");
+        saveAreaInsights(id, "controllo",
+                "Limitazioni di contatti, attività, spostamenti o risorse risultano poco frequenti. Non esclude singole restrizioni o altre forme di controllo.",
+                "Alcune limitazioni compaiono nel periodo scelto. Osserva conseguenze concrete su relazioni, lavoro, studio, movimenti e accesso al denaro.",
+                "Controllo, isolamento o limitazioni delle risorse risultano frequenti. La sicurezza e l'accesso a supporti contano indipendentemente dalla media generale.");
+        saveAreaInsights(id, "paura",
+                "Paura, minacce e adattamento per evitare reazioni risultano poco frequenti. Un singolo episodio può comunque richiedere attenzione e supporto.",
+                "In alcune situazioni il confronto sembra accompagnato da paura o pressione. Considera se puoi dissentire, dire no e interrompere una conversazione in sicurezza.",
+                "Paura, minacce o pressione nel confronto risultano frequenti. Questa area non misura il pericolo futuro: se temi per la sicurezza, cerca aiuto indipendentemente dal punteggio.");
+        saveAreaInsights(id, "reciprocita",
+                "Decisioni unilaterali, responsabilità spostata e rinunce sbilanciate risultano poco frequenti. Non certifica reciprocità in ogni aspetto.",
+                "Reciprocità e riconoscimento della responsabilità appaiono variabili. Osserva chi può decidere, chi rinuncia e che cosa accade dopo un danno.",
+                "Squilibrio nelle decisioni, nelle rinunce o nella responsabilità risulta frequente. L'area non assegna colpa globale né misura la prospettiva del partner.");
+        saveAreaInsights(id, "impatto",
+                "Autodubbio, allerta e rinunce legate alle tensioni risultano poco frequenti. Non esclude sofferenza o conseguenze non esplorate.",
+                "Le tensioni sembrano incidere in alcune situazioni su attenzione, giudizio o attività. Considera durata, recupero e supporti disponibili.",
+                "Autodubbio, allerta o rinunce risultano frequenti. Il questionario non dimostra che la relazione sia l'unica causa e non diagnostica ansia, depressione o trauma.");
+    }
+
     private void seedCoupleCompatibilityInformationTest() {
         String id = "compatibilita-coppia";
         String version = "1.0";
@@ -3453,6 +3572,15 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Goal interdependence and couples' relationship satisfaction — Toma e colleghi", "https://doi.org/10.1177/02654075221128994"),
                 ref("Couples' sexual communication and satisfaction — Mallory e colleghi", "https://pmc.ncbi.nlm.nih.gov/articles/PMC9153093/"),
                 ref("Financial factors and couple relationship satisfaction — Wilmarth e colleghi", "https://doi.org/10.1080/01926187.2025.2610780"),
+                ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
+        syncReferences("relazione-dannosa-benessere", List.of(
+                ref("Italian Validation of the Scale of Psychological Abuse in Intimate Partner Violence — Lausi e colleghi", "https://doi.org/10.3390/ijerph182312717"),
+                ref("Definizioni e indicatori sulla violenza psicologica — Istat", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/"),
+                ref("Psychological violence — EIGE", "https://eige.europa.eu/publications-resources/thesaurus/terms/1241?language_content_entity=en"),
+                ref("Violence against women — World Health Organization", "https://www.who.int/health-topics/violence-against-women"),
+                ref("Evaluation of IPV screening instruments: a COSMIN-based systematic review — Li e colleghi", "https://doi.org/10.1371/journal.pone.0310297"),
+                ref("The Trauma and Mental Health Impacts of Coercive Control — Lohmann e colleghi", "https://doi.org/10.1177/15248380231162972"),
+                ref("Marital Quality and Personal Well-Being: A Meta-Analysis — Proulx e colleghi", "https://doi.org/10.1111/j.1741-3737.2007.00393.x"),
                 ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
     }
 

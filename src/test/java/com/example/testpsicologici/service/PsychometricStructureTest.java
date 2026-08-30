@@ -51,7 +51,8 @@ class PsychometricStructureTest {
             Map.entry("breadcrumbing", "dinamiche associate al breadcrumbing"),
             Map.entry("orbiting", "dinamiche associate all'orbiting"),
             Map.entry("hoovering", "dinamiche associate all'hoovering"),
-            Map.entry("compatibilita-coppia", "compatibilità percepita nella coppia"));
+            Map.entry("compatibilita-coppia", "compatibilità percepita nella coppia"),
+            Map.entry("relazione-dannosa-benessere", "esperienze relazionali potenzialmente dannose"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -61,7 +62,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(33).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(34).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
@@ -104,6 +105,14 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(4));
+            } else if ("relazione-dannosa-benessere".equals(test.id())) {
+                assertThat(test.questions()).hasSize(24);
+                assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).hasSize(6);
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code()))
+                        .hasSize(4));
             } else {
                 assertThat(test.questions()).hasSize(24);
                 assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
@@ -136,6 +145,8 @@ class PsychometricStructureTest {
         assertThat(resultService.profileCode(2, 1, 3)).isEqualTo("BROAD");
         assertThat(resultService.profileCode(6, 2, 8)).isEqualTo("FOCUSED");
         assertThat(resultService.profileCode(7, 1, 8)).isEqualTo("BROAD");
+        assertThat(resultService.profileCode(4, 2, 6)).isEqualTo("FOCUSED");
+        assertThat(resultService.profileCode(5, 1, 6)).isEqualTo("BROAD");
     }
 
     @Test
@@ -226,6 +237,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("moderata o variabile");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("alcuni ambiti");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("ampiamente");
+            } else if ("relazione-dannosa-benessere".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("alcuni ambiti");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("gran parte degli ambiti");
             } else {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");

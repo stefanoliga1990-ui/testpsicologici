@@ -51,13 +51,16 @@ class TopicClusterCatalogueTest {
 
         assertThat(cluster.slug()).isEqualTo("ambiguita-e-manipolazione-relazionale");
         assertThat(cluster.title()).isEqualTo("Ambiguità e manipolazione relazionale");
-        assertThat(cluster.testIds()).containsExactly("gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering");
+        assertThat(cluster.testIds()).containsExactly("relazione-dannosa-benessere", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering");
+        assertThat(topicClusterCatalogue.findByTestId("relazione-dannosa-benessere")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("breadcrumbing")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("love-bombing")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("orbiting")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("hoovering")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("limerenza").orElseThrow().testIds())
-                .doesNotContain("gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering");
+                .doesNotContain("relazione-dannosa-benessere", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering");
+        assertThat(topicClusterCatalogue.findRelatedTestIds("relazione-dannosa-benessere", 3))
+                .containsExactly("gaslighting", "hoovering", "love-bombing");
     }
 
     @Test
