@@ -37,7 +37,7 @@
         "resultModel": null,
         "notes": "Evitare di trasformare l'espressione colloquiale relazione tossica in una diagnosi o in una decisione automatica sulla relazione."
       },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-08-30T17:53:53+02:00", "completedAt": "2026-08-30T17:53:53+02:00", "commitHash": "eb7a1f08a0d96e7e0dfa53f499f32838bd1a1ce3", "blockReason": null }
     },
     {
       "order": 2,
