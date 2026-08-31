@@ -27,11 +27,12 @@ function ReviewerSection({ reviewer }) {
           <p>Per ogni nuovo questionario, la revisione professionale accompagna la definizione delle linee guida e il controllo di struttura, linguaggio, limiti e modalità di restituzione prima della pubblicazione.</p>
         </div>
         <article className="reviewer-card" itemScope itemType="https://schema.org/Person">
-          <div className="reviewer-monogram" aria-hidden="true">AL</div>
+          <div className="reviewer-photo-frame">
+            <img className="reviewer-photo" src="/images/alessia-liga-revisore-professionale.jpg" alt="Ritratto di Alessia Liga, revisore professionale di Spazio Test" width="400" height="400" loading="lazy" decoding="async" itemProp="image" />
+          </div>
           <div className="reviewer-card-content">
-            <p className="eyebrow">Revisore professionale</p>
-            <h3 itemProp="name">{reviewer.name}</h3>
-            <p className="reviewer-role" itemProp="jobTitle">{reviewer.role}</p>
+            <h3>Il Revisore Professionale</h3>
+            <p className="reviewer-role"><span itemProp="name">{reviewer.name}</span> · <span itemProp="jobTitle">{reviewer.role}</span></p>
             <p className="reviewer-biography" itemProp="description">{reviewer.biography}</p>
             <button className="button button-secondary reviewer-contact-button" type="button" onClick={() => dialogRef.current?.showModal()}>Contatti</button>
           </div>

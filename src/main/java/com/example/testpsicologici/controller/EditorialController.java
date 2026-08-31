@@ -36,6 +36,8 @@ public class EditorialController {
         var tests = catalogue.findAll();
         var guides = guideCatalogue.findAll();
         model.addAttribute("reviewer", PROFESSIONAL_REVIEWER);
+        model.addAttribute("reviewerImageUrl", siteUrlService.canonicalUrl(
+                request, "/images/alessia-liga-revisore-professionale.jpg"));
         model.addAttribute("tests", tests);
         model.addAttribute("guides", guides);
         model.addAttribute("reactPageData", ReactPageData.of(

@@ -43,7 +43,8 @@
         "@type": "Person",
         "name": /*[[${reviewer.name}]]*/ "Alessia Liga",
         "jobTitle": /*[[${reviewer.role}]]*/ "Psicologa · Specializzanda in Psicoterapia della Salute",
-        "description": /*[[${reviewer.biography}]]*/ "Biografia professionale del revisore."
+        "description": /*[[${reviewer.biography}]]*/ "Biografia professionale del revisore.",
+        "image": /*[[${reviewerImageUrl}]]*/ "https://example.com/images/alessia-liga-revisore-professionale.jpg"
       }
     }
     </script>
@@ -80,11 +81,14 @@
             <p>Per ogni nuovo questionario, la revisione professionale accompagna la definizione delle linee guida e il controllo di struttura, linguaggio, limiti e modalità di restituzione prima della pubblicazione.</p>
         </div>
         <article class="reviewer-card" itemscope itemtype="https://schema.org/Person">
-            <div class="reviewer-monogram" aria-hidden="true">AL</div>
+            <div class="reviewer-photo-frame">
+                <img class="reviewer-photo" src="/images/alessia-liga-revisore-professionale.jpg"
+                     alt="Ritratto di Alessia Liga, revisore professionale di Spazio Test"
+                     width="400" height="400" loading="lazy" decoding="async" itemprop="image">
+            </div>
             <div class="reviewer-card-content">
-                <p class="eyebrow">Revisore professionale</p>
-                <h3 itemprop="name" th:text="${reviewer.name}">Alessia Liga</h3>
-                <p class="reviewer-role" itemprop="jobTitle" th:text="${reviewer.role}">Psicologa · Specializzanda in Psicoterapia della Salute</p>
+                <h3>Il Revisore Professionale</h3>
+                <p class="reviewer-role"><span itemprop="name" th:text="${reviewer.name}">Alessia Liga</span> · <span itemprop="jobTitle" th:text="${reviewer.role}">Psicologa · Specializzanda in Psicoterapia della Salute</span></p>
                 <p class="reviewer-biography" itemprop="description" th:text="${reviewer.biography}">Biografia professionale del revisore.</p>
                 <button class="button button-secondary reviewer-contact-button" type="button"
                         data-reviewer-dialog-open="reviewer-contact-dialog-fallback">Contatti</button>

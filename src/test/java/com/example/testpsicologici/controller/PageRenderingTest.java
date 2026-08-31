@@ -145,7 +145,12 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("fonti scientifiche o istituzionali italiane")))
                 .andExpect(content().string(containsString("Revisione professionale dei questionari")))
                 .andExpect(content().string(containsString("Alessia Liga")))
+                .andExpect(content().string(containsString("Il Revisore Professionale")))
                 .andExpect(content().string(containsString("Psicologa · Specializzanda in Psicoterapia della Salute")))
+                .andExpect(content().string(containsString("src=\"/images/alessia-liga-revisore-professionale.jpg\"")))
+                .andExpect(content().string(containsString("Ritratto di Alessia Liga, revisore professionale di Spazio Test")))
+                .andExpect(content().string(containsString(
+                        "\"image\": \"http:\\/\\/localhost\\/images\\/alessia-liga-revisore-professionale.jpg\"")))
                 .andExpect(content().string(containsString("Scuola di Specializzazione in Psicoterapia")))
                 .andExpect(content().string(containsString("La revisione professionale migliora la qualità editoriale")))
                 .andExpect(content().string(containsString("href=\"mailto:Alessia.liga3@gmail.com\"")))
