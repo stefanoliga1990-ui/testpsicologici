@@ -28,7 +28,7 @@ function ReviewerSection({ reviewer }) {
         </div>
         <article className="reviewer-card" itemScope itemType="https://schema.org/Person">
           <div className="reviewer-photo-frame">
-            <img className="reviewer-photo" src="/images/alessia-liga-revisore-professionale.jpg" alt="Ritratto di Alessia Liga, revisore professionale di Spazio Test" width="400" height="400" loading="lazy" decoding="async" itemProp="image" />
+            <img className="reviewer-photo" src="/images/alessia-liga-revisore-professionale-2.jpg" alt="Ritratto di Alessia Liga, revisore professionale di Spazio Test" width="527" height="491" loading="lazy" decoding="async" itemProp="image" />
           </div>
           <div className="reviewer-card-content">
             <h3>Il Revisore Professionale</h3>
@@ -49,6 +49,7 @@ function ReviewerSection({ reviewer }) {
           <p><span>Nome</span><strong>{reviewer.name}</strong></p>
           <p><span>Email</span><a href={`mailto:${reviewer.email}`}>{reviewer.email}</a></p>
           <p><span>Telefono</span><a href={`tel:${reviewer.phoneHref}`}>{reviewer.phoneDisplay}</a></p>
+          <p><span>Profilo</span><a href={reviewer.linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
         </address>
       </dialog>
     </>

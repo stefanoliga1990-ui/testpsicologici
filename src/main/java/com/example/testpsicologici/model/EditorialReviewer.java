@@ -6,5 +6,6 @@ public record EditorialReviewer(
         String biography,
         String email,
         String phoneDisplay,
-        String phoneHref) {
+        String phoneHref,
+        String linkedinUrl) {
 }

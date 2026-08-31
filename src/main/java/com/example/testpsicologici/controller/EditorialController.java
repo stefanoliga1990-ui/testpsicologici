@@ -14,11 +14,17 @@ public class EditorialController {
 
     private static final EditorialReviewer PROFESSIONAL_REVIEWER = new EditorialReviewer(
             "Alessia Liga",
-            "Psicologa · Specializzanda in Psicoterapia della Salute",
-            "Psicologa con una formazione centrata sulla psicologia sociale, del lavoro, di comunità e della salute, laureata magistrale in Psicologia sociale, del lavoro e delle organizzazioni presso l’Università degli Studi di Palermo con 110/110 e lode. Ha inoltre conseguito un Master di II livello in Gestione e Sviluppo delle Risorse Umane e ha approfondito l’ambito dell’autismo e della neurodiversità attraverso una formazione specialistica. Attualmente frequenta la Scuola di Specializzazione in Psicoterapia – Psicologia della Salute presso Sapienza Università di Roma. Nel corso della sua esperienza professionale ha lavorato in ambito psicoeducativo, scolastico e comunitario, occupandosi di sostegno a persone con disabilità e bisogni speciali, neurodiversità, inclusione e sviluppo dell’autonomia. Ha maturato esperienza nella prevenzione del disagio, nella promozione del benessere psicologico e organizzativo, nella progettazione di interventi di comunità e nella ricerca psicosociale. Ha inoltre svolto attività di formazione, tutoraggio e supporto metodologico in ambito universitario. Attualmente è Docente di Psicologia di Comunità presso l’Università degli Studi “Guglielmo Marconi” e Cultrice della Materia in Psicologia Sociale presso l’Università degli Studi Niccolò Cusano, partecipando anche a commissioni di laurea e d’esame.",
+            "Psicologa · Specializzanda in Psicoterapia presso la Scuola di Psicologia della Salute.",
+            "Laureata magistrale in Psicologia sociale, del lavoro e delle organizzazioni presso l’Università degli Studi di Palermo con 110/110 e lode. Ha conseguito un Master di II livello in Gestione e Sviluppo delle Risorse Umane e una formazione specialistica in autismo e neurodiversità.\n\n"
+                    + "Nel corso della sua esperienza professionale ha lavorato in ambito psicoeducativo, scolastico e comunitario, occupandosi di supporto e sostegno a persone con disabilità e famiglie con bisogni speciali, prevenzione del disagio, promozione del benessere e ricerca psicosociale. È autrice di vari contributi scientifici accademici e di divulgazione psicologica.\n\n"
+                    + "Attualmente è Docente di Psicologia di Comunità presso l’Università degli Studi “Guglielmo Marconi” e Cultrice della Materia in Psicologia Sociale presso l’Università degli Studi Niccolò Cusano.\n\n"
+                    + "In qualità di consulente, si dedica alla progettazione di interventi di welfare di comunità e all’implementazione di servizi di psicologia delle cure primarie.\n\n"
+                    + "Attraverso un approccio orientato alla salutogenesi, realizza workshop psicoeducativi per la gestione dello stress e promozione della salute, percorsi di sostegno alla genitorialità, mirati a far emergere i punti di forza e le risorse già presenti nelle dinamiche familiari per promuoverne la resilienza.\n\n"
+                    + "Cura inoltre interventi in ambito scolastico orientati allo sviluppo giovanile, integrando i modelli delle Life Skills e del Service-Learning. A supporto di queste attività, conduce progetti di ricerca-intervento avvalendosi di metodologie miste, che uniscono l’analisi dei dati psicometrici all’approfondimento qualitativo tramite studi di caso.",
             "Alessia.liga3@gmail.com",
             "+39 392 240 7494",
-            "+393922407494");
+            "+393922407494",
+            "https://www.linkedin.com/in/alessia-liga-a057b985");
 
     private final TestCatalogue catalogue;
     private final SiteUrlService siteUrlService;
@@ -37,7 +43,7 @@ public class EditorialController {
         var guides = guideCatalogue.findAll();
         model.addAttribute("reviewer", PROFESSIONAL_REVIEWER);
         model.addAttribute("reviewerImageUrl", siteUrlService.canonicalUrl(
-                request, "/images/alessia-liga-revisore-professionale.jpg"));
+                request, "/images/alessia-liga-revisore-professionale-2.jpg"));
         model.addAttribute("tests", tests);
         model.addAttribute("guides", guides);
         model.addAttribute("reactPageData", ReactPageData.of(
