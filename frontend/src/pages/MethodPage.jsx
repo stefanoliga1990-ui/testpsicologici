@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ReferenceList from '../components/ReferenceList';
@@ -14,13 +15,52 @@ function SourceGroup({ eyebrow, title, href, references }) {
   );
 }
 
-export default function MethodPage({ guides, tests }) {
+function ReviewerSection({ reviewer }) {
+  const dialogRef = useRef(null);
+
+  return (
+    <>
+      <section className="reviewer-section" aria-labelledby="revisione-professionale">
+        <div className="editorial-section-heading reviewer-section-heading">
+          <p className="eyebrow">Autorialità e competenze</p>
+          <h2 id="revisione-professionale">Revisione professionale dei questionari</h2>
+          <p>Per ogni nuovo questionario, la revisione professionale accompagna la definizione delle linee guida e il controllo di struttura, linguaggio, limiti e modalità di restituzione prima della pubblicazione.</p>
+        </div>
+        <article className="reviewer-card" itemScope itemType="https://schema.org/Person">
+          <div className="reviewer-monogram" aria-hidden="true">AL</div>
+          <div className="reviewer-card-content">
+            <p className="eyebrow">Revisore professionale</p>
+            <h3 itemProp="name">{reviewer.name}</h3>
+            <p className="reviewer-role" itemProp="jobTitle">{reviewer.role}</p>
+            <p className="reviewer-biography" itemProp="description">{reviewer.biography}</p>
+            <button className="button button-secondary reviewer-contact-button" type="button" onClick={() => dialogRef.current?.showModal()}>Contatti</button>
+          </div>
+        </article>
+        <p className="reviewer-scope-note"><strong>Ambito della revisione.</strong> La revisione professionale migliora la qualità editoriale e la chiarezza dei contenuti, ma non equivale a validazione psicometrica, definizione di norme o valutazione clinica individuale.</p>
+      </section>
+      <dialog className="reviewer-contact-dialog" ref={dialogRef} aria-labelledby="reviewer-contact-title">
+        <form method="dialog">
+          <button className="reviewer-dialog-close" type="submit" aria-label="Chiudi contatti"><span aria-hidden="true">×</span></button>
+        </form>
+        <p className="eyebrow">Contatti professionali</p>
+        <h2 id="reviewer-contact-title">Contatti di {reviewer.name}</h2>
+        <address className="reviewer-contact-list">
+          <p><span>Nome</span><strong>{reviewer.name}</strong></p>
+          <p><span>Email</span><a href={`mailto:${reviewer.email}`}>{reviewer.email}</a></p>
+          <p><span>Telefono</span><a href={`tel:${reviewer.phoneHref}`}>{reviewer.phoneDisplay}</a></p>
+        </address>
+      </dialog>
+    </>
+  );
+}
+
+export default function MethodPage({ guides, reviewer, tests }) {
   return (
     <main className="editorial-shell">
       <Navbar />
       <header className="editorial-hero">
         <p className="eyebrow">Trasparenza editoriale</p><h1>Metodo e fonti</h1>
-        <p>Spazio Test realizza questionari informativi originali e guide dedicate all'auto-osservazione e al benessere psicologico. Per definire i temi, le aree e il linguaggio vengono consultate fonti istituzionali, linee guida e pubblicazioni scientifiche pertinenti.</p>
+        <p>Spazio Test realizza questionari informativi originali e guide dedicate all'auto-osservazione e al benessere psicologico. Il processo combina fonti istituzionali e scientifiche pertinenti, scrittura originale, limiti espliciti e revisione professionale dei nuovi questionari.</p>
       </header>
       <section className="editorial-process" aria-labelledby="come-nasce">
         <div className="editorial-section-heading"><p className="eyebrow">Il processo</p><h2 id="come-nasce">Come nasce un contenuto</h2></div>
@@ -28,9 +68,10 @@ export default function MethodPage({ guides, tests }) {
           <li><span>01</span><h3>Consultazione</h3><p>Si cercano prima fonti scientifiche o istituzionali italiane, poi studi europei e le migliori sintesi internazionali pertinenti.</p></li>
           <li><span>02</span><h3>Struttura</h3><p>I concetti ricorrenti vengono organizzati in aree o sezioni chiare, evitando di trasformare singole esperienze in etichette.</p></li>
           <li><span>03</span><h3>Scrittura</h3><p>Domande e guide sono scritte in forma originale, con un linguaggio accessibile, specifico e non giudicante.</p></li>
-          <li><span>04</span><h3>Limiti</h3><p>Ogni contenuto distingue informazione, auto-osservazione e valutazione clinica e collega direttamente i riferimenti consultati.</p></li>
+          <li><span>04</span><h3>Revisione professionale</h3><p>Ogni nuovo questionario viene revisionato da una psicologa, che fornisce linee guida metodologiche e verifica struttura, formulazioni, limiti e restituzioni.</p></li>
         </ol>
       </section>
+      <ReviewerSection reviewer={reviewer} />
       <section className="editorial-principles">
         <article><p className="eyebrow">Selezione delle fonti</p><h2>Riferimenti tracciabili e pertinenti</h2><p>La priorità va a fonti scientifiche o istituzionali italiane, studi europei, linee guida, revisioni sistematiche e meta-analisi. Si preferiscono collegamenti primari tramite ente produttore, rivista, DOI, PubMed o università; la divulgazione resta un supporto secondario.</p></article>
         <article><p className="eyebrow">Interpretazione</p><h2>Una lettura orientativa</h2><p>Le barre e le soglie servono a organizzare le risposte in una restituzione comprensibile. Non rappresentano percentili, probabilità diagnostiche, misure di gravità clinica o confronti con una popolazione di riferimento.</p></article>

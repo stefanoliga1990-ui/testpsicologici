@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Scopri come vengono realizzati questionari e approfondimenti di Spazio Test, quali fonti vengono consultate e come interpretare i contenuti.">
+    <meta name="description" content="Scopri come Spazio Test realizza questionari e guide: fonti scientifiche, limiti, revisione professionale e competenze del revisore.">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <title>Metodo e fonti di questionari e guide | Spazio Test</title>
+    <title>Metodo, fonti e revisione professionale | Spazio Test</title>
     <link rel="canonical" th:href="${canonicalUrl}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="it_IT">
     <meta property="og:site_name" content="Spazio Test">
-    <meta property="og:title" content="Metodo e fonti di questionari e guide | Spazio Test">
-    <meta property="og:description" content="Il processo editoriale, i criteri di selezione delle fonti e i limiti dei contenuti di Spazio Test.">
+    <meta property="og:title" content="Metodo, fonti e revisione professionale | Spazio Test">
+    <meta property="og:description" content="Il processo editoriale di Spazio Test: fonti scientifiche, limiti dichiarati e revisione professionale dei nuovi questionari.">
     <meta property="og:url" th:content="${canonicalUrl}">
     <th:block th:replace="~{fragments/brand-head :: socialImage(${socialImageUrl})}"></th:block>
     <meta name="twitter:card" content="summary_large_image">
@@ -19,14 +19,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/app.css(v='mobile-nav-1')}">
+    <link rel="stylesheet" th:href="@{/css/app.css(v='reviewer-1')}">
     <link rel="stylesheet" th:href="@{/react/assets/app.css(v='react-5')}">
     <script type="application/ld+json" th:inline="javascript">
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "Metodo e fonti di questionari e guide",
-      "description": "Il processo editoriale, i criteri di selezione delle fonti e i limiti dei contenuti di Spazio Test.",
+      "name": "Metodo, fonti e revisione professionale",
+      "description": "Il processo editoriale di Spazio Test: fonti scientifiche, limiti dichiarati e revisione professionale dei nuovi questionari.",
       "url": /*[[${canonicalUrl}]]*/ "https://example.com/metodo-e-fonti",
       "inLanguage": "it-IT",
       "isPartOf": {
@@ -38,9 +38,16 @@
         "@type": "Organization",
         "name": "Spazio Test",
         "url": /*[[${projectUrl}]]*/ "https://example.com/il-progetto"
+      },
+      "contributor": {
+        "@type": "Person",
+        "name": /*[[${reviewer.name}]]*/ "Alessia Liga",
+        "jobTitle": /*[[${reviewer.role}]]*/ "Psicologa · Specializzanda in Psicoterapia della Salute",
+        "description": /*[[${reviewer.biography}]]*/ "Biografia professionale del revisore."
       }
     }
     </script>
+    <script defer th:src="@{/js/reviewer-contact-dialog.js(v='reviewer-1')}"></script>
 </head>
 <body class="editorial-body">
 <th:block th:replace="~{fragments/react-root :: mount(${reactPageData})}"></th:block>
@@ -50,7 +57,7 @@
     <header class="editorial-hero">
         <p class="eyebrow">Trasparenza editoriale</p>
         <h1>Metodo e fonti</h1>
-        <p>Spazio Test realizza questionari informativi originali e guide dedicate all'auto-osservazione e al benessere psicologico. Per definire i temi, le aree e il linguaggio vengono consultate fonti istituzionali, linee guida e pubblicazioni scientifiche pertinenti.</p>
+        <p>Spazio Test realizza questionari informativi originali e guide dedicate all'auto-osservazione e al benessere psicologico. Il processo combina fonti istituzionali e scientifiche pertinenti, scrittura originale, limiti espliciti e revisione professionale dei nuovi questionari.</p>
     </header>
 
     <section class="editorial-process" aria-labelledby="come-nasce">
@@ -62,9 +69,42 @@
             <li><span>01</span><h3>Consultazione</h3><p>Si cercano prima fonti scientifiche o istituzionali italiane, poi studi europei e le migliori sintesi internazionali pertinenti.</p></li>
             <li><span>02</span><h3>Struttura</h3><p>I concetti ricorrenti vengono organizzati in aree o sezioni chiare, evitando di trasformare singole esperienze in etichette.</p></li>
             <li><span>03</span><h3>Scrittura</h3><p>Domande e guide sono scritte in forma originale, con un linguaggio accessibile, specifico e non giudicante.</p></li>
-            <li><span>04</span><h3>Limiti</h3><p>Ogni contenuto distingue informazione, auto-osservazione e valutazione clinica e collega direttamente i riferimenti consultati.</p></li>
+            <li><span>04</span><h3>Revisione professionale</h3><p>Ogni nuovo questionario viene revisionato da una psicologa, che fornisce linee guida metodologiche e verifica struttura, formulazioni, limiti e restituzioni.</p></li>
         </ol>
     </section>
+
+    <section class="reviewer-section" aria-labelledby="revisione-professionale">
+        <div class="editorial-section-heading reviewer-section-heading">
+            <p class="eyebrow">Autorialità e competenze</p>
+            <h2 id="revisione-professionale">Revisione professionale dei questionari</h2>
+            <p>Per ogni nuovo questionario, la revisione professionale accompagna la definizione delle linee guida e il controllo di struttura, linguaggio, limiti e modalità di restituzione prima della pubblicazione.</p>
+        </div>
+        <article class="reviewer-card" itemscope itemtype="https://schema.org/Person">
+            <div class="reviewer-monogram" aria-hidden="true">AL</div>
+            <div class="reviewer-card-content">
+                <p class="eyebrow">Revisore professionale</p>
+                <h3 itemprop="name" th:text="${reviewer.name}">Alessia Liga</h3>
+                <p class="reviewer-role" itemprop="jobTitle" th:text="${reviewer.role}">Psicologa · Specializzanda in Psicoterapia della Salute</p>
+                <p class="reviewer-biography" itemprop="description" th:text="${reviewer.biography}">Biografia professionale del revisore.</p>
+                <button class="button button-secondary reviewer-contact-button" type="button"
+                        data-reviewer-dialog-open="reviewer-contact-dialog-fallback">Contatti</button>
+            </div>
+        </article>
+        <p class="reviewer-scope-note"><strong>Ambito della revisione.</strong> La revisione professionale migliora la qualità editoriale e la chiarezza dei contenuti, ma non equivale a validazione psicometrica, definizione di norme o valutazione clinica individuale.</p>
+    </section>
+
+    <dialog class="reviewer-contact-dialog" id="reviewer-contact-dialog-fallback" aria-labelledby="reviewer-contact-title-fallback">
+        <form method="dialog">
+            <button class="reviewer-dialog-close" type="submit" aria-label="Chiudi contatti"><span aria-hidden="true">×</span></button>
+        </form>
+        <p class="eyebrow">Contatti professionali</p>
+        <h2 id="reviewer-contact-title-fallback">Contatti di <span th:text="${reviewer.name}">Alessia Liga</span></h2>
+        <address class="reviewer-contact-list">
+            <p><span>Nome</span><strong th:text="${reviewer.name}">Alessia Liga</strong></p>
+            <p><span>Email</span><a th:href="|mailto:${reviewer.email}|" th:text="${reviewer.email}">Alessia.liga3@gmail.com</a></p>
+            <p><span>Telefono</span><a th:href="|tel:${reviewer.phoneHref}|" th:text="${reviewer.phoneDisplay}">+39 392 240 7494</a></p>
+        </address>
+    </dialog>
 
     <section class="editorial-principles">
         <article>
