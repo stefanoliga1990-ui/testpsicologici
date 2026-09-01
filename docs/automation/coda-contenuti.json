@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-08-31",
+  "updatedAt": "2026-09-01",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "16:00",
   "maximumItemsPerDay": 1,
@@ -59,7 +59,7 @@
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Ambiguità e manipolazione relazionale",
       "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Definire comportamenti osservabili senza dedurre intenzioni non verificabili dell'altra persona." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "BLOCKED", "attempts": 1, "lastAttemptAt": "2026-09-01T22:19:48+02:00", "completedAt": null, "commitHash": null, "blockReason": "La letteratura tratta la manipolazione emotiva in modo eterogeneo: le misure specifiche individuate valutano soprattutto la tendenza di chi gestisce o manipola le emozioni altrui, mentre l'esperienza del destinatario viene generalmente ricondotta alla violenza psicologica o al controllo coercitivo. I comportamenti direttamente osservabili pertinenti (svalutazione, pressione sui confini, controllo, paura, responsabilità spostata e impatto) sono già coperti dal questionario relazione-dannosa-benessere, informato anche dalla validazione italiana EAPA-P. Un questionario autonomo duplicherebbe quindi un contenuto esistente oppure richiederebbe di inferire uno scopo intenzionale non verificabile; non è stata individuata una misura italiana o europea recipient-side sufficientemente distinta per sostenerne una restituzione responsabile." }
     },
     {
       "order": 4,
