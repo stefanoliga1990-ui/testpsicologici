@@ -3724,6 +3724,122 @@ public class GuideCatalogue {
                                     "Pagina istituzionale italiana consultata per destinatari, gratuità, continuità e orientamento; non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "invalidazione-emotiva",
+                    "invalidazione-emotiva-subita",
+                    "Invalidazione emotiva",
+                    "Invalidazione emotiva: riconoscere le risposte che sminuiscono ciò che provi",
+                    "Invalidazione emotiva: significato e segnali | Spazio Test",
+                    "Che cos'è l'invalidazione emotiva percepita, come distinguerla da disaccordo e confini e perché contesto, ripetizione e riparazione contano.",
+                    "L'invalidazione emotiva descrive risposte vissute come comunicazioni che un'emozione sia sbagliata, esagerata, irrilevante o non degna di ascolto. Non ogni incomprensione o disaccordo ha questo significato: contano ciò che accade, quanto si ripete e se rimane possibile chiarire e riparare.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "L'emozione può essere riconosciuta senza dare ragione su tutto",
+                                    List.of(
+                                            "Validare significa riconoscere che un'emozione esiste e può essere comprensibile dal punto di vista di chi la prova. Non obbliga a condividere la ricostruzione dei fatti, approvare una decisione o accettare urla, insulti, minacce o altri comportamenti dannosi.",
+                                            "L'invalidazione percepita riguarda invece risposte che comunicano o sembrano comunicare che l'emozione sia sbagliata, inappropriata o non importante. È un'esperienza interpersonale: il questionario descrive la percezione di chi compila e non può leggere le intenzioni dell'altra persona."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le aree esplorate",
+                                    "Tre lenti editoriali per tornare ai comportamenti",
+                                    List.of(
+                                            "I 18 item originali sono distribuiti in tre aree da sei item. La ricerca sulla PIES sostiene prevalentemente una struttura unidimensionale: le aree di Spazio Test servono soltanto a organizzare il feedback e non sono sottoscale validate o tipi clinici di invalidazione.",
+                                            "Le barre hanno uguale peso per trasparenza e restano nell'ordine teorico. Differenze piccole non definiscono quale ambito sia più importante e una media contenuta non annulla un episodio che ha avuto un impatto significativo."
+                                    ),
+                                    List.of(
+                                            "Minimizzazione e mancato ascolto.",
+                                            "Giudizio e correzione dell'emozione.",
+                                            "Rifiuto dell'espressione emotiva."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Disaccordo e confini",
+                                    "Che cosa non basta per parlare di invalidazione",
+                                    List.of(
+                                            "Due persone possono ricordare un fatto in modo diverso, non condividere una valutazione o provare emozioni differenti. Anche chiedere una pausa, dichiarare di non avere risorse in quel momento o porre un limite a un comportamento aggressivo può essere rispettoso, soprattutto quando viene spiegato e il dialogo può riprendere.",
+                                            "La PIES originale include esperienze ampie come non sentirsi rispecchiati o sostenuti. Per ridurre ambiguità, il questionario dell'app non attribuisce punteggio al semplice mancato accordo, al mancato schieramento o al fatto che l'altra persona non provi la stessa emozione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Pattern e contesto",
+                                    "Osservare sequenza, ripetizione e riparazione",
+                                    List.of(
+                                            "Un episodio può nascere da fretta, stress, incomprensione o differenze comunicative. Può essere utile osservare quale emozione stavi condividendo, come è stata espressa, che risposta hai ricevuto e se in seguito la persona ha cercato di capire o riconoscere l'impatto.",
+                                            "Quando minimizzazione, giudizio o chiusura si ripetono, può diventare più difficile parlare apertamente o chiedere supporto. Questa possibilità non dimostra una strategia manipolativa e non consente di attribuire una causa unica a eventuale sofferenza."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Come leggere il risultato",
+                                    "Frequenze editoriali, non una percentuale di invalidazione",
+                                    List.of(
+                                            "Le risposte da 1 a 5 vengono mediate e trasformate in barre da 0 a 100. Le barre non sono percentuali di invalidazione, abuso, gravità, certezza o rischio e le soglie LOW, MIXED, FOCUSED e BROAD sono scelte editoriali.",
+                                            "Il profilo complessivo descrive la distribuzione tra le tre lenti; le schede specifiche riportano ai comportamenti. Il risultato non stabilisce chi abbia ragione, se la relazione sia sana o abusante, né che cosa dovresti fare."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Le fonti orientano, ma non validano questo questionario",
+                                    List.of(
+                                            "La PIES è stata sviluppata in più studi statunitensi e valutata anche in un campione portoghese, con risultati che sostengono un costrutto unitario. Studi quotidiani e sperimentali suggeriscono associazioni con l'esperienza emotiva, ma non spiegano automaticamente ciò che avviene in una relazione specifica.",
+                                            "Sono disponibili dati italiani preliminari depositati dagli autori, ma al momento della ricerca l'articolo di validazione risultava ancora in revisione. Nessuna fonte valida i 18 item, le tre aree, le soglie o le interpretazioni originali di Spazio Test."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Scegliere un confronto che rispetti i tuoi confini",
+                                    List.of(
+                                            "Se questa esperienza ti fa soffrire o limita la possibilità di esprimerti, puoi parlarne con una persona fidata o un professionista. Un confronto con la persona coinvolta è solo una possibilità e non è necessario quando non ti senti al sicuro o temi conseguenze.",
+                                            "Paura, controllo, minacce, coercizione o violenza vanno considerate indipendentemente dal risultato. In caso di pericolo immediato chiama il 112; se sei una donna che vive violenza o stalking, il 1522 offre orientamento gratuito ed è disponibile anche via chat."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 18 item originali, tre lenti editoriali e una finestra di un mese riferita a una sola persona. È informativo e non validato: non accerta invalidazione, manipolazione, abuso, intenzioni, diagnosi o verità dei fatti e non sostituisce supporto professionale.",
+                    List.of(
+                            new GuideReference(
+                                    "The Perceived Invalidation of Emotion Scale (PIES) — Zielinski e Veilleux",
+                                    "https://doi.org/10.1037/pas0000584",
+                                    "Sviluppo in cinque studi consultato per definizione, finestra attuale e struttura unidimensionale; item, proprietà e punteggi non vengono trasferiti."
+                            ),
+                            new GuideReference(
+                                    "The PIES in a Portuguese sample — Brandão e colleghi",
+                                    "https://doi.org/10.1007/s12144-020-01238-6",
+                                    "Valutazione psicometrica europea consultata per la struttura unidimensionale; campione e lingua differenti non validano l'app italiana."
+                            ),
+                            new GuideReference(
+                                    "Perceived Emotional Invalidation, Psychological Distress and Relationship Satisfaction in Couples — Brandão",
+                                    "https://doi.org/10.1177/00332941241279372",
+                                    "Studio diadico portoghese consultato per associazioni relazionali e differenze tra partner; disegno trasversale e misura generale non consentono causalità."
+                            ),
+                            new GuideReference(
+                                    "Perceived Emotion Invalidation Predicts Daily Affect and Stressors — Zielinski e colleghi",
+                                    "https://doi.org/10.1080/10615806.2022.2033973",
+                                    "Studio quotidiano consultato per il legame preliminare con affetto e stress; campione piccolo e giovane e risultati non uniformi dopo i controlli."
+                            ),
+                            new GuideReference(
+                                    "The who and what of validation — Kuo e colleghi",
+                                    "https://doi.org/10.1186/s40479-022-00185-x",
+                                    "Esperimento consultato per gli effetti di feedback validanti e invalidanti; la manipolazione breve non rappresenta una relazione né definisce soglie."
+                            ),
+                            new GuideReference(
+                                    "Psychometric properties of the Italian PIES — dataset",
+                                    "https://doi.org/10.17632/gx6t7jhjtz.1",
+                                    "Dati italiani preliminari consultati per trasferibilità linguistica; il deposito non è una pubblicazione peer-reviewed e non valida il questionario dell'app."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Pagina ufficiale italiana consultata per destinatari, gratuità e orientamento; non è evidenza sull'invalidazione e non sostituisce il 112."
+                            )
+                    )
             )
     );
 

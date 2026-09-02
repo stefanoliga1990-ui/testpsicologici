@@ -79,6 +79,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedHooveringInformationTest();
         seedCoupleCompatibilityInformationTest();
         seedRelationshipWellbeingInformationTest();
+        seedPerceivedEmotionalInvalidationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -3386,6 +3387,101 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Tempo condiviso, socialità e autonomia risultano ampiamente conciliabili. Il dato non stabilisce una quantità ideale né esclude cambiamenti futuri.");
     }
 
+    private void seedPerceivedEmotionalInvalidationTest() {
+        String id = "invalidazione-emotiva-subita";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Le mie emozioni vengono invalidate?",
+                "Auto-osservazione informativa",
+                "Esplora come una persona significativa risponde quando condividi emozioni: minimizzazione, giudizio e chiusura dell'espressione.",
+                "5 min · 18 domande",
+                "Questo questionario per adulti è informativo, originale e non validato. Pensa sempre alla stessa persona con cui hai avuto contatti regolari e alcune occasioni di condividere emozioni nell'ultimo mese; se queste occasioni sono state poche, il risultato ha significato limitato. Non accerta invalidazione, manipolazione, abuso, intenzioni o diagnosi e puoi interromperti in qualsiasi momento.",
+                version, false,
+                "Frequenza complessiva delle esperienze esplorate",
+                "Frequenza delle esperienze nell'ambito",
+                true, 35).withSeo(
+                "Le mie emozioni vengono invalidate? Test informativo | Spazio Test",
+                "Questionario informativo su minimizzazione, giudizio e rifiuto dell'espressione emotiva in una relazione specifica. 18 domande, senza diagnosi.")
+                .withResponseInstruction("Pensando all'ultimo mese e sempre alla stessa persona, quando le comunicavi un'emozione, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "The Perceived Invalidation of Emotion Scale (PIES) — Zielinski e Veilleux",
+                "https://doi.org/10.1037/pas0000584", 1);
+        saveReference(id, "The PIES in a Portuguese sample — Brandão e colleghi",
+                "https://doi.org/10.1007/s12144-020-01238-6", 2);
+        saveReference(id, "Perceived Emotional Invalidation, Psychological Distress and Relationship Satisfaction in Couples — Brandão",
+                "https://doi.org/10.1177/00332941241279372", 3);
+        saveReference(id, "Perceived Emotion Invalidation Predicts Daily Affect and Stressors — Zielinski e colleghi",
+                "https://doi.org/10.1080/10615806.2022.2033973", 4);
+        saveReference(id, "The who and what of validation — Kuo e colleghi",
+                "https://doi.org/10.1186/s40479-022-00185-x", 5);
+        saveReference(id, "Psychometric properties of the Italian PIES — dataset",
+                "https://doi.org/10.17632/gx6t7jhjtz.1", 6);
+        saveReference(id, "1522 — Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 7);
+
+        saveArea(id, "minimizzazione", "Minimizzazione e mancato ascolto", 1);
+        saveArea(id, "giudizio", "Giudizio e correzione dell'emozione", 2);
+        saveArea(id, "rifiuto", "Rifiuto dell'espressione emotiva", 3);
+
+        saveQuestions(id, List.of(
+                q("minimizzazione", "La persona trattava come poco importante l'emozione che esprimevo."),
+                q("minimizzazione", "Mi invitava a superare in fretta ciò che provavo."),
+                q("minimizzazione", "Cambiava argomento mentre cercavo di spiegare un'emozione."),
+                q("minimizzazione", "Confrontava la mia situazione con quella di altri per ridimensionare ciò che provavo."),
+                q("minimizzazione", "Descriveva la mia reazione emotiva come eccessiva senza chiedermi cosa stesse accadendo."),
+                q("minimizzazione", "Rispondeva come se ciò che sentivo non meritasse di essere preso sul serio."),
+                q("giudizio", "Mi diceva che non avrei dovuto provare quell'emozione."),
+                q("giudizio", "Stabiliva quale emozione avrei dovuto sentire al suo posto."),
+                q("giudizio", "Giudicava il mio carattere a partire dall'emozione che avevo espresso."),
+                q("giudizio", "Ridicolizzava il modo in cui manifestavo un'emozione."),
+                q("giudizio", "Usava la mia emozione per rendere meno credibile ciò che dicevo."),
+                q("giudizio", "Presentava il mio bisogno di ascolto emotivo come un difetto personale."),
+                q("rifiuto", "Mostrava irritazione quando nominavo ciò che provavo."),
+                q("rifiuto", "Mi chiedeva di nascondere un'emozione per non metterla a disagio."),
+                q("rifiuto", "Interrompeva la conversazione appena esprimevo un'emozione difficile."),
+                q("rifiuto", "Riprendeva il dialogo soltanto dopo che smettevo di parlare di ciò che provavo."),
+                q("rifiuto", "Diventava distante dopo che avevo condiviso un'emozione."),
+                q("rifiuto", "Mi faceva capire che le mie emozioni erano un peso nel rapporto.")));
+
+        String commonLimits = "Il risultato descrive la tua percezione e non accerta invalidazione intenzionale, manipolazione, abuso, diagnosi, colpa o verità dei fatti. "
+                + "Riconoscere un'emozione non significa concordare con ogni interpretazione o accettare comportamenti dannosi; una pausa o un limite rispettoso non equivalgono automaticamente a invalidazione. "
+                + "Se nel rapporto sono presenti paura, controllo, minacce o violenza, considera la sicurezza indipendentemente dalla media: in pericolo immediato chiama il 112 e, se sei una donna che vive violenza o stalking, puoi contattare il 1522 anche via chat.";
+
+        saveGlobal(id, "LOW",
+                "Le esperienze di invalidazione emotiva sembrano poco presenti nelle tue risposte",
+                "Le risposte esplorate risultano poco frequenti in tutti e tre gli ambiti. Nell'ultimo mese non emerge quindi una configurazione diffusa di minimizzazione, giudizio o rifiuto dell'espressione emotiva con la persona scelta.",
+                "Questo andamento non esclude un episodio importante, altre forme di mancato ascolto o situazioni avvenute fuori dal periodo considerato. Una risposta diversa da quella desiderata o un disaccordo non bastano a definire invalidazione. " + commonLimits);
+        saveGlobal(id, "MIXED",
+                "Le esperienze di invalidazione emotiva sembrano presenti in modo variabile",
+                "Le risposte mostrano una frequenza intermedia o diversa tra gli ambiti, senza che uno raggiunga il livello editoriale più alto. Alcune occasioni possono essere state vissute come poco accoglienti, mentre altre sembrano aver lasciato maggiore spazio all'emozione.",
+                "Può essere utile osservare quali emozioni, contesti o conversazioni precedono queste risposte e se la persona riesce poi a comprendere, riconoscere l'impatto o riparare. Stress, incomprensione e differenze comunicative possono contribuire, ma non rendono irrilevante ciò che hai vissuto. " + commonLimits);
+        saveGlobal(id, "FOCUSED",
+                "Le esperienze di invalidazione emotiva sembrano più presenti in un ambito",
+                "Uno dei tre ambiti raccoglie risposte riferite con maggiore frequenza, mentre gli altri risultano più contenuti. Il profilo orienta quindi verso un modo specifico in cui l'espressione emotiva viene ricevuta, senza definire automaticamente l'intera relazione.",
+                "Leggi l'ambito emergente tornando agli episodi concreti, alla ripetizione e a ciò che accade dopo che provi a chiarire. Giudizio, ridicolo o chiusura sistematica possono avere un impatto anche se concentrati in un solo ambito. " + commonLimits);
+        saveGlobal(id, "BROAD",
+                "Le esperienze di invalidazione emotiva sembrano molto presenti in più ambiti",
+                "Le risposte indicano esperienze frequenti in almeno due dei tre ambiti. Minimizzazione, giudizio o rifiuto dell'espressione sembrano quindi ricorrere in più modi nel rapporto e nel periodo considerato.",
+                "Un andamento ampio rende utile osservare persistenza, impatto sulla disponibilità a parlare e possibilità di ottenere ascolto o riparazione, senza ridurre tutto a una singola etichetta. Le tre aree sono lenti editoriali e non sottotipi validati. " + commonLimits);
+
+        saveAreaInsights(id, "minimizzazione",
+                "Sminuire, affrettare o non prendere sul serio l'emozione risulta poco frequente. Non esclude un episodio importante o forme di ascolto non esplorate.",
+                "Minimizzazione o mancato ascolto compaiono in alcune occasioni. Osserva contesto, ripetizione e possibilità di tornare sulla conversazione con maggiore attenzione.",
+                "Sminuire, affrettare o non prendere sul serio ciò che provi risulta frequente. L'area descrive le risposte riferite e non accerta intenzione o qualità complessiva del rapporto.");
+        saveAreaInsights(id, "giudizio",
+                "Giudizi, ridicolo o prescrizioni su ciò che dovresti sentire risultano poco frequenti. Non certifica accordo o comprensione in ogni confronto.",
+                "In alcune occasioni l'emozione sembra essere giudicata o corretta. Distingui la valutazione dell'emozione dal disaccordo sui fatti o dal limite posto a un comportamento.",
+                "Giudizi, ridicolo o tentativi di stabilire ciò che dovresti provare risultano frequenti. Questo non rivela intenzioni né stabilisce la verità della situazione discussa.");
+        saveAreaInsights(id, "rifiuto",
+                "Irritazione, chiusura o distanza dopo l'espressione emotiva risultano poco frequenti. Non esclude indisponibilità occasionali o situazioni non misurate.",
+                "L'espressione emotiva incontra talvolta irritazione, chiusura o distanza. Osserva se una pausa viene spiegata e se il dialogo può riprendere senza negare ciò che provi.",
+                "Irritazione, chiusura o distanza dopo che esprimi emozioni risultano frequenti. L'area non distingue da sola una difficoltà comunicativa da un pattern più ampio e non accerta abuso.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -3581,6 +3677,14 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Evaluation of IPV screening instruments: a COSMIN-based systematic review — Li e colleghi", "https://doi.org/10.1371/journal.pone.0310297"),
                 ref("The Trauma and Mental Health Impacts of Coercive Control — Lohmann e colleghi", "https://doi.org/10.1177/15248380231162972"),
                 ref("Marital Quality and Personal Well-Being: A Meta-Analysis — Proulx e colleghi", "https://doi.org/10.1111/j.1741-3737.2007.00393.x"),
+                ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
+        syncReferences("invalidazione-emotiva-subita", List.of(
+                ref("The Perceived Invalidation of Emotion Scale (PIES) — Zielinski e Veilleux", "https://doi.org/10.1037/pas0000584"),
+                ref("The PIES in a Portuguese sample — Brandão e colleghi", "https://doi.org/10.1007/s12144-020-01238-6"),
+                ref("Perceived Emotional Invalidation, Psychological Distress and Relationship Satisfaction in Couples — Brandão", "https://doi.org/10.1177/00332941241279372"),
+                ref("Perceived Emotion Invalidation Predicts Daily Affect and Stressors — Zielinski e colleghi", "https://doi.org/10.1080/10615806.2022.2033973"),
+                ref("The who and what of validation — Kuo e colleghi", "https://doi.org/10.1186/s40479-022-00185-x"),
+                ref("Psychometric properties of the Italian PIES — dataset", "https://doi.org/10.17632/gx6t7jhjtz.1"),
                 ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
     }
 

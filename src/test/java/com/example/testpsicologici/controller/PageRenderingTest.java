@@ -1852,6 +1852,72 @@ class PageRenderingTest {
     }
 
     @Test
+    void emotionalInvalidationPagesExposeThreeLensesFrequencyScaleLimitsAndGuide() throws Exception {
+        mockMvc.perform(get("/test/invalidazione-emotiva-subita"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Le mie emozioni vengono invalidate?")))
+                .andExpect(content().string(containsString("Minimizzazione e mancato ascolto")))
+                .andExpect(content().string(containsString("Giudizio e correzione dell'emozione")))
+                .andExpect(content().string(containsString("Rifiuto dell'espressione emotiva")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/invalidazione-emotiva\"")))
+                .andExpect(content().string(containsString("href=\"/test/relazione-dannosa-benessere\"")))
+                .andExpect(content().string(containsString("non accerta invalidazione")))
+                .andExpect(content().string(containsString("da “Mai” a “Quasi sempre”")));
+
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-invalidazione-emotiva-subita", new TestAttempt(18));
+        mockMvc.perform(get("/test/invalidazione-emotiva-subita/domanda/1").session(session))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("ultimo mese")))
+                .andExpect(content().string(containsString("stessa persona")))
+                .andExpect(content().string(containsString("Mai")))
+                .andExpect(content().string(containsString("Quasi sempre")));
+
+        mockMvc.perform(get("/approfondimenti/invalidazione-emotiva"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("L'emozione può essere riconosciuta senza dare ragione su tutto")))
+                .andExpect(content().string(containsString("Tre lenti editoriali per tornare ai comportamenti")))
+                .andExpect(content().string(containsString("Che cosa non basta per parlare di invalidazione")))
+                .andExpect(content().string(containsString("Frequenze editoriali, non una percentuale di invalidazione")))
+                .andExpect(content().string(containsString("href=\"/test/invalidazione-emotiva-subita\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void emotionalInvalidationResultAndPdfExposeOverallThreeLensesAndSafety() throws Exception {
+        mockMvc.perform(get("/test/invalidazione-emotiva-subita/risultato")
+                        .session(completedAttempt("invalidazione-emotiva-subita", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le esperienze di invalidazione emotiva sembrano molto presenti in più ambiti")))
+                .andExpect(content().string(containsString("Minimizzazione e mancato ascolto")))
+                .andExpect(content().string(containsString("Giudizio e correzione dell'emozione")))
+                .andExpect(content().string(containsString("Rifiuto dell'espressione emotiva")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/invalidazione-emotiva-subita/risultato/pdf\"")))
+                .andExpect(content().string(containsString("href=\"/test/relazione-dannosa-benessere\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/invalidazione-emotiva\"")));
+
+        MvcResult mvcResult = mockMvc.perform(get("/test/invalidazione-emotiva-subita/risultato/pdf")
+                        .session(completedAttempt("invalidazione-emotiva-subita", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-invalidazione-emotiva-subita.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Le mie emozioni vengono invalidate?")
+                    .contains("Minimizzazione e mancato ascolto")
+                    .contains("Giudizio e correzione dell'emozione")
+                    .contains("Rifiuto dell'espressione emotiva")
+                    .contains("non accerta", "112", "1522");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -1931,6 +1997,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/compatibilita-coppia")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/relazione-dannosa-benessere")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/invalidazione-emotiva")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -1951,6 +2019,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/hoovering")))
                 .andExpect(content().string(containsString("http://localhost/test/compatibilita-coppia")))
                 .andExpect(content().string(containsString("http://localhost/test/relazione-dannosa-benessere")))
+                .andExpect(content().string(containsString("http://localhost/test/invalidazione-emotiva-subita")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

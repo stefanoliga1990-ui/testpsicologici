@@ -1,0 +1,101 @@
+{
+  "test": {
+    "id": "invalidazione-emotiva-subita",
+    "titolo": "Le mie emozioni vengono invalidate?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa delle risposte ricevute da una persona significativa quando si condividono emozioni",
+    "periodo_riferimento": "Ultimo mese",
+    "unita_riferimento": "Una sola persona con contatti regolari e occasioni di condivisione emotiva",
+    "direzione_punteggio": "Valori più alti descrivono maggiore frequenza delle esperienze formulate, non gravità, abuso o intenzione",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale, non validato e non normato. Non accerta invalidazione, manipolazione, abuso, intenzioni, diagnosi o verità dei fatti."
+  },
+  "istruzione_risposta": "Pensando all'ultimo mese e sempre alla stessa persona, quando le comunicavi un'emozione, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
+    "domande": 18,
+    "aree": 3,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le tre aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una area è HIGH"},
+      {"codice": "BROAD", "condizione": "almeno due aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale di invalidazione, abuso, gravità o probabilità",
+    "ordine_aree_risultato": "minimizzazione, giudizio, rifiuto",
+    "limite_aggregazione": "Le aree sono lenti editoriali e non sottoscale validate; la letteratura sulla PIES sostiene prevalentemente un costrutto unidimensionale."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le esperienze di invalidazione emotiva sembrano poco presenti nelle tue risposte",
+      "sottotitolo": "Le risposte esplorate risultano poco frequenti in tutti e tre gli ambiti. Nell'ultimo mese non emerge quindi una configurazione diffusa di minimizzazione, giudizio o rifiuto dell'espressione emotiva con la persona scelta.",
+      "descrizione": "Questo andamento non esclude un episodio importante, altre forme di mancato ascolto o situazioni avvenute fuori dal periodo considerato. Una risposta diversa da quella desiderata, un disaccordo o un limite a comportamenti dannosi non equivalgono automaticamente a invalidazione. Il risultato descrive la tua percezione e non accerta intenzioni, manipolazione, abuso, diagnosi o verità dei fatti; se vi sono paura, controllo, minacce o violenza, considera la sicurezza indipendentemente dalla media."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le esperienze di invalidazione emotiva sembrano presenti in modo variabile",
+      "sottotitolo": "Le risposte mostrano una frequenza intermedia o diversa tra gli ambiti, senza che uno raggiunga il livello editoriale più alto. Alcune occasioni possono essere state vissute come poco accoglienti, mentre altre sembrano aver lasciato maggiore spazio all'emozione.",
+      "descrizione": "Può essere utile osservare quali emozioni, contesti o conversazioni precedono queste risposte e se la persona riesce poi a comprendere, riconoscere l'impatto o riparare. Stress, incomprensione e differenze comunicative possono contribuire, ma non rendono irrilevante ciò che hai vissuto. Il risultato non prova invalidazione intenzionale, manipolazione o abuso e non stabilisce chi abbia ragione; paura, controllo o violenza richiedono una valutazione separata dalla barra."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le esperienze di invalidazione emotiva sembrano più presenti in un ambito",
+      "sottotitolo": "Uno dei tre ambiti raccoglie risposte riferite con maggiore frequenza, mentre gli altri risultano più contenuti. Il profilo orienta quindi verso un modo specifico in cui l'espressione emotiva viene ricevuta, senza definire automaticamente l'intera relazione.",
+      "descrizione": "Leggi l'ambito emergente tornando agli episodi concreti, alla ripetizione e a ciò che accade dopo che provi a chiarire. Riconoscere un'emozione non obbliga l'altra persona ad approvare ogni interpretazione o comportamento, ma giudizio, ridicolo o chiusura sistematica possono avere un impatto anche se concentrati. La restituzione non accerta intenzioni, manipolazione, abuso o diagnosi; se compaiono paura, minacce, controllo o violenza, cerca supporto senza attendere un profilo più ampio."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le esperienze di invalidazione emotiva sembrano molto presenti in più ambiti",
+      "sottotitolo": "Le risposte indicano esperienze frequenti in almeno due dei tre ambiti. Minimizzazione, giudizio o rifiuto dell'espressione sembrano quindi ricorrere in più modi nel rapporto e nel periodo considerato.",
+      "descrizione": "Un andamento ampio rende utile osservare persistenza, impatto sulla disponibilità a parlare e possibilità di ottenere ascolto o riparazione, senza ridurre tutto a una singola etichetta. La validazione riguarda il riconoscimento dell'esperienza emotiva e resta distinta dall'accordo sui fatti e dall'accettazione di comportamenti dannosi. Il risultato non dimostra manipolazione, abuso, intenzione o diagnosi e non prescrive una decisione sulla relazione; paura, controllo, minacce o violenza meritano supporto e attenzione indipendentemente dal punteggio."
+    }
+  ],
+  "analisi_aree": [
+    {
+      "area_code": "minimizzazione",
+      "nome_area": "Minimizzazione e mancato ascolto",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Sminuire, affrettare o non prendere sul serio l'emozione risulta poco frequente. Non esclude un episodio importante o forme di ascolto non esplorate."},
+        {"livello": "MEDIUM", "descrizione": "Minimizzazione o mancato ascolto compaiono in alcune occasioni. Osserva contesto, ripetizione e possibilità di tornare sulla conversazione con maggiore attenzione."},
+        {"livello": "HIGH", "descrizione": "Sminuire, affrettare o non prendere sul serio ciò che provi risulta frequente. L'area descrive le risposte riferite e non accerta intenzione o qualità complessiva del rapporto."}
+      ]
+    },
+    {
+      "area_code": "giudizio",
+      "nome_area": "Giudizio e correzione dell'emozione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Giudizi, ridicolo o prescrizioni su ciò che dovresti sentire risultano poco frequenti. Non certifica accordo o comprensione in ogni confronto."},
+        {"livello": "MEDIUM", "descrizione": "In alcune occasioni l'emozione sembra essere giudicata o corretta. Distingui la valutazione dell'emozione dal disaccordo sui fatti o dal limite posto a un comportamento."},
+        {"livello": "HIGH", "descrizione": "Giudizi, ridicolo o tentativi di stabilire ciò che dovresti provare risultano frequenti. Questo non rivela intenzioni né stabilisce la verità della situazione discussa."}
+      ]
+    },
+    {
+      "area_code": "rifiuto",
+      "nome_area": "Rifiuto dell'espressione emotiva",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Irritazione, chiusura o distanza dopo l'espressione emotiva risultano poco frequenti. Non esclude indisponibilità occasionali o situazioni non misurate."},
+        {"livello": "MEDIUM", "descrizione": "L'espressione emotiva incontra talvolta irritazione, chiusura o distanza. Osserva se una pausa viene spiegata e se il dialogo può riprendere senza negare ciò che provi."},
+        {"livello": "HIGH", "descrizione": "Irritazione, chiusura o distanza dopo che esprimi emozioni risultano frequenti. L'area non distingue da sola una difficoltà comunicativa da un pattern più ampio e non accerta abuso."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {"titolo": "The Perceived Invalidation of Emotion Scale (PIES)", "url": "https://doi.org/10.1037/pas0000584", "apporto": "Sviluppo del costrutto attuale, struttura unidimensionale e finestra dell'ultimo mese; item e punteggi non vengono trasferiti."},
+    {"titolo": "The PIES in a Portuguese sample", "url": "https://doi.org/10.1007/s12144-020-01238-6", "apporto": "Evidenza psicometrica europea per la struttura unidimensionale; non valida la versione italiana o le lenti editoriali dell'app."},
+    {"titolo": "Perceived Emotional Invalidation, Psychological Distress and Relationship Satisfaction in Couples", "url": "https://doi.org/10.1177/00332941241279372", "apporto": "Studio diadico portoghese consultato per associazioni relazionali e loro limiti; non consente causalità o giudizi sulla singola relazione."},
+    {"titolo": "Perceived Emotion Invalidation Predicts Daily Affect and Stressors", "url": "https://doi.org/10.1080/10615806.2022.2033973", "apporto": "Studio EMA consultato per esperienze quotidiane e limiti delle associazioni; campione piccolo e giovane."},
+    {"titolo": "The who and what of validation", "url": "https://doi.org/10.1186/s40479-022-00185-x", "apporto": "Esperimento consultato per distinguere riconoscimento dell'emozione e risposta affettiva; condizione breve e artificiale."},
+    {"titolo": "Psychometric properties of the Italian PIES — dataset", "url": "https://doi.org/10.17632/gx6t7jhjtz.1", "apporto": "Dati italiani preliminari non peer-reviewed; documentano una ricerca in corso senza validare il questionario dell'app."},
+    {"titolo": "1522 — Numero Anti Violenza e Stalking", "url": "https://www.1522.eu/cose-1522/", "apporto": "Pagina istituzionale italiana per orientamento e sicurezza; non è evidenza sul costrutto e non sostituisce il 112."}
+  ],
+  "limite": "Non esistono dati che validino negli adulti italiani questi 18 item originali, le tre lenti, la scala, le soglie o le interpretazioni."
+}

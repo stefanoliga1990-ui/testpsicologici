@@ -27,6 +27,7 @@
 - `test-hoovering-v1.md` è la specifica psicometrica corrente del questionario sui tentativi di riavvicinamento post-rottura associati all'hoovering e documenta scala di occorrenza, due aree, scoring, sicurezza e scarsità delle evidenze specifiche.
 - `test-compatibilita-coppia-v1.md` è la specifica psicometrica corrente del questionario sulla compatibilità percepita nella relazione attuale e documenta otto aree, scala di rappresentatività, prospettiva individuale, scoring e limiti decisionali e di sicurezza.
 - `test-relazione-dannosa-benessere-v1.md` è la specifica psicometrica corrente del questionario sull'impatto percepito di una relazione sul benessere e documenta sei aree, comportamenti osservabili, scoring editoriale, sicurezza e limiti nell'accertamento di abuso o pericolo.
+- `test-invalidazione-emotiva-v1.md` è la specifica psicometrica corrente del questionario sull'invalidazione emotiva percepita e documenta costrutto unidimensionale, tre lenti editoriali, distinzione tra riconoscimento e accordo, scoring e limiti delle evidenze italiane.
 - Gli altri file `analisi-test-*-v1.json`, `test-autismo-v2.md`, `test-adhd-v2.md` e `test-ocd-v1.md` sono specifiche delle versioni indicate nel nome. Restano nel repository per tracciabilità e non descrivono necessariamente soglie, ancore o ordine di somministrazione correnti.
 
 Il codice e i test automatici sono la fonte operativa per la versione pubblicata. Qualunque nuova versione deve aggiornare anche l'audit o aggiungere una specifica di revisione equivalente.

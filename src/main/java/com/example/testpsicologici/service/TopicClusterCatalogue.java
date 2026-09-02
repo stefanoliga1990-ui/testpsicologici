@@ -47,7 +47,8 @@ public class TopicClusterCatalogue {
                             "love-bombing",
                             "breadcrumbing",
                             "orbiting",
-                            "hoovering"
+                            "hoovering",
+                            "invalidazione-emotiva-subita"
                     )),
             new TopicCluster(
                     "autostima-approvazione-e-obiettivi",

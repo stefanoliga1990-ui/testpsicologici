@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(34).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(35).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1838,10 +1838,69 @@ class TestResultServiceTest {
     }
 
     @Test
+    void emotionalInvalidationTestLoadsEighteenInterleavedItemsThreeEditorialLensesAndSources() {
+        PsychologicalTest test = catalogue.findById("invalidazione-emotiva-subita");
+
+        assertThat(test.title()).isEqualTo("Le mie emozioni vengono invalidate?");
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(18).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "minimizzazione", "giudizio", "rifiuto");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(6));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "minimizzazione", "giudizio", "rifiuto");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains("ultimo mese", "stessa persona", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "adulti", "contatti regolari", "condividere emozioni", "significato limitato",
+                "Non accerta", "interromperti");
+        assertThat(test.references()).hasSize(7).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.1037/pas0000584",
+                "https://doi.org/10.1007/s12144-020-01238-6",
+                "https://doi.org/10.1177/00332941241279372",
+                "https://doi.org/10.1080/10615806.2022.2033973",
+                "https://doi.org/10.1186/s40479-022-00185-x",
+                "https://doi.org/10.17632/gx6t7jhjtz.1",
+                "https://www.1522.eu/cose-1522/");
+    }
+
+    @Test
+    void emotionalInvalidationProfilesUseThreeLensPatternAndKeepInterpretiveAndSafetyLimits() {
+        TestResult low = analyzeWithAnswersForTest("invalidazione-emotiva-subita", 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("invalidazione-emotiva-subita", 3, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("invalidazione-emotiva-subita", 5, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("invalidazione-emotiva-subita", 5, 5, 1);
+
+        assertThat(low.general().title()).contains("invalidazione emotiva", "poco presenti");
+        assertThat(mixed.general().title()).contains("invalidazione emotiva", "modo variabile");
+        assertThat(focused.general().title()).contains("invalidazione emotiva", "un ambito");
+        assertThat(broad.general().title()).contains("invalidazione emotiva", "più ambiti");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(3);
+            assertThat(result.general().detail()).contains(
+                    "non accerta", "manipolazione", "Riconoscere un'emozione",
+                    "indipendentemente dalla media", "112", "1522");
+        });
+        assertThat(broad.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Minimizzazione e mancato ascolto",
+                "Giudizio e correzione dell'emozione",
+                "Rifiuto dell'espressione emotiva");
+        assertThat(low.percentage()).isZero();
+        assertThat(focused.percentage()).isEqualTo(33);
+        assertThat(broad.percentage()).isEqualTo(67);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

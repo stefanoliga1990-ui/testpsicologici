@@ -52,7 +52,8 @@ class PsychometricStructureTest {
             Map.entry("orbiting", "dinamiche associate all'orbiting"),
             Map.entry("hoovering", "dinamiche associate all'hoovering"),
             Map.entry("compatibilita-coppia", "compatibilità percepita nella coppia"),
-            Map.entry("relazione-dannosa-benessere", "esperienze relazionali potenzialmente dannose"));
+            Map.entry("relazione-dannosa-benessere", "esperienze relazionali potenzialmente dannose"),
+            Map.entry("invalidazione-emotiva-subita", "esperienze di invalidazione emotiva"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -62,7 +63,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(34).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(35).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
@@ -113,6 +114,14 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(4));
+            } else if ("invalidazione-emotiva-subita".equals(test.id())) {
+                assertThat(test.questions()).hasSize(18);
+                assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).hasSize(3);
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code()))
+                        .hasSize(6));
             } else {
                 assertThat(test.questions()).hasSize(24);
                 assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
@@ -242,6 +251,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("alcuni ambiti");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("gran parte degli ambiti");
+            } else if ("invalidazione-emotiva-subita".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("un ambito");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("più ambiti");
             } else {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
