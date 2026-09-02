@@ -69,8 +69,8 @@
       "sourceDescription": "Minimizzare o negare ciò che un'altra persona prova.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Ambiguità e manipolazione relazionale",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Distinguere episodi, pattern, disaccordo e mancata comprensione senza attribuire automaticamente abuso o intenzionalità." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 3, "itemCount": 18, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Distinguere episodi, pattern, disaccordo e mancata comprensione senza attribuire automaticamente abuso o intenzionalità." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-09-02T22:32:27+02:00", "completedAt": "2026-09-02T22:32:27+02:00", "commitHash": "b3e7c871a0ddf3efdfb5fb4b119a3fa8f7c391fd", "blockReason": null }
     },
     {
       "order": 5,
