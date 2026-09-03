@@ -19,6 +19,7 @@ import java.nio.file.Path;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.not;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -154,8 +155,15 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Ritratto di Alessia Liga, revisore professionale di Spazio Test")))
                 .andExpect(content().string(containsString(
                         "\"image\": \"http:\\/\\/localhost\\/images\\/alessia-liga-revisore-professionale-2.jpg\"")))
-                .andExpect(content().string(containsString("È autrice di vari contributi scientifici accademici")))
-                .andExpect(content().string(containsString("servizi di psicologia delle cure primarie")))
+                .andExpect(content().string(containsString(
+                        "Psicologa con un percorso che unisce formazione scientifica, ricerca psicosociale ed esperienza diretta sul campo.")))
+                .andExpect(content().string(containsString("Ha lavorato in ambito psicoeducativo e sociale")))
+                .andExpect(content().string(containsString("È autrice di contributi scientifici e di divulgazione psicologica.")))
+                .andExpect(content().string(containsString("È Docente di Psicologia di Comunità")))
+                .andExpect(content().string(containsString(
+                        "Attualmente conduce gruppi di supporto e psicoeducazione per la gestione di conflitti, ansia e stress")))
+                .andExpect(content().string(containsString("programmi di inclusione e sviluppo giovanile")))
+                .andExpect(content().string(not(containsString("servizi di psicologia delle cure primarie"))))
                 .andExpect(content().string(containsString("La revisione professionale migliora la qualità editoriale")))
                 .andExpect(content().string(containsString("href=\"mailto:Alessia.liga3@gmail.com\"")))
                 .andExpect(content().string(containsString("href=\"tel:+393922407494\"")))
