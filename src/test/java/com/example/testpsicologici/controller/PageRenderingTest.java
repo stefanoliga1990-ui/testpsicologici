@@ -1926,6 +1926,75 @@ class PageRenderingTest {
     }
 
     @Test
+    void relationalTriangulationPagesExposeFourLensesFrequencyScaleLimitsAndGuide() throws Exception {
+        mockMvc.perform(get("/test/triangolazione-subita"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Ho vissuto dinamiche di triangolazione?")))
+                .andExpect(content().string(containsString("Comunicazione indiretta e mediazione")))
+                .andExpect(content().string(containsString("Confronti e rivalità")))
+                .andExpect(content().string(containsString("Schieramenti e coalizioni")))
+                .andExpect(content().string(containsString("Ambiguità e pressione legata a terze persone")))
+                .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/triangolazione-relazionale\"")))
+                .andExpect(content().string(containsString("href=\"/test/relazione-dannosa-benessere\"")))
+                .andExpect(content().string(containsString("non prova di per sé triangolazione")))
+                .andExpect(content().string(containsString("da “Mai” a “Quasi sempre”")));
+
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-triangolazione-subita", new TestAttempt(20));
+        mockMvc.perform(get("/test/triangolazione-subita/domanda/1").session(session))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("ultimi tre mesi")))
+                .andExpect(content().string(containsString("stessa relazione")))
+                .andExpect(content().string(containsString("Mai")))
+                .andExpect(content().string(containsString("Quasi sempre")));
+
+        mockMvc.perform(get("/approfondimenti/triangolazione-relazionale"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Una configurazione, non una diagnosi")))
+                .andExpect(content().string(containsString("Quattro lenti editoriali sui comportamenti riferiti")))
+                .andExpect(content().string(containsString("Supporto e terze persone possono avere funzioni diverse")))
+                .andExpect(content().string(containsString("Frequenze editoriali, non una percentuale di manipolazione")))
+                .andExpect(content().string(containsString("href=\"/test/triangolazione-subita\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void relationalTriangulationResultAndPdfExposeOverallFourLensesAndSafety() throws Exception {
+        mockMvc.perform(get("/test/triangolazione-subita/risultato")
+                        .session(completedAttempt("triangolazione-subita", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le dinamiche di triangolazione relazionale sembrano molto presenti in più aree")))
+                .andExpect(content().string(containsString("Comunicazione indiretta e mediazione")))
+                .andExpect(content().string(containsString("Confronti e rivalità")))
+                .andExpect(content().string(containsString("Schieramenti e coalizioni")))
+                .andExpect(content().string(containsString("Ambiguità e pressione legata a terze persone")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/triangolazione-subita/risultato/pdf\"")))
+                .andExpect(content().string(containsString("href=\"/test/relazione-dannosa-benessere\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/triangolazione-relazionale\"")));
+
+        MvcResult mvcResult = mockMvc.perform(get("/test/triangolazione-subita/risultato/pdf")
+                        .session(completedAttempt("triangolazione-subita", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-triangolazione-subita.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Ho vissuto dinamiche di triangolazione?")
+                    .contains("Comunicazione indiretta e mediazione")
+                    .contains("Confronti e rivalità")
+                    .contains("Schieramenti e coalizioni")
+                    .contains("Ambiguità e pressione legata a terze persone")
+                    .contains("accerta", "112", "1522");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -2007,6 +2076,8 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/relazione-dannosa-benessere")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/invalidazione-emotiva")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/triangolazione-relazionale")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-autistici-adulti")))
                 .andExpect(content().string(containsString("http://localhost/test/autosabotaggio")))
                 .andExpect(content().string(containsString("http://localhost/test/tratti-borderline-adulti")))
@@ -2028,6 +2099,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("http://localhost/test/compatibilita-coppia")))
                 .andExpect(content().string(containsString("http://localhost/test/relazione-dannosa-benessere")))
                 .andExpect(content().string(containsString("http://localhost/test/invalidazione-emotiva-subita")))
+                .andExpect(content().string(containsString("http://localhost/test/triangolazione-subita")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/domanda/"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("/risultato"))));
     }

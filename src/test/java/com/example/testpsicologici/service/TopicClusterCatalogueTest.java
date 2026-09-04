@@ -51,17 +51,20 @@ class TopicClusterCatalogueTest {
 
         assertThat(cluster.slug()).isEqualTo("ambiguita-e-manipolazione-relazionale");
         assertThat(cluster.title()).isEqualTo("Ambiguità e manipolazione relazionale");
-        assertThat(cluster.testIds()).containsExactly("relazione-dannosa-benessere", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "invalidazione-emotiva-subita");
+        assertThat(cluster.testIds()).containsExactly("relazione-dannosa-benessere", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "invalidazione-emotiva-subita", "triangolazione-subita");
         assertThat(topicClusterCatalogue.findByTestId("relazione-dannosa-benessere")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("breadcrumbing")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("love-bombing")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("orbiting")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("hoovering")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("invalidazione-emotiva-subita")).contains(cluster);
+        assertThat(topicClusterCatalogue.findByTestId("triangolazione-subita")).contains(cluster);
         assertThat(topicClusterCatalogue.findByTestId("limerenza").orElseThrow().testIds())
-                .doesNotContain("relazione-dannosa-benessere", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "invalidazione-emotiva-subita");
+                .doesNotContain("relazione-dannosa-benessere", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "invalidazione-emotiva-subita", "triangolazione-subita");
         assertThat(topicClusterCatalogue.findRelatedTestIds("relazione-dannosa-benessere", 3))
-                .containsExactly("gaslighting", "invalidazione-emotiva-subita", "love-bombing");
+                .containsExactly("gaslighting", "triangolazione-subita", "love-bombing");
+        assertThat(topicClusterCatalogue.findRelatedTestIds("triangolazione-subita", 3))
+                .containsExactly("relazione-dannosa-benessere", "invalidazione-emotiva-subita", "gaslighting");
     }
 
     @Test

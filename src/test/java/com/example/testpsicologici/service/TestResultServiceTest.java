@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(35).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(36).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1897,10 +1897,69 @@ class TestResultServiceTest {
     }
 
     @Test
+    void relationalTriangulationTestLoadsTwentyInterleavedItemsFourEditorialLensesAndSources() {
+        PsychologicalTest test = catalogue.findById("triangolazione-subita");
+
+        assertThat(test.title()).isEqualTo("Ho vissuto dinamiche di triangolazione?");
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(20).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "mediazione", "confronti", "alleanze", "confini");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(5));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "mediazione", "confronti", "alleanze", "confini");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "stessa relazione", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "adulti", "non validato", "significato limitato", "non prova", "mediazione concordata", "interromperti");
+        assertThat(test.references()).hasSize(7).extracting(reference -> reference.url()).containsExactly(
+                "https://doi.org/10.1037/cfp0000094",
+                "https://doi.org/10.1007/s12144-012-9144-3",
+                "https://doi.org/10.7366/1896180020153306",
+                "https://doi.org/10.1177/0265407518802451",
+                "https://doi.org/10.3389/fpsyg.2022.1013584",
+                "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/",
+                "https://www.1522.eu/cose-1522/");
+    }
+
+    @Test
+    void relationalTriangulationProfilesUseFourLensPatternAndKeepInterpretiveAndSafetyLimits() {
+        TestResult low = analyzeWithAnswersForTest("triangolazione-subita", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("triangolazione-subita", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("triangolazione-subita", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("triangolazione-subita", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).contains("triangolazione relazionale", "poco presenti");
+        assertThat(mixed.general().title()).contains("triangolazione relazionale", "modo variabile");
+        assertThat(focused.general().title()).contains("triangolazione relazionale", "una o due aree");
+        assertThat(broad.general().title()).contains("triangolazione relazionale", "più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(4);
+            assertThat(result.general().detail()).contains(
+                    "non accerta", "manipolazione", "mediazione concordata",
+                    "indipendentemente dalla media", "112", "1522");
+        });
+        assertThat(broad.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Comunicazione indiretta e mediazione",
+                "Confronti e rivalità",
+                "Schieramenti e coalizioni",
+                "Ambiguità e pressione legata a terze persone");
+        assertThat(low.percentage()).isZero();
+        assertThat(focused.percentage()).isEqualTo(25);
+        assertThat(broad.percentage()).isEqualTo(75);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

@@ -1,0 +1,110 @@
+{
+  "test": {
+    "id": "triangolazione-subita",
+    "titolo": "Ho vissuto dinamiche di triangolazione?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa del coinvolgimento di terze persone in una relazione sentimentale specifica",
+    "periodo_riferimento": "Ultimi tre mesi",
+    "unita_riferimento": "Una sola relazione sentimentale attuale o recente",
+    "direzione_punteggio": "Valori più alti descrivono maggiore frequenza delle esperienze formulate, non intenzione, manipolazione, abuso o infedeltà",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale, non validato e non normato. Non accerta triangolazione intenzionale, manipolazione, abuso, infedeltà, accordi violati o diagnosi."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi e sempre alla stessa relazione sentimentale attuale o recente, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
+    "domande": 20,
+    "aree": 4,
+    "domande_per_area": 5,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale di triangolazione, manipolazione, abuso, gravità o probabilità",
+    "ordine_aree_risultato": "mediazione, confronti, alleanze, confini",
+    "limite_aggregazione": "Le quattro aree sono lenti editoriali, non sottoscale validate negli adulti italiani."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le dinamiche di triangolazione relazionale sembrano poco presenti nelle tue risposte",
+      "sottotitolo": "Le esperienze esplorate risultano poco frequenti in tutte e quattro le aree. Negli ultimi tre mesi non emerge quindi un coinvolgimento diffuso di terze persone nella comunicazione, nei confronti, negli schieramenti o nella pressione sui confini.",
+      "descrizione": "Questo andamento non esclude un episodio importante, una dinamica avvenuta fuori dal periodo scelto o forme non esplorate dal questionario. Conta anche se il coinvolgimento di altre persone è concordato, trasparente e rispettoso dei confini. Il risultato descrive la tua percezione e non accerta triangolazione intenzionale, manipolazione, abuso, infedeltà, accordi violati, colpa o diagnosi. Chiedere supporto, avere amicizie, ricorrere a una mediazione concordata o vivere una non-monogamia consensuale non costituisce di per sé una dinamica problematica. Se nel rapporto sono presenti paura, isolamento, minacce, coercizione o violenza, considera la sicurezza indipendentemente dalla media: in pericolo immediato chiama il 112 e, se sei una donna che vive violenza o stalking, puoi contattare il 1522 anche via chat."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le dinamiche di triangolazione relazionale sembrano presenti in modo variabile",
+      "sottotitolo": "Le risposte mostrano frequenze intermedie o differenze tra le aree, senza che una raggiunga il livello editoriale più alto. Il coinvolgimento di terze persone può quindi dipendere dai contesti o assumere forme non costanti.",
+      "descrizione": "Può essere utile osservare in quali situazioni compaiono queste esperienze, se vengono spiegate e se resta possibile un confronto diretto. Supporto legittimo e mediazione concordata possono somigliare ad alcuni comportamenti, mentre segretezza, pressione e ripetizione ne cambiano il significato possibile. Il risultato descrive la tua percezione e non accerta triangolazione intenzionale, manipolazione, abuso, infedeltà, accordi violati, colpa o diagnosi. Chiedere supporto, avere amicizie, ricorrere a una mediazione concordata o vivere una non-monogamia consensuale non costituisce di per sé una dinamica problematica. Se nel rapporto sono presenti paura, isolamento, minacce, coercizione o violenza, considera la sicurezza indipendentemente dalla media: in pericolo immediato chiama il 112 e, se sei una donna che vive violenza o stalking, puoi contattare il 1522 anche via chat."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le dinamiche di triangolazione relazionale sembrano più presenti in una o due aree",
+      "sottotitolo": "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta quindi verso modi specifici in cui terze persone entrano nel rapporto, senza definire automaticamente l'intera relazione.",
+      "descrizione": "Torna agli episodi concreti dell'area o delle aree emergenti e considera sequenza, trasparenza, accordi e possibilità di riparazione. Anche un andamento circoscritto può avere un impatto se rende difficile parlare direttamente, esprimere limiti o sentirsi al sicuro. Il risultato descrive la tua percezione e non accerta triangolazione intenzionale, manipolazione, abuso, infedeltà, accordi violati, colpa o diagnosi. Chiedere supporto, avere amicizie, ricorrere a una mediazione concordata o vivere una non-monogamia consensuale non costituisce di per sé una dinamica problematica. Se nel rapporto sono presenti paura, isolamento, minacce, coercizione o violenza, considera la sicurezza indipendentemente dalla media: in pericolo immediato chiama il 112 e, se sei una donna che vive violenza o stalking, puoi contattare il 1522 anche via chat."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le dinamiche di triangolazione relazionale sembrano molto presenti in più aree",
+      "sottotitolo": "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree. Terze persone sembrano quindi entrare ripetutamente nel rapporto attraverso più canali, pur senza chiarire intenzioni, accordi o significato di ogni episodio.",
+      "descrizione": "Un andamento ampio rende utile osservare persistenza, interferenza con il confronto diretto e impatto sulla tua autonomia o sicurezza. Le quattro aree sono lenti editoriali e non sottotipi validati, perciò il risultato va letto insieme al contesto concreto. Il risultato descrive la tua percezione e non accerta triangolazione intenzionale, manipolazione, abuso, infedeltà, accordi violati, colpa o diagnosi. Chiedere supporto, avere amicizie, ricorrere a una mediazione concordata o vivere una non-monogamia consensuale non costituisce di per sé una dinamica problematica. Se nel rapporto sono presenti paura, isolamento, minacce, coercizione o violenza, considera la sicurezza indipendentemente dalla media: in pericolo immediato chiama il 112 e, se sei una donna che vive violenza o stalking, puoi contattare il 1522 anche via chat."
+    }
+  ],
+  "analisi_aree": [
+    {
+      "area_code": "mediazione",
+      "nome_area": "Comunicazione indiretta e mediazione",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Messaggi indiretti e interventi di terzi risultano poco frequenti. Non esclude una mediazione occasionale o un episodio importante."},
+        {"livello": "MEDIUM", "descrizione": "Comunicazione indiretta o mediazione compaiono in alcune occasioni. Osserva se sono concordate e se facilitano davvero un confronto successivo tra voi."},
+        {"livello": "HIGH", "descrizione": "Messaggi affidati a terzi o chiarimenti che richiedono intermediari risultano frequenti. L'area non distingue da sola supporto legittimo, evitamento o pressione intenzionale."}
+      ]
+    },
+    {
+      "area_code": "confronti",
+      "nome_area": "Confronti e rivalità",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Confronti con altre persone o ex partner risultano poco frequenti. Non certifica assenza di gelosia o sicurezza relazionale in ogni situazione."},
+        {"livello": "MEDIUM", "descrizione": "Confronti e richiami all'attenzione altrui compaiono in alcune occasioni. Considera tono, contesto e possibilità di spiegare l'impatto senza essere svalutato."},
+        {"livello": "HIGH", "descrizione": "Confronti con altre persone, ex partner o modelli ideali risultano frequenti. Il dato descrive ciò che riferisci e non prova un intento di suscitare rivalità."}
+      ]
+    },
+    {
+      "area_code": "alleanze",
+      "nome_area": "Schieramenti e coalizioni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Schieramenti e uso delle opinioni altrui nei conflitti risultano poco frequenti. Non esclude che ciascuno cerchi supporto fuori dalla coppia."},
+        {"livello": "MEDIUM", "descrizione": "Terze persone vengono talvolta richiamate come alleate o arbitri. Osserva se il loro coinvolgimento chiarisce il problema oppure rende più difficile esprimere una posizione diversa."},
+        {"livello": "HIGH", "descrizione": "Schieramenti, coalizioni o opinioni di terzi usate come prova risultano frequenti. L'area non stabilisce chi abbia ragione né se ogni coinvolgimento sia concordato."}
+      ]
+    },
+    {
+      "area_code": "confini",
+      "nome_area": "Ambiguità e pressione legata a terze persone",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Ambiguità o pressione legata a terze persone risultano poco frequenti. Non definisce accordi impliciti o espliciti della relazione."},
+        {"livello": "MEDIUM", "descrizione": "Confini poco chiari o richiami a terze persone compaiono in alcune occasioni. Può essere utile distinguere accordi condivisi, richieste di chiarezza e reazioni concrete ricevute."},
+        {"livello": "HIGH", "descrizione": "Ambiguità, pressione o difficoltà a esprimere limiti in presenza di terzi risultano frequenti. Il dato non prova infedeltà, abuso o intenzione manipolativa, ma l'impatto riferito merita attenzione."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {"titolo": "The Triangular Relationship Inventory: Development and Validation", "url": "https://doi.org/10.1037/cfp0000094", "apporto": "Definizione sistemica e pluralità delle forme; misura intergenerazionale diversa, senza trasferimento di item o fattori."},
+    {"titolo": "Development of the Romantic Jealousy-Induction Scale and the Motives for Inducing Romantic Jealousy Scale", "url": "https://doi.org/10.1007/s12144-012-9144-3", "apporto": "Condotte di induzione della gelosia e distinzione tra comportamenti e motivi; campione statunitense giovane e prospettiva di chi agisce."},
+    {"titolo": "Jealousy induction as influence strategy in close relationships", "url": "https://doi.org/10.7366/1896180020153306", "apporto": "Evidenza europea su gelosia indotta e correlati relazionali; non misura l'esposizione ricevuta e non consente causalità."},
+    {"titolo": "Inducing jealousy and intimate partner violence among young adults", "url": "https://doi.org/10.1177/0265407518802451", "apporto": "Associazione con violenza di coppia e limiti causali; non produce previsioni individuali."},
+    {"titolo": "Validation of the Italian brief Multidimensional Jealousy Scale — Diotaiuti e colleghi", "url": "https://doi.org/10.3389/fpsyg.2022.1013584", "apporto": "Evidenza italiana sulla natura multidimensionale della gelosia; costrutto e direzione di misura differenti."},
+    {"titolo": "ISTAT — Definizioni e indicatori sulla violenza", "url": "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "apporto": "Inquadramento istituzionale italiano di denigrazione, controllo e isolamento; non definisce triangolazione."},
+    {"titolo": "1522 — Numero Anti Violenza e Stalking", "url": "https://www.1522.eu/cose-1522/", "apporto": "Orientamento istituzionale italiano per sicurezza e supporto; non è evidenza sul costrutto e non sostituisce il 112."}
+  ],
+  "limite": "Non esistono dati che validino negli adulti italiani questi 20 item originali, le quattro aree, la scala, le soglie o le interpretazioni."
+}

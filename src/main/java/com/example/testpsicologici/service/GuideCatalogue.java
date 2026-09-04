@@ -3726,6 +3726,123 @@ public class GuideCatalogue {
                     )
             ),
             new InformationGuide(
+                    "triangolazione-relazionale",
+                    "triangolazione-subita",
+                    "Triangolazione relazionale",
+                    "Triangolazione relazionale: quando una terza persona entra nella dinamica",
+                    "Triangolazione relazionale: significato e segnali | Spazio Test",
+                    "Che cosa indica il termine triangolazione relazionale, quali comportamenti osservare e come distinguere pressione, supporto e mediazione concordata.",
+                    "La triangolazione relazionale è un'etichetta ampia per situazioni in cui una terza persona entra nella comunicazione o nella tensione tra due persone. Il significato non dipende dalla sola presenza di qualcuno: contano accordi, trasparenza, ripetizione, funzione e impatto sul confronto diretto.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Una configurazione, non una diagnosi",
+                                    List.of(
+                                            "Nella teoria sistemica, triangolazione può descrivere il coinvolgimento di una terza persona nella tensione tra due membri di una relazione. Nella ricerca romantica si studiano anche comportamenti che evocano confronti o gelosia, ma questi filoni non coincidono e non definiscono un disturbo.",
+                                            "Il questionario usa il termine in senso descrittivo e limitato: osserva messaggi indiretti, confronti, schieramenti e confini legati a terze persone. Non può stabilire intenzioni, tradimento, manipolazione o chi abbia ragione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le aree esplorate",
+                                    "Quattro lenti editoriali sui comportamenti riferiti",
+                                    List.of(
+                                            "I 20 item originali sono distribuiti in quattro aree da cinque item e presentati in ordine intercalato. Le aree organizzano il feedback, non sono fattori validati o sottotipi scientifici della triangolazione.",
+                                            "Le barre hanno uguale peso e restano nell'ordine teorico. Differenze piccole tra aree non stabiliscono quale dinamica sia dominante e una media bassa non annulla un episodio importante."
+                                    ),
+                                    List.of(
+                                            "Comunicazione indiretta e mediazione.",
+                                            "Confronti e rivalità.",
+                                            "Schieramenti e coalizioni.",
+                                            "Ambiguità e pressione legata a terze persone."
+                                    )
+                            ),
+                            new GuideSection(
+                                    "Che cosa non basta",
+                                    "Supporto e terze persone possono avere funzioni diverse",
+                                    List.of(
+                                            "Parlare con una persona fidata, chiedere consiglio o usare una mediazione scelta da entrambi può proteggere e facilitare il dialogo. Anche amicizie, legami familiari e relazioni consensualmente non monogame non indicano di per sé pressione o violazione dei confini.",
+                                            "Diventa utile guardare se il coinvolgimento è trasparente e concordato, se apre o chiude il confronto e se le opinioni altrui vengono usate per informare oppure per rendere impossibile una posizione diversa."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Sequenza e contesto",
+                                    "Osservare che cosa accade prima e dopo",
+                                    List.of(
+                                            "Un confronto isolato può nascere da goffaggine, stress o un tentativo maldestro di spiegarsi. La ripetizione dopo conflitti, la segretezza, il mancato rispetto di richieste chiare e l'effetto sulla libertà di parlare offrono informazioni contestuali più utili dell'etichetta.",
+                                            "Può aiutare annotare il comportamento concreto, la persona coinvolta, l'accordo esistente e la risposta ricevuta quando chiedi chiarezza. Questo non trasforma un diario in una prova delle intenzioni altrui, ma rende l'esperienza meno vaga."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Come leggere il risultato",
+                                    "Frequenze editoriali, non una percentuale di manipolazione",
+                                    List.of(
+                                            "Le risposte da 1 a 5 vengono mediate e trasformate in barre da 0 a 100. Le barre non sono percentuali di triangolazione, abuso, certezza, rischio o gravità e le soglie LOW, MIXED, FOCUSED e BROAD sono scelte editoriali.",
+                                            "Il profilo complessivo descrive come le frequenze si distribuiscono tra le quattro lenti. Il risultato non stabilisce la qualità complessiva della relazione, una violazione degli accordi o quale decisione prendere."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Le fonti sono pertinenti ma indirette",
+                                    List.of(
+                                            "Il TRI studia soprattutto il coinvolgimento dei figli nei conflitti genitoriali, mentre gli studi sull'induzione della gelosia osservano principalmente chi mette in atto quei comportamenti. Una validazione italiana della gelosia romantica riguarda invece pensieri, emozioni e azioni di chi risponde, non l'esposizione a terze persone nel partner.",
+                                            "Non è stata individuata una misura italiana o europea validata che coincida con questi 20 item recipient-side. Le fonti orientano definizioni e limiti, ma non validano aree, soglie o restituzioni di Spazio Test."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "L'impatto conta anche senza un'etichetta",
+                                    List.of(
+                                            "Se queste dinamiche ti fanno soffrire o limitano la possibilità di esprimere bisogni e confini, puoi parlarne con una persona fidata o un professionista. Un confronto con la persona coinvolta è solo una possibilità e non è necessario quando temi conseguenze o non ti senti al sicuro.",
+                                            "Paura, isolamento, minacce, coercizione o violenza vanno considerate indipendentemente dal risultato. In caso di pericolo immediato chiama il 112; se sei una donna che vive violenza o stalking, il 1522 offre orientamento gratuito ed è disponibile anche via chat."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 20 item originali, quattro lenti editoriali e una finestra di tre mesi riferita a una sola relazione sentimentale attuale o recente. È informativo e non validato: non accerta triangolazione intenzionale, manipolazione, abuso, infedeltà, accordi violati, colpa o diagnosi.",
+                    List.of(
+                            new GuideReference(
+                                    "The Triangulation in Relationships Inventory (TRI) — Bresin e colleghi",
+                                    "https://doi.org/10.1037/cfp0000094",
+                                    "Sviluppo del TRI consultato per forme di coinvolgimento di una terza persona; riguarda soprattutto conflitti genitoriali riferiti retrospettivamente e non valida il test di coppia."
+                            ),
+                            new GuideReference(
+                                    "The Motivations and Behaviors of Jealousy Induction — Mattingly e colleghi",
+                                    "https://doi.org/10.1007/s12144-012-9144-3",
+                                    "Studio consultato per comportamenti e motivazioni di induzione della gelosia; prospettiva di chi agisce e campione soprattutto studentesco limitano il trasferimento."
+                            ),
+                            new GuideReference(
+                                    "Jealousy and the use of relational influence strategies — Mandal e colleghi",
+                                    "https://doi.org/10.7366/1896180020153306",
+                                    "Studio polacco consultato come evidenza europea su gelosia e strategie di influenza; disegno correlazionale e prospettiva actor-side non validano l'app."
+                            ),
+                            new GuideReference(
+                                    "Why do people use jealousy induction? — Kaufman-Parks e colleghi",
+                                    "https://doi.org/10.1177/0265407518802451",
+                                    "Studio consultato per associazioni relazionali e violenza di coppia; dati trasversali e regionali non dimostrano causalità o intenzione individuale."
+                            ),
+                            new GuideReference(
+                                    "Validation of the Italian brief Multidimensional Jealousy Scale — Diotaiuti e colleghi",
+                                    "https://doi.org/10.3389/fpsyg.2022.1013584",
+                                    "Validazione italiana consultata per il contesto nazionale della gelosia romantica; misura il rispondente e non l'esposizione a comportamenti del partner."
+                            ),
+                            new GuideReference(
+                                    "Definizioni e indicatori sulla violenza psicologica — Istat",
+                                    "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/",
+                                    "Fonte istituzionale italiana consultata per distinguere controllo, isolamento e denigrazione; non definisce la triangolazione e il perimetro riguarda soprattutto le donne."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Pagina ufficiale italiana consultata per destinatari, gratuità e orientamento; non è evidenza sul costrutto e non sostituisce il 112."
+                            )
+                    )
+            ),
+            new InformationGuide(
                     "invalidazione-emotiva",
                     "invalidazione-emotiva-subita",
                     "Invalidazione emotiva",

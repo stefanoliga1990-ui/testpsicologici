@@ -80,6 +80,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedCoupleCompatibilityInformationTest();
         seedRelationshipWellbeingInformationTest();
         seedPerceivedEmotionalInvalidationTest();
+        seedRelationalTriangulationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -3482,6 +3483,108 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Irritazione, chiusura o distanza dopo che esprimi emozioni risultano frequenti. L'area non distingue da sola una difficoltà comunicativa da un pattern più ampio e non accerta abuso.");
     }
 
+    private void seedRelationalTriangulationTest() {
+        String id = "triangolazione-subita";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Ho vissuto dinamiche di triangolazione?",
+                "Auto-osservazione informativa",
+                "Esplora il coinvolgimento di terze persone nella comunicazione, nei confronti, negli schieramenti e nei confini di una relazione sentimentale.",
+                "6 min · 20 domande",
+                "Questo questionario per adulti è informativo, originale e non validato; pensa agli ultimi tre mesi e sempre alla stessa relazione sentimentale attuale o recente: se le occasioni pertinenti sono state poche, il risultato ha significato limitato. Coinvolgere altre persone non prova di per sé triangolazione, manipolazione o infedeltà; supporto, mediazione concordata, amicizie e relazioni consensualmente non monogame richiedono una lettura contestuale. Puoi interromperti in qualsiasi momento.",
+                version, false,
+                "Frequenza complessiva delle dinamiche esplorate",
+                "Frequenza delle esperienze nell'area",
+                true, 36).withSeo(
+                "Ho vissuto dinamiche di triangolazione? Test | Spazio Test",
+                "Questionario informativo sul coinvolgimento di terze persone in una relazione sentimentale: comunicazione indiretta, confronti, schieramenti e confini.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e sempre alla stessa relazione sentimentale attuale o recente, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "The Triangulation in Relationships Inventory (TRI) — Bresin e colleghi",
+                "https://doi.org/10.1037/cfp0000094", 1);
+        saveReference(id, "The Motivations and Behaviors of Jealousy Induction — Mattingly e colleghi",
+                "https://doi.org/10.1007/s12144-012-9144-3", 2);
+        saveReference(id, "Jealousy and the use of relational influence strategies — Mandal e colleghi",
+                "https://doi.org/10.7366/1896180020153306", 3);
+        saveReference(id, "Why do people use jealousy induction? — Kaufman-Parks e colleghi",
+                "https://doi.org/10.1177/0265407518802451", 4);
+        saveReference(id, "Validation of the Italian brief Multidimensional Jealousy Scale — Diotaiuti e colleghi",
+                "https://doi.org/10.3389/fpsyg.2022.1013584", 5);
+        saveReference(id, "Definizioni e indicatori sulla violenza psicologica — Istat",
+                "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", 6);
+        saveReference(id, "1522 — Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 7);
+
+        saveArea(id, "mediazione", "Comunicazione indiretta e mediazione", 1);
+        saveArea(id, "confronti", "Confronti e rivalità", 2);
+        saveArea(id, "alleanze", "Schieramenti e coalizioni", 3);
+        saveArea(id, "confini", "Ambiguità e pressione legata a terze persone", 4);
+
+        saveQuestions(id, List.of(
+                q("mediazione", "La persona affidava a qualcun altro messaggi che riguardavano direttamente il nostro rapporto."),
+                q("confronti", "La persona confrontava il mio aspetto con quello di un'altra persona."),
+                q("alleanze", "La persona mi diceva che altre persone erano d'accordo con la sua versione di un nostro problema."),
+                q("confini", "La persona mostrava particolare vicinanza con qualcun altro subito dopo un conflitto tra noi."),
+                q("mediazione", "Venivo a sapere da terzi questioni che la persona evitava di discutere con me."),
+                q("confronti", "La persona confrontava il mio modo di comportarmi con quello di un ex partner."),
+                q("alleanze", "Invitava qualcuno a prendere posizione in un conflitto tra noi."),
+                q("confini", "Manteneva poco chiari i confini con una terza persona anche dopo che avevo chiesto chiarezza."),
+                q("mediazione", "La persona chiedeva a qualcuno di intervenire in un disaccordo prima di cercare un confronto diretto con me."),
+                q("confronti", "Durante un disaccordo, citava qualcuno che avrebbe gestito meglio la situazione."),
+                q("alleanze", "Condivideva dettagli di un nostro disaccordo con terzi e usava le loro reazioni nel confronto con me."),
+                q("confini", "Lasciava aperta la possibilità di preferire un'altra persona al nostro rapporto."),
+                q("mediazione", "Una terza persona mi riferiva critiche o richieste provenienti dalla persona."),
+                q("confronti", "Richiamava l'attenzione ricevuta da altre persone mentre parlavamo del nostro rapporto."),
+                q("alleanze", "Mi metteva di fronte a una scelta tra sostenere la persona e sostenere qualcun altro."),
+                q("confini", "Richiamava la possibilità di rivolgersi a qualcun altro per farmi accettare una richiesta."),
+                q("mediazione", "Per chiarire un problema tra noi, dovevo passare attraverso un'altra persona."),
+                q("confronti", "Presentava una terza persona come esempio di ciò che avrei dovuto essere."),
+                q("alleanze", "Trattava l'opinione di una terza persona come prova che la mia posizione fosse sbagliata."),
+                q("confini", "La presenza di una terza persona rendeva più difficile per me esprimere bisogni o limiti.")));
+
+        String commonLimits = "Il risultato descrive la tua percezione e non accerta triangolazione intenzionale, manipolazione, abuso, infedeltà, accordi violati, colpa o diagnosi. "
+                + "Chiedere supporto, avere amicizie, ricorrere a una mediazione concordata o vivere una non-monogamia consensuale non costituisce di per sé una dinamica problematica. "
+                + "Se nel rapporto sono presenti paura, isolamento, minacce, coercizione o violenza, considera la sicurezza indipendentemente dalla media: in pericolo immediato chiama il 112 e, se sei una donna che vive violenza o stalking, puoi contattare il 1522 anche via chat.";
+
+        saveGlobal(id, "LOW",
+                "Le dinamiche di triangolazione relazionale sembrano poco presenti nelle tue risposte",
+                "Le esperienze esplorate risultano poco frequenti in tutte e quattro le aree. Negli ultimi tre mesi non emerge quindi un coinvolgimento diffuso di terze persone nella comunicazione, nei confronti, negli schieramenti o nella pressione sui confini.",
+                "Questo andamento non esclude un episodio importante, una dinamica avvenuta fuori dal periodo scelto o forme non esplorate dal questionario. Conta anche se il coinvolgimento di altre persone è concordato, trasparente e rispettoso dei confini. " + commonLimits);
+        saveGlobal(id, "MIXED",
+                "Le dinamiche di triangolazione relazionale sembrano presenti in modo variabile",
+                "Le risposte mostrano frequenze intermedie o differenze tra le aree, senza che una raggiunga il livello editoriale più alto. Il coinvolgimento di terze persone può quindi dipendere dai contesti o assumere forme non costanti.",
+                "Può essere utile osservare in quali situazioni compaiono queste esperienze, se vengono spiegate e se resta possibile un confronto diretto. Supporto legittimo e mediazione concordata possono somigliare ad alcuni comportamenti, mentre segretezza, pressione e ripetizione ne cambiano il significato possibile. " + commonLimits);
+        saveGlobal(id, "FOCUSED",
+                "Le dinamiche di triangolazione relazionale sembrano più presenti in una o due aree",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso modi specifici in cui terze persone entrano nel rapporto, senza definire automaticamente l'intera relazione.",
+                "Torna agli episodi concreti dell'area o delle aree emergenti e considera sequenza, trasparenza, accordi e possibilità di riparazione. Anche un andamento circoscritto può avere un impatto se rende difficile parlare direttamente, esprimere limiti o sentirsi al sicuro. " + commonLimits);
+        saveGlobal(id, "BROAD",
+                "Le dinamiche di triangolazione relazionale sembrano molto presenti in più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree. Terze persone sembrano quindi entrare ripetutamente nel rapporto attraverso più canali, pur senza chiarire intenzioni, accordi o significato di ogni episodio.",
+                "Un andamento ampio rende utile osservare persistenza, interferenza con il confronto diretto e impatto sulla tua autonomia o sicurezza. Le quattro aree sono lenti editoriali e non sottotipi validati, perciò il risultato va letto insieme al contesto concreto. " + commonLimits);
+
+        saveAreaInsights(id, "mediazione",
+                "Messaggi indiretti e interventi di terzi risultano poco frequenti. Non esclude una mediazione occasionale o un episodio importante.",
+                "Comunicazione indiretta o mediazione compaiono in alcune occasioni. Osserva se sono concordate e se facilitano davvero un confronto successivo tra voi.",
+                "Messaggi affidati a terzi o chiarimenti che richiedono intermediari risultano frequenti. L'area non distingue da sola supporto legittimo, evitamento o pressione intenzionale.");
+        saveAreaInsights(id, "confronti",
+                "Confronti con altre persone o ex partner risultano poco frequenti. Non certifica assenza di gelosia o sicurezza relazionale in ogni situazione.",
+                "Confronti e richiami all'attenzione altrui compaiono in alcune occasioni. Considera tono, contesto e possibilità di spiegare l'impatto senza essere svalutato.",
+                "Confronti con altre persone, ex partner o modelli ideali risultano frequenti. Il dato descrive ciò che riferisci e non prova un intento di suscitare rivalità.");
+        saveAreaInsights(id, "alleanze",
+                "Schieramenti e uso delle opinioni altrui nei conflitti risultano poco frequenti. Non esclude che ciascuno cerchi supporto fuori dalla coppia.",
+                "Terze persone vengono talvolta richiamate come alleate o arbitri. Osserva se il loro coinvolgimento chiarisce il problema oppure rende più difficile esprimere una posizione diversa.",
+                "Schieramenti, coalizioni o opinioni di terzi usate come prova risultano frequenti. L'area non stabilisce chi abbia ragione né se ogni coinvolgimento sia concordato.");
+        saveAreaInsights(id, "confini",
+                "Ambiguità o pressione legata a terze persone risultano poco frequenti. Non definisce accordi impliciti o espliciti della relazione.",
+                "Confini poco chiari o richiami a terze persone compaiono in alcune occasioni. Può essere utile distinguere accordi condivisi, richieste di chiarezza e reazioni concrete ricevute.",
+                "Ambiguità, pressione o difficoltà a esprimere limiti in presenza di terzi risultano frequenti. Il dato non prova infedeltà, abuso o intenzione manipolativa, ma l'impatto riferito merita attenzione.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -3685,6 +3788,14 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Perceived Emotion Invalidation Predicts Daily Affect and Stressors — Zielinski e colleghi", "https://doi.org/10.1080/10615806.2022.2033973"),
                 ref("The who and what of validation — Kuo e colleghi", "https://doi.org/10.1186/s40479-022-00185-x"),
                 ref("Psychometric properties of the Italian PIES — dataset", "https://doi.org/10.17632/gx6t7jhjtz.1"),
+                ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
+        syncReferences("triangolazione-subita", List.of(
+                ref("The Triangulation in Relationships Inventory (TRI) — Bresin e colleghi", "https://doi.org/10.1037/cfp0000094"),
+                ref("The Motivations and Behaviors of Jealousy Induction — Mattingly e colleghi", "https://doi.org/10.1007/s12144-012-9144-3"),
+                ref("Jealousy and the use of relational influence strategies — Mandal e colleghi", "https://doi.org/10.7366/1896180020153306"),
+                ref("Why do people use jealousy induction? — Kaufman-Parks e colleghi", "https://doi.org/10.1177/0265407518802451"),
+                ref("Validation of the Italian brief Multidimensional Jealousy Scale — Diotaiuti e colleghi", "https://doi.org/10.3389/fpsyg.2022.1013584"),
+                ref("Definizioni e indicatori sulla violenza psicologica — Istat", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/"),
                 ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
     }
 
