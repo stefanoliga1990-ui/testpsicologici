@@ -81,7 +81,7 @@
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Ambiguità e manipolazione relazionale",
       "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Verificare se le evidenze consentono un test autonomo; non inferire finalità seduttive o manipolative dai soli effetti percepiti." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "BLOCKED", "attempts": 1, "lastAttemptAt": "2026-09-04T22:16:53+02:00", "completedAt": null, "commitHash": null, "blockReason": "La ricerca ha individuato un solo studio empirico direttamente centrato sul negging: Green, Kukan e Tully (2017), basato sulle valutazioni di 308 partecipanti di vignette eterosessuali e gender-specific, non sulle esperienze dei destinatari e non sullo sviluppo di una misura. Non sono emersi una scala recipient-side validata, una struttura dimensionale replicata o evidenze italiane/europee che permettano di definire aree, item e interpretazioni autonome. I comportamenti osservabili utilizzabili senza attribuire intenzioni (complimenti ambigui, critiche, derisione e svalutazione) sono già coperti dai contenuti su invalidazione emotiva e impatto della relazione sul benessere; la caratteristica distintiva del negging richiederebbe invece di inferire lo scopo non verificabile di ridurre l'autostima per ottenere approvazione o conquista sessuale. Un questionario autonomo responsabile non è quindi sostenibile con le evidenze disponibili." }
     },
     {
       "order": 6,
