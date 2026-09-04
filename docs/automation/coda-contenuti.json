@@ -91,8 +91,8 @@
       "sourceDescription": "Introduzione di una terza persona reale o immaginaria nella dinamica per creare gelosia, competizione o pressione.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Ambiguità e manipolazione relazionale",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Separare fatti osservabili, interpretazioni ed effetti; non presumere intenzioni o una diagnosi dell'altra persona." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 4, "itemCount": 20, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Separare fatti osservabili, interpretazioni ed effetti; non presumere intenzioni o una diagnosi dell'altra persona." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-09-04T23:08:29+02:00", "completedAt": "2026-09-04T23:08:29+02:00", "commitHash": "d08c7f62798eff2967893611ed23dc62c29094a6", "blockReason": null }
     },
     {
       "order": 7,
