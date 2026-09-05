@@ -98,25 +98,25 @@
     {
       "order": 7,
       "slug": "tratti-evitanti-personalita-adulti",
-      "workingTitle": "Tratti associati al disturbo evitante di personalità (DEP) nell'adulto",
+      "workingTitle": "Tratti associati al disturbo evitante di personalità",
       "sourceTopic": "Disturbo Evitante di personalità (DEP)",
       "sourceDescription": "Tema richiesto dall'utente come prossimo questionario: esperienze e tratti associati al disturbo evitante di personalità, da delimitare attraverso la ricerca.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Personalità e tratti",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 4,
+        "itemCount": 24,
+        "answerScale": "FREQUENCY",
+        "resultModel": "AREA_PROFILE",
         "notes": "Priorità editoriale richiesta il 2026-09-05. Prima dell'implementazione verificare fonti italiane ed europee e distinzione da ansia sociale, introversione e attaccamento evitante. Non formulare diagnosi, probabilità o classificazioni cliniche; non equiparare evitamento o timidezza a un disturbo. Definire costrutto, dimensioni e restituzione soltanto dopo la ricerca."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-09-05T22:31:41+02:00",
+        "completedAt": "2026-09-05T22:31:41+02:00",
+        "commitHash": "d23465a44d36da1bd1c17aa5bae4c2f8752c784c",
         "blockReason": null
       }
     },
