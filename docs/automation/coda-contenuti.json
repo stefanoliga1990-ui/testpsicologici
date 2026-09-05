@@ -1,9 +1,10 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-09-01",
+  "updatedAt": "2026-09-05",
   "timezone": "Europe/Rome",
-  "scheduledLocalTime": "16:00",
+  "scheduledLocalTime": "22:15",
+  "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
   "maximumItemsPerDay": 1,
   "selectionPolicy": "FIRST_PENDING_BY_ORDER",
   "questionnaireDefaults": {
@@ -96,6 +97,31 @@
     },
     {
       "order": 7,
+      "slug": "tratti-evitanti-personalita-adulti",
+      "workingTitle": "Tratti associati al disturbo evitante di personalità (DEP) nell'adulto",
+      "sourceTopic": "Disturbo Evitante di personalità (DEP)",
+      "sourceDescription": "Tema richiesto dall'utente come prossimo questionario: esperienze e tratti associati al disturbo evitante di personalità, da delimitare attraverso la ricerca.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Personalità e tratti",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Priorità editoriale richiesta il 2026-09-05. Prima dell'implementazione verificare fonti italiane ed europee e distinzione da ansia sociale, introversione e attaccamento evitante. Non formulare diagnosi, probabilità o classificazioni cliniche; non equiparare evitamento o timidezza a un disturbo. Definire costrutto, dimensioni e restituzione soltanto dopo la ricerca."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 8,
       "slug": "disponibilita-emotiva",
       "workingTitle": "Quanto mi è difficile essere emotivamente disponibile?",
       "sourceTopic": "Emotional unavailability",
@@ -106,7 +132,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 8,
+      "order": 9,
       "slug": "situationship",
       "workingTitle": "Sto vivendo una situationship?",
       "sourceTopic": "Sono in una Situationship?",
@@ -117,7 +143,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 9,
+      "order": 10,
       "slug": "codipendenza-relazionale",
       "workingTitle": "Quanto mi riconosco in dinamiche di codipendenza?",
       "sourceTopic": "Codependency / codipendenza",
@@ -128,7 +154,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 10,
+      "order": 11,
       "slug": "confini-nella-relazione",
       "workingTitle": "Come vivo i confini nella relazione?",
       "sourceTopic": "Boundary issues nella relazione",
@@ -139,7 +165,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 11,
+      "order": 12,
       "slug": "positivita-tossica",
       "workingTitle": "Tendo a imporre una positività che lascia poco spazio alle emozioni?",
       "sourceTopic": "Toxic positivity",
@@ -150,7 +176,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 12,
+      "order": 13,
       "slug": "tratti-associati-psicopatia-adulto",
       "workingTitle": "Tratti associati alla psicopatia nell'adulto",
       "sourceTopic": "Psicopatia",
@@ -161,7 +187,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 13,
+      "order": 14,
       "slug": "burnout-percepito",
       "workingTitle": "Sto vivendo segnali associati al burnout?",
       "sourceTopic": "Sono in Burnout?",
@@ -172,7 +198,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 14,
+      "order": 15,
       "slug": "empatia-percepita",
       "workingTitle": "Come vivo l'empatia verso gli altri?",
       "sourceTopic": "Empatia",
@@ -183,7 +209,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 15,
+      "order": 16,
       "slug": "introversione-estroversione",
       "workingTitle": "Sono più introverso/a o estroverso/a?",
       "sourceTopic": "Introversione ed estroversione",
@@ -194,7 +220,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 16,
+      "order": 17,
       "slug": "autocompassione",
       "workingTitle": "Quanto pratico l'autocompassione?",
       "sourceTopic": "Autocompassione",
@@ -205,7 +231,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 17,
+      "order": 18,
       "slug": "ruminazione-mentale",
       "workingTitle": "Quanto tendo alla ruminazione mentale?",
       "sourceTopic": "Ruminazione mentale",
@@ -216,7 +242,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 18,
+      "order": 19,
       "slug": "bisogno-controllo",
       "workingTitle": "Quanto sento il bisogno di avere tutto sotto controllo?",
       "sourceTopic": "Bisogno di controllo",
@@ -227,7 +253,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 19,
+      "order": 20,
       "slug": "camaleonte-sociale",
       "workingTitle": "Quanto mi adatto agli altri come un camaleonte sociale?",
       "sourceTopic": "Quanto sei un social chameleon?",
@@ -238,7 +264,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 20,
+      "order": 21,
       "slug": "future-faking",
       "workingTitle": "Future faking: quando le promesse sul futuro creano aspettative senza basi",
       "sourceTopic": "Future faking",
@@ -249,7 +275,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 21,
+      "order": 22,
       "slug": "stonewalling",
       "workingTitle": "Stonewalling: quando il dialogo si interrompe durante il conflitto",
       "sourceTopic": "Stonewalling",
@@ -260,7 +286,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 22,
+      "order": 23,
       "slug": "silent-treatment",
       "workingTitle": "Silent treatment: quando il silenzio diventa pressione",
       "sourceTopic": "Silent treatment",
@@ -271,7 +297,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 23,
+      "order": 24,
       "slug": "trauma-bonding",
       "workingTitle": "Trauma bonding: comprendere i legami nelle relazioni segnate da abuso",
       "sourceTopic": "Trauma bonding",
@@ -282,7 +308,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 24,
+      "order": 25,
       "slug": "rinforzo-intermittente-relazioni",
       "workingTitle": "Rinforzo intermittente: perché l'alternanza tra attenzione e distanza può coinvolgere",
       "sourceTopic": "Intermittent reinforcement",
@@ -293,7 +319,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 25,
+      "order": 26,
       "slug": "guilt-tripping",
       "workingTitle": "Guilt tripping: quando il senso di colpa viene usato per influenzare",
       "sourceTopic": "Guilt tripping",
@@ -304,7 +330,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 26,
+      "order": 27,
       "slug": "ricatto-emotivo",
       "workingTitle": "Ricatto emotivo: paura, obbligo e senso di colpa nelle relazioni",
       "sourceTopic": "Emotional blackmail",
@@ -315,7 +341,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 27,
+      "order": 28,
       "slug": "proiezione-psicologica",
       "workingTitle": "Proiezione psicologica: significato, limiti e interpretazioni",
       "sourceTopic": "Projection",
@@ -326,7 +352,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 28,
+      "order": 29,
       "slug": "blame-shifting",
       "workingTitle": "Blame shifting: quando la responsabilità viene spostata sull'altro",
       "sourceTopic": "Blame shifting",
@@ -337,7 +363,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 29,
+      "order": 30,
       "slug": "darvo",
       "workingTitle": "DARVO: negare, attaccare e ribaltare vittima e responsabile",
       "sourceTopic": "DARVO",
@@ -348,7 +374,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 30,
+      "order": 31,
       "slug": "mirroring-relazioni",
       "workingTitle": "Mirroring nelle relazioni: somiglianza, sintonia o imitazione strategica?",
       "sourceTopic": "Mirroring",
@@ -359,7 +385,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 31,
+      "order": 32,
       "slug": "fawning-risposta-stress",
       "workingTitle": "Fawning: compiacere per affrontare conflitto o pericolo",
       "sourceTopic": "Fawning",
@@ -370,7 +396,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 32,
+      "order": 33,
       "slug": "emotional-dumping",
       "workingTitle": "Emotional dumping: condividere emozioni senza oltrepassare la disponibilità altrui",
       "sourceTopic": "Emotional dumping",
@@ -381,7 +407,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 33,
+      "order": 34,
       "slug": "main-character-syndrome",
       "workingTitle": "Main character syndrome: cosa descrive davvero questa espressione social?",
       "sourceTopic": "Main character syndrome",
@@ -392,7 +418,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 34,
+      "order": 35,
       "slug": "pick-me-behaviour",
       "workingTitle": "Pick-me behaviour: approvazione, confronto e svalutazione del gruppo",
       "sourceTopic": "Pick-me behaviour",
@@ -403,7 +429,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 35,
+      "order": 36,
       "slug": "weaponized-incompetence",
       "workingTitle": "Weaponized incompetence: quando l'incapacità trasferisce il carico agli altri",
       "sourceTopic": "Weaponized incompetence",
@@ -414,7 +440,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 36,
+      "order": 37,
       "slug": "lavoro-emotivo",
       "workingTitle": "Lavoro emotivo: il carico invisibile nelle relazioni e nei ruoli sociali",
       "sourceTopic": "Emotional labor",
@@ -425,7 +451,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 37,
+      "order": 38,
       "slug": "red-green-beige-flags",
       "workingTitle": "Red, green e beige flags: come leggere i segnali nelle relazioni",
       "sourceTopic": "Red flags / green flags / beige flags",
@@ -436,7 +462,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 38,
+      "order": 39,
       "slug": "doomscrolling",
       "workingTitle": "Doomscrolling: quando lo scorrimento automatico alimenta il malessere",
       "sourceTopic": "Scrolling automatico e doomscrolling",
@@ -447,7 +473,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 39,
+      "order": 40,
       "slug": "triade-oscura",
       "workingTitle": "Triade oscura: narcisismo, machiavellismo e psicopatia come tratti",
       "sourceTopic": "Triade oscura",
@@ -456,6 +482,506 @@
       "categoryHint": "Personalità e tratti",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente.", "notes": "Mantenere distinti tratti di ricerca, diagnosi cliniche e giudizi sulle singole persone." },
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+    },
+    {
+      "order": 41,
+      "slug": "autoefficacia-percepita",
+      "workingTitle": "Autoefficacia — Quanto mi sento in grado di affrontare le sfide?",
+      "sourceTopic": "Autoefficacia",
+      "sourceDescription": "Fiducia percepita nell'affrontare compiti e ostacoli.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Autostima, approvazione e obiettivi",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Direzione positiva: distinguere fiducia nell'agire, valore personale e competenza oggettiva; non certificare capacità."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 42,
+      "slug": "speranza-obiettivi",
+      "workingTitle": "Speranza — Riesco a vedere strade verso i miei obiettivi?",
+      "sourceTopic": "Speranza",
+      "sourceDescription": "Possibilità future percepite, motivazione a procedere e percorsi alternativi verso obiettivi significativi.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Distinguere speranza, ottimismo e resilienza; scegliere il modello teorico dopo la ricerca senza combinare concezioni eterogenee."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 43,
+      "slug": "ottimismo",
+      "workingTitle": "Ottimismo — Come guardo al mio futuro?",
+      "sourceTopic": "Ottimismo",
+      "sourceDescription": "Aspettative favorevoli e sfavorevoli rispetto al futuro.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Non equiparare ottimismo a positività obbligatoria né pessimismo a disturbo; non prevedere esiti individuali."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 44,
+      "slug": "gratitudine",
+      "workingTitle": "Gratitudine — Quanto riconosco ciò che arricchisce la mia vita?",
+      "sourceTopic": "Gratitudine",
+      "sourceDescription": "Riconoscimento e apprezzamento di aiuti, gesti e aspetti positivi della propria esperienza.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Direzione positiva, senza obbligo di riconoscenza, giudizi morali o minimizzazione della sofferenza."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 45,
+      "slug": "assaporare-momenti-positivi",
+      "workingTitle": "Assaporare i momenti positivi — Riesco a godermi le cose belle?",
+      "sourceTopic": "Savoring",
+      "sourceDescription": "Soffermarsi sulle esperienze piacevoli, anticiparle e richiamarle alla memoria.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Distinguere savoring, gratitudine e soddisfazione di vita; separare convinzioni sulle proprie risorse ed esperienze riferite; verificare lo stato delle evidenze italiane."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 46,
+      "slug": "significato-vita",
+      "workingTitle": "Significato nella vita — Quanto sento che ciò che faccio ha senso?",
+      "sourceTopic": "Significato nella vita",
+      "sourceDescription": "Presenza di significato e ricerca di una direzione personale.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Tenere distinte presenza e ricerca di significato; non sommarle automaticamente né considerare la ricerca un deficit; distinguere soddisfazione e conoscenza di sé."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 47,
+      "slug": "curiosita-esplorazione",
+      "workingTitle": "Curiosità — Quanto spazio do alla scoperta?",
+      "sourceTopic": "Curiosità",
+      "sourceDescription": "Interesse per nuove conoscenze, esplorazione e disponibilità verso esperienze poco familiari.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Descrivere interesse e occasioni di esplorazione, non intelligenza, cultura generale o valore dell'estroversione."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 48,
+      "slug": "esperienze-flow",
+      "workingTitle": "Flow — Quanto mi capita di essere pienamente immerso/a in ciò che faccio?",
+      "sourceTopic": "Flow",
+      "sourceDescription": "Esperienze di concentrazione e coinvolgimento in attività scelte, come hobby, sport, studio o lavoro.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Definire attività e occasioni di riferimento; distinguere flow, assorbimento generico e coinvolgimento lavorativo; non certificare prestazione."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 49,
+      "slug": "presenza-mentale",
+      "workingTitle": "Presenza mentale — Quanto sono presente nelle mie giornate?",
+      "sourceTopic": "Presenza mentale e mindfulness",
+      "sourceDescription": "Attenzione all'esperienza attuale e consapevolezza delle azioni quotidiane.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Delimitare rispetto a intelligenza intrapersonale e flessibilità psicologica; non inferire esperienza meditativa, accuratezza o salute mentale."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 50,
+      "slug": "flessibilita-psicologica",
+      "workingTitle": "Flessibilità psicologica — Riesco ad agire anche con pensieri ed emozioni difficili?",
+      "sourceTopic": "Flessibilità psicologica",
+      "sourceDescription": "Disponibilità a fare spazio alle esperienze interne e scegliere azioni significative.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Verificare autonomia rispetto a resilienza, mindfulness e autosabotaggio; non confondere accettazione di vissuti interni con tolleranza di abuso o condizioni dannose."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 51,
+      "slug": "supporto-sociale-percepito",
+      "workingTitle": "Supporto sociale — Quanto sento di poter contare sugli altri?",
+      "sourceTopic": "Supporto sociale percepito",
+      "sourceDescription": "Disponibilità percepita di ascolto, vicinanza e aiuto nelle diverse relazioni.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Relazioni e attaccamento",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Distinguere risorse percepite, aiuto effettivamente ricevuto e numero di contatti; considerare reti diverse senza presupporre partner o famiglia disponibili."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 52,
+      "slug": "apprezzamento-corpo",
+      "workingTitle": "Apprezzamento del corpo — Come vivo il rapporto con il mio corpo?",
+      "sourceTopic": "Apprezzamento del corpo",
+      "sourceDescription": "Accettazione e rispetto del proprio corpo.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Direzione positiva, senza giudizi su peso, bellezza, salute o prestazione; considerare disabilità e diversità dei corpi; non diagnosticare disturbi alimentari."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 53,
+      "slug": "motivazione-personale",
+      "workingTitle": "Motivazione personale — Cosa mi spinge a perseguire i miei obiettivi?",
+      "sourceTopic": "Motivazione personale",
+      "sourceDescription": "Interesse, significato personale, ricompense e pressioni esterne riferiti a un obiettivo concreto.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Autostima, approvazione e obiettivi",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Restituire motivazioni distinte senza classificare la persona come motivata o pigra; scegliere popolazione e contesto evitando trasferimenti da scale settoriali."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 54,
+      "slug": "coinvolgimento-lavoro",
+      "workingTitle": "Coinvolgimento nel lavoro — Quanto mi sento coinvolto/a in ciò che faccio?",
+      "sourceTopic": "Coinvolgimento nel lavoro",
+      "sourceDescription": "Energia, dedizione e coinvolgimento percepiti nell'attività lavorativa.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Lavoro, studio e stress",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Destinatari adulti che lavorano; distinguere engagement, burnout, flow e lavoro eccessivo; non trasferire il modello allo studio senza evidenze."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 55,
+      "slug": "recupero-dopo-lavoro",
+      "workingTitle": "Recupero dopo il lavoro — Riesco a staccare e ricaricarmi?",
+      "sourceTopic": "Recupero dopo il lavoro",
+      "sourceDescription": "Distacco mentale, rilassamento, esperienze gratificanti e autonomia sul tempo libero.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Lavoro, studio e stress",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Definire contesto lavorativo e tempo fuori dal lavoro; considerare turni, cura familiare e vincoli reali; distinguere recupero, sonno e burnout."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 56,
+      "slug": "stress-percepito",
+      "workingTitle": "Stress percepito — Quanto mi sento sotto pressione nella vita quotidiana?",
+      "sourceTopic": "Stress percepito",
+      "sourceDescription": "Sovraccarico e gestibilità percepita delle richieste quotidiane, anche fuori dal lavoro.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Lavoro, studio e stress",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Distinguere stress, ansia e burnout; considerare risorse e condizioni del contesto; non trasferire norme da campioni occupazionali o studenteschi."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 57,
+      "slug": "sonno-riposo",
+      "workingTitle": "Sonno e riposo — Come sto vivendo il mio sonno?",
+      "sourceTopic": "Sonno e riposo",
+      "sourceDescription": "Addormentamento, continuità del sonno e sensazione di riposo durante il giorno.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Questionario informativo, senza diagnosi di insonnia o altri disturbi del sonno; considerare turni, salute e contesto; non copiare item o soglie del PSQI."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 58,
+      "slug": "rapporto-rabbia",
+      "workingTitle": "Rapporto con la rabbia — Cosa succede quando mi arrabbio?",
+      "sourceTopic": "Rapporto con la rabbia",
+      "sourceDescription": "Situazioni in cui emerge la rabbia, modalità di espressione e ritorno alla calma.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Distinguere emozione, espressione e aggressione; non etichettare la persona né inferire pericolosità; verificare sovrapposizioni con regolazione emotiva e ruminazione."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 59,
+      "slug": "confronto-sociale",
+      "workingTitle": "Confronto sociale — Quanto mi confronto con gli altri?",
+      "sourceTopic": "Confronto sociale",
+      "sourceDescription": "Uso di risultati, opinioni e percorsi altrui come riferimento per sé.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Autostima, approvazione e obiettivi",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Verificare distinzione da FOMO, autostima, perfezionismo e camaleonte sociale; non considerare ogni confronto dannoso; documentare limiti delle evidenze italiane."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
+    },
+    {
+      "order": 60,
+      "slug": "stili-decisionali",
+      "workingTitle": "Stili decisionali — Come prendo le mie decisioni?",
+      "sourceTopic": "Stili decisionali",
+      "sourceDescription": "Ricorso ad analisi, intuizione, consigli, rapidità o rinvio nelle decisioni.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Personalità e tratti",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Restituire un profilo descrittivo senza uno stile universalmente migliore; non applicare automaticamente LOW/MIXED/FOCUSED/BROAD né certificare qualità delle decisioni."
+      },
+      "workflow": {
+        "status": "PENDING",
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "completedAt": null,
+        "commitHash": null,
+        "blockReason": null
+      }
     }
   ]
 }
