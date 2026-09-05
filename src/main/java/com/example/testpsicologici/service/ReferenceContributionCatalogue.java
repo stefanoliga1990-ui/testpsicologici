@@ -327,6 +327,14 @@ public class ReferenceContributionCatalogue {
                     "Dataset italiano preliminare consultato per la ricerca di evidenze locali; non è una pubblicazione peer-reviewed e non valida item, lenti editoriali, soglie o restituzioni dell'app."),
             entry("https://www.1522.eu/cose-1522/",
                     "Pagina ufficiale consultata per destinatari, gratuità, disponibilità continuativa e orientamento territoriale del 1522; non è evidenza sul costrutto e non sostituisce il 112 nelle emergenze."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/29563846/",
+                    "Revisione narrativa consultata per inibizione sociale, inadeguatezza, sensibilità alla valutazione e problemi di distinzione del disturbo evitante di personalità; non valida il test dell'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/26129819/",
+                    "Revisione clinica consultata per distinguere dal disturbo d'ansia sociale il concetto di sé negativo, il significato globale del rifiuto e il senso di non appartenenza; non fornisce una regola diagnostica online."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/30656823/",
+                    "Studio trasversale europeo consultato per sovrapposizione e problemi interpersonali in ansia sociale e disturbo evitante; campione clinico danese e metodo non consentono causalità o trasferimento di soglie."),
+            entry("https://doi.org/10.3389/fpsyg.2018.00341",
+                    "Validazione italiana dell'IIP-32 consultata per inibizione e problemi interpersonali; misura generale, campioni e struttura diversi non validano item, aree o scoring dell'app."),
             entry("https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/",
                     "Fonte istituzionale italiana consultata per orientare ai servizi territoriali quando sofferenza o interferenza richiedono una valutazione; non è evidenza sui costrutti dei questionari."));
 

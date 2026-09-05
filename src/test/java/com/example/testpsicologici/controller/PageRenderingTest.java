@@ -1995,6 +1995,75 @@ class PageRenderingTest {
     }
 
     @Test
+    void avoidantPersonalityTraitsPagesExposeAreasFrequencyScaleLimitsAndGuide() throws Exception {
+        mockMvc.perform(get("/test/tratti-evitanti-personalita-adulti"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Tratti associati al disturbo evitante di personalità")))
+                .andExpect(content().string(containsString("Sensibilità a critica e rifiuto")))
+                .andExpect(content().string(containsString("Percezione di inadeguatezza e non appartenenza")))
+                .andExpect(content().string(containsString("Evitamento e restrizione delle opportunità")))
+                .andExpect(content().string(containsString("Inibizione nella vicinanza e nell&#39;apertura")))
+                .andExpect(content().string(containsString("Personalità e tratti")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/disturbo-evitante-personalita\"")))
+                .andExpect(content().string(containsString("href=\"/test/tratti-borderline-adulti\"")))
+                .andExpect(content().string(containsString("non diagnostica né esclude")))
+                .andExpect(content().string(containsString("da “Mai” a “Quasi sempre”")));
+
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-tratti-evitanti-personalita-adulti", new TestAttempt(24));
+        mockMvc.perform(get("/test/tratti-evitanti-personalita-adulti/domanda/1").session(session))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("ultimi sei mesi")))
+                .andExpect(content().string(containsString("contesti sociali e relazionali")))
+                .andExpect(content().string(containsString("Mai")))
+                .andExpect(content().string(containsString("Quasi sempre")));
+
+        mockMvc.perform(get("/approfondimenti/disturbo-evitante-personalita"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Tratti, funzionamento e diagnosi non sono la stessa cosa")))
+                .andExpect(content().string(containsString("Quattro lenti editoriali, non quattro criteri clinici")))
+                .andExpect(content().string(containsString("Ansia sociale, introversione e attaccamento evitante")))
+                .andExpect(content().string(containsString("Frequenze editoriali, non una probabilità diagnostica")))
+                .andExpect(content().string(containsString("href=\"/test/tratti-evitanti-personalita-adulti\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void avoidantPersonalityTraitsResultAndPdfExposeOverallAreasAndLimits() throws Exception {
+        mockMvc.perform(get("/test/tratti-evitanti-personalita-adulti/risultato")
+                        .session(completedAttempt("tratti-evitanti-personalita-adulti", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "I tratti associati al disturbo evitante di personalità sembrano molto presenti in più aree")))
+                .andExpect(content().string(containsString("Sensibilità a critica e rifiuto")))
+                .andExpect(content().string(containsString("Percezione di inadeguatezza e non appartenenza")))
+                .andExpect(content().string(containsString("Evitamento e restrizione delle opportunità")))
+                .andExpect(content().string(containsString("Inibizione nella vicinanza e nell&#39;apertura")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/tratti-evitanti-personalita-adulti/risultato/pdf\"")))
+                .andExpect(content().string(containsString("href=\"/test/tratti-borderline-adulti\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/disturbo-evitante-personalita\"")));
+
+        MvcResult mvcResult = mockMvc.perform(get("/test/tratti-evitanti-personalita-adulti/risultato/pdf")
+                        .session(completedAttempt("tratti-evitanti-personalita-adulti", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-tratti-evitanti-personalita-adulti.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Tratti associati al disturbo evitante di personalità")
+                    .contains("Sensibilità a critica e rifiuto")
+                    .contains("Percezione di inadeguatezza e non appartenenza")
+                    .contains("Evitamento e restrizione delle opportunità")
+                    .contains("Inibizione nella vicinanza e nell'apertura")
+                    .contains("non accerta", "ansia sociale", "introversione", "neurodivergenza");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -2040,6 +2109,10 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/disturbo-borderline-personalita")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/paura-abbandono")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/disturbo-evitante-personalita")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/test/tratti-evitanti-personalita-adulti")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/fomo")))
                 .andExpect(content().string(containsString(

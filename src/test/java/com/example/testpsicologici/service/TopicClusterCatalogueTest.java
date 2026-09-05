@@ -76,4 +76,17 @@ class TopicClusterCatalogueTest {
         assertThat(topicClusterCatalogue.findRelatedTestIds("compatibilita-coppia", 3))
                 .containsExactly("gelosia-partner", "dipendenza-affettiva", "dinamiche-narcisistiche-partner");
     }
+
+    @Test
+    void personalityTraitsUseTheirDedicatedClusterAndAreMutuallyRelated() {
+        var cluster = topicClusterCatalogue.findByTestId("tratti-evitanti-personalita-adulti").orElseThrow();
+
+        assertThat(cluster.slug()).isEqualTo("personalita-e-tratti");
+        assertThat(cluster.title()).isEqualTo("Personalità e tratti");
+        assertThat(cluster.testIds()).containsExactly(
+                "tratti-borderline-adulti", "tratti-evitanti-personalita-adulti");
+        assertThat(topicClusterCatalogue.findByTestId("tratti-borderline-adulti")).contains(cluster);
+        assertThat(topicClusterCatalogue.findRelatedTestIds("tratti-evitanti-personalita-adulti", 3))
+                .containsExactly("tratti-borderline-adulti");
+    }
 }

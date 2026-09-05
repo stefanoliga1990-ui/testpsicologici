@@ -81,6 +81,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedRelationshipWellbeingInformationTest();
         seedPerceivedEmotionalInvalidationTest();
         seedRelationalTriangulationTest();
+        seedAvoidantPersonalityTraitsInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -3585,6 +3586,110 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Ambiguità, pressione o difficoltà a esprimere limiti in presenza di terzi risultano frequenti. Il dato non prova infedeltà, abuso o intenzione manipolativa, ma l'impatto riferito merita attenzione.");
     }
 
+    private void seedAvoidantPersonalityTraitsInformationTest() {
+        String id = "tratti-evitanti-personalita-adulti";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Tratti associati al disturbo evitante di personalità",
+                "Autovalutazione informativa",
+                "Esplora sensibilità al giudizio, percezione di inadeguatezza, evitamento e apertura nelle relazioni.",
+                "6 min · 24 domande",
+                "Questo questionario per adulti è informativo, originale e non validato: non diagnostica né esclude un disturbo evitante di personalità. Pensa agli ultimi sei mesi e a contesti sociali e relazionali significativi; ansia sociale, introversione, attaccamento, cultura, neurodivergenza, esperienze di rifiuto e barriere reali possono influire sulle risposte. Puoi interromperti in qualsiasi momento.",
+                version, false,
+                "Frequenza complessiva delle esperienze esplorate",
+                "Frequenza delle esperienze nell'area",
+                true, 37).withSeo(
+                "Tratti evitanti di personalità nell'adulto: test | Spazio Test",
+                "Questionario informativo per adulti su sensibilità al giudizio, inadeguatezza percepita, evitamento e apertura relazionale. 24 domande, senza diagnosi.")
+                .withResponseInstruction("Pensando agli ultimi sei mesi e ai contesti sociali e relazionali significativi, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "Avoidant personality disorder: current insights — Lampe e Malhi",
+                "https://pubmed.ncbi.nlm.nih.gov/29563846/", 1);
+        saveReference(id, "Differentiating social phobia from avoidant personality disorder — Lampe",
+                "https://pubmed.ncbi.nlm.nih.gov/26129819/", 2);
+        saveReference(id, "Social anxiety disorder and avoidant personality disorder from an interpersonal perspective — Frandsen e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/30656823/", 3);
+        saveReference(id, "Clinical descriptions and diagnostic requirements for ICD-11 — WHO",
+                "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1", 4);
+        saveReference(id, "The Italian Version of the Inventory of Interpersonal Problems (IIP-32) — Lo Coco e colleghi",
+                "https://doi.org/10.3389/fpsyg.2018.00341", 5);
+        saveReference(id, "Percorsi di cura per i disturbi gravi di personalità — Ministero della Salute",
+                "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf", 6);
+
+        saveArea(id, "valutazione", "Sensibilità a critica e rifiuto", 1);
+        saveArea(id, "inadeguatezza", "Percezione di inadeguatezza e non appartenenza", 2);
+        saveArea(id, "evitamento", "Evitamento e restrizione delle opportunità", 3);
+        saveArea(id, "vicinanza", "Inibizione nella vicinanza e nell'apertura", 4);
+
+        saveQuestions(id, List.of(
+                q("valutazione", "Prima di parlare in un gruppo, temevo che ciò che avrei detto sarebbe stato criticato."),
+                q("inadeguatezza", "In un gruppo, mi sentivo fuori posto."),
+                q("evitamento", "Rinunciavo a un'attività perché avrei dovuto conoscere persone nuove."),
+                q("vicinanza", "Condividevo poco di me finché non ero certo/a di piacere all'altra persona."),
+                q("valutazione", "Un'osservazione critica restava a lungo nei miei pensieri."),
+                q("inadeguatezza", "Mi sentivo meno capace socialmente delle persone intorno a me."),
+                q("evitamento", "Lasciavo passare un'opportunità perché comportava espormi al giudizio altrui."),
+                q("vicinanza", "Mi trattenevo dal mostrare affetto per timore di essere respinto/a."),
+                q("valutazione", "Interpretavo un'accoglienza poco calorosa come un possibile rifiuto."),
+                q("inadeguatezza", "Pensavo di avere poco da offrire in una relazione."),
+                q("evitamento", "Restavo ai margini di un gruppo finché non mi sentivo accettato/a."),
+                q("vicinanza", "Evitavo di chiedere vicinanza quando temevo una risposta negativa."),
+                q("valutazione", "Cercavo segnali che indicassero se sarei stato/a accettato/a."),
+                q("inadeguatezza", "Dubitavo di essere una persona interessante per gli altri."),
+                q("evitamento", "Rifiutavo inviti per timore di sentirmi inadeguato/a."),
+                q("vicinanza", "Mantenevo le distanze anche quando volevo conoscere meglio qualcuno."),
+                q("valutazione", "Mi sentivo molto esposto/a quando qualcuno valutava ciò che facevo."),
+                q("inadeguatezza", "Mi aspettavo che, conoscendomi meglio, gli altri avrebbero notato i miei difetti."),
+                q("evitamento", "Evitavo di esprimere un'opinione quando poteva essere criticata."),
+                q("vicinanza", "Durante conversazioni personali, controllavo molto ciò che dicevo per non essere giudicato/a."),
+                q("valutazione", "Dopo un errore sociale, temevo che gli altri mi giudicassero negativamente nel complesso."),
+                q("inadeguatezza", "Mi consideravo poco adatto/a a situazioni sociali nuove."),
+                q("evitamento", "Sceglievo attività familiari per ridurre il rischio di sentirmi in imbarazzo."),
+                q("vicinanza", "Aspettavo segnali chiari di accettazione prima di esprimere un bisogno personale.")));
+
+        String commonLimits = "Il risultato è descrittivo e non accerta un disturbo di personalità, gravità, rischio, abilità sociali o valore personale; aree e soglie sono editoriali e non validate. "
+                + "Esperienze di ansia sociale, introversione, attaccamento, cultura, neurodivergenza, discriminazione, rifiuto, umore e condizioni ambientali possono produrre risposte simili, mentre un punteggio contenuto non esclude difficoltà circoscritte. "
+                + "Se queste esperienze causano sofferenza o limitano relazioni, studio, lavoro o opportunità, puoi parlarne con uno psicologo, psicoterapeuta, medico o servizio di salute mentale indipendentemente dal livello ottenuto.";
+
+        saveGlobal(id, "LOW",
+                "I tratti associati al disturbo evitante di personalità sembrano poco presenti nelle tue risposte",
+                "Le esperienze esplorate risultano poco frequenti in tutte e quattro le aree negli ultimi sei mesi. Non emerge quindi una configurazione ampia di timore del giudizio, inadeguatezza percepita, rinuncia e inibizione relazionale.",
+                "Questo andamento non esclude un episodio importante, una difficoltà limitata a un contesto o esperienze fuori dal periodo considerato. Preferire ambienti tranquilli o poche relazioni può essere una scelta e non una difficoltà. " + commonLimits);
+        saveGlobal(id, "MIXED",
+                "I tratti associati al disturbo evitante di personalità sembrano presenti in modo variabile",
+                "Le risposte mostrano frequenze intermedie o differenze tra le aree, senza che una raggiunga il livello editoriale più alto. Queste esperienze possono quindi cambiare tra contesti, persone e situazioni.",
+                "Può essere utile osservare dove compare la variabilità: familiarità, ruolo, potere, possibilità di prepararsi e accoglienza ricevuta possono modificare il modo di partecipare. Le differenze tra barre non sono una misura di stabilità o causa. " + commonLimits);
+        saveGlobal(id, "FOCUSED",
+                "I tratti associati al disturbo evitante di personalità sembrano più presenti in una o due aree",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta quindi verso aspetti specifici e non descrive automaticamente ogni relazione o contesto.",
+                "Torna agli episodi concreti delle aree emergenti e considera quanto siano persistenti, quali situazioni li attivino e quali opportunità limitino. Una difficoltà focalizzata può meritare attenzione anche senza un andamento diffuso. " + commonLimits);
+        saveGlobal(id, "BROAD",
+                "I tratti associati al disturbo evitante di personalità sembrano molto presenti in più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree. Timore del giudizio, percezione di inadeguatezza, evitamento o inibizione sembrano quindi attraversare più aspetti della vita recente.",
+                "Un andamento ampio rende utile osservare persistenza, contesti, sofferenza e interferenza con relazioni o opportunità, senza trasformare le barre in una diagnosi. Anche esperienze di esclusione reale o ambienti poco accessibili possono contribuire e richiedono una lettura contestuale. " + commonLimits);
+
+        saveAreaInsights(id, "valutazione",
+                "Preoccupazione per critica e rifiuto risulta poco frequente. Non esclude episodi importanti o situazioni specifiche in cui il giudizio pesa di più.",
+                "Sensibilità alla valutazione compare in alcune situazioni. Osserva persone, segnali e contesti che aumentano o riducono l'aspettativa di essere criticato/a.",
+                "Preoccupazione, monitoraggio e persistenza della critica risultano frequenti. L'area non stabilisce se il giudizio sia reale né distingue da sola ansia sociale o conseguenze di rifiuti vissuti.");
+        saveAreaInsights(id, "inadeguatezza",
+                "Inadeguatezza e non appartenenza percepite risultano poco frequenti. Non misura sicurezza in ogni ambiente né competenze sociali oggettive.",
+                "Valutazioni negative di sé compaiono in parte o in alcuni contesti. Considera se cambiano con familiarità, accoglienza, ruolo e persone presenti.",
+                "Inadeguatezza, scarso valore relazionale e non appartenenza risultano frequenti. Queste percezioni non certificano capacità o valore personale e possono essere influenzate da esperienze e ambienti reali.");
+        saveAreaInsights(id, "evitamento",
+                "Rinunce e restrizioni dovute al timore del giudizio risultano poco frequenti. Non significa che tu debba preferire molte attività o contatti sociali.",
+                "Alcune opportunità vengono evitate o affrontate con cautela. Osserva se la scelta protegge un limite oppure riduce possibilità che per te sarebbero importanti.",
+                "Rinunce, marginalità e limitazione dell'esposizione risultano frequenti. L'area non distingue da sola evitamento, preferenza personale, stanchezza, accessibilità o prudenza motivata.");
+        saveAreaInsights(id, "vicinanza",
+                "Trattenersi nell'apertura o nella vicinanza risulta poco frequente. Non certifica intimità o sicurezza in tutte le relazioni.",
+                "Apertura, affetto o bisogni vengono trattenuti in alcune situazioni. Può essere utile osservare quali segnali di fiducia rendano più possibile esprimersi.",
+                "Distanza, autocontrollo e bisogno di segnali di accettazione risultano frequenti. L'area non equivale ad attaccamento evitante e non valuta reciprocità o qualità complessiva delle relazioni.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -3797,6 +3902,13 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Validation of the Italian brief Multidimensional Jealousy Scale — Diotaiuti e colleghi", "https://doi.org/10.3389/fpsyg.2022.1013584"),
                 ref("Definizioni e indicatori sulla violenza psicologica — Istat", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/"),
                 ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
+        syncReferences("tratti-evitanti-personalita-adulti", List.of(
+                ref("Avoidant personality disorder: current insights — Lampe e Malhi", "https://pubmed.ncbi.nlm.nih.gov/29563846/"),
+                ref("Differentiating social phobia from avoidant personality disorder — Lampe", "https://pubmed.ncbi.nlm.nih.gov/26129819/"),
+                ref("Social anxiety disorder and avoidant personality disorder from an interpersonal perspective — Frandsen e colleghi", "https://pubmed.ncbi.nlm.nih.gov/30656823/"),
+                ref("Clinical descriptions and diagnostic requirements for ICD-11 — WHO", "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1"),
+                ref("The Italian Version of the Inventory of Interpersonal Problems (IIP-32) — Lo Coco e colleghi", "https://doi.org/10.3389/fpsyg.2018.00341"),
+                ref("Percorsi di cura per i disturbi gravi di personalità — Ministero della Salute", "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

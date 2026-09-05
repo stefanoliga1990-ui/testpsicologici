@@ -34,8 +34,15 @@ public class TopicClusterCatalogue {
                             "dipendenza-affettiva",
                             "compatibilita-coppia",
                             "gelosia-partner",
-                            "dinamiche-narcisistiche-partner",
-                            "tratti-borderline-adulti"
+                            "dinamiche-narcisistiche-partner"
+                    )),
+            new TopicCluster(
+                    "personalita-e-tratti",
+                    "Personalità e tratti",
+                    "Pattern di esperienza e relazione da osservare nel tempo e nei contesti, senza trasformarli in diagnosi online.",
+                    List.of(
+                            "tratti-borderline-adulti",
+                            "tratti-evitanti-personalita-adulti"
                     )),
             new TopicCluster(
                     "ambiguita-e-manipolazione-relazionale",

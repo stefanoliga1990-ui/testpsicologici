@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(36).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(37).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -1956,10 +1956,69 @@ class TestResultServiceTest {
     }
 
     @Test
+    void avoidantPersonalityTraitsTestLoadsTwentyFourInterleavedItemsFourAreasAndSources() {
+        PsychologicalTest test = catalogue.findById("tratti-evitanti-personalita-adulti");
+
+        assertThat(test.title()).isEqualTo("Tratti associati al disturbo evitante di personalità");
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(24).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "valutazione", "inadeguatezza", "evitamento", "vicinanza");
+        assertThat(test.areas()).allSatisfy(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(6));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).startsWith(
+                "valutazione", "inadeguatezza", "evitamento", "vicinanza");
+        assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains("ultimi sei mesi", "contesti", "frequenza");
+        assertThat(test.introductoryText()).contains(
+                "adulti", "non validato", "non diagnostica", "ansia sociale", "introversione",
+                "neurodivergenza", "interromperti");
+        assertThat(test.references()).hasSize(6).extracting(reference -> reference.url()).containsExactly(
+                "https://pubmed.ncbi.nlm.nih.gov/29563846/",
+                "https://pubmed.ncbi.nlm.nih.gov/26129819/",
+                "https://pubmed.ncbi.nlm.nih.gov/30656823/",
+                "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1",
+                "https://doi.org/10.3389/fpsyg.2018.00341",
+                "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf");
+    }
+
+    @Test
+    void avoidantPersonalityTraitsProfilesUseFourAreaPatternAndKeepDifferentialLimits() {
+        TestResult low = analyzeWithAnswersForTest("tratti-evitanti-personalita-adulti", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("tratti-evitanti-personalita-adulti", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("tratti-evitanti-personalita-adulti", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("tratti-evitanti-personalita-adulti", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).contains("disturbo evitante di personalità", "poco presenti");
+        assertThat(mixed.general().title()).contains("disturbo evitante di personalità", "modo variabile");
+        assertThat(focused.general().title()).contains("disturbo evitante di personalità", "una o due aree");
+        assertThat(broad.general().title()).contains("disturbo evitante di personalità", "più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result -> {
+            assertThat(result.areaResults()).hasSize(4);
+            assertThat(result.general().detail()).contains(
+                    "non accerta", "disturbo di personalità", "ansia sociale", "introversione",
+                    "neurodivergenza", "indipendentemente dal livello");
+        });
+        assertThat(broad.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Sensibilità a critica e rifiuto",
+                "Percezione di inadeguatezza e non appartenenza",
+                "Evitamento e restrizione delle opportunità",
+                "Inibizione nella vicinanza e nell'apertura");
+        assertThat(low.percentage()).isZero();
+        assertThat(focused.percentage()).isEqualTo(25);
+        assertThat(broad.percentage()).isEqualTo(75);
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita", "tratti-evitanti-personalita-adulti");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

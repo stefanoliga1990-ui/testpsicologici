@@ -3957,6 +3957,113 @@ public class GuideCatalogue {
                                     "Pagina ufficiale italiana consultata per destinatari, gratuità e orientamento; non è evidenza sull'invalidazione e non sostituisce il 112."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "disturbo-evitante-personalita",
+                    "tratti-evitanti-personalita-adulti",
+                    "Disturbo evitante di personalità",
+                    "Disturbo evitante di personalità: caratteristiche, confini e valutazione",
+                    "Disturbo evitante di personalità: caratteristiche | Spazio Test",
+                    "Una guida ai tratti associati al disturbo evitante di personalità, alle differenze da ansia sociale, introversione e attaccamento e ai limiti dei test online.",
+                    "Il disturbo evitante di personalità riguarda un pattern ampio e persistente di inibizione sociale, inadeguatezza percepita e sensibilità alla valutazione negativa. Singole esperienze o un risultato online non permettono di stabilire una diagnosi.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Tratti, funzionamento e diagnosi non sono la stessa cosa",
+                                    List.of(
+                                            "Timore della critica, sensazione di non essere adeguati e rinuncia a esporsi possono comparire in molte persone e in periodi specifici. In una valutazione clinica contano invece durata, pervasività, storia, contesto, sofferenza e interferenza con il funzionamento.",
+                                            "Le classificazioni contemporanee considerano il funzionamento del sé e interpersonale insieme ai tratti. Per questo non basta contare comportamenti isolati e una compilazione online non può confermare o escludere un disturbo di personalità."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Esperienze esplorate",
+                                    "Quattro lenti editoriali, non quattro criteri clinici",
+                                    List.of(
+                                            "Il questionario collegato organizza l'auto-osservazione in sensibilità a critica e rifiuto, inadeguatezza e non appartenenza percepite, evitamento di opportunità e inibizione nell'apertura relazionale.",
+                                            "Queste lenti derivano da nuclei ricorrenti in letteratura, ma non sono fattori validati o sottotipi. Una persona può riconoscersi in un'area e non nelle altre, e il significato dipende dalle circostanze concrete."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Ansia sociale, introversione e attaccamento evitante",
+                                    List.of(
+                                            "Ansia sociale e disturbo evitante possono condividere paura del giudizio ed evitamento; gli studi mostrano una forte sovrapposizione e non sostengono una distinzione affidabile basata su poche risposte. Una valutazione approfondisce ampiezza del pattern, concetto di sé, storia e funzionamento.",
+                                            "L'introversione può indicare preferenza per meno stimoli o relazioni senza implicare paura, inadeguatezza o compromissione. L'attaccamento evitante descrive invece una dimensione delle relazioni e non equivale al disturbo evitante di personalità."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Il comportamento sociale non nasce nel vuoto",
+                                    List.of(
+                                            "Cultura, lingua, neurodivergenza, accessibilità, salute, discriminazione, bullismo, rifiuti reali e ambienti poco accoglienti possono influenzare partecipazione e fiducia. Ridurre tutto a un tratto individuale farebbe perdere informazioni importanti.",
+                                            "Anche depressione, ansia, trauma o periodi di stress possono produrre esperienze simili. Le risposte descrivono ciò che è accaduto negli ultimi sei mesi, non la causa né una caratteristica immutabile."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Come leggere il risultato",
+                                    "Frequenze editoriali, non una probabilità diagnostica",
+                                    List.of(
+                                            "Le risposte da 1 a 5 vengono mediate e trasformate in barre da 0 a 100. Le barre non sono percentuali di disturbo, gravità, rischio, certezza, capacità sociale o valore personale; anche le soglie LOW, MIXED, FOCUSED e BROAD sono scelte editoriali.",
+                                            "Il profilo globale descrive come le frequenze si distribuiscono tra le quattro aree. Differenze piccole non hanno significato psicometrico e un livello contenuto non esclude una difficoltà importante in un contesto specifico."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Valutazione e supporto",
+                                    "Quando può essere utile un confronto professionale",
+                                    List.of(
+                                            "Se timore del giudizio, svalutazione di sé o rinunce causano sofferenza o limitano relazioni, studio, lavoro o opportunità, puoi parlarne con uno psicologo, psicoterapeuta, medico o servizio di salute mentale. Non serve aspettare un risultato alto per chiedere aiuto.",
+                                            "Un percorso professionale può ricostruire storia e contesti, distinguere spiegazioni sovrapposte e concordare obiettivi rilevanti per la persona. Non esiste un'unica lettura adatta a tutti e il questionario non prescrive un trattamento."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Le fonti delimitano il tema, ma non validano il test",
+                                    List.of(
+                                            "Revisioni e studi clinici descrivono sovrapposizione con l'ansia sociale e problemi interpersonali eterogenei. La validazione italiana dell'IIP-32 offre dati su una misura generale dei problemi interpersonali, non su questo questionario o su una diagnosi di disturbo evitante.",
+                                            "Non sono state trovate validazioni italiane di questi 24 item, delle quattro lenti o delle soglie. Tutte le domande e interpretazioni di Spazio Test sono originali, informative e da sottoporre a revisione ed evidenza empirica."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 24 item originali, quattro lenti editoriali e una finestra di sei mesi. È informativo e non validato: non stabilisce diagnosi, probabilità, gravità, abilità sociale o valore personale e non sostituisce una valutazione professionale.",
+                    List.of(
+                            new GuideReference(
+                                    "Avoidant personality disorder: current insights — Lampe e Malhi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/29563846/",
+                                    "Revisione consultata per i nuclei del costrutto, l'impatto e i problemi di distinzione; non valida aree, item o soglie dell'app."
+                            ),
+                            new GuideReference(
+                                    "Differentiating social phobia from avoidant personality disorder — Lampe",
+                                    "https://pubmed.ncbi.nlm.nih.gov/26129819/",
+                                    "Revisione clinica consultata per concetto di sé, significato del rifiuto e non appartenenza; non fornisce una regola diagnostica applicabile online."
+                            ),
+                            new GuideReference(
+                                    "Social anxiety disorder and avoidant personality disorder from an interpersonal perspective — Frandsen e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/30656823/",
+                                    "Studio clinico europeo consultato per sovrapposizione e problemi interpersonali; campione danese e disegno trasversale non consentono inferenze individuali."
+                            ),
+                            new GuideReference(
+                                    "Clinical descriptions and diagnostic requirements for ICD-11 — WHO",
+                                    "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1",
+                                    "Descrizioni cliniche consultate per funzionamento e necessità di una valutazione ampia; non sono una guida alla costruzione di autocompilati."
+                            ),
+                            new GuideReference(
+                                    "The Italian Version of the Inventory of Interpersonal Problems (IIP-32) — Lo Coco e colleghi",
+                                    "https://doi.org/10.3389/fpsyg.2018.00341",
+                                    "Validazione italiana di una misura generale consultata per inibizione e difficoltà interpersonali; campioni, struttura e punteggi non validano il test dell'app."
+                            ),
+                            new GuideReference(
+                                    "Percorsi di cura per i disturbi gravi di personalità — Ministero della Salute",
+                                    "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf",
+                                    "Documento italiano consultato per la natura multidimensionale della valutazione e dei percorsi; non riguarda questionari online per la popolazione generale."
+                            )
+                    )
             )
     );
 
