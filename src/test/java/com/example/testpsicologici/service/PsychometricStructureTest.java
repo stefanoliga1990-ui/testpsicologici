@@ -55,7 +55,8 @@ class PsychometricStructureTest {
             Map.entry("relazione-dannosa-benessere", "esperienze relazionali potenzialmente dannose"),
             Map.entry("invalidazione-emotiva-subita", "esperienze di invalidazione emotiva"),
             Map.entry("triangolazione-subita", "dinamiche di triangolazione relazionale"),
-            Map.entry("tratti-evitanti-personalita-adulti", "tratti associati al disturbo evitante di personalità"));
+            Map.entry("tratti-evitanti-personalita-adulti", "tratti associati al disturbo evitante di personalità"),
+            Map.entry("disponibilita-emotiva", "difficoltà di disponibilità emotiva nella relazione"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -65,7 +66,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(37).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(38).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {

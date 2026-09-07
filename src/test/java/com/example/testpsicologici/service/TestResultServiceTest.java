@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(37).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(38).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -2015,10 +2015,70 @@ class TestResultServiceTest {
     }
 
     @Test
+    void emotionalAvailabilityTestLoadsTwentyFourInterleavedItemsFourAreasAndSources() {
+        PsychologicalTest test = catalogue.findById("disponibilita-emotiva");
+
+        assertThat(test.title()).isEqualTo("Quanto mi è difficile essere emotivamente disponibile in una relazione?");
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(24).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.questions()).extracting(question -> question.areaCode()).containsExactly(
+                "accesso", "condivisione", "vicinanza", "presenza",
+                "accesso", "condivisione", "vicinanza", "presenza",
+                "accesso", "condivisione", "vicinanza", "presenza",
+                "accesso", "condivisione", "vicinanza", "presenza",
+                "accesso", "condivisione", "vicinanza", "presenza",
+                "accesso", "condivisione", "vicinanza", "presenza");
+        assertThat(test.areas()).extracting(area -> area.name()).containsExactly(
+                "Riconoscimento e chiarezza del proprio vissuto",
+                "Espressione e condivisione emotiva",
+                "Vulnerabilità e affidamento nella vicinanza",
+                "Presenza e responsività nello scambio");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "stessa relazione sentimentale");
+        assertThat(test.introductoryText()).contains(
+                "originale", "non validato", "privacy", "confini", "non stabiliscono diagnosi", "interromperti");
+        assertThat(test.overallMetricLabel()).isEqualTo("Frequenza complessiva delle difficoltà esplorate");
+        assertThat(test.areaMetricLabel()).isEqualTo("Frequenza delle difficoltà nell'area");
+        assertThat(test.references()).hasSize(8).extracting(reference -> reference.url()).containsExactly(
+                "https://pubmed.ncbi.nlm.nih.gov/23230982/",
+                "https://doi.org/10.1037/0022-3514.74.5.1238",
+                "https://doi.org/10.1037/pas0000986",
+                "https://doi.org/10.4081/ripppo.2019.392",
+                "https://pubmed.ncbi.nlm.nih.gov/9032718/",
+                "https://pubmed.ncbi.nlm.nih.gov/22653763/",
+                "https://doi.org/10.3389/fpsyg.2018.01434",
+                "https://doi.org/10.3389/fpsyg.2015.01069");
+    }
+
+    @Test
+    void emotionalAvailabilityProfilesUseFourAreaPatternAndKeepContextAndSafetyLimits() {
+        TestResult low = analyzeWithAnswersForTest("disponibilita-emotiva", 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("disponibilita-emotiva", 3, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("disponibilita-emotiva", 5, 1, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("disponibilita-emotiva", 5, 5, 5, 1);
+
+        assertThat(low.general().title()).contains("disponibilità emotiva nella relazione", "poco presenti");
+        assertThat(mixed.general().title()).contains("disponibilità emotiva nella relazione", "modo variabile");
+        assertThat(focused.general().title()).contains("disponibilità emotiva nella relazione", "una o due aree");
+        assertThat(broad.general().title()).contains("disponibilità emotiva nella relazione", "più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non accerta cause", "Privacy", "neurodivergenza", "consenso", "sicurezza"));
+        assertThat(broad.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Riconoscimento e chiarezza del proprio vissuto",
+                "Espressione e condivisione emotiva",
+                "Vulnerabilità e affidamento nella vicinanza",
+                "Presenza e responsività nello scambio");
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita", "tratti-evitanti-personalita-adulti");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita", "tratti-evitanti-personalita-adulti", "disponibilita-emotiva");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

@@ -336,7 +336,23 @@ public class ReferenceContributionCatalogue {
             entry("https://doi.org/10.3389/fpsyg.2018.00341",
                     "Validazione italiana dell'IIP-32 consultata per inibizione e problemi interpersonali; misura generale, campioni e struttura diversi non validano item, aree o scoring dell'app."),
             entry("https://www.salute.gov.it/new/it/tema/salute-mentale/la-rete-dei-servizi-la-salute-mentale/",
-                    "Fonte istituzionale italiana consultata per orientare ai servizi territoriali quando sofferenza o interferenza richiedono una valutazione; non è evidenza sui costrutti dei questionari."));
+                    "Fonte istituzionale italiana consultata per orientare ai servizi territoriali quando sofferenza o interferenza richiedono una valutazione; non è evidenza sui costrutti dei questionari."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/23230982/",
+                    "Sviluppo del BARE consultato per accessibilità, responsività e coinvolgimento nelle coppie; misura, item, campioni e proprietà non vengono trasferiti al questionario originale dell'app."),
+            entry("https://doi.org/10.1037/0022-3514.74.5.1238",
+                    "Due studi con diario consultati per il ruolo di condivisione emotiva e responsività percepita nel processo d'intimità; associazioni e campioni statunitensi non stabiliscono cause individuali."),
+            entry("https://doi.org/10.1037/pas0000986",
+                    "Sviluppo della Perceived Responsiveness and Insensitivity Scale consultato per distinguere responsività e insensibilità; valuta il partner percepito e non l'auto-disponibilità emotiva."),
+            entry("https://doi.org/10.4081/ripppo.2019.392",
+                    "Validazione italiana dell'ECR-12 consultata per distinguere l'evitamento dell'attaccamento; un altro strumento e costrutto non validano item, aree o soglie dell'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/9032718/",
+                    "Studio multicentrico italiano della TAS-20 consultato per difficoltà nell'identificare e descrivere emozioni; alessitimia, campioni e punteggi non sono trasferiti al test."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/22653763/",
+                    "Adattamento italiano della DERS consultato per consapevolezza e chiarezza emotiva; campioni specifici e costrutto di regolazione emotiva non validano il questionario relazionale."),
+            entry("https://doi.org/10.3389/fpsyg.2018.01434",
+                    "Validazione italiana preliminare del Capacity to Love Inventory consultata per fiducia, interesse e intimità; costrutto psicodinamico e campione non convalidano questa operazionalizzazione."),
+            entry("https://doi.org/10.3389/fpsyg.2015.01069",
+                    "Mini-review consultata per la natura diadica della disponibilità emotiva e la prevalenza della ricerca genitore-figlio; non giustifica il trasferimento delle dimensioni EAS alle coppie adulte."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

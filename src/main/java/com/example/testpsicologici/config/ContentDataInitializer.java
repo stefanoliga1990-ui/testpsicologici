@@ -82,6 +82,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedPerceivedEmotionalInvalidationTest();
         seedRelationalTriangulationTest();
         seedAvoidantPersonalityTraitsInformationTest();
+        seedEmotionalAvailabilityInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -3690,6 +3691,114 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Distanza, autocontrollo e bisogno di segnali di accettazione risultano frequenti. L'area non equivale ad attaccamento evitante e non valuta reciprocità o qualità complessiva delle relazioni.");
     }
 
+    private void seedEmotionalAvailabilityInformationTest() {
+        String id = "disponibilita-emotiva";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Quanto mi è difficile essere emotivamente disponibile in una relazione?",
+                "Autovalutazione informativa",
+                "Esplora accesso al proprio vissuto, condivisione, vulnerabilità e presenza negli scambi emotivi.",
+                "6 min · 24 domande",
+                "Questo questionario per adulti è originale, informativo e non validato. Pensa agli ultimi tre mesi e sempre alla stessa relazione sentimentale attuale o recente: privacy, bisogno di tempo, confini e distanza in una relazione non sicura non indicano automaticamente una difficoltà. Le risposte non misurano amore, capacità relazionale, qualità del rapporto o comportamento dell'altra persona, non stabiliscono diagnosi o cause e puoi interromperti in qualsiasi momento.",
+                version, false,
+                "Frequenza complessiva delle difficoltà esplorate",
+                "Frequenza delle difficoltà nell'area",
+                true, 38).withSeo(
+                "Disponibilità emotiva nella relazione: test | Spazio Test",
+                "Questionario informativo su accesso alle emozioni, condivisione, vulnerabilità e presenza in una relazione. 24 domande, senza diagnosi.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e sempre alla stessa relazione sentimentale attuale o recente, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "The Brief Accessibility, Responsiveness, and Engagement (BARE) Scale — Sandberg e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/23230982/", 1);
+        saveReference(id, "Intimacy as an interpersonal process — Laurenceau, Barrett e Pietromonaco",
+                "https://doi.org/10.1037/0022-3514.74.5.1238", 2);
+        saveReference(id, "Perceived Responsiveness and Insensitivity Scale — Crasta e colleghi",
+                "https://doi.org/10.1037/pas0000986", 3);
+        saveReference(id, "Italian version of the Experience in Close Relationship Scale 12 — Brugnera e colleghi",
+                "https://doi.org/10.4081/ripppo.2019.392", 4);
+        saveReference(id, "Italian multicenter study of the 20-item Toronto Alexithymia Scale — Bressi e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/9032718/", 5);
+        saveReference(id, "Italian version of the Difficulties in Emotion Regulation Scale — Giromini e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/22653763/", 6);
+        saveReference(id, "Italian Validation of the Capacity to Love Inventory — Margherita e colleghi",
+                "https://doi.org/10.3389/fpsyg.2018.01434", 7);
+        saveReference(id, "Emotional availability: theory, research, and intervention — Saunders e colleghi",
+                "https://doi.org/10.3389/fpsyg.2015.01069", 8);
+
+        saveArea(id, "accesso", "Riconoscimento e chiarezza del proprio vissuto", 1);
+        saveArea(id, "condivisione", "Espressione e condivisione emotiva", 2);
+        saveArea(id, "vicinanza", "Vulnerabilità e affidamento nella vicinanza", 3);
+        saveArea(id, "presenza", "Presenza e responsività nello scambio", 4);
+
+        saveQuestions(id, List.of(
+                q("accesso", "Durante uno scambio importante, capivo con ritardo quale emozione stavo provando."),
+                q("condivisione", "Trattenevo un'emozione che avrei voluto condividere."),
+                q("vicinanza", "Prendevo distanza quando lo scambio diventava emotivamente più vicino."),
+                q("presenza", "Mi era difficile restare presente mentre la persona condivideva un'emozione intensa."),
+                q("accesso", "Faticavo a distinguere tra emozioni diverse presenti nello stesso momento."),
+                q("condivisione", "Davo una risposta generica quando mi veniva chiesto come stavo."),
+                q("vicinanza", "Provavo disagio nel mostrare una parte vulnerabile di me."),
+                q("presenza", "Cercavo di chiudere rapidamente una conversazione emotiva."),
+                q("accesso", "Mi era difficile trovare parole per ciò che sentivo."),
+                q("condivisione", "Rimandavo una conversazione emotiva che desideravo affrontare."),
+                q("vicinanza", "Evitavo di chiedere conforto alla persona scelta."),
+                q("presenza", "Passavo alle soluzioni prima di comprendere ciò che la persona voleva comunicare."),
+                q("accesso", "Avevo bisogno di molto tempo per capire cosa mi avesse toccato emotivamente."),
+                q("condivisione", "Parlavo di aspetti pratici quando desideravo comunicare un vissuto personale."),
+                q("vicinanza", "Riducevo il contatto dopo aver condiviso qualcosa di personale."),
+                q("presenza", "Mi distraevo mentre la persona parlava dei propri vissuti."),
+                q("accesso", "Durante un confronto, perdevo il contatto con ciò che provavo."),
+                q("condivisione", "Mi era difficile esprimere un bisogno emotivo alla persona scelta."),
+                q("vicinanza", "Mi irrigidivo quando la persona cercava maggiore vicinanza emotiva."),
+                q("presenza", "Dopo una pausa, faticavo a riprendere una conversazione emotiva."),
+                q("accesso", "Il mio stato emotivo mi appariva confuso quando provavo a raccontarlo."),
+                q("condivisione", "Mostravo poco del mio coinvolgimento affettivo rispetto a ciò che sentivo."),
+                q("vicinanza", "Mi era difficile affidarmi alla persona scelta nei momenti di bisogno."),
+                q("presenza", "Mi era difficile riconoscere l'emozione espressa dalla persona.")));
+
+        String commonLimits = "Il risultato descrive soltanto la tua prospettiva e non accerta cause, intenzioni, amore, capacità relazionale, qualità del rapporto o caratteristiche dell'altra persona; aree e soglie sono editoriali e non validate. "
+                + "Privacy, bisogno di tempo, stile comunicativo, cultura, neurodivergenza, stress, salute e sicurezza della relazione possono influire sulle risposte; porre confini o prendere distanza può essere appropriato quando mancano consenso o sicurezza. "
+                + "Se queste esperienze causano sofferenza o interferiscono con relazioni e vita quotidiana, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal livello; in presenza di minacce, coercizione o violenza, considera prima la sicurezza.";
+
+        saveGlobal(id, "LOW",
+                "Le difficoltà di disponibilità emotiva nella relazione sembrano poco presenti nelle tue risposte",
+                "Le esperienze esplorate risultano poco frequenti in tutte e quattro le aree negli ultimi tre mesi. Non emerge quindi una difficoltà diffusa nell'accesso al vissuto, nella condivisione, nella vulnerabilità o nella presenza emotiva con la persona scelta.",
+                "Questo andamento non esclude un episodio importante, una difficoltà circoscritta o esperienze fuori dal periodo considerato. Il ritmo con cui ci si apre può inoltre cambiare tra relazioni senza essere problematico. " + commonLimits);
+        saveGlobal(id, "MIXED",
+                "Le difficoltà di disponibilità emotiva nella relazione sembrano presenti in modo variabile",
+                "Le risposte mostrano frequenze intermedie o differenze tra le aree, senza che una raggiunga il livello editoriale più alto. La partecipazione agli scambi emotivi può quindi variare per processo, momento o situazione.",
+                "Può essere utile osservare quando compare la variabilità e quali condizioni rendono più facile riconoscere, condividere o accogliere un vissuto. Le differenze tra barre non spiegano la causa e non descrivono da sole l'intera relazione. " + commonLimits);
+        saveGlobal(id, "FOCUSED",
+                "Le difficoltà di disponibilità emotiva nella relazione sembrano più presenti in una o due aree",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta quindi verso aspetti specifici dello scambio emotivo senza generalizzare alla persona o al rapporto.",
+                "Torna agli episodi concreti delle aree emergenti e considera contesto, persistenza, reciprocità e impatto su ciò che per te conta. Una difficoltà focalizzata può meritare attenzione anche quando le altre aree sono contenute. " + commonLimits);
+        saveGlobal(id, "BROAD",
+                "Le difficoltà di disponibilità emotiva nella relazione sembrano frequenti in più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree. Difficoltà di accesso, condivisione, vicinanza o presenza sembrano quindi attraversare più aspetti degli scambi recenti con la persona scelta.",
+                "Un andamento ampio rende utile osservare persistenza, situazioni e interferenza con il modo in cui desideri vivere la relazione. Le quattro aree restano lenti editoriali e non dimostrano una caratteristica stabile o una causa unica. " + commonLimits);
+
+        saveAreaInsights(id, "accesso",
+                "Riconoscere e dare parole al proprio vissuto risulta poco difficile. Non significa avere sempre chiarezza emotiva o comprenderla subito in ogni situazione.",
+                "Accesso e chiarezza del vissuto risultano difficili in alcune occasioni. Osserva se cambiano con intensità, tempo disponibile, stanchezza e tipo di confronto.",
+                "Riconoscere, distinguere o raccontare il proprio vissuto risulta spesso difficile. L'area non equivale ad alessitimia o a un deficit stabile e non ne stabilisce la causa.");
+        saveAreaInsights(id, "condivisione",
+                "Trattenere o rimandare la condivisione emotiva risulta poco frequente. Non certifica apertura in ogni rapporto né impone di condividere ciò che vuoi mantenere privato.",
+                "Condivisione di emozioni o bisogni viene talvolta trattenuta o spostata. Considera se avevi il desiderio, il tempo e condizioni sufficientemente sicure per esprimerti.",
+                "Trattenere, rimandare o rendere generica la condivisione risulta frequente. Il dato non chiarisce se prevalgano protezione, abitudine, difficoltà di accesso o caratteristiche dello scambio.");
+        saveAreaInsights(id, "vicinanza",
+                "Disagio, distanza o difficoltà ad affidarsi nella vicinanza risultano poco frequenti. Non misura la profondità del legame o il bisogno personale di autonomia.",
+                "Vulnerabilità e affidamento risultano difficili in alcune situazioni. Osserva quali segnali di fiducia, consenso e reciprocità modificano la possibilità di avvicinarti.",
+                "Distanza, disagio nella vulnerabilità o difficoltà ad affidarsi risultano frequenti. L'area non equivale ad attaccamento evitante e non stabilisce se la relazione sia sicura o adatta.");
+        saveAreaInsights(id, "presenza",
+                "Restare presenti e riconoscere il vissuto dell'altra persona risulta poco difficile. Non significa comprendere sempre correttamente ciò che l'altra persona prova.",
+                "Presenza e responsività risultano difficili in alcuni scambi. Considera intensità, richieste esplicite, pause concordate e possibilità di tornare sulla conversazione.",
+                "Restare nello scambio, ascoltare o riprenderlo dopo una pausa risulta spesso difficile. L'area riguarda il tuo resoconto e non misura la percezione o il comportamento dell'altra persona.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -3909,6 +4018,15 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Clinical descriptions and diagnostic requirements for ICD-11 — WHO", "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf?sequence=1"),
                 ref("The Italian Version of the Inventory of Interpersonal Problems (IIP-32) — Lo Coco e colleghi", "https://doi.org/10.3389/fpsyg.2018.00341"),
                 ref("Percorsi di cura per i disturbi gravi di personalità — Ministero della Salute", "https://www.salute.gov.it/new/sites/default/files/imported/C_17_pubblicazioni_2461_allegato.pdf")));
+        syncReferences("disponibilita-emotiva", List.of(
+                ref("The Brief Accessibility, Responsiveness, and Engagement (BARE) Scale — Sandberg e colleghi", "https://pubmed.ncbi.nlm.nih.gov/23230982/"),
+                ref("Intimacy as an interpersonal process — Laurenceau, Barrett e Pietromonaco", "https://doi.org/10.1037/0022-3514.74.5.1238"),
+                ref("Perceived Responsiveness and Insensitivity Scale — Crasta e colleghi", "https://doi.org/10.1037/pas0000986"),
+                ref("Italian version of the Experience in Close Relationship Scale 12 — Brugnera e colleghi", "https://doi.org/10.4081/ripppo.2019.392"),
+                ref("Italian multicenter study of the 20-item Toronto Alexithymia Scale — Bressi e colleghi", "https://pubmed.ncbi.nlm.nih.gov/9032718/"),
+                ref("Italian version of the Difficulties in Emotion Regulation Scale — Giromini e colleghi", "https://pubmed.ncbi.nlm.nih.gov/22653763/"),
+                ref("Italian Validation of the Capacity to Love Inventory — Margherita e colleghi", "https://doi.org/10.3389/fpsyg.2018.01434"),
+                ref("Emotional availability: theory, research, and intervention — Saunders e colleghi", "https://doi.org/10.3389/fpsyg.2015.01069")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

@@ -78,6 +78,16 @@ class TopicClusterCatalogueTest {
     }
 
     @Test
+    void emotionalAvailabilityBelongsToRelationshipsAndUsesNearbySuggestions() {
+        var cluster = topicClusterCatalogue.findByTestId("disponibilita-emotiva").orElseThrow();
+
+        assertThat(cluster.slug()).isEqualTo("relazioni-e-attaccamento");
+        assertThat(cluster.title()).isEqualTo("Relazioni e attaccamento");
+        assertThat(topicClusterCatalogue.findRelatedTestIds("disponibilita-emotiva", 3))
+                .containsExactly("parentificazione", "stili-attaccamento", "paura-abbandono");
+    }
+
+    @Test
     void personalityTraitsUseTheirDedicatedClusterAndAreMutuallyRelated() {
         var cluster = topicClusterCatalogue.findByTestId("tratti-evitanti-personalita-adulti").orElseThrow();
 

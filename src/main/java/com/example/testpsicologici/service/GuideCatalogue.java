@@ -4064,6 +4064,141 @@ public class GuideCatalogue {
                                     "Documento italiano consultato per la natura multidimensionale della valutazione e dei percorsi; non riguarda questionari online per la popolazione generale."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "disponibilita-emotiva",
+                    "disponibilita-emotiva",
+                    "Disponibilità emotiva",
+                    "Disponibilità emotiva nella relazione: significato, confini e contesto",
+                    "Disponibilità emotiva nella relazione | Spazio Test",
+                    "Una guida a riconoscimento emotivo, condivisione, vulnerabilità e presenza nella relazione, con distinzioni da privacy, attaccamento e alessitimia.",
+                    "Essere emotivamente disponibili non è un interruttore acceso o spento né una diagnosi. È un modo colloquiale per riunire processi diversi che cambiano tra persone, relazioni e momenti.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Un'etichetta comune, non un unico costrutto clinico",
+                                    List.of(
+                                            "Nella vita quotidiana, disponibilità emotiva può indicare il riuscire a riconoscere ciò che si prova, comunicarlo, tollerare la vulnerabilità e restare coinvolti quando l'altra persona porta un vissuto. La ricerca studia questi processi con costrutti diversi, non con una definizione universale di persona emotivamente indisponibile.",
+                                            "Per questo il questionario collegato non attribuisce un'identità stabile. Descrive soltanto quanto spesso alcune difficoltà sono state riferite negli ultimi tre mesi con una persona scelta."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "I processi",
+                                    "Quattro lenti per osservare lo scambio emotivo",
+                                    List.of(
+                                            "La prima lente riguarda accesso e chiarezza del proprio vissuto; la seconda riguarda esprimere emozioni e bisogni. La terza osserva vulnerabilità e possibilità di affidarsi, mentre la quarta riguarda presenza, ascolto e ritorno allo scambio dopo una pausa.",
+                                            "Queste lenti aiutano a separare esperienze che possono coesistere oppure no. Non sono sottotipi validati e una barra più alta non dimostra che un processo causi gli altri."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Natura relazionale",
+                                    "Intimità e responsività si costruiscono nello scambio",
+                                    List.of(
+                                            "Gli studi sul processo d'intimità collegano condivisione personale e responsività percepita negli scambi quotidiani. Altri lavori distinguono accessibilità, responsività e coinvolgimento nella coppia: ciò che accade dipende quindi anche dalla sequenza tra le persone, non soltanto da una caratteristica individuale.",
+                                            "Questo test raccoglie una sola prospettiva. Non misura ciò che l'altra persona prova, non stabilisce chi abbia ragione e non valuta reciprocità o qualità complessiva della relazione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Confini",
+                                    "Privacy, gradualità e sicurezza non sono indisponibilità",
+                                    List.of(
+                                            "Ognuno può scegliere cosa condividere e con quale ritmo. Avere bisogno di tempo, proteggere la privacy, chiedere una pausa o non affidarsi a una persona poco sicura possono essere confini appropriati e non segnali di una difficoltà.",
+                                            "Il significato cambia se l'apertura è desiderata ma ripetutamente difficile, se lo scambio resta bloccato o se ciò interferisce con il modo in cui si vorrebbe vivere la relazione. Anche in quel caso le risposte non identificano da sole la causa."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Attaccamento evitante, alessitimia e regolazione emotiva",
+                                    List.of(
+                                            "L'evitamento dell'attaccamento riguarda modi di gestire vicinanza e dipendenza nelle relazioni. L'alessitimia riguarda soprattutto difficoltà nell'identificare e descrivere emozioni, mentre la regolazione emotiva comprende processi più ampi di consapevolezza, accettazione e gestione delle risposte.",
+                                            "Questi costrutti possono condividere alcune esperienze ma non sono sinonimi di disponibilità emotiva. Le validazioni italiane di ECR-12, TAS-20 e DERS riguardano strumenti diversi e non rendono valido il questionario di Spazio Test."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Le risposte possono cambiare tra relazioni e periodi",
+                                    List.of(
+                                            "Stress, lutto, salute, stanchezza, cultura, lingua, neurodivergenza ed esperienze precedenti possono influire sul modo di riconoscere e condividere emozioni. Anche fiducia, consenso, potere e reazioni ricevute nella relazione contano.",
+                                            "È quindi più utile tornare a episodi concreti che trasformare il risultato in un'etichetta. Osservare quando lo scambio diventa più facile o più difficile può offrire informazioni che una media non contiene."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Come leggere il risultato",
+                                    "Frequenze editoriali, non percentuali di disponibilità",
+                                    List.of(
+                                            "Le risposte da 1 a 5 vengono mediate e trasformate in barre da 0 a 100. Le barre non sono percentuali di disponibilità emotiva, amore, capacità relazionale o qualità della coppia; anche le soglie LOW, MIXED, FOCUSED e BROAD sono scelte editoriali.",
+                                            "Il profilo descrive la distribuzione delle frequenze tra quattro aree e mantiene il loro ordine teorico. Differenze piccole non hanno un significato psicometrico dimostrato e un livello contenuto non esclude un episodio o una difficoltà circoscritta."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Confronto e supporto",
+                                    "Dal risultato a una conversazione contestuale",
+                                    List.of(
+                                            "Se desideri parlarne con la persona coinvolta, può essere più chiaro descrivere un episodio, il suo impatto e ciò che vorresti chiedere, lasciando spazio alla prospettiva reciproca. Non esiste però un obbligo di aprirsi né una formula adatta a ogni rapporto.",
+                                            "Se la difficoltà causa sofferenza o interferisce con le relazioni, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal profilo. In presenza di controllo, minacce, coercizione o violenza, considera prima la sicurezza e cerca un supporto adeguato alla situazione."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Le fonti delimitano il tema, ma non validano il test",
+                                    List.of(
+                                            "La letteratura offre misure su responsività di coppia, attaccamento, alessitimia e regolazione emotiva. Una review sulla emotional availability riguarda però soprattutto relazioni genitore-figlio, mostrando perché non sia responsabile trasferirne direttamente dimensioni e interpretazioni alla coppia adulta.",
+                                            "Non sono state trovate validazioni italiane di questi 24 item, delle quattro lenti o delle soglie. Item e restituzioni sono originali e richiedono revisione di esperti e utenti, interviste cognitive, studi psicometrici e replica indipendente prima di qualunque affermazione di validità."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 24 item originali, quattro lenti editoriali e una finestra di tre mesi riferita a una relazione. È informativo e non validato: non stabilisce diagnosi, cause, intenzioni, amore, capacità relazionale, comportamento dell'altra persona o qualità del rapporto.",
+                    List.of(
+                            new GuideReference(
+                                    "The Brief Accessibility, Responsiveness, and Engagement (BARE) Scale — Sandberg e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/23230982/",
+                                    "Sviluppo del BARE consultato per accessibilità, responsività e coinvolgimento nelle coppie; misura, item, campioni e proprietà non vengono trasferiti al questionario originale."
+                            ),
+                            new GuideReference(
+                                    "Intimacy as an interpersonal process — Laurenceau, Barrett e Pietromonaco",
+                                    "https://doi.org/10.1037/0022-3514.74.5.1238",
+                                    "Due studi con diario consultati per condivisione emotiva e responsività percepita nell'intimità; associazioni e campioni statunitensi non stabiliscono cause individuali."
+                            ),
+                            new GuideReference(
+                                    "Perceived Responsiveness and Insensitivity Scale — Crasta e colleghi",
+                                    "https://doi.org/10.1037/pas0000986",
+                                    "Sviluppo della PRIS consultato per distinguere responsività e insensibilità; valuta la percezione del partner e non l'auto-disponibilità emotiva."
+                            ),
+                            new GuideReference(
+                                    "Italian version of the Experience in Close Relationship Scale 12 — Brugnera e colleghi",
+                                    "https://doi.org/10.4081/ripppo.2019.392",
+                                    "Validazione italiana dell'ECR-12 consultata per distinguere l'evitamento dell'attaccamento; un altro strumento non convalida il test dell'app."
+                            ),
+                            new GuideReference(
+                                    "Italian multicenter study of the 20-item Toronto Alexithymia Scale — Bressi e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/9032718/",
+                                    "Studio multicentrico italiano consultato per identificazione e descrizione delle emozioni; alessitimia, campioni e punteggi non sono trasferiti."
+                            ),
+                            new GuideReference(
+                                    "Italian version of the Difficulties in Emotion Regulation Scale — Giromini e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/22653763/",
+                                    "Adattamento italiano della DERS consultato per consapevolezza e chiarezza; campioni specifici e costrutto diverso non validano il questionario relazionale."
+                            ),
+                            new GuideReference(
+                                    "Italian Validation of the Capacity to Love Inventory — Margherita e colleghi",
+                                    "https://doi.org/10.3389/fpsyg.2018.01434",
+                                    "Validazione italiana preliminare consultata per fiducia, interesse e intimità; il diverso costrutto psicodinamico non convalida questa operazionalizzazione."
+                            ),
+                            new GuideReference(
+                                    "Emotional availability: theory, research, and intervention — Saunders e colleghi",
+                                    "https://doi.org/10.3389/fpsyg.2015.01069",
+                                    "Mini-review consultata per natura diadica e prevalenza della ricerca genitore-figlio; non giustifica il trasferimento delle dimensioni EAS alle coppie adulte."
+                            )
+                    )
             )
     );
 

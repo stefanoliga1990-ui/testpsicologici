@@ -1,0 +1,111 @@
+{
+  "test": {
+    "id": "disponibilita-emotiva",
+    "titolo": "Quanto mi è difficile essere emotivamente disponibile in una relazione?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa della partecipazione agli scambi emotivi in una relazione sentimentale specifica",
+    "periodo_riferimento": "Ultimi tre mesi",
+    "unita_riferimento": "Una sola relazione sentimentale attuale o recente",
+    "direzione_punteggio": "Valori più alti descrivono maggiore frequenza delle difficoltà formulate, non minore amore, capacità relazionale o qualità del rapporto",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale, non validato e non normato. Non accerta cause, intenzioni, diagnosi, capacità relazionale, comportamento dell'altra persona o qualità del rapporto."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi e sempre alla stessa relazione sentimentale attuale o recente, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
+    "domande": 24,
+    "aree": 4,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le quattro aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una o due aree sono HIGH"},
+      {"codice": "BROAD", "condizione": "almeno tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale di disponibilità emotiva, amore, capacità relazionale o qualità del rapporto",
+    "ordine_aree_risultato": "accesso, condivisione, vicinanza, presenza",
+    "limite_aggregazione": "Le quattro aree sono lenti editoriali, non sottoscale validate negli adulti italiani."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le difficoltà di disponibilità emotiva nella relazione sembrano poco presenti nelle tue risposte",
+      "sottotitolo": "Le esperienze esplorate risultano poco frequenti in tutte e quattro le aree negli ultimi tre mesi. Non emerge quindi una difficoltà diffusa nell'accesso al vissuto, nella condivisione, nella vulnerabilità o nella presenza emotiva con la persona scelta.",
+      "descrizione": "Questo andamento non esclude un episodio importante, una difficoltà circoscritta o esperienze fuori dal periodo considerato. Il ritmo con cui ci si apre può inoltre cambiare tra relazioni senza essere problematico. Il risultato descrive soltanto la tua prospettiva e non accerta cause, intenzioni, amore, capacità relazionale, qualità del rapporto o caratteristiche dell'altra persona; aree e soglie sono editoriali e non validate. Privacy, bisogno di tempo, stile comunicativo, cultura, neurodivergenza, stress, salute e sicurezza della relazione possono influire sulle risposte; porre confini o prendere distanza può essere appropriato quando mancano consenso o sicurezza. Se queste esperienze causano sofferenza o interferiscono con relazioni e vita quotidiana, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal livello; in presenza di minacce, coercizione o violenza, considera prima la sicurezza."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le difficoltà di disponibilità emotiva nella relazione sembrano presenti in modo variabile",
+      "sottotitolo": "Le risposte mostrano frequenze intermedie o differenze tra le aree, senza che una raggiunga il livello editoriale più alto. La partecipazione agli scambi emotivi può quindi variare per processo, momento o situazione.",
+      "descrizione": "Può essere utile osservare quando compare la variabilità e quali condizioni rendono più facile riconoscere, condividere o accogliere un vissuto. Le differenze tra barre non spiegano la causa e non descrivono da sole l'intera relazione. Il risultato descrive soltanto la tua prospettiva e non accerta cause, intenzioni, amore, capacità relazionale, qualità del rapporto o caratteristiche dell'altra persona; aree e soglie sono editoriali e non validate. Privacy, bisogno di tempo, stile comunicativo, cultura, neurodivergenza, stress, salute e sicurezza della relazione possono influire sulle risposte; porre confini o prendere distanza può essere appropriato quando mancano consenso o sicurezza. Se queste esperienze causano sofferenza o interferiscono con relazioni e vita quotidiana, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal livello; in presenza di minacce, coercizione o violenza, considera prima la sicurezza."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le difficoltà di disponibilità emotiva nella relazione sembrano più presenti in una o due aree",
+      "sottotitolo": "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta quindi verso aspetti specifici dello scambio emotivo senza generalizzare alla persona o al rapporto.",
+      "descrizione": "Torna agli episodi concreti delle aree emergenti e considera contesto, persistenza, reciprocità e impatto su ciò che per te conta. Una difficoltà focalizzata può meritare attenzione anche quando le altre aree sono contenute. Il risultato descrive soltanto la tua prospettiva e non accerta cause, intenzioni, amore, capacità relazionale, qualità del rapporto o caratteristiche dell'altra persona; aree e soglie sono editoriali e non validate. Privacy, bisogno di tempo, stile comunicativo, cultura, neurodivergenza, stress, salute e sicurezza della relazione possono influire sulle risposte; porre confini o prendere distanza può essere appropriato quando mancano consenso o sicurezza. Se queste esperienze causano sofferenza o interferiscono con relazioni e vita quotidiana, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal livello; in presenza di minacce, coercizione o violenza, considera prima la sicurezza."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le difficoltà di disponibilità emotiva nella relazione sembrano frequenti in più aree",
+      "sottotitolo": "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree. Difficoltà di accesso, condivisione, vicinanza o presenza sembrano quindi attraversare più aspetti degli scambi recenti con la persona scelta.",
+      "descrizione": "Un andamento ampio rende utile osservare persistenza, situazioni e interferenza con il modo in cui desideri vivere la relazione. Le quattro aree restano lenti editoriali e non dimostrano una caratteristica stabile o una causa unica. Il risultato descrive soltanto la tua prospettiva e non accerta cause, intenzioni, amore, capacità relazionale, qualità del rapporto o caratteristiche dell'altra persona; aree e soglie sono editoriali e non validate. Privacy, bisogno di tempo, stile comunicativo, cultura, neurodivergenza, stress, salute e sicurezza della relazione possono influire sulle risposte; porre confini o prendere distanza può essere appropriato quando mancano consenso o sicurezza. Se queste esperienze causano sofferenza o interferiscono con relazioni e vita quotidiana, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal livello; in presenza di minacce, coercizione o violenza, considera prima la sicurezza."
+    }
+  ],
+  "analisi_aree": [
+    {
+      "area_code": "accesso",
+      "nome_area": "Riconoscimento e chiarezza del proprio vissuto",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Riconoscere e dare parole al proprio vissuto risulta poco difficile. Non significa avere sempre chiarezza emotiva o comprenderla subito in ogni situazione."},
+        {"livello": "MEDIUM", "descrizione": "Accesso e chiarezza del vissuto risultano difficili in alcune occasioni. Osserva se cambiano con intensità, tempo disponibile, stanchezza e tipo di confronto."},
+        {"livello": "HIGH", "descrizione": "Riconoscere, distinguere o raccontare il proprio vissuto risulta spesso difficile. L'area non equivale ad alessitimia o a un deficit stabile e non ne stabilisce la causa."}
+      ]
+    },
+    {
+      "area_code": "condivisione",
+      "nome_area": "Espressione e condivisione emotiva",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Trattenere o rimandare la condivisione emotiva risulta poco frequente. Non certifica apertura in ogni rapporto né impone di condividere ciò che vuoi mantenere privato."},
+        {"livello": "MEDIUM", "descrizione": "Condivisione di emozioni o bisogni viene talvolta trattenuta o spostata. Considera se avevi il desiderio, il tempo e condizioni sufficientemente sicure per esprimerti."},
+        {"livello": "HIGH", "descrizione": "Trattenere, rimandare o rendere generica la condivisione risulta frequente. Il dato non chiarisce se prevalgano protezione, abitudine, difficoltà di accesso o caratteristiche dello scambio."}
+      ]
+    },
+    {
+      "area_code": "vicinanza",
+      "nome_area": "Vulnerabilità e affidamento nella vicinanza",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Disagio, distanza o difficoltà ad affidarsi nella vicinanza risultano poco frequenti. Non misura la profondità del legame o il bisogno personale di autonomia."},
+        {"livello": "MEDIUM", "descrizione": "Vulnerabilità e affidamento risultano difficili in alcune situazioni. Osserva quali segnali di fiducia, consenso e reciprocità modificano la possibilità di avvicinarti."},
+        {"livello": "HIGH", "descrizione": "Distanza, disagio nella vulnerabilità o difficoltà ad affidarsi risultano frequenti. L'area non equivale ad attaccamento evitante e non stabilisce se la relazione sia sicura o adatta."}
+      ]
+    },
+    {
+      "area_code": "presenza",
+      "nome_area": "Presenza e responsività nello scambio",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Restare presenti e riconoscere il vissuto dell'altra persona risulta poco difficile. Non significa comprendere sempre correttamente ciò che l'altra persona prova."},
+        {"livello": "MEDIUM", "descrizione": "Presenza e responsività risultano difficili in alcuni scambi. Considera intensità, richieste esplicite, pause concordate e possibilità di tornare sulla conversazione."},
+        {"livello": "HIGH", "descrizione": "Restare nello scambio, ascoltare o riprenderlo dopo una pausa risulta spesso difficile. L'area riguarda il tuo resoconto e non misura la percezione o il comportamento dell'altra persona."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {"titolo": "The Brief Accessibility, Responsiveness, and Engagement (BARE) Scale", "url": "https://pubmed.ncbi.nlm.nih.gov/23230982/", "apporto": "Accessibilità, responsività e coinvolgimento in coppia; nessun trasferimento di item o proprietà."},
+    {"titolo": "Intimacy as an interpersonal process", "url": "https://doi.org/10.1037/0022-3514.74.5.1238", "apporto": "Condivisione e responsività percepita nel processo d'intimità; dati associativi statunitensi."},
+    {"titolo": "Perceived Responsiveness and Insensitivity Scale", "url": "https://doi.org/10.1037/pas0000986", "apporto": "Responsività e insensibilità percepite; misura del partner diversa dall'autovalutazione proposta."},
+    {"titolo": "Italian ECR-12", "url": "https://doi.org/10.4081/ripppo.2019.392", "apporto": "Evidenza italiana sull'evitamento dell'attaccamento come costrutto distinto."},
+    {"titolo": "Italian multicenter TAS-20", "url": "https://pubmed.ncbi.nlm.nih.gov/9032718/", "apporto": "Evidenza italiana su identificazione e descrizione delle emozioni; altro strumento e costrutto."},
+    {"titolo": "Italian DERS", "url": "https://pubmed.ncbi.nlm.nih.gov/22653763/", "apporto": "Evidenza italiana su consapevolezza e chiarezza nella regolazione emotiva; campioni specifici."},
+    {"titolo": "Italian Capacity to Love Inventory", "url": "https://doi.org/10.3389/fpsyg.2018.01434", "apporto": "Evidenza italiana preliminare su un diverso costrutto relazionale."},
+    {"titolo": "Emotional availability: theory, research, and intervention", "url": "https://doi.org/10.3389/fpsyg.2015.01069", "apporto": "Natura diadica e prevalenza della ricerca genitore-figlio; limite al trasferimento nelle coppie adulte."}
+  ],
+  "limite": "Non esistono dati che validino negli adulti italiani questi 24 item originali, le quattro aree, la scala, le soglie o le interpretazioni."
+}

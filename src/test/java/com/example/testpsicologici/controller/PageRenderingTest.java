@@ -1340,7 +1340,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Relazioni e attaccamento")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/parentificazione\"")))
                 .andExpect(content().string(containsString("href=\"/test/paura-abbandono\"")))
-                .andExpect(content().string(containsString("href=\"/test/stili-attaccamento\"")))
+                .andExpect(content().string(containsString("href=\"/test/disponibilita-emotiva\"")))
                 .andExpect(content().string(containsString("href=\"/test/limerenza\"")))
                 .andExpect(content().string(containsString("prima dei 18 anni")))
                 .andExpect(content().string(containsString("non attribuisce colpe")));
@@ -2064,6 +2064,76 @@ class PageRenderingTest {
     }
 
     @Test
+    void emotionalAvailabilityPagesExposeAreasFrequencyScaleLimitsGuideAndRelatedTests() throws Exception {
+        mockMvc.perform(get("/test/disponibilita-emotiva"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Quanto mi è difficile essere emotivamente disponibile in una relazione?")))
+                .andExpect(content().string(containsString("Riconoscimento e chiarezza del proprio vissuto")))
+                .andExpect(content().string(containsString("Espressione e condivisione emotiva")))
+                .andExpect(content().string(containsString("Vulnerabilità e affidamento nella vicinanza")))
+                .andExpect(content().string(containsString("Presenza e responsività nello scambio")))
+                .andExpect(content().string(containsString("Relazioni e attaccamento")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/disponibilita-emotiva\"")))
+                .andExpect(content().string(containsString("href=\"/test/parentificazione\"")))
+                .andExpect(content().string(containsString("originale, informativo e non validato")))
+                .andExpect(content().string(containsString("da “Mai” a “Quasi sempre”")));
+
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-disponibilita-emotiva", new TestAttempt(24));
+        mockMvc.perform(get("/test/disponibilita-emotiva/domanda/1").session(session))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("ultimi tre mesi")))
+                .andExpect(content().string(containsString("stessa relazione sentimentale")))
+                .andExpect(content().string(containsString("Mai")))
+                .andExpect(content().string(containsString("Quasi sempre")));
+
+        mockMvc.perform(get("/approfondimenti/disponibilita-emotiva"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Un'etichetta comune, non un unico costrutto clinico")))
+                .andExpect(content().string(containsString("Quattro lenti per osservare lo scambio emotivo")))
+                .andExpect(content().string(containsString("Privacy, gradualità e sicurezza non sono indisponibilità")))
+                .andExpect(content().string(containsString("Attaccamento evitante, alessitimia e regolazione emotiva")))
+                .andExpect(content().string(containsString("Frequenze editoriali, non percentuali di disponibilità")))
+                .andExpect(content().string(containsString("href=\"/test/disponibilita-emotiva\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void emotionalAvailabilityResultAndPdfExposeOverallAreasAndLimits() throws Exception {
+        mockMvc.perform(get("/test/disponibilita-emotiva/risultato")
+                        .session(completedAttempt("disponibilita-emotiva", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le difficoltà di disponibilità emotiva nella relazione sembrano frequenti in più aree")))
+                .andExpect(content().string(containsString("Riconoscimento e chiarezza del proprio vissuto")))
+                .andExpect(content().string(containsString("Espressione e condivisione emotiva")))
+                .andExpect(content().string(containsString("Vulnerabilità e affidamento nella vicinanza")))
+                .andExpect(content().string(containsString("Presenza e responsività nello scambio")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/disponibilita-emotiva/risultato/pdf\"")))
+                .andExpect(content().string(containsString("href=\"/test/parentificazione\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/disponibilita-emotiva\"")));
+
+        MvcResult mvcResult = mockMvc.perform(get("/test/disponibilita-emotiva/risultato/pdf")
+                        .session(completedAttempt("disponibilita-emotiva", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-disponibilita-emotiva.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Quanto mi è difficile essere emotivamente disponibile in una relazione?")
+                    .contains("Riconoscimento e chiarezza del proprio vissuto")
+                    .contains("Espressione e condivisione emotiva")
+                    .contains("Vulnerabilità e affidamento nella vicinanza")
+                    .contains("Presenza e responsività nello scambio")
+                    .contains("accerta", "Privacy", "consenso", "sicurezza");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -2113,6 +2183,10 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/disturbo-evitante-personalita")))
                 .andExpect(content().string(containsString(
                         "http://localhost/test/tratti-evitanti-personalita-adulti")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/disponibilita-emotiva")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/test/disponibilita-emotiva")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/fomo")))
                 .andExpect(content().string(containsString(
