@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-09-05",
+  "updatedAt": "2026-09-08",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -128,8 +128,8 @@
       "sourceDescription": "Difficoltà a entrare in una relazione emotivamente intima o vulnerabile.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Relazioni e attaccamento",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Mantenere una prospettiva di autovalutazione e distinguere preferenze, contesto, sicurezza e difficoltà persistenti." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 4, "itemCount": 24, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Mantenere una prospettiva di autovalutazione e distinguere preferenze, contesto, sicurezza e difficoltà persistenti." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-09-08T00:47:02+02:00", "completedAt": "2026-09-08T00:47:02+02:00", "commitHash": "d878f915547f36e1bd9a625c2d13b9c73fe5097b", "blockReason": null }
     },
     {
       "order": 9,
