@@ -352,7 +352,21 @@ public class ReferenceContributionCatalogue {
             entry("https://doi.org/10.3389/fpsyg.2018.01434",
                     "Validazione italiana preliminare del Capacity to Love Inventory consultata per fiducia, interesse e intimità; costrutto psicodinamico e campione non convalidano questa operazionalizzazione."),
             entry("https://doi.org/10.3389/fpsyg.2015.01069",
-                    "Mini-review consultata per la natura diadica della disponibilità emotiva e la prevalenza della ricerca genitore-figlio; non giustifica il trasferimento delle dimensioni EAS alle coppie adulte."));
+                    "Mini-review consultata per la natura diadica della disponibilità emotiva e la prevalenza della ricerca genitore-figlio; non giustifica il trasferimento delle dimensioni EAS alle coppie adulte."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/21396720/",
+                    "Validazione italiana della Toronto Structured Interview for Alexithymia consultata per il valore di una valutazione multimodale; intervista, campioni e fattori non validano il self-report dell'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/8126686/",
+                    "Sviluppo e cross-validazione della TAS-20 consultati per le tre componenti ricorrenti dell'alessitimia; nessun item protetto, punteggio o cut-off viene copiato o adattato."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/8126688/",
+                    "Studio di validità convergente, discriminante e concorrente della TAS-20 consultato per delimitare il costrutto; le proprietà del diverso strumento non sono trasferibili."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/34311556/",
+                    "Meta-analisi fattoriale di 88 campioni consultata per la struttura a tre dimensioni e la cautela sulle versioni tradotte; non valida le aree originali dell'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/29713295/",
+                    "Meta-analisi consultata per la debole convergenza fra TAS-20 e misura osservativa della consapevolezza emotiva; segnala limiti del metodo senza rendere equivalenti i costrutti."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/39509403/",
+                    "Revisione sistematica e meta-analisi consultata per il rapporto variabile fra interocezione autoriferita e componenti dell'alessitimia; studi trasversali e misure eterogenee non consentono causalità."),
+            entry("https://doi.org/10.1016/j.jpsychores.2020.109940",
+                    "Review dei 25 anni della TAS-20 consultata per componenti, stato della misura e fattori contestuali; la prospettiva degli sviluppatori non giustifica diagnosi o cut-off nell'app."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

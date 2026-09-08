@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(38).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(39).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -2075,10 +2075,66 @@ class TestResultServiceTest {
     }
 
     @Test
+    void alexithymiaTestLoadsEighteenInterleavedItemsThreeAreasAndItalianSources() {
+        PsychologicalTest test = catalogue.findById("alessitimia");
+
+        assertThat(test.title()).isEqualTo("Alessitimia, vivo senza emozioni?");
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(18).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.questions()).extracting(question -> question.areaCode()).containsExactly(
+                "riconoscimento", "descrizione", "orientamento",
+                "riconoscimento", "descrizione", "orientamento",
+                "riconoscimento", "descrizione", "orientamento",
+                "riconoscimento", "descrizione", "orientamento",
+                "riconoscimento", "descrizione", "orientamento",
+                "riconoscimento", "descrizione", "orientamento");
+        assertThat(test.areas()).extracting(area -> area.name()).containsExactly(
+                "Riconoscimento e distinzione delle emozioni",
+                "Parole e descrizione del vissuto",
+                "Attenzione e riflessione sul mondo interno");
+        assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "situazioni diverse");
+        assertThat(test.introductoryText()).contains(
+                "non significa vivere senza emozioni", "originale", "non validato", "senza riprodurre la TAS-20");
+        assertThat(test.references()).hasSize(8).extracting(reference -> reference.url()).containsExactly(
+                "https://pubmed.ncbi.nlm.nih.gov/9032718/",
+                "https://pubmed.ncbi.nlm.nih.gov/21396720/",
+                "https://pubmed.ncbi.nlm.nih.gov/8126686/",
+                "https://pubmed.ncbi.nlm.nih.gov/8126688/",
+                "https://pubmed.ncbi.nlm.nih.gov/34311556/",
+                "https://pubmed.ncbi.nlm.nih.gov/29713295/",
+                "https://pubmed.ncbi.nlm.nih.gov/39509403/",
+                "https://doi.org/10.1016/j.jpsychores.2020.109940");
+    }
+
+    @Test
+    void alexithymiaProfilesUseThreeAreaPatternAndRejectTheAbsenceOfEmotionsInference() {
+        TestResult low = analyzeWithAnswersForTest("alessitimia", 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("alessitimia", 3, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("alessitimia", 5, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("alessitimia", 5, 5, 1);
+
+        assertThat(low.general().title()).contains("esperienze associate all'alessitimia", "poco presenti");
+        assertThat(mixed.general().title()).contains("esperienze associate all'alessitimia", "modo variabile");
+        assertThat(focused.general().title()).contains("esperienze associate all'alessitimia", "un'area");
+        assertThat(broad.general().title()).contains("esperienze associate all'alessitimia", "più aree");
+        assertThat(List.of(low, mixed, focused, broad)).allSatisfy(result ->
+                assertThat(result.general().detail()).contains(
+                        "non diagnostica alessitimia", "non misura quante emozioni provi", "non stabilisce cause"));
+        assertThat(broad.areaResults()).extracting(area -> area.title()).containsExactly(
+                "Riconoscimento e distinzione delle emozioni",
+                "Parole e descrizione del vissuto",
+                "Attenzione e riflessione sul mondo interno");
+        assertThat(broad.areaResults()).extracting(area -> area.percentage())
+                .containsExactly(100, 100, 0);
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita", "tratti-evitanti-personalita-adulti", "disponibilita-emotiva");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita", "tratti-evitanti-personalita-adulti", "disponibilita-emotiva", "alessitimia");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

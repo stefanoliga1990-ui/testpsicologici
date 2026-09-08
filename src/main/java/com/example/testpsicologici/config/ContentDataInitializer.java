@@ -83,6 +83,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedRelationalTriangulationTest();
         seedAvoidantPersonalityTraitsInformationTest();
         seedEmotionalAvailabilityInformationTest();
+        seedAlexithymiaInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -3799,6 +3800,103 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Restare nello scambio, ascoltare o riprenderlo dopo una pausa risulta spesso difficile. L'area riguarda il tuo resoconto e non misura la percezione o il comportamento dell'altra persona.");
     }
 
+    private void seedAlexithymiaInformationTest() {
+        String id = "alessitimia";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Alessitimia, vivo senza emozioni?",
+                "Autovalutazione informativa",
+                "Esplora riconoscimento, descrizione e attenzione al proprio vissuto emotivo.",
+                "5 min · 18 domande",
+                "Il titolo riprende una domanda comune, ma l'alessitimia non significa vivere senza emozioni. Questo questionario per adulti è originale, informativo e non validato: esplora difficoltà recenti nel riconoscere, distinguere e descrivere il vissuto, senza riprodurre la TAS-20. Le risposte non stabiliscono diagnosi o cause e possono cambiare con stress, salute, lingua, cultura e contesto.",
+                version, false,
+                "Frequenza complessiva delle difficoltà esplorate",
+                "Frequenza delle difficoltà nell'area",
+                true, 39).withSeo(
+                "Alessitimia, vivo senza emozioni? Test | Spazio Test",
+                "Questionario informativo su riconoscimento, descrizione e attenzione alle emozioni. 18 domande originali, senza diagnosi.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e a situazioni diverse, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "Italian multicenter study of the 20-item Toronto Alexithymia Scale — Bressi e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/9032718/", 1);
+        saveReference(id, "Italian Toronto Structured Interview for Alexithymia — Caretti e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/21396720/", 2);
+        saveReference(id, "The twenty-item Toronto Alexithymia Scale—I — Bagby, Parker e Taylor",
+                "https://pubmed.ncbi.nlm.nih.gov/8126686/", 3);
+        saveReference(id, "The twenty-item Toronto Alexithymia Scale—II — Bagby, Taylor e Parker",
+                "https://pubmed.ncbi.nlm.nih.gov/8126688/", 4);
+        saveReference(id, "The Structure of the Toronto Alexithymia Scale — Schroeders, Kubera e Gnambs",
+                "https://pubmed.ncbi.nlm.nih.gov/34311556/", 5);
+        saveReference(id, "The Relationship Between Alexithymia and Emotional Awareness — Maroti e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/29713295/", 6);
+        saveReference(id, "Subjective interoception and alexithymia — Van Bael e colleghi",
+                "https://pubmed.ncbi.nlm.nih.gov/39509403/", 7);
+        saveReference(id, "Twenty-five years with the 20-item Toronto Alexithymia Scale — Bagby, Parker e Taylor",
+                "https://doi.org/10.1016/j.jpsychores.2020.109940", 8);
+
+        saveArea(id, "riconoscimento", "Riconoscimento e distinzione delle emozioni", 1);
+        saveArea(id, "descrizione", "Parole e descrizione del vissuto", 2);
+        saveArea(id, "orientamento", "Attenzione e riflessione sul mondo interno", 3);
+
+        saveQuestions(id, List.of(
+                q("riconoscimento", "Mi accorgevo che il mio stato era cambiato senza capire quale emozione fosse presente."),
+                q("descrizione", "Avevo chiaro che qualcosa mi aveva toccato, ma non trovavo le parole per descriverlo."),
+                q("orientamento", "Durante una decisione importante, consideravo i fatti senza soffermarmi su ciò che provavo."),
+                q("riconoscimento", "Durante una reazione intensa, mi era difficile distinguere un'emozione da una sensazione fisica."),
+                q("descrizione", "Usavo espressioni generiche quando parlavo di come mi sentivo."),
+                q("orientamento", "Dopo un evento significativo, passavo subito agli aspetti pratici senza osservare il mio stato emotivo."),
+                q("riconoscimento", "Riconoscevo ciò che provavo solo molto tempo dopo l'episodio."),
+                q("descrizione", "Interrompevo un racconto personale perché non riuscivo a spiegare il vissuto emotivo."),
+                q("orientamento", "Trovavo poco utile riflettere sulle emozioni provate durante la giornata."),
+                q("riconoscimento", "Emozioni diverse mi sembravano un unico stato confuso."),
+                q("descrizione", "Avevo bisogno di molto tempo per formulare una descrizione di ciò che provavo."),
+                q("orientamento", "Quando un'emozione non era chiara, spostavo l'attenzione su un'attività concreta."),
+                q("riconoscimento", "Capivo se un'esperienza era piacevole o spiacevole senza riuscire a identificare l'emozione."),
+                q("descrizione", "Descrivevo soprattutto i fatti quando volevo raccontare l'effetto emotivo di un episodio."),
+                q("orientamento", "Nel ripensare a un'esperienza, mi concentravo sulla sequenza degli eventi più che sul mio vissuto."),
+                q("riconoscimento", "Quando il mio umore cambiava, faticavo a riconoscere cosa stessi provando."),
+                q("descrizione", "Le parole che usavo non mi sembravano precise rispetto a ciò che provavo."),
+                q("orientamento", "Evitavo di dedicare tempo a capire il significato personale di un'emozione.")));
+
+        String commonLimits = "Il risultato non diagnostica alessitimia, non misura quante emozioni provi e non stabilisce cause; item, aree e soglie sono originali, editoriali e non validati. "
+                + "Riservatezza, comunicazione sintetica, preferenza per attività concrete e bisogno di tempo non equivalgono da soli a una difficoltà. "
+                + "Se riconoscere o comunicare il vissuto causa sofferenza, ostacola le relazioni o rende difficile esprimere sintomi e bisogni, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal profilo.";
+
+        saveGlobal(id, "LOW",
+                "Le esperienze associate all'alessitimia sembrano poco presenti nelle tue risposte",
+                "Le difficoltà esplorate risultano poco frequenti in tutte e tre le aree negli ultimi tre mesi. Riconoscimento, descrizione e attenzione al vissuto non mostrano quindi un andamento diffusamente elevato nelle risposte.",
+                "Questo profilo non esclude un episodio importante, una difficoltà circoscritta o esperienze fuori dal periodo considerato. Il modo di accedere alle emozioni può cambiare con situazione, lingua, salute e stress. " + commonLimits);
+        saveGlobal(id, "MIXED",
+                "Le esperienze associate all'alessitimia emergono in modo variabile nelle tue risposte",
+                "Le risposte mostrano frequenze intermedie o differenze tra le tre aree, senza che una raggiunga il livello editoriale più alto. L'accesso al vissuto può quindi cambiare per processo, contesto o momento.",
+                "Può essere utile osservare se la variabilità riguarda il riconoscere, il trovare parole o il dedicare attenzione all'esperienza interna. Differenze piccole tra le barre non spiegano la causa e non dimostrano una caratteristica stabile. " + commonLimits);
+        saveGlobal(id, "FOCUSED",
+                "Le esperienze associate all'alessitimia sembrano concentrate in un'area",
+                "Una delle tre aree raccoglie difficoltà riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso una componente specifica senza classificare la persona.",
+                "Torna agli episodi concreti dell'area emergente e considera quando la difficoltà compare, quanto persiste e quale impatto ha. Una componente può essere rilevante anche senza un andamento ampio. " + commonLimits);
+        saveGlobal(id, "BROAD",
+                "Le esperienze associate all'alessitimia sembrano frequenti in più aree",
+                "Le risposte indicano difficoltà frequenti in almeno due delle tre aree. Riconoscimento, descrizione o attenzione al vissuto sembrano quindi coinvolgere più passaggi del processo emotivo recente.",
+                "Un andamento ampio rende utile osservare persistenza, contesti e interferenza con comunicazione, relazioni e cura di sé. Non significa che le emozioni siano assenti o meno intense e non indica una causa unica. " + commonLimits);
+
+        saveAreaInsights(id, "riconoscimento",
+                "Riconoscere e distinguere il proprio stato emotivo risulta poco difficile. Non significa identificare subito ogni emozione o interpretare con certezza tutti i segnali corporei.",
+                "Il riconoscimento emotivo risulta difficile in alcune situazioni. Osserva se cambia con intensità, tempo, stress, salute e familiarità del contesto.",
+                "Riconoscere o distinguere emozioni e sensazioni risulta spesso difficile. L'area non dimostra assenza di emozioni, alessitimia o una causa medica o psicologica.");
+        saveAreaInsights(id, "descrizione",
+                "Trovare parole abbastanza precise per il vissuto risulta poco difficile. Non impone di condividere emozioni che si preferisce mantenere private.",
+                "Descrivere il vissuto risulta difficile in alcune occasioni. Considera tempo disponibile, lingua, interlocutore, sicurezza e complessità dell'esperienza.",
+                "Mettere in parole o comunicare il vissuto risulta spesso difficile. Il dato non misura sincerità, volontà di aprirsi o capacità comunicativa generale.");
+        saveAreaInsights(id, "orientamento",
+                "Soffermarsi sul vissuto interno risulta poco difficile. Non certifica introspezione accurata né svaluta un orientamento concreto e pragmatico.",
+                "L'attenzione al mondo interno varia tra situazioni. Osserva quando riflettere sulle emozioni è utile e quando il contesto richiede invece azione immediata.",
+                "Spostarsi su fatti e attività senza approfondire il vissuto risulta frequente. L'area non dimostra freddezza, scarsa empatia o assenza di immaginazione.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -4027,6 +4125,15 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Italian version of the Difficulties in Emotion Regulation Scale — Giromini e colleghi", "https://pubmed.ncbi.nlm.nih.gov/22653763/"),
                 ref("Italian Validation of the Capacity to Love Inventory — Margherita e colleghi", "https://doi.org/10.3389/fpsyg.2018.01434"),
                 ref("Emotional availability: theory, research, and intervention — Saunders e colleghi", "https://doi.org/10.3389/fpsyg.2015.01069")));
+        syncReferences("alessitimia", List.of(
+                ref("Italian multicenter study of the 20-item Toronto Alexithymia Scale — Bressi e colleghi", "https://pubmed.ncbi.nlm.nih.gov/9032718/"),
+                ref("Italian Toronto Structured Interview for Alexithymia — Caretti e colleghi", "https://pubmed.ncbi.nlm.nih.gov/21396720/"),
+                ref("The twenty-item Toronto Alexithymia Scale—I — Bagby, Parker e Taylor", "https://pubmed.ncbi.nlm.nih.gov/8126686/"),
+                ref("The twenty-item Toronto Alexithymia Scale—II — Bagby, Taylor e Parker", "https://pubmed.ncbi.nlm.nih.gov/8126688/"),
+                ref("The Structure of the Toronto Alexithymia Scale — Schroeders, Kubera e Gnambs", "https://pubmed.ncbi.nlm.nih.gov/34311556/"),
+                ref("The Relationship Between Alexithymia and Emotional Awareness — Maroti e colleghi", "https://pubmed.ncbi.nlm.nih.gov/29713295/"),
+                ref("Subjective interoception and alexithymia — Van Bael e colleghi", "https://pubmed.ncbi.nlm.nih.gov/39509403/"),
+                ref("Twenty-five years with the 20-item Toronto Alexithymia Scale — Bagby, Parker e Taylor", "https://doi.org/10.1016/j.jpsychores.2020.109940")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

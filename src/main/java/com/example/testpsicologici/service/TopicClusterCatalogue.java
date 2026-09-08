@@ -77,6 +77,7 @@ public class TopicClusterCatalogue {
                     "Consapevolezza emotiva, comunicazione, adattamento e percezione del proprio benessere.",
                     List.of(
                             "intelligenza-emotiva",
+                            "alessitimia",
                             "intelligenza-intrapersonale",
                             "assertivita",
                             "resilienza-psicologica",

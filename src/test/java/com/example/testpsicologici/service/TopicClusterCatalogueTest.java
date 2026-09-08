@@ -88,6 +88,16 @@ class TopicClusterCatalogueTest {
     }
 
     @Test
+    void alexithymiaBelongsToEmotionsAndUsesConceptuallyNearbySuggestions() {
+        var cluster = topicClusterCatalogue.findByTestId("alessitimia").orElseThrow();
+
+        assertThat(cluster.slug()).isEqualTo("emozioni-risorse-e-benessere");
+        assertThat(cluster.title()).isEqualTo("Emozioni, risorse e benessere");
+        assertThat(topicClusterCatalogue.findRelatedTestIds("alessitimia", 3))
+                .containsExactly("intelligenza-intrapersonale", "intelligenza-emotiva", "assertivita");
+    }
+
+    @Test
     void personalityTraitsUseTheirDedicatedClusterAndAreMutuallyRelated() {
         var cluster = topicClusterCatalogue.findByTestId("tratti-evitanti-personalita-adulti").orElseThrow();
 

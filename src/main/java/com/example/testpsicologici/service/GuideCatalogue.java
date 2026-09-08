@@ -4199,6 +4199,141 @@ public class GuideCatalogue {
                                     "Mini-review consultata per natura diadica e prevalenza della ricerca genitore-figlio; non giustifica il trasferimento delle dimensioni EAS alle coppie adulte."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "alessitimia",
+                    "alessitimia",
+                    "Alessitimia",
+                    "Alessitimia: emozioni presenti, parole difficili",
+                    "Alessitimia: significato, caratteristiche e limiti | Spazio Test",
+                    "Una guida alle difficoltà nel riconoscere e descrivere le emozioni, all'orientamento esterno e ai limiti dei test di autovalutazione.",
+                    "Alessitimia non significa essere senza emozioni. Riguarda soprattutto la difficoltà di riconoscerle, distinguerle, rappresentarle e descriverle.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "No: alessitimia non significa vivere senza emozioni",
+                                    List.of(
+                                            "Una persona può provare attivazione, piacere, disagio o emozioni intense e avere difficoltà a capire quale emozione sia presente o a metterla in parole. Il termine, nato nella ricerca psicosomatica, significa letteralmente mancanza di parole per le emozioni, ma non descrive un vuoto emotivo.",
+                                            "L'alessitimia viene studiata come costrutto dimensionale e multifattoriale, non come identità che divide le persone in due gruppi naturali. Un questionario informativo non può stabilire da solo se una persona sia alessitimica."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le componenti",
+                                    "Riconoscere, descrivere e rivolgere attenzione al vissuto",
+                                    List.of(
+                                            "Il modello più studiato distingue difficoltà nell'identificare le emozioni, difficoltà nel descriverle e uno stile di pensiero più orientato a fatti ed eventi esterni. Le componenti sono correlate, ma possono emergere con intensità diverse.",
+                                            "Il test collegato mantiene queste tre lenti con 18 item originali. Non riproduce la TAS-20, non usa il suo punteggio e non eredita le proprietà delle scale pubblicate."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Corpo ed emozioni",
+                                    "I segnali fisici non hanno un'unica traduzione",
+                                    List.of(
+                                            "Le emozioni possono accompagnarsi a cambiamenti corporei, ma tensione, battito, calore o stanchezza possono avere anche spiegazioni non emotive. La difficoltà può riguardare il collegamento tra sensazione, contesto e rappresentazione dell'emozione, non l'assenza di una risposta del corpo.",
+                                            "Le revisioni sull'interocezione mostrano risultati che cambiano secondo la misura usata. Un'autovalutazione non verifica quindi l'accuratezza fisiologica e non sostituisce una valutazione medica quando compaiono sintomi fisici nuovi o preoccupanti."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Parole e comunicazione",
+                                    "Sapere di essere coinvolti non sempre basta per descriversi",
+                                    List.of(
+                                            "A volte una persona riconosce che qualcosa l'ha colpita ma trova soltanto parole generiche, ha bisogno di tempo o racconta soprattutto i fatti. Lingua, abitudini familiari, sicurezza dell'interlocutore e complessità dell'esperienza possono modificare ciò che riesce a dire.",
+                                            "La riservatezza non è alessitimia e nessuno è obbligato a condividere il proprio vissuto. La lente descrittiva riguarda la difficoltà a trovare parole quando si desidera comprendere o comunicare l'esperienza."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Non è sinonimo di freddezza, scarsa empatia o bassa intelligenza emotiva",
+                                    List.of(
+                                            "Alessitimia, empatia, riconoscimento delle emozioni altrui, regolazione emotiva e intelligenza emotiva si sovrappongono solo in parte. Una difficoltà introspettiva non dimostra disinteresse per gli altri, mancanza di affetto o incapacità di regolare ogni emozione.",
+                                            "Anche immaginazione e pensiero concreto sono temi discussi nella storia del costrutto, ma non vanno dedotti automaticamente da un profilo online. Il risultato descrive soltanto le esperienze formulate."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Contesto",
+                                    "Stress, salute, lingua e neurodivergenze possono cambiare le risposte",
+                                    List.of(
+                                            "Difficoltà simili possono comparire insieme a depressione, ansia, trauma, condizioni neurologiche, dolore, uso di sostanze o neurodivergenze. Le associazioni di gruppo non spiegano però il singolo caso e non autorizzano diagnosi indirette.",
+                                            "Il questionario usa gli ultimi tre mesi proprio per evitare di trasformare automaticamente uno stato recente in una caratteristica permanente. Cultura, istruzione emotiva, lingua e contesto relazionale restano alternative da considerare."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Limiti della misura",
+                                    "Un self-report sull'auto-osservazione ha un limite interno",
+                                    List.of(
+                                            "Per rispondere occorre osservare capacità che il questionario stesso prova a esplorare. Una meta-analisi ha trovato una convergenza debole tra TAS-20 e una misura osservativa della consapevolezza emotiva, mentre la validazione italiana dell'intervista TSIA sostiene l'utilità di integrare metodi diversi.",
+                                            "Per questo le barre non certificano né escludono alessitimia. Colloquio, esempi concreti, prospettive esterne e valutazione del contesto possono aggiungere informazioni che un'autovalutazione non contiene."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Come leggere il risultato",
+                                    "Frequenze editoriali, non un punteggio TAS-20",
+                                    List.of(
+                                            "Le risposte da 1 a 5 vengono mediate per area e trasformate in barre da 0 a 100. Le barre non sono percentuali di alessitimia, quantità di emozioni, percentili o probabilità; anche le soglie LOW, MIXED, FOCUSED e BROAD sono editoriali.",
+                                            "Un profilo focalizzato indica una sola area con frequenze alte, mentre un profilo ampio ne indica almeno due. Differenze piccole non hanno significato psicometrico dimostrato e un livello contenuto non esclude difficoltà specifiche."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Osservazione e supporto",
+                                    "Partire dagli episodi, non dall'etichetta",
+                                    List.of(
+                                            "Può essere utile annotare separatamente situazione, segnali corporei, parole disponibili, azioni e ciò che si comprende in seguito. Questa osservazione non è un trattamento e non serve a trovare per forza un'etichetta, ma può rendere più concreto ciò che si vuole comunicare.",
+                                            "Se la difficoltà causa sofferenza, ostacola le relazioni o rende difficile esprimere sintomi e bisogni, puoi parlarne con uno psicologo, psicoterapeuta o medico. La ricerca sugli interventi è in sviluppo e non giustifica una tecnica universale basata sul solo risultato online."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 18 item originali, tre lenti editoriali e una finestra di tre mesi. È informativo e non validato: non è la TAS-20, non diagnostica alessitimia e non misura quante emozioni una persona provi.",
+                    List.of(
+                            new GuideReference(
+                                    "Italian multicenter study of the 20-item Toronto Alexithymia Scale — Bressi e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/9032718/",
+                                    "Validazione italiana consultata per la struttura a tre fattori; item, punteggi, cut-off e proprietà non vengono trasferiti al questionario originale."
+                            ),
+                            new GuideReference(
+                                    "Italian Toronto Structured Interview for Alexithymia — Caretti e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/21396720/",
+                                    "Validazione italiana dell'intervista consultata per il valore della valutazione multimodale; campioni e metodo sono diversi dall'autovalutazione dell'app."
+                            ),
+                            new GuideReference(
+                                    "The twenty-item Toronto Alexithymia Scale—I — Bagby, Parker e Taylor",
+                                    "https://pubmed.ncbi.nlm.nih.gov/8126686/",
+                                    "Sviluppo della TAS-20 consultato per le tre componenti ricorrenti; nessun item viene copiato, adattato o parafrasato."
+                            ),
+                            new GuideReference(
+                                    "The twenty-item Toronto Alexithymia Scale—II — Bagby, Taylor e Parker",
+                                    "https://pubmed.ncbi.nlm.nih.gov/8126688/",
+                                    "Studio di validità consultato per distinguere costrutti collegati e ricordare che la convergenza richiede evidenze sullo specifico strumento."
+                            ),
+                            new GuideReference(
+                                    "The Structure of the Toronto Alexithymia Scale — Schroeders, Kubera e Gnambs",
+                                    "https://pubmed.ncbi.nlm.nih.gov/34311556/",
+                                    "Meta-analisi fattoriale consultata per la soluzione a tre dimensioni e i problemi di generalizzazione tra lingue e culture."
+                            ),
+                            new GuideReference(
+                                    "The Relationship Between Alexithymia and Emotional Awareness — Maroti e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/29713295/",
+                                    "Meta-analisi consultata per la debole convergenza tra self-report e misura osservativa; i due metodi non sono equivalenti."
+                            ),
+                            new GuideReference(
+                                    "Subjective interoception and alexithymia — Van Bael e colleghi",
+                                    "https://pubmed.ncbi.nlm.nih.gov/39509403/",
+                                    "Revisione sistematica consultata per il rapporto variabile tra misure interocettive autoriferite e componenti dell'alessitimia."
+                            ),
+                            new GuideReference(
+                                    "Twenty-five years with the 20-item Toronto Alexithymia Scale — Bagby, Parker e Taylor",
+                                    "https://doi.org/10.1016/j.jpsychores.2020.109940",
+                                    "Review degli sviluppatori consultata per stato della misura, componenti e influenza di affettività negativa e contesto."
+                            )
+                    )
             )
     );
 

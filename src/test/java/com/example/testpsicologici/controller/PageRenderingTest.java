@@ -2134,6 +2134,72 @@ class PageRenderingTest {
     }
 
     @Test
+    void alexithymiaPagesCorrectTheTitlePremiseAndExposeThreeAreasGuideAndRelatedTests() throws Exception {
+        mockMvc.perform(get("/test/alessitimia"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Alessitimia, vivo senza emozioni?")))
+                .andExpect(content().string(containsString("non significa vivere senza emozioni")))
+                .andExpect(content().string(containsString("Riconoscimento e distinzione delle emozioni")))
+                .andExpect(content().string(containsString("Parole e descrizione del vissuto")))
+                .andExpect(content().string(containsString("Attenzione e riflessione sul mondo interno")))
+                .andExpect(content().string(containsString("Emozioni, risorse e benessere")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/alessitimia\"")))
+                .andExpect(content().string(containsString("href=\"/test/intelligenza-intrapersonale\"")))
+                .andExpect(content().string(containsString("da “Mai” a “Quasi sempre”")));
+
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-alessitimia", new TestAttempt(18));
+        mockMvc.perform(get("/test/alessitimia/domanda/1").session(session))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("ultimi tre mesi")))
+                .andExpect(content().string(containsString("situazioni diverse")))
+                .andExpect(content().string(containsString("Mai")))
+                .andExpect(content().string(containsString("Quasi sempre")));
+
+        mockMvc.perform(get("/approfondimenti/alessitimia"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("No: alessitimia non significa vivere senza emozioni")))
+                .andExpect(content().string(containsString("I segnali fisici non hanno un'unica traduzione")))
+                .andExpect(content().string(containsString("Non è sinonimo di freddezza, scarsa empatia o bassa intelligenza emotiva")))
+                .andExpect(content().string(containsString("Un self-report sull'auto-osservazione ha un limite interno")))
+                .andExpect(content().string(containsString("Frequenze editoriali, non un punteggio TAS-20")))
+                .andExpect(content().string(containsString("href=\"/test/alessitimia\"")))
+                .andExpect(content().string(containsString("Approfondimenti collegati")));
+    }
+
+    @Test
+    void alexithymiaResultAndPdfExposeProfilesAreasAndMeasurementLimits() throws Exception {
+        mockMvc.perform(get("/test/alessitimia/risultato")
+                        .session(completedAttempt("alessitimia", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(
+                        "Le esperienze associate all'alessitimia sembrano frequenti in più aree")))
+                .andExpect(content().string(containsString("Riconoscimento e distinzione delle emozioni")))
+                .andExpect(content().string(containsString("Parole e descrizione del vissuto")))
+                .andExpect(content().string(containsString("Attenzione e riflessione sul mondo interno")))
+                .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
+                .andExpect(content().string(containsString("href=\"/test/alessitimia/risultato/pdf\"")))
+                .andExpect(content().string(containsString("href=\"/approfondimenti/alessitimia\"")));
+
+        MvcResult mvcResult = mockMvc.perform(get("/test/alessitimia/risultato/pdf")
+                        .session(completedAttempt("alessitimia", 5)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/pdf"))
+                .andExpect(header().string("Content-Disposition", containsString("analisi-alessitimia.pdf")))
+                .andReturn();
+
+        try (PDDocument document = PDDocument.load(mvcResult.getResponse().getContentAsByteArray())) {
+            String text = new PDFTextStripper().getText(document);
+            assertThat(text)
+                    .contains("Alessitimia, vivo senza emozioni?")
+                    .contains("Riconoscimento e distinzione delle emozioni")
+                    .contains("Parole e descrizione del vissuto")
+                    .contains("Attenzione e riflessione sul mondo interno")
+                    .contains("non diagnostica alessitimia", "non misura quante emozioni provi");
+        }
+    }
+
+    @Test
     void robotsAndSitemapExposeOnlyCanonicalLandingPages() throws Exception {
         mockMvc.perform(get("/robots.txt"))
                 .andExpect(status().isOk())
@@ -2187,6 +2253,10 @@ class PageRenderingTest {
                         "http://localhost/approfondimenti/disponibilita-emotiva")))
                 .andExpect(content().string(containsString(
                         "http://localhost/test/disponibilita-emotiva")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/approfondimenti/alessitimia")))
+                .andExpect(content().string(containsString(
+                        "http://localhost/test/alessitimia")))
                 .andExpect(content().string(containsString(
                         "http://localhost/approfondimenti/fomo")))
                 .andExpect(content().string(containsString(

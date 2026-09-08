@@ -1,0 +1,101 @@
+{
+  "test": {
+    "id": "alessitimia",
+    "titolo": "Alessitimia, vivo senza emozioni?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa delle difficoltà recenti nel riconoscere, distinguere e descrivere il vissuto emotivo e nel rivolgere attenzione al mondo interno",
+    "periodo_riferimento": "Ultimi tre mesi",
+    "direzione_punteggio": "Valori più alti descrivono maggiore frequenza delle difficoltà formulate, non assenza o minore intensità delle emozioni",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale, non validato e non normato. Non è la TAS-20, non diagnostica alessitimia e non misura quante emozioni una persona provi."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi e a situazioni diverse, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
+    "domande": 18,
+    "aree": 3,
+    "domande_per_area": 6,
+    "pesi": "Tutti gli item hanno lo stesso peso; non sono presenti item invertiti",
+    "livelli_area": [
+      {"codice": "LOW", "condizione": "media_area < 2.5"},
+      {"codice": "MEDIUM", "condizione": "2.5 <= media_area < 3.5"},
+      {"codice": "HIGH", "condizione": "media_area >= 3.5"}
+    ],
+    "profili_globali": [
+      {"codice": "LOW", "condizione": "tutte le tre aree sono LOW"},
+      {"codice": "MIXED", "condizione": "nessuna area è HIGH e almeno un'area è MEDIUM"},
+      {"codice": "FOCUSED", "condizione": "una sola area è HIGH"},
+      {"codice": "BROAD", "condizione": "due o tre aree sono HIGH"}
+    ],
+    "barra": "(media - 1) / 4 * 100, arrotondata; non è una percentuale di alessitimia, emozioni presenti o capacità emotiva",
+    "ordine_aree_risultato": "riconoscimento, descrizione, orientamento",
+    "limite_aggregazione": "Le tre aree sono lenti editoriali ispirate al modello più studiato, non sottoscale validate dell'app."
+  },
+  "analisi_generali": [
+    {
+      "codice": "LOW",
+      "titolo": "Le esperienze associate all'alessitimia sembrano poco presenti nelle tue risposte",
+      "sottotitolo": "Le difficoltà esplorate risultano poco frequenti in tutte e tre le aree negli ultimi tre mesi. Riconoscimento, descrizione e attenzione al vissuto non mostrano quindi un andamento diffusamente elevato nelle risposte.",
+      "descrizione": "Questo profilo non esclude un episodio importante, una difficoltà circoscritta o esperienze fuori dal periodo considerato. Il modo di accedere alle emozioni può cambiare con situazione, lingua, salute e stress. Il risultato non diagnostica alessitimia, non misura quante emozioni provi e non stabilisce cause; item, aree e soglie sono originali, editoriali e non validati. Riservatezza, comunicazione sintetica, preferenza per attività concrete e bisogno di tempo non equivalgono da soli a una difficoltà. Se riconoscere o comunicare il vissuto causa sofferenza, ostacola le relazioni o rende difficile esprimere sintomi e bisogni, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal profilo."
+    },
+    {
+      "codice": "MIXED",
+      "titolo": "Le esperienze associate all'alessitimia emergono in modo variabile nelle tue risposte",
+      "sottotitolo": "Le risposte mostrano frequenze intermedie o differenze tra le tre aree, senza che una raggiunga il livello editoriale più alto. L'accesso al vissuto può quindi cambiare per processo, contesto o momento.",
+      "descrizione": "Può essere utile osservare se la variabilità riguarda il riconoscere, il trovare parole o il dedicare attenzione all'esperienza interna. Differenze piccole tra le barre non spiegano la causa e non dimostrano una caratteristica stabile. Il risultato non diagnostica alessitimia, non misura quante emozioni provi e non stabilisce cause; item, aree e soglie sono originali, editoriali e non validati. Riservatezza, comunicazione sintetica, preferenza per attività concrete e bisogno di tempo non equivalgono da soli a una difficoltà. Se riconoscere o comunicare il vissuto causa sofferenza, ostacola le relazioni o rende difficile esprimere sintomi e bisogni, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal profilo."
+    },
+    {
+      "codice": "FOCUSED",
+      "titolo": "Le esperienze associate all'alessitimia sembrano concentrate in un'area",
+      "sottotitolo": "Una delle tre aree raccoglie difficoltà riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta verso una componente specifica senza classificare la persona.",
+      "descrizione": "Torna agli episodi concreti dell'area emergente e considera quando la difficoltà compare, quanto persiste e quale impatto ha. Una componente può essere rilevante anche senza un andamento ampio. Il risultato non diagnostica alessitimia, non misura quante emozioni provi e non stabilisce cause; item, aree e soglie sono originali, editoriali e non validati. Riservatezza, comunicazione sintetica, preferenza per attività concrete e bisogno di tempo non equivalgono da soli a una difficoltà. Se riconoscere o comunicare il vissuto causa sofferenza, ostacola le relazioni o rende difficile esprimere sintomi e bisogni, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal profilo."
+    },
+    {
+      "codice": "BROAD",
+      "titolo": "Le esperienze associate all'alessitimia sembrano frequenti in più aree",
+      "sottotitolo": "Le risposte indicano difficoltà frequenti in almeno due delle tre aree. Riconoscimento, descrizione o attenzione al vissuto sembrano quindi coinvolgere più passaggi del processo emotivo recente.",
+      "descrizione": "Un andamento ampio rende utile osservare persistenza, contesti e interferenza con comunicazione, relazioni e cura di sé. Non significa che le emozioni siano assenti o meno intense e non indica una causa unica. Il risultato non diagnostica alessitimia, non misura quante emozioni provi e non stabilisce cause; item, aree e soglie sono originali, editoriali e non validati. Riservatezza, comunicazione sintetica, preferenza per attività concrete e bisogno di tempo non equivalgono da soli a una difficoltà. Se riconoscere o comunicare il vissuto causa sofferenza, ostacola le relazioni o rende difficile esprimere sintomi e bisogni, puoi parlarne con uno psicologo, psicoterapeuta o medico indipendentemente dal profilo."
+    }
+  ],
+  "analisi_aree": [
+    {
+      "area_code": "riconoscimento",
+      "nome_area": "Riconoscimento e distinzione delle emozioni",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Riconoscere e distinguere il proprio stato emotivo risulta poco difficile. Non significa identificare subito ogni emozione o interpretare con certezza tutti i segnali corporei."},
+        {"livello": "MEDIUM", "descrizione": "Il riconoscimento emotivo risulta difficile in alcune situazioni. Osserva se cambia con intensità, tempo, stress, salute e familiarità del contesto."},
+        {"livello": "HIGH", "descrizione": "Riconoscere o distinguere emozioni e sensazioni risulta spesso difficile. L'area non dimostra assenza di emozioni, alessitimia o una causa medica o psicologica."}
+      ]
+    },
+    {
+      "area_code": "descrizione",
+      "nome_area": "Parole e descrizione del vissuto",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Trovare parole abbastanza precise per il vissuto risulta poco difficile. Non impone di condividere emozioni che si preferisce mantenere private."},
+        {"livello": "MEDIUM", "descrizione": "Descrivere il vissuto risulta difficile in alcune occasioni. Considera tempo disponibile, lingua, interlocutore, sicurezza e complessità dell'esperienza."},
+        {"livello": "HIGH", "descrizione": "Mettere in parole o comunicare il vissuto risulta spesso difficile. Il dato non misura sincerità, volontà di aprirsi o capacità comunicativa generale."}
+      ]
+    },
+    {
+      "area_code": "orientamento",
+      "nome_area": "Attenzione e riflessione sul mondo interno",
+      "analisi": [
+        {"livello": "LOW", "descrizione": "Soffermarsi sul vissuto interno risulta poco difficile. Non certifica introspezione accurata né svaluta un orientamento concreto e pragmatico."},
+        {"livello": "MEDIUM", "descrizione": "L'attenzione al mondo interno varia tra situazioni. Osserva quando riflettere sulle emozioni è utile e quando il contesto richiede invece azione immediata."},
+        {"livello": "HIGH", "descrizione": "Spostarsi su fatti e attività senza approfondire il vissuto risulta frequente. L'area non dimostra freddezza, scarsa empatia o assenza di immaginazione."}
+      ]
+    }
+  ],
+  "fonti_questionario": [
+    {"titolo": "Italian multicenter TAS-20", "url": "https://pubmed.ncbi.nlm.nih.gov/9032718/", "apporto": "Struttura a tre fattori nella traduzione italiana; nessun item, punteggio o cut-off trasferito."},
+    {"titolo": "Italian Toronto Structured Interview for Alexithymia", "url": "https://pubmed.ncbi.nlm.nih.gov/21396720/", "apporto": "Evidenza italiana sull'utilità di una valutazione multimodale; intervista diversa dal self-report dell'app."},
+    {"titolo": "TAS-20 I: item selection and factor structure", "url": "https://pubmed.ncbi.nlm.nih.gov/8126686/", "apporto": "Tre componenti teoriche; gli item protetti non vengono copiati o adattati."},
+    {"titolo": "TAS-20 II: construct validity", "url": "https://pubmed.ncbi.nlm.nih.gov/8126688/", "apporto": "Validità convergente e discriminante del diverso strumento originale."},
+    {"titolo": "Meta-analytic factor structure of TAS-20", "url": "https://pubmed.ncbi.nlm.nih.gov/34311556/", "apporto": "Sintesi della struttura a tre dimensioni e cautela interculturale."},
+    {"titolo": "Alexithymia and emotional awareness meta-analysis", "url": "https://pubmed.ncbi.nlm.nih.gov/29713295/", "apporto": "Debole convergenza tra self-report e misura osservativa; limite di metodo."},
+    {"titolo": "Subjective interoception and alexithymia meta-analysis", "url": "https://pubmed.ncbi.nlm.nih.gov/39509403/", "apporto": "Rapporto variabile fra interocezione autoriferita e componenti dell'alessitimia."},
+    {"titolo": "Twenty-five years with the TAS-20", "url": "https://doi.org/10.1016/j.jpsychores.2020.109940", "apporto": "Stato della misura, componenti e fattori contestuali; review degli sviluppatori."}
+  ],
+  "limite": "Non esistono dati che validino negli adulti italiani questi 18 item originali, le tre aree, la scala, le soglie o le interpretazioni."
+}
