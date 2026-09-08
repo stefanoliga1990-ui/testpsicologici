@@ -1,4 +1,4 @@
-# Gaslighting — specifica psicometrica v1.0
+# Gaslighting — specifica psicometrica v1.1
 
 ## Identità e uso previsto
 
@@ -6,7 +6,7 @@
 |---|---|
 | Identificativo | `gaslighting` |
 | Titolo pubblico | Ho subito gaslighting? |
-| Versione | `1.0` |
+| Versione | `1.1` |
 | Popolazione | adulti che compilano autonomamente il questionario in italiano |
 | Finalità | auto-osservazione informativa di esperienze avvenute in una relazione specifica, attuale o passata |
 | Periodo di riferimento | ultimi sei mesi di contatto significativo con la persona scelta, oppure l'intero periodo se il rapporto è durato meno |
@@ -56,36 +56,36 @@ Spiegazioni alternative o concorrenti includono incomprensioni, memorie fallibil
 
 | Area | N. teorico | Testo |
 |---|---:|---|
-| realtà | 1 | La persona negava di aver detto qualcosa che ricordavo. |
-| realtà | 2 | La persona negava di aver compiuto un'azione che ricordavo. |
-| realtà | 3 | La persona sosteneva che una sua versione precedente non fosse mai stata diversa. |
-| realtà | 4 | La persona affermava che avevo immaginato un episodio di cui parlavo. |
-| realtà | 5 | La persona metteva in dubbio la mia comprensione anche quando citavo messaggi o altre tracce. |
-| realtà | 6 | La persona presentava una propria incoerenza come prova che io avevo frainteso. |
-| credibilità | 1 | La persona descriveva la mia memoria come inaffidabile durante un confronto. |
-| credibilità | 2 | La persona definiva esagerate le mie percezioni senza discuterne il contenuto. |
-| credibilità | 3 | La persona usava le mie emozioni per sostenere che il mio giudizio non fosse attendibile. |
-| credibilità | 4 | La persona richiamava miei errori passati per screditare ciò che osservavo nel presente. |
-| credibilità | 5 | La persona sosteneva che anche gli altri mi considerassero confuso o poco credibile. |
-| credibilità | 6 | La persona ridicolizzava il modo in cui ricordavo o descrivevo un episodio. |
-| ribaltamento | 1 | Quando chiedevo conto di un comportamento, la conversazione si spostava sui miei difetti. |
-| ribaltamento | 2 | Dopo aver espresso una preoccupazione, finivo per scusarmi io. |
-| ribaltamento | 3 | La persona attribuiva a me la responsabilità delle proprie azioni. |
-| ribaltamento | 4 | La persona trattava la mia richiesta di chiarimento come un attacco personale. |
-| ribaltamento | 5 | La persona insisteva sulla propria versione finché rinunciavo a esporre la mia. |
-| ribaltamento | 6 | La persona interrompeva il confronto quando non accettavo la sua ricostruzione. |
-| autonomia | 1 | Dopo i confronti controllavo messaggi o appunti per verificare la mia memoria. |
-| autonomia | 2 | Cercavo conferme da altre persone per capire se la mia percezione fosse ragionevole. |
-| autonomia | 3 | Esitavo a raccontare un episodio perché temevo di essere definito confuso. |
-| autonomia | 4 | Mi affidavo alla persona per decidere se le mie emozioni fossero giustificate. |
-| autonomia | 5 | Modificavo le mie scelte per evitare nuove discussioni su ciò che era accaduto. |
-| autonomia | 6 | Mi sentivo meno capace di fidarmi del mio giudizio dopo aver parlato con la persona. |
+| realtà | 1 | La persona ha negato di aver detto qualcosa che ricordavo. |
+| realtà | 2 | La persona ha negato di aver compiuto un'azione che ricordavo. |
+| realtà | 3 | La persona ha sostenuto che una sua versione precedente non fosse mai stata diversa. |
+| realtà | 4 | La persona ha affermato che avevo immaginato un episodio di cui parlavo. |
+| realtà | 5 | La persona ha messo in dubbio la mia comprensione anche quando ho citato messaggi o altre tracce. |
+| realtà | 6 | La persona ha presentato una propria incoerenza come prova che io avevo frainteso. |
+| credibilità | 1 | La persona ha descritto la mia memoria come inaffidabile durante un confronto. |
+| credibilità | 2 | La persona ha definito esagerate le mie percezioni senza discuterne il contenuto. |
+| credibilità | 3 | La persona ha usato le mie emozioni per sostenere che il mio giudizio non fosse attendibile. |
+| credibilità | 4 | La persona ha richiamato miei errori passati per screditare ciò che osservavo nel presente. |
+| credibilità | 5 | La persona ha sostenuto che anche gli altri mi considerassero confuso o poco credibile. |
+| credibilità | 6 | La persona ha ridicolizzato il modo in cui ricordavo o descrivevo un episodio. |
+| ribaltamento | 1 | Quando ho chiesto conto di un comportamento, la conversazione si è spostata sui miei difetti. |
+| ribaltamento | 2 | Dopo aver espresso una preoccupazione, ho finito per scusarmi io. |
+| ribaltamento | 3 | La persona ha attribuito a me la responsabilità delle proprie azioni. |
+| ribaltamento | 4 | La persona ha trattato la mia richiesta di chiarimento come un attacco personale. |
+| ribaltamento | 5 | La persona ha insistito sulla propria versione finché ho rinunciato a esporre la mia. |
+| ribaltamento | 6 | La persona ha interrotto il confronto quando non ho accettato la sua ricostruzione. |
+| autonomia | 1 | Dopo i confronti ho controllato messaggi o appunti per verificare la mia memoria. |
+| autonomia | 2 | Ho cercato conferme da altre persone per capire se la mia percezione fosse ragionevole. |
+| autonomia | 3 | Ho esitato a raccontare un episodio per timore di essere definito confuso. |
+| autonomia | 4 | Mi sono affidato/a alla persona per decidere se le mie emozioni fossero giustificate. |
+| autonomia | 5 | Ho modificato le mie scelte per evitare nuove discussioni su ciò che era accaduto. |
+| autonomia | 6 | Mi sono sentito/a meno capace di fidarmi del mio giudizio dopo aver parlato con la persona. |
 
 Nel database gli item vengono salvati per area e somministrati intercalando ciclicamente `realta → credibilita → ribaltamento → autonomia`. Nel risultato le aree restano nell'ordine teorico sopra indicato.
 
 ## Istruzione e scala di risposta
 
-Domanda mostrata: **“Pensando agli ultimi sei mesi di contatto significativo con la persona scelta, o all'intero periodo se più breve, con quale frequenza accadeva?”**
+Domanda mostrata: **“Pensando agli ultimi sei mesi di contatto significativo con la persona scelta, o all'intero periodo se più breve, con quale frequenza è accaduto?”**
 
 Le ancore descrivono frequenza percepita, non accordo con un'etichetta. Se la relazione è terminata da tempo, la memoria può essere incompleta; se una frase non è applicabile, “Mai” indica che l'esperienza formulata non è avvenuta nel periodo scelto.
 
@@ -150,7 +150,7 @@ Prima di descrivere lo strumento come affidabile, valido o utile clinicamente se
 
 ## Test automatici richiesti
 
-- esistenza della versione `1.0`, 24 item unici, quattro aree da sei item e ordine intercalato;
+- esistenza della versione `1.1`, 24 item unici, quattro aree da sei item e ordine intercalato;
 - istruzione su una sola relazione e periodo di sei mesi, cinque ancore e direzione uniforme;
 - profili `LOW/MIXED/FOCUSED/BROAD`, soglie e casi limite;
 - titolo autonomamente comprensibile, sintesi e approfondimento minimi per ogni profilo;

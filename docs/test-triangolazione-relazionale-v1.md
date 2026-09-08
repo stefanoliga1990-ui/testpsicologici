@@ -1,4 +1,4 @@
-# Dinamiche di triangolazione nella relazione — specifica psicometrica v1.0
+# Dinamiche di triangolazione nella relazione — specifica psicometrica v1.1
 
 ## Identità e uso previsto
 
@@ -6,7 +6,7 @@
 |---|---|
 | Identificativo | `triangolazione-subita` |
 | Titolo pubblico | Ho vissuto dinamiche di triangolazione? |
-| Versione | `1.0` |
+| Versione | `1.1` |
 | Popolazione | adulti che compilano autonomamente il questionario in italiano |
 | Finalità | auto-osservazione informativa di situazioni in cui una terza persona entra nella comunicazione, nei confronti, negli schieramenti o nei confini di una relazione sentimentale |
 | Periodo di riferimento | ultimi tre mesi |
@@ -59,26 +59,26 @@ Comportamenti simili possono derivare da abitudini familiari, evitamento del con
 
 | Area | N. | Testo |
 |---|---:|---|
-| mediazione | 1 | La persona affidava a qualcun altro messaggi che riguardavano direttamente il nostro rapporto. |
-| mediazione | 2 | Venivo a sapere da terzi questioni che la persona evitava di discutere con me. |
-| mediazione | 3 | La persona chiedeva a qualcuno di intervenire in un disaccordo prima di cercare un confronto diretto con me. |
-| mediazione | 4 | Una terza persona mi riferiva critiche o richieste provenienti dalla persona. |
-| mediazione | 5 | Per chiarire un problema tra noi, dovevo passare attraverso un'altra persona. |
-| confronti | 1 | La persona confrontava il mio aspetto con quello di un'altra persona. |
-| confronti | 2 | La persona confrontava il mio modo di comportarmi con quello di un ex partner. |
-| confronti | 3 | Durante un disaccordo, citava qualcuno che avrebbe gestito meglio la situazione. |
-| confronti | 4 | Richiamava l'attenzione ricevuta da altre persone mentre parlavamo del nostro rapporto. |
-| confronti | 5 | Presentava una terza persona come esempio di ciò che avrei dovuto essere. |
-| alleanze | 1 | La persona mi diceva che altre persone erano d'accordo con la sua versione di un nostro problema. |
-| alleanze | 2 | Invitava qualcuno a prendere posizione in un conflitto tra noi. |
-| alleanze | 3 | Condivideva dettagli di un nostro disaccordo con terzi e usava le loro reazioni nel confronto con me. |
-| alleanze | 4 | Mi metteva di fronte a una scelta tra sostenere la persona e sostenere qualcun altro. |
-| alleanze | 5 | Trattava l'opinione di una terza persona come prova che la mia posizione fosse sbagliata. |
-| confini | 1 | La persona mostrava particolare vicinanza con qualcun altro subito dopo un conflitto tra noi. |
-| confini | 2 | Manteneva poco chiari i confini con una terza persona anche dopo che avevo chiesto chiarezza. |
-| confini | 3 | Lasciava aperta la possibilità di preferire un'altra persona al nostro rapporto. |
-| confini | 4 | Richiamava la possibilità di rivolgersi a qualcun altro per farmi accettare una richiesta. |
-| confini | 5 | La presenza di una terza persona rendeva più difficile per me esprimere bisogni o limiti. |
+| mediazione | 1 | La persona ha affidato a qualcun altro messaggi che riguardavano direttamente il nostro rapporto. |
+| mediazione | 2 | Ho appreso da terzi questioni che la persona ha evitato di discutere con me. |
+| mediazione | 3 | La persona ha chiesto a qualcuno di intervenire in un disaccordo prima di cercare un confronto diretto con me. |
+| mediazione | 4 | Una terza persona mi ha riferito critiche o richieste provenienti dalla persona. |
+| mediazione | 5 | Per chiarire un problema tra noi, ho dovuto passare attraverso un'altra persona. |
+| confronti | 1 | La persona ha confrontato il mio aspetto con quello di un'altra persona. |
+| confronti | 2 | La persona ha confrontato il mio modo di comportarmi con quello di un ex partner. |
+| confronti | 3 | Durante un disaccordo, ha citato qualcuno che avrebbe gestito meglio la situazione. |
+| confronti | 4 | Ha richiamato l'attenzione ricevuta da altre persone mentre parlavamo del nostro rapporto. |
+| confronti | 5 | Ha presentato una terza persona come esempio di ciò che avrei dovuto essere. |
+| alleanze | 1 | La persona mi ha detto che altre persone erano d'accordo con la sua versione di un nostro problema. |
+| alleanze | 2 | Ha invitato qualcuno a prendere posizione in un conflitto tra noi. |
+| alleanze | 3 | Ha condiviso dettagli di un nostro disaccordo con terzi e ha usato le loro reazioni nel confronto con me. |
+| alleanze | 4 | Mi ha messo di fronte a una scelta tra sostenere la persona e sostenere qualcun altro. |
+| alleanze | 5 | Ha trattato l'opinione di una terza persona come prova che la mia posizione fosse sbagliata. |
+| confini | 1 | La persona ha mostrato particolare vicinanza con qualcun altro subito dopo un conflitto tra noi. |
+| confini | 2 | Ha mantenuto poco chiari i confini con una terza persona anche dopo che avevo chiesto chiarezza. |
+| confini | 3 | Ha lasciato aperta la possibilità di preferire un'altra persona al nostro rapporto. |
+| confini | 4 | Ha richiamato la possibilità di rivolgersi a qualcun altro per farmi accettare una richiesta. |
+| confini | 5 | La presenza di una terza persona ha reso più difficile per me esprimere bisogni o limiti. |
 
 Nel database gli item sono salvati per area e somministrati in ordine round-robin `mediazione → confronti → alleanze → confini`. Nel risultato le aree restano nell'ordine teorico sopra indicato.
 
@@ -147,7 +147,7 @@ Prima di definire il questionario affidabile o valido servono: revisione di psic
 
 ## Test automatici richiesti
 
-- versione `1.0`, 20 item unici, quattro aree da cinque e intercalazione;
+- versione `1.1`, 20 item unici, quattro aree da cinque e intercalazione;
 - ultimi tre mesi, una relazione sentimentale, scala di frequenza e direzione uniforme;
 - profili `LOW/MIXED/FOCUSED/BROAD`, inclusi uno, due e tre ambiti `HIGH`;
 - titoli specifici, sintesi di almeno due frasi e approfondimenti di almeno tre;

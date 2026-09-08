@@ -1438,7 +1438,7 @@ class TestResultServiceTest {
     void gaslightingTestLoadsItsOriginalRelationshipSpecificBalancedStructureAndSources() {
         PsychologicalTest test = catalogue.findById("gaslighting");
 
-        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.version()).isEqualTo("1.1");
         assertThat(test.questions()).hasSize(24);
         assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
                 "realta", "credibilita", "ribaltamento", "autonomia");
@@ -1544,7 +1544,7 @@ class TestResultServiceTest {
     void breadcrumbingTestLoadsItsOriginalRelationshipSpecificBalancedStructureAndSources() {
         PsychologicalTest test = catalogue.findById("breadcrumbing");
 
-        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.version()).isEqualTo("1.1");
         assertThat(test.questions()).hasSize(24);
         assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
                 "intermittenza", "segnali", "incongruenza", "chiarezza");
@@ -1778,7 +1778,7 @@ class TestResultServiceTest {
         PsychologicalTest test = catalogue.findById("relazione-dannosa-benessere");
 
         assertThat(test.title()).isEqualTo("La mia relazione sta danneggiando il mio benessere?");
-        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.version()).isEqualTo("1.1");
         assertThat(test.questions()).hasSize(24).allSatisfy(question ->
                 assertThat(question.example()).isNull());
         assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
@@ -1842,7 +1842,7 @@ class TestResultServiceTest {
         PsychologicalTest test = catalogue.findById("invalidazione-emotiva-subita");
 
         assertThat(test.title()).isEqualTo("Le mie emozioni vengono invalidate?");
-        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.version()).isEqualTo("1.1");
         assertThat(test.questions()).hasSize(18).allSatisfy(question ->
                 assertThat(question.example()).isNull());
         assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
@@ -1901,7 +1901,7 @@ class TestResultServiceTest {
         PsychologicalTest test = catalogue.findById("triangolazione-subita");
 
         assertThat(test.title()).isEqualTo("Ho vissuto dinamiche di triangolazione?");
-        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.version()).isEqualTo("1.1");
         assertThat(test.questions()).hasSize(20).allSatisfy(question ->
                 assertThat(question.example()).isNull());
         assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
@@ -1960,7 +1960,7 @@ class TestResultServiceTest {
         PsychologicalTest test = catalogue.findById("tratti-evitanti-personalita-adulti");
 
         assertThat(test.title()).isEqualTo("Tratti associati al disturbo evitante di personalità");
-        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.version()).isEqualTo("1.1");
         assertThat(test.questions()).hasSize(24).allSatisfy(question ->
                 assertThat(question.example()).isNull());
         assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
@@ -2019,7 +2019,7 @@ class TestResultServiceTest {
         PsychologicalTest test = catalogue.findById("disponibilita-emotiva");
 
         assertThat(test.title()).isEqualTo("Quanto mi è difficile essere emotivamente disponibile in una relazione?");
-        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.version()).isEqualTo("1.1");
         assertThat(test.questions()).hasSize(24).allSatisfy(question ->
                 assertThat(question.example()).isNull());
         assertThat(test.questions()).extracting(question -> question.areaCode()).containsExactly(
@@ -2079,7 +2079,7 @@ class TestResultServiceTest {
         PsychologicalTest test = catalogue.findById("alessitimia");
 
         assertThat(test.title()).isEqualTo("Alessitimia, vivo senza emozioni?");
-        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.version()).isEqualTo("1.1");
         assertThat(test.questions()).hasSize(18).allSatisfy(question ->
                 assertThat(question.example()).isNull());
         assertThat(test.questions()).extracting(question -> question.areaCode()).containsExactly(
@@ -2128,6 +2128,34 @@ class TestResultServiceTest {
                 "Attenzione e riflessione sul mondo interno");
         assertThat(broad.areaResults()).extracting(area -> area.percentage())
                 .containsExactly(100, 100, 0);
+    }
+
+    @Test
+    void recentWindowQuestionnairesUsePastPerfectiveWordingAfterTheVerbTenseRevision() {
+        List<String> revisedTestIds = List.of(
+                "gaslighting",
+                "breadcrumbing",
+                "relazione-dannosa-benessere",
+                "invalidazione-emotiva-subita",
+                "triangolazione-subita",
+                "tratti-evitanti-personalita-adulti",
+                "disponibilita-emotiva",
+                "alessitimia");
+
+        revisedTestIds.forEach(testId -> {
+            PsychologicalTest test = catalogue.findById(testId);
+            assertThat(test.version()).isEqualTo("1.1");
+            assertThat(test.responseInstruction()).containsIgnoringCase("ultim");
+            assertThat(test.questions()).allSatisfy(question -> {
+                String text = question.text().toLowerCase(java.util.Locale.ROOT);
+                assertThat(text).matches("(?s).*(^|\\s)(ho|ha|hanno|sono|è)\\s.*");
+            });
+        });
+
+        assertThat(catalogue.findById("gaslighting").responseInstruction()).contains("è accaduto");
+        assertThat(catalogue.findById("breadcrumbing").responseInstruction()).contains("è accaduto");
+        assertThat(catalogue.findById("invalidazione-emotiva-subita").responseInstruction())
+                .contains("le hai comunicato un'emozione");
     }
 
     @Test

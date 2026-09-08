@@ -2,7 +2,7 @@
   "test": {
     "id": "gaslighting",
     "titolo": "Ho subito gaslighting?",
-    "versione": "1.0",
+    "versione": "1.1",
     "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
     "finalita": "Auto-osservazione informativa riferita a una relazione specifica",
     "periodo_riferimento": "Ultimi sei mesi di contatto significativo con la persona scelta, o intero periodo se più breve",
@@ -10,7 +10,7 @@
     "punteggio_numerico_visibile": false,
     "disclaimer": "Questionario originale non validato e non normato. Non accerta i fatti, non dimostra gaslighting, abuso o violenza e non attribuisce intenzioni, colpe, diagnosi o caratteristiche di personalità alla persona indicata."
   },
-  "istruzione_risposta": "Pensando agli ultimi sei mesi di contatto significativo con la persona scelta, o all'intero periodo se più breve, con quale frequenza accadeva?",
+  "istruzione_risposta": "Pensando agli ultimi sei mesi di contatto significativo con la persona scelta, o all'intero periodo se più breve, con quale frequenza è accaduto?",
   "calcolo": {
     "risposte": {
       "Mai": 1,

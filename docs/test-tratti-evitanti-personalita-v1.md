@@ -1,4 +1,4 @@
-# Tratti associati al disturbo evitante di personalità nell'adulto — specifica psicometrica v1.0
+# Tratti associati al disturbo evitante di personalità nell'adulto — specifica psicometrica v1.1
 
 ## Stato, popolazione e uso previsto
 
@@ -51,32 +51,32 @@ Gli item sono mostrati intercalando le aree; la numerazione seguente corrisponde
 
 | # | Area | Item | Indicatore singolo |
 |---:|---|---|---|
-| 1 | valutazione | Prima di parlare in un gruppo, temevo che ciò che avrei detto sarebbe stato criticato. | anticipazione della critica |
-| 2 | inadeguatezza | In un gruppo, mi sentivo fuori posto. | non appartenenza percepita |
-| 3 | evitamento | Rinunciavo a un'attività perché avrei dovuto conoscere persone nuove. | rinuncia a contatti nuovi |
-| 4 | vicinanza | Condividevo poco di me finché non ero certo/a di piacere all'altra persona. | apertura condizionata all'accettazione |
-| 5 | valutazione | Un'osservazione critica restava a lungo nei miei pensieri. | persistenza della critica |
-| 6 | inadeguatezza | Mi sentivo meno capace socialmente delle persone intorno a me. | confronto di capacità sociale |
-| 7 | evitamento | Lasciavo passare un'opportunità perché comportava espormi al giudizio altrui. | opportunità evitata |
-| 8 | vicinanza | Mi trattenevo dal mostrare affetto per timore di essere respinto/a. | espressione affettiva inibita |
-| 9 | valutazione | Interpretavo un'accoglienza poco calorosa come un possibile rifiuto. | lettura del segnale ambiguo |
-| 10 | inadeguatezza | Pensavo di avere poco da offrire in una relazione. | contributo relazionale svalutato |
-| 11 | evitamento | Restavo ai margini di un gruppo finché non mi sentivo accettato/a. | partecipazione differita |
-| 12 | vicinanza | Evitavo di chiedere vicinanza quando temevo una risposta negativa. | richiesta di vicinanza inibita |
-| 13 | valutazione | Cercavo segnali che indicassero se sarei stato/a accettato/a. | monitoraggio dell'accettazione |
-| 14 | inadeguatezza | Dubitavo di essere una persona interessante per gli altri. | interesse personale svalutato |
-| 15 | evitamento | Rifiutavo inviti per timore di sentirmi inadeguato/a. | inviti evitati |
-| 16 | vicinanza | Mantenevo le distanze anche quando volevo conoscere meglio qualcuno. | distanza non desiderata |
-| 17 | valutazione | Mi sentivo molto esposto/a quando qualcuno valutava ciò che facevo. | esposizione alla valutazione |
-| 18 | inadeguatezza | Mi aspettavo che, conoscendomi meglio, gli altri avrebbero notato i miei difetti. | difetti attesi nell'intimità |
-| 19 | evitamento | Evitavo di esprimere un'opinione quando poteva essere criticata. | opinione trattenuta |
-| 20 | vicinanza | Durante conversazioni personali, controllavo molto ciò che dicevo per non essere giudicato/a. | autocontrollo nell'apertura |
-| 21 | valutazione | Dopo un errore sociale, temevo che gli altri mi giudicassero negativamente nel complesso. | generalizzazione del giudizio |
-| 22 | inadeguatezza | Mi consideravo poco adatto/a a situazioni sociali nuove. | inadeguatezza nel nuovo |
-| 23 | evitamento | Sceglievo attività familiari per ridurre il rischio di sentirmi in imbarazzo. | restrizione a situazioni familiari |
-| 24 | vicinanza | Aspettavo segnali chiari di accettazione prima di esprimere un bisogno personale. | bisogno trattenuto |
+| 1 | valutazione | Prima di parlare in un gruppo, ho avuto timore che ciò che avrei detto sarebbe stato criticato. | anticipazione della critica |
+| 2 | inadeguatezza | In un gruppo, mi sono sentito/a fuori posto. | non appartenenza percepita |
+| 3 | evitamento | Ho rinunciato a un'attività perché avrei dovuto conoscere persone nuove. | rinuncia a contatti nuovi |
+| 4 | vicinanza | Ho condiviso poco di me finché non mi sono sentito/a certo/a di piacere all'altra persona. | apertura condizionata all'accettazione |
+| 5 | valutazione | Un'osservazione critica è rimasta a lungo nei miei pensieri. | persistenza della critica |
+| 6 | inadeguatezza | Mi sono sentito/a meno capace socialmente delle persone intorno a me. | confronto di capacità sociale |
+| 7 | evitamento | Ho lasciato passare un'opportunità per evitare di espormi al giudizio altrui. | opportunità evitata |
+| 8 | vicinanza | Mi sono trattenuto/a dal mostrare affetto per timore di essere respinto/a. | espressione affettiva inibita |
+| 9 | valutazione | Ho interpretato un'accoglienza poco calorosa come un possibile rifiuto. | lettura del segnale ambiguo |
+| 10 | inadeguatezza | Ho pensato di avere poco da offrire in una relazione. | contributo relazionale svalutato |
+| 11 | evitamento | Sono rimasto/a ai margini di un gruppo finché non mi sono sentito/a accettato/a. | partecipazione differita |
+| 12 | vicinanza | Ho evitato di chiedere vicinanza per timore di una risposta negativa. | richiesta di vicinanza inibita |
+| 13 | valutazione | Ho cercato segnali che indicassero se sarei stato/a accettato/a. | monitoraggio dell'accettazione |
+| 14 | inadeguatezza | Ho dubitato di essere una persona interessante per gli altri. | interesse personale svalutato |
+| 15 | evitamento | Ho rifiutato inviti per timore di sentirmi inadeguato/a. | inviti evitati |
+| 16 | vicinanza | Ho mantenuto le distanze pur desiderando conoscere meglio qualcuno. | distanza non desiderata |
+| 17 | valutazione | Mi sono sentito/a molto esposto/a quando il mio comportamento è stato valutato da qualcuno. | esposizione alla valutazione |
+| 18 | inadeguatezza | Ho pensato che, conoscendomi meglio, gli altri avrebbero notato i miei difetti. | difetti attesi nell'intimità |
+| 19 | evitamento | Ho evitato di esprimere un'opinione per timore che fosse criticata. | opinione trattenuta |
+| 20 | vicinanza | Durante conversazioni personali, ho controllato molto ciò che ho detto per non essere giudicato/a. | autocontrollo nell'apertura |
+| 21 | valutazione | Dopo un errore sociale, ho avuto timore che gli altri mi giudicassero negativamente nel complesso. | generalizzazione del giudizio |
+| 22 | inadeguatezza | Mi sono considerato/a poco adatto/a a situazioni sociali nuove. | inadeguatezza nel nuovo |
+| 23 | evitamento | Ho scelto attività familiari per ridurre il rischio di sentirmi in imbarazzo. | restrizione a situazioni familiari |
+| 24 | vicinanza | Ho aspettato segnali chiari di accettazione prima di esprimere un bisogno personale. | bisogno trattenuto |
 
-Non vengono aggiunti esempi agli item nella v1.0: le frasi sono brevi e gli esempi potrebbero focalizzare la risposta su contesti non rappresentativi.
+Non vengono aggiunti esempi agli item nella v1.1: le frasi sono brevi e gli esempi potrebbero focalizzare la risposta su contesti non rappresentativi.
 
 ## Scoring e profili globali
 

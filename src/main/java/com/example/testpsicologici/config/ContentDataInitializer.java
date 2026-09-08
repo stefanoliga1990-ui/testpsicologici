@@ -2645,7 +2645,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedGaslightingInformationTest() {
         String id = "gaslighting";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -2662,7 +2662,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 true, 28).withSeo(
                 "Test gaslighting: 24 domande informative | Spazio Test",
                 "Questionario informativo per adulti su negazione degli eventi, svalutazione, ribaltamento e autodubbio in una relazione specifica; non diagnostico.")
-                .withResponseInstruction("Pensando agli ultimi sei mesi di contatto significativo con la persona scelta, o all'intero periodo se più breve, con quale frequenza accadeva?"));
+                .withResponseInstruction("Pensando agli ultimi sei mesi di contatto significativo con la persona scelta, o all'intero periodo se più breve, con quale frequenza è accaduto?"));
 
         saveReference(id, "Defining Gaslighting in Gender-Based Violence — Adair",
                 "https://doi.org/10.1177/15248380251344316", 1);
@@ -2687,30 +2687,30 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "autonomia", "Autodubbio e riduzione dell'autonomia", 4);
 
         saveQuestions(id, List.of(
-                q("realta", "La persona negava di aver detto qualcosa che ricordavo."),
-                q("realta", "La persona negava di aver compiuto un'azione che ricordavo."),
-                q("realta", "La persona sosteneva che una sua versione precedente non fosse mai stata diversa."),
-                q("realta", "La persona affermava che avevo immaginato un episodio di cui parlavo."),
-                q("realta", "La persona metteva in dubbio la mia comprensione anche quando citavo messaggi o altre tracce."),
-                q("realta", "La persona presentava una propria incoerenza come prova che io avevo frainteso."),
-                q("credibilita", "La persona descriveva la mia memoria come inaffidabile durante un confronto."),
-                q("credibilita", "La persona definiva esagerate le mie percezioni senza discuterne il contenuto."),
-                q("credibilita", "La persona usava le mie emozioni per sostenere che il mio giudizio non fosse attendibile."),
-                q("credibilita", "La persona richiamava miei errori passati per screditare ciò che osservavo nel presente."),
-                q("credibilita", "La persona sosteneva che anche gli altri mi considerassero confuso o poco credibile."),
-                q("credibilita", "La persona ridicolizzava il modo in cui ricordavo o descrivevo un episodio."),
-                q("ribaltamento", "Quando chiedevo conto di un comportamento, la conversazione si spostava sui miei difetti."),
-                q("ribaltamento", "Dopo aver espresso una preoccupazione, finivo per scusarmi io."),
-                q("ribaltamento", "La persona attribuiva a me la responsabilità delle proprie azioni."),
-                q("ribaltamento", "La persona trattava la mia richiesta di chiarimento come un attacco personale."),
-                q("ribaltamento", "La persona insisteva sulla propria versione finché rinunciavo a esporre la mia."),
-                q("ribaltamento", "La persona interrompeva il confronto quando non accettavo la sua ricostruzione."),
-                q("autonomia", "Dopo i confronti controllavo messaggi o appunti per verificare la mia memoria."),
-                q("autonomia", "Cercavo conferme da altre persone per capire se la mia percezione fosse ragionevole."),
-                q("autonomia", "Esitavo a raccontare un episodio perché temevo di essere definito confuso."),
-                q("autonomia", "Mi affidavo alla persona per decidere se le mie emozioni fossero giustificate."),
-                q("autonomia", "Modificavo le mie scelte per evitare nuove discussioni su ciò che era accaduto."),
-                q("autonomia", "Mi sentivo meno capace di fidarmi del mio giudizio dopo aver parlato con la persona.")));
+                q("realta", "La persona ha negato di aver detto qualcosa che ricordavo."),
+                q("realta", "La persona ha negato di aver compiuto un'azione che ricordavo."),
+                q("realta", "La persona ha sostenuto che una sua versione precedente non fosse mai stata diversa."),
+                q("realta", "La persona ha affermato che avevo immaginato un episodio di cui parlavo."),
+                q("realta", "La persona ha messo in dubbio la mia comprensione anche quando ho citato messaggi o altre tracce."),
+                q("realta", "La persona ha presentato una propria incoerenza come prova che io avevo frainteso."),
+                q("credibilita", "La persona ha descritto la mia memoria come inaffidabile durante un confronto."),
+                q("credibilita", "La persona ha definito esagerate le mie percezioni senza discuterne il contenuto."),
+                q("credibilita", "La persona ha usato le mie emozioni per sostenere che il mio giudizio non fosse attendibile."),
+                q("credibilita", "La persona ha richiamato miei errori passati per screditare ciò che osservavo nel presente."),
+                q("credibilita", "La persona ha sostenuto che anche gli altri mi considerassero confuso o poco credibile."),
+                q("credibilita", "La persona ha ridicolizzato il modo in cui ricordavo o descrivevo un episodio."),
+                q("ribaltamento", "Quando ho chiesto conto di un comportamento, la conversazione si è spostata sui miei difetti."),
+                q("ribaltamento", "Dopo aver espresso una preoccupazione, ho finito per scusarmi io."),
+                q("ribaltamento", "La persona ha attribuito a me la responsabilità delle proprie azioni."),
+                q("ribaltamento", "La persona ha trattato la mia richiesta di chiarimento come un attacco personale."),
+                q("ribaltamento", "La persona ha insistito sulla propria versione finché ho rinunciato a esporre la mia."),
+                q("ribaltamento", "La persona ha interrotto il confronto quando non ho accettato la sua ricostruzione."),
+                q("autonomia", "Dopo i confronti ho controllato messaggi o appunti per verificare la mia memoria."),
+                q("autonomia", "Ho cercato conferme da altre persone per capire se la mia percezione fosse ragionevole."),
+                q("autonomia", "Ho esitato a raccontare un episodio per timore di essere definito confuso."),
+                q("autonomia", "Mi sono affidato/a alla persona per decidere se le mie emozioni fossero giustificate."),
+                q("autonomia", "Ho modificato le mie scelte per evitare nuove discussioni su ciò che era accaduto."),
+                q("autonomia", "Mi sono sentito/a meno capace di fidarmi del mio giudizio dopo aver parlato con la persona.")));
 
         String commonSafety = "Il risultato non accerta i fatti e non dimostra gaslighting, abuso, violenza, diagnosi, intenzioni o colpe; differenze di memoria, conflitto e altri contesti possono produrre esperienze simili. "
                 + "Se ti senti confuso, limitato o in difficoltà puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. "
@@ -2861,7 +2861,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedBreadcrumbingInformationTest() {
         String id = "breadcrumbing";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -2878,7 +2878,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 true, 30).withSeo(
                 "Test breadcrumbing: 24 domande informative | Spazio Test",
                 "Questionario informativo per adulti su contatti intermittenti, segnali, seguito concreto e chiarezza in una relazione; non diagnostico.")
-                .withResponseInstruction("Pensando agli ultimi 12 mesi della relazione o frequentazione scelta, o all'intero periodo se più breve, con quale frequenza accadeva?"));
+                .withResponseInstruction("Pensando agli ultimi 12 mesi della relazione o frequentazione scelta, o all'intero periodo se più breve, con quale frequenza è accaduto?"));
 
         saveReference(id, "Psychological Correlates of Ghosting and Breadcrumbing Experiences — Navarro e colleghi",
                 "https://doi.org/10.3390/ijerph17031116", 1);
@@ -2903,30 +2903,30 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "chiarezza", "Chiarezza, reciprocità e progressione", 4);
 
         saveQuestions(id, List.of(
-                q("intermittenza", "La persona alternava periodi di contatto frequente a periodi di silenzio."),
-                q("intermittenza", "Dopo essersi allontanata, la persona riprendeva il contatto."),
-                q("intermittenza", "La persona inviava brevi messaggi dopo lunghi intervalli senza contatti."),
-                q("intermittenza", "Quando smettevo di cercarla, la persona tornava a farsi sentire."),
-                q("intermittenza", "La persona manteneva il contatto tramite reazioni occasionali ai miei contenuti online."),
-                q("intermittenza", "La persona avviava una conversazione e poi interrompeva le risposte."),
-                q("segnali", "La persona esprimeva interesse romantico nei miei confronti."),
-                q("segnali", "La persona diceva che avrebbe voluto incontrarmi presto."),
-                q("segnali", "La persona parlava della possibilità di una relazione tra noi."),
-                q("segnali", "La persona proponeva attività future da fare insieme."),
-                q("segnali", "La persona usava espressioni affettuose dopo periodi di distanza."),
-                q("segnali", "La persona accennava a una maggiore vicinanza futura."),
-                q("incongruenza", "Le proposte di incontro della persona rimanevano senza seguito."),
-                q("incongruenza", "La persona annullava incontri senza proporre una nuova occasione."),
-                q("incongruenza", "Le promesse di ricontatto della persona rimanevano senza seguito."),
-                q("incongruenza", "Le attività future nominate dalla persona non venivano poi organizzate."),
-                q("incongruenza", "Le dichiarazioni di interesse non portavano a una maggiore continuità nei contatti."),
-                q("incongruenza", "La disponibilità annunciata cambiava quando arrivava il momento di incontrarsi."),
-                q("chiarezza", "Quando chiedevo che significato avesse il rapporto, la persona rispondeva in modo vago."),
-                q("chiarezza", "La persona rimandava le conversazioni su cosa desiderava dal rapporto."),
-                q("chiarezza", "Alle domande sul proseguimento della frequentazione, la persona non dava una risposta definita."),
-                q("chiarezza", "La persona cambiava argomento quando parlavo delle aspettative reciproche."),
-                q("chiarezza", "Gli accordi sul tipo di rapporto restavano indefiniti dopo i nostri confronti."),
-                q("chiarezza", "Le mie richieste di decidere come proseguire rimanevano senza risposta.")));
+                q("intermittenza", "La persona ha alternato periodi di contatto frequente a periodi di silenzio."),
+                q("intermittenza", "Dopo essersi allontanata, la persona ha ripreso il contatto."),
+                q("intermittenza", "La persona ha inviato brevi messaggi dopo lunghi intervalli senza contatti."),
+                q("intermittenza", "Quando ho smesso di cercarla, la persona è tornata a farsi sentire."),
+                q("intermittenza", "La persona ha mantenuto il contatto tramite reazioni occasionali ai miei contenuti online."),
+                q("intermittenza", "La persona ha avviato una conversazione e poi ha interrotto le risposte."),
+                q("segnali", "La persona ha espresso interesse romantico nei miei confronti."),
+                q("segnali", "La persona ha detto che avrebbe voluto incontrarmi presto."),
+                q("segnali", "La persona ha parlato della possibilità di una relazione tra noi."),
+                q("segnali", "La persona ha proposto attività future da fare insieme."),
+                q("segnali", "La persona ha usato espressioni affettuose dopo periodi di distanza."),
+                q("segnali", "La persona ha accennato a una maggiore vicinanza futura."),
+                q("incongruenza", "Le proposte di incontro della persona sono rimaste senza seguito."),
+                q("incongruenza", "La persona ha annullato incontri senza proporre una nuova occasione."),
+                q("incongruenza", "Le promesse di ricontatto della persona sono rimaste senza seguito."),
+                q("incongruenza", "Le attività future nominate dalla persona non sono state poi organizzate."),
+                q("incongruenza", "Le dichiarazioni di interesse non hanno portato a una maggiore continuità nei contatti."),
+                q("incongruenza", "La disponibilità annunciata è cambiata quando è arrivato il momento di incontrarsi."),
+                q("chiarezza", "Quando ho chiesto che significato avesse il rapporto, la persona ha risposto in modo vago."),
+                q("chiarezza", "La persona ha rimandato le conversazioni su cosa desiderava dal rapporto."),
+                q("chiarezza", "Alle domande sul proseguimento della frequentazione, la persona non ha dato una risposta definita."),
+                q("chiarezza", "La persona ha cambiato argomento quando ho parlato delle aspettative reciproche."),
+                q("chiarezza", "Gli accordi sul tipo di rapporto sono rimasti indefiniti dopo i nostri confronti."),
+                q("chiarezza", "Le mie richieste di decidere come proseguire sono rimaste senza risposta.")));
 
         String commonSafety = "Il risultato descrive soltanto le risposte riferite: non dimostra breadcrumbing, manipolazione, abuso, intenzioni, diagnosi o colpe, e comportamenti simili possono dipendere anche da aspettative non esplicitate, disponibilità variabile o difficoltà comunicative. "
                 + "Se l'incertezza ti provoca sofferenza o limita le tue scelte, puoi parlarne con un professionista o una persona fidata, senza affrontare direttamente la situazione se non è sicuro. "
@@ -3138,7 +3138,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedRelationshipWellbeingInformationTest() {
         String id = "relazione-dannosa-benessere";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -3182,30 +3182,30 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "impatto", "Impatto percepito sul benessere", 6);
 
         saveQuestions(id, List.of(
-                q("rispetto", "Il partner mi insultava o ridicolizzava durante un disaccordo."),
-                q("rispetto", "Il partner trattava i miei bisogni come poco importanti."),
-                q("rispetto", "Il partner mi umiliava davanti ad altre persone."),
-                q("rispetto", "Il partner usava una mia confidenza per ferirmi."),
-                q("confini", "Il partner insisteva dopo che avevo espresso un limite."),
-                q("confini", "Il partner si aspettava di poter leggere i miei messaggi o controllare i miei dispositivi."),
-                q("confini", "Il partner decideva come avrei dovuto usare il mio tempo."),
-                q("confini", "Il partner faceva pressione perché accettassi un contatto fisico o sessuale che non desideravo."),
-                q("controllo", "Il partner ostacolava i miei contatti con amici o familiari."),
-                q("controllo", "Il partner rendeva difficile dedicarmi al lavoro o allo studio."),
-                q("controllo", "Il partner controllava i miei spostamenti."),
-                q("controllo", "Il partner limitava il mio accesso al denaro o alle decisioni economiche che mi riguardavano."),
-                q("paura", "Modificavo ciò che dicevo per evitare una reazione del partner."),
-                q("paura", "Avevo paura di dire di no al partner."),
-                q("paura", "Il partner mi minacciava per influenzare una mia decisione."),
-                q("paura", "Dopo un disaccordo, la comunicazione riprendeva soltanto quando accettavo la posizione del partner."),
-                q("reciprocita", "Il partner attribuiva a me la responsabilità dei problemi condivisi."),
-                q("reciprocita", "Dopo avermi ferito, il partner evitava di riconoscere l'accaduto."),
-                q("reciprocita", "Le decisioni che riguardavano entrambi venivano prese senza coinvolgermi."),
-                q("reciprocita", "I compromessi richiedevano soprattutto mie rinunce."),
-                q("impatto", "Dopo le interazioni con il partner, dubitavo del mio giudizio."),
-                q("impatto", "Le tensioni della relazione occupavano la mia attenzione durante le attività quotidiane."),
-                q("impatto", "Rimanevo in allerta per anticipare una reazione del partner."),
-                q("impatto", "Rinunciavo ad attività importanti per gestire le tensioni della relazione.")));
+                q("rispetto", "Il partner mi ha insultato o ridicolizzato durante un disaccordo."),
+                q("rispetto", "Il partner ha trattato i miei bisogni come poco importanti."),
+                q("rispetto", "Il partner mi ha umiliato davanti ad altre persone."),
+                q("rispetto", "Il partner ha usato una mia confidenza per ferirmi."),
+                q("confini", "Il partner ha insistito dopo che avevo espresso un limite."),
+                q("confini", "Il partner ha dato per scontato di poter leggere i miei messaggi o controllare i miei dispositivi."),
+                q("confini", "Il partner ha deciso come avrei dovuto usare il mio tempo."),
+                q("confini", "Il partner ha fatto pressione perché accettassi un contatto fisico o sessuale che non desideravo."),
+                q("controllo", "Il partner ha ostacolato i miei contatti con amici o familiari."),
+                q("controllo", "Il partner ha reso difficile dedicarmi al lavoro o allo studio."),
+                q("controllo", "Il partner ha controllato i miei spostamenti."),
+                q("controllo", "Il partner ha limitato il mio accesso al denaro o alle decisioni economiche che mi riguardavano."),
+                q("paura", "Ho modificato ciò che dicevo per evitare una reazione del partner."),
+                q("paura", "Ho avuto paura di dire di no al partner."),
+                q("paura", "Il partner mi ha minacciato per influenzare una mia decisione."),
+                q("paura", "Dopo un disaccordo, la comunicazione è ripresa soltanto quando ho accettato la posizione del partner."),
+                q("reciprocita", "Il partner ha attribuito a me la responsabilità dei problemi condivisi."),
+                q("reciprocita", "Dopo avermi ferito, il partner ha evitato di riconoscere l'accaduto."),
+                q("reciprocita", "Le decisioni che riguardavano entrambi sono state prese senza coinvolgermi."),
+                q("reciprocita", "I compromessi hanno richiesto soprattutto mie rinunce."),
+                q("impatto", "Dopo le interazioni con il partner, ho dubitato del mio giudizio."),
+                q("impatto", "Le tensioni della relazione hanno occupato la mia attenzione durante le attività quotidiane."),
+                q("impatto", "Sono rimasto/a in allerta per anticipare una reazione del partner."),
+                q("impatto", "Ho rinunciato ad attività importanti per gestire le tensioni della relazione.")));
 
         String commonSafety = "Il risultato non stabilisce se la relazione sia tossica, abusante, sicura o da interrompere e non accerta fatti, intenzioni, colpe, diagnosi o rischio futuro. "
                 + "Minacce, coercizione, paura, violenza o confini violati meritano attenzione indipendentemente dalla media e non vengono compensati dalle parti positive del rapporto. "
@@ -3393,7 +3393,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedPerceivedEmotionalInvalidationTest() {
         String id = "invalidazione-emotiva-subita";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -3410,7 +3410,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 true, 35).withSeo(
                 "Le mie emozioni vengono invalidate? Test informativo | Spazio Test",
                 "Questionario informativo su minimizzazione, giudizio e rifiuto dell'espressione emotiva in una relazione specifica. 18 domande, senza diagnosi.")
-                .withResponseInstruction("Pensando all'ultimo mese e sempre alla stessa persona, quando le comunicavi un'emozione, con quale frequenza ti è capitata questa esperienza?"));
+                .withResponseInstruction("Pensando all'ultimo mese e sempre alla stessa persona, quando le hai comunicato un'emozione, con quale frequenza ti è capitata questa esperienza?"));
 
         saveReference(id, "The Perceived Invalidation of Emotion Scale (PIES) — Zielinski e Veilleux",
                 "https://doi.org/10.1037/pas0000584", 1);
@@ -3432,24 +3432,24 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "rifiuto", "Rifiuto dell'espressione emotiva", 3);
 
         saveQuestions(id, List.of(
-                q("minimizzazione", "La persona trattava come poco importante l'emozione che esprimevo."),
-                q("minimizzazione", "Mi invitava a superare in fretta ciò che provavo."),
-                q("minimizzazione", "Cambiava argomento mentre cercavo di spiegare un'emozione."),
-                q("minimizzazione", "Confrontava la mia situazione con quella di altri per ridimensionare ciò che provavo."),
-                q("minimizzazione", "Descriveva la mia reazione emotiva come eccessiva senza chiedermi cosa stesse accadendo."),
-                q("minimizzazione", "Rispondeva come se ciò che sentivo non meritasse di essere preso sul serio."),
-                q("giudizio", "Mi diceva che non avrei dovuto provare quell'emozione."),
-                q("giudizio", "Stabiliva quale emozione avrei dovuto sentire al suo posto."),
-                q("giudizio", "Giudicava il mio carattere a partire dall'emozione che avevo espresso."),
-                q("giudizio", "Ridicolizzava il modo in cui manifestavo un'emozione."),
-                q("giudizio", "Usava la mia emozione per rendere meno credibile ciò che dicevo."),
-                q("giudizio", "Presentava il mio bisogno di ascolto emotivo come un difetto personale."),
-                q("rifiuto", "Mostrava irritazione quando nominavo ciò che provavo."),
-                q("rifiuto", "Mi chiedeva di nascondere un'emozione per non metterla a disagio."),
-                q("rifiuto", "Interrompeva la conversazione appena esprimevo un'emozione difficile."),
-                q("rifiuto", "Riprendeva il dialogo soltanto dopo che smettevo di parlare di ciò che provavo."),
-                q("rifiuto", "Diventava distante dopo che avevo condiviso un'emozione."),
-                q("rifiuto", "Mi faceva capire che le mie emozioni erano un peso nel rapporto.")));
+                q("minimizzazione", "La persona ha trattato come poco importante l'emozione che ho espresso."),
+                q("minimizzazione", "Mi ha invitato a superare in fretta ciò che ho provato."),
+                q("minimizzazione", "Ha cambiato argomento durante il mio tentativo di spiegare un'emozione."),
+                q("minimizzazione", "Ha confrontato la mia situazione con quella di altri per ridimensionare ciò che ho provato."),
+                q("minimizzazione", "Ha descritto la mia reazione emotiva come eccessiva senza chiedermi cosa stesse accadendo."),
+                q("minimizzazione", "Ha risposto come se ciò che ho sentito non meritasse di essere preso sul serio."),
+                q("giudizio", "Mi ha detto che non avrei dovuto provare quell'emozione."),
+                q("giudizio", "Ha stabilito quale emozione avrei dovuto sentire al suo posto."),
+                q("giudizio", "Ha giudicato il mio carattere a partire dall'emozione che avevo espresso."),
+                q("giudizio", "Ha ridicolizzato il modo in cui ho manifestato un'emozione."),
+                q("giudizio", "Ha usato la mia emozione per rendere meno credibile ciò che ho detto."),
+                q("giudizio", "Ha presentato il mio bisogno di ascolto emotivo come un difetto personale."),
+                q("rifiuto", "Ha mostrato irritazione quando ho nominato ciò che ho provato."),
+                q("rifiuto", "Mi ha chiesto di nascondere un'emozione per non metterla a disagio."),
+                q("rifiuto", "Ha interrotto la conversazione appena ho espresso un'emozione difficile."),
+                q("rifiuto", "Ha ripreso il dialogo soltanto dopo che ho smesso di parlare di ciò che ho provato."),
+                q("rifiuto", "È diventata distante dopo che avevo condiviso un'emozione."),
+                q("rifiuto", "Mi ha fatto capire che le mie emozioni erano un peso nel rapporto.")));
 
         String commonLimits = "Il risultato descrive la tua percezione e non accerta invalidazione intenzionale, manipolazione, abuso, diagnosi, colpa o verità dei fatti. "
                 + "Riconoscere un'emozione non significa concordare con ogni interpretazione o accettare comportamenti dannosi; una pausa o un limite rispettoso non equivalgono automaticamente a invalidazione. "
@@ -3488,7 +3488,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedRelationalTriangulationTest() {
         String id = "triangolazione-subita";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -3528,26 +3528,26 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "confini", "Ambiguità e pressione legata a terze persone", 4);
 
         saveQuestions(id, List.of(
-                q("mediazione", "La persona affidava a qualcun altro messaggi che riguardavano direttamente il nostro rapporto."),
-                q("confronti", "La persona confrontava il mio aspetto con quello di un'altra persona."),
-                q("alleanze", "La persona mi diceva che altre persone erano d'accordo con la sua versione di un nostro problema."),
-                q("confini", "La persona mostrava particolare vicinanza con qualcun altro subito dopo un conflitto tra noi."),
-                q("mediazione", "Venivo a sapere da terzi questioni che la persona evitava di discutere con me."),
-                q("confronti", "La persona confrontava il mio modo di comportarmi con quello di un ex partner."),
-                q("alleanze", "Invitava qualcuno a prendere posizione in un conflitto tra noi."),
-                q("confini", "Manteneva poco chiari i confini con una terza persona anche dopo che avevo chiesto chiarezza."),
-                q("mediazione", "La persona chiedeva a qualcuno di intervenire in un disaccordo prima di cercare un confronto diretto con me."),
-                q("confronti", "Durante un disaccordo, citava qualcuno che avrebbe gestito meglio la situazione."),
-                q("alleanze", "Condivideva dettagli di un nostro disaccordo con terzi e usava le loro reazioni nel confronto con me."),
-                q("confini", "Lasciava aperta la possibilità di preferire un'altra persona al nostro rapporto."),
-                q("mediazione", "Una terza persona mi riferiva critiche o richieste provenienti dalla persona."),
-                q("confronti", "Richiamava l'attenzione ricevuta da altre persone mentre parlavamo del nostro rapporto."),
-                q("alleanze", "Mi metteva di fronte a una scelta tra sostenere la persona e sostenere qualcun altro."),
-                q("confini", "Richiamava la possibilità di rivolgersi a qualcun altro per farmi accettare una richiesta."),
-                q("mediazione", "Per chiarire un problema tra noi, dovevo passare attraverso un'altra persona."),
-                q("confronti", "Presentava una terza persona come esempio di ciò che avrei dovuto essere."),
-                q("alleanze", "Trattava l'opinione di una terza persona come prova che la mia posizione fosse sbagliata."),
-                q("confini", "La presenza di una terza persona rendeva più difficile per me esprimere bisogni o limiti.")));
+                q("mediazione", "La persona ha affidato a qualcun altro messaggi che riguardavano direttamente il nostro rapporto."),
+                q("confronti", "La persona ha confrontato il mio aspetto con quello di un'altra persona."),
+                q("alleanze", "La persona mi ha detto che altre persone erano d'accordo con la sua versione di un nostro problema."),
+                q("confini", "La persona ha mostrato particolare vicinanza con qualcun altro subito dopo un conflitto tra noi."),
+                q("mediazione", "Ho appreso da terzi questioni che la persona ha evitato di discutere con me."),
+                q("confronti", "La persona ha confrontato il mio modo di comportarmi con quello di un ex partner."),
+                q("alleanze", "Ha invitato qualcuno a prendere posizione in un conflitto tra noi."),
+                q("confini", "Ha mantenuto poco chiari i confini con una terza persona anche dopo che avevo chiesto chiarezza."),
+                q("mediazione", "La persona ha chiesto a qualcuno di intervenire in un disaccordo prima di cercare un confronto diretto con me."),
+                q("confronti", "Durante un disaccordo, ha citato qualcuno che avrebbe gestito meglio la situazione."),
+                q("alleanze", "Ha condiviso dettagli di un nostro disaccordo con terzi e ha usato le loro reazioni nel confronto con me."),
+                q("confini", "Ha lasciato aperta la possibilità di preferire un'altra persona al nostro rapporto."),
+                q("mediazione", "Una terza persona mi ha riferito critiche o richieste provenienti dalla persona."),
+                q("confronti", "Ha richiamato l'attenzione ricevuta da altre persone mentre parlavamo del nostro rapporto."),
+                q("alleanze", "Mi ha messo di fronte a una scelta tra sostenere la persona e sostenere qualcun altro."),
+                q("confini", "Ha richiamato la possibilità di rivolgersi a qualcun altro per farmi accettare una richiesta."),
+                q("mediazione", "Per chiarire un problema tra noi, ho dovuto passare attraverso un'altra persona."),
+                q("confronti", "Ha presentato una terza persona come esempio di ciò che avrei dovuto essere."),
+                q("alleanze", "Ha trattato l'opinione di una terza persona come prova che la mia posizione fosse sbagliata."),
+                q("confini", "La presenza di una terza persona ha reso più difficile per me esprimere bisogni o limiti.")));
 
         String commonLimits = "Il risultato descrive la tua percezione e non accerta triangolazione intenzionale, manipolazione, abuso, infedeltà, accordi violati, colpa o diagnosi. "
                 + "Chiedere supporto, avere amicizie, ricorrere a una mediazione concordata o vivere una non-monogamia consensuale non costituisce di per sé una dinamica problematica. "
@@ -3590,7 +3590,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAvoidantPersonalityTraitsInformationTest() {
         String id = "tratti-evitanti-personalita-adulti";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -3628,30 +3628,30 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "vicinanza", "Inibizione nella vicinanza e nell'apertura", 4);
 
         saveQuestions(id, List.of(
-                q("valutazione", "Prima di parlare in un gruppo, temevo che ciò che avrei detto sarebbe stato criticato."),
-                q("inadeguatezza", "In un gruppo, mi sentivo fuori posto."),
-                q("evitamento", "Rinunciavo a un'attività perché avrei dovuto conoscere persone nuove."),
-                q("vicinanza", "Condividevo poco di me finché non ero certo/a di piacere all'altra persona."),
-                q("valutazione", "Un'osservazione critica restava a lungo nei miei pensieri."),
-                q("inadeguatezza", "Mi sentivo meno capace socialmente delle persone intorno a me."),
-                q("evitamento", "Lasciavo passare un'opportunità perché comportava espormi al giudizio altrui."),
-                q("vicinanza", "Mi trattenevo dal mostrare affetto per timore di essere respinto/a."),
-                q("valutazione", "Interpretavo un'accoglienza poco calorosa come un possibile rifiuto."),
-                q("inadeguatezza", "Pensavo di avere poco da offrire in una relazione."),
-                q("evitamento", "Restavo ai margini di un gruppo finché non mi sentivo accettato/a."),
-                q("vicinanza", "Evitavo di chiedere vicinanza quando temevo una risposta negativa."),
-                q("valutazione", "Cercavo segnali che indicassero se sarei stato/a accettato/a."),
-                q("inadeguatezza", "Dubitavo di essere una persona interessante per gli altri."),
-                q("evitamento", "Rifiutavo inviti per timore di sentirmi inadeguato/a."),
-                q("vicinanza", "Mantenevo le distanze anche quando volevo conoscere meglio qualcuno."),
-                q("valutazione", "Mi sentivo molto esposto/a quando qualcuno valutava ciò che facevo."),
-                q("inadeguatezza", "Mi aspettavo che, conoscendomi meglio, gli altri avrebbero notato i miei difetti."),
-                q("evitamento", "Evitavo di esprimere un'opinione quando poteva essere criticata."),
-                q("vicinanza", "Durante conversazioni personali, controllavo molto ciò che dicevo per non essere giudicato/a."),
-                q("valutazione", "Dopo un errore sociale, temevo che gli altri mi giudicassero negativamente nel complesso."),
-                q("inadeguatezza", "Mi consideravo poco adatto/a a situazioni sociali nuove."),
-                q("evitamento", "Sceglievo attività familiari per ridurre il rischio di sentirmi in imbarazzo."),
-                q("vicinanza", "Aspettavo segnali chiari di accettazione prima di esprimere un bisogno personale.")));
+                q("valutazione", "Prima di parlare in un gruppo, ho avuto timore che ciò che avrei detto sarebbe stato criticato."),
+                q("inadeguatezza", "In un gruppo, mi sono sentito/a fuori posto."),
+                q("evitamento", "Ho rinunciato a un'attività perché avrei dovuto conoscere persone nuove."),
+                q("vicinanza", "Ho condiviso poco di me finché non mi sono sentito/a certo/a di piacere all'altra persona."),
+                q("valutazione", "Un'osservazione critica è rimasta a lungo nei miei pensieri."),
+                q("inadeguatezza", "Mi sono sentito/a meno capace socialmente delle persone intorno a me."),
+                q("evitamento", "Ho lasciato passare un'opportunità per evitare di espormi al giudizio altrui."),
+                q("vicinanza", "Mi sono trattenuto/a dal mostrare affetto per timore di essere respinto/a."),
+                q("valutazione", "Ho interpretato un'accoglienza poco calorosa come un possibile rifiuto."),
+                q("inadeguatezza", "Ho pensato di avere poco da offrire in una relazione."),
+                q("evitamento", "Sono rimasto/a ai margini di un gruppo finché non mi sono sentito/a accettato/a."),
+                q("vicinanza", "Ho evitato di chiedere vicinanza per timore di una risposta negativa."),
+                q("valutazione", "Ho cercato segnali che indicassero se sarei stato/a accettato/a."),
+                q("inadeguatezza", "Ho dubitato di essere una persona interessante per gli altri."),
+                q("evitamento", "Ho rifiutato inviti per timore di sentirmi inadeguato/a."),
+                q("vicinanza", "Ho mantenuto le distanze pur desiderando conoscere meglio qualcuno."),
+                q("valutazione", "Mi sono sentito/a molto esposto/a quando il mio comportamento è stato valutato da qualcuno."),
+                q("inadeguatezza", "Ho pensato che, conoscendomi meglio, gli altri avrebbero notato i miei difetti."),
+                q("evitamento", "Ho evitato di esprimere un'opinione per timore che fosse criticata."),
+                q("vicinanza", "Durante conversazioni personali, ho controllato molto ciò che ho detto per non essere giudicato/a."),
+                q("valutazione", "Dopo un errore sociale, ho avuto timore che gli altri mi giudicassero negativamente nel complesso."),
+                q("inadeguatezza", "Mi sono considerato/a poco adatto/a a situazioni sociali nuove."),
+                q("evitamento", "Ho scelto attività familiari per ridurre il rischio di sentirmi in imbarazzo."),
+                q("vicinanza", "Ho aspettato segnali chiari di accettazione prima di esprimere un bisogno personale.")));
 
         String commonLimits = "Il risultato è descrittivo e non accerta un disturbo di personalità, gravità, rischio, abilità sociali o valore personale; aree e soglie sono editoriali e non validate. "
                 + "Esperienze di ansia sociale, introversione, attaccamento, cultura, neurodivergenza, discriminazione, rifiuto, umore e condizioni ambientali possono produrre risposte simili, mentre un punteggio contenuto non esclude difficoltà circoscritte. "
@@ -3694,7 +3694,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedEmotionalAvailabilityInformationTest() {
         String id = "disponibilita-emotiva";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -3736,30 +3736,30 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "presenza", "Presenza e responsività nello scambio", 4);
 
         saveQuestions(id, List.of(
-                q("accesso", "Durante uno scambio importante, capivo con ritardo quale emozione stavo provando."),
-                q("condivisione", "Trattenevo un'emozione che avrei voluto condividere."),
-                q("vicinanza", "Prendevo distanza quando lo scambio diventava emotivamente più vicino."),
-                q("presenza", "Mi era difficile restare presente mentre la persona condivideva un'emozione intensa."),
-                q("accesso", "Faticavo a distinguere tra emozioni diverse presenti nello stesso momento."),
-                q("condivisione", "Davo una risposta generica quando mi veniva chiesto come stavo."),
-                q("vicinanza", "Provavo disagio nel mostrare una parte vulnerabile di me."),
-                q("presenza", "Cercavo di chiudere rapidamente una conversazione emotiva."),
-                q("accesso", "Mi era difficile trovare parole per ciò che sentivo."),
-                q("condivisione", "Rimandavo una conversazione emotiva che desideravo affrontare."),
-                q("vicinanza", "Evitavo di chiedere conforto alla persona scelta."),
-                q("presenza", "Passavo alle soluzioni prima di comprendere ciò che la persona voleva comunicare."),
-                q("accesso", "Avevo bisogno di molto tempo per capire cosa mi avesse toccato emotivamente."),
-                q("condivisione", "Parlavo di aspetti pratici quando desideravo comunicare un vissuto personale."),
-                q("vicinanza", "Riducevo il contatto dopo aver condiviso qualcosa di personale."),
-                q("presenza", "Mi distraevo mentre la persona parlava dei propri vissuti."),
-                q("accesso", "Durante un confronto, perdevo il contatto con ciò che provavo."),
-                q("condivisione", "Mi era difficile esprimere un bisogno emotivo alla persona scelta."),
-                q("vicinanza", "Mi irrigidivo quando la persona cercava maggiore vicinanza emotiva."),
-                q("presenza", "Dopo una pausa, faticavo a riprendere una conversazione emotiva."),
-                q("accesso", "Il mio stato emotivo mi appariva confuso quando provavo a raccontarlo."),
-                q("condivisione", "Mostravo poco del mio coinvolgimento affettivo rispetto a ciò che sentivo."),
-                q("vicinanza", "Mi era difficile affidarmi alla persona scelta nei momenti di bisogno."),
-                q("presenza", "Mi era difficile riconoscere l'emozione espressa dalla persona.")));
+                q("accesso", "Durante uno scambio importante, ho riconosciuto con ritardo l'emozione provata."),
+                q("condivisione", "Ho trattenuto un'emozione che avrei voluto condividere."),
+                q("vicinanza", "Ho preso distanza quando lo scambio è diventato emotivamente più vicino."),
+                q("presenza", "Ho avuto difficoltà a restare presente quando la persona ha condiviso un'emozione intensa."),
+                q("accesso", "Ho faticato a distinguere tra emozioni diverse presenti nello stesso momento."),
+                q("condivisione", "Ho dato una risposta generica quando mi è stato chiesto di descrivere il mio stato."),
+                q("vicinanza", "Ho provato disagio nel mostrare una parte vulnerabile di me."),
+                q("presenza", "Ho cercato di chiudere rapidamente una conversazione emotiva."),
+                q("accesso", "Ho avuto difficoltà a trovare parole per il mio vissuto."),
+                q("condivisione", "Ho rimandato una conversazione emotiva pur volendo affrontarla."),
+                q("vicinanza", "Ho evitato di chiedere conforto alla persona scelta."),
+                q("presenza", "Sono passato/a alle soluzioni prima di comprendere il messaggio della persona."),
+                q("accesso", "Ho avuto bisogno di molto tempo per capire cosa mi avesse toccato emotivamente."),
+                q("condivisione", "Ho parlato di aspetti pratici invece di comunicare un vissuto personale."),
+                q("vicinanza", "Ho ridotto il contatto dopo aver condiviso qualcosa di personale."),
+                q("presenza", "Mi sono distratto/a quando la persona ha parlato dei propri vissuti."),
+                q("accesso", "Durante un confronto, ho perso il contatto con il mio vissuto."),
+                q("condivisione", "Ho avuto difficoltà a esprimere un bisogno emotivo alla persona scelta."),
+                q("vicinanza", "Mi sono irrigidito/a quando la persona ha cercato maggiore vicinanza emotiva."),
+                q("presenza", "Dopo una pausa, ho faticato a riprendere una conversazione emotiva."),
+                q("accesso", "Il mio stato emotivo mi è apparso confuso nel tentativo di raccontarlo."),
+                q("condivisione", "Ho mostrato poco del mio coinvolgimento affettivo rispetto a ciò che ho sentito."),
+                q("vicinanza", "Ho avuto difficoltà ad affidarmi alla persona scelta nei momenti di bisogno."),
+                q("presenza", "Ho avuto difficoltà a riconoscere l'emozione espressa dalla persona.")));
 
         String commonLimits = "Il risultato descrive soltanto la tua prospettiva e non accerta cause, intenzioni, amore, capacità relazionale, qualità del rapporto o caratteristiche dell'altra persona; aree e soglie sono editoriali e non validate. "
                 + "Privacy, bisogno di tempo, stile comunicativo, cultura, neurodivergenza, stress, salute e sicurezza della relazione possono influire sulle risposte; porre confini o prendere distanza può essere appropriato quando mancano consenso o sicurezza. "
@@ -3802,7 +3802,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAlexithymiaInformationTest() {
         String id = "alessitimia";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -3843,24 +3843,24 @@ public class ContentDataInitializer implements ApplicationRunner {
         saveArea(id, "orientamento", "Attenzione e riflessione sul mondo interno", 3);
 
         saveQuestions(id, List.of(
-                q("riconoscimento", "Mi accorgevo che il mio stato era cambiato senza capire quale emozione fosse presente."),
-                q("descrizione", "Avevo chiaro che qualcosa mi aveva toccato, ma non trovavo le parole per descriverlo."),
-                q("orientamento", "Durante una decisione importante, consideravo i fatti senza soffermarmi su ciò che provavo."),
-                q("riconoscimento", "Durante una reazione intensa, mi era difficile distinguere un'emozione da una sensazione fisica."),
-                q("descrizione", "Usavo espressioni generiche quando parlavo di come mi sentivo."),
-                q("orientamento", "Dopo un evento significativo, passavo subito agli aspetti pratici senza osservare il mio stato emotivo."),
-                q("riconoscimento", "Riconoscevo ciò che provavo solo molto tempo dopo l'episodio."),
-                q("descrizione", "Interrompevo un racconto personale perché non riuscivo a spiegare il vissuto emotivo."),
-                q("orientamento", "Trovavo poco utile riflettere sulle emozioni provate durante la giornata."),
-                q("riconoscimento", "Emozioni diverse mi sembravano un unico stato confuso."),
-                q("descrizione", "Avevo bisogno di molto tempo per formulare una descrizione di ciò che provavo."),
-                q("orientamento", "Quando un'emozione non era chiara, spostavo l'attenzione su un'attività concreta."),
-                q("riconoscimento", "Capivo se un'esperienza era piacevole o spiacevole senza riuscire a identificare l'emozione."),
-                q("descrizione", "Descrivevo soprattutto i fatti quando volevo raccontare l'effetto emotivo di un episodio."),
-                q("orientamento", "Nel ripensare a un'esperienza, mi concentravo sulla sequenza degli eventi più che sul mio vissuto."),
-                q("riconoscimento", "Quando il mio umore cambiava, faticavo a riconoscere cosa stessi provando."),
-                q("descrizione", "Le parole che usavo non mi sembravano precise rispetto a ciò che provavo."),
-                q("orientamento", "Evitavo di dedicare tempo a capire il significato personale di un'emozione.")));
+                q("riconoscimento", "Mi sono accorto/a che il mio stato era cambiato senza capire quale emozione fosse presente."),
+                q("descrizione", "Ho capito che qualcosa mi aveva toccato, ma non ho trovato le parole per descriverlo."),
+                q("orientamento", "Durante una decisione importante, ho considerato i fatti senza soffermarmi sul mio vissuto."),
+                q("riconoscimento", "Durante una reazione intensa, ho avuto difficoltà a distinguere un'emozione da una sensazione fisica."),
+                q("descrizione", "Ho usato espressioni generiche quando ho parlato del mio stato emotivo."),
+                q("orientamento", "Dopo un evento significativo, sono passato/a subito agli aspetti pratici senza osservare il mio stato emotivo."),
+                q("riconoscimento", "Ho riconosciuto ciò che avevo provato solo molto tempo dopo l'episodio."),
+                q("descrizione", "Ho interrotto un racconto personale perché non sono riuscito/a a spiegare il vissuto emotivo."),
+                q("orientamento", "Ho trovato poco utile riflettere sulle emozioni provate durante la giornata."),
+                q("riconoscimento", "Emozioni diverse mi sono sembrate un unico stato confuso."),
+                q("descrizione", "Ho avuto bisogno di molto tempo per formulare una descrizione del mio vissuto."),
+                q("orientamento", "Quando non ho riconosciuto con chiarezza un'emozione, ho spostato l'attenzione su un'attività concreta."),
+                q("riconoscimento", "Ho riconosciuto un'esperienza come piacevole o spiacevole senza riuscire a identificare l'emozione."),
+                q("descrizione", "Ho descritto soprattutto i fatti nel tentativo di raccontare l'effetto emotivo di un episodio."),
+                q("orientamento", "Nel ripensare a un'esperienza, mi sono concentrato/a sulla sequenza degli eventi più che sul mio vissuto."),
+                q("riconoscimento", "Quando il mio umore è cambiato, ho faticato a riconoscere il mio stato emotivo."),
+                q("descrizione", "Le parole che ho usato non mi sono sembrate precise rispetto al mio vissuto."),
+                q("orientamento", "Ho evitato di dedicare tempo a capire il significato personale di un'emozione.")));
 
         String commonLimits = "Il risultato non diagnostica alessitimia, non misura quante emozioni provi e non stabilisce cause; item, aree e soglie sono originali, editoriali e non validati. "
                 + "Riservatezza, comunicazione sintetica, preferenza per attività concrete e bisogno di tempo non equivalgono da soli a una difficoltà. "

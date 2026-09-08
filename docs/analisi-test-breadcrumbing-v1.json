@@ -2,7 +2,7 @@
   "test": {
     "id": "breadcrumbing",
     "titolo": "Ho subito breadcrumbing?",
-    "versione": "1.0",
+    "versione": "1.1",
     "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
     "finalita": "Auto-osservazione informativa riferita a una relazione o frequentazione romantica specifica",
     "periodo_riferimento": "Ultimi 12 mesi della relazione o frequentazione scelta, o intero periodo se più breve",
@@ -10,7 +10,7 @@
     "punteggio_numerico_visibile": false,
     "disclaimer": "Questionario originale non validato e non normato. Non dimostra breadcrumbing, manipolazione, abuso o controllo e non attribuisce intenzioni, colpe o diagnosi alla persona indicata."
   },
-  "istruzione_risposta": "Pensando agli ultimi 12 mesi della relazione o frequentazione scelta, o all'intero periodo se più breve, con quale frequenza accadeva?",
+  "istruzione_risposta": "Pensando agli ultimi 12 mesi della relazione o frequentazione scelta, o all'intero periodo se più breve, con quale frequenza è accaduto?",
   "calcolo": {
     "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
     "domande": 24,

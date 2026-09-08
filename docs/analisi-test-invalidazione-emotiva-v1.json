@@ -2,7 +2,7 @@
   "test": {
     "id": "invalidazione-emotiva-subita",
     "titolo": "Le mie emozioni vengono invalidate?",
-    "versione": "1.0",
+    "versione": "1.1",
     "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
     "finalita": "Auto-osservazione informativa delle risposte ricevute da una persona significativa quando si condividono emozioni",
     "periodo_riferimento": "Ultimo mese",
@@ -11,7 +11,7 @@
     "punteggio_numerico_visibile": false,
     "disclaimer": "Questionario originale, non validato e non normato. Non accerta invalidazione, manipolazione, abuso, intenzioni, diagnosi o verità dei fatti."
   },
-  "istruzione_risposta": "Pensando all'ultimo mese e sempre alla stessa persona, quando le comunicavi un'emozione, con quale frequenza ti è capitata questa esperienza?",
+  "istruzione_risposta": "Pensando all'ultimo mese e sempre alla stessa persona, quando le hai comunicato un'emozione, con quale frequenza ti è capitata questa esperienza?",
   "calcolo": {
     "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
     "domande": 18,

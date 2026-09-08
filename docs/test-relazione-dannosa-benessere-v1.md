@@ -1,4 +1,4 @@
-# Relazione e benessere — specifica psicometrica v1.0
+# Relazione e benessere — specifica psicometrica v1.1
 
 ## Identità e uso previsto
 
@@ -6,7 +6,7 @@
 |---|---|
 | Identificativo | `relazione-dannosa-benessere` |
 | Titolo pubblico | La mia relazione sta danneggiando il mio benessere? |
-| Versione | `1.0` |
+| Versione | `1.1` |
 | Popolazione | adulti che compilano autonomamente il questionario in italiano |
 | Finalità | auto-osservazione informativa di esperienze, pressioni e conseguenze percepite in una relazione romantica specifica |
 | Periodo di riferimento | ultimi tre mesi della relazione attuale o gli ultimi tre mesi di una relazione terminata nell'ultimo anno; intero rapporto se durato meno |
@@ -61,30 +61,30 @@ Spiegazioni alternative o concorrenti includono stress esterno, malattia, diffic
 
 | Area | N. | Testo |
 |---|---:|---|
-| rispetto | 1 | Il partner mi insultava o ridicolizzava durante un disaccordo. |
-| rispetto | 2 | Il partner trattava i miei bisogni come poco importanti. |
-| rispetto | 3 | Il partner mi umiliava davanti ad altre persone. |
-| rispetto | 4 | Il partner usava una mia confidenza per ferirmi. |
-| confini | 1 | Il partner insisteva dopo che avevo espresso un limite. |
-| confini | 2 | Il partner si aspettava di poter leggere i miei messaggi o controllare i miei dispositivi. |
-| confini | 3 | Il partner decideva come avrei dovuto usare il mio tempo. |
-| confini | 4 | Il partner faceva pressione perché accettassi un contatto fisico o sessuale che non desideravo. |
-| controllo | 1 | Il partner ostacolava i miei contatti con amici o familiari. |
-| controllo | 2 | Il partner rendeva difficile dedicarmi al lavoro o allo studio. |
-| controllo | 3 | Il partner controllava i miei spostamenti. |
-| controllo | 4 | Il partner limitava il mio accesso al denaro o alle decisioni economiche che mi riguardavano. |
-| paura | 1 | Modificavo ciò che dicevo per evitare una reazione del partner. |
-| paura | 2 | Avevo paura di dire di no al partner. |
-| paura | 3 | Il partner mi minacciava per influenzare una mia decisione. |
-| paura | 4 | Dopo un disaccordo, la comunicazione riprendeva soltanto quando accettavo la posizione del partner. |
-| reciprocità | 1 | Il partner attribuiva a me la responsabilità dei problemi condivisi. |
-| reciprocità | 2 | Dopo avermi ferito, il partner evitava di riconoscere l'accaduto. |
-| reciprocità | 3 | Le decisioni che riguardavano entrambi venivano prese senza coinvolgermi. |
-| reciprocità | 4 | I compromessi richiedevano soprattutto mie rinunce. |
-| impatto | 1 | Dopo le interazioni con il partner, dubitavo del mio giudizio. |
-| impatto | 2 | Le tensioni della relazione occupavano la mia attenzione durante le attività quotidiane. |
-| impatto | 3 | Rimanevo in allerta per anticipare una reazione del partner. |
-| impatto | 4 | Rinunciavo ad attività importanti per gestire le tensioni della relazione. |
+| rispetto | 1 | Il partner mi ha insultato o ridicolizzato durante un disaccordo. |
+| rispetto | 2 | Il partner ha trattato i miei bisogni come poco importanti. |
+| rispetto | 3 | Il partner mi ha umiliato davanti ad altre persone. |
+| rispetto | 4 | Il partner ha usato una mia confidenza per ferirmi. |
+| confini | 1 | Il partner ha insistito dopo che avevo espresso un limite. |
+| confini | 2 | Il partner ha dato per scontato di poter leggere i miei messaggi o controllare i miei dispositivi. |
+| confini | 3 | Il partner ha deciso come avrei dovuto usare il mio tempo. |
+| confini | 4 | Il partner ha fatto pressione perché accettassi un contatto fisico o sessuale che non desideravo. |
+| controllo | 1 | Il partner ha ostacolato i miei contatti con amici o familiari. |
+| controllo | 2 | Il partner ha reso difficile dedicarmi al lavoro o allo studio. |
+| controllo | 3 | Il partner ha controllato i miei spostamenti. |
+| controllo | 4 | Il partner ha limitato il mio accesso al denaro o alle decisioni economiche che mi riguardavano. |
+| paura | 1 | Ho modificato ciò che dicevo per evitare una reazione del partner. |
+| paura | 2 | Ho avuto paura di dire di no al partner. |
+| paura | 3 | Il partner mi ha minacciato per influenzare una mia decisione. |
+| paura | 4 | Dopo un disaccordo, la comunicazione è ripresa soltanto quando ho accettato la posizione del partner. |
+| reciprocità | 1 | Il partner ha attribuito a me la responsabilità dei problemi condivisi. |
+| reciprocità | 2 | Dopo avermi ferito, il partner ha evitato di riconoscere l'accaduto. |
+| reciprocità | 3 | Le decisioni che riguardavano entrambi sono state prese senza coinvolgermi. |
+| reciprocità | 4 | I compromessi hanno richiesto soprattutto mie rinunce. |
+| impatto | 1 | Dopo le interazioni con il partner, ho dubitato del mio giudizio. |
+| impatto | 2 | Le tensioni della relazione hanno occupato la mia attenzione durante le attività quotidiane. |
+| impatto | 3 | Sono rimasto/a in allerta per anticipare una reazione del partner. |
+| impatto | 4 | Ho rinunciato ad attività importanti per gestire le tensioni della relazione. |
 
 Nel database gli item sono salvati per area e somministrati in ordine round-robin `rispetto → confini → controllo → paura → reciprocita → impatto`. Nel risultato le aree restano nell'ordine teorico sopra indicato.
 
@@ -144,7 +144,7 @@ Prima di usare termini come affidabile, valido o utile per lo screening servono:
 
 ## Test automatici richiesti
 
-- versione `1.0`, 24 item unici, sei aree da quattro e intercalazione;
+- versione `1.1`, 24 item unici, sei aree da quattro e intercalazione;
 - periodo, singola relazione, scala di frequenza e direzione uniforme;
 - profili `LOW/MIXED/FOCUSED/BROAD`, inclusi casi con quattro e cinque aree HIGH;
 - titoli specifici, sintesi di almeno due frasi e approfondimenti di almeno tre;

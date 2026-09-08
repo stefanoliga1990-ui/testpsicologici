@@ -1,4 +1,4 @@
-# Invalidazione emotiva percepita — specifica psicometrica v1.0
+# Invalidazione emotiva percepita — specifica psicometrica v1.1
 
 ## Identità e uso previsto
 
@@ -6,7 +6,7 @@
 |---|---|
 | Identificativo | `invalidazione-emotiva-subita` |
 | Titolo pubblico | Le mie emozioni vengono invalidate? |
-| Versione | `1.0` |
+| Versione | `1.1` |
 | Popolazione | adulti che compilano autonomamente il questionario in italiano |
 | Finalità | auto-osservazione informativa delle risposte ricevute quando si condividono emozioni con una persona significativa |
 | Periodo di riferimento | ultimo mese |
@@ -58,30 +58,30 @@ Una risposta poco sintonizzata può dipendere da incomprensione, fretta, stress,
 
 | Area | N. | Testo |
 |---|---:|---|
-| minimizzazione | 1 | La persona trattava come poco importante l'emozione che esprimevo. |
-| minimizzazione | 2 | Mi invitava a superare in fretta ciò che provavo. |
-| minimizzazione | 3 | Cambiava argomento mentre cercavo di spiegare un'emozione. |
-| minimizzazione | 4 | Confrontava la mia situazione con quella di altri per ridimensionare ciò che provavo. |
-| minimizzazione | 5 | Descriveva la mia reazione emotiva come eccessiva senza chiedermi cosa stesse accadendo. |
-| minimizzazione | 6 | Rispondeva come se ciò che sentivo non meritasse di essere preso sul serio. |
-| giudizio | 1 | Mi diceva che non avrei dovuto provare quell'emozione. |
-| giudizio | 2 | Stabiliva quale emozione avrei dovuto sentire al suo posto. |
-| giudizio | 3 | Giudicava il mio carattere a partire dall'emozione che avevo espresso. |
-| giudizio | 4 | Ridicolizzava il modo in cui manifestavo un'emozione. |
-| giudizio | 5 | Usava la mia emozione per rendere meno credibile ciò che dicevo. |
-| giudizio | 6 | Presentava il mio bisogno di ascolto emotivo come un difetto personale. |
-| rifiuto | 1 | Mostrava irritazione quando nominavo ciò che provavo. |
-| rifiuto | 2 | Mi chiedeva di nascondere un'emozione per non metterla a disagio. |
-| rifiuto | 3 | Interrompeva la conversazione appena esprimevo un'emozione difficile. |
-| rifiuto | 4 | Riprendeva il dialogo soltanto dopo che smettevo di parlare di ciò che provavo. |
-| rifiuto | 5 | Diventava distante dopo che avevo condiviso un'emozione. |
-| rifiuto | 6 | Mi faceva capire che le mie emozioni erano un peso nel rapporto. |
+| minimizzazione | 1 | La persona ha trattato come poco importante l'emozione che ho espresso. |
+| minimizzazione | 2 | Mi ha invitato a superare in fretta ciò che ho provato. |
+| minimizzazione | 3 | Ha cambiato argomento durante il mio tentativo di spiegare un'emozione. |
+| minimizzazione | 4 | Ha confrontato la mia situazione con quella di altri per ridimensionare ciò che ho provato. |
+| minimizzazione | 5 | Ha descritto la mia reazione emotiva come eccessiva senza chiedermi cosa stesse accadendo. |
+| minimizzazione | 6 | Ha risposto come se ciò che ho sentito non meritasse di essere preso sul serio. |
+| giudizio | 1 | Mi ha detto che non avrei dovuto provare quell'emozione. |
+| giudizio | 2 | Ha stabilito quale emozione avrei dovuto sentire al suo posto. |
+| giudizio | 3 | Ha giudicato il mio carattere a partire dall'emozione che avevo espresso. |
+| giudizio | 4 | Ha ridicolizzato il modo in cui ho manifestato un'emozione. |
+| giudizio | 5 | Ha usato la mia emozione per rendere meno credibile ciò che ho detto. |
+| giudizio | 6 | Ha presentato il mio bisogno di ascolto emotivo come un difetto personale. |
+| rifiuto | 1 | Ha mostrato irritazione quando ho nominato ciò che ho provato. |
+| rifiuto | 2 | Mi ha chiesto di nascondere un'emozione per non metterla a disagio. |
+| rifiuto | 3 | Ha interrotto la conversazione appena ho espresso un'emozione difficile. |
+| rifiuto | 4 | Ha ripreso il dialogo soltanto dopo che ho smesso di parlare di ciò che ho provato. |
+| rifiuto | 5 | È diventata distante dopo che avevo condiviso un'emozione. |
+| rifiuto | 6 | Mi ha fatto capire che le mie emozioni erano un peso nel rapporto. |
 
 Nel database gli item sono salvati per lente e somministrati in ordine round-robin `minimizzazione → giudizio → rifiuto`. Nel risultato le aree restano nell'ordine teorico sopra indicato.
 
 ## Istruzione e scala
 
-Domanda mostrata: **“Pensando all'ultimo mese e sempre alla stessa persona, quando le comunicavi un'emozione, con quale frequenza ti è capitata questa esperienza?”**
+Domanda mostrata: **“Pensando all'ultimo mese e sempre alla stessa persona, quando le hai comunicato un'emozione, con quale frequenza ti è capitata questa esperienza?”**
 
 Le categorie descrivono frequenza percepita. “Mai” indica che l'esperienza formulata non è avvenuta nelle occasioni pertinenti; non deve trasformare l'assenza di occasioni in prova di ascolto. Se la persona non ha condiviso emozioni o i contatti sono stati molto limitati, il questionario va letto con particolare cautela.
 
@@ -144,7 +144,7 @@ Prima di definire il questionario affidabile o valido servono: revisione di psic
 
 ## Test automatici richiesti
 
-- versione `1.0`, 18 item unici, tre aree da sei e intercalazione;
+- versione `1.1`, 18 item unici, tre aree da sei e intercalazione;
 - ultimo mese, una persona, occasioni di condivisione, scala di frequenza e direzione uniforme;
 - profili `LOW/MIXED/FOCUSED/BROAD`, inclusi uno e due ambiti `HIGH`;
 - titoli specifici, sintesi di almeno due frasi e approfondimenti di almeno tre;

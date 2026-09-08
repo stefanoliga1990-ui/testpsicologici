@@ -57,6 +57,12 @@ Non esistono però dati di somministrazione o studi sullo specifico strumento. N
 | Limerenza — focalizzazione; reciprocità; idealizzazione; azioni/confini/impatto | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali si riferiscono agli ultimi tre mesi e alla stessa persona, distinguendo pensieri, interpretazioni, azioni e conseguenze. Le quattro aree sono editoriali e non riproducono i due fattori LQ-11; il risultato non diagnostica limerenza, OCD o dipendenza, non accerta reciprocità o consenso e mantiene confini, 112 e 1522 indipendenti dal profilo. |
 | Parentificazione — responsabilità pratiche; accudimento emotivo; inversione dei ruoli; spazio per i bisogni | Nuova specifica v1.0 definita prima del codice. Ventiquattro item originali chiedono agli adulti di ripensare al periodo prima dei 18 anni con genitori o caregiver. Le quattro aree sono editoriali e non copiano PQ, PI o FRS-A; il risultato non diagnostica parentificazione o trauma, non attribuisce colpe, non deduce cause adulte e distingue responsabilità gravose da aiuto familiare adeguato, sostenuto e riconosciuto. |
 
+## Revisione dei tempi verbali — 2026-09-08
+
+L'intero catalogo è stato verificato distinguendo le finestre recenti dai periodi storici chiusi. Negli item riferiti all'ultimo mese o agli ultimi 3, 6 o 12 mesi, i predicati principali all'imperfetto sono stati portati al passato prossimo, mantenendo invariati indicatori, aree, scala e scoring. La modifica riguarda `gaslighting`, `breadcrumbing`, `relazione-dannosa-benessere`, `invalidazione-emotiva-subita`, `triangolazione-subita`, `tratti-evitanti-personalita-adulti`, `disponibilita-emotiva` e `alessitimia`, tutti incrementati dalla versione `1.0` alla `1.1`.
+
+L'imperfetto è stato conservato dove descrive correttamente una condizione di sfondo o un rapporto di contemporaneità interno alla frase, nonché nei questionari che chiedono di ricostruire abitudini entro un periodo storico concluso, come l'infanzia nella parentificazione o una fase relazionale iniziale già terminata. Questa scelta evita una sostituzione meccanica che cambierebbe il valore aspettuale o il significato dell'item.
+
 ## Scoring e interpretazione risultanti
 
 - Ogni risposta vale 1–5 e ogni item ha lo stesso peso.

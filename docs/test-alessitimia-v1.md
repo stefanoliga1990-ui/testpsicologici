@@ -1,10 +1,10 @@
-# Specifica psicometrica — Esperienze associate all'alessitimia v1.0
+# Specifica psicometrica — Esperienze associate all'alessitimia v1.1
 
 ## Identità e uso previsto
 
 - **ID:** `alessitimia`
 - **Titolo:** Alessitimia, vivo senza emozioni?
-- **Versione:** 1.0
+- **Versione:** 1.1
 - **Popolazione:** adulti che compilano autonomamente il questionario in italiano.
 - **Uso previsto:** auto-osservazione informativa di difficoltà recenti nel riconoscere, distinguere e descrivere il proprio vissuto emotivo e della tendenza a concentrarsi sugli aspetti esterni degli eventi.
 - **Periodo di riferimento:** ultimi tre mesi.
@@ -38,24 +38,24 @@ Vanno mantenute esplicite queste distinzioni:
 
 | Posizione | Area | Item originale | Indicatore singolo |
 |---:|---|---|---|
-| 1 | riconoscimento | Mi accorgevo che il mio stato era cambiato senza capire quale emozione fosse presente. | identificazione del cambiamento |
-| 2 | descrizione | Avevo chiaro che qualcosa mi aveva toccato, ma non trovavo le parole per descriverlo. | accesso alle parole |
-| 3 | orientamento | Durante una decisione importante, consideravo i fatti senza soffermarmi su ciò che provavo. | attenzione al vissuto nelle decisioni |
-| 4 | riconoscimento | Durante una reazione intensa, mi era difficile distinguere un'emozione da una sensazione fisica. | distinzione emozione-corpo |
-| 5 | descrizione | Usavo espressioni generiche quando parlavo di come mi sentivo. | precisione del linguaggio emotivo |
-| 6 | orientamento | Dopo un evento significativo, passavo subito agli aspetti pratici senza osservare il mio stato emotivo. | passaggio al piano pratico |
-| 7 | riconoscimento | Riconoscevo ciò che provavo solo molto tempo dopo l'episodio. | latenza del riconoscimento |
-| 8 | descrizione | Interrompevo un racconto personale perché non riuscivo a spiegare il vissuto emotivo. | continuità della descrizione |
-| 9 | orientamento | Trovavo poco utile riflettere sulle emozioni provate durante la giornata. | valore attribuito alla riflessione |
-| 10 | riconoscimento | Emozioni diverse mi sembravano un unico stato confuso. | differenziazione emotiva |
-| 11 | descrizione | Avevo bisogno di molto tempo per formulare una descrizione di ciò che provavo. | tempo per verbalizzare |
-| 12 | orientamento | Quando un'emozione non era chiara, spostavo l'attenzione su un'attività concreta. | spostamento dell'attenzione |
-| 13 | riconoscimento | Capivo se un'esperienza era piacevole o spiacevole senza riuscire a identificare l'emozione. | specificità del riconoscimento |
-| 14 | descrizione | Descrivevo soprattutto i fatti quando volevo raccontare l'effetto emotivo di un episodio. | racconto fattuale del vissuto |
-| 15 | orientamento | Nel ripensare a un'esperienza, mi concentravo sulla sequenza degli eventi più che sul mio vissuto. | prevalenza dei dettagli esterni |
-| 16 | riconoscimento | Quando il mio umore cambiava, faticavo a riconoscere cosa stessi provando. | riconoscimento del tono emotivo |
-| 17 | descrizione | Le parole che usavo non mi sembravano precise rispetto a ciò che provavo. | corrispondenza esperienza-parole |
-| 18 | orientamento | Evitavo di dedicare tempo a capire il significato personale di un'emozione. | approfondimento del significato |
+| 1 | riconoscimento | Mi sono accorto/a che il mio stato era cambiato senza capire quale emozione fosse presente. | identificazione del cambiamento |
+| 2 | descrizione | Ho capito che qualcosa mi aveva toccato, ma non ho trovato le parole per descriverlo. | accesso alle parole |
+| 3 | orientamento | Durante una decisione importante, ho considerato i fatti senza soffermarmi sul mio vissuto. | attenzione al vissuto nelle decisioni |
+| 4 | riconoscimento | Durante una reazione intensa, ho avuto difficoltà a distinguere un'emozione da una sensazione fisica. | distinzione emozione-corpo |
+| 5 | descrizione | Ho usato espressioni generiche quando ho parlato del mio stato emotivo. | precisione del linguaggio emotivo |
+| 6 | orientamento | Dopo un evento significativo, sono passato/a subito agli aspetti pratici senza osservare il mio stato emotivo. | passaggio al piano pratico |
+| 7 | riconoscimento | Ho riconosciuto ciò che avevo provato solo molto tempo dopo l'episodio. | latenza del riconoscimento |
+| 8 | descrizione | Ho interrotto un racconto personale perché non sono riuscito/a a spiegare il vissuto emotivo. | continuità della descrizione |
+| 9 | orientamento | Ho trovato poco utile riflettere sulle emozioni provate durante la giornata. | valore attribuito alla riflessione |
+| 10 | riconoscimento | Emozioni diverse mi sono sembrate un unico stato confuso. | differenziazione emotiva |
+| 11 | descrizione | Ho avuto bisogno di molto tempo per formulare una descrizione del mio vissuto. | tempo per verbalizzare |
+| 12 | orientamento | Quando non ho riconosciuto con chiarezza un'emozione, ho spostato l'attenzione su un'attività concreta. | spostamento dell'attenzione |
+| 13 | riconoscimento | Ho riconosciuto un'esperienza come piacevole o spiacevole senza riuscire a identificare l'emozione. | specificità del riconoscimento |
+| 14 | descrizione | Ho descritto soprattutto i fatti nel tentativo di raccontare l'effetto emotivo di un episodio. | racconto fattuale del vissuto |
+| 15 | orientamento | Nel ripensare a un'esperienza, mi sono concentrato/a sulla sequenza degli eventi più che sul mio vissuto. | prevalenza dei dettagli esterni |
+| 16 | riconoscimento | Quando il mio umore è cambiato, ho faticato a riconoscere il mio stato emotivo. | riconoscimento del tono emotivo |
+| 17 | descrizione | Le parole che ho usato non mi sono sembrate precise rispetto al mio vissuto. | corrispondenza esperienza-parole |
+| 18 | orientamento | Ho evitato di dedicare tempo a capire il significato personale di un'emozione. | approfondimento del significato |
 
 ### Ordine teorico delle aree
 

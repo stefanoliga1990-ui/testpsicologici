@@ -1,10 +1,10 @@
-# Specifica psicometrica — Difficoltà di disponibilità emotiva nella relazione v1.0
+# Specifica psicometrica — Difficoltà di disponibilità emotiva nella relazione v1.1
 
 ## Identità e uso previsto
 
 - **ID:** `disponibilita-emotiva`
 - **Titolo:** Quanto mi è difficile essere emotivamente disponibile in una relazione?
-- **Versione:** 1.0
+- **Versione:** 1.1
 - **Popolazione:** adulti che compilano autonomamente il questionario in italiano e possono riferirsi a una relazione sentimentale attuale o recente.
 - **Uso previsto:** auto-osservazione informativa delle difficoltà sperimentate nel partecipare agli scambi emotivi con una persona specifica.
 - **Periodo di riferimento:** ultimi tre mesi.
@@ -39,30 +39,30 @@ Vanno mantenute esplicite queste distinzioni:
 
 | Posizione | Area | Item originale | Indicatore singolo |
 |---:|---|---|---|
-| 1 | accesso | Durante uno scambio importante, capivo con ritardo quale emozione stavo provando. | riconoscimento tardivo |
-| 2 | condivisione | Trattenevo un'emozione che avrei voluto condividere. | emozione trattenuta |
-| 3 | vicinanza | Prendevo distanza quando lo scambio diventava emotivamente più vicino. | distanza dalla vicinanza |
-| 4 | presenza | Mi era difficile restare presente mentre la persona condivideva un'emozione intensa. | permanenza nello scambio |
-| 5 | accesso | Faticavo a distinguere tra emozioni diverse presenti nello stesso momento. | differenziazione emotiva |
-| 6 | condivisione | Davo una risposta generica quando mi veniva chiesto come stavo. | risposta emotiva generica |
-| 7 | vicinanza | Provavo disagio nel mostrare una parte vulnerabile di me. | vulnerabilità |
-| 8 | presenza | Cercavo di chiudere rapidamente una conversazione emotiva. | chiusura dello scambio |
-| 9 | accesso | Mi era difficile trovare parole per ciò che sentivo. | verbalizzazione del vissuto |
-| 10 | condivisione | Rimandavo una conversazione emotiva che desideravo affrontare. | rinvio della condivisione |
-| 11 | vicinanza | Evitavo di chiedere conforto alla persona scelta. | richiesta di conforto |
-| 12 | presenza | Passavo alle soluzioni prima di comprendere ciò che la persona voleva comunicare. | ascolto prima della soluzione |
-| 13 | accesso | Avevo bisogno di molto tempo per capire cosa mi avesse toccato emotivamente. | elaborazione del vissuto |
-| 14 | condivisione | Parlavo di aspetti pratici quando desideravo comunicare un vissuto personale. | spostamento sul piano pratico |
-| 15 | vicinanza | Riducevo il contatto dopo aver condiviso qualcosa di personale. | distanza dopo l'apertura |
-| 16 | presenza | Mi distraevo mentre la persona parlava dei propri vissuti. | attenzione allo scambio |
-| 17 | accesso | Durante un confronto, perdevo il contatto con ciò che provavo. | contatto con il vissuto |
-| 18 | condivisione | Mi era difficile esprimere un bisogno emotivo alla persona scelta. | espressione del bisogno |
-| 19 | vicinanza | Mi irrigidivo quando la persona cercava maggiore vicinanza emotiva. | tensione nella vicinanza |
-| 20 | presenza | Dopo una pausa, faticavo a riprendere una conversazione emotiva. | ritorno allo scambio |
-| 21 | accesso | Il mio stato emotivo mi appariva confuso quando provavo a raccontarlo. | chiarezza nel racconto |
-| 22 | condivisione | Mostravo poco del mio coinvolgimento affettivo rispetto a ciò che sentivo. | espressione del coinvolgimento |
-| 23 | vicinanza | Mi era difficile affidarmi alla persona scelta nei momenti di bisogno. | affidamento relazionale |
-| 24 | presenza | Mi era difficile riconoscere l'emozione espressa dalla persona. | riconoscimento dell'emozione altrui |
+| 1 | accesso | Durante uno scambio importante, ho riconosciuto con ritardo l'emozione provata. | riconoscimento tardivo |
+| 2 | condivisione | Ho trattenuto un'emozione che avrei voluto condividere. | emozione trattenuta |
+| 3 | vicinanza | Ho preso distanza quando lo scambio è diventato emotivamente più vicino. | distanza dalla vicinanza |
+| 4 | presenza | Ho avuto difficoltà a restare presente quando la persona ha condiviso un'emozione intensa. | permanenza nello scambio |
+| 5 | accesso | Ho faticato a distinguere tra emozioni diverse presenti nello stesso momento. | differenziazione emotiva |
+| 6 | condivisione | Ho dato una risposta generica quando mi è stato chiesto di descrivere il mio stato. | risposta emotiva generica |
+| 7 | vicinanza | Ho provato disagio nel mostrare una parte vulnerabile di me. | vulnerabilità |
+| 8 | presenza | Ho cercato di chiudere rapidamente una conversazione emotiva. | chiusura dello scambio |
+| 9 | accesso | Ho avuto difficoltà a trovare parole per il mio vissuto. | verbalizzazione del vissuto |
+| 10 | condivisione | Ho rimandato una conversazione emotiva pur volendo affrontarla. | rinvio della condivisione |
+| 11 | vicinanza | Ho evitato di chiedere conforto alla persona scelta. | richiesta di conforto |
+| 12 | presenza | Sono passato/a alle soluzioni prima di comprendere il messaggio della persona. | ascolto prima della soluzione |
+| 13 | accesso | Ho avuto bisogno di molto tempo per capire cosa mi avesse toccato emotivamente. | elaborazione del vissuto |
+| 14 | condivisione | Ho parlato di aspetti pratici invece di comunicare un vissuto personale. | spostamento sul piano pratico |
+| 15 | vicinanza | Ho ridotto il contatto dopo aver condiviso qualcosa di personale. | distanza dopo l'apertura |
+| 16 | presenza | Mi sono distratto/a quando la persona ha parlato dei propri vissuti. | attenzione allo scambio |
+| 17 | accesso | Durante un confronto, ho perso il contatto con il mio vissuto. | contatto con il vissuto |
+| 18 | condivisione | Ho avuto difficoltà a esprimere un bisogno emotivo alla persona scelta. | espressione del bisogno |
+| 19 | vicinanza | Mi sono irrigidito/a quando la persona ha cercato maggiore vicinanza emotiva. | tensione nella vicinanza |
+| 20 | presenza | Dopo una pausa, ho faticato a riprendere una conversazione emotiva. | ritorno allo scambio |
+| 21 | accesso | Il mio stato emotivo mi è apparso confuso nel tentativo di raccontarlo. | chiarezza nel racconto |
+| 22 | condivisione | Ho mostrato poco del mio coinvolgimento affettivo rispetto a ciò che ho sentito. | espressione del coinvolgimento |
+| 23 | vicinanza | Ho avuto difficoltà ad affidarmi alla persona scelta nei momenti di bisogno. | affidamento relazionale |
+| 24 | presenza | Ho avuto difficoltà a riconoscere l'emozione espressa dalla persona. | riconoscimento dell'emozione altrui |
 
 ### Ordine teorico delle aree
 

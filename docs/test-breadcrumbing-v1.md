@@ -1,4 +1,4 @@
-# Breadcrumbing — specifica psicometrica v1.0
+# Breadcrumbing — specifica psicometrica v1.1
 
 ## Identità e uso previsto
 
@@ -6,7 +6,7 @@
 |---|---|
 | Identificativo | `breadcrumbing` |
 | Titolo pubblico | Ho subito breadcrumbing? |
-| Versione | `1.0` |
+| Versione | `1.1` |
 | Popolazione | adulti che compilano autonomamente il questionario in italiano |
 | Finalità | auto-osservazione informativa di dinamiche riferite a una relazione o frequentazione romantica specifica, attuale o passata |
 | Periodo di riferimento | ultimi 12 mesi della relazione o frequentazione scelta, oppure l'intero periodo se più breve |
@@ -57,36 +57,36 @@ Spiegazioni alternative o concorrenti comprendono aspettative non esplicitate, u
 
 | Area | N. | Testo |
 |---|---:|---|
-| intermittenza | 1 | La persona alternava periodi di contatto frequente a periodi di silenzio. |
-| intermittenza | 2 | Dopo essersi allontanata, la persona riprendeva il contatto. |
-| intermittenza | 3 | La persona inviava brevi messaggi dopo lunghi intervalli senza contatti. |
-| intermittenza | 4 | Quando smettevo di cercarla, la persona tornava a farsi sentire. |
-| intermittenza | 5 | La persona manteneva il contatto tramite reazioni occasionali ai miei contenuti online. |
-| intermittenza | 6 | La persona avviava una conversazione e poi interrompeva le risposte. |
-| segnali | 1 | La persona esprimeva interesse romantico nei miei confronti. |
-| segnali | 2 | La persona diceva che avrebbe voluto incontrarmi presto. |
-| segnali | 3 | La persona parlava della possibilità di una relazione tra noi. |
-| segnali | 4 | La persona proponeva attività future da fare insieme. |
-| segnali | 5 | La persona usava espressioni affettuose dopo periodi di distanza. |
-| segnali | 6 | La persona accennava a una maggiore vicinanza futura. |
-| incongruenza | 1 | Le proposte di incontro della persona rimanevano senza seguito. |
-| incongruenza | 2 | La persona annullava incontri senza proporre una nuova occasione. |
-| incongruenza | 3 | Le promesse di ricontatto della persona rimanevano senza seguito. |
-| incongruenza | 4 | Le attività future nominate dalla persona non venivano poi organizzate. |
-| incongruenza | 5 | Le dichiarazioni di interesse non portavano a una maggiore continuità nei contatti. |
-| incongruenza | 6 | La disponibilità annunciata cambiava quando arrivava il momento di incontrarsi. |
-| chiarezza | 1 | Quando chiedevo che significato avesse il rapporto, la persona rispondeva in modo vago. |
-| chiarezza | 2 | La persona rimandava le conversazioni su cosa desiderava dal rapporto. |
-| chiarezza | 3 | Alle domande sul proseguimento della frequentazione, la persona non dava una risposta definita. |
-| chiarezza | 4 | La persona cambiava argomento quando parlavo delle aspettative reciproche. |
-| chiarezza | 5 | Gli accordi sul tipo di rapporto restavano indefiniti dopo i nostri confronti. |
-| chiarezza | 6 | Le mie richieste di decidere come proseguire rimanevano senza risposta. |
+| intermittenza | 1 | La persona ha alternato periodi di contatto frequente a periodi di silenzio. |
+| intermittenza | 2 | Dopo essersi allontanata, la persona ha ripreso il contatto. |
+| intermittenza | 3 | La persona ha inviato brevi messaggi dopo lunghi intervalli senza contatti. |
+| intermittenza | 4 | Quando ho smesso di cercarla, la persona è tornata a farsi sentire. |
+| intermittenza | 5 | La persona ha mantenuto il contatto tramite reazioni occasionali ai miei contenuti online. |
+| intermittenza | 6 | La persona ha avviato una conversazione e poi ha interrotto le risposte. |
+| segnali | 1 | La persona ha espresso interesse romantico nei miei confronti. |
+| segnali | 2 | La persona ha detto che avrebbe voluto incontrarmi presto. |
+| segnali | 3 | La persona ha parlato della possibilità di una relazione tra noi. |
+| segnali | 4 | La persona ha proposto attività future da fare insieme. |
+| segnali | 5 | La persona ha usato espressioni affettuose dopo periodi di distanza. |
+| segnali | 6 | La persona ha accennato a una maggiore vicinanza futura. |
+| incongruenza | 1 | Le proposte di incontro della persona sono rimaste senza seguito. |
+| incongruenza | 2 | La persona ha annullato incontri senza proporre una nuova occasione. |
+| incongruenza | 3 | Le promesse di ricontatto della persona sono rimaste senza seguito. |
+| incongruenza | 4 | Le attività future nominate dalla persona non sono state poi organizzate. |
+| incongruenza | 5 | Le dichiarazioni di interesse non hanno portato a una maggiore continuità nei contatti. |
+| incongruenza | 6 | La disponibilità annunciata è cambiata quando è arrivato il momento di incontrarsi. |
+| chiarezza | 1 | Quando ho chiesto che significato avesse il rapporto, la persona ha risposto in modo vago. |
+| chiarezza | 2 | La persona ha rimandato le conversazioni su cosa desiderava dal rapporto. |
+| chiarezza | 3 | Alle domande sul proseguimento della frequentazione, la persona non ha dato una risposta definita. |
+| chiarezza | 4 | La persona ha cambiato argomento quando ho parlato delle aspettative reciproche. |
+| chiarezza | 5 | Gli accordi sul tipo di rapporto sono rimasti indefiniti dopo i nostri confronti. |
+| chiarezza | 6 | Le mie richieste di decidere come proseguire sono rimaste senza risposta. |
 
 Nel database gli item vengono salvati per area e somministrati intercalando ciclicamente `intermittenza → segnali → incongruenza → chiarezza`. Nel risultato le aree restano nell'ordine teorico, senza essere riordinate per differenze minime.
 
 ## Istruzione e scala di risposta
 
-Domanda mostrata: **“Pensando agli ultimi 12 mesi della relazione o frequentazione scelta, o all'intero periodo se più breve, con quale frequenza accadeva?”**
+Domanda mostrata: **“Pensando agli ultimi 12 mesi della relazione o frequentazione scelta, o all'intero periodo se più breve, con quale frequenza è accaduto?”**
 
 Chi compila sceglie una sola relazione o frequentazione romantica e pensa sempre alla stessa persona. Le cinque ancore descrivono frequenza percepita, non accordo con l'etichetta breadcrumbing. Se un'esperienza non è avvenuta o non era applicabile, la risposta è “Mai”.
 
@@ -151,7 +151,7 @@ Prima di descrivere lo strumento come affidabile o valido servono revisione di e
 
 ## Test automatici richiesti
 
-- versione `1.0`, 24 item unici, quattro aree da sei item e ordine intercalato;
+- versione `1.1`, 24 item unici, quattro aree da sei item e ordine intercalato;
 - istruzione su una sola relazione, finestra di 12 mesi, cinque ancore e direzione uniforme;
 - profili `LOW/MIXED/FOCUSED/BROAD`, casi limite, testi minimi e titoli specifici;
 - barre, PDF, guida, categoria, correlati e sitemap;
