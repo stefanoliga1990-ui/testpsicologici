@@ -87,7 +87,7 @@
                 <p class="recommended-reading-authors" th:text="${reading.authors}">Autore</p>
                 <p th:text="${reading.description}">Descrizione.</p>
                 <p class="recommended-reading-limit" th:text="${reading.limit}">Limite.</p>
-                <a class="button button-secondary" th:href="${reading.amazonUrl}" target="_blank" rel="noopener noreferrer sponsored">Vedi su Amazon <span aria-hidden="true">↗</span></a>
+                <a class="button amazon-button" th:href="${reading.amazonUrl}" target="_blank" rel="noopener noreferrer sponsored">Vedi su Amazon <span aria-hidden="true">↗</span></a>
             </article>
         </div>
         <p class="affiliate-disclosure">Link affiliati Amazon. In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.</p>
