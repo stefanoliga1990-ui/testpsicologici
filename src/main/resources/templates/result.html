@@ -76,7 +76,6 @@
             <a class="button button-secondary" th:href="@{/}">Torna alla home</a>
         </div>
     </section>
-    <th:block th:replace="~{fragments/related-content :: tests(${relatedTests}, ${topicCluster}, 'result-related-content')}"></th:block>
     <section class="recommended-readings" aria-labelledby="recommended-readings-title-fallback"
              th:if="${!#lists.isEmpty(recommendedReadings)}">
         <p class="eyebrow">Letture facoltative</p>
@@ -93,6 +92,7 @@
         </div>
         <p class="affiliate-disclosure">Link affiliati Amazon. In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.</p>
     </section>
+    <th:block th:replace="~{fragments/related-content :: tests(${relatedTests}, ${topicCluster}, 'result-related-content')}"></th:block>
     <section class="support-card" aria-labelledby="support-card-title-fallback" th:if="${contributionsEnabled}">
         <div class="support-card-copy">
             <p class="eyebrow">Sostieni Spazio Test</p>

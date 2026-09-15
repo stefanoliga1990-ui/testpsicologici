@@ -328,7 +328,7 @@ class PageRenderingTest {
 
     @Test
     void autismGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
-        mockMvc.perform(get("/approfondimenti/autismo-adulti"))
+        MvcResult mvcResult = mockMvc.perform(get("/approfondimenti/autismo-adulti"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString(
                         "<title>Autismo negli adulti: caratteristiche e segnali | Spazio Test</title>")))
@@ -351,12 +351,19 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/approfondimenti/adhd-adulti\"")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/intelligenza-linguistica\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
-                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))))
+                .andReturn();
+
+        String html = mvcResult.getResponse().getContentAsString();
+        int readingsPosition = html.indexOf("<section class=\"recommended-readings\"");
+        int questionnairePosition = html.indexOf("<aside class=\"guide-test-cta\">");
+        assertThat(readingsPosition).isGreaterThanOrEqualTo(0);
+        assertThat(questionnairePosition).isGreaterThan(readingsPosition);
     }
 
     @Test
     void autismResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
-        mockMvc.perform(get("/test/tratti-autistici-adulti/risultato")
+        MvcResult mvcResult = mockMvc.perform(get("/test/tratti-autistici-adulti/risultato")
                         .session(completedAttempt("tratti-autistici-adulti", 3)))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Letture facoltative")))
@@ -365,7 +372,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("tag=spaziotest-21")))
                 .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
                 .andExpect(content().string(containsString(
-                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")))
+                .andReturn();
+
+        String html = mvcResult.getResponse().getContentAsString();
+        int readingsPosition = html.indexOf("<section class=\"recommended-readings\"");
+        int relatedTestsPosition = html.indexOf("class=\"related-content result-related-content\"");
+        assertThat(readingsPosition).isGreaterThanOrEqualTo(0);
+        assertThat(relatedTestsPosition).isGreaterThan(readingsPosition);
     }
 
     @Test

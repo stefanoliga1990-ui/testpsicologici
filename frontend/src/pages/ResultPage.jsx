@@ -119,8 +119,8 @@ export default function ResultPage({ areaResults, contributionsEnabled = false, 
           <Button as="a" className="button-secondary" href="/">Torna alla home</Button>
         </div>
       </section>
-      <RelatedTests className="result-related-content" relatedTests={relatedTests} topicCluster={topicCluster} />
       <RecommendedReadings readings={recommendedReadings} />
+      <RelatedTests className="result-related-content" relatedTests={relatedTests} topicCluster={topicCluster} />
       {contributionsEnabled && <SupportContributionCard />}
       <p className="disclaimer">Questo questionario è informativo e non clinicamente validato: non conferma né esclude una diagnosi e non sostituisce una valutazione professionale.</p>
       <Footer />
