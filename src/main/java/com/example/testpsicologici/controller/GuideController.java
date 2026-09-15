@@ -2,6 +2,7 @@ package com.example.testpsicologici.controller;
 
 import com.example.testpsicologici.model.InformationGuide;
 import com.example.testpsicologici.service.GuideCatalogue;
+import com.example.testpsicologici.service.RecommendedReadingCatalogue;
 import com.example.testpsicologici.service.SiteUrlService;
 import com.example.testpsicologici.service.TestCatalogue;
 import com.example.testpsicologici.service.TopicClusterCatalogue;
@@ -20,14 +21,17 @@ public class GuideController {
     private final TestCatalogue testCatalogue;
     private final SiteUrlService siteUrlService;
     private final TopicClusterCatalogue topicClusterCatalogue;
+    private final RecommendedReadingCatalogue recommendedReadingCatalogue;
 
     public GuideController(GuideCatalogue guideCatalogue, TestCatalogue testCatalogue,
                            SiteUrlService siteUrlService,
-                           TopicClusterCatalogue topicClusterCatalogue) {
+                           TopicClusterCatalogue topicClusterCatalogue,
+                           RecommendedReadingCatalogue recommendedReadingCatalogue) {
         this.guideCatalogue = guideCatalogue;
         this.testCatalogue = testCatalogue;
         this.siteUrlService = siteUrlService;
         this.topicClusterCatalogue = topicClusterCatalogue;
+        this.recommendedReadingCatalogue = recommendedReadingCatalogue;
     }
 
     @GetMapping("/approfondimenti")
@@ -55,12 +59,15 @@ public class GuideController {
         var topicCluster = topicClusterCatalogue.findByTestId(guide.testId()).orElse(null);
         var relatedGuides = guideCatalogue.findSuggestionsByTestIds(
                 topicClusterCatalogue.findRelatedTestIds(guide.testId(), 3));
+        var recommendedReadings = recommendedReadingCatalogue.findByTestId(guide.testId());
         model.addAttribute("test", test);
         model.addAttribute("topicCluster", topicCluster);
         model.addAttribute("relatedGuides", relatedGuides);
+        model.addAttribute("recommendedReadings", recommendedReadings);
         model.addAttribute("reactPageData", ReactPageData.of(
                 "guide", "guide", guide, "test", test,
-                "topicCluster", topicCluster, "relatedGuides", relatedGuides));
+                "topicCluster", topicCluster, "relatedGuides", relatedGuides,
+                "recommendedReadings", recommendedReadings));
         model.addAttribute("canonicalUrl",
                 siteUrlService.canonicalUrl(request, "/approfondimenti/" + guide.slug()));
         model.addAttribute("siteUrl", siteUrlService.canonicalUrl(request, "/"));

@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProgressBar from '../components/ProgressBar';
 import RelatedTests from '../components/RelatedTests';
+import RecommendedReadings from '../components/RecommendedReadings';
 import SupportContributionCard from '../components/SupportContributionCard';
 import SupportIntroDialog from '../components/SupportIntroDialog';
 import { withSessionId } from '../utils/urls';
@@ -17,7 +18,7 @@ function shouldShowSupportIntro(enabled, testId) {
   }
 }
 
-export default function ResultPage({ areaResults, contributionsEnabled = false, guide, percentage, relatedTests, result, score, styleResults = [], test, topicCluster }) {
+export default function ResultPage({ areaResults, contributionsEnabled = false, guide, percentage, recommendedReadings = [], relatedTests, result, score, styleResults = [], test, topicCluster }) {
   const [showSupportIntro, setShowSupportIntro] = useState(
     () => shouldShowSupportIntro(contributionsEnabled, test.id)
   );
@@ -119,6 +120,7 @@ export default function ResultPage({ areaResults, contributionsEnabled = false, 
         </div>
       </section>
       <RelatedTests className="result-related-content" relatedTests={relatedTests} topicCluster={topicCluster} />
+      <RecommendedReadings readings={recommendedReadings} />
       {contributionsEnabled && <SupportContributionCard />}
       <p className="disclaimer">Questo questionario è informativo e non clinicamente validato: non conferma né esclude una diagnosi e non sostituisce una valutazione professionale.</p>
       <Footer />

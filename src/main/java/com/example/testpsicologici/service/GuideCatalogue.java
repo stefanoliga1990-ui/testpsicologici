@@ -4334,6 +4334,149 @@ public class GuideCatalogue {
                                     "Review degli sviluppatori consultata per stato della misura, componenti e influenza di affettività negativa e contesto."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "situationship",
+                    "situationship",
+                    "Situationship",
+                    "Situationship: quando vicinanza e definizione non coincidono",
+                    "Situationship: significato, accordi e confini | Spazio Test",
+                    "Una guida a definizione, reciprocità, direzione, accordi e bisogni nelle relazioni non pienamente definite, senza imporre etichette o impegno.",
+                    "Situationship è un termine colloquiale, non una diagnosi o una forma di relazione necessariamente problematica. La questione centrale non è l'etichetta in sé, ma quanto aspettative, confini e possibilità di scelta siano comprensibili e condivisi.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Un rapporto vicino ma non pienamente definito",
+                                    List.of(
+                                            "La ricerca recente usa situationship per descrivere rapporti romantici o sessuali in cui possono esserci affetto, intimità e tempo condiviso senza una definizione o un impegno altrettanto chiari. È un'etichetta emergente e i confini cambiano tra studi, culture e persone.",
+                                            "L'assenza di un'etichetta non rende automaticamente problematica una relazione. Può funzionare quando entrambe le persone desiderano una forma flessibile e comprendono in modo simile aspettative, limiti e possibilità future."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Le lenti",
+                                    "Definizione, reciprocità, direzione, accordi e bisogni",
+                                    List.of(
+                                            "Il questionario collegato separa cinque aspetti: come viene definito il rapporto, quanto il coinvolgimento sembra reciproco, quale direzione viene immaginata, quali accordi regolano i confini e che spazio hanno bisogni e scelte personali.",
+                                            "Le aree sono lenti editoriali, non sottotipi di situationship. Possono emergere insieme oppure no e non permettono di conoscere direttamente pensieri o intenzioni dell'altra persona."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricerca italiana",
+                                    "La REUS studia incertezza e ambiguità romantica",
+                                    List.of(
+                                            "Nel 2026 ricercatrici e ricercatori dell'Università Cattolica di Milano hanno sviluppato la Romantic Experience Uncertainty Scale con focus group, pilotaggio, EFA e CFA su adolescenti e giovani adulti italiani. Sono emersi tre fattori: incertezza sul coinvolgimento, incertezza sul rapporto e ambiguità comportamentale.",
+                                            "La REUS riguarda un costrutto più ampio della situationship e il campione arrivava a 30 anni. La sua validazione non rende validi i 20 item di Spazio Test e non autorizza a trasferire punteggi, fattori o soglie."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Definizione e reciprocità",
+                                    "Il nome del rapporto e la corrispondenza del coinvolgimento sono distinti",
+                                    List.of(
+                                            "Due persone possono evitare un'etichetta e avere comunque una comprensione condivisa del legame. Al contrario, possono usare la stessa parola ma attribuirle aspettative diverse: definizione, sentimenti e impegno non coincidono automaticamente.",
+                                            "Per questo è utile distinguere ciò che è stato detto, i comportamenti osservati e l'interpretazione personale. Un'autovalutazione raccoglie soltanto una prospettiva e non accerta quanto l'altra persona sia coinvolta."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Direzione e decisioni",
+                                    "Restare nel presente può essere una scelta oppure un passaggio non discusso",
+                                    List.of(
+                                            "Non tutte le relazioni devono orientarsi a convivenza, matrimonio o lunga durata. La chiarezza riguarda piuttosto la possibilità di dire che cosa si desidera ora, rivedere gli accordi e sapere se le direzioni immaginate sono compatibili.",
+                                            "La ricerca su sliding versus deciding distingue le transizioni discusse da quelle che avvengono per inerzia, ma non stabilisce una forma relazionale universalmente migliore. Contano consenso, alternative reali e possibilità di cambiare idea."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Accordi e confini",
+                                    "Esclusività, contatti e privacy non si possono presumere",
+                                    List.of(
+                                            "Monogamia, rapporti aperti, frequenza dei messaggi, visibilità sociale e privacy richiedono accordi comprensibili alle persone coinvolte. L'assenza di una definizione formale non elimina il bisogno di consenso e non rende implicita una regola unica.",
+                                            "Un disaccordo non dimostra inganno o abuso. Diventa però importante osservare se i confini possono essere espressi e rinegoziati, se un no viene rispettato e se entrambe le persone mantengono libertà di scelta."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Bisogni e impatto",
+                                    "L'incertezza non ha lo stesso effetto per tutti",
+                                    List.of(
+                                            "Alcune persone apprezzano flessibilità e minori aspettative; altre desiderano più continuità, riconoscimento o progettualità. Gli studi specifici sulle situationship sono ancora pochi e soprattutto statunitensi, quindi non sostengono l'idea che queste relazioni producano sempre lo stesso esito.",
+                                            "Può essere utile osservare se si trattengono bisogni, si sospendono altre scelte o l'incertezza occupa molta attenzione. Queste esperienze non provano da sole una causa e vanno lette insieme a durata, contesto e alternative disponibili."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Situationship, breadcrumbing e compatibilità non sono sinonimi",
+                                    List.of(
+                                            "Nel breadcrumbing il nucleo riguarda contatti intermittenti e segnali che possono mantenere aspettative senza seguito. Una situationship può invece avere contatti regolari e vicinanza, mentre restano poco definiti status, impegno o accordi.",
+                                            "La compatibilità riguarda domini più ampi della vita di coppia e non è deducibile dalla sola chiarezza del rapporto. Anche attaccamento, disponibilità emotiva e paura dell'abbandono sono costrutti distinti, sebbene possano influire su come viene vissuta l'incertezza."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Come leggere il risultato",
+                                    "Frequenze editoriali, non una classificazione del rapporto",
+                                    List.of(
+                                            "Le risposte da 1 a 5 vengono mediate per area e trasformate in barre da 0 a 100. Le barre non sono percentuali di situationship, soddisfazione, amore o compatibilità; anche le soglie LOW, MIXED, FOCUSED e BROAD sono editoriali.",
+                                            "Un profilo ampio indica frequenze alte in almeno quattro aree, non che il rapporto appartenga oggettivamente a una categoria. Un livello contenuto non esclude un episodio importante, una differenza di desideri o un problema di sicurezza."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Confronto e supporto",
+                                    "Partire da richieste concrete e dalla sicurezza",
+                                    List.of(
+                                            "Se vuoi parlarne e la situazione è sicura, puoi distinguere ciò che osservi, come ti senti, che cosa desideri e quale accordo vorresti discutere. La risposta dell'altra persona fornisce informazioni, ma nessuno è obbligato a negoziare restando in una situazione che non desidera.",
+                                            "Se l'incertezza causa sofferenza o limita scelte importanti, puoi parlarne con una persona fidata o un professionista. In presenza di paura, minacce, controllo, coercizione, stalking o violenza, considera prima la sicurezza: chiama il 112 nelle emergenze; se sei una donna, il 1522 offre orientamento gratuito anche via chat."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Un campo recente che richiede cautela",
+                                    List.of(
+                                            "Gli studi specifici sulla situationship disponibili sono esplorativi, recenti e concentrati soprattutto su giovani adulti statunitensi. La REUS italiana rafforza la base su incertezza e ambiguità romantica, ma non è stata progettata per classificare una situationship in tutti gli adulti.",
+                                            "Non esistono dati sui 20 item, sulle cinque aree o sulle soglie di Spazio Test. Prima di parlare di validità servono revisione di esperti e utenti, interviste cognitive, studi fattoriali, affidabilità, validità, equità e replica indipendente."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 20 item originali, cinque lenti editoriali e una finestra di tre mesi riferita a una sola relazione o frequentazione. È informativo e non validato: non classifica oggettivamente il rapporto, non accerta intenzioni o reciprocità e non prescrive una forma relazionale.",
+                    List.of(
+                            new GuideReference(
+                                    "Development and Validation of the Romantic Experience Uncertainty Scale (REUS) — Colombo e colleghi",
+                                    "https://tpmap.org/submission/index.php/tpm/article/download/4150/3129/9063",
+                                    "Sviluppo italiano con focus group, pilot, EFA e CFA consultato per incertezza sul coinvolgimento, sul rapporto e ambiguità comportamentale; partecipanti fino a 30 anni e strumento diverso non validano l'app."
+                            ),
+                            new GuideReference(
+                                    "Measuring the sources and content of relational uncertainty — Knobloch e Solomon",
+                                    "https://doi.org/10.1080/10510979909388499",
+                                    "Studio fondativo consultato per distinguere desideri, valutazioni, obiettivi, norme, reciprocità, definizione e futuro; campione statunitense, item e struttura non vengono trasferiti."
+                            ),
+                            new GuideReference(
+                                    "Defining and Describing Situationships — Langlais e colleghi",
+                                    "https://doi.org/10.1007/s12119-024-10210-6",
+                                    "Studio esplorativo mixed-methods consultato per la combinazione di vicinanza romantica, bassa chiarezza e impegno; campioni di convenienza e definizione emergente limitano la generalizzazione."
+                            ),
+                            new GuideReference(
+                                    "Are Situationships situational? — Langlais e colleghi",
+                                    "https://doi.org/10.1007/s12119-025-10402-8",
+                                    "Studio mixed-methods consultato per esclusività, investimento, bisogni, comunicazione sul futuro, sforzo e fiducia; associazioni e campione statunitense non provano causalità o esiti universali."
+                            ),
+                            new GuideReference(
+                                    "Sliding versus deciding in relationships — Owen, Rhoades e Stanley",
+                                    "https://doi.org/10.1080/15332691.2013.779097",
+                                    "Studio osservazionale consultato per distinguere passaggi discussi e inerzia relazionale; non misura situationship e non prescrive etichette o impegno."
+                            ),
+                            new GuideReference(
+                                    "1522 — Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Fonte istituzionale italiana consultata per orientamento e sicurezza; non è evidenza sul costrutto e non sostituisce il 112 nelle emergenze."
+                            )
+                    )
             )
     );
 

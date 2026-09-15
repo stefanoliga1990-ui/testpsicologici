@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(39).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(40).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -2159,10 +2159,56 @@ class TestResultServiceTest {
     }
 
     @Test
+    void situationshipTestLoadsItsOriginalFiveAreaStructureAndItalianEvidence() {
+        PsychologicalTest test = catalogue.findById("situationship");
+
+        assertThat(test.title()).isEqualTo("Sto vivendo una situationship?");
+        assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.questions()).hasSize(20).allSatisfy(question ->
+                assertThat(question.example()).isNull());
+        assertThat(test.areas()).extracting(area -> area.code()).containsExactly(
+                "definizione", "reciprocita", "direzione", "accordi", "bisogni");
+        test.areas().forEach(area -> assertThat(test.questions())
+                .filteredOn(question -> question.areaCode().equals(area.code()))
+                .hasSize(4));
+        assertThat(test.questions()).extracting(question -> question.areaCode()).containsExactly(
+                "definizione", "reciprocita", "direzione", "accordi", "bisogni",
+                "definizione", "reciprocita", "direzione", "accordi", "bisogni",
+                "definizione", "reciprocita", "direzione", "accordi", "bisogni",
+                "definizione", "reciprocita", "direzione", "accordi", "bisogni");
+        assertThat(test.responseInstruction()).contains("ultimi tre mesi", "stessa relazione", "frequenza");
+        assertThat(test.overallMetricLabel()).contains("ambiguità");
+        assertThat(test.introductoryText()).contains(
+                "termine colloquiale", "non validato", "senza etichetta", "non classifica oggettivamente");
+        assertThat(test.references()).hasSize(6);
+        assertThat(test.references().get(0).url()).contains("tpmap.org");
+        assertThat(test.references()).extracting(reference -> reference.url())
+                .contains("https://doi.org/10.1007/s12119-024-10210-6");
+    }
+
+    @Test
+    void situationshipProfilesUseFiveAreaBoundaryAndKeepLimitsIndependentFromLevel() {
+        TestResult low = analyzeWithAnswersForTest("situationship", 1, 1, 1, 1, 1);
+        TestResult mixed = analyzeWithAnswersForTest("situationship", 3, 1, 1, 1, 1);
+        TestResult focused = analyzeWithAnswersForTest("situationship", 5, 5, 5, 1, 1);
+        TestResult broad = analyzeWithAnswersForTest("situationship", 5, 5, 5, 5, 1);
+
+        assertThat(low.general().title()).contains("Ambiguità e accordi", "poco");
+        assertThat(mixed.general().title()).contains("Ambiguità e accordi", "modo variabile");
+        assertThat(focused.general().title()).contains("Ambiguità e accordi", "alcune aree");
+        assertThat(broad.general().title()).contains("Ambiguità e accordi", "molte aree");
+        assertThat(broad.areaResults()).extracting(area -> area.percentage()).containsExactly(100, 100, 100, 100, 0);
+        List.of(low, mixed, focused, broad).forEach(result -> {
+            assertThat(result.general().detail()).contains(
+                    "non dimostra una situationship", "senza etichetta", "112", "1522");
+        });
+    }
+
+    @Test
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita", "tratti-evitanti-personalita-adulti", "disponibilita-emotiva", "alessitimia");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita", "tratti-evitanti-personalita-adulti", "disponibilita-emotiva", "alessitimia", "situationship");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

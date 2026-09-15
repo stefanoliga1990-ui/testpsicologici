@@ -46,7 +46,7 @@ Le risposte della dashboard usano `Cache-Control: no-store` e `X-Robots-Tag: noi
 
 ## Informativa
 
-La pagina pubblica `/privacy-e-cookie`, collegata dal footer, descrive sessione tecnica e conteggio aggregato. Il recapito mostrato è configurato con `APP_PRIVACY_CONTACT_EMAIL`.
+La pagina pubblica `/privacy-e-cookie`, collegata dal footer, descrive sessione tecnica e conteggio aggregato. Il recapito mostrato è configurato con `app.privacy-contact-email` in `application.properties`; dal 9 settembre 2026 è `stefano.liga1990@gmail.com`. La precedente variabile `APP_PRIVACY_CONTACT_EMAIL` non viene più interpolata, per evitare che il vecchio recapito in produzione prevalga su quello confermato dal gestore.
 
 La configurazione è stata progettata secondo l'indicazione del Garante per cui gli analytics gestiti direttamente dal titolare possono essere assimilati ai cookie tecnici se utilizzati per statistiche aggregate relative a un singolo sito. L'informativa resta necessaria anche quando non è richiesto il consenso: <https://www.garanteprivacy.it/faq/cookie>.
 

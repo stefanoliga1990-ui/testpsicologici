@@ -241,12 +241,16 @@ a { color: inherit; text-decoration: none; }
 .result-related-content { max-width: 860px; margin: 20px auto 0; }
 .intro-related-content .related-links, .result-related-content .related-links, .guide-related-content .related-links { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
 
+.recommended-readings { max-width: 860px; margin: 20px auto 0; padding: clamp(28px, 5vw, 48px); border: 1px solid rgba(36,92,76,.16); border-radius: 22px; background: #eef5ef; text-align: left; }.guide-content .recommended-readings { max-width: none; margin-top: 0; }.recommended-readings > h2 { margin: 0; color: var(--ink); font: 700 clamp(2rem, 4vw, 3rem)/1.05 var(--serif); letter-spacing: -.04em; }.recommended-readings-intro { max-width: 680px; margin: 16px 0 0; color: #52615a; line-height: 1.65; }.recommended-reading-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }.recommended-reading-card { display: flex; flex-direction: column; padding: 23px; border: 1px solid rgba(36,92,76,.14); border-radius: 17px; background: var(--paper); }.recommended-reading-card h3 { margin: 0; color: var(--ink); font: 700 1.45rem/1.12 var(--serif); }.recommended-reading-authors { margin: 8px 0 0; color: var(--green); font-size: .84rem; font-weight: 700; }.recommended-reading-card > p:not(.recommended-reading-authors) { margin: 16px 0 0; color: #52615a; line-height: 1.58; }.recommended-reading-card .recommended-reading-limit { color: var(--muted); font-size: .89rem; }.recommended-reading-card .button { align-self: flex-start; margin-top: auto; padding: 0 16px; }.affiliate-disclosure { margin: 24px 0 0; color: var(--muted); font-size: .8rem; line-height: 1.5; }
+
 .guide-article { max-width: 880px; }
 .guide-content { max-width: none; }
 
 @media (max-width: 1050px) {
     .related-content { position: static; }
 }
+
+@media (max-width: 680px) { .recommended-reading-grid { grid-template-columns: 1fr; }.recommended-readings { padding: 25px 21px; } }
 
 @media (max-width: 680px) {
     .topic-clusters { gap: 20px; }

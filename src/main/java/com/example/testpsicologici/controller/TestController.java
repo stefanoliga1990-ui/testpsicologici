@@ -6,6 +6,7 @@ import com.example.testpsicologici.model.TestAttempt;
 import com.example.testpsicologici.model.TestResult;
 import com.example.testpsicologici.service.TestCatalogue;
 import com.example.testpsicologici.service.GuideCatalogue;
+import com.example.testpsicologici.service.RecommendedReadingCatalogue;
 import com.example.testpsicologici.service.PdfResultService;
 import com.example.testpsicologici.service.SiteUrlService;
 import com.example.testpsicologici.service.TestResultService;
@@ -61,6 +62,7 @@ public class TestController {
     private final PdfResultService pdfResultService;
     private final SiteUrlService siteUrlService;
     private final GuideCatalogue guideCatalogue;
+    private final RecommendedReadingCatalogue recommendedReadingCatalogue;
     private final TestCompletionAnalyticsService completionAnalyticsService;
     private final TopicClusterCatalogue topicClusterCatalogue;
     private final boolean contributionsEnabled;
@@ -68,6 +70,7 @@ public class TestController {
     public TestController(TestCatalogue catalogue, TestResultService resultService,
                           PdfResultService pdfResultService, SiteUrlService siteUrlService,
                           GuideCatalogue guideCatalogue,
+                          RecommendedReadingCatalogue recommendedReadingCatalogue,
                           TestCompletionAnalyticsService completionAnalyticsService,
                           TopicClusterCatalogue topicClusterCatalogue,
                           @Value("${app.payments.stripe.enabled:false}") boolean contributionsEnabled) {
@@ -76,6 +79,7 @@ public class TestController {
         this.pdfResultService = pdfResultService;
         this.siteUrlService = siteUrlService;
         this.guideCatalogue = guideCatalogue;
+        this.recommendedReadingCatalogue = recommendedReadingCatalogue;
         this.completionAnalyticsService = completionAnalyticsService;
         this.topicClusterCatalogue = topicClusterCatalogue;
         this.contributionsEnabled = contributionsEnabled;
@@ -207,11 +211,13 @@ public class TestController {
     private String renderResult(PsychologicalTest test, TestAttempt attempt, Model model) {
         TestResult result = resultService.analyze(test, attempt);
         InformationGuide guide = guideCatalogue.findByTestId(test.id()).orElse(null);
+        var recommendedReadings = recommendedReadingCatalogue.findByTestId(test.id());
         var topicCluster = topicClusterCatalogue.findByTestId(test.id()).orElse(null);
         var relatedTests = catalogue.findSuggestionsByIds(
                 topicClusterCatalogue.findRelatedTestIds(test.id(), 3));
         model.addAttribute("test", test);
         model.addAttribute("guide", guide);
+        model.addAttribute("recommendedReadings", recommendedReadings);
         model.addAttribute("topicCluster", topicCluster);
         model.addAttribute("relatedTests", relatedTests);
         model.addAttribute("score", result.score());
@@ -228,6 +234,7 @@ public class TestController {
                 "areaResults", result.areaResults(),
                 "styleResults", result.styleResults(),
                 "guide", guide,
+                "recommendedReadings", recommendedReadings,
                 "topicCluster", topicCluster,
                 "relatedTests", relatedTests,
                 "contributionsEnabled", contributionsEnabled));

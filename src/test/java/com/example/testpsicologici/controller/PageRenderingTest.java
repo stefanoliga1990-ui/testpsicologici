@@ -216,7 +216,9 @@ class PageRenderingTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("<title>Il progetto | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Uno spazio per osservarti con più chiarezza")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga, come privato")))
+                .andExpect(content().string(containsString("mailto:stefano.liga1990@gmail.com")))
+                .andExpect(content().string(containsString("contributo volontario tramite Stripe")))
                 .andExpect(content().string(containsString("href=\"/metodo-e-fonti\"")));
     }
 
@@ -339,12 +341,31 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("A cura di Spazio Test")))
                 .andExpect(content().string(containsString("Signs of autism in adults — NHS")))
                 .andExpect(content().string(containsString("href=\"/test/tratti-autistici-adulti\"")))
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("La differenza invisibile")))
+                .andExpect(content().string(containsString("Esplorare il proprio autismo")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")))
                 .andExpect(content().string(containsString("Approfondimenti collegati")))
                 .andExpect(content().string(containsString("class=\"related-content guide-related-content\"")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/adhd-adulti\"")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/intelligenza-linguistica\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
+    void autismResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
+        mockMvc.perform(get("/test/tratti-autistici-adulti/risultato")
+                        .session(completedAttempt("tratti-autistici-adulti", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("La differenza invisibile")))
+                .andExpect(content().string(containsString("Esplorare il proprio autismo")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test

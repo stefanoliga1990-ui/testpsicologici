@@ -366,7 +366,17 @@ public class ReferenceContributionCatalogue {
             entry("https://pubmed.ncbi.nlm.nih.gov/39509403/",
                     "Revisione sistematica e meta-analisi consultata per il rapporto variabile fra interocezione autoriferita e componenti dell'alessitimia; studi trasversali e misure eterogenee non consentono causalità."),
             entry("https://doi.org/10.1016/j.jpsychores.2020.109940",
-                    "Review dei 25 anni della TAS-20 consultata per componenti, stato della misura e fattori contestuali; la prospettiva degli sviluppatori non giustifica diagnosi o cut-off nell'app."));
+                    "Review dei 25 anni della TAS-20 consultata per componenti, stato della misura e fattori contestuali; la prospettiva degli sviluppatori non giustifica diagnosi o cut-off nell'app."),
+            entry("https://tpmap.org/submission/index.php/tpm/article/download/4150/3129/9063",
+                    "Sviluppo italiano della REUS con focus group, pilot, EFA e CFA consultato per incertezza sul coinvolgimento, sul rapporto e ambiguità comportamentale; partecipanti fino a 30 anni e misura diversa non validano l'app."),
+            entry("https://doi.org/10.1080/10510979909388499",
+                    "Studio fondativo consultato per desideri, valutazioni, obiettivi, norme, reciprocità, definizione e futuro nell'incertezza relazionale; campione statunitense, item e struttura non vengono trasferiti."),
+            entry("https://doi.org/10.1007/s12119-024-10210-6",
+                    "Studio esplorativo mixed-methods consultato per definire le situationship attraverso vicinanza romantica, bassa chiarezza e impegno; campioni di convenienza e campo emergente limitano la generalizzazione."),
+            entry("https://doi.org/10.1007/s12119-025-10402-8",
+                    "Studio mixed-methods consultato per esclusività, investimento, bisogni, comunicazione sul futuro, sforzo e fiducia; associazioni e campione statunitense non dimostrano causalità o esiti universali."),
+            entry("https://doi.org/10.1080/15332691.2013.779097",
+                    "Studio osservazionale consultato per distinguere transizioni discusse e passaggi relazionali per inerzia; non misura situationship e non prescrive etichette, esclusività o impegno."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

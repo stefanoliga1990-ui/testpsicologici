@@ -307,6 +307,9 @@ class VisitorMonitoringTest {
                 .andExpect(content().string(containsString("__Host-st_visit_day")))
                 .andExpect(content().string(containsString("Contributi e pagamenti tramite Stripe")))
                 .andExpect(content().string(containsString("https://stripe.com/privacy")))
+                .andExpect(content().string(containsString("Stefano Liga")))
+                .andExpect(content().string(containsString("Le risposte vengono inviate al server")))
+                .andExpect(content().string(containsString("https://railway.com/legal/privacy")))
                 .andExpect(content().string(containsString("privacy@example.test")));
     }
 

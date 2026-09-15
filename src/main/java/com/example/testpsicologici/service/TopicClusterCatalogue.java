@@ -35,7 +35,8 @@ public class TopicClusterCatalogue {
                             "dipendenza-affettiva",
                             "compatibilita-coppia",
                             "gelosia-partner",
-                            "dinamiche-narcisistiche-partner"
+                            "dinamiche-narcisistiche-partner",
+                            "situationship"
                     )),
             new TopicCluster(
                     "personalita-e-tratti",

@@ -37,7 +37,8 @@ Prima di usare la dashboard configurare in **Variables** del servizio Railway:
 - `MONITORING_USERNAME`: nome utente scelto per `/monitoring`;
 - `MONITORING_PASSWORD`: password lunga e univoca per la dashboard;
 - `VISITOR_COOKIE_SECRET`: segreto casuale stabile usato per firmare il cookie giornaliero;
-- `APP_PRIVACY_CONTACT_EMAIL`: indirizzo mostrato nella pagina `/privacy-e-cookie`.
+
+Il contatto pubblico è `stefano.liga1990@gmail.com`, definito da `app.privacy-contact-email` in `application.properties`. La precedente variabile `APP_PRIVACY_CONTACT_EMAIL` non è più utilizzata.
 
 Per generare una chiave casuale da PowerShell:
 

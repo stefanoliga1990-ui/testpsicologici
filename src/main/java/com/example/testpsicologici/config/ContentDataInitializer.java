@@ -84,6 +84,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedAvoidantPersonalityTraitsInformationTest();
         seedEmotionalAvailabilityInformationTest();
         seedAlexithymiaInformationTest();
+        seedSituationshipInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -3897,6 +3898,111 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Spostarsi su fatti e attività senza approfondire il vissuto risulta frequente. L'area non dimostra freddezza, scarsa empatia o assenza di immaginazione.");
     }
 
+    private void seedSituationshipInformationTest() {
+        String id = "situationship";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Sto vivendo una situationship?",
+                "Autovalutazione informativa",
+                "Osserva definizione, reciprocità, direzione, accordi e bisogni in una relazione o frequentazione specifica.",
+                "5 min · 20 domande",
+                "Situationship è un termine colloquiale per rapporti romantici o sessuali con vicinanza ma definizione o impegno poco chiari. Questo questionario per adulti è originale, informativo e non validato: pensa sempre alla stessa relazione o frequentazione. Una relazione senza etichetta può essere desiderata e condivisa; il risultato non classifica oggettivamente il rapporto, non accerta intenzioni o reciprocità e non indica se mantenerlo o terminarlo.",
+                version, false,
+                "Frequenza complessiva dell'ambiguità esplorata",
+                "Frequenza delle esperienze nell'area",
+                true, 40).withSeo(
+                "Situationship: test informativo in 20 domande | Spazio Test",
+                "Questionario informativo su definizione, reciprocità, accordi e bisogni in una relazione non pienamente definita; senza diagnosi.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e sempre alla stessa relazione o frequentazione, o all'intero rapporto se iniziato più recentemente, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "Development and Validation of the Romantic Experience Uncertainty Scale (REUS) — Colombo e colleghi",
+                "https://tpmap.org/submission/index.php/tpm/article/download/4150/3129/9063", 1);
+        saveReference(id, "Measuring the sources and content of relational uncertainty — Knobloch e Solomon",
+                "https://doi.org/10.1080/10510979909388499", 2);
+        saveReference(id, "Defining and Describing Situationships — Langlais e colleghi",
+                "https://doi.org/10.1007/s12119-024-10210-6", 3);
+        saveReference(id, "Are Situationships situational? — Langlais e colleghi",
+                "https://doi.org/10.1007/s12119-025-10402-8", 4);
+        saveReference(id, "Sliding versus deciding in relationships — Owen, Rhoades e Stanley",
+                "https://doi.org/10.1080/15332691.2013.779097", 5);
+        saveReference(id, "1522 — Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 6);
+
+        saveArea(id, "definizione", "Definizione condivisa del rapporto", 1);
+        saveArea(id, "reciprocita", "Reciprocità del coinvolgimento", 2);
+        saveArea(id, "direzione", "Intenzioni e direzione futura", 3);
+        saveArea(id, "accordi", "Accordi e confini", 4);
+        saveArea(id, "bisogni", "Espressione dei bisogni e impatto", 5);
+
+        saveQuestions(id, List.of(
+                q("definizione", "Ho avuto dubbi su come definire il nostro rapporto."),
+                q("definizione", "Ho avuto dubbi su come l'altra persona definisse il nostro rapporto."),
+                q("definizione", "La definizione del rapporto è cambiata a seconda del contesto."),
+                q("definizione", "Una conversazione sul tipo di rapporto si è conclusa senza un accordo condiviso."),
+                q("reciprocita", "Ho avuto dubbi su quanto il mio coinvolgimento fosse ricambiato."),
+                q("reciprocita", "Mi è stato difficile capire quale importanza avesse il rapporto per l'altra persona."),
+                q("reciprocita", "Ho interpretato singoli segnali per capire quanto l'altra persona fosse coinvolta."),
+                q("reciprocita", "Il livello di vicinanza tra noi mi è sembrato diverso dal livello di impegno condiviso."),
+                q("direzione", "Ho avuto dubbi su ciò che desideravo dal rapporto."),
+                q("direzione", "Ho avuto dubbi su ciò che l'altra persona desiderasse dal rapporto."),
+                q("direzione", "Mi è stato difficile capire se entrambi volessimo continuare il rapporto."),
+                q("direzione", "I progetti futuri sono rimasti vaghi dopo averne parlato."),
+                q("accordi", "Gli accordi sull'esclusività sono rimasti impliciti."),
+                q("accordi", "Ho avuto dubbi su quali contatti con altre persone fossero compatibili con il rapporto."),
+                q("accordi", "Le aspettative sulla frequenza dei contatti sono rimaste poco chiare."),
+                q("accordi", "Ho avuto dubbi su quali impegni reciproci potessi aspettarmi."),
+                q("bisogni", "Ho trattenuto un bisogno per timore che una richiesta di chiarezza cambiasse il rapporto."),
+                q("bisogni", "Ho accettato una modalità di relazione diversa da quella che desideravo."),
+                q("bisogni", "L'incertezza sul rapporto ha occupato la mia attenzione durante altre attività."),
+                q("bisogni", "Ho rimandato altre scelte affettive in attesa di capire il rapporto.")));
+
+        String commonLimits = "Il risultato descrive una sola prospettiva e non dimostra una situationship, incompatibilità, inganno, manipolazione, abuso, intenzioni o colpe; item, aree e soglie sono originali e non validati. "
+                + "Relazioni senza etichetta, casuali o non monogame possono essere desiderate, consensuali e soddisfacenti quando accordi e confini sono condivisi. "
+                + "Se l'incertezza causa sofferenza o limita scelte importanti, puoi parlarne con una persona fidata o un professionista; paura, minacce, controllo, coercizione, stalking o violenza meritano attenzione indipendentemente dal profilo, con il 112 nelle emergenze e il 1522 per donne che vivono violenza o stalking.";
+
+        saveGlobal(id, "LOW",
+                "Ambiguità e accordi nella relazione risultano poco problematici nelle tue risposte",
+                "Dubbi su definizione, reciprocità, direzione, accordi e bisogni risultano poco frequenti in tutte le aree. Nella relazione scelta non emerge quindi una configurazione diffusa delle esperienze esplorate.",
+                "Questo andamento non esclude un episodio importante, un bisogno non espresso o un disallineamento circoscritto. La presenza o assenza di un'etichetta non stabilisce da sola la qualità del rapporto. " + commonLimits);
+        saveGlobal(id, "MIXED",
+                "Ambiguità e accordi nella relazione emergono in modo variabile nelle tue risposte",
+                "Le risposte mostrano frequenze intermedie o differenze tra le cinque aree, senza che una raggiunga il livello editoriale più alto. Chiarezza e accordi possono quindi cambiare secondo il tema o il momento.",
+                "Osserva quali aspetti sono condivisi e quali restano impliciti, distinguendo i tuoi desideri da ciò che attribuisci all'altra persona. La variabilità non permette di classificare il rapporto né di prevederne l'evoluzione. " + commonLimits);
+        saveGlobal(id, "FOCUSED",
+                "Ambiguità e accordi nella relazione sembrano concentrati in alcune aree",
+                "Da una a tre aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta quindi verso aspetti specifici senza definire l'intero rapporto.",
+                "Consulta le aree emergenti per distinguere definizione, reciprocità, futuro, accordi e bisogni. Considera durata, conversazioni avvenute, libertà di scelta e cambiamenti nel tempo senza dedurre intenzioni. " + commonLimits);
+        saveGlobal(id, "BROAD",
+                "Ambiguità e accordi nella relazione sembrano coinvolgere molte aree",
+                "Le risposte indicano esperienze frequenti in almeno quattro delle cinque aree esplorate. Dubbi e accordi impliciti sembrano quindi attraversare più aspetti della relazione nel periodo considerato.",
+                "Un andamento ampio rende utile osservare persistenza, interferenza e possibilità concreta di esprimere bisogni e scegliere. Non significa automaticamente che il rapporto sia dannoso o che una forma più tradizionale sarebbe migliore. " + commonLimits);
+
+        saveAreaInsights(id, "definizione",
+                "Dubbi sul modo di definire il rapporto risultano poco frequenti. Non implica l'obbligo di usare un'etichetta o una forma relazionale tradizionale.",
+                "La definizione del rapporto è risultata incerta in alcune occasioni. Osserva se entrambi potevate descriverlo in modo comprensibile e modificabile.",
+                "Dubbi o confronti senza una definizione condivisa risultano frequenti. L'area non classifica il rapporto e non stabilisce quale nome dovrebbe avere.");
+        saveAreaInsights(id, "reciprocita",
+                "Dubbi sul coinvolgimento reciproco risultano poco frequenti. Non certifica i sentimenti o l'importanza attribuita dall'altra persona.",
+                "La reciprocità è risultata incerta in alcune situazioni. Distingui comportamenti osservati, parole ricevute e interpretazioni personali.",
+                "Dubbi sulla corrispondenza del coinvolgimento risultano frequenti. L'area raccoglie la tua percezione e non accerta ciò che l'altra persona prova.");
+        saveAreaInsights(id, "direzione",
+                "Dubbi su intenzioni e futuro risultano poco frequenti. Non garantisce stabilità né richiede progetti a lungo termine.",
+                "La direzione del rapporto è risultata incerta in alcuni momenti. Considera se desideri e possibilità sono stati discussi e aggiornati.",
+                "Dubbi su desideri, continuazione o progetti risultano frequenti. L'area non prevede l'esito e non impone impegno, convivenza o matrimonio.");
+        saveAreaInsights(id, "accordi",
+                "Aspettative implicite su esclusività, contatti e impegni risultano poco frequenti. Non stabilisce quali accordi siano corretti per voi.",
+                "Alcuni confini o impegni sono rimasti poco chiari. Osserva se potevano essere discussi senza presupporre monogamia o disponibilità continua.",
+                "Accordi impliciti o dubbi sui confini risultano frequenti. L'area non accerta violazioni e non definisce una norma universale per la relazione.");
+        saveAreaInsights(id, "bisogni",
+                "Bisogni trattenuti, scelte sospese o interferenza risultano poco frequenti. Non esclude un bisogno importante non incluso negli item.",
+                "Espressione dei bisogni o impatto dell'incertezza emergono in alcune occasioni. Considera libertà di scelta, conseguenze e condizioni di sicurezza.",
+                "Bisogni trattenuti, disallineamento o interferenza risultano frequenti. L'area non dimostra una causa unica né indica automaticamente di terminare il rapporto.");
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -4134,6 +4240,13 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("The Relationship Between Alexithymia and Emotional Awareness — Maroti e colleghi", "https://pubmed.ncbi.nlm.nih.gov/29713295/"),
                 ref("Subjective interoception and alexithymia — Van Bael e colleghi", "https://pubmed.ncbi.nlm.nih.gov/39509403/"),
                 ref("Twenty-five years with the 20-item Toronto Alexithymia Scale — Bagby, Parker e Taylor", "https://doi.org/10.1016/j.jpsychores.2020.109940")));
+        syncReferences("situationship", List.of(
+                ref("Development and Validation of the Romantic Experience Uncertainty Scale (REUS) — Colombo e colleghi", "https://tpmap.org/submission/index.php/tpm/article/download/4150/3129/9063"),
+                ref("Measuring the sources and content of relational uncertainty — Knobloch e Solomon", "https://doi.org/10.1080/10510979909388499"),
+                ref("Defining and Describing Situationships — Langlais e colleghi", "https://doi.org/10.1007/s12119-024-10210-6"),
+                ref("Are Situationships situational? — Langlais e colleghi", "https://doi.org/10.1007/s12119-025-10402-8"),
+                ref("Sliding versus deciding in relationships — Owen, Rhoades e Stanley", "https://doi.org/10.1080/15332691.2013.779097"),
+                ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {

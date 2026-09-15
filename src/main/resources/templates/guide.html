@@ -111,6 +111,23 @@
                 </ul>
                 <p class="guide-method-note">Per conoscere criteri e limiti del processo editoriale, consulta <a th:href="@{/metodo-e-fonti}">Metodo e fonti</a>.</p>
             </section>
+
+            <section class="recommended-readings" aria-labelledby="recommended-readings-title-fallback"
+                     th:if="${!#lists.isEmpty(recommendedReadings)}">
+                <p class="eyebrow">Letture facoltative</p>
+                <h2 id="recommended-readings-title-fallback">Per approfondire l'argomento</h2>
+                <p class="recommended-readings-intro">Questi libri sono proposte editoriali facoltative, distinte dalle fonti scientifiche della pagina.</p>
+                <div class="recommended-reading-grid">
+                    <article class="recommended-reading-card" th:each="reading : ${recommendedReadings}">
+                        <h3 th:text="${reading.title}">Titolo</h3>
+                        <p class="recommended-reading-authors" th:text="${reading.authors}">Autore</p>
+                        <p th:text="${reading.description}">Descrizione.</p>
+                        <p class="recommended-reading-limit" th:text="${reading.limit}">Limite.</p>
+                        <a class="button button-secondary" th:href="${reading.amazonUrl}" target="_blank" rel="noopener noreferrer sponsored">Vedi su Amazon <span aria-hidden="true">↗</span></a>
+                    </article>
+                </div>
+                <p class="affiliate-disclosure">Link affiliati Amazon. In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.</p>
+            </section>
         </div>
     </article>
 

@@ -23,7 +23,7 @@ export default function ProjectPage() {
         <div><p className="eyebrow">Trasparenza</p><h2>Il metodo è parte del progetto</h2><p>Per questionari e approfondimenti rendiamo disponibili i riferimenti principali e spieghiamo come vengono costruiti i contenuti.</p></div>
         <Button as="a" className="button-light" href="/metodo-e-fonti">Scopri metodo e fonti <span aria-hidden="true">→</span></Button>
       </section>
-      <section className="editorial-responsibility"><p className="eyebrow">Responsabilità editoriale</p><h2>A cura di Spazio Test</h2><p>I contenuti sono pubblicati sotto la responsabilità editoriale di Spazio Test. Il progetto mantiene distinti i questionari informativi dagli strumenti clinici e invita a rivolgersi a professionisti qualificati quando un'esperienza causa sofferenza, limita la vita quotidiana o richiede una valutazione individuale.</p></section>
+      <section className="editorial-responsibility"><p className="eyebrow">Responsabilità editoriale</p><h2>Chi gestisce Spazio Test</h2><p>Spazio Test è gestito da Stefano Liga, come privato. Per contatti puoi scrivere a <a href="mailto:stefano.liga1990@gmail.com">stefano.liga1990@gmail.com</a>.</p><p>Test e approfondimenti sono gratuiti. Chi desidera contribuire al progetto può lasciare un contributo volontario tramite Stripe; il pagamento non è necessario per accedere ai contenuti o ai risultati.</p><p>Il progetto mantiene distinti i questionari informativi dagli strumenti clinici e invita a rivolgersi a professionisti qualificati quando un'esperienza causa sofferenza, limita la vita quotidiana o richiede una valutazione individuale.</p></section>
       <Footer />
     </main>
   );

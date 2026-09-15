@@ -3,8 +3,9 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ReferenceList from '../components/ReferenceList';
 import RelatedGuides from '../components/RelatedGuides';
+import RecommendedReadings from '../components/RecommendedReadings';
 
-export default function GuidePage({ guide, relatedGuides, test, topicCluster }) {
+export default function GuidePage({ guide, recommendedReadings = [], relatedGuides, test, topicCluster }) {
   return (
     <main className="guide-shell">
       <Navbar />
@@ -35,6 +36,7 @@ export default function GuidePage({ guide, relatedGuides, test, topicCluster }) 
             <ReferenceList references={guide.references} />
             <p className="guide-method-note">Per conoscere criteri e limiti del processo editoriale, consulta <a href="/metodo-e-fonti">Metodo e fonti</a>.</p>
           </section>
+          <RecommendedReadings readings={recommendedReadings} />
         </div>
       </article>
       <Footer />

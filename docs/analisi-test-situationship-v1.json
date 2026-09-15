@@ -1,0 +1,41 @@
+{
+  "test": {
+    "id": "situationship",
+    "titolo": "Sto vivendo una situationship?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente il questionario in italiano",
+    "finalita": "Auto-osservazione informativa di ambiguità, accordi e conseguenze percepite in una relazione o frequentazione specifica",
+    "periodo_riferimento": "Ultimi tre mesi, o intero rapporto se iniziato più recentemente",
+    "modello_risultato": "AREA_PROFILE",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale, informativo, non validato e non normato. Non classifica oggettivamente il rapporto, non accerta intenzioni o reciprocità e non indica se iniziare, mantenere o terminare una relazione."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi e sempre alla stessa relazione o frequentazione, o all'intero rapporto se iniziato più recentemente, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
+    "domande": 20,
+    "aree": [
+      {"codice": "definizione", "nome": "Definizione condivisa del rapporto", "item": 4},
+      {"codice": "reciprocita", "nome": "Reciprocità del coinvolgimento", "item": 4},
+      {"codice": "direzione", "nome": "Intenzioni e direzione futura", "item": 4},
+      {"codice": "accordi", "nome": "Accordi e confini", "item": 4},
+      {"codice": "bisogni", "nome": "Espressione dei bisogni e impatto", "item": 4}
+    ],
+    "soglie_editoriali": {"LOW": "media < 2.5", "MEDIUM": "2.5 <= media < 3.5", "HIGH": "media >= 3.5"},
+    "profili": {
+      "LOW": "tutte le aree LOW",
+      "MIXED": "nessuna area HIGH e almeno una MEDIUM",
+      "FOCUSED": "da una a tre aree HIGH",
+      "BROAD": "almeno quattro aree HIGH"
+    },
+    "barre": "Trasformazione lineare 1-5 in 0-100; non percentuali, probabilità, gravità, norme o cut-off"
+  },
+  "fonti": [
+    {"ordine": 1, "titolo": "Development and Validation of the Romantic Experience Uncertainty Scale (REUS) — Colombo e colleghi", "url": "https://tpmap.org/submission/index.php/tpm/article/download/4150/3129/9063", "contributo": "Sviluppo e validazione italiana su adolescenti e giovani adulti; sostiene tre domini di incertezza e ambiguità, senza validare il questionario dell'app."},
+    {"ordine": 2, "titolo": "Measuring the sources and content of relational uncertainty — Knobloch e Solomon", "url": "https://doi.org/10.1080/10510979909388499", "contributo": "Distingue dubbi su sé, partner, norme, reciprocità, definizione e futuro; item e struttura non vengono trasferiti."},
+    {"ordine": 3, "titolo": "Defining and Describing Situationships — Langlais e colleghi", "url": "https://doi.org/10.1007/s12119-024-10210-6", "contributo": "Studio esplorativo mixed-methods consultato per definizione colloquiale, chiarezza, impegno e comportamenti di vicinanza."},
+    {"ordine": 4, "titolo": "Are Situationships situational? — Langlais e colleghi", "url": "https://doi.org/10.1007/s12119-025-10402-8", "contributo": "Temi relativi a esclusività, investimento, bisogni, futuro, sforzo e fiducia; non dimostra causalità o esiti universali."},
+    {"ordine": 5, "titolo": "Sliding versus deciding in relationships — Owen, Rhoades e Stanley", "url": "https://doi.org/10.1080/15332691.2013.779097", "contributo": "Distingue decisioni relazionali esplicite e passaggi per inerzia; non valuta situationship né prescrive una forma di relazione."},
+    {"ordine": 6, "titolo": "1522 — Numero Anti Violenza e Stalking", "url": "https://www.1522.eu/cose-1522/", "contributo": "Fonte istituzionale per l'orientamento di sicurezza; non è evidenza sul costrutto e non sostituisce il 112."}
+  ]
+}
