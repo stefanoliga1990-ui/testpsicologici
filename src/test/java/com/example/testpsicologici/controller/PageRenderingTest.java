@@ -146,7 +146,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("fonti scientifiche o istituzionali italiane")))
                 .andExpect(content().string(containsString("Revisione professionale dei questionari")))
                 .andExpect(content().string(containsString("/react/assets/app.js?v=")))
-                .andExpect(content().string(containsString("/css/app.css?v=reviewer-3")))
+                .andExpect(content().string(containsString("/css/app.css?v=")))
                 .andExpect(content().string(containsString("Alessia Liga")))
                 .andExpect(content().string(containsString("Il Revisore Professionale")))
                 .andExpect(content().string(containsString(

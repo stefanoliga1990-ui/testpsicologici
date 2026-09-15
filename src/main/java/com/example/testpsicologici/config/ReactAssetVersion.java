@@ -10,14 +10,19 @@ import java.io.IOException;
 public class ReactAssetVersion {
 
     private final String value;
+    private final String stylesheetValue;
 
     public ReactAssetVersion(ResourceLoader resourceLoader) {
-        Resource bundle = resourceLoader.getResource("classpath:/static/react/assets/app.js");
-        this.value = lastModified(bundle);
+        this.value = lastModified(resourceLoader.getResource("classpath:/static/react/assets/app.js"));
+        this.stylesheetValue = lastModified(resourceLoader.getResource("classpath:/static/css/app.css"));
     }
 
     public String getValue() {
         return value;
+    }
+
+    public String getStylesheetValue() {
+        return stylesheetValue;
     }
 
     private String lastModified(Resource bundle) {
