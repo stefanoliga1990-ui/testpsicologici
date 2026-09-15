@@ -5,6 +5,7 @@ public record RecommendedReading(
         String authors,
         String description,
         String limit,
-        String amazonUrl
+        String amazonUrl,
+        boolean placeholderCover
 ) {
 }

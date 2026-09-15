@@ -62,6 +62,8 @@ Non chiedere di acquistare tramite i link per sostenere il sito e non offrire pr
 
 Prima versione: testo e link, senza prezzi, stelle, recensioni o copertine recuperati da Amazon. Eventuali immagini e dati commerciali futuri richiedono verifica dei diritti e delle modalità consentite dal programma. Nessuna risposta, punteggio o identificativo personale nei collegamenti o nei parametri di tracciamento.
 
+Quando una scheda utilizza `placeholderCover: true`, mostra una copertina grafica interna e puramente tipografica: rettangolo grigio chiaro, titolo in grigio scuro, senza immagine o dato commerciale di Amazon. Il placeholder non rappresenta la copertina reale e non richiede il recupero di asset esterni. Il valore va registrato anche nel catalogo applicativo; per i nuovi titoli può essere attivato dopo la verifica editoriale della scheda.
+
 ## Scheda interna minima e manutenzione
 
 Per ogni candidato registrare in un catalogo del passo 4:

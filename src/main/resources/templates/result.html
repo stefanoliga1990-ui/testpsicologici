@@ -82,9 +82,14 @@
         <h2 id="recommended-readings-title-fallback">Per approfondire l'argomento</h2>
         <p class="recommended-readings-intro">Questi libri sono proposte editoriali facoltative, distinte dalle fonti scientifiche della pagina.</p>
         <div class="recommended-reading-grid">
-            <article class="recommended-reading-card" th:each="reading : ${recommendedReadings}">
-                <h3 th:text="${reading.title}">Titolo</h3>
-                <p class="recommended-reading-authors" th:text="${reading.authors}">Autore</p>
+            <article th:class="${reading.placeholderCover} ? 'recommended-reading-card has-placeholder-cover' : 'recommended-reading-card'" th:each="reading : ${recommendedReadings}">
+                <div class="recommended-reading-heading">
+                    <div class="recommended-reading-cover" aria-hidden="true" th:if="${reading.placeholderCover}"><span th:text="${reading.title}">Titolo</span></div>
+                    <div>
+                        <h3 th:text="${reading.title}">Titolo</h3>
+                        <p class="recommended-reading-authors" th:text="${reading.authors}">Autore</p>
+                    </div>
+                </div>
                 <p th:text="${reading.description}">Descrizione.</p>
                 <p class="recommended-reading-limit" th:text="${reading.limit}">Limite.</p>
                 <a class="button amazon-button" th:href="${reading.amazonUrl}" target="_blank" rel="noopener noreferrer sponsored">Vedi su Amazon <span aria-hidden="true">↗</span></a>

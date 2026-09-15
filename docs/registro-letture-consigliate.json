@@ -45,6 +45,7 @@
       "books": [
         {
           "title": "La differenza invisibile",
+          "placeholderCover": true,
           "authors": ["Julie Dachez", "Mademoiselle Caroline"],
           "publisher": "Edizioni LSWR",
           "isbn13": "9788868956004",
@@ -68,6 +69,7 @@
         },
         {
           "title": "Esplorare il proprio autismo",
+          "placeholderCover": true,
           "authors": ["Chiara Mangione", "Francesca Mela"],
           "publisher": "Edizioni LSWR",
           "isbn13": "9791254910689",
