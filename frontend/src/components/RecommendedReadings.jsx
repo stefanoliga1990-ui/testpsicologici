@@ -17,7 +17,7 @@ export default function RecommendedReadings({ readings }) {
             <p className="recommended-reading-authors">{reading.authors}</p>
             <p>{reading.description}</p>
             <p className="recommended-reading-limit">{reading.limit}</p>
-            <Button as="a" className="button-secondary" href={reading.amazonUrl} target="_blank" rel="noopener noreferrer sponsored">
+            <Button as="a" className="amazon-button" href={reading.amazonUrl} target="_blank" rel="noopener noreferrer sponsored">
               Vedi su Amazon <span aria-hidden="true">↗</span>
             </Button>
           </article>
