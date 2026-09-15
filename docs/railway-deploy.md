@@ -48,6 +48,17 @@ Per generare una chiave casuale da PowerShell:
 
 Railway tratta le variabili come segreti del servizio e avvia automaticamente un nuovo deploy dopo la modifica. Non inserire questi valori in `application.properties`, nei log o nel repository.
 
+## Copertine Amazon tramite Creators API
+
+La visualizzazione delle copertine dei libri è disattivata per impostazione predefinita. Dopo aver ottenuto le credenziali della Creators API dal Centro Affiliazioni Amazon, configurare in **Variables** del servizio Railway:
+
+- `AMAZON_CREATORS_API_CLIENT_ID`: Credential ID dell'applicazione Creators API;
+- `AMAZON_CREATORS_API_CLIENT_SECRET`: Secret associato alla credenziale;
+- `AMAZON_PARTNER_TAG`: Tracking ID Amazon.it, attualmente `spaziotest-21`;
+- `AMAZON_CREATORS_API_ENABLED`: `true`, da impostare soltanto dopo aver inserito le altre tre variabili.
+
+Le credenziali restano nel backend e non vengono inviate al browser. L'app richiede ad Amazon soltanto le immagini principali degli ASIN presenti nel catalogo editoriale, conserva gli URL per 23 ore e nasconde la copertina senza interrompere la pagina quando Amazon non è disponibile. Le immagini non vengono scaricate né archiviate sul volume Railway.
+
 Se `MONITORING_USERNAME` o `MONITORING_PASSWORD` mancano, l'area riservata non è accessibile. Se manca `VISITOR_COOKIE_SECRET`, il conteggio funziona con una chiave temporanea ma può ricontare alcuni browser dopo un riavvio; in produzione va quindi sempre configurata.
 
 La dashboard è disponibile su `https://spaziotest.me/monitoring` e aggiorna il valore odierno ogni 15 secondi. Le visite alla dashboard e alla pagina di login non entrano nelle statistiche. Dettagli tecnici e limiti sono documentati in [`docs/monitoraggio-visite.md`](monitoraggio-visite.md).

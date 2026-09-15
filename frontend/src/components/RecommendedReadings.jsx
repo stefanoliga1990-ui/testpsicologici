@@ -13,6 +13,24 @@ export default function RecommendedReadings({ readings }) {
       <div className="recommended-reading-grid">
         {readings.map((reading) => (
           <article className="recommended-reading-card" key={reading.amazonUrl}>
+            {reading.imageUrl && (
+              <a
+                className="recommended-reading-cover"
+                href={reading.amazonUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                aria-label={`Vedi ${reading.title} su Amazon`}
+              >
+                <img
+                  src={reading.imageUrl}
+                  width={reading.imageWidth}
+                  height={reading.imageHeight}
+                  loading="lazy"
+                  decoding="async"
+                  alt={`Copertina di ${reading.title}`}
+                />
+              </a>
+            )}
             <h3>{reading.title}</h3>
             <p className="recommended-reading-authors">{reading.authors}</p>
             <p>{reading.description}</p>
