@@ -44,7 +44,8 @@ class TestResultServiceTest {
         assertThat(test.areas()).allSatisfy(area ->
                 assertThat(test.questions()).filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
         assertThat(test.scoreVisible()).isFalse();
-        assertThat(test.version()).isEqualTo("2.6");
+        assertThat(test.version()).isEqualTo("2.7");
+        assertThat(test.title()).isEqualTo("Autismo nell'adulto: tratti associati");
         assertThat(test.seoTitle()).startsWith("Test autismo adulti online");
         assertThat(test.seoDescription()).contains("senza registrazione");
         assertThat(test.references()).hasSize(3);

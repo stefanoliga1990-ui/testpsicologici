@@ -1,4 +1,4 @@
-# Tratti autistici nell'adulto — specifica editoriale v2.0
+# Autismo nell'adulto: tratti associati — specifica editoriale v2.0
 
 ## Stato e finalità
 

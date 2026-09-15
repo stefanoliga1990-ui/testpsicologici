@@ -90,13 +90,13 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAutismInformationTest() {
         String id = "tratti-autistici-adulti";
-        String version = "2.6";
+        String version = "2.7";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Tratti autistici nell'adulto",
+                "Autismo nell'adulto: tratti associati",
                 "Autovalutazione informativa",
                 "Questionario informativo per adulti su comunicazione sociale, segnali impliciti, routine, flessibilità, interessi e sensibilità sensoriale.",
                 "6 min · 24 domande",
