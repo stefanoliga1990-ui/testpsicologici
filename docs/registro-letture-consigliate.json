@@ -152,7 +152,67 @@
         }
       ]
     },
-    { "topicId": "disturbo-ossessivo-compulsivo", "testId": "tratti-ossessivo-compulsivi", "guideSlug": "disturbo-ossessivo-compulsivo", "title": "Pensieri ossessivi e compulsioni (DOC)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "disturbo-ossessivo-compulsivo",
+      "testId": "tratti-ossessivo-compulsivi",
+      "guideSlug": "disturbo-ossessivo-compulsivo",
+      "title": "Pensieri ossessivi e compulsioni (DOC)",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Vincere le ossessioni",
+          "subtitle": "Capire e affrontare il Disturbo Ossessivo-Compulsivo",
+          "authors": ["Gabriele Melli"],
+          "publisher": "Erickson",
+          "isbn13": "9788859044635",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Introduzione e percorso di auto-aiuto",
+          "audience": "Adulti che cercano una spiegazione accessibile del DOC, familiari e professionisti che desiderano un supporto psicoeducativo",
+          "description": "Un testo introduttivo e operativo che presenta le caratteristiche del DOC, i suoi possibili meccanismi di mantenimento e un percorso di auto-aiuto basato sull'approccio cognitivo-comportamentale.",
+          "limit": "Un manuale di auto-aiuto non permette di stabilire una diagnosi e non sostituisce una valutazione o un trattamento concordato con un professionista.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/vincere-le-ossessioni" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859044634",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Vincere-ossessioni-affrontare-disturbo-ossessivo-compulsivo/dp/8859044634?dib=eyJ2IjoiMSJ9.DzFfu6WwZQocYEfCi53IylV0qpMctNfXIbjh7vDLfg_IKl3VZOOVt3IRYdJdftL-.DVzqnucH4fUOWFe9wBjdm6LcfTpr0HobMjlOg-zOFcs&dib_tag=se&keywords=Vincere+le+ossessioni+Gabriele+Melli&qid=1789505096&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=2513be9f53d87f24a6ea8ffd828402da&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "La mente ossessiva",
+          "subtitle": "Curare il disturbo ossessivo-compulsivo",
+          "authors": ["Francesco Mancini (a cura di)"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860308221",
+          "publicationYear": 2016,
+          "format": "brossura",
+          "editorialRole": "Approfondimento clinico e teorico",
+          "audience": "Professionisti, studenti e lettori che cercano un approfondimento tecnico sul DOC",
+          "description": "Un volume specialistico che approfondisce un modello cognitivista di comprensione del disturbo ossessivo-compulsivo e della sua cura, collegandolo alla ricerca e alla pratica clinica.",
+          "limit": "È un testo tecnico legato a uno specifico modello teorico e non offre una lettura personalizzata delle risposte al questionario.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/autori-vari/la-mente-ossessiva-9788860308221-2422.html" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8860308224",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/mente-ossessiva-Curare-disturbo-ossessivo-compulsivo/dp/8860308224?crid=3JTQABH2BWKIB&dib=eyJ2IjoiMSJ9.GEHjRcJvU04sDFt7pE3tCw.wSN9tKHCL6iDN8osFcY4pjwr_qBKdN1T29FqtgNQU_I&dib_tag=se&keywords=9788860308221&qid=1789505129&sprefix=9788860308221%2Caps%2C331&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=68d714a6089fb8ae408370d07a056ed8&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "autostima", "testId": "autostima", "guideSlug": "autostima", "title": "Autostima", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "dipendenza-affettiva", "testId": "dipendenza-affettiva", "guideSlug": "dipendenza-affettiva", "title": "Dipendenza affettiva", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "assertivita", "testId": "assertivita", "guideSlug": "assertivita", "title": "Assertività", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

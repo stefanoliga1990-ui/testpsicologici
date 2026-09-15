@@ -442,8 +442,26 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Obsessive-compulsive disorder and body dysmorphic disorder: treatment — NICE CG31")))
                 .andExpect(content().string(containsString("href=\"/test/tratti-ossessivo-compulsivi\"")))
+                .andExpect(content().string(containsString("Vincere le ossessioni")))
+                .andExpect(content().string(containsString("La mente ossessiva")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
+    void obsessiveCompulsiveResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
+        mockMvc.perform(get("/test/tratti-ossessivo-compulsivi/risultato")
+                        .session(completedAttempt("tratti-ossessivo-compulsivi", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("Vincere le ossessioni")))
+                .andExpect(content().string(containsString("La mente ossessiva")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
