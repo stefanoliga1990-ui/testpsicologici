@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-15",
+  "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
+  "selectionPolicy": {
+    "booksPerTopic": {
+      "minimum": 2,
+      "maximum": 3
+    },
+    "fallbackRule": "Quando non esistono titoli sufficientemente pertinenti sul tema specifico, possono essere selezionati libri su un tema più ampio che lo includa. Il tema più ampio e il motivo della scelta vanno registrati in fallbackTopics e fallbackRationale.",
+    "publicationRule": "Un libro può essere pubblicato solo dopo la verifica dell'edizione Amazon.it, del formato, dell'ASIN e del link SiteStripe con tracking ID. La sezione non deve confermare diagnosi, suggerire un acquisto in base al risultato o attribuire efficacia clinica al libro."
+  },
+  "bookFields": {
+    "requiredBeforePublication": [
+      "title",
+      "authors",
+      "publisher",
+      "isbn13",
+      "format",
+      "editorialRole",
+      "audience",
+      "description",
+      "limit",
+      "primarySources",
+      "amazon.asin",
+      "amazon.affiliateUrl",
+      "amazon.verificationStatus"
+    ],
+    "statusValues": [
+      "PENDING_RESEARCH",
+      "RESEARCHED",
+      "PUBLISHED",
+      "NOT_SELECTED"
+    ]
+  },
+  "topics": [
+    {
+      "topicId": "autismo-adulti",
+      "testId": "tratti-autistici-adulti",
+      "guideSlug": "autismo-adulti",
+      "title": "Autismo nell'adulto",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "La differenza invisibile",
+          "authors": ["Julie Dachez", "Mademoiselle Caroline"],
+          "publisher": "Edizioni LSWR",
+          "isbn13": "9788868956004",
+          "format": "cartonato",
+          "editorialRole": "Graphic novel introduttiva",
+          "audience": "Adulti interessati a una narrazione ambientata nella vita quotidiana",
+          "description": "Una graphic novel sulla vita di Marguerite e sul modo in cui alcune esperienze sociali e sensoriali possono essere vissute nell'età adulta.",
+          "limit": "Racconta un'esperienza particolare: non è un test e non serve a stabilire se una persona sia autistica.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.edizionilswr.it/cultura-e-societa/la-differenza-invisibile.html" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8868956004",
+            "formatVerified": "cartaceo",
+            "affiliateUrl": "https://www.amazon.it/-/en/differenza-invisibile-Caroline-Mademoiselle/dp/8868956004?crid=2IJUWCYK4HXJF&dib=eyJ2IjoiMSJ9.epShUfSiSkQVueGrdMsLKQ.GS6okDmIatM2p7-iK3JcyplpgiieBP6r_12zBcJLI1Y&dib_tag=se&keywords=9788868956004&qid=1789482441&sprefix=9788868956004%2Caps%2C153&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=d798aa3baaa2f274290edcb540cdc5ec&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Esplorare il proprio autismo",
+          "authors": ["Chiara Mangione", "Francesca Mela"],
+          "publisher": "Edizioni LSWR",
+          "isbn13": "9791254910689",
+          "format": "brossura",
+          "editorialRole": "Approfondimento sulle esperienze adulte",
+          "audience": "Adulti nello spettro interessati a riflettere sulla propria esperienza",
+          "description": "Un volume dedicato all'esplorazione dell'esperienza di adulti nello spettro, con capitoli tematici e testimonianze.",
+          "limit": "È rivolto a un contesto adulto nello spettro e non conferma il risultato del questionario né sostituisce una valutazione professionale.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.edizionilswr.it/esplorare-il-proprio-autismo.html" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "B0BT4WCXFB",
+            "formatVerified": "cartaceo",
+            "affiliateUrl": "https://www.amazon.it/-/en/Esplorare-proprio-autismo-formazione-benessere/dp/B0BT4WCXFB?crid=128Q68GPXJJJ9&dib=eyJ2IjoiMSJ9.f1PNBWyx7VetB2gPq9_EGQ.rG97biUWu2ThECB7p1jpi67jiYiIryxDwV0Kdt03xG4&dib_tag=se&keywords=9791254910689&qid=1789482565&sprefix=9791254910689%2Caps%2C141&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=dc6aa3de7170dc51f979a5b0e09beb6d&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
+    {
+      "topicId": "adhd-adulti",
+      "testId": "tratti-adhd-adulti",
+      "guideSlug": "adhd-adulti",
+      "title": "ADHD nell'adulto",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "RESEARCHED",
+      "books": [
+        {
+          "title": "L'anno che ho incontrato il mio cervello",
+          "subtitle": "Diario di viaggio per chi ha appena scoperto di avere l'ADHD",
+          "authors": ["Matilda Boseley"],
+          "publisher": "Erickson",
+          "isbn13": "9788859044666",
+          "publicationYear": 2026,
+          "format": "cartaceo",
+          "editorialRole": "Narrazione e divulgazione esperienziale",
+          "audience": "Adulti interessati a un racconto personale sull'ADHD e persone vicine che vogliono comprenderne alcune esperienze",
+          "description": "Un racconto in prima persona che intreccia l'esperienza dell'autrice, informazioni accessibili e temi come relazioni, studio, lavoro, burnout e cura di sé.",
+          "limit": "Racconta il percorso di una persona con diagnosi e non permette di dedurre che chi completa il questionario abbia l'ADHD.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/l-anno-che-ho-incontrato-il-mio-cervello" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": null,
+            "formatVerified": null,
+            "affiliateUrl": null,
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "PENDING"
+          },
+          "publicationStatus": "RESEARCHED"
+        },
+        {
+          "title": "ADHD negli adulti",
+          "subtitle": "Un modello per l'intervento psicoeducativo",
+          "authors": ["Giovanni Migliarese", "Viviana Venturi", "Yacob Levin Reibman", "Claudio Mencacci"],
+          "publisher": "Erickson",
+          "isbn13": "9788859030294",
+          "format": "cartaceo",
+          "editorialRole": "Manuale di approfondimento psicoeducativo",
+          "audience": "Soprattutto professionisti della salute mentale e lettori che cercano un testo più tecnico",
+          "description": "Un manuale sull'ADHD in età adulta e su un modello di intervento psicoeducativo, con capitoli su manifestazioni, comorbilità, organizzazione, relazioni e materiali per gli utenti.",
+          "limit": "È rivolto principalmente a professionisti e non va presentato come strumento di autodiagnosi o come indicazione di trattamento per chi completa il test.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/adhd-negli-adulti" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": null,
+            "formatVerified": null,
+            "affiliateUrl": null,
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "PENDING"
+          },
+          "publicationStatus": "RESEARCHED"
+        }
+      ]
+    },
+    { "topicId": "disturbo-ossessivo-compulsivo", "testId": "tratti-ossessivo-compulsivi", "guideSlug": "disturbo-ossessivo-compulsivo", "title": "Pensieri ossessivi e compulsioni (DOC)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "autostima", "testId": "autostima", "guideSlug": "autostima", "title": "Autostima", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "dipendenza-affettiva", "testId": "dipendenza-affettiva", "guideSlug": "dipendenza-affettiva", "title": "Dipendenza affettiva", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "assertivita", "testId": "assertivita", "guideSlug": "assertivita", "title": "Assertività", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "intelligenza-emotiva", "testId": "intelligenza-emotiva", "guideSlug": "intelligenza-emotiva", "title": "Intelligenza emotiva", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "perfezionismo", "testId": "perfezionismo", "guideSlug": "perfezionismo", "title": "Perfezionismo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "ansia-sociale", "testId": "ansia-sociale", "guideSlug": "ansia-sociale", "title": "Ansia sociale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "dinamiche-narcisistiche-coppia", "testId": "dinamiche-narcisistiche-partner", "guideSlug": "dinamiche-narcisistiche-coppia", "title": "Dinamiche narcisistiche nella coppia", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "ansia-generalizzata", "testId": "ansia-generalizzata", "guideSlug": "ansia-generalizzata", "title": "Ansia generalizzata", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "umore-depresso", "testId": "umore-depresso", "guideSlug": "umore-depresso", "title": "Umore depresso e sintomi depressivi", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "people-pleasing", "testId": "people-pleasing", "guideSlug": "people-pleasing", "title": "People pleasing e bisogno di approvazione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "sindrome-impostore", "testId": "sindrome-impostore", "guideSlug": "sindrome-impostore", "title": "Sindrome dell'impostore", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "autosabotaggio", "testId": "autosabotaggio", "guideSlug": "autosabotaggio", "title": "Autosabotaggio e ostacoli agli obiettivi", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "disturbo-borderline-personalita", "testId": "tratti-borderline-adulti", "guideSlug": "disturbo-borderline-personalita", "title": "Disturbo borderline di personalità", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "paura-abbandono", "testId": "paura-abbandono", "guideSlug": "paura-abbandono", "title": "Paura dell'abbandono", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "fomo", "testId": "fomo", "guideSlug": "fomo", "title": "FOMO (Fear of Missing Out)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "intelligenza-linguistica", "testId": "intelligenza-linguistica", "guideSlug": "intelligenza-linguistica", "title": "Intelligenza linguistica", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "intelligenza-intrapersonale", "testId": "intelligenza-intrapersonale", "guideSlug": "intelligenza-intrapersonale", "title": "Intelligenza intrapersonale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "resilienza-psicologica", "testId": "resilienza-psicologica", "guideSlug": "resilienza-psicologica", "title": "Resilienza psicologica", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "gelosia-partner", "testId": "gelosia-partner", "guideSlug": "gelosia-partner", "title": "Gelosia nella relazione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "soddisfazione-vita", "testId": "soddisfazione-vita", "guideSlug": "soddisfazione-vita", "title": "Soddisfazione di vita", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "ptsd-adulti", "testId": "ptsd-adulti", "guideSlug": "ptsd-adulti", "title": "Disturbo post-traumatico da stress", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "stili-attaccamento", "testId": "stili-attaccamento", "guideSlug": "stili-attaccamento", "title": "Stili di attaccamento nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "limerenza", "testId": "limerenza", "guideSlug": "limerenza", "title": "Limerenza e innamoramento ossessivo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "parentificazione", "testId": "parentificazione", "guideSlug": "parentificazione", "title": "Parentificazione e inversione dei ruoli", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "gaslighting", "testId": "gaslighting", "guideSlug": "gaslighting", "title": "Gaslighting nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "love-bombing", "testId": "love-bombing", "guideSlug": "love-bombing", "title": "Love bombing nelle relazioni", "fallbackTopics": ["manipolazione nelle relazioni", "violenza psicologica"], "fallbackRationale": "Se non emergono titoli affidabili dedicati al love bombing, considerare testi sulle dinamiche di manipolazione e violenza psicologica nelle relazioni.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "breadcrumbing", "testId": "breadcrumbing", "guideSlug": "breadcrumbing", "title": "Breadcrumbing nelle relazioni", "fallbackTopics": ["incertezza relazionale", "comunicazione nelle relazioni"], "fallbackRationale": "Il breadcrumbing può richiedere testi più generali su incertezza, comunicazione e confini relazionali.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "orbiting", "testId": "orbiting", "guideSlug": "orbiting", "title": "Orbiting dopo una relazione", "fallbackTopics": ["rotture relazionali", "confini digitali"], "fallbackRationale": "Se non esistono testi dedicati, selezionare libri su separazioni, confini e comunicazione digitale.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "hoovering", "testId": "hoovering", "guideSlug": "hoovering", "title": "Hoovering dopo una relazione", "fallbackTopics": ["manipolazione nelle relazioni", "separazioni e confini"], "fallbackRationale": "Il termine è specifico; possono essere più appropriati libri più generali su dinamiche manipolative e confini dopo una separazione.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "compatibilita-coppia", "testId": "compatibilita-coppia", "guideSlug": "compatibilita-coppia", "title": "Compatibilità di coppia", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "relazione-dannosa-benessere", "testId": "relazione-dannosa-benessere", "guideSlug": "relazione-dannosa-benessere", "title": "Relazione e benessere", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "triangolazione-relazionale", "testId": "triangolazione-subita", "guideSlug": "triangolazione-relazionale", "title": "Triangolazione relazionale", "fallbackTopics": ["dinamiche familiari", "manipolazione nelle relazioni"], "fallbackRationale": "Se mancano testi dedicati, usare fonti divulgative affidabili su triangolazione, confini e dinamiche relazionali più ampie.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "invalidazione-emotiva", "testId": "invalidazione-emotiva-subita", "guideSlug": "invalidazione-emotiva", "title": "Invalidazione emotiva", "fallbackTopics": ["comunicazione nelle relazioni", "violenza psicologica"], "fallbackRationale": "Il tema può essere coperto da testi più generali su comunicazione, confini e dinamiche relazionali dannose.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "disturbo-evitante-personalita", "testId": "tratti-evitanti-personalita-adulti", "guideSlug": "disturbo-evitante-personalita", "title": "Disturbo evitante di personalità", "fallbackTopics": ["ansia sociale", "evitamento"], "fallbackRationale": "Se non emergono testi divulgativi responsabili sul tema specifico, usare letture su ansia sociale ed evitamento senza equiparare i costrutti.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "disponibilita-emotiva", "testId": "disponibilita-emotiva", "guideSlug": "disponibilita-emotiva", "title": "Disponibilità emotiva", "fallbackTopics": ["intimità nelle relazioni", "comunicazione emotiva"], "fallbackRationale": "Il costrutto può richiedere testi più ampi su intimità, ascolto e comunicazione emotiva.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "alessitimia", "testId": "alessitimia", "guideSlug": "alessitimia", "title": "Alessitimia", "fallbackTopics": ["consapevolezza emotiva", "regolazione emotiva"], "fallbackRationale": "In assenza di libri dedicati accessibili, usare testi su riconoscimento, linguaggio e regolazione delle emozioni senza assimilare i costrutti.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "situationship", "testId": "situationship", "guideSlug": "situationship", "title": "Situationship", "fallbackTopics": ["incertezza relazionale", "comunicazione e confini"], "fallbackRationale": "Se non emergono testi dedicati e affidabili, selezionare letture su incertezza, definizione della relazione, comunicazione e confini.", "researchStatus": "PENDING_RESEARCH", "books": [] }
+  ]
+}

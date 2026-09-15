@@ -2,6 +2,7 @@
 
 - [Regole editoriali per letture e materiali consigliati](policy-letture-consigliate.md): criteri di selezione, esclusioni, trasparenza dell'affiliazione e scheda interna per i titoli proposti.
 - [Letture candidate: tratti autistici nell'adulto](letture-autismo-adulti.md): primo argomento, due candidati complementari e verifiche ancora necessarie prima della pubblicazione.
+- [Registro delle letture consigliate](registro-letture-consigliate.json): stato editoriale e dati bibliografici dei materiali associabili a ogni test e approfondimento.
 
 - `audit-psicometrico-2026-08.md` descrive l'audit trasversale dei 27 questionari presenti al momento della revisione; le specifiche aggiunte successivamente documentano i nuovi questionari.
 - `audit-fonti-2026-08.md` documenta criteri, decisioni e limiti della revisione delle fonti per la popolazione italiana.
