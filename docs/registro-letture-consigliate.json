@@ -98,7 +98,7 @@
       "title": "ADHD nell'adulto",
       "fallbackTopics": [],
       "fallbackRationale": null,
-      "researchStatus": "RESEARCHED",
+      "researchStatus": "PUBLISHED",
       "books": [
         {
           "title": "L'anno che ho incontrato il mio cervello",
@@ -117,13 +117,13 @@
           ],
           "amazon": {
             "marketplace": "amazon.it",
-            "asin": null,
-            "formatVerified": null,
-            "affiliateUrl": null,
+            "asin": "8859044669",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/incontrato-cervello-Diario-viaggio-scoperto/dp/8859044669?crid=3PFRX3QPBDULK&dib=eyJ2IjoiMSJ9.QOCxbW2MvIcVRWqZhRQLeQ.yWaO2YjrqjMYInT55owv73pyCrhIgPzhUiKK_mNTAyc&dib_tag=se&keywords=9788859044666&qid=1789503160&sprefix=9788859044666%2Caps%2C160&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=06292617b9f411b0bdcc49b1d3d1d774&ref_=as_li_ss_tl",
             "trackingId": "spaziotest-21",
-            "verificationStatus": "PENDING"
+            "verificationStatus": "VERIFIED"
           },
-          "publicationStatus": "RESEARCHED"
+          "publicationStatus": "PUBLISHED"
         },
         {
           "title": "ADHD negli adulti",
@@ -131,6 +131,7 @@
           "authors": ["Giovanni Migliarese", "Viviana Venturi", "Yacob Levin Reibman", "Claudio Mencacci"],
           "publisher": "Erickson",
           "isbn13": "9788859030294",
+          "publicationYear": 2023,
           "format": "cartaceo",
           "editorialRole": "Manuale di approfondimento psicoeducativo",
           "audience": "Soprattutto professionisti della salute mentale e lettori che cercano un testo più tecnico",
@@ -141,13 +142,13 @@
           ],
           "amazon": {
             "marketplace": "amazon.it",
-            "asin": null,
-            "formatVerified": null,
-            "affiliateUrl": null,
+            "asin": "8859030293",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/negli-adulti-modello-lintervento-psicoeducativo/dp/8859030293?dib=eyJ2IjoiMSJ9.Xwfk3JWdyrKgfws-RGVgfw.orwXL2bOHxgTCxRhhS-5s7X2aKxGUPnYLsfpe0FDGgo&dib_tag=se&keywords=9788859030294&qid=1789503354&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=a5799dce98e7af80ff45383edb70cc80&ref_=as_li_ss_tl",
             "trackingId": "spaziotest-21",
-            "verificationStatus": "PENDING"
+            "verificationStatus": "VERIFIED"
           },
-          "publicationStatus": "RESEARCHED"
+          "publicationStatus": "PUBLISHED"
         }
       ]
     },
