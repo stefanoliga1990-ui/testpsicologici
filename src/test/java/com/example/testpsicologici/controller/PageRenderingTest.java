@@ -452,6 +452,8 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/test/tratti-ossessivo-compulsivi\"")))
                 .andExpect(content().string(containsString("Vincere le ossessioni")))
                 .andExpect(content().string(containsString("La mente ossessiva")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
                 .andExpect(content().string(containsString("tag=spaziotest-21")))
                 .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
@@ -466,6 +468,8 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Letture facoltative")))
                 .andExpect(content().string(containsString("Vincere le ossessioni")))
                 .andExpect(content().string(containsString("La mente ossessiva")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
                 .andExpect(content().string(containsString("tag=spaziotest-21")))
                 .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
                 .andExpect(content().string(containsString(

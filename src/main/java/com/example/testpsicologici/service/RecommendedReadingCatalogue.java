@@ -53,7 +53,7 @@ public class RecommendedReadingCatalogue {
                             "Un testo introduttivo e operativo che presenta le caratteristiche del DOC, i suoi possibili meccanismi di mantenimento e un percorso di auto-aiuto basato sull'approccio cognitivo-comportamentale.",
                             "Un manuale di auto-aiuto non permette di stabilire una diagnosi e non sostituisce una valutazione o un trattamento concordato con un professionista.",
                             "https://www.amazon.it/-/en/Vincere-ossessioni-affrontare-disturbo-ossessivo-compulsivo/dp/8859044634?dib=eyJ2IjoiMSJ9.DzFfu6WwZQocYEfCi53IylV0qpMctNfXIbjh7vDLfg_IKl3VZOOVt3IRYdJdftL-.DVzqnucH4fUOWFe9wBjdm6LcfTpr0HobMjlOg-zOFcs&dib_tag=se&keywords=Vincere+le+ossessioni+Gabriele+Melli&qid=1789505096&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=2513be9f53d87f24a6ea8ffd828402da&ref_=as_li_ss_tl",
-                            false
+                            true
                     ),
                     new RecommendedReading(
                             "La mente ossessiva",
@@ -61,7 +61,7 @@ public class RecommendedReadingCatalogue {
                             "Un volume specialistico che approfondisce un modello cognitivista di comprensione del disturbo ossessivo-compulsivo e della sua cura, collegandolo alla ricerca e alla pratica clinica.",
                             "È un testo tecnico legato a uno specifico modello teorico e non offre una lettura personalizzata delle risposte al questionario.",
                             "https://www.amazon.it/-/en/mente-ossessiva-Curare-disturbo-ossessivo-compulsivo/dp/8860308224?crid=3JTQABH2BWKIB&dib=eyJ2IjoiMSJ9.GEHjRcJvU04sDFt7pE3tCw.wSN9tKHCL6iDN8osFcY4pjwr_qBKdN1T29FqtgNQU_I&dib_tag=se&keywords=9788860308221&qid=1789505129&sprefix=9788860308221%2Caps%2C331&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=68d714a6089fb8ae408370d07a056ed8&ref_=as_li_ss_tl",
-                            false
+                            true
                     )
             )
     );

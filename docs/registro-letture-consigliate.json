@@ -167,6 +167,7 @@
       "books": [
         {
           "title": "Vincere le ossessioni",
+          "placeholderCover": true,
           "subtitle": "Capire e affrontare il Disturbo Ossessivo-Compulsivo",
           "authors": ["Gabriele Melli"],
           "publisher": "Erickson",
@@ -192,6 +193,7 @@
         },
         {
           "title": "La mente ossessiva",
+          "placeholderCover": true,
           "subtitle": "Curare il disturbo ossessivo-compulsivo",
           "authors": ["Francesco Mancini (a cura di)"],
           "publisher": "Raffaello Cortina Editore",
