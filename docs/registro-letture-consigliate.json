@@ -104,6 +104,7 @@
       "books": [
         {
           "title": "L'anno che ho incontrato il mio cervello",
+          "placeholderCover": true,
           "subtitle": "Diario di viaggio per chi ha appena scoperto di avere l'ADHD",
           "authors": ["Matilda Boseley"],
           "publisher": "Erickson",
@@ -129,6 +130,7 @@
         },
         {
           "title": "ADHD negli adulti",
+          "placeholderCover": true,
           "subtitle": "Un modello per l'intervento psicoeducativo",
           "authors": ["Giovanni Migliarese", "Viviana Venturi", "Yacob Levin Reibman", "Claudio Mencacci"],
           "publisher": "Erickson",

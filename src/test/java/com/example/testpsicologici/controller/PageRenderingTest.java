@@ -406,6 +406,8 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/test/tratti-adhd-adulti\"")))
                 .andExpect(content().string(containsString("L&#39;anno che ho incontrato il mio cervello")))
                 .andExpect(content().string(containsString("ADHD negli adulti")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
                 .andExpect(content().string(containsString("tag=spaziotest-21")))
                 .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
@@ -420,6 +422,8 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Letture facoltative")))
                 .andExpect(content().string(containsString("L&#39;anno che ho incontrato il mio cervello")))
                 .andExpect(content().string(containsString("ADHD negli adulti")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
                 .andExpect(content().string(containsString("tag=spaziotest-21")))
                 .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
                 .andExpect(content().string(containsString(
