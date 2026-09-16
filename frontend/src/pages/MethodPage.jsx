@@ -50,6 +50,7 @@ function ReviewerSection({ reviewer }) {
           <p><span>Email</span><a href={`mailto:${reviewer.email}`}>{reviewer.email}</a></p>
           <p><span>Telefono</span><a href={`tel:${reviewer.phoneHref}`}>{reviewer.phoneDisplay}</a></p>
           <p><span>Profilo</span><a href={reviewer.linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          <p><span>Sito</span><a href={reviewer.websiteUrl} target="_blank" rel="noopener noreferrer">IL MIO SITO</a></p>
         </address>
       </dialog>
     </>

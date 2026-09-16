@@ -22,7 +22,8 @@ public class EditorialController {
             "Alessia.liga3@gmail.com",
             "+39 392 240 7494",
             "+393922407494",
-            "https://www.linkedin.com/in/alessia-liga-a057b985");
+            "https://www.linkedin.com/in/alessia-liga-a057b985",
+            "https://alessialigapsicologa.com/");
 
     private final TestCatalogue catalogue;
     private final SiteUrlService siteUrlService;

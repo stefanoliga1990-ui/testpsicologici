@@ -171,6 +171,9 @@ class PageRenderingTest {
                         "href=\"https://www.linkedin.com/in/alessia-liga-a057b985\"")))
                 .andExpect(content().string(containsString(">LinkedIn</a>")))
                 .andExpect(content().string(containsString(
+                        "href=\"https://alessialigapsicologa.com/\"")))
+                .andExpect(content().string(containsString(">IL MIO SITO</a>")))
+                .andExpect(content().string(containsString(
                         "\"sameAs\": \"https:\\/\\/www.linkedin.com\\/in\\/alessia-liga-a057b985\"")))
                 .andExpect(content().string(containsString("\"@type\": \"Person\"")))
                 .andExpect(content().string(containsString("Norme, prevalenze e cut-off non vengono trasferiti")))
