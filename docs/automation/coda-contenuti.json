@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-09-08",
+  "updatedAt": "2026-09-16",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -139,8 +139,8 @@
       "sourceDescription": "Relazione affettiva o sessuale senza una definizione condivisa chiara.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Relazioni e attaccamento",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Non trattare l'assenza di etichetta come problema in sé; esplorare chiarezza, accordo, bisogni, confini ed effetti." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 5, "itemCount": 20, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Non trattare l'assenza di etichetta come problema in sé; esplorare chiarezza, accordo, bisogni, confini ed effetti." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-09-16T13:05:16+02:00", "completedAt": "2026-09-16T13:05:16+02:00", "commitHash": "5a01503466c215312a5b566d7d88f7aa6f838324", "blockReason": null }
     },
     {
       "order": 10,
