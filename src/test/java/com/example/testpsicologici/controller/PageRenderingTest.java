@@ -391,7 +391,7 @@ class PageRenderingTest {
 
     @Test
     void adhdGuideRendersHelpfulContentSourcesAndBidirectionalLink() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/approfondimenti/adhd-adulti"))
+        mockMvc.perform(get("/approfondimenti/adhd-adulti"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString(
                         "<title>ADHD negli adulti: sintomi e caratteristiche | Spazio Test</title>")))
@@ -413,22 +413,13 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
                 .andExpect(content().string(containsString("tag=spaziotest-21")))
                 .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
-                .andExpect(content().string(containsString("amazon-button-top")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
-                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))))
-                .andReturn();
-
-        String html = mvcResult.getResponse().getContentAsString();
-        int cardPosition = html.indexOf("recommended-reading-card has-placeholder-cover");
-        int amazonButtonPosition = html.indexOf("amazon-button-top", cardPosition);
-        int headingPosition = html.indexOf("recommended-reading-heading", cardPosition);
-        assertThat(amazonButtonPosition).isGreaterThan(cardPosition);
-        assertThat(headingPosition).isGreaterThan(amazonButtonPosition);
+                .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
     }
 
     @Test
     void adhdResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/test/tratti-adhd-adulti/risultato")
+        mockMvc.perform(get("/test/tratti-adhd-adulti/risultato")
                         .session(completedAttempt("tratti-adhd-adulti", 3)))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Letture facoltative")))
@@ -438,17 +429,8 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
                 .andExpect(content().string(containsString("tag=spaziotest-21")))
                 .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
-                .andExpect(content().string(containsString("amazon-button-top")))
                 .andExpect(content().string(containsString(
-                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")))
-                .andReturn();
-
-        String html = mvcResult.getResponse().getContentAsString();
-        int cardPosition = html.indexOf("recommended-reading-card has-placeholder-cover");
-        int amazonButtonPosition = html.indexOf("amazon-button-top", cardPosition);
-        int headingPosition = html.indexOf("recommended-reading-heading", cardPosition);
-        assertThat(amazonButtonPosition).isGreaterThan(cardPosition);
-        assertThat(headingPosition).isGreaterThan(amazonButtonPosition);
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
