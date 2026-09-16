@@ -345,7 +345,69 @@
         }
       ]
     },
-    { "topicId": "assertivita", "testId": "assertivita", "guideSlug": "assertivita", "title": "Assertività", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "assertivita",
+      "testId": "assertivita",
+      "guideSlug": "assertivita",
+      "title": "Assertività",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Quaderno di esercizi per sviluppare l'assertività",
+          "placeholderCover": true,
+          "subtitle": "Un percorso di auto-aiuto in 7 step",
+          "authors": ["Federico Betti", "Gabriele Costanzo", "Simona Carniato"],
+          "publisher": "Erickson",
+          "isbn13": "9788859044659",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Quaderno operativo di auto-aiuto",
+          "audience": "Adulti interessati a esplorare modalità di comunicazione rispettose e ferme",
+          "description": "Un quaderno operativo con una parte introduttiva e attività in sette passaggi su stili di comunicazione, ostacoli, critiche e modi di esprimere i propri bisogni.",
+          "limit": "Gli esercizi offrono spunti di auto-osservazione e non misurano l'assertività né sostituiscono un supporto professionale quando le difficoltà relazionali causano sofferenza persistente.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/quaderno-di-esercizi-per-sviluppare-l-assertivita" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859044650",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/dp/8859044650?&linkCode=ll2&tag=spaziotest-21&linkId=2b9a0fe7df327e34878f89547baa2ab2&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Training di comunicazione assertiva",
+          "placeholderCover": true,
+          "subtitle": "Conoscere, valutare e potenziare comunicazione e relazioni interpersonali",
+          "authors": ["Ezio Sanavio", "Francesco Sanavio"],
+          "publisher": "Erickson",
+          "isbn13": "9788859030270",
+          "publicationYear": 2023,
+          "format": "brossura",
+          "editorialRole": "Manuale tecnico con esercitazioni",
+          "audience": "Soprattutto professionisti, studenti e lettori che cercano un approfondimento tecnico strutturato",
+          "description": "Un manuale con inquadramento teorico, strumenti di osservazione e ventotto esercitazioni su comunicazione, critiche, confini, conflitti e relazioni.",
+          "limit": "Presenta specifici strumenti e un modello di training: non permette di interpretare il risultato del questionario né di ricavare una valutazione personale.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/training-di-comunicazione-assertiva" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859030277",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/dp/8859030277?&linkCode=ll2&tag=spaziotest-21&linkId=0a7cc530e5de01ba9b22c4bc22c46e30&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "intelligenza-emotiva", "testId": "intelligenza-emotiva", "guideSlug": "intelligenza-emotiva", "title": "Intelligenza emotiva", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "perfezionismo", "testId": "perfezionismo", "guideSlug": "perfezionismo", "title": "Perfezionismo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ansia-sociale", "testId": "ansia-sociale", "guideSlug": "ansia-sociale", "title": "Ansia sociale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

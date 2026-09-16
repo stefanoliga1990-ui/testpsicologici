@@ -99,6 +99,24 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/dp/8859029759?&linkCode=ll2&tag=spaziotest-21&linkId=970a512c8ea1eccc9c7be79465413f8e&ref_=as_li_ss_tl",
                             true
                     )
+            ),
+            "assertivita", List.of(
+                    new RecommendedReading(
+                            "Quaderno di esercizi per sviluppare l'assertività",
+                            "Federico Betti, Gabriele Costanzo e Simona Carniato",
+                            "Un quaderno operativo con una parte introduttiva e attività in sette passaggi su stili di comunicazione, ostacoli, critiche e modi di esprimere i propri bisogni.",
+                            "Gli esercizi offrono spunti di auto-osservazione e non misurano l'assertività né sostituiscono un supporto professionale quando le difficoltà relazionali causano sofferenza persistente.",
+                            "https://www.amazon.it/-/en/dp/8859044650?&linkCode=ll2&tag=spaziotest-21&linkId=2b9a0fe7df327e34878f89547baa2ab2&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Training di comunicazione assertiva",
+                            "Ezio Sanavio e Francesco Sanavio",
+                            "Un manuale tecnico con inquadramento teorico e strumenti di osservazione sulla comunicazione assertiva e le relazioni interpersonali.",
+                            "È rivolto soprattutto a professionisti e lettori che cercano un approfondimento tecnico; non permette di interpretare il risultato del questionario né di ricavare una valutazione personale.",
+                            "https://www.amazon.it/-/en/dp/8859030277?&linkCode=ll2&tag=spaziotest-21&linkId=0a7cc530e5de01ba9b22c4bc22c46e30&ref_=as_li_ss_tl",
+                            true
+                    )
             )
     );
 
