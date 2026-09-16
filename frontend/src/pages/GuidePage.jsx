@@ -25,7 +25,7 @@ export default function GuidePage({ guide, recommendedReadings = [], relatedGuid
               {section.points.length > 0 && <ul>{section.points.map((point) => <li key={point}>{point}</li>)}</ul>}
             </section>
           ))}
-          <RecommendedReadings readings={recommendedReadings} />
+          <RecommendedReadings readings={recommendedReadings} test={test} />
           <aside className="guide-test-cta">
             <div><p className="eyebrow">Auto-osservazione</p><h2>Questionario: {test.title}</h2><p>{guide.testConnection}</p></div>
             <Button as="a" className="button-light" href={`/test/${test.id}`}>Vai al questionario <span aria-hidden="true">→</span></Button>

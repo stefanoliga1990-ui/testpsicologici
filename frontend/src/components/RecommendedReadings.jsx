@@ -1,7 +1,9 @@
 import Button from './Button';
 
-export default function RecommendedReadings({ readings }) {
+export default function RecommendedReadings({ readings, test }) {
   if (readings.length === 0) return null;
+
+  const hasAmazonButtonAtTop = test?.id === 'tratti-adhd-adulti';
 
   return (
     <section className="recommended-readings" aria-labelledby="recommended-readings-title">
@@ -13,6 +15,11 @@ export default function RecommendedReadings({ readings }) {
       <div className="recommended-reading-grid">
         {readings.map((reading) => (
           <article className={`recommended-reading-card${reading.placeholderCover ? ' has-placeholder-cover' : ''}`} key={reading.amazonUrl}>
+            {hasAmazonButtonAtTop && (
+              <Button as="a" className="amazon-button amazon-button-top" href={reading.amazonUrl} target="_blank" rel="noopener noreferrer sponsored">
+                Vedi su Amazon <span aria-hidden="true">↗</span>
+              </Button>
+            )}
             <div className="recommended-reading-heading">
               {reading.placeholderCover && (
                 <div className="recommended-reading-cover" aria-hidden="true">
@@ -26,9 +33,11 @@ export default function RecommendedReadings({ readings }) {
             </div>
             <p>{reading.description}</p>
             <p className="recommended-reading-limit">{reading.limit}</p>
-            <Button as="a" className="amazon-button" href={reading.amazonUrl} target="_blank" rel="noopener noreferrer sponsored">
-              Vedi su Amazon <span aria-hidden="true">↗</span>
-            </Button>
+            {!hasAmazonButtonAtTop && (
+              <Button as="a" className="amazon-button" href={reading.amazonUrl} target="_blank" rel="noopener noreferrer sponsored">
+                Vedi su Amazon <span aria-hidden="true">↗</span>
+              </Button>
+            )}
           </article>
         ))}
       </div>
