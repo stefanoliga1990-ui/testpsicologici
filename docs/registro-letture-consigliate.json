@@ -408,7 +408,69 @@
         }
       ]
     },
-    { "topicId": "intelligenza-emotiva", "testId": "intelligenza-emotiva", "guideSlug": "intelligenza-emotiva", "title": "Intelligenza emotiva", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "intelligenza-emotiva",
+      "testId": "intelligenza-emotiva",
+      "guideSlug": "intelligenza-emotiva",
+      "title": "Intelligenza emotiva",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Intelligenza emotiva",
+          "placeholderCover": true,
+          "subtitle": "Che cos'è, perché può renderci felici",
+          "authors": ["Daniel Goleman"],
+          "publisher": "Rizzoli",
+          "isbn13": "9788817050166",
+          "publicationYear": 2011,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo",
+          "audience": "Lettori adulti interessati a una panoramica divulgativa su emozioni, relazioni e autoconsapevolezza",
+          "description": "Un saggio divulgativo che mette in relazione emozioni, autocontrollo, empatia e relazioni, ripercorrendo studi e applicazioni nella vita quotidiana, nella scuola e nel lavoro.",
+          "limit": "Propone un modello divulgativo, discusso e distinto da altri modelli di intelligenza emotiva; non misura le competenze della persona né permette di interpretare il risultato del questionario.",
+          "primarySources": [
+            { "label": "Catalogo editore", "url": "https://www.rizzolilibri.it/content/uploads/2026/02/Catalogo2026.pdf" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8817050164",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Intelligenza-emotiva-Daniel-Goleman/dp/8817050164?dib=eyJ2IjoiMSJ9.Cfpwf1tuyGA1wyvCqfstpQ.hDIcI2PVsgBHP9rN-l5WgNiBgnsoIVkUjm1_hrvcR8A&dib_tag=se&keywords=9788817050166&qid=1789550518&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=bda3b4587e8b8cb716b475fbbac6256f&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "L'intelligenza emotiva di tratto",
+          "placeholderCover": true,
+          "subtitle": "Prospettive e applicazioni per le professioni socioeducative e psicologiche",
+          "authors": ["Giacomo Mancini"],
+          "publisher": "Erickson",
+          "isbn13": "9788859044642",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Manuale tecnico",
+          "audience": "Professionisti, studenti e lettori interessati a un approfondimento tecnico sul modello dell'intelligenza emotiva di tratto",
+          "description": "Un manuale sul costrutto dell'intelligenza emotiva di tratto, sui modelli teorici, la misurazione, le evidenze empiriche e le applicazioni nei contesti socioeducativi e psicologici.",
+          "limit": "È un testo tecnico su uno specifico modello di intelligenza emotiva: non consente di interpretare il risultato del questionario né di certificare abilità individuali.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/l-intelligenza-emotiva-di-tratto" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859044642",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Lintelligenza-Prospettive-applicazioni-socioeducative-psicologiche/dp/8859044642?dib=eyJ2IjoiMSJ9.fKVM_VaEe2njomF8NZdysw.jwCuC3u7GxOnq2x6kkxycPu9gB7xg2O49_XNjW1SaR4&dib_tag=se&keywords=9788859044642&qid=1789550599&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=2f4ce82681af9284a72b5c4b6618200a&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "perfezionismo", "testId": "perfezionismo", "guideSlug": "perfezionismo", "title": "Perfezionismo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ansia-sociale", "testId": "ansia-sociale", "guideSlug": "ansia-sociale", "title": "Ansia sociale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "dinamiche-narcisistiche-coppia", "testId": "dinamiche-narcisistiche-partner", "guideSlug": "dinamiche-narcisistiche-coppia", "title": "Dinamiche narcisistiche nella coppia", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

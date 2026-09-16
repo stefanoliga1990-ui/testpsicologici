@@ -117,6 +117,24 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/dp/8859030277?&linkCode=ll2&tag=spaziotest-21&linkId=0a7cc530e5de01ba9b22c4bc22c46e30&ref_=as_li_ss_tl",
                             true
                     )
+            ),
+            "intelligenza-emotiva", List.of(
+                    new RecommendedReading(
+                            "Intelligenza emotiva",
+                            "Daniel Goleman",
+                            "Un saggio divulgativo che mette in relazione emozioni, autocontrollo, empatia e relazioni, ripercorrendo studi e applicazioni nella vita quotidiana, nella scuola e nel lavoro.",
+                            "Propone un modello divulgativo, discusso e distinto da altri modelli di intelligenza emotiva; non misura le competenze della persona né permette di interpretare il risultato del questionario.",
+                            "https://www.amazon.it/-/en/Intelligenza-emotiva-Daniel-Goleman/dp/8817050164?dib=eyJ2IjoiMSJ9.Cfpwf1tuyGA1wyvCqfstpQ.hDIcI2PVsgBHP9rN-l5WgNiBgnsoIVkUjm1_hrvcR8A&dib_tag=se&keywords=9788817050166&qid=1789550518&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=bda3b4587e8b8cb716b475fbbac6256f&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "L'intelligenza emotiva di tratto",
+                            "Giacomo Mancini",
+                            "Un manuale sul costrutto dell'intelligenza emotiva di tratto, sui modelli teorici, la misurazione, le evidenze empiriche e le applicazioni nei contesti socioeducativi e psicologici.",
+                            "È un testo tecnico su uno specifico modello di intelligenza emotiva: non consente di interpretare il risultato del questionario né di certificare abilità individuali.",
+                            "https://www.amazon.it/-/en/Lintelligenza-Prospettive-applicazioni-socioeducative-psicologiche/dp/8859044642?dib=eyJ2IjoiMSJ9.fKVM_VaEe2njomF8NZdysw.jwCuC3u7GxOnq2x6kkxycPu9gB7xg2O49_XNjW1SaR4&dib_tag=se&keywords=9788859044642&qid=1789550599&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=2f4ce82681af9284a72b5c4b6618200a&ref_=as_li_ss_tl",
+                            true
+                    )
             )
     );
 
