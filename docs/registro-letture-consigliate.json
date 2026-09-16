@@ -471,7 +471,69 @@
         }
       ]
     },
-    { "topicId": "perfezionismo", "testId": "perfezionismo", "guideSlug": "perfezionismo", "title": "Perfezionismo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "perfezionismo",
+      "testId": "perfezionismo",
+      "guideSlug": "perfezionismo",
+      "title": "Perfezionismo",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Nessuno è perfetto. Strategie per superare il perfezionismo. Nuova ediz.",
+          "placeholderCover": true,
+          "subtitle": "Strategie per superare il perfezionismo",
+          "authors": ["Martin M. Antony", "Richard P. Swinson"],
+          "publisher": "Erickson",
+          "isbn13": "9788859017516",
+          "publicationYear": 2018,
+          "format": "brossura",
+          "editorialRole": "Guida di auto-aiuto con impostazione cognitivo-comportamentale",
+          "audience": "Adulti che vogliono esplorare standard rigidi, autocritica e comportamenti perfezionistici",
+          "description": "Un volume di auto-aiuto che descrive fattori cognitivi e comportamentali collegati al perfezionismo e propone esercizi per osservare standard rigidi, autocritica e abitudini di controllo.",
+          "limit": "Le proposte del volume sono spunti di auto-osservazione e pratica; non consentono di interpretare il risultato del questionario, formulare una diagnosi o sostituire una valutazione professionale.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/nessuno-e-perfetto" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859017513",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/8859017513?&linkCode=ll2&tag=spaziotest-21&linkId=80d9fb435c5df5d9498a1ce3ac867f4d&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "La ricerca della perfezione. Smetti di inseguire il perfezionismo",
+          "placeholderCover": true,
+          "subtitle": "Smetti di inseguire il perfezionismo",
+          "authors": ["Tal Ben-Shahar"],
+          "publisher": "Giunti Editore",
+          "isbn13": "9788809975491",
+          "publicationYear": 2023,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo di auto-riflessione",
+          "audience": "Adulti interessati a riflettere sulle aspettative di perfezione, sul fallimento e sul successo",
+          "description": "Un saggio divulgativo che riflette sulle aspettative di perfezione, sul rapporto con fallimento e successo e propone esercizi di riflessione personale.",
+          "limit": "È una proposta divulgativa di auto-riflessione: non permette di interpretare il risultato del questionario, formulare una diagnosi o sostituire una valutazione professionale.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://giunti.it/products/la-ricerca-della-perfezione-ben-shahar-tal-9788809975491" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8809975499",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/ricerca-perfezione-Smetti-inseguire-perfezionismo/dp/8809975499?dib=eyJ2IjoiMSJ9.pxGjWoQ4AxRjOPhRGsJDqw.Pnh4vICfh2k-iwkdZE9Rbx_xHJmD8Xe7iOJRzfgqIyE&dib_tag=se&keywords=9788809975491&qid=1789572363&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=9c446c9391f22ab143a2015e7eb94e38&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "ansia-sociale", "testId": "ansia-sociale", "guideSlug": "ansia-sociale", "title": "Ansia sociale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "dinamiche-narcisistiche-coppia", "testId": "dinamiche-narcisistiche-partner", "guideSlug": "dinamiche-narcisistiche-coppia", "title": "Dinamiche narcisistiche nella coppia", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ansia-generalizzata", "testId": "ansia-generalizzata", "guideSlug": "ansia-generalizzata", "title": "Ansia generalizzata", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

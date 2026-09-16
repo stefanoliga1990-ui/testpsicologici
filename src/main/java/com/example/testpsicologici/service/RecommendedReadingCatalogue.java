@@ -135,6 +135,24 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/Lintelligenza-Prospettive-applicazioni-socioeducative-psicologiche/dp/8859044642?dib=eyJ2IjoiMSJ9.fKVM_VaEe2njomF8NZdysw.jwCuC3u7GxOnq2x6kkxycPu9gB7xg2O49_XNjW1SaR4&dib_tag=se&keywords=9788859044642&qid=1789550599&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=2f4ce82681af9284a72b5c4b6618200a&ref_=as_li_ss_tl",
                             true
                     )
+            ),
+            "perfezionismo", List.of(
+                    new RecommendedReading(
+                            "Nessuno è perfetto. Strategie per superare il perfezionismo. Nuova ediz.",
+                            "Martin M. Antony e Richard P. Swinson",
+                            "Un volume di auto-aiuto che descrive fattori cognitivi e comportamentali collegati al perfezionismo e propone esercizi per osservare standard rigidi, autocritica e abitudini di controllo.",
+                            "Le proposte del volume sono spunti di auto-osservazione e pratica; non consentono di interpretare il risultato del questionario, formulare una diagnosi o sostituire una valutazione professionale.",
+                            "https://www.amazon.it/dp/8859017513?&linkCode=ll2&tag=spaziotest-21&linkId=80d9fb435c5df5d9498a1ce3ac867f4d&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "La ricerca della perfezione. Smetti di inseguire il perfezionismo",
+                            "Tal Ben-Shahar",
+                            "Un saggio divulgativo che riflette sulle aspettative di perfezione, sul rapporto con fallimento e successo e propone esercizi di riflessione personale.",
+                            "È una proposta divulgativa di auto-riflessione: non permette di interpretare il risultato del questionario, formulare una diagnosi o sostituire una valutazione professionale.",
+                            "https://www.amazon.it/-/en/ricerca-perfezione-Smetti-inseguire-perfezionismo/dp/8809975499?dib=eyJ2IjoiMSJ9.pxGjWoQ4AxRjOPhRGsJDqw.Pnh4vICfh2k-iwkdZE9Rbx_xHJmD8Xe7iOJRzfgqIyE&dib_tag=se&keywords=9788809975491&qid=1789572363&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=9c446c9391f22ab143a2015e7eb94e38&ref_=as_li_ss_tl",
+                            true
+                    )
             )
     );
 

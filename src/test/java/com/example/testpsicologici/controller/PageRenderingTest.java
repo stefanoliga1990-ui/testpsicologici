@@ -696,8 +696,36 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Perfectionism Self-Help Resources — Centre for Clinical Interventions")))
                 .andExpect(content().string(containsString("href=\"/test/perfezionismo\"")))
+                .andExpect(content().string(containsString(
+                        "Nessuno è perfetto. Strategie per superare il perfezionismo. Nuova ediz.")))
+                .andExpect(content().string(containsString(
+                        "La ricerca della perfezione. Smetti di inseguire il perfezionismo")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
+    void perfectionismResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
+        mockMvc.perform(get("/test/perfezionismo/risultato")
+                        .session(completedAttempt("perfezionismo", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString(
+                        "Nessuno è perfetto. Strategie per superare il perfezionismo. Nuova ediz.")))
+                .andExpect(content().string(containsString(
+                        "La ricerca della perfezione. Smetti di inseguire il perfezionismo")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
