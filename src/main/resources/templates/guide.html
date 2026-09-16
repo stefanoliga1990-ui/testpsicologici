@@ -95,6 +95,7 @@
                 <p class="recommended-readings-intro">Questi libri sono proposte editoriali facoltative, distinte dalle fonti scientifiche della pagina.</p>
                 <div class="recommended-reading-grid">
             <article th:class="${reading.placeholderCover} ? 'recommended-reading-card has-placeholder-cover' : 'recommended-reading-card'" th:each="reading : ${recommendedReadings}">
+                <a class="button amazon-button amazon-button-top" th:if="${test.id == 'tratti-adhd-adulti'}" th:href="${reading.amazonUrl}" target="_blank" rel="noopener noreferrer sponsored">Vedi su Amazon <span aria-hidden="true">↗</span></a>
                         <div class="recommended-reading-heading">
                             <div class="recommended-reading-cover" aria-hidden="true" th:if="${reading.placeholderCover}"><span th:text="${reading.title}">Titolo</span></div>
                             <div>
@@ -104,7 +105,7 @@
                         </div>
                         <p th:text="${reading.description}">Descrizione.</p>
                         <p class="recommended-reading-limit" th:text="${reading.limit}">Limite.</p>
-                        <a class="button amazon-button" th:href="${reading.amazonUrl}" target="_blank" rel="noopener noreferrer sponsored">Vedi su Amazon <span aria-hidden="true">↗</span></a>
+                        <a class="button amazon-button" th:unless="${test.id == 'tratti-adhd-adulti'}" th:href="${reading.amazonUrl}" target="_blank" rel="noopener noreferrer sponsored">Vedi su Amazon <span aria-hidden="true">↗</span></a>
                     </article>
                 </div>
                 <p class="affiliate-disclosure">Link affiliati Amazon. In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.</p>
