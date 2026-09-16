@@ -63,6 +63,24 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/mente-ossessiva-Curare-disturbo-ossessivo-compulsivo/dp/8860308224?crid=3JTQABH2BWKIB&dib=eyJ2IjoiMSJ9.GEHjRcJvU04sDFt7pE3tCw.wSN9tKHCL6iDN8osFcY4pjwr_qBKdN1T29FqtgNQU_I&dib_tag=se&keywords=9788860308221&qid=1789505129&sprefix=9788860308221%2Caps%2C331&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=68d714a6089fb8ae408370d07a056ed8&ref_=as_li_ss_tl",
                             true
                     )
+            ),
+            "autostima", List.of(
+                    new RecommendedReading(
+                            "L'autostima si impara",
+                            "Umberto Longoni",
+                            "Un manuale pratico che propone esercizi e spunti di riflessione sul rapporto con se stessi, sull'immagine personale e sulla fiducia nelle proprie possibilità.",
+                            "Gli esercizi possono offrire spunti personali, ma non misurano l'autostima né sostituiscono un confronto professionale quando la sofferenza è persistente o interferisce con la vita quotidiana.",
+                            "https://www.amazon.it/-/en/Lautostima-impara-Esercizi-aumentare-fiducia/dp/8891790311?dib=eyJ2IjoiMSJ9.elWJmHYcVpcXWtYi6v-s8g.nP6d9qDk7bjI7MNQ4dasXwF4NbH4icIZliDd5LuCbTE&dib_tag=se&keywords=9788891790316&qid=1789518041&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=95df3009f0ae3e1518c7623a920b7980&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Mi vado bene?",
+                            "Michele Giannantonio",
+                            "Un testo di auto-aiuto su autostima e assertività, con esempi e attività dedicate anche a pensieri, critiche e relazioni quotidiane.",
+                            "Propone un percorso divulgativo e non permette di dedurre il significato delle singole risposte al questionario né sostituisce un percorso psicoterapeutico.",
+                            "https://www.amazon.it/-/en/dp/886137557X?&linkCode=ll2&tag=spaziotest-21&linkId=21827a0d23f8c1408df3538cd6d735eb&ref_=as_li_ss_tl",
+                            true
+                    )
             )
     );
 

@@ -495,8 +495,29 @@ class PageRenderingTest {
                         "Rosenberg Self-Esteem Scale — University of Maryland")))
                 .andExpect(content().string(containsString("Raising low self-esteem — NHS")))
                 .andExpect(content().string(containsString("href=\"/test/autostima\"")))
+                .andExpect(content().string(containsString("L'autostima si impara")))
+                .andExpect(content().string(containsString("Mi vado bene?")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("Vedi su Amazon")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
+    void selfEsteemResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
+        mockMvc.perform(get("/test/autostima/risultato").session(completedAttempt("autostima", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("L'autostima si impara")))
+                .andExpect(content().string(containsString("Mi vado bene?")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("Vedi su Amazon")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test

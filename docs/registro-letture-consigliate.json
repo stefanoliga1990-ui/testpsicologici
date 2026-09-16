@@ -219,7 +219,69 @@
         }
       ]
     },
-    { "topicId": "autostima", "testId": "autostima", "guideSlug": "autostima", "title": "Autostima", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "autostima",
+      "testId": "autostima",
+      "guideSlug": "autostima",
+      "title": "Autostima",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "L'autostima si impara",
+          "placeholderCover": true,
+          "subtitle": "Esercizi per aumentare la fiducia in se stessi",
+          "authors": ["Umberto Longoni"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788891790316",
+          "publicationYear": 2020,
+          "format": "cartaceo",
+          "editorialRole": "Manuale pratico di riflessione ed esercizi",
+          "audience": "Adulti interessati a esplorare il rapporto con se stessi e la fiducia nelle proprie possibilità",
+          "description": "Un manuale pratico che propone esercizi e spunti di riflessione sul rapporto con se stessi, sull'immagine personale e sulla fiducia nelle proprie possibilità.",
+          "limit": "Gli esercizi possono offrire spunti personali, ma non misurano l'autostima né sostituiscono un confronto professionale quando la sofferenza è persistente o interferisce con la vita quotidiana.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.francoangeli.it/Libro/L'autostima-si-impara?Id=26066" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8891790311",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Lautostima-impara-Esercizi-aumentare-fiducia/dp/8891790311?dib=eyJ2IjoiMSJ9.elWJmHYcVpcXWtYi6v-s8g.nP6d9qDk7bjI7MNQ4dasXwF4NbH4icIZliDd5LuCbTE&dib_tag=se&keywords=9788891790316&qid=1789518041&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=95df3009f0ae3e1518c7623a920b7980&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Mi vado bene?",
+          "placeholderCover": true,
+          "subtitle": "Autostima e assertività",
+          "authors": ["Michele Giannantonio"],
+          "publisher": "Erickson",
+          "isbn13": "9788861375574",
+          "publicationYear": 2009,
+          "format": "cartaceo",
+          "editorialRole": "Manuale divulgativo su autostima e assertività",
+          "audience": "Adulti interessati a riflettere su autostima, assertività e relazioni quotidiane",
+          "description": "Un testo di auto-aiuto su autostima e assertività, con esempi e attività dedicate anche a pensieri, critiche e relazioni quotidiane.",
+          "limit": "Propone un percorso divulgativo e non permette di dedurre il significato delle singole risposte al questionario né sostituisce un percorso psicoterapeutico.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/mi-vado-bene" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "886137557X",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/dp/886137557X?&linkCode=ll2&tag=spaziotest-21&linkId=21827a0d23f8c1408df3538cd6d735eb&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "dipendenza-affettiva", "testId": "dipendenza-affettiva", "guideSlug": "dipendenza-affettiva", "title": "Dipendenza affettiva", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "assertivita", "testId": "assertivita", "guideSlug": "assertivita", "title": "Assertività", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "intelligenza-emotiva", "testId": "intelligenza-emotiva", "guideSlug": "intelligenza-emotiva", "title": "Intelligenza emotiva", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
