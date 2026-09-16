@@ -81,6 +81,24 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/dp/886137557X?&linkCode=ll2&tag=spaziotest-21&linkId=21827a0d23f8c1408df3538cd6d735eb&ref_=as_li_ss_tl",
                             true
                     )
+            ),
+            "dipendenza-affettiva", List.of(
+                    new RecommendedReading(
+                            "Quaderno di esercizi per vincere la dipendenza affettiva",
+                            "Antonella Lebruto, Giulia Calamai e Laura Caccico",
+                            "Un quaderno operativo che presenta il tema e propone attività strutturate su pensieri, emozioni, evitamenti, bisogni e relazioni.",
+                            "È un testo di auto-aiuto: non stabilisce se una persona abbia una dipendenza affettiva e non sostituisce il supporto professionale, soprattutto in presenza di violenza, coercizione o pericolo.",
+                            "https://www.amazon.it/-/en/dp/8859043735?&linkCode=ll2&tag=spaziotest-21&linkId=81dd7705e0f71ceb891150be89cccfee&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Dipendenza affettiva",
+                            "Antonella Lebruto, Giulia Calamai, Laura Caccico e Valentina Ciorciari",
+                            "Un manuale tecnico sul tema, con inquadramento, assessment, trattamento cognitivo-comportamentale e casi clinici.",
+                            "È rivolto soprattutto a psicologi e psicoterapeuti; non va usato per interpretare autonomamente il questionario o per formulare una diagnosi.",
+                            "https://www.amazon.it/-/en/dp/8859029759?&linkCode=ll2&tag=spaziotest-21&linkId=970a512c8ea1eccc9c7be79465413f8e&ref_=as_li_ss_tl",
+                            true
+                    )
             )
     );
 

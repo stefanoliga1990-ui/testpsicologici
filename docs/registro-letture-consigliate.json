@@ -282,7 +282,69 @@
         }
       ]
     },
-    { "topicId": "dipendenza-affettiva", "testId": "dipendenza-affettiva", "guideSlug": "dipendenza-affettiva", "title": "Dipendenza affettiva", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "dipendenza-affettiva",
+      "testId": "dipendenza-affettiva",
+      "guideSlug": "dipendenza-affettiva",
+      "title": "Dipendenza affettiva",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Quaderno di esercizi per vincere la dipendenza affettiva",
+          "placeholderCover": true,
+          "subtitle": "Un percorso di auto-aiuto in 13 step",
+          "authors": ["Antonella Lebruto", "Giulia Calamai", "Laura Caccico"],
+          "publisher": "Erickson",
+          "isbn13": "9788859043737",
+          "publicationYear": 2025,
+          "format": "brossura",
+          "editorialRole": "Quaderno operativo di auto-aiuto",
+          "audience": "Adulti interessati a riflettere su dipendenza affettiva e dinamiche relazionali",
+          "description": "Un quaderno operativo che presenta il tema e propone attività strutturate su pensieri, emozioni, evitamenti, bisogni e relazioni.",
+          "limit": "È un testo di auto-aiuto: non stabilisce se una persona abbia una dipendenza affettiva e non sostituisce il supporto professionale, soprattutto in presenza di violenza, coercizione o pericolo.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/quaderno-di-esercizi-per-vincere-la-dipendenza-affettiva" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859043735",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/dp/8859043735?&linkCode=ll2&tag=spaziotest-21&linkId=81dd7705e0f71ceb891150be89cccfee&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Dipendenza affettiva",
+          "placeholderCover": true,
+          "subtitle": "Diagnosi, assessment e trattamento cognitivo-comportamentale",
+          "authors": ["Antonella Lebruto", "Giulia Calamai", "Laura Caccico", "Valentina Ciorciari"],
+          "publisher": "Erickson",
+          "isbn13": "9788859029755",
+          "publicationYear": 2022,
+          "format": "brossura",
+          "editorialRole": "Manuale tecnico e clinico",
+          "audience": "Soprattutto psicologi, psicoterapeuti e lettori che cercano un approfondimento tecnico",
+          "description": "Un manuale tecnico sul tema, con inquadramento, assessment, trattamento cognitivo-comportamentale e casi clinici.",
+          "limit": "È rivolto soprattutto a psicologi e psicoterapeuti; non va usato per interpretare autonomamente il questionario o per formulare una diagnosi.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/dipendenza-affettiva" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859029759",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/dp/8859029759?&linkCode=ll2&tag=spaziotest-21&linkId=970a512c8ea1eccc9c7be79465413f8e&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "assertivita", "testId": "assertivita", "guideSlug": "assertivita", "title": "Assertività", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "intelligenza-emotiva", "testId": "intelligenza-emotiva", "guideSlug": "intelligenza-emotiva", "title": "Intelligenza emotiva", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "perfezionismo", "testId": "perfezionismo", "guideSlug": "perfezionismo", "title": "Perfezionismo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
