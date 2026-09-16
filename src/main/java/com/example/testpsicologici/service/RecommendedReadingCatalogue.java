@@ -153,6 +153,24 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/ricerca-perfezione-Smetti-inseguire-perfezionismo/dp/8809975499?dib=eyJ2IjoiMSJ9.pxGjWoQ4AxRjOPhRGsJDqw.Pnh4vICfh2k-iwkdZE9Rbx_xHJmD8Xe7iOJRzfgqIyE&dib_tag=se&keywords=9788809975491&qid=1789572363&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=9c446c9391f22ab143a2015e7eb94e38&ref_=as_li_ss_tl",
                             true
                     )
+            ),
+            "ansia-sociale", List.of(
+                    new RecommendedReading(
+                            "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",
+                            "Nicola Marsigli",
+                            "Un manuale di auto-aiuto basato sulla terapia cognitivo-comportamentale, con strategie ed esercizi su ansia anticipatoria, valutazione post-evento, pensieri e graduale esposizione alle situazioni sociali.",
+                            "È una risorsa editoriale di auto-aiuto: non interpreta il risultato del questionario, non formula una diagnosi e non sostituisce un percorso con un professionista.",
+                            "https://www.amazon.it/-/en/allansia-sociale-Strategie-affrontare-timidezza/dp/8859016339?dib=eyJ2IjoiMSJ9.JKTYAqEHzOcxkdSH2jJXyQ.JLCrSqfn71eh-Ztbx8hreFDqgslXUp-tV5NsTrgS1J4&dib_tag=se&keywords=9788859016335&qid=1789583144&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=60976a536df3aea65e7b043352cff207&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Quaderno di esercizi per vincere l'ansia sociale",
+                            "Duccio Baroni, Laura Caccico, Serena Ciandri e altri autori",
+                            "Un quaderno operativo di auto-aiuto con dieci step, esercizi e attività per esplorare paura del giudizio, pensieri e comportamenti di evitamento nelle situazioni sociali.",
+                            "Gli esercizi sono materiali di auto-aiuto e non sono una valutazione individuale: non permettono di interpretare il risultato del questionario, formulare una diagnosi o sostituire un supporto professionale.",
+                            "https://www.amazon.it/-/en/Quaderno-esercizi-vincere-lansia-sociale/dp/8859025877?dib=eyJ2IjoiMSJ9.szV2dvrpHaRj-aDX8xH4Rw.qdbTHnEk_1DVb1sQ8fO65rQqmyoSPdpJKfl_Br4Wznw&dib_tag=se&keywords=9788859025870&qid=1789583183&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=6c67db138cb6455a94d1573dbe54043e&ref_=as_li_ss_tl",
+                            true
+                    )
             )
     );
 

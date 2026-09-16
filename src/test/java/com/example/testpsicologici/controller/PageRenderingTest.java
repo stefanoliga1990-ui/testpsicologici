@@ -750,8 +750,36 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Social anxiety (social phobia) — NHS")))
                 .andExpect(content().string(containsString("href=\"/test/ansia-sociale\"")))
+                .andExpect(content().string(containsString(
+                        "Stop all&#39;ansia sociale. Strategie per affrontare e gestire la timidezza")))
+                .andExpect(content().string(containsString(
+                        "Quaderno di esercizi per vincere l&#39;ansia sociale")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
+    void socialAnxietyResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
+        mockMvc.perform(get("/test/ansia-sociale/risultato")
+                        .session(completedAttempt("ansia-sociale", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString(
+                        "Stop all&#39;ansia sociale. Strategie per affrontare e gestire la timidezza")))
+                .andExpect(content().string(containsString(
+                        "Quaderno di esercizi per vincere l&#39;ansia sociale")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test

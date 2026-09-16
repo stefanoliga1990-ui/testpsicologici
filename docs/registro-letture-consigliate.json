@@ -534,7 +534,69 @@
         }
       ]
     },
-    { "topicId": "ansia-sociale", "testId": "ansia-sociale", "guideSlug": "ansia-sociale", "title": "Ansia sociale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "ansia-sociale",
+      "testId": "ansia-sociale",
+      "guideSlug": "ansia-sociale",
+      "title": "Ansia sociale",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",
+          "placeholderCover": true,
+          "subtitle": "Strategie per affrontare e gestire la timidezza",
+          "authors": ["Nicola Marsigli"],
+          "publisher": "Erickson",
+          "isbn13": "9788859016335",
+          "publicationYear": 2018,
+          "format": "brossura",
+          "editorialRole": "Manuale di auto-aiuto basato sulla terapia cognitivo-comportamentale",
+          "audience": "Adulti interessati a esplorare ansia anticipatoria, timore del giudizio ed evitamento nelle situazioni sociali",
+          "description": "Un manuale di auto-aiuto basato sulla terapia cognitivo-comportamentale, con strategie ed esercizi su ansia anticipatoria, valutazione post-evento, pensieri e graduale esposizione alle situazioni sociali.",
+          "limit": "È una risorsa editoriale di auto-aiuto: non interpreta il risultato del questionario, non formula una diagnosi e non sostituisce un percorso con un professionista.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/stop-all-ansia-sociale" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859016339",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/allansia-sociale-Strategie-affrontare-timidezza/dp/8859016339?dib=eyJ2IjoiMSJ9.JKTYAqEHzOcxkdSH2jJXyQ.JLCrSqfn71eh-Ztbx8hreFDqgslXUp-tV5NsTrgS1J4&dib_tag=se&keywords=9788859016335&qid=1789583144&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=60976a536df3aea65e7b043352cff207&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Quaderno di esercizi per vincere l'ansia sociale",
+          "placeholderCover": true,
+          "subtitle": "Quaderno operativo in dieci step",
+          "authors": ["Duccio Baroni", "Laura Caccico", "Serena Ciandri", "Cristian Di Gesto", "Laura Di Leonardo", "Alice Fiesoli", "Francesco Lauretta", "Antonella Lebruto", "Giulia Rosa Policardo", "Martina Rosadoni"],
+          "publisher": "Erickson",
+          "isbn13": "9788859025870",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "editorialRole": "Quaderno operativo di auto-aiuto",
+          "audience": "Adulti interessati a esercizi strutturati per riflettere su paura del giudizio, pensieri ed evitamento sociale",
+          "description": "Un quaderno operativo di auto-aiuto con dieci step, esercizi e attività per esplorare paura del giudizio, pensieri e comportamenti di evitamento nelle situazioni sociali.",
+          "limit": "Gli esercizi sono materiali di auto-aiuto e non sono una valutazione individuale: non permettono di interpretare il risultato del questionario, formulare una diagnosi o sostituire un supporto professionale.",
+          "primarySources": [
+            { "label": "Scheda editore", "url": "https://www.erickson.it/it/quaderno-di-esercizi-per-vincere-l-ansia-sociale" }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859025877",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Quaderno-esercizi-vincere-lansia-sociale/dp/8859025877?dib=eyJ2IjoiMSJ9.szV2dvrpHaRj-aDX8xH4Rw.qdbTHnEk_1DVb1sQ8fO65rQqmyoSPdpJKfl_Br4Wznw&dib_tag=se&keywords=9788859025870&qid=1789583183&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=6c67db138cb6455a94d1573dbe54043e&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "dinamiche-narcisistiche-coppia", "testId": "dinamiche-narcisistiche-partner", "guideSlug": "dinamiche-narcisistiche-coppia", "title": "Dinamiche narcisistiche nella coppia", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ansia-generalizzata", "testId": "ansia-generalizzata", "guideSlug": "ansia-generalizzata", "title": "Ansia generalizzata", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "umore-depresso", "testId": "umore-depresso", "guideSlug": "umore-depresso", "title": "Umore depresso e sintomi depressivi", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
