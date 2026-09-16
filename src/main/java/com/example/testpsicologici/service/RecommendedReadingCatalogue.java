@@ -154,6 +154,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             ),
+            "dinamiche-narcisistiche-partner", List.of(
+                    new RecommendedReading(
+                            "E questo sarebbe amore?",
+                            "Sonja R. e Bärbel Wardetzki",
+                            "Una testimonianza accompagnata dall'analisi di una psicoterapeuta, che ripercorre l'escalation di una relazione descritta come narcisistica e le sue conseguenze su forza e autostima.",
+                            "Racconta un'esperienza specifica e usa una propria cornice interpretativa: non consente di etichettare un partner, stabilire se una relazione sia abusante o decidere cosa fare in una situazione di pericolo.",
+                            "https://www.amazon.it/-/en/questo-sarebbe-amore-B%C3%A4rbel-Wardetzki/dp/8807091593?dib=eyJ2IjoiMSJ9.OY1gjsUwuVo8_uQC8ygi_A.2I9Xgzb_ZI29PXqx4rR96myZoEM45y4TlegYoIlaJUw&dib_tag=se&keywords=9788807091599&qid=1789593986&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=53952ab1c4586f32e4ca127b59da7ee2&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "I mille volti di Narciso. Fragilità e arroganza tra normalità e patologia",
+                            "Fabio Madeddu",
+                            "Un saggio ampio sul narcisismo, dalle teorie storiche al dibattito contemporaneo, con capitoli dedicati anche a innamoramento, coppia e orientamenti terapeutici.",
+                            "È un testo teorico e clinico, con linguaggio anche tecnico: non permette di diagnosticare una persona, interpretare il risultato del questionario o valutare la sicurezza di una relazione.",
+                            "https://www.amazon.it/-/en/Narciso-Fragilit%C3%A0-arroganza-normalit%C3%A0-patologia/dp/8832851520?dib=eyJ2IjoiMSJ9.HTIwoU4452J4cCSggZSZmA.I1IoanmGTjxAKeV0DfR99Az2Pa7UX4iA4IH7tzwUz8Y&dib_tag=se&keywords=9788832851526&qid=1789594078&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=93a73b038262154ff11361eb1d951570&ref_=as_li_ss_tl",
+                            true
+                    )
+            ),
             "ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-15",
+  "updatedAt": "2026-09-16",
   "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
   "selectionPolicy": {
     "booksPerTopic": {
@@ -597,7 +597,69 @@
         }
       ]
     },
-    { "topicId": "dinamiche-narcisistiche-coppia", "testId": "dinamiche-narcisistiche-partner", "guideSlug": "dinamiche-narcisistiche-coppia", "title": "Dinamiche narcisistiche nella coppia", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "dinamiche-narcisistiche-coppia",
+      "testId": "dinamiche-narcisistiche-partner",
+      "guideSlug": "dinamiche-narcisistiche-coppia",
+      "title": "Dinamiche narcisistiche nella coppia",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "E questo sarebbe amore?",
+          "placeholderCover": true,
+          "subtitle": "Riconoscere una relazione malata e liberarsene",
+          "authors": ["Sonja R.", "Bärbel Wardetzki"],
+          "publisher": "Feltrinelli",
+          "isbn13": "9788807091599",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "editorialRole": "Testimonianza commentata da una psicoterapeuta",
+          "audience": "Adulti interessati a riflettere su dinamiche relazionali distruttive e sul loro impatto personale",
+          "description": "Una testimonianza accompagnata dall’analisi di una psicoterapeuta, che ripercorre l’escalation di una relazione descritta come narcisistica e le sue conseguenze su forza e autostima.",
+          "limit": "Racconta un’esperienza specifica e usa una propria cornice interpretativa: non consente di etichettare un partner, stabilire se una relazione sia abusante o decidere cosa fare in una situazione di pericolo.",
+          "primarySources": [
+            {"label": "Scheda editore", "url": "https://www.feltrinellieditore.it/opera/e-questo-sarebbe-amore/"}
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8807091593",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/questo-sarebbe-amore-B%C3%A4rbel-Wardetzki/dp/8807091593?dib=eyJ2IjoiMSJ9.OY1gjsUwuVo8_uQC8ygi_A.2I9Xgzb_ZI29PXqx4rR96myZoEM45y4TlegYoIlaJUw&dib_tag=se&keywords=9788807091599&qid=1789593986&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=53952ab1c4586f32e4ca127b59da7ee2&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "I mille volti di Narciso. Fragilità e arroganza tra normalità e patologia",
+          "placeholderCover": true,
+          "subtitle": "Fragilità e arroganza tra normalità e patologia",
+          "authors": ["Fabio Madeddu"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788832851526",
+          "publicationYear": 2020,
+          "format": "brossura",
+          "editorialRole": "Saggio teorico-clinico di approfondimento",
+          "audience": "Lettori con interesse per un approfondimento teorico sul narcisismo, anche nelle relazioni di coppia",
+          "description": "Un saggio ampio sul narcisismo, dalle teorie storiche al dibattito contemporaneo, con capitoli dedicati anche a innamoramento, coppia e orientamenti terapeutici.",
+          "limit": "È un testo teorico e clinico, con linguaggio anche tecnico: non permette di diagnosticare una persona, interpretare il risultato del questionario o valutare la sicurezza di una relazione.",
+          "primarySources": [
+            {"label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/fabio-madeddu/i-mille-volti-di-narciso-9788832851526-3122.html"}
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8832851520",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Narciso-Fragilit%C3%A0-arroganza-normalit%C3%A0-patologia/dp/8832851520?dib=eyJ2IjoiMSJ9.HTIwoU4452J4cCSggZSZmA.I1IoanmGTjxAKeV0DfR99Az2Pa7UX4iA4IH7tzwUz8Y&dib_tag=se&keywords=9788832851526&qid=1789594078&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=93a73b038262154ff11361eb1d951570&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "ansia-generalizzata", "testId": "ansia-generalizzata", "guideSlug": "ansia-generalizzata", "title": "Ansia generalizzata", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "umore-depresso", "testId": "umore-depresso", "guideSlug": "umore-depresso", "title": "Umore depresso e sintomi depressivi", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "people-pleasing", "testId": "people-pleasing", "guideSlug": "people-pleasing", "title": "People pleasing e bisogno di approvazione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

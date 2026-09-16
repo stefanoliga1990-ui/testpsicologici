@@ -809,8 +809,35 @@ class PageRenderingTest {
                         "Il 1522 — Dipartimento per le Pari Opportunità")))
                 .andExpect(content().string(containsString(
                         "href=\"/test/dinamiche-narcisistiche-partner\"")))
+                .andExpect(content().string(containsString("E questo sarebbe amore?")))
+                .andExpect(content().string(containsString(
+                        "I mille volti di Narciso. Fragilità e arroganza tra normalità e patologia")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Ultimo aggiornamento"))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("Versione 2"))));
+    }
+
+    @Test
+    void narcissisticRelationshipDynamicsResultRendersTheSameOptionalAffiliateReadingsAsTheGuide()
+            throws Exception {
+        mockMvc.perform(get("/test/dinamiche-narcisistiche-partner/risultato")
+                        .session(completedAttempt("dinamiche-narcisistiche-partner", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("E questo sarebbe amore?")))
+                .andExpect(content().string(containsString(
+                        "I mille volti di Narciso. Fragilità e arroganza tra normalità e patologia")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
