@@ -786,7 +786,69 @@
         }
       ]
     },
-    { "topicId": "people-pleasing", "testId": "people-pleasing", "guideSlug": "people-pleasing", "title": "People pleasing e bisogno di approvazione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "people-pleasing",
+      "testId": "people-pleasing",
+      "guideSlug": "people-pleasing",
+      "title": "People pleasing e bisogno di approvazione",
+      "fallbackTopics": ["assertivita", "autostima"],
+      "fallbackRationale": "Non sono stati selezionati due testi editoriali dedicati esclusivamente al people pleasing: i volumi scelti approfondiscono due temi direttamente pertinenti, l'espressione dei bisogni e il rapporto con approvazione, critiche e autostima.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Quaderno di esercizi per sviluppare l'assertività",
+          "placeholderCover": true,
+          "subtitle": "Un percorso di auto-aiuto in 7 step",
+          "authors": ["Federico Betti", "Gabriele Costanzo", "Simona Carniato"],
+          "publisher": "Erickson",
+          "isbn13": "9788859044659",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Quaderno operativo di auto-aiuto",
+          "audience": "Adulti che desiderano riflettere su confini, comunicazione e modi di esprimere i propri bisogni",
+          "description": "Un quaderno operativo con una parte introduttiva e attività in sette passaggi su stili di comunicazione, ostacoli, critiche e modi di esprimere i propri bisogni.",
+          "limit": "Gli esercizi offrono spunti di auto-osservazione e non misurano quanto una persona compiace gli altri né sostituiscono un supporto professionale quando le difficoltà relazionali causano sofferenza persistente.",
+          "primarySources": [
+            {"label": "Scheda editore", "url": "https://www.erickson.it/it/quaderno-di-esercizi-per-sviluppare-l-assertivita"}
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859044650",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/8859044650?&linkCode=ll2&tag=spaziotest-21&linkId=778b304dde4d5be4b130a097415516ca&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Mi vado bene?",
+          "placeholderCover": true,
+          "subtitle": "Autostima e assertività",
+          "authors": ["Michele Giannantonio"],
+          "publisher": "Erickson",
+          "isbn13": "9788861375574",
+          "publicationYear": 2009,
+          "format": "cartaceo",
+          "editorialRole": "Manuale divulgativo su autostima e assertività",
+          "audience": "Adulti interessati a riflettere su approvazione, autostima, assertività e relazioni quotidiane",
+          "description": "Un testo di auto-aiuto su autostima e assertività, con esempi e attività dedicate anche a pensieri, critiche e relazioni quotidiane.",
+          "limit": "Propone un percorso divulgativo e non permette di dedurre il significato delle singole risposte al questionario né sostituisce un percorso psicoterapeutico.",
+          "primarySources": [
+            {"label": "Scheda editore", "url": "https://www.erickson.it/it/mi-vado-bene"}
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "886137557X",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/dp/886137557X?&linkCode=ll2&tag=spaziotest-21&linkId=21827a0d23f8c1408df3538cd6d735eb&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "sindrome-impostore", "testId": "sindrome-impostore", "guideSlug": "sindrome-impostore", "title": "Sindrome dell'impostore", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "autosabotaggio", "testId": "autosabotaggio", "guideSlug": "autosabotaggio", "title": "Autosabotaggio e ostacoli agli obiettivi", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "disturbo-borderline-personalita", "testId": "tratti-borderline-adulti", "guideSlug": "disturbo-borderline-personalita", "title": "Disturbo borderline di personalità", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

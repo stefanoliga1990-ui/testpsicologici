@@ -208,6 +208,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("people-pleasing", List.of(
+                    new RecommendedReading(
+                            "Quaderno di esercizi per sviluppare l'assertività",
+                            "Federico Betti, Gabriele Costanzo e Simona Carniato",
+                            "Un quaderno operativo con una parte introduttiva e attività in sette passaggi su stili di comunicazione, ostacoli, critiche e modi di esprimere i propri bisogni.",
+                            "Gli esercizi offrono spunti di auto-osservazione e non misurano quanto una persona compiace gli altri né sostituiscono un supporto professionale quando le difficoltà relazionali causano sofferenza persistente.",
+                            "https://www.amazon.it/dp/8859044650?&linkCode=ll2&tag=spaziotest-21&linkId=778b304dde4d5be4b130a097415516ca&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Mi vado bene?",
+                            "Michele Giannantonio",
+                            "Un testo di auto-aiuto su autostima e assertività, con esempi e attività dedicate anche a pensieri, critiche e relazioni quotidiane.",
+                            "Propone un percorso divulgativo e non permette di dedurre il significato delle singole risposte al questionario né sostituisce un percorso psicoterapeutico.",
+                            "https://www.amazon.it/-/en/dp/886137557X?&linkCode=ll2&tag=spaziotest-21&linkId=21827a0d23f8c1408df3538cd6d735eb&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",
