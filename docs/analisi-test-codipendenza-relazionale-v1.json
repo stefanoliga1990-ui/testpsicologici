@@ -1,0 +1,34 @@
+{
+  "test": {
+    "id": "codipendenza-relazionale",
+    "titolo": "Quanto mi riconosco in dinamiche di codipendenza?",
+    "versione": "1.0",
+    "popolazione": "Adulti che compilano autonomamente in italiano pensando a una relazione stretta attuale",
+    "finalita": "Auto-osservazione informativa di focalizzazione sull'altro, sacrificio di sé, responsabilità e spazio personale",
+    "periodo_riferimento": "Ultimi tre mesi, sempre nella stessa relazione stretta",
+    "modello_risultato": "AREA_PROFILE",
+    "punteggio_numerico_visibile": false,
+    "disclaimer": "Questionario originale, informativo, non validato e non normato. Non diagnostica codipendenza e non giudica cura, interdipendenza o qualità della relazione."
+  },
+  "istruzione_risposta": "Pensando agli ultimi tre mesi e sempre alla stessa relazione stretta, con quale frequenza ti è capitata questa esperienza?",
+  "calcolo": {
+    "risposte": {"Mai": 1, "Raramente": 2, "A volte": 3, "Spesso": 4, "Quasi sempre": 5},
+    "domande": 20,
+    "aree": [
+      {"codice": "altro", "nome": "Focalizzazione sull'altra persona", "item": 5},
+      {"codice": "sacrificio", "nome": "Sacrificio di bisogni e scelte", "item": 5},
+      {"codice": "controllo", "nome": "Responsabilità e controllo relazionale", "item": 5},
+      {"codice": "spazio", "nome": "Spazio per identità ed emozioni", "item": 5}
+    ],
+    "soglie_editoriali": {"LOW": "media < 2.5", "MEDIUM": "2.5 <= media < 3.5", "HIGH": "media >= 3.5"},
+    "profili": {"LOW": "tutte le aree LOW", "MIXED": "nessuna area HIGH e almeno una MEDIUM", "FOCUSED": "una o due aree HIGH", "BROAD": "almeno tre aree HIGH"},
+    "barre": "Trasformazione lineare 1-5 in 0-100; non percentuali, probabilità, gravità, norme o cut-off"
+  },
+  "fonti": [
+    {"ordine": 1, "titolo": "Co-Dependency Revisited - Molina e colleghi", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13067074/", "contributo": "Revisione integrativa per prospettive, temi ed espliciti limiti concettuali."},
+    {"ordine": 2, "titolo": "Differentiation of Self and Codependency - Lampis e colleghi", "url": "https://doi.org/10.1007/s10591-017-9403-4", "contributo": "Studio italiano correlazionale; non offre norme e non valida il questionario."},
+    {"ordine": 3, "titolo": "Revised measure of codependency - Marks e colleghi", "url": "https://doi.org/10.1111/j.1742-9536.2011.00034.x", "contributo": "Temi di controllo, sacrificio e soppressione; nessun item o fattore trasferito."},
+    {"ordine": 4, "titolo": "Lived Experience of Codependency - Bacon e colleghi", "url": "https://doi.org/10.1007/s11469-018-9983-8", "contributo": "Studio qualitativo per esperienza vissuta e temi ricorrenti; generalizzazione limitata."},
+    {"ordine": 5, "titolo": "1522 - Numero Anti Violenza e Stalking", "url": "https://www.1522.eu/cose-1522/", "contributo": "Orientamento istituzionale di sicurezza, indipendente dal profilo."}
+  ]
+}

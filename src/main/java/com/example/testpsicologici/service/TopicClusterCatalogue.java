@@ -36,7 +36,8 @@ public class TopicClusterCatalogue {
                             "compatibilita-coppia",
                             "gelosia-partner",
                             "dinamiche-narcisistiche-partner",
-                            "situationship"
+                            "situationship",
+                            "codipendenza-relazionale"
                     )),
             new TopicCluster(
                     "personalita-e-tratti",

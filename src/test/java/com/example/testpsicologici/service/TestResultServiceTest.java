@@ -23,7 +23,7 @@ class TestResultServiceTest {
 
     @Test
     void allIntroductoryCardsAreConciseAndKeepTheirInformativePurpose() {
-        assertThat(catalogue.findAll()).hasSize(40).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(41).allSatisfy(test -> {
             String introductoryText = test.introductoryText();
             long sentenceCount = introductoryText.chars()
                     .filter(character -> character == '.' || character == '!' || character == '?')
@@ -2209,7 +2209,7 @@ class TestResultServiceTest {
     void onlyTheInformationTestsRemainAvailable() {
         assertThat(catalogue.findAll())
                 .extracting(PsychologicalTest::id)
-                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita", "tratti-evitanti-personalita-adulti", "disponibilita-emotiva", "alessitimia", "situationship");
+                .containsExactly("tratti-autistici-adulti", "tratti-adhd-adulti", "tratti-ossessivo-compulsivi", "autostima", "dipendenza-affettiva", "assertivita", "intelligenza-emotiva", "perfezionismo", "ansia-sociale", "dinamiche-narcisistiche-partner", "ansia-generalizzata", "umore-depresso", "people-pleasing", "sindrome-impostore", "autosabotaggio", "tratti-borderline-adulti", "paura-abbandono", "fomo", "intelligenza-linguistica", "intelligenza-intrapersonale", "resilienza-psicologica", "gelosia-partner", "soddisfazione-vita", "ptsd-adulti", "stili-attaccamento", "limerenza", "parentificazione", "gaslighting", "love-bombing", "breadcrumbing", "orbiting", "hoovering", "compatibilita-coppia", "relazione-dannosa-benessere", "invalidazione-emotiva-subita", "triangolazione-subita", "tratti-evitanti-personalita-adulti", "disponibilita-emotiva", "alessitimia", "situationship", "codipendenza-relazionale");
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("vera-web-app"));
         assertThatIllegalArgumentException().isThrownBy(() -> catalogue.findById("equilibrio-quotidiano"));
     }

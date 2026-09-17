@@ -58,7 +58,8 @@ class PsychometricStructureTest {
             Map.entry("tratti-evitanti-personalita-adulti", "tratti associati al disturbo evitante di personalità"),
             Map.entry("disponibilita-emotiva", "difficoltà di disponibilità emotiva nella relazione"),
             Map.entry("alessitimia", "esperienze associate all'alessitimia"),
-            Map.entry("situationship", "ambiguità e accordi nella relazione"));
+            Map.entry("situationship", "ambiguità e accordi nella relazione"),
+            Map.entry("codipendenza-relazionale", "dinamiche relazionali esplorate"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -68,7 +69,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(40).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(41).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
@@ -127,7 +128,7 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(6));
-            } else if ("triangolazione-subita".equals(test.id())) {
+            } else if ("triangolazione-subita".equals(test.id()) || "codipendenza-relazionale".equals(test.id())) {
                 assertThat(test.questions()).hasSize(20);
                 assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
                 assertThat(test.answerScale()).isEqualTo("FREQUENCY");

@@ -376,7 +376,15 @@ public class ReferenceContributionCatalogue {
             entry("https://doi.org/10.1007/s12119-025-10402-8",
                     "Studio mixed-methods consultato per esclusività, investimento, bisogni, comunicazione sul futuro, sforzo e fiducia; associazioni e campione statunitense non dimostrano causalità o esiti universali."),
             entry("https://doi.org/10.1080/15332691.2013.779097",
-                    "Studio osservazionale consultato per distinguere transizioni discusse e passaggi relazionali per inerzia; non misura situationship e non prescrive etichette, esclusività o impegno."));
+                    "Studio osservazionale consultato per distinguere transizioni discusse e passaggi relazionali per inerzia; non misura situationship e non prescrive etichette, esclusività o impegno."),
+            entry("https://pmc.ncbi.nlm.nih.gov/articles/PMC13067074/",
+                    "Revisione integrativa preregistrata consultata per prospettive, temi ricorrenti, esiti associati e persistente frammentazione della codipendenza; le cornici proposte sono preliminari."),
+            entry("https://doi.org/10.1007/s10591-017-9403-4",
+                    "Studio italiano su 318 adulti non clinici consultato per differenziazione del sé e funzionamento di coppia; associazioni trasversali e campione non forniscono norme o causalità."),
+            entry("https://doi.org/10.1111/j.1742-9536.2011.00034.x",
+                    "Sviluppo della Composite Codependency Scale consultato per controllo interpersonale, sacrificio di sé e soppressione emotiva; item, fattori e punteggi non vengono trasferiti."),
+            entry("https://doi.org/10.1007/s11469-018-9983-8",
+                    "Studio qualitativo britannico consultato per esperienza vissuta e temi ricorrenti; piccolo campione autoidentificato e analisi idiografica limitano la generalizzazione."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

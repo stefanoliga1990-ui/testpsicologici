@@ -85,6 +85,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedEmotionalAvailabilityInformationTest();
         seedAlexithymiaInformationTest();
         seedSituationshipInformationTest();
+        seedRelationalCodependencyInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4001,6 +4002,104 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Bisogni trattenuti, scelte sospese o interferenza risultano poco frequenti. Non esclude un bisogno importante non incluso negli item.",
                 "Espressione dei bisogni o impatto dell'incertezza emergono in alcune occasioni. Considera libertà di scelta, conseguenze e condizioni di sicurezza.",
                 "Bisogni trattenuti, disallineamento o interferenza risultano frequenti. L'area non dimostra una causa unica né indica automaticamente di terminare il rapporto.");
+    }
+
+    private void seedRelationalCodependencyInformationTest() {
+        String id = "codipendenza-relazionale";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(
+                id,
+                "Quanto mi riconosco in dinamiche di codipendenza?",
+                "Autovalutazione informativa",
+                "Osserva focalizzazione sull'altra persona, sacrificio di sé, controllo relazionale e spazio dato al proprio vissuto.",
+                "5 min · 20 domande",
+                "Codipendenza è un termine discusso e non una diagnosi autonoma. Questo questionario per adulti è originale, informativo e non validato: pensa a una relazione stretta attuale, sentimentale, familiare o di cura. Il risultato non stabilisce che tu sia codipendente, non giudica la cura o l'interdipendenza e non accerta responsabilità, abuso o intenzioni dell'altra persona.",
+                version, false,
+                "Frequenza complessiva delle dinamiche esplorate",
+                "Frequenza delle esperienze nell'area",
+                true, 41).withSeo(
+                "Codipendenza relazionale: test informativo | Spazio Test",
+                "Questionario informativo in 20 domande su focalizzazione sull'altro, sacrificio di sé, controllo e vissuto personale; non diagnostico.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi e sempre alla stessa relazione stretta, con quale frequenza ti è capitata questa esperienza?"));
+
+        saveReference(id, "Co-Dependency Revisited: integrative review - Molina e colleghi",
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC13067074/", 1);
+        saveReference(id, "The Role of Differentiation of Self and Dyadic Adjustment in Predicting Codependency - Lampis e colleghi",
+                "https://doi.org/10.1007/s10591-017-9403-4", 2);
+        saveReference(id, "Development and validation of a revised measure of codependency - Marks e colleghi",
+                "https://doi.org/10.1111/j.1742-9536.2011.00034.x", 3);
+        saveReference(id, "The Lived Experience of Codependency - Bacon e colleghi",
+                "https://doi.org/10.1007/s11469-018-9983-8", 4);
+        saveReference(id, "1522 - Numero Anti Violenza e Stalking",
+                "https://www.1522.eu/cose-1522/", 5);
+
+        saveArea(id, "altro", "Focalizzazione sull'altra persona", 1);
+        saveArea(id, "sacrificio", "Sacrificio di bisogni e scelte", 2);
+        saveArea(id, "controllo", "Responsabilità e controllo relazionale", 3);
+        saveArea(id, "spazio", "Spazio per identità ed emozioni", 4);
+
+        saveQuestions(id, List.of(
+                q("altro", "Ho regolato il mio umore in base a come stava l'altra persona."),
+                q("altro", "Ho dedicato molta attenzione a prevedere le reazioni dell'altra persona."),
+                q("altro", "Ho cercato segnali dell'approvazione dell'altra persona prima di scegliere."),
+                q("altro", "Ho perso di vista ciò che desideravo mentre cercavo di capire l'altra persona."),
+                q("altro", "Il benessere dell'altra persona ha occupato gran parte dei miei pensieri."),
+                q("sacrificio", "Ho rimandato un mio bisogno per occuparmi dell'altra persona."),
+                q("sacrificio", "Ho rinunciato a un'attività importante per mantenere l'equilibrio della relazione."),
+                q("sacrificio", "Ho accettato più compiti di quanti potessi sostenere."),
+                q("sacrificio", "Ho messo da parte il riposo per rispondere alle necessità dell'altra persona."),
+                q("sacrificio", "Ho continuato ad aiutare anche quando ne risentiva il mio benessere."),
+                q("controllo", "Mi sono sentito/a responsabile di risolvere i problemi dell'altra persona."),
+                q("controllo", "Ho cercato di prevenire conseguenze delle scelte dell'altra persona."),
+                q("controllo", "Ho controllato come procedevano situazioni che riguardavano l'altra persona."),
+                q("controllo", "Ho assunto decisioni che l'altra persona avrebbe potuto prendere autonomamente."),
+                q("controllo", "Mi è stato difficile lasciare all'altra persona la responsabilità delle proprie scelte."),
+                q("spazio", "Ho trattenuto un'emozione per non alterare l'equilibrio della relazione."),
+                q("spazio", "Ho evitato di esprimere un'opinione diversa da quella dell'altra persona."),
+                q("spazio", "Ho avuto poco spazio per interessi che sentivo miei."),
+                q("spazio", "Mi è stato difficile descrivere chi fossi al di fuori della relazione."),
+                q("spazio", "Ho nascosto una mia difficoltà per restare la persona che sostiene l'altro.")));
+
+        String commonLimits = "Il risultato descrive esperienze riferite in una sola relazione e non dimostra codipendenza, dipendenza affettiva, disturbo di personalità, abuso, intenzioni o colpe; item, aree e soglie sono originali e non validati. "
+                + "Cura, reciprocità e interdipendenza possono essere sane quando restano scelte, sostenibili e compatibili con autonomia e confini; cultura, salute, disabilità, responsabilità di cura e condizioni materiali possono influire sulle risposte. "
+                + "Se la relazione causa sofferenza o limita la vita quotidiana, puoi parlarne con un professionista; paura, minacce, controllo, coercizione, stalking o violenza meritano attenzione indipendentemente dal profilo, con il 112 nelle emergenze e il 1522 per donne che vivono violenza o stalking.";
+
+        saveGlobal(id, "LOW",
+                "Le dinamiche relazionali esplorate sembrano poco presenti",
+                "Focalizzazione sull'altra persona, sacrificio di sé, responsabilità e riduzione dello spazio personale risultano poco frequenti in tutte le aree. Nella relazione scelta non emerge quindi una configurazione diffusa delle esperienze esplorate.",
+                "Questo andamento non esclude un episodio importante, una fatica circoscritta o esperienze fuori dal periodo considerato. Un aiuto intenso può inoltre essere adeguato al contesto senza definire l'intera relazione. " + commonLimits);
+        saveGlobal(id, "MIXED",
+                "Le dinamiche relazionali esplorate emergono in modo variabile",
+                "Le risposte mostrano frequenze intermedie o differenze tra le quattro aree, senza che una raggiunga il livello editoriale più alto. Il modo di prendersi cura, scegliere e mantenere spazio personale può quindi cambiare secondo la situazione.",
+                "Può essere utile osservare quando compare questa variabilità e quali condizioni rendono l'aiuto più libero o più oneroso. Le differenze tra barre non spiegano la causa e non descrivono da sole la relazione. " + commonLimits);
+        saveGlobal(id, "FOCUSED",
+                "Le dinamiche relazionali esplorate sembrano più presenti in una o due aree",
+                "Una o due aree raccolgono esperienze riferite con maggiore frequenza, mentre le altre risultano più contenute. Il profilo orienta quindi verso aspetti specifici senza definire la persona o l'intera relazione.",
+                "Torna agli episodi concreti delle aree emergenti e considera scelta, reciprocità, sostenibilità e conseguenze. Una difficoltà focalizzata può meritare attenzione anche quando le altre aree sono contenute. " + commonLimits);
+        saveGlobal(id, "BROAD",
+                "Le dinamiche relazionali esplorate sembrano frequenti in più aree",
+                "Le risposte indicano esperienze frequenti in almeno tre delle quattro aree. Focalizzazione sull'altro, sacrificio, responsabilità e spazio personale sembrano quindi coinvolgere più aspetti della relazione nel periodo considerato.",
+                "Un andamento ampio rende utile osservare persistenza, interferenza e libertà concreta di scegliere come partecipare alla relazione. Non trasforma il termine codipendenza in una diagnosi e non stabilisce una causa unica. " + commonLimits);
+
+        saveAreaInsights(id, "altro",
+                "La focalizzazione sull'altra persona risulta poco frequente. Non significa disinteresse o assenza di cura.",
+                "L'attenzione all'altra persona prevale in alcune situazioni. Osserva se resta compatibile con i tuoi segnali, desideri e decisioni.",
+                "La focalizzazione sull'altra persona risulta frequente. L'area non accerta dipendenza né stabilisce perché questo accada.");
+        saveAreaInsights(id, "sacrificio",
+                "Rinunce e trascuratezza dei bisogni risultano poco frequenti. Non misura la quantità di aiuto offerto.",
+                "Bisogni o attività personali vengono messi da parte in alcune occasioni. Considera scelta, durata e possibilità di recupero.",
+                "Rinunce e costi per il benessere risultano frequenti. L'area non giudica la cura, ma invita a osservarne sostenibilità e reciprocità.");
+        saveAreaInsights(id, "controllo",
+                "Responsabilità e controllo sulle scelte altrui risultano poco frequenti. Non indica indifferenza verso le conseguenze.",
+                "Ti senti responsabile o intervieni in alcune situazioni. Distingui aiuto concordato, necessità reali e compiti che spettano all'altra persona.",
+                "Responsabilità o controllo relazionale risultano frequenti. L'area non accerta intenzioni e non rende chi compila responsabile delle condotte altrui.");
+        saveAreaInsights(id, "spazio",
+                "Riduzione dello spazio personale ed emotivo risulta poco frequente. Non certifica autonomia o chiarezza emotiva.",
+                "Opinioni, emozioni o interessi personali trovano meno spazio in alcune occasioni. Osserva contesto, sicurezza e possibilità di espressione.",
+                "Lo spazio per identità, opinioni o emozioni risulta spesso ridotto. L'area non stabilisce una diagnosi o la qualità complessiva della relazione.");
     }
 
     private void synchronizeEvidenceReferences() {

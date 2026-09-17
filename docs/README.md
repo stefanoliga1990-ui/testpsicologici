@@ -33,6 +33,7 @@
 - `test-relazione-dannosa-benessere-v1.md` è la specifica psicometrica corrente del questionario sull'impatto percepito di una relazione sul benessere e documenta sei aree, comportamenti osservabili, scoring editoriale, sicurezza e limiti nell'accertamento di abuso o pericolo.
 - `test-invalidazione-emotiva-v1.md` è la specifica psicometrica corrente del questionario sull'invalidazione emotiva percepita e documenta costrutto unidimensionale, tre lenti editoriali, distinzione tra riconoscimento e accordo, scoring e limiti delle evidenze italiane.
 - `test-triangolazione-relazionale-v1.md` è la specifica psicometrica corrente del questionario sulle dinamiche di triangolazione in una relazione sentimentale e documenta comunicazione indiretta, confronti, schieramenti, confini e limiti delle evidenze recipient-side.
+- `test-codipendenza-relazionale-v1.md` è la specifica psicometrica corrente del questionario sulle dinamiche attribuite alla codipendenza e documenta quattro aree editoriali, sovrapposizioni concettuali, contesto di cura e assenza di criteri diagnostici condivisi.
 - Gli altri file `analisi-test-*-v1.json`, `test-autismo-v2.md`, `test-adhd-v2.md` e `test-ocd-v1.md` sono specifiche delle versioni indicate nel nome. Restano nel repository per tracciabilità e non descrivono necessariamente soglie, ancore o ordine di somministrazione correnti.
 
 Il codice e i test automatici sono la fonte operativa per la versione pubblicata. Qualunque nuova versione deve aggiornare anche l'audit o aggiungere una specifica di revisione equivalente.

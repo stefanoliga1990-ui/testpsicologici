@@ -4336,6 +4336,117 @@ public class GuideCatalogue {
                     )
             ),
             new InformationGuide(
+                    "codipendenza-relazionale",
+                    "codipendenza-relazionale",
+                    "Codipendenza relazionale",
+                    "Codipendenza relazionale: un concetto discusso da leggere con cautela",
+                    "Codipendenza relazionale: significato e limiti | Spazio Test",
+                    "Una guida a focalizzazione sull'altro, sacrificio di sé, controllo e spazio personale, distinguendo cura, interdipendenza e abuso.",
+                    "Codipendenza è un termine diffuso ma non una diagnosi autonoma. La ricerca descrive temi ricorrenti, mentre definizioni, modelli e strumenti restano eterogenei: per questo è più utile osservare esperienze concrete che applicare un'etichetta alla persona.",
+                    List.of(
+                            new GuideSection(
+                                    "In breve",
+                                    "Un'etichetta ampia, non una diagnosi",
+                                    List.of(
+                                            "Il termine nacque nel contesto delle famiglie coinvolte da problemi di alcol e sostanze e in seguito è stato esteso a molte difficoltà relazionali. La revisione integrativa più recente conferma che il costrutto è multidimensionale e clinicamente discusso, ma ancora frammentato tra prospettive diverse.",
+                                            "Non esistono criteri diagnostici formali condivisi. Riconoscersi in alcune esperienze non significa quindi essere una persona codipendente e non permette di spiegare una relazione con una causa unica."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Temi ricorrenti",
+                                    "Focalizzazione sull'altro, sacrificio, controllo e spazio personale",
+                                    List.of(
+                                            "Studi e strumenti diversi ricorrono a temi come attenzione prevalente ai bisogni altrui, rinuncia ai propri bisogni, tentativi di gestire ciò che accade nella relazione e difficoltà a dare spazio a emozioni e identità personali.",
+                                            "Le quattro aree del questionario sono lenti editoriali ispirate a questi temi, non sottotipi validati. Possono comparire separatamente e non vanno sommate per attribuire un'identità alla persona."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Evidenze italiane",
+                                    "Uno studio sulla differenziazione del sé non valida un test italiano",
+                                    List.of(
+                                            "Uno studio condotto da ricercatrici italiane su 318 adulti non clinici ha rilevato associazioni tra comportamenti definiti codipendenti e dimensioni della differenziazione del sé. Il disegno correlazionale non stabilisce cause e il campione non fornisce norme per la popolazione italiana.",
+                                            "Non è stata individuata una validazione italiana consolidata di una misura unitaria della codipendenza. I 20 item di Spazio Test sono originali e non ereditano affidabilità, fattori o soglie dagli strumenti citati."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Cura e interdipendenza",
+                                    "Dipendere dagli altri non è di per sé un problema",
+                                    List.of(
+                                            "Le relazioni includono normalmente sostegno, responsabilità condivise e periodi in cui una persona offre più aiuto. Malattia, disabilità, genitorialità, lavoro di cura, cultura e condizioni materiali possono cambiare temporaneamente l'equilibrio senza indicare patologia.",
+                                            "Sono più informative domande su scelta, reciprocità, sostenibilità e possibilità di mantenere bisogni, relazioni e attività proprie. Anche l'interdipendenza può essere sana quando entrambe le persone conservano voce e confini."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Distinzioni",
+                                    "Codipendenza, dipendenza affettiva e people pleasing non coincidono",
+                                    List.of(
+                                            "La dipendenza affettiva viene spesso riferita soprattutto alla paura della perdita, alla centralità del legame romantico e alle difficoltà di separazione. Il people pleasing riguarda invece il compiacere e l'approvazione in relazioni e contesti diversi.",
+                                            "La codipendenza è stata usata in modo più ampio per descrivere configurazioni di cura, autosacrificio, controllo e identità. La sovrapposizione resta notevole: il risultato va letto per area e non come prova di un costrutto distinto."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Come leggere il risultato",
+                                    "Frequenze editoriali, non livelli clinici",
+                                    List.of(
+                                            "Le risposte da 1 a 5 vengono mediate per area e trasformate in barre da 0 a 100. Le barre non sono percentuali di codipendenza, gravità, rischio, probabilità o norme; anche le soglie LOW, MIXED, FOCUSED e BROAD sono editoriali.",
+                                            "Un profilo ampio indica frequenze alte in almeno tre aree, non una diagnosi. Un livello contenuto non esclude un episodio importante, una situazione di abuso o una fatica non inclusa negli item."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Supporto e sicurezza",
+                                    "Osservare conseguenze e libertà di scelta",
+                                    List.of(
+                                            "Può essere utile annotare episodi concreti: che cosa è stato chiesto, che cosa hai scelto, quali costi hai sostenuto e se potevi dire no o chiedere aiuto. Un confronto professionale può aiutare quando la relazione assorbe molte energie, limita la vita quotidiana o rende difficile riconoscere i propri bisogni.",
+                                            "La responsabilità della violenza appartiene a chi la esercita. In presenza di paura, minacce, controllo, coercizione, stalking o violenza, considera prima la sicurezza: chiama il 112 nelle emergenze; se sei una donna, il 1522 offre orientamento gratuito anche via chat."
+                                    ),
+                                    List.of()
+                            ),
+                            new GuideSection(
+                                    "Ricerca e limiti",
+                                    "Le definizioni restano frammentate",
+                                    List.of(
+                                            "La revisione integrativa del 2026 ha incluso studi quantitativi, qualitativi e teorici e ha proposto cornici preliminari, ma segnala ancora ambiguità concettuale, limitata contestualizzazione culturale e sovrapposizione con dipendenza affettiva e altri costrutti.",
+                                            "Prima di descrivere il questionario come affidabile o valido servono revisione di esperti e utenti, interviste cognitive, pilotaggio, studi fattoriali, affidabilità, errore di misura, validità, equità e replica indipendente."
+                                    ),
+                                    List.of()
+                            )
+                    ),
+                    "Il questionario collegato usa 20 item originali, quattro lenti editoriali e una finestra di tre mesi riferita a una sola relazione stretta. È informativo e non validato: non attribuisce un'identità, non giudica la cura e non accerta abuso o intenzioni.",
+                    List.of(
+                            new GuideReference(
+                                    "Co-Dependency Revisited: An Integrative Review of Conceptualisations and Mental Health Outcomes - Molina e colleghi",
+                                    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13067074/",
+                                    "Revisione integrativa preregistrata consultata per prospettive, temi ricorrenti, esiti associati e persistente frammentazione concettuale; le cornici proposte sono preliminari."
+                            ),
+                            new GuideReference(
+                                    "The Role of Differentiation of Self and Dyadic Adjustment in Predicting Codependency - Lampis e colleghi",
+                                    "https://doi.org/10.1007/s10591-017-9403-4",
+                                    "Studio italiano su 318 adulti non clinici consultato per differenziazione del sé e funzionamento di coppia; associazioni trasversali e campione non forniscono norme o causalità."
+                            ),
+                            new GuideReference(
+                                    "Development and validation of a revised measure of codependency - Marks e colleghi",
+                                    "https://doi.org/10.1111/j.1742-9536.2011.00034.x",
+                                    "Sviluppo della Composite Codependency Scale consultato per controllo interpersonale, sacrificio di sé e soppressione emotiva; item, fattori e punteggi non vengono trasferiti."
+                            ),
+                            new GuideReference(
+                                    "The Lived Experience of Codependency - Bacon e colleghi",
+                                    "https://doi.org/10.1007/s11469-018-9983-8",
+                                    "Studio qualitativo britannico consultato per esperienza vissuta e quattro temi ricorrenti; piccolo campione autoidentificato e analisi idiografica limitano la generalizzazione."
+                            ),
+                            new GuideReference(
+                                    "1522 - Numero Anti Violenza e Stalking",
+                                    "https://www.1522.eu/cose-1522/",
+                                    "Fonte istituzionale italiana consultata per orientamento e sicurezza; non è evidenza sul costrutto e non sostituisce il 112 nelle emergenze."
+                            )
+                    )
+            ),
+            new InformationGuide(
                     "situationship",
                     "situationship",
                     "Situationship",
