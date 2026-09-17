@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-09-16",
+  "updatedAt": "2026-09-17",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -150,8 +150,8 @@
       "sourceDescription": "Dinamica nella quale benessere e identità diventano fortemente dipendenti dal rapporto con l'altro.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Relazioni e attaccamento",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Costrutto discusso e non diagnosi autonoma: distinguere da dipendenza affettiva, cura, interdipendenza e condizioni di abuso." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 4, "itemCount": 20, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Costrutto discusso e non diagnosi autonoma: distinguere da dipendenza affettiva, cura, interdipendenza e condizioni di abuso." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-09-17T13:14:41+02:00", "completedAt": "2026-09-17T13:14:41+02:00", "commitHash": "e6bd0c1593ea19288beaf44b9b4484f4f0f3607c", "blockReason": null }
     },
     {
       "order": 11,
