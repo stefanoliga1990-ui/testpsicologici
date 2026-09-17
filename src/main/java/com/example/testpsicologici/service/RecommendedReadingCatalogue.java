@@ -190,6 +190,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("umore-depresso", List.of(
+                    new RecommendedReading(
+                            "Quaderno di esercizi per vincere la depressione",
+                            "Daniele Piacentini, Daniela Leveni e Paolo Michielin",
+                            "Un quaderno in undici step con informazioni ed esercizi su apatia, pensieri controproducenti, ruminazione, senso di colpa, rete sociale e monitoraggio dei cambiamenti.",
+                            "Gli esercizi sono materiali di auto-aiuto: non stabiliscono la presenza di depressione, non consentono di interpretare il risultato del questionario e non sostituiscono una valutazione professionale o un intervento in caso di urgenza.",
+                            "https://www.amazon.it/-/en/Quaderno-esercizi-vincere-depressione-Piacentini/dp/8859033527?dib=eyJ2IjoiMSJ9.Ffy0Hde5jMTFOCYZyOe10rJm_6SV0vzn_N1KP30RyIbb9Dxuma_Vdot0ujUfHugixyP3EPU3uQ780NbEJiGav5_B88Yj9jbpywNWZAUyX-vdrW5xn-giy3ZOSUXFLnIAiuDoWFs7SQiXN6k43JTRFS7noxnwt6La5NZvRf4dBawK9qufIw1BVg3VmjK6XCrQh6xPYFi9YtdEMtrqAcJF19U48q0UWsk6kn5saGI2ljg.OBZLAzBeJaKvFmmfsA-FGh5QF7g0nijjbInCemFFW2w&dib_tag=se&keywords=Quaderno+di+esercizi+per+vincere+la+depressione&qid=1789626427&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=63f104df5e7db46226a375d6e2c4996d&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Come sconfiggere la depressione",
+                            "Robert L. Leahy",
+                            "Un manuale di auto-aiuto che propone riflessioni ed esercizi su pensieri negativi, autocritica, solitudine, paura del fallimento e abitudini quotidiane.",
+                            "Il titolo non implica un risultato garantito: il libro non formula diagnosi, non permette di dedurre il significato delle risposte al questionario e non sostituisce supporto professionale o interventi urgenti.",
+                            "https://www.amazon.it/Come-sconfiggere-depressione-percorso-autoaiuto/dp/8860304962?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2LZIWVS4SG5F5&dib=eyJ2IjoiMSJ9.iN7K_fjQzNkTsJEUOJ_5xw.AGsiU1LL7groL6Ary6M0lTTg_CFqyu_xP8fhi3P9gXg&dib_tag=se&keywords=9788860304964&qid=1789629863&sprefix=9788860304964%2Caps%2C240&sr=8-1&ufe=app_do%3Aamzn1.fos.8a1562af-dabe-4f1d-8eb5-1ded1ace4ef7&linkCode=ll2&tag=spaziotest-21&linkId=b8f57efb48a06541b223eb319b4716c1&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",
