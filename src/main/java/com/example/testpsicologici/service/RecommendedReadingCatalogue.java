@@ -9,8 +9,8 @@ import java.util.Map;
 @Service
 public class RecommendedReadingCatalogue {
 
-    private final Map<String, List<RecommendedReading>> readingsByTestId = Map.of(
-            "tratti-autistici-adulti", List.of(
+    private final Map<String, List<RecommendedReading>> readingsByTestId = Map.ofEntries(
+            Map.entry("tratti-autistici-adulti", List.of(
                     new RecommendedReading(
                             "La differenza invisibile",
                             "Julie Dachez e Mademoiselle Caroline",
@@ -27,8 +27,8 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/Esplorare-proprio-autismo-formazione-benessere/dp/B0BT4WCXFB?crid=128Q68GPXJJJ9&dib=eyJ2IjoiMSJ9.f1PNBWyx7VetB2gPq9_EGQ.rG97biUWu2ThECB7p1jpi67jiYiIryxDwV0Kdt03xG4&dib_tag=se&keywords=9791254910689&qid=1789482565&sprefix=9791254910689%2Caps%2C141&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=dc6aa3de7170dc51f979a5b0e09beb6d&ref_=as_li_ss_tl",
                             true
                     )
-            ),
-            "tratti-adhd-adulti", List.of(
+            )),
+            Map.entry("tratti-adhd-adulti", List.of(
                     new RecommendedReading(
                             "L'anno che ho incontrato il mio cervello",
                             "Matilda Boseley",
@@ -45,8 +45,8 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/negli-adulti-modello-lintervento-psicoeducativo/dp/8859030293?dib=eyJ2IjoiMSJ9.Xwfk3JWdyrKgfws-RGVgfw.orwXL2bOHxgTCxRhhS-5s7X2aKxGUPnYLsfpe0FDGgo&dib_tag=se&keywords=9788859030294&qid=1789503354&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=a5799dce98e7af80ff45383edb70cc80&ref_=as_li_ss_tl",
                             true
                     )
-            ),
-            "tratti-ossessivo-compulsivi", List.of(
+            )),
+            Map.entry("tratti-ossessivo-compulsivi", List.of(
                     new RecommendedReading(
                             "Vincere le ossessioni",
                             "Gabriele Melli",
@@ -63,8 +63,8 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/mente-ossessiva-Curare-disturbo-ossessivo-compulsivo/dp/8860308224?crid=3JTQABH2BWKIB&dib=eyJ2IjoiMSJ9.GEHjRcJvU04sDFt7pE3tCw.wSN9tKHCL6iDN8osFcY4pjwr_qBKdN1T29FqtgNQU_I&dib_tag=se&keywords=9788860308221&qid=1789505129&sprefix=9788860308221%2Caps%2C331&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=68d714a6089fb8ae408370d07a056ed8&ref_=as_li_ss_tl",
                             true
                     )
-            ),
-            "autostima", List.of(
+            )),
+            Map.entry("autostima", List.of(
                     new RecommendedReading(
                             "L'autostima si impara",
                             "Umberto Longoni",
@@ -81,8 +81,8 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/dp/886137557X?&linkCode=ll2&tag=spaziotest-21&linkId=21827a0d23f8c1408df3538cd6d735eb&ref_=as_li_ss_tl",
                             true
                     )
-            ),
-            "dipendenza-affettiva", List.of(
+            )),
+            Map.entry("dipendenza-affettiva", List.of(
                     new RecommendedReading(
                             "Quaderno di esercizi per vincere la dipendenza affettiva",
                             "Antonella Lebruto, Giulia Calamai e Laura Caccico",
@@ -99,8 +99,8 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/dp/8859029759?&linkCode=ll2&tag=spaziotest-21&linkId=970a512c8ea1eccc9c7be79465413f8e&ref_=as_li_ss_tl",
                             true
                     )
-            ),
-            "assertivita", List.of(
+            )),
+            Map.entry("assertivita", List.of(
                     new RecommendedReading(
                             "Quaderno di esercizi per sviluppare l'assertività",
                             "Federico Betti, Gabriele Costanzo e Simona Carniato",
@@ -117,8 +117,8 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/dp/8859030277?&linkCode=ll2&tag=spaziotest-21&linkId=0a7cc530e5de01ba9b22c4bc22c46e30&ref_=as_li_ss_tl",
                             true
                     )
-            ),
-            "intelligenza-emotiva", List.of(
+            )),
+            Map.entry("intelligenza-emotiva", List.of(
                     new RecommendedReading(
                             "Intelligenza emotiva",
                             "Daniel Goleman",
@@ -135,8 +135,8 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/Lintelligenza-Prospettive-applicazioni-socioeducative-psicologiche/dp/8859044642?dib=eyJ2IjoiMSJ9.fKVM_VaEe2njomF8NZdysw.jwCuC3u7GxOnq2x6kkxycPu9gB7xg2O49_XNjW1SaR4&dib_tag=se&keywords=9788859044642&qid=1789550599&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=2f4ce82681af9284a72b5c4b6618200a&ref_=as_li_ss_tl",
                             true
                     )
-            ),
-            "perfezionismo", List.of(
+            )),
+            Map.entry("perfezionismo", List.of(
                     new RecommendedReading(
                             "Nessuno è perfetto. Strategie per superare il perfezionismo. Nuova ediz.",
                             "Martin M. Antony e Richard P. Swinson",
@@ -153,8 +153,8 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/ricerca-perfezione-Smetti-inseguire-perfezionismo/dp/8809975499?dib=eyJ2IjoiMSJ9.pxGjWoQ4AxRjOPhRGsJDqw.Pnh4vICfh2k-iwkdZE9Rbx_xHJmD8Xe7iOJRzfgqIyE&dib_tag=se&keywords=9788809975491&qid=1789572363&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=9c446c9391f22ab143a2015e7eb94e38&ref_=as_li_ss_tl",
                             true
                     )
-            ),
-            "dinamiche-narcisistiche-partner", List.of(
+            )),
+            Map.entry("dinamiche-narcisistiche-partner", List.of(
                     new RecommendedReading(
                             "E questo sarebbe amore?",
                             "Sonja R. e Bärbel Wardetzki",
@@ -171,8 +171,26 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/Narciso-Fragilit%C3%A0-arroganza-normalit%C3%A0-patologia/dp/8832851520?dib=eyJ2IjoiMSJ9.HTIwoU4452J4cCSggZSZmA.I1IoanmGTjxAKeV0DfR99Az2Pa7UX4iA4IH7tzwUz8Y&dib_tag=se&keywords=9788832851526&qid=1789594078&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=93a73b038262154ff11361eb1d951570&ref_=as_li_ss_tl",
                             true
                     )
-            ),
-            "ansia-sociale", List.of(
+            )),
+            Map.entry("ansia-generalizzata", List.of(
+                    new RecommendedReading(
+                            "Quaderno di esercizi per vincere l'ansia generalizzata",
+                            "Daniele Piacentini e Daniela Leveni",
+                            "Un quaderno di auto-aiuto in undici step con tecniche, strategie e attività dedicate a preoccupazioni ricorrenti, rimuginio, comportamenti disfunzionali e problemi quotidiani.",
+                            "Gli esercizi sono materiali di auto-aiuto: non stabiliscono la presenza di un disturbo d'ansia generalizzata, non permettono di interpretare il risultato del questionario e non sostituiscono una valutazione professionale.",
+                            "https://www.amazon.it/-/en/Quaderno-esercizi-vincere-lansia-generalizzata/dp/885904118X?dib=eyJ2IjoiMSJ9.8x86z45iKeD_rCr0rtmnVg.I3GFdaZ-DPr5b4xZLRUq1TNQtjQ1tJkiuhz8D--DbEM&dib_tag=se&keywords=9788859041184&qid=1789604773&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=c7f0234e07163b227944fa37506f0343&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Rimuginio. Teoria e terapia del pensiero ripetitivo",
+                            "Gabriele Caselli, Giovanni M. Ruggiero e Sandra Sassaroli",
+                            "Un saggio che ricapitola ricerca e modelli clinici sul pensiero negativo ripetitivo, sulle credenze metacognitive e sui comportamenti che possono mantenere il rimuginio.",
+                            "È un testo teorico e clinico, in parte rivolto a chi lavora nella salute mentale: non consente di diagnosticare un disturbo, valutare una terapia o dedurre il significato delle risposte al questionario.",
+                            "https://www.amazon.it/-/en/Rimuginio-Teoria-terapia-pensiero-ripetitivo/dp/8860309026?dib=eyJ2IjoiMSJ9.PHEpTm6OnHEohhblIoMy-A.9flKnlBdTorKbTqfwU-TbMbTtym_olrBk8winVwD8_A&dib_tag=se&keywords=9788860309020&qid=1789604805&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=28fb3d1d1eb7e5b3fb2230cada97dba0&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
+            Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",
                             "Nicola Marsigli",
@@ -189,7 +207,7 @@ public class RecommendedReadingCatalogue {
                             "https://www.amazon.it/-/en/Quaderno-esercizi-vincere-lansia-sociale/dp/8859025877?dib=eyJ2IjoiMSJ9.szV2dvrpHaRj-aDX8xH4Rw.qdbTHnEk_1DVb1sQ8fO65rQqmyoSPdpJKfl_Br4Wznw&dib_tag=se&keywords=9788859025870&qid=1789583183&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=6c67db138cb6455a94d1573dbe54043e&ref_=as_li_ss_tl",
                             true
                     )
-            )
+            ))
     );
 
     public List<RecommendedReading> findByTestId(String testId) {

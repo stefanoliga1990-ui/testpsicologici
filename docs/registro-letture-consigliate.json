@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-16",
+  "updatedAt": "2026-09-17",
   "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
   "selectionPolicy": {
     "booksPerTopic": {
@@ -660,7 +660,69 @@
         }
       ]
     },
-    { "topicId": "ansia-generalizzata", "testId": "ansia-generalizzata", "guideSlug": "ansia-generalizzata", "title": "Ansia generalizzata", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "ansia-generalizzata",
+      "testId": "ansia-generalizzata",
+      "guideSlug": "ansia-generalizzata",
+      "title": "Ansia generalizzata",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Quaderno di esercizi per vincere l'ansia generalizzata",
+          "placeholderCover": true,
+          "subtitle": "Percorso di auto-aiuto in undici step",
+          "authors": ["Daniele Piacentini", "Daniela Leveni"],
+          "publisher": "Erickson",
+          "isbn13": "9788859041184",
+          "publicationYear": 2025,
+          "format": "brossura",
+          "editorialRole": "Quaderno operativo di auto-aiuto basato sulla terapia cognitivo-comportamentale",
+          "audience": "Adulti interessati a osservare preoccupazioni eccessive, rimuginio e comportamenti che possono mantenere l’ansia",
+          "description": "Un quaderno di auto-aiuto in undici step con tecniche, strategie e attività dedicate a preoccupazioni ricorrenti, rimuginio, comportamenti disfunzionali e problemi quotidiani.",
+          "limit": "Gli esercizi sono materiali di auto-aiuto: non stabiliscono la presenza di un disturbo d’ansia generalizzata, non permettono di interpretare il risultato del questionario e non sostituiscono una valutazione professionale.",
+          "primarySources": [
+            {"label": "Scheda della serie editoriale", "url": "https://www.erickson.it/it/serie/quaderni-di-esercizi-per-l-auto-aiuto"}
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "885904118X",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Quaderno-esercizi-vincere-lansia-generalizzata/dp/885904118X?dib=eyJ2IjoiMSJ9.8x86z45iKeD_rCr0rtmnVg.I3GFdaZ-DPr5b4xZLRUq1TNQtjQ1tJkiuhz8D--DbEM&dib_tag=se&keywords=9788859041184&qid=1789604773&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=c7f0234e07163b227944fa37506f0343&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Rimuginio. Teoria e terapia del pensiero ripetitivo",
+          "placeholderCover": true,
+          "subtitle": "Teoria e terapia del pensiero ripetitivo",
+          "authors": ["Gabriele Caselli", "Giovanni M. Ruggiero", "Sandra Sassaroli"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860309020",
+          "publicationYear": 2017,
+          "format": "brossura",
+          "editorialRole": "Saggio teorico-clinico di approfondimento",
+          "audience": "Lettori e professionisti interessati a un approfondimento teorico e clinico sul rimuginio e sui processi metacognitivi",
+          "description": "Un saggio che ricapitola ricerca e modelli clinici sul pensiero negativo ripetitivo, sulle credenze metacognitive e sui comportamenti che possono mantenere il rimuginio.",
+          "limit": "È un testo teorico e clinico, in parte rivolto a chi lavora nella salute mentale: non consente di diagnosticare un disturbo, valutare una terapia o dedurre il significato delle risposte al questionario.",
+          "primarySources": [
+            {"label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/gabriele-caselli-giovanni-m-ruggiero-sandra-sassaroli/rimuginio-9788860309020-2543.html"}
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8860309026",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Rimuginio-Teoria-terapia-pensiero-ripetitivo/dp/8860309026?dib=eyJ2IjoiMSJ9.PHEpTm6OnHEohhblIoMy-A.9flKnlBdTorKbTqfwU-TbMbTtym_olrBk8winVwD8_A&dib_tag=se&keywords=9788860309020&qid=1789604805&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=28fb3d1d1eb7e5b3fb2230cada97dba0&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "umore-depresso", "testId": "umore-depresso", "guideSlug": "umore-depresso", "title": "Umore depresso e sintomi depressivi", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "people-pleasing", "testId": "people-pleasing", "guideSlug": "people-pleasing", "title": "People pleasing e bisogno di approvazione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "sindrome-impostore", "testId": "sindrome-impostore", "guideSlug": "sindrome-impostore", "title": "Sindrome dell'impostore", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
