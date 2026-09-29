@@ -53,7 +53,7 @@
         "I testi non sono formule generiche ripetute e non introducono nuove affermazioni cliniche non supportate.",
         "I test controllano che il campo esista e sia visibile per le guide interessate."
       ],
-      "workflow": {"status": "PENDING", "attempts": 0, "lastAttemptAt": null, "readyAt": null, "contentCommitHash": null, "blockReason": null, "outcomeSummary": null}
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-29T22:52:09+02:00", "readyAt": "2026-09-29T22:52:09+02:00", "contentCommitHash": "45d04ea73d775eed981862069bcb347e1e979532", "blockReason": null, "outcomeSummary": "Contributi editoriali distinti per le prime dieci guide, visibili in HTML e React; introduzioni dei questionari verificate; 267 test Maven superati."}
     },
     {
       "order": 2,
