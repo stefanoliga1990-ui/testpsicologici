@@ -125,7 +125,7 @@
         "Tutte le 6 guide indicate mostrano un contributo distinto e coerente con le fonti e i limiti presenti.",
         "I test verificano copertura e rendering delle guide interessate."
       ],
-      "workflow": {"status": "PENDING", "attempts": 0, "lastAttemptAt": null, "readyAt": null, "contentCommitHash": null, "blockReason": null, "outcomeSummary": null}
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T01:49:20+02:00", "readyAt": "2026-09-30T01:49:20+02:00", "contentCommitHash": "319fd3771a2442f8ba35f3c1c027aaf979cc30e0", "blockReason": null, "outcomeSummary": "Contributi distinti per sei guide su autovalutazione e obiettivi, visibili in HTML e nei dati React; limiti e sicurezza preservati; 270 test Maven superati."}
     },
     {
       "order": 5,
