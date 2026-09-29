@@ -16,14 +16,14 @@
     "onTechnicalFailure": "KEEP_PENDING_AND_REPORT"
   },
   "statusValues": ["PENDING", "READY", "BLOCKED"],
-  "readyDefinition": "Uno step è READY solo dopo la verifica dei criteri di completamento, i test pertinenti, la suite Maven completa con settings.xml, git diff --check e la registrazione dei commit locali. Un problema tecnico non è un blocco editoriale e lascia lo step PENDING.",
+  "readyDefinition": "Uno step è READY solo dopo la verifica dei criteri di completamento, i test pertinenti, la suite Maven completa con settings.xml, git diff --check, i commit locali e il push non forzato su origin/per-revisione-adsense. Un problema tecnico non è un blocco editoriale e non autorizza l'avvio dello step successivo.",
   "executionRules": {
-    "branch": "Lavorare soltanto su per-revisione-adsense; non fare merge su main, push o deploy prima della revisione finale dell'utente.",
+    "branch": "Lavorare soltanto su per-revisione-adsense e pubblicare i commit verificati su origin/per-revisione-adsense. Non fare merge su main né deploy prima della revisione finale dell'utente.",
     "workingTree": "Prima di ogni step controllare git status --short --branch. Non sovrascrivere o includere modifiche preesistenti non correlate.",
     "scope": "Non modificare marketing/. Non aggiungere o cambiare item, scoring o interpretazioni dei questionari in questa coda.",
     "editorial": "Usare fonti primarie o istituzionali pertinenti e rispettare AGENTS.md. Non presentare i questionari originali come validati; mantenere limiti e messaggi di sicurezza.",
     "verification": "Eseguire .\\mvnw.cmd -s settings.xml test e git diff --check. Verificare la coerenza fra HTML renderizzato dal server e React.",
-    "commits": "Committare prima il contenuto verificato e poi l'aggiornamento dello stato della coda con l'hash del commit del contenuto. Se lo step non richiede modifiche al contenuto, committare soltanto la decisione documentata e lo stato. Non fare push."
+    "commits": "Committare prima il contenuto verificato e poi l'aggiornamento dello stato della coda con l'hash del commit del contenuto. Se lo step non richiede modifiche al contenuto, committare soltanto la decisione documentata e lo stato. Eseguire push non forzato su origin/per-revisione-adsense. Prima di scegliere un nuovo step, pubblicare in sicurezza eventuali commit verificati rimasti locali da un'esecuzione precedente; se il push non riesce, fermarsi."
   },
   "selectedGuideSlugs": [],
   "selectionReportPath": "docs/automation/selezione-guide-adsense.md",
