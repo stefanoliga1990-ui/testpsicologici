@@ -2968,6 +2968,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali riferiti a una sola relazione e quattro aree editoriali. Non accerta i fatti, non dimostra gaslighting, abuso o violenza, non attribuisce intenzioni o diagnosi e non sostituisce una valutazione o un supporto professionale.",
+                    "La guida separa un disaccordo o una bugia isolata da un andamento ripetuto che mette in discussione la credibilità di chi racconta i fatti. Propone di osservare insieme episodi, asimmetrie di potere e spazio per il confronto, senza ricostruire le intenzioni dell'altra persona dalle sole risposte.",
                     List.of(
                             new GuideReference(
                                     "Defining Gaslighting in Gender-Based Violence — Adair",
@@ -3089,6 +3090,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali riferiti a una sola fase di una relazione romantica e quattro aree editoriali. Non dimostra love bombing, manipolazione, abuso o controllo, non attribuisce intenzioni o diagnosi e non sostituisce una valutazione o un supporto professionale.",
+                    "La guida legge l'intensità iniziale alla luce del ritmo scelto da entrambe le persone: distingue gesti affettuosi da pressioni sui confini e osserva se lo spazio personale resta possibile nel tempo. La sequenza aiuta l'auto-osservazione senza trasformare attenzioni o promesse in prove di manipolazione.",
                     List.of(
                             new GuideReference(
                                     "Love-bombing: A Narcissistic Approach to Relationship Formation — Strutzenberg e colleghi",
@@ -3210,6 +3212,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali riferiti a una sola relazione o frequentazione e quattro aree editoriali. Non dimostra breadcrumbing, manipolazione o abuso, non attribuisce intenzioni o diagnosi e non sostituisce una valutazione o un supporto professionale.",
+                    "La guida distingue la semplice disponibilità variabile dall'alternanza fra segnali di interesse e scarso seguito concreto. Invita a confrontare messaggi, proposte e possibilità di chiarire le aspettative in una stessa frequentazione, senza attribuire una strategia all'altra persona.",
                     List.of(
                             new GuideReference(
                                     "Psychological Correlates of Ghosting and Breadcrumbing Experiences — Navarro e colleghi",
@@ -3329,6 +3332,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 12 item originali riferiti ai primi sei mesi dopo l'interruzione di una sola relazione o frequentazione e due aree editoriali congiunte. Non dimostra orbiting, ghosting, manipolazione o cyberstalking, non attribuisce intenzioni e non sostituisce un supporto professionale.",
+                    "La guida tiene distinte due osservazioni che possono coesistere dopo una rottura: la fine del contatto diretto e una presenza online visibile. Se una delle due manca, l'etichetta orbiting descrive meno bene la situazione; visualizzazioni e reazioni sui social non rivelano da sole interesse, controllo o intenzioni.",
                     List.of(
                             new GuideReference(
                                     "Ghosting and orbiting: An analysis of victims' experiences — Pancani e colleghi",
@@ -3439,6 +3443,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 12 item originali, due aree editoriali e una scala di occorrenza riferita ai primi sei mesi dopo una conclusione o richiesta di distanza. Non dimostra hoovering, manipolazione, abuso o stalking, non attribuisce intenzioni e non sostituisce un supporto professionale.",
+                    "La guida sposta l'attenzione dal nome colloquiale hoovering alla differenza fra un tentativo di riconciliazione e contatti che proseguono dopo una richiesta di distanza. Mette al centro la risposta ai confini espressi e la sicurezza, senza dedurre sincerità, manipolazione o pericolo dal numero di ricontatti.",
                     List.of(
                             new GuideReference(
                                     "What Is Hoovering? — Cleveland Clinic",
@@ -3699,6 +3704,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato è un'autovalutazione informativa originale e non validata. Non stabilisce se la relazione sia tossica, abusante, sicura o da interrompere, non accerta fatti, intenzioni o colpe e non sostituisce supporto professionale o servizi di emergenza.",
+                    "La guida sostituisce l'etichetta generica di relazione tossica con sei osservazioni separate su rispetto, confini, controllo, paura, reciprocità e impatto sul benessere. Ricorda che paura e sicurezza meritano attenzione anche quando la media delle risposte è contenuta, senza chiedere al questionario un verdetto sulla relazione.",
                     List.of(
                             new GuideReference(
                                     "Italian Validation of the Scale of Psychological Abuse in Intimate Partner Violence — Lausi e colleghi",
@@ -3821,6 +3827,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 20 item originali, quattro lenti editoriali e una finestra di tre mesi riferita a una sola relazione sentimentale attuale o recente. È informativo e non validato: non accerta triangolazione intenzionale, manipolazione, abuso, infedeltà, accordi violati, colpa o diagnosi.",
+                    "La guida distingue il coinvolgimento di una terza persona come supporto o mediazione concordata dalle situazioni in cui confronti, messaggi indiretti o richieste di schieramento rendono più difficile il dialogo diretto. Accordi e contesto restano necessari per interpretare l'episodio, senza dedurre un'intenzione manipolativa.",
                     List.of(
                             new GuideReference(
                                     "The Triangulation in Relationships Inventory (TRI) — Bresin e colleghi",
@@ -3937,6 +3944,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 18 item originali, tre lenti editoriali e una finestra di un mese riferita a una sola persona. È informativo e non validato: non accerta invalidazione, manipolazione, abuso, intenzioni, diagnosi o verità dei fatti e non sostituisce supporto professionale.",
+                    "La guida separa il riconoscimento di un'emozione dall'accordo sui fatti o dalle scelte di comportamento. Suggerisce di osservare risposta, ripetizione e possibilità di riparazione, così un disaccordo o un confine rispettoso non diventano automaticamente invalidazione.",
                     List.of(
                             new GuideReference(
                                     "The Perceived Invalidation of Emotion Scale (PIES) — Zielinski e Veilleux",
