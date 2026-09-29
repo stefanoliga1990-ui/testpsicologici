@@ -325,6 +325,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, valore personale e autoaccettazione, fiducia ed espressione dei bisogni, risposta a errori e critiche, confronto e bisogno di approvazione. Non misura il valore della persona e non costituisce una valutazione clinica.",
+                    "La guida distingue il valore che una persona attribuisce a sé dalla fiducia in un compito specifico: un errore o una critica possono toccare entrambi, ma non li rendono equivalenti. Propone di osservare se il giudizio su un episodio si estende all'intera persona, lasciando spazio al contesto e ai cambiamenti nel tempo.",
                     List.of(
                             new GuideReference(
                                     "Rosenberg Self-Esteem Scale — University of Maryland",
@@ -655,6 +656,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, standard elevati e valore legato ai risultati, paura degli errori e dubbi, aspettative e giudizio percepiti, ordine e controllo. Descrive la frequenza di alcune dinamiche riferite dalla persona, ma non misura capacità o valore e non costituisce una valutazione clinica.",
+                    "La guida confronta uno standard elevato ma adattabile con la pressione a ottenere un risultato impeccabile. Invita a guardare il costo dei controlli, dei rinvii e della difficoltà a concludere, senza trattare ambizione o precisione come problemi in sé.",
                     List.of(
                             new GuideReference(
                                     "The dimensions of perfectionism — Frost e colleghi",
@@ -1099,6 +1101,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, bisogno di approvazione e paura del rifiuto, difficoltà a dire no e mantenere confini, autosilenziamento nel conflitto e sovraresponsabilità verso gli altri. Non formula una diagnosi, non misura quanto una persona sia gentile e non può stabilire da solo se un comportamento sia libero, imposto dal ruolo o necessario per la sicurezza.",
+                    "La guida distingue la cura scelta liberamente dall'adattamento che lascia poco spazio ai propri bisogni. Per leggere un sì o un silenzio suggerisce di considerare desiderio, costo personale, potere e sicurezza nella relazione, senza attribuire alla persona un'identità fissa di people pleaser.",
                     List.of(
                             new GuideReference(
                                     "Distinctions of unmitigated communion from communion: self-neglect and overinvolvement with others — Fritz e Helgeson",
@@ -1196,6 +1199,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, attribuzione dei successi, paura di essere smascherati, pressione perfezionistica e impatto di confronto e feedback sulle opportunità. Non formula una diagnosi e non misura competenza, preparazione o adeguatezza reale: il risultato va letto insieme a evidenze concrete, qualità dei riscontri e caratteristiche dell'ambiente.",
+                    "La guida separa il vissuto di non meritare un risultato dalle prove disponibili su competenze e contributi concreti. Accosta attribuzioni personali, qualità del feedback e condizioni dell'ambiente, così il dubbio non diventa automaticamente una misura di incapacità o una spiegazione individuale di ostacoli reali.",
                     List.of(
                             new GuideReference(
                                     "The imposter phenomenon in high achieving women — Clance e Imes",
@@ -1293,6 +1297,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, avvio e pianificazione, protezione dal giudizio e auto-handicapping, ricerca di sollievo emotivo e capacità di mantenere o adattare il percorso. Non formula una diagnosi, non attribuisce intenzioni e non distingue da solo abitudini modificabili, ostacoli ambientali, condizioni di salute o difficoltà esecutive; non misura volontà, disciplina o valore personale.",
+                    "La guida usa l'etichetta autosabotaggio solo come punto di partenza e chiede prima se l'obiettivo sia ancora proprio e praticabile. Distingue il sollievo breve di un rinvio da riposo necessario, mancanza di risorse e cambiamento sensato di priorità, senza presumere una volontà di farsi del male.",
                     List.of(
                             new GuideReference(
                                     "Self-defeating behavior patterns among normal individuals — Baumeister e Scher",
@@ -1665,6 +1670,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, inclusione percepita, confronto con alternative, bisogno di restare aggiornati e possibile interferenza su attenzione e scelte. Non è validato, non diagnostica una condizione e non dimostra un uso problematico di social media, Internet o smartphone.",
+                    "La guida scompone la FOMO in ciò che è accaduto, il significato attribuito all'assenza, il controllo degli aggiornamenti e l'effetto sulla scelta presente. Tiene distinti esclusione reale, confronto e abitudini digitali: il tempo online da solo non spiega l'esperienza né identifica un problema.",
                     List.of(
                             new GuideReference(
                                     "Factor structure and psychometric properties of the Italian version of the Fear of Missing Out Scale — Casale e Fioravanti",

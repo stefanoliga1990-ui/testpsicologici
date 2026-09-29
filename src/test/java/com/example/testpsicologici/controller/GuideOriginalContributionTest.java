@@ -37,6 +37,10 @@ class GuideOriginalContributionTest {
             "breadcrumbing", "orbiting", "hoovering", "invalidazione-emotiva",
             "triangolazione-relazionale");
 
+    private static final List<String> SELF_EVALUATION_SLUGS = List.of(
+            "autostima", "sindrome-impostore", "perfezionismo",
+            "people-pleasing", "autosabotaggio", "fomo");
+
     @Autowired
     private GuideCatalogue guides;
 
@@ -109,6 +113,28 @@ class GuideOriginalContributionTest {
         assertThat(contributions).doesNotHaveDuplicates();
 
         for (String slug : AMBIGUOUS_DYNAMICS_SLUGS) {
+            String contribution = guides.findBySlug(slug).orElseThrow().originalContribution();
+            mvc.perform(get("/approfondimenti/{slug}", slug))
+                    .andExpect(status().isOk())
+                    .andExpect(content().string(containsString("class=\"guide-section guide-original-contribution\"")))
+                    .andExpect(content().string(containsString("Il contributo di Spazio Test")))
+                    .andExpect(content().string(containsString(contribution)))
+                    .andExpect(content().string(containsString("originalContribution")))
+                    .andExpect(content().string(containsString("Fonti consultate")));
+        }
+    }
+
+    @Test
+    void selfEvaluationGuidesHaveDistinctContributionsInFallbackAndReactData() throws Exception {
+        MockMvc mvc = webAppContextSetup(context).build();
+        List<String> contributions = SELF_EVALUATION_SLUGS.stream()
+                .map(slug -> guides.findBySlug(slug).orElseThrow().originalContribution())
+                .toList();
+
+        assertThat(contributions).allSatisfy(text -> assertThat(text).isNotBlank());
+        assertThat(contributions).doesNotHaveDuplicates();
+
+        for (String slug : SELF_EVALUATION_SLUGS) {
             String contribution = guides.findBySlug(slug).orElseThrow().originalContribution();
             mvc.perform(get("/approfondimenti/{slug}", slug))
                     .andExpect(status().isOk())
