@@ -1,5 +1,7 @@
 # Documentazione dei questionari
 
+- `crediti-editoriali-guide.md` documenta autore, revisore e provenienza delle date mostrate nelle guide.
+
 - [Regole editoriali per letture e materiali consigliati](policy-letture-consigliate.md): criteri di selezione, esclusioni, trasparenza dell'affiliazione e scheda interna per i titoli proposti.
 - [Letture candidate: tratti autistici nell'adulto](letture-autismo-adulti.md): primo argomento, due candidati complementari e verifiche ancora necessarie prima della pubblicazione.
 - [Registro delle letture consigliate](registro-letture-consigliate.json): stato editoriale e dati bibliografici dei materiali associabili a ogni test e approfondimento.

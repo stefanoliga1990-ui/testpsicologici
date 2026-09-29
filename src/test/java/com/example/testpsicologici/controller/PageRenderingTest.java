@@ -144,7 +144,7 @@ class PageRenderingTest {
                         "<title>Metodo, fonti e revisione professionale | Spazio Test</title>")))
                 .andExpect(content().string(containsString("Come nasce un contenuto")))
                 .andExpect(content().string(containsString("fonti scientifiche o istituzionali italiane")))
-                .andExpect(content().string(containsString("Revisione professionale dei questionari")))
+                .andExpect(content().string(containsString("Revisione professionale dei contenuti")))
                 .andExpect(content().string(containsString("/react/assets/app.js?v=")))
                 .andExpect(content().string(containsString("/css/app.css?v=")))
                 .andExpect(content().string(containsString("Alessia Liga")))
@@ -341,7 +341,13 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Come può manifestarsi nell&#39;adulto")))
                 .andExpect(content().string(containsString("Singole caratteristiche non bastano per una diagnosi")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
+                .andExpect(content().string(containsString("Alessia Liga")))
+                .andExpect(content().string(containsString("Psicologa · Specializzanda in Psicoterapia")))
+                .andExpect(content().string(containsString("<time datetime=\"2026-08-13\">13 agosto 2026</time>")))
+                .andExpect(content().string(containsString("<time datetime=\"2026-08-20\">20 agosto 2026</time>")))
+                .andExpect(content().string(containsString("\"datePublished\": \"2026-08-13\"")))
+                .andExpect(content().string(containsString("\"dateModified\": \"2026-08-20\"")))
                 .andExpect(content().string(containsString("Signs of autism in adults — NHS")))
                 .andExpect(content().string(containsString("href=\"/test/tratti-autistici-adulti\"")))
                 .andExpect(content().string(containsString("Letture facoltative")))
@@ -402,7 +408,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Distrazione e impulsività non indicano sempre ADHD")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString("ADHD in adults — NHS")))
                 .andExpect(content().string(containsString(
                         "Attention-Deficit/Hyperactivity Disorder: What You Need to Know — NIMH")))
@@ -447,7 +453,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Un pensiero intrusivo non è un&#39;intenzione")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "Symptoms – Obsessive compulsive disorder (OCD) — NHS")))
                 .andExpect(content().string(containsString(
@@ -493,7 +499,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Come può manifestarsi una bassa autostima")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "Rosenberg Self-Esteem Scale — University of Maryland")))
                 .andExpect(content().string(containsString("Raising low self-esteem — NHS")))
@@ -539,7 +545,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Dipendenza relazionale, controllo e violenza non sono la stessa cosa")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "I disturbi da addiction nelle dipendenze non legate a sostanze — Ministero della Salute")))
                 .andExpect(content().string(containsString(
@@ -590,7 +596,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Strategie per comunicare in modo più assertivo")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "A 30-Item Schedule for Assessing Assertive Behavior — Rathus")))
                 .andExpect(content().string(containsString(
@@ -642,7 +648,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Riconoscere un&#39;emozione non significa leggere la mente")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "The Ability Model of Emotional Intelligence: Principles and Updates — Mayer, Caruso e Salovey")))
                 .andExpect(content().string(containsString(
@@ -690,7 +696,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Perché controllo e procrastinazione possono mantenere il problema")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "The dimensions of perfectionism — Frost e colleghi")))
                 .andExpect(content().string(containsString(
@@ -744,7 +750,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Ansia sociale, timidezza e contesto non sono la stessa cosa")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "Social Anxiety Disorder: What You Need to Know — NIMH")))
                 .andExpect(content().string(containsString(
@@ -800,7 +806,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Come riflettere sulla relazione e cercare supporto")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "Narcissistic Personality Disorder — Merck Manual Professional Edition")))
                 .andExpect(content().string(containsString(
@@ -856,7 +862,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Come può mantenersi il ciclo della preoccupazione")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "Generalized Anxiety Disorder: What You Need to Know — NIMH")))
                 .andExpect(content().string(containsString(
@@ -913,7 +919,7 @@ class PageRenderingTest {
                         "Trattamenti disponibili e segnali da non affrontare da soli")))
                 .andExpect(content().string(containsString("chiama subito il 112")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "Depressive disorder (depression) — World Health Organization")))
                 .andExpect(content().string(containsString("Depression in adults — NHS")))
@@ -968,7 +974,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Potere, sicurezza e richiesta di supporto")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "Distinctions of unmitigated communion from communion: self-neglect and overinvolvement with others — Fritz e Helgeson")))
                 .andExpect(content().string(containsString(
@@ -1020,7 +1026,7 @@ class PageRenderingTest {
                         "Perché un successo può non correggere il dubbio")))
                 .andExpect(content().string(containsString("Non tutto nasce dentro la persona")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "Impostor Phenomenon Measurement Scales: A Systematic Review — Mak, Kleitman e Abbott")))
                 .andExpect(content().string(containsString(
@@ -1046,7 +1052,7 @@ class PageRenderingTest {
                         "Come sollievo immediato e autocritica mantengono il blocco")))
                 .andExpect(content().string(containsString("Quando guardare oltre le abitudini")))
                 .andExpect(content().string(containsString("BreadcrumbList")))
-                .andExpect(content().string(containsString("A cura di Spazio Test")))
+                .andExpect(content().string(containsString("Stefano Liga")))
                 .andExpect(content().string(containsString(
                         "The nature of procrastination: a meta-analytic and theoretical review — Steel")))
                 .andExpect(content().string(containsString(
