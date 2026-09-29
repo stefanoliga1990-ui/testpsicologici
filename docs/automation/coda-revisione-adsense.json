@@ -104,7 +104,7 @@
         "I testi mantengono le cautele su sicurezza e limiti delle inferenze.",
         "I test verificano copertura e rendering delle guide interessate."
       ],
-      "workflow": {"status": "PENDING", "attempts": 0, "lastAttemptAt": null, "readyAt": null, "contentCommitHash": null, "blockReason": null, "outcomeSummary": null}
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T00:48:41+02:00", "readyAt": "2026-09-30T00:48:41+02:00", "contentCommitHash": "98b1557b76c32c6e3eb79f4098601f6489b9158a", "blockReason": null, "outcomeSummary": "Contributi distinti per otto guide sulle dinamiche relazionali ambigue, visibili in HTML e nei dati React; limiti e sicurezza preservati; 269 test Maven superati."}
     },
     {
       "order": 4,
