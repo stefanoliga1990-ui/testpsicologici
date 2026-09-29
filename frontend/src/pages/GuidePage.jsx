@@ -27,6 +27,12 @@ export default function GuidePage({ author, editorialHistory, guide, recommended
           </div>
         </header>
         <div className="guide-content">
+          {guide.originalContribution && (
+            <section className="guide-section guide-original-contribution">
+              <p className="eyebrow">Il contributo di Spazio Test</p><h2>Come leggere questa guida</h2>
+              <p>{guide.originalContribution}</p>
+            </section>
+          )}
           {guide.sections.map((section) => (
             <section className="guide-section" key={`${section.eyebrow}-${section.title}`}>
               <p className="eyebrow">{section.eyebrow}</p><h2>{section.title}</h2>

@@ -76,6 +76,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, comunicazione sociale, segnali impliciti, routine, flessibilità, interessi e sensibilità sensoriale. Le risposte offrono una traccia di auto-osservazione e non una conclusione clinica.",
+                    "La guida mette in relazione comunicazione, routine e sensibilità sensoriale con la varietà delle esperienze adulte. Invita a considerare storia dello sviluppo, contesti e possibili spiegazioni alternative prima di attribuire un significato a singole caratteristiche o alle risposte al questionario.",
                     List.of(
                             new GuideReference(
                                     "What is autism? — NHS",
@@ -164,6 +165,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, attenzione, organizzazione, gestione del tempo, irrequietezza e impulsività. Le risposte aiutano a osservare la frequenza percepita di queste esperienze e non costituiscono uno screening validato o una diagnosi.",
+                    "La guida distingue le difficoltà di attenzione e organizzazione che una persona può osservare dalla valutazione dell'ADHD nell'adulto. Collega irrequietezza e impulsività al funzionamento quotidiano, ricordando che storia personale, contesti e altre spiegazioni richiedono un confronto specialistico.",
                     List.of(
                             new GuideReference(
                                     "ADHD in adults — NHS",
@@ -243,6 +245,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, pensieri intrusivi e dubbio, contaminazione e pulizia, controlli, responsabilità, ordine, ripetizione e rituali mentali. Non misura da solo disagio, storia personale e funzionamento necessari per una valutazione clinica.",
+                    "La guida separa il contenuto di un pensiero intrusivo dall'intenzione di agire e descrive il rapporto tra dubbio, sollievo temporaneo e rituali. Questa distinzione aiuta a leggere le risposte al questionario senza scambiare la presenza di un pensiero per una conclusione sulla persona.",
                     List.of(
                             new GuideReference(
                                     "Symptoms – Obsessive compulsive disorder (OCD) — NHS",
@@ -735,6 +738,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, paura del giudizio e dell'imbarazzo, tensione nelle interazioni, situazioni di prestazione o osservazione e ciclo di anticipazione, protezione, evitamento e ripensamento. Descrive esperienze riferite dalla persona, ma non stabilisce la presenza di un disturbo d'ansia sociale e non sostituisce una valutazione professionale.",
+                    "La guida segue ciò che può accadere prima, durante e dopo un incontro sociale, includendo anticipazione, comportamenti protettivi e ripensamento. Distingue queste esperienze dalla timidezza e considera il contesto, così che le risposte non diventino un'etichetta isolata.",
                     List.of(
                             new GuideReference(
                                     "Social Anxiety Disorder: What You Need to Know — NIMH",
@@ -906,6 +910,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, ampiezza e controllabilità della preoccupazione, tensione e attivazione, concentrazione, affaticamento, irritabilità, sonno e interferenza nella vita quotidiana negli ultimi sei mesi. Non formula una diagnosi e non permette di distinguere da solo ansia generalizzata, stress, altre difficoltà psicologiche o condizioni fisiche.",
+                    "La guida distingue la preoccupazione utile da quella difficile da controllare e collega pensieri, tensione e risorse quotidiane in un possibile ciclo. Le aree del questionario servono a osservare come queste esperienze si distribuiscono, senza trasformare la loro frequenza in una diagnosi.",
                     List.of(
                             new GuideReference(
                                     "Generalized Anxiety Disorder: What You Need to Know — NIMH",
@@ -989,6 +994,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, umore e capacità di provare piacere, energia e attivazione, pensieri su di sé e sul futuro, sonno, appetito, concentrazione e funzionamento nelle ultime due settimane. Non formula una diagnosi e non valuta pensieri suicidari o rischio di autolesionismo: un risultato basso non esclude la necessità di chiedere aiuto.",
+                    "La guida distingue tristezza, umore depresso e depressione e invita a osservare insieme piacere, energia, pensieri e funzionamento. Propone di leggere il ritiro nel suo contesto e mantiene separati i segnali che richiedono aiuto immediato dal risultato del questionario.",
                     List.of(
                             new GuideReference(
                                     "Depressive disorder (depression) — World Health Organization",
@@ -1391,6 +1397,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, intensità emotiva e ritorno all'equilibrio, sensibilità alla distanza nelle relazioni, immagine di sé e senso di vuoto, impulsività e reazioni sotto stress. Non è validato, non conta criteri clinici, non valuta autolesionismo o pensieri suicidari e non può confermare, escludere o stimare la presenza di un disturbo borderline di personalità.",
+                    "La guida organizza emozioni, relazioni, immagine di sé e reazioni sotto stress come domini di lettura, senza usarli come checklist diagnostica. Distingue la frequenza recente delle risposte da un pattern duraturo e presenta il supporto professionale e la sicurezza indipendentemente dal profilo ottenuto.",
                     List.of(
                             new GuideReference(
                                     "The Italian Version of the Borderline Personality Disorder Severity Index IV — di Giacomo e colleghi",
@@ -1785,6 +1792,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa la cornice di Gardner soltanto come punto di partenza per osservare la frequenza percepita di comprensione, espressione orale, scrittura e flessibilità linguistica. Non misura intelligenza generale o competenza, non certifica talenti o limiti e non diagnostica condizioni.",
+                    "La guida usa la cornice di Gardner per proporre quattro prospettive di auto-osservazione, ma distingue autopercezione, uso della lingua e prestazione. Considera anche lingue, modalità e opportunità, evitando di trattare le risposte come una misura dell'intelligenza.",
                     List.of(
                             new GuideReference(
                                     "The Theory of Multiple Intelligences — Project Zero, Harvard",
@@ -2446,6 +2454,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato descrive la frequenza nell'ultimo mese di esperienze riferite a un evento scelto mentalmente. Non accerta l'esposizione, non è la PCL-5, non diagnostica il PTSD e non valuta durata complessiva, interferenza o sicurezza.",
+                    "La guida distingue evento, reazione e valutazione del PTSD e spiega perché quattro famiglie di esperienze sono soltanto una traccia di auto-osservazione. Ricorda che non occorre raccontare l'evento per leggere la pagina e che sicurezza e supporto non dipendono dal risultato del questionario.",
                     List.of(
                             new GuideReference(
                                     "Italian validation of the PTSD Checklist for DSM-5 — Di Tella e colleghi",
@@ -4032,6 +4041,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali, quattro lenti editoriali e una finestra di sei mesi. È informativo e non validato: non stabilisce diagnosi, probabilità, gravità, abilità sociale o valore personale e non sostituisce una valutazione professionale.",
+                    "La guida presenta quattro lenti editoriali e le confronta con ansia sociale, introversione e attaccamento evitante. Mette le risposte nel contesto delle opportunità e delle condizioni relazionali, senza ricavarne una probabilità diagnostica o un giudizio sul valore personale.",
                     List.of(
                             new GuideReference(
                                     "Avoidant personality disorder: current insights — Lampe e Malhi",

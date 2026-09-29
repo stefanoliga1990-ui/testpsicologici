@@ -94,6 +94,11 @@
         </header>
 
         <div class="guide-content">
+            <section class="guide-section guide-original-contribution" th:if="${guide.originalContribution != null}">
+                <p class="eyebrow">Il contributo di Spazio Test</p>
+                <h2>Come leggere questa guida</h2>
+                <p th:text="${guide.originalContribution}">Il contributo editoriale di questa guida.</p>
+            </section>
             <section class="guide-section" th:each="section : ${guide.sections}">
                 <p class="eyebrow" th:text="${section.eyebrow}">Sezione</p>
                 <h2 th:text="${section.title}">Titolo sezione</h2>
