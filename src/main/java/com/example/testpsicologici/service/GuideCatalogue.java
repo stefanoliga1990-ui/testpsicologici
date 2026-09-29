@@ -409,6 +409,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, paura della separazione e bisogno di rassicurazione, autonomia e interessi personali, confini e reciprocità, regolazione emotiva e centralità della relazione. Non formula diagnosi, non definisce se una relazione sia sana e non rileva abusi o violenza.",
+                    "La guida separa il desiderio di vicinanza dalla centralità del legame quando autonomia e confini si restringono. Legge questi temi nel contesto della relazione e della sicurezza, senza usare l'etichetta di dipendenza come diagnosi o spiegazione della persona.",
                     List.of(
                             new GuideReference(
                                     "I disturbi da addiction nelle dipendenze non legate a sostanze — Ministero della Salute",
@@ -822,6 +823,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, la percezione di reciprocità ed empatia, centralità e bisogno di ammirazione, gestione di critiche e responsabilità, confini, controllo e impatto emotivo nella relazione. Non valuta direttamente il partner, non diagnostica un disturbo narcisistico di personalità e non può stabilire se una relazione sia abusante o sicura.",
+                    "La guida sposta l'attenzione dall'etichetta del partner a episodi osservabili di reciprocità, confronto, confini e impatto. Distingue il conflitto dai comportamenti di controllo e mantiene la sicurezza rilevante indipendentemente da qualsiasi ipotesi diagnostica.",
                     List.of(
                             new GuideReference(
                                     "Narcissistic Personality Disorder — Merck Manual Professional Edition",
@@ -1532,6 +1534,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, sensibilità ai segnali di distanza, ricerca di rassicurazione, pensieri ed emozioni durante la distanza e autonomia nei confini. Non è validato, non classifica uno stile di attaccamento e non può confermare, escludere o stimare una condizione psicologica o la qualità reale di una relazione.",
+                    "La guida segue il passaggio da un segnale di distanza alla sua interpretazione, alla richiesta di rassicurazione e allo spazio rimasto per i propri confini. Mantiene aperta la possibilità che nel rapporto vi siano fatti concreti da considerare, senza dedurre uno stile di attaccamento dalle risposte.",
                     List.of(
                             new GuideReference(
                                     "Italian Validation of the Adult Attachment Scale-Revised — Troisi, Parola e Margherita",
@@ -2188,6 +2191,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato descrive la frequenza riferita di interpretazioni, reazioni emotive, verifiche e interferenza verso il partner attuale. Non stabilisce se i sospetti siano fondati, non accerta infedeltà e non classifica gelosia, violenza o sicurezza.",
+                    "La guida separa ciò che è accaduto dall'interpretazione, dall'emozione e dalla risposta scelta, distinguendo la ricerca di chiarimenti dal controllo. Tiene presenti gli accordi effettivi e il consenso senza presumere infedeltà né ridurre ogni preoccupazione a insicurezza personale.",
                     List.of(
                             new GuideReference(
                                     "Validation study of the Italian brief Multidimensional Jealousy Scale — Diotaiuti e colleghi",
@@ -2585,6 +2589,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali, una scala di rappresentatività e uno scoring dimensionale editoriale. Non è l'ECR-R o l'ECR-12, non assegna uno stile permanente e non valuta partner, qualità o sicurezza della relazione.",
+                    "La guida tiene separate le dimensioni di ansia ed evitamento dai quattro prototipi che ne riassumono le combinazioni. Mostra perché un profilo vicino a più orientamenti e il contesto di una relazione specifica non vanno trasformati in un'identità stabile.",
                     List.of(
                             new GuideReference(
                                     "Attachment styles among young adults — Bartholomew e Horowitz",
@@ -2715,6 +2720,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali, quattro aree editoriali e soglie descrittive. Non è l'LQ-11, non diagnostica limerenza, OCD o dipendenza e non accerta reciprocità, consenso, intenzioni dell'altra persona o pericolosità.",
+                    "La guida distingue la focalizzazione verso una persona dalla reciprocità osservabile e dalle azioni compiute. Riporta l'attenzione su consenso, confini e impatto quotidiano senza equiparare pensieri insistenti a una diagnosi o alle intenzioni dell'altra persona.",
                     List.of(
                             new GuideReference(
                                     "Development and Validation of the Limerence Questionnaire (LQ-11) — Marshall e colleghi",
@@ -2840,6 +2846,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali, una finestra retrospettiva e quattro aree editoriali. Non è una scala clinica, non diagnostica parentificazione o trauma, non attribuisce colpe e non dimostra cause degli eventuali vissuti adulti.",
+                    "La guida mette a confronto l'aiuto familiare con responsabilità che possono diventare sproporzionate per età, obbligo e scarso sostegno. Invita a ricostruire periodi e possibilità concrete prima di leggere un ricordo adulto come prova delle intenzioni dei genitori o causa di difficoltà attuali.",
                     List.of(
                             new GuideReference(
                                     "Parentification Vulnerability, Reactivity, Resilience, and Thriving — Dariotis e colleghi",
@@ -3558,6 +3565,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 32 item originali, otto aree editoriali e una scala di rappresentatività riferita alla relazione attuale. Descrive la prospettiva di chi compila, non stabilisce compatibilità oggettiva, durata o sicurezza e non prescrive decisioni sulla relazione.",
+                    "La guida mette in fila domini concreti, come comunicazione, conflitto, sostegno e scelte quotidiane, per rendere discutibili differenze e accordi. Ricorda che la risposta di una persona descrive la sua prospettiva e non stabilisce da sola la compatibilità della coppia o il punto di vista del partner.",
                     List.of(
                             new GuideReference(
                                     "Psychometrical Properties of the Dyadic Adjustment Scale with Italian Couples — Garbarini e colleghi",
@@ -4167,6 +4175,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali, quattro lenti editoriali e una finestra di tre mesi riferita a una relazione. È informativo e non validato: non stabilisce diagnosi, cause, intenzioni, amore, capacità relazionale, comportamento dell'altra persona o qualità del rapporto.",
+                    "La guida scompone la disponibilità emotiva in accesso al proprio vissuto, condivisione, vulnerabilità e presenza nello scambio. Confronta queste lenti con privacy, ritmo personale e sicurezza della relazione, evitando di attribuire la difficoltà a una sola persona.",
                     List.of(
                             new GuideReference(
                                     "The Brief Accessibility, Responsiveness, and Engagement (BARE) Scale — Sandberg e colleghi",
@@ -4428,6 +4437,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 20 item originali, quattro lenti editoriali e una finestra di tre mesi riferita a una sola relazione stretta. È informativo e non validato: non attribuisce un'identità, non giudica la cura e non accerta abuso o intenzioni.",
+                    "La guida confronta cura e interdipendenza con sacrificio di sé, tentativi di controllo e riduzione dello spazio personale. Esplicita le sovrapposizioni con dipendenza affettiva e people pleasing, così le risposte restano esperienze da discutere e non un'identità assegnata alla persona.",
                     List.of(
                             new GuideReference(
                                     "Co-Dependency Revisited: An Integrative Review of Conceptualisations and Mental Health Outcomes - Molina e colleghi",
@@ -4566,6 +4576,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 20 item originali, cinque lenti editoriali e una finestra di tre mesi riferita a una sola relazione o frequentazione. È informativo e non validato: non classifica oggettivamente il rapporto, non accerta intenzioni o reciprocità e non prescrive una forma relazionale.",
+                    "La guida distingue il nome dato al rapporto dagli accordi, dal coinvolgimento percepito e dai bisogni di ciascuno. Permette di osservare se l'incertezza lascia spazio a scelte e confini condivisi, senza considerare l'assenza di un'etichetta un problema in sé.",
                     List.of(
                             new GuideReference(
                                     "Development and Validation of the Romantic Experience Uncertainty Scale (REUS) — Colombo e colleghi",

@@ -26,6 +26,12 @@ class GuideOriginalContributionTest {
             "disturbo-evitante-personalita", "adhd-adulti", "autismo-adulti",
             "intelligenza-linguistica");
 
+    private static final List<String> RELATIONSHIP_SLUGS = List.of(
+            "stili-attaccamento", "disponibilita-emotiva", "parentificazione",
+            "paura-abbandono", "limerenza", "dipendenza-affettiva",
+            "compatibilita-coppia", "gelosia-partner", "dinamiche-narcisistiche-coppia",
+            "situationship", "codipendenza-relazionale");
+
     @Autowired
     private GuideCatalogue guides;
 
@@ -62,6 +68,28 @@ class GuideOriginalContributionTest {
             mvc.perform(get("/test/{id}", guide.testId()))
                     .andExpect(status().isOk())
                     .andExpect(content().string(containsString("Le domande sono originali")));
+        }
+    }
+
+    @Test
+    void relationshipGuidesHaveDistinctContributionsInFallbackAndReactData() throws Exception {
+        MockMvc mvc = webAppContextSetup(context).build();
+        List<String> contributions = RELATIONSHIP_SLUGS.stream()
+                .map(slug -> guides.findBySlug(slug).orElseThrow().originalContribution())
+                .toList();
+
+        assertThat(contributions).allSatisfy(text -> assertThat(text).isNotBlank());
+        assertThat(contributions).doesNotHaveDuplicates();
+
+        for (String slug : RELATIONSHIP_SLUGS) {
+            String contribution = guides.findBySlug(slug).orElseThrow().originalContribution();
+            mvc.perform(get("/approfondimenti/{slug}", slug))
+                    .andExpect(status().isOk())
+                    .andExpect(content().string(containsString("class=\"guide-section guide-original-contribution\"")))
+                    .andExpect(content().string(containsString("Il contributo di Spazio Test")))
+                    .andExpect(content().string(containsString(contribution)))
+                    .andExpect(content().string(containsString("originalContribution")))
+                    .andExpect(content().string(containsString("Fonti consultate")));
         }
     }
 }
