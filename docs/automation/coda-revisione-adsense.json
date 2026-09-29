@@ -80,7 +80,7 @@
         "Limiti, contesto relazionale e indicazioni di sicurezza restano visibili.",
         "I test verificano copertura e rendering delle guide interessate."
       ],
-      "workflow": {"status": "PENDING", "attempts": 0, "lastAttemptAt": null, "readyAt": null, "contentCommitHash": null, "blockReason": null, "outcomeSummary": null}
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-29T23:48:00+02:00", "readyAt": "2026-09-29T23:48:00+02:00", "contentCommitHash": "4bf0fea4615fe038556a845e88d7fc9d999385bf", "blockReason": null, "outcomeSummary": "Contributi distinti per undici guide relazionali, visibili in HTML e nei dati React; limiti e sicurezza preservati; 268 test Maven superati."}
     },
     {
       "order": 3,
