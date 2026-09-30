@@ -25,7 +25,17 @@
     "verification": "Eseguire .\\mvnw.cmd -s settings.xml test e git diff --check. Verificare la coerenza fra HTML renderizzato dal server e React.",
     "commits": "Committare prima il contenuto verificato e poi l'aggiornamento dello stato della coda con l'hash del commit del contenuto. Se lo step non richiede modifiche al contenuto, committare soltanto la decisione documentata e lo stato. Eseguire push non forzato su origin/per-revisione-adsense. Prima di scegliere un nuovo step, pubblicare in sicurezza eventuali commit verificati rimasti locali da un'esecuzione precedente; se il push non riesce, fermarsi."
   },
-  "selectedGuideSlugs": [],
+  "selectedGuideSlugs": [
+    "alessitimia",
+    "gelosia-partner",
+    "stili-attaccamento",
+    "soddisfazione-vita",
+    "resilienza-psicologica",
+    "ptsd-adulti",
+    "relazione-dannosa-benessere",
+    "autismo-adulti",
+    "ansia-sociale"
+  ],
   "selectionReportPath": "docs/automation/selezione-guide-adsense.md",
   "indexingAuditPath": "docs/automation/valutazione-indicizzazione-guide.md",
   "steps": [
@@ -163,7 +173,7 @@
         "selectedGuideSlugs contiene solo slug esistenti, senza duplicati e in ordine di priorità.",
         "Se non esistono guide sufficientemente solide, il rapporto lo dichiara e non ne seleziona artificialmente."
       ],
-      "workflow": {"status": "PENDING", "attempts": 0, "lastAttemptAt": null, "readyAt": null, "contentCommitHash": null, "blockReason": null, "outcomeSummary": null}
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T03:53:13+02:00", "readyAt": "2026-09-30T03:53:13+02:00", "contentCommitHash": "b887d080e20e21a7159a979421e41ed91cb52cd4", "blockReason": null, "outcomeSummary": "Confrontate tutte le 41 guide per fonti, trasferibilità, differenziazione, utilità, limiti e sicurezza; selezionate nove guide in ordine di priorità; 271 test Maven superati."}
     },
     {
       "order": 7,
