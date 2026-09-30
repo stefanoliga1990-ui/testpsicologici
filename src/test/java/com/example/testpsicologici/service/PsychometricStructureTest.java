@@ -69,7 +69,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(42).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(41).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ACE_EXPOSURE".equals(test.scoringModel())) {
@@ -249,7 +249,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyOverallTitleNamesItsSpecificSubjectAndProfileDistribution() {
-        assertThat(RESULT_TITLE_SUBJECTS).hasSize(catalogue.findAll().size() - 1);
+        assertThat(RESULT_TITLE_SUBJECTS).hasSize(catalogue.findAll().size());
 
         catalogue.findAll().forEach(test -> {
             if ("ACE_EXPOSURE".equals(test.scoringModel())) return;

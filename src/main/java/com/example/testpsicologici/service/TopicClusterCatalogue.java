@@ -20,8 +20,7 @@ public class TopicClusterCatalogue {
                             "ansia-sociale",
                             "tratti-ossessivo-compulsivi",
                             "umore-depresso",
-                            "ptsd-adulti",
-                            "esperienze-avverse-infanzia"
+                            "ptsd-adulti"
                     )),
             new TopicCluster(
                     "relazioni-e-attaccamento",

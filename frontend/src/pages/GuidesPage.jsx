@@ -18,18 +18,23 @@ export default function GuidesPage({ guides, topicClusters }) {
     () => new Map(guides.map((guide) => [guide.testId, guide])),
     [guides]
   );
+  const clusteredIds = useMemo(
+    () => new Set(topicClusters.flatMap((cluster) => cluster.testIds)),
+    [topicClusters]
+  );
+  const standaloneGuides = visibleGuides.filter((guide) => !clusteredIds.has(guide.testId));
 
   return (
     <main className="editorial-shell guides-shell">
       <Navbar />
       <header className="editorial-hero guides-hero">
         <p className="eyebrow">Conoscere per orientarsi</p><h1>Approfondimenti</h1>
-        <p>Guide brevi e documentate per comprendere gli argomenti esplorati nei questionari, distinguere esperienze comuni e condizioni cliniche e sapere che cosa può richiedere una valutazione individuale.</p>
+        <p>Guide brevi e documentate per comprendere temi psicologici, distinguere esperienze comuni e condizioni cliniche e sapere che cosa può richiedere una valutazione individuale.</p>
       </header>
       <section className="guide-index" aria-labelledby="guide-disponibili">
         <div className="editorial-section-heading">
           <p className="eyebrow">Guide disponibili</p><h2 id="guide-disponibili">Un argomento alla volta</h2>
-          <p>Ogni approfondimento utilizza fonti istituzionali e scientifiche consultabili e rimane distinto dal questionario informativo collegato.</p>
+          <p>Ogni approfondimento utilizza fonti istituzionali e scientifiche consultabili; alcuni hanno anche un questionario informativo collegato.</p>
         </div>
         <div className="test-search guide-search">
           <div className="guide-search-heading">
@@ -78,6 +83,22 @@ export default function GuidesPage({ guides, topicClusters }) {
               </section>
             );
           })}
+          {standaloneGuides.length > 0 && (
+            <section className="topic-cluster guide-topic-cluster" id="cluster-guide-autonome">
+              <header className="topic-cluster-heading">
+                <div><h3>Guide autonome</h3><p>Approfondimenti disponibili senza un questionario collegato.</p></div>
+                <span>{standaloneGuides.length} {standaloneGuides.length === 1 ? 'guida' : 'guide'}</span>
+              </header>
+              <div className="guide-card-grid">
+                {standaloneGuides.map((guide) => (
+                  <Card as="a" className="guide-card" href={`/approfondimenti/${guide.slug}`} key={guide.slug}>
+                    <div><p className="eyebrow">Guida informativa</p><h3>{guide.cardTitle}</h3><p>{guide.summary}</p></div>
+                    <span>Leggi l'approfondimento <span aria-hidden="true">→</span></span>
+                  </Card>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
         {visibleGuides.length === 0 && <p className="test-search-empty guide-search-empty">Nessun approfondimento corrisponde alla ricerca.</p>}
       </section>

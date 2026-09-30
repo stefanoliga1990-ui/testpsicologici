@@ -68,7 +68,7 @@ class SourceQualityAuditTest {
 
     @Test
     void everyQuestionnaireHasTraceableSourcesAndDocumentedContextualEvidence() {
-        assertThat(testCatalogue.findAll()).hasSize(42).allSatisfy(test -> {
+        assertThat(testCatalogue.findAll()).hasSize(41).allSatisfy(test -> {
             assertThat(test.references()).hasSizeGreaterThanOrEqualTo(3);
             assertThat(test.references()).extracting(TestReference::url)
                     .allMatch(url -> url.startsWith("https://"))
@@ -96,9 +96,9 @@ class SourceQualityAuditTest {
     @Test
     void everyQuestionnaireHasItsOwnGuideAndContextLimitIsVisibleWhereEvidenceIsSparse() {
         assertThat(guideCatalogue.findAll()).extracting(InformationGuide::testId)
-                .containsExactlyInAnyOrderElementsOf(testCatalogue.findAll().stream()
-                        .map(PsychologicalTest::id)
-                        .toList());
+                .containsExactlyInAnyOrderElementsOf(java.util.stream.Stream.concat(
+                        testCatalogue.findAll().stream().map(PsychologicalTest::id),
+                        java.util.stream.Stream.of("esperienze-avverse-infanzia")).toList());
 
         InformationGuide peoplePleasing = guideCatalogue.findBySlug("people-pleasing").orElseThrow();
         assertThat(peoplePleasing.sections().stream()

@@ -130,7 +130,7 @@
                 <p class="affiliate-disclosure">Link affiliati Amazon. In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.</p>
             </section>
 
-            <aside class="guide-test-cta">
+            <aside class="guide-test-cta" th:if="${test != null}">
                 <div>
                     <p class="eyebrow">Auto-osservazione</p>
                     <h2 th:text="|Questionario: ${test.title}|">Questionario collegato</h2>
@@ -144,7 +144,8 @@
             <section class="guide-sources" aria-labelledby="fonti-guida">
                 <p class="eyebrow">Riferimenti</p>
                 <h2 id="fonti-guida">Fonti consultate</h2>
-                <p>Questi riferimenti hanno orientato la spiegazione dell'argomento. Sono distinti dalle fonti impiegate per costruire il questionario.</p>
+                <p th:if="${test != null}">Questi riferimenti hanno orientato la spiegazione dell'argomento. Sono distinti dalle fonti impiegate per costruire il questionario.</p>
+                <p th:if="${test == null}">Questi riferimenti hanno orientato la spiegazione dell'argomento; non costituiscono una valutazione della storia individuale.</p>
                 <ul>
                     <li th:each="reference : ${guide.references}">
                         <a th:href="${reference.url}" target="_blank" rel="noopener noreferrer" th:text="${reference.title}">Fonte</a>

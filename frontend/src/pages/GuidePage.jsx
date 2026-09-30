@@ -41,14 +41,14 @@ export default function GuidePage({ author, editorialHistory, guide, recommended
             </section>
           ))}
           <RecommendedReadings readings={recommendedReadings} />
-          <aside className="guide-test-cta">
+          {test && <aside className="guide-test-cta">
             <div><p className="eyebrow">Auto-osservazione</p><h2>Questionario: {test.title}</h2><p>{guide.testConnection}</p></div>
             <Button as="a" className="button-light" href={`/test/${test.id}`}>Vai al questionario <span aria-hidden="true">→</span></Button>
-          </aside>
+          </aside>}
           <RelatedGuides className="guide-related-content" relatedGuides={relatedGuides} topicCluster={topicCluster} />
           <section className="guide-sources" aria-labelledby="fonti-guida">
             <p className="eyebrow">Riferimenti</p><h2 id="fonti-guida">Fonti consultate</h2>
-            <p>Questi riferimenti hanno orientato la spiegazione dell'argomento. Sono distinti dalle fonti impiegate per costruire il questionario.</p>
+            <p>{test ? "Questi riferimenti hanno orientato la spiegazione dell'argomento. Sono distinti dalle fonti impiegate per costruire il questionario." : "Questi riferimenti hanno orientato la spiegazione dell'argomento; non costituiscono una valutazione della storia individuale."}</p>
             <ReferenceList references={guide.references} />
             <p className="guide-method-note">Per conoscere criteri e limiti del processo editoriale, consulta <a href="/metodo-e-fonti">Metodo e fonti</a>.</p>
           </section>

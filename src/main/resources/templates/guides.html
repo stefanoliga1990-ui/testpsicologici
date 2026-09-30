@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Guide concise e documentate su psicologia, benessere e relazioni, collegate ai questionari informativi di Spazio Test.">
+    <meta name="description" content="Guide concise e documentate su psicologia, benessere e relazioni di Spazio Test.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <title>Approfondimenti su psicologia e benessere | Spazio Test</title>
     <link rel="canonical" th:href="${canonicalUrl}">
@@ -11,7 +11,7 @@
     <meta property="og:locale" content="it_IT">
     <meta property="og:site_name" content="Spazio Test">
     <meta property="og:title" content="Approfondimenti su psicologia e benessere | Spazio Test">
-    <meta property="og:description" content="Guide chiare, concise e documentate per comprendere gli argomenti esplorati dai questionari di Spazio Test.">
+    <meta property="og:description" content="Guide chiare, concise e documentate per comprendere temi psicologici e relazionali.">
     <meta property="og:url" th:content="${canonicalUrl}">
     <th:block th:replace="~{fragments/brand-head :: socialImage(${socialImageUrl})}"></th:block>
     <meta name="twitter:card" content="summary_large_image">
@@ -27,7 +27,7 @@
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Approfondimenti di Spazio Test",
-      "description": "Guide concise e documentate sugli argomenti esplorati dai questionari di Spazio Test.",
+      "description": "Guide concise e documentate su temi psicologici e relazionali.",
       "url": /*[[${canonicalUrl}]]*/ "https://example.com/approfondimenti",
       "inLanguage": "it-IT",
       "isPartOf": {
@@ -46,14 +46,14 @@
     <header class="editorial-hero guides-hero">
         <p class="eyebrow">Conoscere per orientarsi</p>
         <h1>Approfondimenti</h1>
-        <p>Guide brevi e documentate per comprendere gli argomenti esplorati nei questionari, distinguere esperienze comuni e condizioni cliniche e sapere che cosa può richiedere una valutazione individuale.</p>
+        <p>Guide brevi e documentate per comprendere temi psicologici, distinguere esperienze comuni e condizioni cliniche e sapere che cosa può richiedere una valutazione individuale.</p>
     </header>
 
     <section class="guide-index" aria-labelledby="guide-disponibili">
         <div class="editorial-section-heading">
             <p class="eyebrow">Guide disponibili</p>
             <h2 id="guide-disponibili">Un argomento alla volta</h2>
-            <p>Ogni approfondimento utilizza fonti istituzionali e scientifiche consultabili e rimane distinto dal questionario informativo collegato.</p>
+            <p>Ogni approfondimento utilizza fonti istituzionali e scientifiche consultabili; alcuni hanno anche un questionario informativo collegato.</p>
         </div>
         <div class="test-search guide-search">
             <div class="guide-search-heading">
@@ -94,6 +94,25 @@
                         <span>Leggi l'approfondimento <span aria-hidden="true">→</span></span>
                     </a>
                     </th:block>
+                </div>
+            </section>
+            <section class="topic-cluster guide-topic-cluster" id="cluster-guide-autonome" data-topic-cluster
+                     th:if="${!#lists.isEmpty(standaloneGuides)}">
+                <header class="topic-cluster-heading">
+                    <div><h3>Guide autonome</h3><p>Approfondimenti disponibili senza un questionario collegato.</p></div>
+                    <span data-cluster-count th:text="|${#lists.size(standaloneGuides)} guide|">1 guida</span>
+                </header>
+                <div class="guide-card-grid">
+                    <a class="guide-card" th:each="guide : ${standaloneGuides}"
+                       th:href="@{/approfondimenti/{slug}(slug=${guide.slug})}"
+                       data-guide-card th:attr="data-guide-title=${guide.cardTitle}">
+                        <div>
+                            <p class="eyebrow">Guida informativa</p>
+                            <h3 th:text="${guide.cardTitle}">Titolo della guida</h3>
+                            <p th:text="${guide.summary}">Descrizione della guida.</p>
+                        </div>
+                        <span>Leggi l'approfondimento <span aria-hidden="true">→</span></span>
+                    </a>
                 </div>
             </section>
         </div>

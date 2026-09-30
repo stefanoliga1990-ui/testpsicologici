@@ -2,6 +2,8 @@
 
 ## Stato e decisione editoriale
 
+**Aggiornamento v1.1 — 30 settembre 2026:** su richiesta del responsabile del progetto il questionario è temporaneamente nascosto: non compare nel catalogo o nella sitemap e i suoi percorsi diretti non sono disponibili. La guida sulle Adverse Childhood Experiences (ACEs) resta pubblica come approfondimento autonomo. I 24 item e le interpretazioni v1.0 rimangono documentati, ma non sono offerti agli utenti; questa scelta non equivale a una validazione o a una revisione dei contenuti del questionario.
+
 Questa specifica è stata redatta prima del codice e aggiornata durante l'implementazione; non è una dichiarazione di validazione. Il questionario non è un adattamento dell'ACE-IQ dell'OMS né del questionario ACE originale; non ne usa item, traduzioni, norme o punteggi. La voce non appartiene alla coda editoriale programmata.
 
 **Decisione editoriale del 30 settembre 2026:** il responsabile del progetto ha confermato la revisione dei testi ma ha dichiarato di non poter svolgere interviste cognitive sui 24 item né una prova pilota dell'interfaccia, chiedendo esplicitamente la pubblicazione con un'avvertenza. È un'eccezione ai prerequisiti di pubblicazione inizialmente pianificati qui sotto, non una prova che tali passaggi siano superflui. Comprensibilità, interpretazione delle risposte e possibili effetti indesiderati della somministrazione non sono stati verificati con utenti. L'assenza di queste verifiche è resa visibile nell'introduzione, nella guida e in ogni profilo di risultato; il questionario resta informativo, originale e non validato.

@@ -4105,7 +4105,7 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private void seedAceExposureQuestionnaire() {
         String id = "esperienze-avverse-infanzia";
-        String version = "1.0";
+        String version = "1.1";
         if (!requiresSeed(id, version)) return;
         removeTest(id);
 
@@ -4115,7 +4115,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Esplora esperienze prima dei 18 anni in casa, nella cura ricevuta, tra pari e nella comunità, senza un punteggio ACE.",
                 "8 min · 24 domande",
                 "Questo questionario originale, informativo e non validato tratta violenza, contatti sessuali e bisogni di cura prima dei 18 anni; non sono state svolte interviste cognitive né una prova pilota dell'interfaccia, quindi alcune domande potrebbero risultare poco chiare. Puoi saltare ogni domanda o fermarti, senza raccontare dettagli. Le risposte non accertano fatti né prevedono la tua salute; per un pericolo attuale chiama il 112, oppure il 1522 per orientamento su violenza o stalking.",
-                version, false, "", "", true, 42)
+                version, false, "", "", false, 42)
                 .withSeo("Esperienze avverse nell'infanzia: questionario informativo | Spazio Test",
                         "24 domande originali su esperienze prima dei 18 anni. Nessun punteggio ACE, diagnosi o previsione individuale; puoi non rispondere.")
                 .withResponseInstruction("Pensando a quando avevi meno di 18 anni, ti è capitata l'esperienza descritta? Puoi scegliere «Non ricordo» o «Preferisco non rispondere» e interrompere in ogni momento.")

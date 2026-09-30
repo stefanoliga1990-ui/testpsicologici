@@ -48,7 +48,11 @@ public class GuideController {
     public String index(HttpServletRequest request, Model model) {
         var guides = guideCatalogue.findAll();
         var topicClusters = topicClusterCatalogue.findAll();
+        var standaloneGuides = guides.stream()
+                .filter(guide -> topicClusterCatalogue.findByTestId(guide.testId()).isEmpty())
+                .toList();
         model.addAttribute("guides", guides);
+        model.addAttribute("standaloneGuides", standaloneGuides);
         model.addAttribute("topicClusters", topicClusters);
         model.addAttribute("guidesByTestId", guides.stream().collect(java.util.stream.Collectors.toMap(
                 InformationGuide::testId, java.util.function.Function.identity(),
@@ -65,7 +69,8 @@ public class GuideController {
         InformationGuide guide = guideCatalogue.findBySlug(slug)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Approfondimento non trovato"));
         model.addAttribute("guide", guide);
-        var test = testCatalogue.findById(guide.testId());
+        var test = testCatalogue.findSuggestionsByIds(java.util.List.of(guide.testId())).isEmpty()
+                ? null : testCatalogue.findById(guide.testId());
         var topicCluster = topicClusterCatalogue.findByTestId(guide.testId()).orElse(null);
         var relatedGuides = guideCatalogue.findSuggestionsByTestIds(
                 topicClusterCatalogue.findRelatedTestIds(guide.testId(), 3));

@@ -194,7 +194,7 @@
       "sourceDescription": null,
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Personalità e tratti",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Argomento altamente sensibile: definire prospettiva e costrutto, non diagnosticare e bloccare se non è possibile una restituzione informativa responsabile." },
+      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Argomento altamente sensibile: definire prospettiva e costrutto, non diagnosticare e bloccare se non è possibile una restituzione informativa responsabile. Esaminare la sovrapposizione e le differenze con il disturbo antisociale di personalità richiesto dall'utente, senza trattare i due costrutti come equivalenti." },
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
@@ -993,6 +993,78 @@
         "commitHash": null,
         "blockReason": null
       }
+    },
+    {
+      "order": 62,
+      "slug": "tratti-paranoidi-personalita-adulti",
+      "workingTitle": "Tratti associati al disturbo paranoide di personalità",
+      "sourceTopic": "Disturbo paranoide di personalità",
+      "sourceDescription": "Esplorare esperienze di sfiducia e interpretazione delle intenzioni altrui senza inferire una diagnosi.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Personalità e tratti",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Prima dell'implementazione verificare la sostenibilità scientifica di un questionario originale; distinguere da prudenza contestuale, esperienze reali di minaccia, trauma e altri quadri clinici. Non diagnosticare né attribuire intenzioni."
+      },
+      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+    },
+    {
+      "order": 63,
+      "slug": "tratti-schizoidi-personalita-adulti",
+      "workingTitle": "Tratti associati al disturbo schizoide di personalità",
+      "sourceTopic": "Disturbo schizoide di personalità",
+      "sourceDescription": "Esplorare il rapporto con la vicinanza e l'espressione emotiva senza equiparare solitudine scelta o introversione a un disturbo.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Personalità e tratti",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Verificare distinguibilità da introversione, isolamento dovuto al contesto, depressione, neurodivergenza e attaccamento evitante; non forzare un test se non è possibile una restituzione responsabile."
+      },
+      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+    },
+    {
+      "order": 64,
+      "slug": "tratti-schizotipici-personalita-adulti",
+      "workingTitle": "Tratti associati al disturbo schizotipico di personalità",
+      "sourceTopic": "Disturbo schizotipico di personalità",
+      "sourceDescription": "Esplorare esperienze e modalità relazionali associate al tema, separando credenze, cultura e interpretazioni cliniche.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Personalità e tratti",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Argomento sensibile: verificare trasferibilità, differenze culturali e rischio di etichettare esperienze insolite; nessuna diagnosi o inferenza di psicosi da un questionario originale. Bloccare se la restituzione non è sostenibile."
+      },
+      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+    },
+    {
+      "order": 65,
+      "slug": "tratti-istrionici-personalita-adulti",
+      "workingTitle": "Tratti associati al disturbo istrionico di personalità",
+      "sourceTopic": "Disturbo istrionico di personalità",
+      "sourceDescription": "Valutare un contenuto informativo su espressione emotiva e relazione con l'attenzione altrui, senza stereotipi.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Personalità e tratti",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": null,
+        "itemCount": null,
+        "answerScale": null,
+        "resultModel": null,
+        "notes": "Verificare qualità delle evidenze, bias di genere e culturali, e differenza da espressività non problematica o ricerca di approvazione. Non costruire etichette morali o diagnosi da auto-risposte; bloccare se non sostenibile."
+      },
+      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     }
   ]
 }
