@@ -147,7 +147,7 @@
         "L'intero catalogo fotografato di 41 guide è coperto una sola volta dagli step CONTRIB-01–05.",
         "I test verificano copertura completa e rendering."
       ],
-      "workflow": {"status": "PENDING", "attempts": 0, "lastAttemptAt": null, "readyAt": null, "contentCommitHash": null, "blockReason": null, "outcomeSummary": null}
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T02:50:07+02:00", "readyAt": "2026-09-30T02:50:07+02:00", "contentCommitHash": "b426a90e93e7e6fd8775bd8b9a6f6820b336f734", "blockReason": null, "outcomeSummary": "Contributi distinti per sei guide su emozioni, risorse e benessere; catalogo di 41 guide coperto una sola volta; rendering HTML e dati React verificati; 271 test Maven superati."}
     },
     {
       "order": 6,
