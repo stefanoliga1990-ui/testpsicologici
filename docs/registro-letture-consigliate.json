@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-17",
+  "updatedAt": "2026-09-30",
   "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
   "selectionPolicy": {
     "booksPerTopic": {
@@ -849,7 +849,69 @@
         }
       ]
     },
-    { "topicId": "sindrome-impostore", "testId": "sindrome-impostore", "guideSlug": "sindrome-impostore", "title": "Sindrome dell'impostore", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "sindrome-impostore",
+      "testId": "sindrome-impostore",
+      "guideSlug": "sindrome-impostore",
+      "title": "Sindrome dell'impostore",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "La sindrome dell'impostore",
+          "placeholderCover": true,
+          "subtitle": "Perché pensi che gli altri ti sopravvalutino",
+          "authors": ["Sandi Mann"],
+          "publisher": "Feltrinelli",
+          "isbn13": "9788807091490",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa di auto-aiuto",
+          "audience": "Adulti interessati a riflettere sul senso di inadeguatezza e sul timore di essere smascherati in diversi contesti di vita",
+          "description": "Una guida divulgativa che descrive il fenomeno dell'impostore, l'attribuzione dei risultati alla fortuna e il timore di essere smascherati, con spunti pratici di riflessione.",
+          "limit": "Il volume propone una cornice divulgativa e non consente di interpretare il risultato del questionario, formulare una diagnosi o dedurre le cause individuali di un senso di inadeguatezza.",
+          "primarySources": [
+            {"label": "Scheda editore", "url": "https://www.feltrinellieditore.it/opera/la-sindrome-dellimpostore/"}
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8807091496",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/8807091496?&linkCode=ll2&tag=spaziotest-21&linkId=89257714000222a43ca77fb6a004d832&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Pensavo di essere io... invece è la Sindrome dell'Impostore",
+          "placeholderCover": true,
+          "subtitle": "Come trasformare il senso di inadeguatezza nel nostro migliore alleato",
+          "authors": ["Florencia Di Stefano-Abichain"],
+          "publisher": "TEA",
+          "isbn13": "9788850266234",
+          "publicationYear": 2023,
+          "format": "brossura",
+          "editorialRole": "Testimonianza e percorso divulgativo di auto-aiuto",
+          "audience": "Adulti interessati a riflettere su senso di inadeguatezza, paura di essere smascherati e autostima",
+          "description": "Un libro che intreccia l'esperienza personale dell'autrice e una proposta divulgativa sulla paura di essere smascherati, l'inadeguatezza e l'autostima.",
+          "limit": "Parte da un vissuto personale e da una proposta divulgativa: non permette di interpretare il risultato del questionario né sostituisce una valutazione o un supporto professionale.",
+          "primarySources": [
+            {"label": "Scheda bibliografica", "url": "https://giuntialpunto.it/products/pensavo-di-essere-io-invece-e-la-sindrome-dellimpostore-come-trasformare-il-senso-di-inadeguatezza-nel-nostro-migliore-alleato-di-stefano-florencia-9788850266234"}
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8850266235",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/8850266235?&linkCode=ll2&tag=spaziotest-21&linkId=d00c6c6024dd48c6d63ef4f70b384411&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "autosabotaggio", "testId": "autosabotaggio", "guideSlug": "autosabotaggio", "title": "Autosabotaggio e ostacoli agli obiettivi", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "disturbo-borderline-personalita", "testId": "tratti-borderline-adulti", "guideSlug": "disturbo-borderline-personalita", "title": "Disturbo borderline di personalità", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "paura-abbandono", "testId": "paura-abbandono", "guideSlug": "paura-abbandono", "title": "Paura dell'abbandono", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

@@ -226,6 +226,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("sindrome-impostore", List.of(
+                    new RecommendedReading(
+                            "La sindrome dell'impostore",
+                            "Sandi Mann",
+                            "Una guida divulgativa che descrive il fenomeno dell'impostore, l'attribuzione dei risultati alla fortuna e il timore di essere smascherati, con spunti pratici di riflessione.",
+                            "Il volume propone una cornice divulgativa e non consente di interpretare il risultato del questionario, formulare una diagnosi o dedurre le cause individuali di un senso di inadeguatezza.",
+                            "https://www.amazon.it/dp/8807091496?&linkCode=ll2&tag=spaziotest-21&linkId=89257714000222a43ca77fb6a004d832&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Pensavo di essere io...",
+                            "Florencia Di Stefano-Abichain",
+                            "Un libro che intreccia l'esperienza personale dell'autrice e una proposta divulgativa sulla paura di essere smascherati, l'inadeguatezza e l'autostima.",
+                            "Parte da un vissuto personale e da una proposta divulgativa: non permette di interpretare il risultato del questionario né sostituisce una valutazione o un supporto professionale.",
+                            "https://www.amazon.it/dp/8850266235?&linkCode=ll2&tag=spaziotest-21&linkId=d00c6c6024dd48c6d63ef4f70b384411&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",
