@@ -2191,6 +2191,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Un messaggio senza risposta: dal dubbio alla scelta",
+                                    List.of(
+                                            "Immagina di avere scritto al partner e di non ricevere risposta per alcune ore. Il fatto osservato è il tempo trascorso; “mi nasconde qualcosa” è un'interpretazione possibile, non una verifica. Puoi provare agitazione senza sapere ancora perché l'altra persona non risponda.",
+                                            "Un chiarimento concordato può riguardare tempi e aspettative di comunicazione. Accedere all'account dell'altra persona o seguirne gli spostamenti senza consenso è invece un comportamento di controllo: il dubbio non lo autorizza. Se temi una reazione violenta, non usare questo schema per avviare un confronto diretto."
+                                    ),
+                                    List.of(
+                                            "Quale accordo concreto sulla comunicazione esisteva prima dell'episodio, e quali informazioni mancano?",
+                                            "Che cosa hai fatto dopo il dubbio? La scelta ha rispettato autonomia e consenso?",
+                                            "Per un episodio successivo, annota soltanto fatto, interpretazione, emozione e azione: il confronto fra episodi può chiarire un andamento, senza dimostrare fedeltà o intenzioni."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Supporto e sicurezza",
                                     "Quando serve un aiuto diverso dal questionario",
                                     List.of(
@@ -2579,6 +2592,19 @@ public class GuideCatalogue {
                                             "Il test non misura comportamento o intenzioni del partner, qualità della relazione, tradimento, gelosia, dipendenza affettiva, disturbi di personalità o compatibilità. Nessun profilo spiega da solo un comportamento concreto."
                                     ),
                                     List.of()
+                            ),
+                            new GuideSection(
+                                    "Esempio guidato",
+                                    "Un ritardo nella risposta non definisce uno stile",
+                                    List.of(
+                                            "Immagina un messaggio importante rimasto senza risposta. Una persona può cercare più rassicurazione; un'altra può scegliere di prendere distanza. Sono esempi di possibili risposte in quel momento, non prove di uno stile ansioso o evitante. Conta anche sapere se c'era un accordo sui tempi, se l'assenza è abituale e se la relazione è sicura.",
+                                            "Per confrontare le due dimensioni, chiediti separatamente quanto temi una perdita del legame e quanto ti è difficile affidarti o condividere il bisogno. La stessa risposta può cambiare con la persona e il contesto; nessuna delle due dimensioni misura il comportamento del partner."
+                                    ),
+                                    List.of(
+                                            "Che cosa è accaduto prima della tua risposta, e quali accordi erano espliciti?",
+                                            "Cercavi contatto, prendevi distanza o entrambe le cose in momenti diversi?",
+                                            "Se ti è utile, descrivi un secondo episodio nella stessa relazione e confronta contesto e bisogni, senza assegnarti un'etichetta permanente."
+                                    )
                             ),
                             new GuideSection(
                                     "Come leggere il risultato",
@@ -4300,6 +4326,19 @@ public class GuideCatalogue {
                                             "Il questionario usa gli ultimi tre mesi proprio per evitare di trasformare automaticamente uno stato recente in una caratteristica permanente. Cultura, istruzione emotiva, lingua e contesto relazionale restano alternative da considerare."
                                     ),
                                     List.of()
+                            ),
+                            new GuideSection(
+                                    "Esempio guidato",
+                                    "Da una sensazione a parole possibili, senza forzare un nome",
+                                    List.of(
+                                            "Immagina che, dopo un colloquio difficile, tu noti tensione alle spalle ma sappia dire soltanto “non sto bene”. La tensione è una sensazione; il nome di un'emozione è un'ipotesi ancora aperta. Stanchezza, postura e altri fattori fisici possono contribuire: il segnale non ha una traduzione emotiva obbligatoria.",
+                                            "Potresti voler capire meglio ciò che provi senza volerlo raccontare a nessuno. Identificare il vissuto, trovare parole e scegliere di comunicarle sono passaggi distinti; avere bisogno di tempo o preferire la riservatezza non equivale da solo ad alessitimia."
+                                    ),
+                                    List.of(
+                                            "Che cosa hai notato nel corpo e nella situazione, senza attribuire subito una causa?",
+                                            "Quali parole erano disponibili allora, e quali ti sembrano possibili solo ripensandoci?",
+                                            "Se lo desideri, annota un episodio analogo e confronta parole e contesto; per sintomi fisici nuovi o preoccupanti rivolgiti a un medico."
+                                    )
                             ),
                             new GuideSection(
                                     "Limiti della misura",

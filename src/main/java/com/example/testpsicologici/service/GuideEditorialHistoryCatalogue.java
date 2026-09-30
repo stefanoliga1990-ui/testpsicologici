@@ -33,10 +33,10 @@ public class GuideEditorialHistoryCatalogue {
             entry("intelligenza-linguistica", history("2026-08-20", "2026-08-21")),
             entry("intelligenza-intrapersonale", history("2026-08-21", "2026-08-21")),
             entry("resilienza-psicologica", history("2026-08-21", "2026-08-24")),
-            entry("gelosia-partner", history("2026-08-24", "2026-08-25")),
+            entry("gelosia-partner", history("2026-08-24", "2026-09-30")),
             entry("soddisfazione-vita", history("2026-08-25", "2026-08-29")),
             entry("ptsd-adulti", history("2026-08-25", "2026-08-25")),
-            entry("stili-attaccamento", history("2026-08-25", "2026-08-26")),
+            entry("stili-attaccamento", history("2026-08-25", "2026-09-30")),
             entry("limerenza", history("2026-08-26", "2026-08-27")),
             entry("parentificazione", history("2026-08-27", "2026-08-28")),
             entry("gaslighting", history("2026-08-28", "2026-08-28")),
@@ -50,7 +50,7 @@ public class GuideEditorialHistoryCatalogue {
             entry("triangolazione-relazionale", history("2026-09-04", "2026-09-04")),
             entry("disturbo-evitante-personalita", history("2026-09-05", "2026-09-07")),
             entry("disponibilita-emotiva", history("2026-09-07", "2026-09-08")),
-            entry("alessitimia", history("2026-09-08", "2026-09-15")),
+            entry("alessitimia", history("2026-09-08", "2026-09-30")),
             entry("situationship", history("2026-09-15", "2026-09-15")),
             entry("codipendenza-relazionale", history("2026-09-17", "2026-09-17"))
     );
