@@ -2060,6 +2060,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Una difficoltà di cura: distinguere impegno e condizioni",
+                                    List.of(
+                                            "Immagina alcune settimane in cui devi assistere una persona vicina mentre gli orari di lavoro cambiano. Ridurre temporaneamente un'attività può essere una scelta di adattamento, non la prova di una minore resilienza. Se un familiare può aiutare o un servizio è accessibile, cambia il margine d'azione: l'esito non dipende soltanto dal tuo impegno.",
+                                            "Per leggere l'episodio, confronta ciò che era richiesto, le opzioni realmente disponibili e ciò che è cambiato nel tempo. Riprendere tutto subito, rallentare e chiedere sostegno non sono gradini di una scala personale; la loro utilità dipende dal carico e dalla sicurezza del contesto. Questo confronto non valuta la tua capacità futura."
+                                    ),
+                                    List.of(
+                                            "Quale richiesta concreta assorbiva tempo o energie, e quali attività potevano attendere?",
+                                            "Quali aiuti erano disponibili, quali mancavano e quali potevi usare senza aumentare il carico?",
+                                            "Se vuoi fare un passo pratico, annota un bisogno circoscritto da comunicare a una persona o a un servizio pertinente; non usarlo come prova di resilienza."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Supporto e limiti",
                                     "Quando il questionario non basta",
                                     List.of(
@@ -2336,6 +2349,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Un ambito che pesa senza cancellare gli altri",
+                                    List.of(
+                                            "Immagina di apprezzare le relazioni con gli amici e, nello stesso periodo, di sentirti poco soddisfatto/a della situazione economica dopo alcune spese impreviste. I due giudizi possono coesistere. La soddisfazione per la vita nel complesso è un'altra domanda: non si ottiene sommando automaticamente queste due risposte.",
+                                            "Il confronto utile riguarda anche il criterio: per te conta di più la stabilità delle spese, il margine per scegliere o la possibilità di chiedere aiuto? Le condizioni concrete possono limitare le possibilità, senza che un giudizio poco soddisfatto sia un errore da correggere. Le otto aree dell'app non stabiliscono quali priorità dovresti avere."
+                                    ),
+                                    List.of(
+                                            "Quale ambito stai valutando e quale criterio personale stai usando oggi?",
+                                            "Che cosa è cambiato negli ultimi tre mesi: la condizione concreta, il criterio o entrambi?",
+                                            "Se desideri parlarne, scegli un bisogno specifico da portare a una persona o a un servizio adatto; non trasformare la barra in un obiettivo numerico."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Supporto e sicurezza",
                                     "Quando il questionario non basta",
                                     List.of(
@@ -2470,6 +2496,19 @@ public class GuideCatalogue {
                                             "Non usare il risultato per esporti da solo/a ai ricordi, visitare luoghi non sicuri o confrontare una persona pericolosa. La Psychological First Aid della WHO raccomanda un aiuto rispettoso e pratico senza fare pressione perché una persona racconti l'evento."
                                     ),
                                     List.of()
+                            ),
+                            new GuideSection(
+                                    "Esempio guidato",
+                                    "Un rumore improvviso: distinguere richiamo e sicurezza attuale",
+                                    List.of(
+                                            "Immagina un rumore improvviso che ti mette in allerta dopo un evento molto difficile. La reazione, da sola, non dice se in quel momento esista un pericolo né permette di stabilire un PTSD. Prima di interpretarla, conta ciò che accade qui e ora: un richiamo in un luogo sicuro e una minaccia ancora presente richiedono attenzioni diverse.",
+                                            "Se c'è un pericolo attuale, cerca un luogo sicuro e aiuto immediato. Se non c'è un pericolo immediato ma leggere questa pagina aumenta il disagio, puoi fermarti senza descrivere l'evento. Puoi chiedere a una persona di fiducia o a un professionista di aiutarti a valutare i prossimi passi, anche dicendo soltanto che hai bisogno di sostegno."
+                                    ),
+                                    List.of(
+                                            "Che cosa puoi verificare della sicurezza presente, senza ricostruire l'evento passato?",
+                                            "Ti è utile interrompere ora la lettura o chiedere compagnia in un luogo sicuro?",
+                                            "Se vuoi chiedere aiuto, puoi formulare una richiesta breve come: «Vorrei parlare di come sto, senza raccontare adesso i dettagli»."
+                                    )
                             ),
                             new GuideSection(
                                     "Supporto",
