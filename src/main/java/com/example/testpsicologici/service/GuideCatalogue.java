@@ -494,6 +494,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, espressione di opinioni, bisogni ed emozioni, capacità di dire no e proteggere i confini, gestione di critiche e disaccordi, richieste, iniziativa e riconoscimento reciproco. Non misura valore, forza o coraggio e non costituisce una valutazione clinica.",
+                    "La guida distingue ciò che una persona riesce a dire dal disagio che prova nel dirlo e dalla scelta di aspettare un momento più sicuro. Propone di osservare richiesta, rifiuto e confronto nel contesto concreto, senza chiamare carenza personale ogni silenzio.",
                     List.of(
                             new GuideReference(
                                     "A 30-Item Schedule for Assessing Assertive Behavior — Rathus",
@@ -577,6 +578,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, la percezione delle proprie abitudini nelle quattro aree del modello: riconoscere le emozioni, utilizzarne le informazioni, comprenderne cause e cambiamenti e regolarne espressione e intensità. Non è una prova di abilità, non assegna un quoziente emotivo e non costituisce una valutazione clinica.",
+                    "La guida usa le quattro aree del modello di abilità come mappa per riflettere su episodi quotidiani, ma separa la percezione delle proprie abitudini dalla prestazione in una prova. Invita a verificare le ipotesi sulle emozioni altrui e a considerare contesto e stanchezza prima di attribuire una capacità stabile.",
                     List.of(
                             new GuideReference(
                                     "The Ability Model of Emotional Intelligence: Principles and Updates — Mayer, Caruso e Salovey",
@@ -1932,6 +1934,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa la cornice di Gardner soltanto come punto di partenza per osservare la frequenza percepita di riconoscimento, chiarezza, riflessione e uso delle informazioni su di sé. Non misura intelligenza generale o accuratezza, non certifica talenti o limiti e non diagnostica condizioni.",
+                    "La guida mette alla prova l'utilità dell'auto-osservazione confrontando ciò che si pensava, ciò che si è fatto e ciò che è accaduto. Separa riflessione e insight dall'accuratezza delle spiegazioni che diamo a noi stessi, senza trasformare una frequenza riferita in una misura di intelligenza.",
                     List.of(
                             new GuideReference(
                                     "The Theory of Multiple Intelligences — Project Zero, Harvard",
@@ -2067,6 +2070,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato descrive la frequenza riferita di alcuni comportamenti di recupero, adattamento, accesso ai supporti e continuità davanti a difficoltà recenti. Non misura una forza personale fissa, non osserva il processo completo né gli esiti e non predice il futuro.",
+                    "La guida legge un episodio difficile distinguendo carico, azioni tentate, sostegni disponibili e cambiamenti nel tempo. Così le risorse riferite restano legate alle opportunità del contesto e non diventano una qualità personale certificata o una previsione dell'esito.",
                     List.of(
                             new GuideReference(
                                     "Psychological Resilience: A Review and Critique — Fletcher e Sarkar",
@@ -2329,6 +2333,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato descrive il grado di soddisfazione riferito in otto ambiti negli ultimi tre mesi. Non è SWLS, WHOQOL-BREF, PWI o una rilevazione ufficiale e non misura felicità, salute mentale, qualità di vita oggettiva o sicurezza.",
+                    "La guida separa il giudizio complessivo sulla vita dalla soddisfazione per singoli ambiti e invita a esplicitare quali criteri personali contano oggi. Gli otto ambiti aiutano a localizzare ciò che pesa nel racconto, senza sommarli in una misura ufficiale di felicità o benessere.",
                     List.of(
                             new GuideReference(
                                     "La Satisfaction With Life Scale: un contributo alla validazione italiana con lavoratori adulti — Di Fabio e Palazzeschi",
@@ -4325,6 +4330,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 18 item originali, tre lenti editoriali e una finestra di tre mesi. È informativo e non validato: non è la TAS-20, non diagnostica alessitimia e non misura quante emozioni una persona provi.",
+                    "La guida separa il sentire un cambiamento corporeo dal trovare parole per descriverlo e dal decidere se comunicarlo. Invita a partire da episodi concreti e da spiegazioni alternative, ricordando che riservatezza e difficoltà di descrizione non indicano assenza di emozioni.",
                     List.of(
                             new GuideReference(
                                     "Italian multicenter study of the 20-item Toronto Alexithymia Scale — Bressi e colleghi",

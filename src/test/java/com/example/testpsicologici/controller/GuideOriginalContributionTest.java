@@ -9,6 +9,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -40,6 +43,10 @@ class GuideOriginalContributionTest {
     private static final List<String> SELF_EVALUATION_SLUGS = List.of(
             "autostima", "sindrome-impostore", "perfezionismo",
             "people-pleasing", "autosabotaggio", "fomo");
+
+    private static final List<String> WELLBEING_SLUGS = List.of(
+            "intelligenza-emotiva", "alessitimia", "intelligenza-intrapersonale",
+            "assertivita", "resilienza-psicologica", "soddisfazione-vita");
 
     @Autowired
     private GuideCatalogue guides;
@@ -135,6 +142,38 @@ class GuideOriginalContributionTest {
         assertThat(contributions).doesNotHaveDuplicates();
 
         for (String slug : SELF_EVALUATION_SLUGS) {
+            String contribution = guides.findBySlug(slug).orElseThrow().originalContribution();
+            mvc.perform(get("/approfondimenti/{slug}", slug))
+                    .andExpect(status().isOk())
+                    .andExpect(content().string(containsString("class=\"guide-section guide-original-contribution\"")))
+                    .andExpect(content().string(containsString("Il contributo di Spazio Test")))
+                    .andExpect(content().string(containsString(contribution)))
+                    .andExpect(content().string(containsString("originalContribution")))
+                    .andExpect(content().string(containsString("Fonti consultate")));
+        }
+    }
+
+    @Test
+    void wellbeingGuidesCompleteSnapshotCoverageAndRenderDistinctContributions() throws Exception {
+        MockMvc mvc = webAppContextSetup(context).build();
+        List<String> snapshotSlugs = Stream.of(SLUGS, RELATIONSHIP_SLUGS,
+                        AMBIGUOUS_DYNAMICS_SLUGS, SELF_EVALUATION_SLUGS, WELLBEING_SLUGS)
+                .flatMap(List::stream)
+                .toList();
+        Set<String> catalogueSlugs = guides.findAll().stream()
+                .map(InformationGuide::slug)
+                .collect(Collectors.toSet());
+
+        assertThat(snapshotSlugs).hasSize(41).doesNotHaveDuplicates();
+        assertThat(catalogueSlugs).containsExactlyInAnyOrderElementsOf(snapshotSlugs);
+
+        List<String> contributions = guides.findAll().stream()
+                .map(InformationGuide::originalContribution)
+                .toList();
+        assertThat(contributions).allSatisfy(text -> assertThat(text).isNotBlank());
+        assertThat(contributions).doesNotHaveDuplicates();
+
+        for (String slug : WELLBEING_SLUGS) {
             String contribution = guides.findBySlug(slug).orElseThrow().originalContribution();
             mvc.perform(get("/approfondimenti/{slug}", slug))
                     .andExpect(status().isOk())
