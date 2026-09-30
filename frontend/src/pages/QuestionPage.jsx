@@ -12,6 +12,7 @@ export default function QuestionPage({ answers, progress, question, questionCoun
   const { error, loading, run } = useAsyncAction(action);
   const previousPath = withSessionId(`/test/${test.id}/domanda/${questionNumber - 1}`);
   const isLast = questionNumber === questionCount;
+  const isAceExposure = test.scoringModel === 'ACE_EXPOSURE';
 
   return (
     <main className="test-shell">
@@ -25,6 +26,7 @@ export default function QuestionPage({ answers, progress, question, questionCoun
         </div>
         <p className="question-prompt">{test.responseInstruction}</p>
         <h1>{question.text}</h1>
+        {isAceExposure && <p className="question-example">Puoi continuare senza scegliere una risposta; verrà registrata come «Preferisco non rispondere».</p>}
         {question.example ? <p className="question-example"><strong>Un esempio possibile:</strong> {question.example}</p> : null}
         <form className="answer-form" onSubmit={(event) => { event.preventDefault(); run(answer); }} aria-busy={loading}>
           <div className="answer-navigation">
@@ -39,7 +41,7 @@ export default function QuestionPage({ answers, progress, question, questionCoun
                 const value = index + 1;
                 return (
                   <label className="answer-option" key={label}>
-                    <input type="radio" name="answer" value={value} checked={Number(answer) === value} onChange={() => setAnswer(value)} required />
+                    <input type="radio" name="answer" value={value} checked={Number(answer) === value} onChange={() => setAnswer(value)} required={!isAceExposure} />
                     <span className="custom-radio" aria-hidden="true" /><span>{label}</span>
                   </label>
                 );

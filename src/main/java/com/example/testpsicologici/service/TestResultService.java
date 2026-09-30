@@ -6,6 +6,7 @@ import com.example.testpsicologici.model.AttachmentStyleResult;
 import com.example.testpsicologici.model.TestArea;
 import com.example.testpsicologici.model.TestAttempt;
 import com.example.testpsicologici.model.TestResult;
+import com.example.testpsicologici.model.AceExposureResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,12 +28,20 @@ public class TestResultService {
             new AttachmentPrototype("FEARFUL_AVOIDANT", "Orientamento timoroso-evitante", 1, 1));
 
     private final TestCatalogue catalogue;
+    private final AceExposureAnalyzer aceExposureAnalyzer;
 
-    public TestResultService(TestCatalogue catalogue) {
+    public TestResultService(TestCatalogue catalogue, AceExposureAnalyzer aceExposureAnalyzer) {
         this.catalogue = catalogue;
+        this.aceExposureAnalyzer = aceExposureAnalyzer;
     }
 
     public TestResult analyze(PsychologicalTest test, TestAttempt attempt) {
+        if (AceExposureAnalyzer.SCORING_MODEL.equals(test.scoringModel())) {
+            AceExposureResult exposure = aceExposureAnalyzer.analyze(test, attempt);
+            return new TestResult(0, 0,
+                    catalogue.findGlobalInterpretation(test.id(), exposure.profileCode()),
+                    List.of(), List.of(), exposure);
+        }
         if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
             return analyzeAttachment(test, attempt);
         }

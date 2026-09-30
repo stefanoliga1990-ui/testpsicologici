@@ -25,6 +25,20 @@
         <h1 th:text="${result.title}">Sì, decisamente!</h1>
         <p class="result-description" th:text="${result.description}">Hai l'energia di una vera web app.</p>
         <p class="result-detail" th:text="${result.detail}">Design, ritmo e praticità sono dalla tua parte.</p>
+        <section class="area-results" th:if="${test.scoringModel == 'ACE_EXPOSURE' and aceExposure != null}" aria-label="Ambiti esplorati">
+            <div class="area-results-heading">
+                <p class="eyebrow">Gli ambiti esplorati</p>
+                <h2>Che cosa emerge dalle risposte</h2>
+                <p>Questa lettura non misura intensità, durata o conseguenze delle esperienze.</p>
+            </div>
+            <div class="area-result-grid">
+                <article class="area-result-card" th:each="group : ${aceExposure.groups}">
+                    <h3 th:text="${group.title}">Ambito</h3>
+                    <p th:text="${group.status == 'PRESENT' ? 'Esperienze riferite in questo ambito' : group.status == 'NOT_REPORTED' ? 'Nessuna delle esperienze chieste è stata riferita' : 'Risposte insufficienti per descrivere questo ambito'}">Stato dell'ambito</p>
+                </article>
+            </div>
+            <p th:if="${aceExposure.partial}">Alcune domande non hanno una risposta utilizzabile; il quadro è parziale.</p>
+        </section>
         <div class="overall-presence" th:if="${!#lists.isEmpty(areaResults) and test.scoringModel != 'ATTACHMENT_DIMENSIONAL'}">
             <div class="overall-presence-label" th:text="${test.overallMetricLabel}">Presenza complessiva del tratto</div>
             <div class="overall-presence-track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
@@ -69,7 +83,7 @@
         </section>
         <div class="score-line" th:if="${test.scoreVisible}" aria-hidden="true"><span th:style="|width:${percentage}%|"></span></div>
         <div class="result-actions">
-            <a class="button button-primary" th:href="@{/test/{id}/risultato/pdf(id=${test.id})}">Download PDF <span aria-hidden="true">↓</span></a>
+            <a class="button button-primary" th:if="${test.scoringModel != 'ACE_EXPOSURE'}" th:href="@{/test/{id}/risultato/pdf(id=${test.id})}">Download PDF <span aria-hidden="true">↓</span></a>
             <a class="button button-secondary" th:if="${guide != null}"
                th:href="@{/approfondimenti/{slug}(slug=${guide.slug})}">Approfondisci l'argomento <span aria-hidden="true">→</span></a>
             <a class="button button-secondary" th:href="@{/test/{id}(id=${test.id})}">Rifai il test <span aria-hidden="true">↻</span></a>

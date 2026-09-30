@@ -41,7 +41,7 @@
             <fieldset>
                 <legend class="sr-only">Scegli una risposta</legend>
                 <label class="answer-option" th:each="answer, iter : ${answers}">
-                    <input type="radio" name="answer" th:value="${iter.count}" th:checked="${selectedAnswer == iter.count}" required>
+                    <input type="radio" name="answer" th:value="${iter.count}" th:checked="${selectedAnswer == iter.count}" th:attr="required=${test.scoringModel == 'ACE_EXPOSURE' ? null : 'required'}">
                     <span class="custom-radio" aria-hidden="true"></span>
                     <span th:text="${answer}">Mai</span>
                 </label>

@@ -384,7 +384,21 @@ public class ReferenceContributionCatalogue {
             entry("https://doi.org/10.1111/j.1742-9536.2011.00034.x",
                     "Sviluppo della Composite Codependency Scale consultato per controllo interpersonale, sacrificio di sé e soppressione emotiva; item, fattori e punteggi non vengono trasferiti."),
             entry("https://doi.org/10.1007/s11469-018-9983-8",
-                    "Studio qualitativo britannico consultato per esperienza vissuta e temi ricorrenti; piccolo campione autoidentificato e analisi idiografica limitano la generalizzazione."));
+                    "Studio qualitativo britannico consultato per esperienza vissuta e temi ricorrenti; piccolo campione autoidentificato e analisi idiografica limitano la generalizzazione."),
+            entry("https://doi.org/10.1007/s12144-025-08250-8",
+                    "Studio psicometrico italiano dell'ACE-IQ consultato per struttura, opzioni e invarianza; non valida i 24 item originali dell'app."),
+            entry("https://doi.org/10.1016/j.chiabu.2022.105640",
+                    "Revisione sistematica consultata per eterogeneità delle esposizioni e dei campioni; non fornisce norme per questo questionario."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/37922617/",
+                    "Sviluppo finlandese dell'ACE-THL consultato per copertura, contenuto e interviste cognitive; non trasferisce item o proprietà psicometriche."),
+            entry("https://www.who.int/publications/m/item/adverse-childhood-experiences-international-questionnaire-(ace-iq)",
+                    "Cornice istituzionale per l'ampiezza degli ambiti ACE e l'uso con adulti; il questionario dell'app non è l'ACE-IQ."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/33492366/",
+                    "Studio longitudinale consultato per distinguere associazioni di gruppo e limitata previsione di esiti individuali da un conteggio ACE."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/30892562/",
+                    "Meta-analisi consultata per la differenza tra rilevazioni prospettiche e ricordi retrospettivi; non giudica il singolo ricordo."),
+            entry("https://www.cdc.gov/aces/risk-factors/index.html",
+                    "Sintesi istituzionale sui fattori protettivi; non sostiene una compensazione numerica delle esposizioni né una previsione personale."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

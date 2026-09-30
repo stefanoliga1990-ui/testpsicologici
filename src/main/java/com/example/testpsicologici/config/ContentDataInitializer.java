@@ -86,6 +86,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedAlexithymiaInformationTest();
         seedSituationshipInformationTest();
         seedRelationalCodependencyInformationTest();
+        seedAceExposureQuestionnaire();
         synchronizeEvidenceReferences();
     }
 
@@ -4102,6 +4103,70 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Lo spazio per identità, opinioni o emozioni risulta spesso ridotto. L'area non stabilisce una diagnosi o la qualità complessiva della relazione.");
     }
 
+    private void seedAceExposureQuestionnaire() {
+        String id = "esperienze-avverse-infanzia";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Esperienze avverse nell'infanzia: quali ambiti ho vissuto?",
+                "Questionario informativo per adulti",
+                "Esplora esperienze prima dei 18 anni in casa, nella cura ricevuta, tra pari e nella comunità, senza un punteggio ACE.",
+                "8 min · 24 domande",
+                "Questo questionario originale, informativo e non validato tratta violenza, contatti sessuali e bisogni di cura prima dei 18 anni; non sono state svolte interviste cognitive né una prova pilota dell'interfaccia, quindi alcune domande potrebbero risultare poco chiare. Puoi saltare ogni domanda o fermarti, senza raccontare dettagli. Le risposte non accertano fatti né prevedono la tua salute; per un pericolo attuale chiama il 112, oppure il 1522 per orientamento su violenza o stalking.",
+                version, false, "", "", true, 42)
+                .withSeo("Esperienze avverse nell'infanzia: questionario informativo | Spazio Test",
+                        "24 domande originali su esperienze prima dei 18 anni. Nessun punteggio ACE, diagnosi o previsione individuale; puoi non rispondere.")
+                .withResponseInstruction("Pensando a quando avevi meno di 18 anni, ti è capitata l'esperienza descritta? Puoi scegliere «Non ricordo» o «Preferisco non rispondere» e interrompere in ogni momento.")
+                .withScoringModel("ACE_EXPOSURE").withAnswerScale("ACE_PRESENCE"));
+
+        saveArea(id, "A", "Esperienze dirette di maltrattamento", 1);
+        saveArea(id, "B", "Bisogni e cura", 2);
+        saveArea(id, "C", "Sicurezza e continuità in casa", 3);
+        saveArea(id, "D", "Pari e comunità", 4);
+
+        saveQuestions(id, List.of(
+                aceQuestion("A01", "Un adulto di riferimento ti ha rivolto insulti in più occasioni?"),
+                aceQuestion("A02", "Un adulto di riferimento ti ha umiliato davanti ad altre persone in più occasioni?"),
+                aceQuestion("A03", "Un adulto ti ha colpito causando dolore fisico?"),
+                aceQuestion("A04", "Un adulto ti ha minacciato di colpirti in più occasioni?"),
+                aceQuestion("A05", "Qualcuno ti ha coinvolto in un contatto sessuale che non potevi scegliere liberamente?"),
+                aceQuestion("A06", "Qualcuno ti ha costretto a compiere un atto sessuale?"),
+                aceQuestion("B01", "Hai vissuto un periodo in cui mancava cibo sufficiente per te?"),
+                aceQuestion("B02", "Hai vissuto un periodo senza un posto sicuro in cui dormire?"),
+                aceQuestion("B03", "Hai avuto bisogno di cure mediche che non hai ricevuto?"),
+                aceQuestion("B04", "Sei rimasto senza supervisione adulta in una situazione in cui avevi bisogno di protezione?"),
+                aceQuestion("B05", "Hai chiesto aiuto a un adulto di riferimento senza ricevere risposta in più occasioni?"),
+                aceQuestion("B06", "Hai cercato conforto da un adulto di riferimento senza riceverlo in più occasioni?"),
+                aceQuestion("C01", "Hai assistito a un adulto che colpiva un'altra persona in casa?"),
+                aceQuestion("C02", "Hai sentito minacce di violenza fisica tra persone che vivevano con te?"),
+                aceQuestion("C03", "Hai perso cure di cui avevi bisogno durante periodi in cui un adulto di riferimento faceva uso di alcol o droghe?"),
+                aceQuestion("C04", "Hai perso cure di cui avevi bisogno durante una grave crisi psicologica di un adulto di riferimento?"),
+                aceQuestion("C05", "Durante la detenzione di un adulto di riferimento, hai perso il sostegno quotidiano su cui contavi?"),
+                aceQuestion("C06", "Dopo la perdita o la separazione da un adulto di riferimento, sei rimasto a lungo senza il sostegno su cui contavi?"),
+                aceQuestion("D01", "Altri ragazzi ti hanno preso di mira ripetutamente con insulti?"),
+                aceQuestion("D02", "Altri ragazzi ti hanno aggredito fisicamente in più occasioni?"),
+                aceQuestion("D03", "Hai assistito a una grave aggressione nel luogo in cui vivevi?"),
+                aceQuestion("D04", "Sei stato aggredito da persone fuori casa?"),
+                aceQuestion("D05", "Hai assistito a episodi di guerra o violenza collettiva?"),
+                aceQuestion("D06", "Hai dovuto lasciare il luogo in cui vivevi a causa di guerra o violenza collettiva?")));
+
+        String safety = "Questo questionario non è una valutazione clinica: non misura durata, intensità, effetti attuali o sicurezza presente e non permette previsioni personali. Le domande non sono state verificate con interviste cognitive né l'interfaccia con una prova pilota; alcune risposte potrebbero avere un significato incerto. Se le domande riattivano disagio, puoi interromperti e parlarne con una persona fidata o un professionista. In caso di pericolo immediato chiama il 112; il 1522 offre orientamento per violenza e stalking.";
+        saveGlobal(id, "NONE_REPORTED", "Nessuna delle esperienze avverse esplorate è stata riferita",
+                "Le risposte non riferiscono le esperienze incluse nei quattro ambiti esplorati. Questo descrive soltanto ciò che è stato chiesto e ricordato nel questionario.",
+                "L'assenza di risposte affermative non esclude altre esperienze difficili o sofferenza attuale. Ricordi, contesti e bisogni possono essere diversi dalle categorie qui proposte. " + safety);
+        saveGlobal(id, "ONE_GROUP", "Esperienze avverse riferite in un ambito esplorato",
+                "Almeno un'esperienza è stata riferita in uno dei quattro ambiti. Gli altri ambiti sono descritti separatamente e alcune risposte potrebbero restare indeterminate.",
+                "Un solo ambito non significa che l'esperienza sia lieve o trascurabile. Puoi considerare che cosa conta per te oggi senza attribuire automaticamente un effetto all'evento. " + safety);
+        saveGlobal(id, "MULTIPLE_GROUPS", "Esperienze avverse riferite in più ambiti esplorati",
+                "Le risposte riferiscono esperienze in più di uno dei quattro ambiti. La restituzione mantiene gli ambiti in un ordine fisso, senza graduarli per importanza.",
+                "L'ampiezza degli ambiti non stabilisce gravità, conseguenze o una causa della tua situazione attuale. Anche tempi, durata, protezioni e contesto possono avere significati diversi per persone diverse. " + safety);
+        saveGlobal(id, "UNDETERMINED", "Alcuni ambiti delle esperienze avverse restano indeterminati",
+                "Non sono state riferite esperienze negli ambiti esplorati, ma alcune domande non hanno una risposta utilizzabile. Il risultato non tratta «Non ricordo», una domanda saltata o «Preferisco non rispondere» come un «No».",
+                "È legittimo lasciare domande senza risposta e non occorre ricostruire forzatamente i ricordi. Gli ambiti indeterminati non possono essere interpretati come presenza o assenza. " + safety);
+    }
+
     private void synchronizeEvidenceReferences() {
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
@@ -4346,6 +4411,14 @@ public class ContentDataInitializer implements ApplicationRunner {
                 ref("Are Situationships situational? — Langlais e colleghi", "https://doi.org/10.1007/s12119-025-10402-8"),
                 ref("Sliding versus deciding in relationships — Owen, Rhoades e Stanley", "https://doi.org/10.1080/15332691.2013.779097"),
                 ref("1522 — Numero Anti Violenza e Stalking", "https://www.1522.eu/cose-1522/")));
+        syncReferences("esperienze-avverse-infanzia", List.of(
+                ref("Italian adaptation of the ACE-IQ — Muzi, Rogier e Pace", "https://doi.org/10.1007/s12144-025-08250-8"),
+                ref("Adverse childhood experiences: systematic review — Pace e colleghi", "https://doi.org/10.1016/j.chiabu.2022.105640"),
+                ref("ACE-THL: sviluppo e valutazione in Finlandia — Hietamäki e colleghi", "https://pubmed.ncbi.nlm.nih.gov/37922617/"),
+                ref("Adverse Childhood Experiences International Questionnaire — OMS", "https://www.who.int/publications/m/item/adverse-childhood-experiences-international-questionnaire-(ace-iq)"),
+                ref("Population vs Individual Prediction of Poor Health From ACE Screening — Baldwin e colleghi", "https://pubmed.ncbi.nlm.nih.gov/33492366/"),
+                ref("Agreement Between Prospective and Retrospective Measures of Childhood Maltreatment — Baldwin e colleghi", "https://pubmed.ncbi.nlm.nih.gov/30892562/"),
+                ref("1522 — Numero Antiviolenza e Antistalking", "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/")));
     }
 
     private void syncReferences(String testId, List<ReferenceSeed> expected) {
@@ -4392,8 +4465,11 @@ public class ContentDataInitializer implements ApplicationRunner {
         referenceRepository.save(new TestReferenceEntity(testId, title, url, order));
     }
     private void saveArea(String testId, String code, String name, int order) { areaRepository.save(new TestAreaEntity(testId, code, name, order)); }
-    private QuestionSeed q(String areaCode, String text) { return new QuestionSeed(areaCode, text, null); }
-    private QuestionSeed qe(String areaCode, String text, String example) { return new QuestionSeed(areaCode, text, example); }
+    private QuestionSeed q(String areaCode, String text) { return new QuestionSeed(areaCode, text, null, null); }
+    private QuestionSeed qe(String areaCode, String text, String example) { return new QuestionSeed(areaCode, text, example, null); }
+    private QuestionSeed aceQuestion(String indicatorCode, String text) {
+        return new QuestionSeed(indicatorCode.substring(0, 1), text, null, indicatorCode);
+    }
     private void saveQuestions(String testId, List<QuestionSeed> questions) {
         Map<String, List<QuestionSeed>> questionsByArea = questions.stream()
                 .collect(Collectors.groupingBy(QuestionSeed::areaCode, LinkedHashMap::new, Collectors.toList()));
@@ -4404,7 +4480,8 @@ public class ContentDataInitializer implements ApplicationRunner {
                 if (offset < areaQuestions.size()) {
                     QuestionSeed question = areaQuestions.get(offset);
                     questionRepository.save(new TestQuestionEntity(
-                            testId, question.areaCode(), position++, question.text(), question.example()));
+                            testId, question.areaCode(), position++, question.text(), question.example(),
+                            question.indicatorCode()));
                 }
             }
         }
@@ -4422,7 +4499,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 testId, "STYLE", styleCode, "PROFILE", null, description, null));
     }
 
-    private record QuestionSeed(String areaCode, String text, String example) {
+    private record QuestionSeed(String areaCode, String text, String example, String indicatorCode) {
     }
 
     private record ReferenceSeed(String title, String url) {

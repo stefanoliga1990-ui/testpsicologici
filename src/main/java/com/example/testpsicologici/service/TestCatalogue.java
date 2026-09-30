@@ -96,7 +96,8 @@ public class TestCatalogue {
                         areaInsight(entity.getId(), area.getCode(), "HIGH")))
                 .toList();
         List<TestQuestion> questions = questionRepository.findByTestIdOrderByPositionAsc(entity.getId()).stream()
-                .map(question -> new TestQuestion(question.getText(), question.getExample(), question.getAreaCode()))
+                .map(question -> new TestQuestion(question.getText(), question.getExample(),
+                        question.getAreaCode(), question.getIndicatorCode()))
                 .toList();
         List<TestReference> references = referenceRepository.findByTestIdOrderByDisplayOrderAsc(entity.getId()).stream()
                 .map(reference -> new TestReference(reference.getTitle(), reference.getUrl(),

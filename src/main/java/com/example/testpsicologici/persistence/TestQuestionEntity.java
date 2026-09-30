@@ -25,20 +25,29 @@ public class TestQuestionEntity {
     private String text;
     @Column(length = 800)
     private String example;
+    @Column(name = "indicator_code", length = 8)
+    private String indicatorCode;
 
     protected TestQuestionEntity() {
     }
 
     public TestQuestionEntity(String testId, String areaCode, int position, String text, String example) {
+        this(testId, areaCode, position, text, example, null);
+    }
+
+    public TestQuestionEntity(String testId, String areaCode, int position, String text, String example,
+                              String indicatorCode) {
         this.testId = testId;
         this.areaCode = areaCode;
         this.position = position;
         this.text = text;
         this.example = example;
+        this.indicatorCode = indicatorCode;
     }
 
     public String getAreaCode() { return areaCode; }
     public int getPosition() { return position; }
     public String getText() { return text; }
     public String getExample() { return example; }
+    public String getIndicatorCode() { return indicatorCode; }
 }

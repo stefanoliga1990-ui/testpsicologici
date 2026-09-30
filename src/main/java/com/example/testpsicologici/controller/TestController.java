@@ -12,6 +12,7 @@ import com.example.testpsicologici.service.SiteUrlService;
 import com.example.testpsicologici.service.TestResultService;
 import com.example.testpsicologici.service.TestCompletionAnalyticsService;
 import com.example.testpsicologici.service.TopicClusterCatalogue;
+import com.example.testpsicologici.service.AceExposureAnalyzer;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -56,6 +57,8 @@ public class TestController {
     private static final List<String> SATISFACTION_ANSWER_OPTIONS =
             List.of("Per nulla soddisfatto/a", "Poco soddisfatto/a", "Abbastanza soddisfatto/a",
                     "Molto soddisfatto/a", "Pienamente soddisfatto/a");
+    private static final List<String> ACE_ANSWER_OPTIONS =
+            List.of("Sì", "No", "Non ricordo", "Preferisco non rispondere");
 
     private final TestCatalogue catalogue;
     private final TestResultService resultService;
@@ -136,6 +139,7 @@ public class TestController {
                            HttpSession session, HttpServletResponse response, Model model) {
         response.setHeader("X-Robots-Tag", "noindex, follow, noarchive");
         PsychologicalTest test = findTest(testId);
+        if (isAceExposure(test)) response.setHeader(HttpHeaders.CACHE_CONTROL, "no-store");
         TestAttempt attempt = findAttempt(testId, session);
         if (attempt == null) return "redirect:/test/" + testId;
         int questionIndex = validQuestionIndex(questionNumber, test);
@@ -165,6 +169,7 @@ public class TestController {
                              @RequestParam(required = false) Integer answer, HttpSession session) {
         PsychologicalTest test = findTest(testId);
         int questionIndex = validQuestionIndex(questionNumber, test);
+        if (answer == null && isAceExposure(test)) answer = AceExposureAnalyzer.SKIPPED;
         if (answer == null || answer < 1 || answer > answerOptionsFor(test).size()) {
             return "redirect:/test/" + testId + "/domanda/" + questionNumber;
         }
@@ -189,6 +194,7 @@ public class TestController {
                          HttpServletResponse response, Model model) {
         response.setHeader("X-Robots-Tag", "noindex, follow, noarchive");
         PsychologicalTest test = findTest(testId);
+        if (isAceExposure(test)) response.setHeader(HttpHeaders.CACHE_CONTROL, "no-store");
         TestAttempt attempt = findAttempt(testId, session);
         if (attempt == null || !attempt.isComplete()) return "redirect:/test/" + testId;
 
@@ -220,19 +226,23 @@ public class TestController {
         model.addAttribute("recommendedReadings", recommendedReadings);
         model.addAttribute("topicCluster", topicCluster);
         model.addAttribute("relatedTests", relatedTests);
-        model.addAttribute("score", result.score());
-        model.addAttribute("percentage", result.percentage());
+        Integer visibleScore = isAceExposure(test) ? null : result.score();
+        Integer visiblePercentage = isAceExposure(test) ? null : result.percentage();
+        model.addAttribute("score", visibleScore);
+        model.addAttribute("percentage", visiblePercentage);
         model.addAttribute("result", result.general());
         model.addAttribute("areaResults", result.areaResults());
         model.addAttribute("styleResults", result.styleResults());
+        model.addAttribute("aceExposure", result.aceExposure());
         model.addAttribute("reactPageData", ReactPageData.of(
                 "result",
                 "test", test,
-                "score", result.score(),
-                "percentage", result.percentage(),
+                "score", visibleScore,
+                "percentage", visiblePercentage,
                 "result", result.general(),
                 "areaResults", result.areaResults(),
                 "styleResults", result.styleResults(),
+                "aceExposure", result.aceExposure(),
                 "guide", guide,
                 "recommendedReadings", recommendedReadings,
                 "topicCluster", topicCluster,
@@ -245,6 +255,9 @@ public class TestController {
     @GetMapping(value = "/test/{testId}/risultato/pdf", produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<byte[]> downloadResultPdf(@PathVariable String testId, HttpSession session) {
         PsychologicalTest test = findTest(testId);
+        if (isAceExposure(test)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "PDF non disponibile per questo questionario");
+        }
         TestAttempt attempt = findAttempt(testId, session);
         if (attempt == null || !attempt.isComplete()) {
             return ResponseEntity.<byte[]>status(HttpStatus.SEE_OTHER)
@@ -298,7 +311,12 @@ public class TestController {
             case "AGREEMENT" -> AGREEMENT_ANSWER_OPTIONS;
             case "OCCURRENCE" -> OCCURRENCE_ANSWER_OPTIONS;
             case "SATISFACTION" -> SATISFACTION_ANSWER_OPTIONS;
+            case AceExposureAnalyzer.ANSWER_SCALE -> ACE_ANSWER_OPTIONS;
             default -> ANSWER_OPTIONS;
         };
+    }
+
+    private boolean isAceExposure(PsychologicalTest test) {
+        return AceExposureAnalyzer.SCORING_MODEL.equals(test.scoringModel());
     }
 }

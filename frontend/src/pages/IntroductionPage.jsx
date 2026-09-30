@@ -13,6 +13,7 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
   const action = useCallback((signal) => startTest(test.id, signal), [test.id]);
   const { error, loading, run } = useAsyncAction(action);
   const isAttachmentStyles = test.scoringModel === 'ATTACHMENT_DIMENSIONAL';
+  const isAceExposure = test.scoringModel === 'ACE_EXPOSURE';
   const isOccurrenceScale = test.answerScale === 'OCCURRENCE';
   const isSatisfactionScale = test.answerScale === 'SATISFACTION';
   const isAgreementScale = test.answerScale === 'AGREEMENT';
@@ -54,7 +55,9 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
         <div className="editorial-heading">
           <p className="eyebrow">Prima di rispondere</p>
           <h2>Che cosa esplora questo questionario</h2>
-          <p>{isAttachmentStyles
+          <p>{isAceExposure
+            ? 'Le domande riguardano esperienze e condizioni riferite al periodo prima dei 18 anni. Gli ambiti servono a organizzare la lettura, non sono sottoscale cliniche o una misura della gravità.'
+            : isAttachmentStyles
             ? 'Le affermazioni esplorano ansia relazionale ed evitamento della vicinanza. La loro combinazione permette una lettura orientativa dei quattro stili descritti qui sotto, senza assegnare diagnosi o identità definitive.'
             : isSatisfactionScale
               ? 'Le domande sono organizzate negli ambiti indicati qui sotto. La restituzione aiuta a osservare dove la soddisfazione è più o meno espressa, senza stabilire quali parti della vita dovrebbero contare di più.'
@@ -67,7 +70,9 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
         <ul className="explored-areas">{(isAttachmentStyles ? attachmentStyles : test.areas.map((area) => area.name))
           .map((name) => <li key={name}>{name}</li>)}</ul>
         <div className="editorial-grid">
-          <Card className="editorial-card"><p className="eyebrow">Come funziona</p><h2>Una risposta alla volta</h2><p>{isAttachmentStyles
+          <Card className="editorial-card"><p className="eyebrow">Come funziona</p><h2>Una risposta alla volta</h2><p>{isAceExposure
+            ? 'Per ogni domanda puoi scegliere “Sì”, “No”, “Non ricordo” o “Preferisco non rispondere”. Puoi anche procedere senza selezionare nulla e interrompere il percorso quando desideri.'
+            : isAttachmentStyles
             ? 'Per ogni affermazione indicherai quanto descrive il tuo modo abituale di vivere la relazione scelta come riferimento, da “Per nulla vero per me” a “Del tutto vero per me”. Puoi tornare alla domanda precedente e completare le 24 domande senza creare un account.'
             : isSatisfactionScale
               ? 'Per ogni domanda indicherai il tuo grado di soddisfazione, da “Per nulla soddisfatto/a” a “Pienamente soddisfatto/a”, pensando agli ultimi tre mesi. Puoi tornare alla domanda precedente e completare il percorso senza creare un account.'
@@ -76,7 +81,9 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
               : isOccurrenceScale
               ? 'Per ogni affermazione indicherai quante volte è accaduta, da “Mai” a “Molte volte”, nel periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'
               : 'Per ogni affermazione indicherai una frequenza da “Mai” a “Quasi sempre”, riferita al periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'}</p></Card>
-          <Card className="editorial-card"><p className="eyebrow">Il risultato</p><h2>Una lettura orientativa</h2><p>{isAttachmentStyles
+          <Card className="editorial-card"><p className="eyebrow">Il risultato</p><h2>Una lettura orientativa</h2><p>{isAceExposure
+            ? 'Il risultato descrive soltanto gli ambiti riferiti e segnala le risposte mancanti. Non presenta un punteggio ACE, percentuali, fasce o previsioni sulla salute individuale.'
+            : isAttachmentStyles
             ? 'Il risultato mostra le due dimensioni esplorate e ordina i quattro orientamenti per vicinanza al profilo delle risposte. Se due orientamenti risultano vicini, la restituzione parla di caratteristiche intermedie; non sono percentuali, categorie cliniche o etichette stabili.'
             : isSatisfactionScale
               ? "Il risultato riassume il grado di soddisfazione generale e negli ambiti esplorati. Le barre sono trasformazioni editoriali delle risposte: non sono percentuali normative, confronti con altre persone o misure di salute mentale."
@@ -90,7 +97,9 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
           <div><p className="eyebrow">Metodo e trasparenza</p><h2>Contenuto editoriale, non scala clinica</h2></div>
           <div>
             <p>Le domande sono originali e costruite per finalità informative a partire dai temi descritti nelle fonti consultate. Non riproducono né sostituiscono un test psicologico validato o una valutazione condotta da un professionista.</p>
-            <p>Le soglie e i testi del risultato servono esclusivamente a comporre una restituzione comprensibile. <a href="/metodo-e-fonti">Scopri il metodo editoriale</a>.</p>
+            <p>{isAceExposure
+              ? 'Gli stati delle risposte servono soltanto a comporre una restituzione descrittiva; non vengono applicate soglie o punteggi clinici.'
+              : 'Le soglie e i testi del risultato servono esclusivamente a comporre una restituzione comprensibile.'} <a href="/metodo-e-fonti">Scopri il metodo editoriale</a>.</p>
           </div>
         </section>
         {test.references.length > 0 && (

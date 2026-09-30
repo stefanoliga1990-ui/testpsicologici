@@ -4746,6 +4746,49 @@ public class GuideCatalogue {
                                     "Fonte istituzionale italiana consultata per orientamento e sicurezza; non è evidenza sul costrutto e non sostituisce il 112 nelle emergenze."
                             )
                     )
+            ),
+            new InformationGuide(
+                    "esperienze-avverse-infanzia", "esperienze-avverse-infanzia",
+                    "Esperienze avverse nell'infanzia",
+                    "Esperienze avverse nell'infanzia: capire le ACE senza ridurre la storia a un numero",
+                    "Esperienze avverse nell'infanzia (ACE): guida | Spazio Test",
+                    "Una guida agli ambiti ACE, ai limiti del ricordo retrospettivo e del conteggio, e a un uso rispettoso e non diagnostico del questionario.",
+                    "Le esperienze avverse nell'infanzia comprendono eventi e condizioni molto diversi prima dei 18 anni. Questa guida aiuta a leggerli senza trasformare una storia personale in un punteggio o in una previsione di salute.",
+                    List.of(
+                            new GuideSection("In breve", "Che cosa indica ACE", List.of(
+                                    "ACE è una cornice di ricerca che comprende esperienze di maltrattamento, bisogni non soddisfatti, difficoltà di sicurezza in casa e violenza tra pari o nella comunità. Non è una diagnosi della persona né un unico tratto psicologico.",
+                                    "Gli studi hanno osservato associazioni tra alcune esposizioni e salute in gruppi di persone. Queste associazioni non dimostrano che una specifica esperienza abbia causato un particolare esito nella vita di un individuo."), List.of()),
+                            new GuideSection("Ambiti", "Esperienze diverse richiedono contesto", List.of(
+                                    "Il questionario distingue azioni rivolte direttamente al minore, bisogni di cura, sicurezza e continuità in casa, ed esperienze tra pari o fuori casa. I quattro gruppi aiutano la lettura: non sono sottoscale validate e non ordinano le esperienze per importanza.",
+                                    "Una separazione, una malattia o l'uso di sostanze di un adulto non bastano da soli a descrivere ciò che ha vissuto un bambino. Conta la cura effettivamente disponibile, insieme al contesto materiale, culturale e storico; il questionario non attribuisce colpe o diagnosi ai familiari."), List.of()),
+                            new GuideSection("Risposte e memoria", "Non ricordo e preferisco non rispondere sono risposte legittime", List.of(
+                                    "Ricordare retrospettivamente l'infanzia è diverso dal registrare eventi mentre accadono. Un ricordo può essere incompleto o difficile da collocare: il questionario non accerta fatti e non richiede di ricostruirli forzatamente.",
+                                    "Puoi non rispondere a qualsiasi domanda e fermarti. Un ambito resta indeterminato quando mancano risposte necessarie per descriverlo; il silenzio non viene interpretato come assenza di esperienza."), List.of()),
+                            new GuideSection("Risultato", "Perché non compare un punteggio ACE", List.of(
+                                    "Un conteggio può essere utile in alcune analisi di popolazione, ma non descrive durata, intensità, relazioni, protezioni o significato delle esperienze. Anche dove un numero è associato a esiti di gruppo, la sua capacità di prevedere la salute della singola persona è limitata.",
+                                    "Spazio Test restituisce soltanto se un ambito è riferito, non riferito o indeterminato. Non mostra un totale, una fascia di gravità o una probabilità; zero risposte affermative non esclude altre difficoltà e più ambiti non determinano il futuro."), List.of()),
+                            new GuideSection("Distinzioni", "ACE non equivale a PTSD o parentificazione", List.of(
+                                    "Le ACE riguardano esperienze prima dei 18 anni; il PTSD riguarda un insieme di sintomi attuali che richiede una valutazione clinica distinta. Avere vissuto un'esperienza avversa non implica PTSD, e l'assenza di un risultato ACE non esclude sofferenza presente.",
+                                    "La parentificazione descrive un particolare assetto di responsabilità familiari. Può intrecciarsi con alcune avversità, ma non coincide con l'insieme delle esperienze esplorate qui."), List.of()),
+                            new GuideSection("Protezione e supporto", "Che cosa puoi fare con queste informazioni", List.of(
+                                    "Relazioni sicure e risorse di sostegno possono contare nel percorso di una persona, ma non cancellano quanto vissuto né garantiscono un esito specifico. Se le domande riattivano forte disagio, interrompiti e valuta un confronto con una persona fidata o un professionista.",
+                                    "Per un pericolo immediato in Italia chiama il 112. Se vivi violenza o stalking, il 1522 offre orientamento: non è un servizio per interpretare il questionario e non sostituisce le emergenze."), List.of()),
+                            new GuideSection("Ricerca e limiti", "Uno strumento originale non validato", List.of(
+                                    "Esistono studi italiani ed europei su altri questionari ACE, ma le loro proprietà non si trasferiscono ai 24 item originali di Spazio Test. Le categorie e il risultato sono scelte editoriali descrittive, non norme o soglie cliniche.",
+                                    "La revisione editoriale dei testi è stata svolta, ma non sono state effettuate interviste cognitive sui 24 item né una prova pilota dell'interfaccia: comprensibilità ed effetti della somministrazione non sono stati verificati con utenti. Per attribuire validità allo strumento occorrerebbero inoltre studi sulla struttura, affidabilità, errore di misura, validità esterna, equità e replica indipendente."), List.of())
+                    ),
+                    "Il questionario collegato è riservato agli adulti, usa 24 domande originali riferite a prima dei 18 anni e permette di saltarle. Non è l'ACE-IQ, non ha ancora interviste cognitive o prova pilota, non produce un totale ACE né una previsione individuale; il PDF è disabilitato per tutela della privacy.",
+                    "Questa guida separa le associazioni di popolazione dalla storia individuale e spiega perché gli ambiti vengono restituiti senza conteggi o fasce. Considera memoria, contesto, sicurezza e supporto senza forzare interpretazioni.",
+                    List.of(
+                            new GuideReference("Italian adaptation of the ACE-IQ — Muzi, Rogier e Pace", "https://doi.org/10.1007/s12144-025-08250-8", "Studio psicometrico italiano consultato per limiti di struttura e invarianza; non valida il nostro strumento."),
+                            new GuideReference("Adverse childhood experiences: systematic review — Pace e colleghi", "https://doi.org/10.1016/j.chiabu.2022.105640", "Revisione consultata per eterogeneità di campioni e stime; non fornisce norme italiane per questi item."),
+                            new GuideReference("ACE-THL — Hietamäki e colleghi", "https://pubmed.ncbi.nlm.nih.gov/37922617/", "Sviluppo finlandese consultato per la necessità di curare contenuto e opzioni; nessun item o punteggio è trasferito."),
+                            new GuideReference("Adverse Childhood Experiences International Questionnaire — OMS", "https://www.who.int/publications/m/item/adverse-childhood-experiences-international-questionnaire-(ace-iq)", "Cornice istituzionale per l'ampiezza degli ambiti e l'età di riferimento; il nostro questionario non è l'ACE-IQ."),
+                            new GuideReference("Population vs Individual Prediction — Baldwin e colleghi", "https://pubmed.ncbi.nlm.nih.gov/33492366/", "Studio longitudinale consultato per distinguere associazioni di gruppo e previsione individuale."),
+                            new GuideReference("Prospective and Retrospective Measures — Baldwin e colleghi", "https://pubmed.ncbi.nlm.nih.gov/30892562/", "Meta-analisi consultata per i limiti della ricostruzione retrospettiva; non giudica il ricordo individuale."),
+                            new GuideReference("Risk and Protective Factors — CDC", "https://www.cdc.gov/aces/risk-factors/index.html", "Sintesi istituzionale sul contesto protettivo; non implica compensazione numerica o immunità."),
+                            new GuideReference("1522 — Dipartimento per le Pari Opportunità", "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/", "Servizio italiano di orientamento per violenza e stalking; non sostituisce il 112 nelle emergenze.")
+                    )
             )
     );
 

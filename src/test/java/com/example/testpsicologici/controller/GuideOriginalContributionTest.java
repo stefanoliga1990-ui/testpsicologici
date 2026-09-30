@@ -25,7 +25,7 @@ class GuideOriginalContributionTest {
 
     private static final List<String> SLUGS = List.of(
             "ansia-generalizzata", "ansia-sociale", "disturbo-ossessivo-compulsivo",
-            "umore-depresso", "ptsd-adulti", "disturbo-borderline-personalita",
+            "umore-depresso", "ptsd-adulti", "esperienze-avverse-infanzia", "disturbo-borderline-personalita",
             "disturbo-evitante-personalita", "adhd-adulti", "autismo-adulti",
             "intelligenza-linguistica");
 
@@ -164,7 +164,7 @@ class GuideOriginalContributionTest {
                 .map(InformationGuide::slug)
                 .collect(Collectors.toSet());
 
-        assertThat(snapshotSlugs).hasSize(41).doesNotHaveDuplicates();
+        assertThat(snapshotSlugs).hasSize(42).doesNotHaveDuplicates();
         assertThat(catalogueSlugs).containsExactlyInAnyOrderElementsOf(snapshotSlugs);
 
         List<String> contributions = guides.findAll().stream()

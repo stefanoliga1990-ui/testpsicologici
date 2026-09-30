@@ -18,7 +18,7 @@ function shouldShowSupportIntro(enabled, testId) {
   }
 }
 
-export default function ResultPage({ areaResults, contributionsEnabled = false, guide, percentage, recommendedReadings = [], relatedTests, result, score, styleResults = [], test, topicCluster }) {
+export default function ResultPage({ aceExposure, areaResults, contributionsEnabled = false, guide, percentage, recommendedReadings = [], relatedTests, result, score, styleResults = [], test, topicCluster }) {
   const [showSupportIntro, setShowSupportIntro] = useState(
     () => shouldShowSupportIntro(contributionsEnabled, test.id)
   );
@@ -40,6 +40,12 @@ export default function ResultPage({ areaResults, contributionsEnabled = false, 
     setShowSupportIntro(false);
   }, [test.id]);
   const isAttachmentStyles = test.scoringModel === 'ATTACHMENT_DIMENSIONAL';
+  const isAceExposure = test.scoringModel === 'ACE_EXPOSURE';
+  const aceStatusLabels = {
+    PRESENT: 'Esperienze riferite in questo ambito',
+    NOT_REPORTED: 'Nessuna delle esperienze chieste è stata riferita',
+    UNDETERMINED: 'Risposte insufficienti per descrivere questo ambito'
+  };
 
   return (
     <main className="result-shell">
@@ -51,7 +57,24 @@ export default function ResultPage({ areaResults, contributionsEnabled = false, 
         <h1>{result.title}</h1>
         <p className="result-description">{result.description}</p>
         <p className="result-detail">{result.detail}</p>
-        {areaResults.length > 0 && !isAttachmentStyles && (
+        {isAceExposure && aceExposure && (
+          <section className="area-results" aria-label="Ambiti esplorati">
+            <div className="area-results-heading">
+              <p className="eyebrow">Gli ambiti esplorati</p><h2>Che cosa emerge dalle risposte</h2>
+              <p>Questa lettura non misura intensità, durata o conseguenze delle esperienze.</p>
+            </div>
+            <div className="area-result-grid">
+              {aceExposure.groups.map((group) => (
+                <article className="area-result-card" key={group.code}>
+                  <h3>{group.title}</h3>
+                  <p>{aceStatusLabels[group.status]}</p>
+                </article>
+              ))}
+            </div>
+            {aceExposure.partial && <p>Alcune domande non hanno una risposta utilizzabile; il quadro è parziale.</p>}
+          </section>
+        )}
+        {areaResults.length > 0 && !isAttachmentStyles && !isAceExposure && (
           <>
             <div className="overall-presence">
               <div className="overall-presence-label">{test.overallMetricLabel}</div>
@@ -113,7 +136,7 @@ export default function ResultPage({ areaResults, contributionsEnabled = false, 
         )}
         {test.scoreVisible && <div className="score-line" aria-hidden="true"><span style={{ width: `${percentage}%` }} /></div>}
         <div className="result-actions">
-          <Button as="a" className="button-primary" href={withSessionId(`/test/${test.id}/risultato/pdf`)}>Download PDF <span aria-hidden="true">↓</span></Button>
+          {!isAceExposure && <Button as="a" className="button-primary" href={withSessionId(`/test/${test.id}/risultato/pdf`)}>Download PDF <span aria-hidden="true">↓</span></Button>}
           {guide && <Button as="a" className="button-secondary" href={`/approfondimenti/${guide.slug}`}>Approfondisci l'argomento <span aria-hidden="true">→</span></Button>}
           <Button as="a" className="button-secondary" href={`/test/${test.id}`}>Rifai il test <span aria-hidden="true">↻</span></Button>
           <Button as="a" className="button-secondary" href="/">Torna alla home</Button>

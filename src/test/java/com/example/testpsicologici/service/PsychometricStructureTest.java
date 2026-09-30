@@ -69,10 +69,18 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(41).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(42).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
-            if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
+            if ("ACE_EXPOSURE".equals(test.scoringModel())) {
+                assertThat(test.questions()).hasSize(24);
+                assertThat(test.responseInstruction()).contains("18 anni");
+                assertThat(test.answerScale()).isEqualTo("ACE_PRESENCE");
+                assertThat(test.areas()).extracting(area -> area.code()).containsExactly("A", "B", "C", "D");
+                assertThat(test.questions()).extracting(question -> question.indicatorCode()).doesNotHaveDuplicates();
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
+            } else if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
                 assertThat(test.questions()).hasSize(24);
                 assertThat(test.responseInstruction()).containsIgnoringCase("descrive");
                 assertThat(test.answerScale()).isEqualTo("AGREEMENT");
@@ -207,6 +215,7 @@ class PsychometricStructureTest {
     @Test
     void everyOverallProfileProvidesAStandaloneDetailedInterpretation() {
         catalogue.findAll().forEach(test -> {
+            if ("ACE_EXPOSURE".equals(test.scoringModel())) return;
             List<TestResult> profiles = List.of(
                     analyzeWithAreaAnswers(test, 1, 1, 1, 1),
                     analyzeWithAreaAnswers(test, 3, 3, 3, 3),
@@ -240,9 +249,10 @@ class PsychometricStructureTest {
 
     @Test
     void everyOverallTitleNamesItsSpecificSubjectAndProfileDistribution() {
-        assertThat(RESULT_TITLE_SUBJECTS).hasSize(catalogue.findAll().size());
+        assertThat(RESULT_TITLE_SUBJECTS).hasSize(catalogue.findAll().size() - 1);
 
         catalogue.findAll().forEach(test -> {
+            if ("ACE_EXPOSURE".equals(test.scoringModel())) return;
             List<TestResult> profiles = List.of(
                     analyzeWithAreaAnswers(test, 1, 1, 1, 1),
                     analyzeWithAreaAnswers(test, 3, 3, 3, 3),
