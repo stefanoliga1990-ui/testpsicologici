@@ -66,6 +66,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Una riunione rumorosa: osservare ambiente e comunicazione",
+                                    List.of(
+                                            "Immagina una riunione con più persone che parlano insieme, luci intense e cambi di programma. Puoi seguire meglio lo scambio quando il turno di parola è chiaro o l'ordine del giorno è disponibile; la fatica in quella stanza, da sola, non indica autismo. Rumore, stress, sonno e familiarità con il gruppo possono cambiare l'esperienza.",
+                                            "Confronta la stessa attività in ambienti diversi e, se ti è utile, chiedi un'informazione scritta o un luogo meno rumoroso. Osservare che cosa cambia può aiutarti a descrivere un bisogno pratico; non ricostruisce la storia dello sviluppo e non sostituisce una valutazione specialistica."
+                                    ),
+                                    List.of(
+                                            "Quale parte della riunione è stata difficile: rumore, turni, cambiamento o altro?",
+                                            "Che cosa è cambiato in un contesto più prevedibile o meno intenso sul piano sensoriale?",
+                                            "Se vuoi chiedere un adattamento, indica una modifica concreta utile per quella situazione, senza dover attribuire subito una causa alla difficoltà."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Supporto",
                                     "Quando può essere utile parlarne con qualcuno",
                                     List.of(
@@ -731,6 +744,19 @@ public class GuideCatalogue {
                                             "Esperienze di esclusione, bullismo, discriminazione o ambienti realmente ostili possono rendere il timore del giudizio comprensibile e fondato. Trauma, depressione, altre forme d'ansia, neurodivergenze, differenze culturali o linguistiche e difficoltà comunicative possono inoltre produrre esperienze simili; una lettura professionale considera la persona e il contesto, non soltanto i sintomi."
                                     ),
                                     List.of()
+                            ),
+                            new GuideSection(
+                                    "Esempio guidato",
+                                    "Una domanda in riunione: distinguere previsione e risposta",
+                                    List.of(
+                                            "Immagina di voler fare una domanda in riunione. Prima temi di sembrare impreparato/a; durante controlli la voce e rinunci a intervenire; dopo interpreti un'espressione neutra come critica. Questa sequenza può aiutarti a distinguere previsione, comportamento e ricordo, ma non dimostra che gli altri ti abbiano giudicato né identifica un disturbo.",
+                                            "Confronta l'episodio con ciò che era osservabile: il tempo disponibile per parlare, le risposte ricevute e le regole del gruppo. In un ambiente dove si viene davvero derisi o esclusi, cercare sostegno o cambiare condizioni può essere più pertinente che chiedersi soltanto come ridurre l'ansia. Un piccolo passo scelto da te, se il contesto è sicuro, può essere preparare una domanda breve; se il disagio limita la vita, valuta un confronto professionale."
+                                    ),
+                                    List.of(
+                                            "Che cosa temevi prima e quali fatti hai potuto osservare durante lo scambio?",
+                                            "Hai rinunciato, chiesto chiarimenti o usato un accorgimento per sentirti più al sicuro?",
+                                            "Se vuoi annotare l'episodio, separa la previsione iniziale da ciò che è successo e da come lo hai ricordato dopo."
+                                    )
                             ),
                             new GuideSection(
                                     "Possibili aiuti",
@@ -3750,6 +3776,19 @@ public class GuideCatalogue {
                                             "Può aiutare annotare episodi, contesto, frequenza e conseguenze soltanto se farlo è sicuro. Una conversazione con una persona fidata o un professionista può offrire prospettiva senza richiedere subito una decisione definitiva."
                                     ),
                                     List.of()
+                            ),
+                            new GuideSection(
+                                    "Esempio guidato",
+                                    "Una scelta quotidiana: distinguere disaccordo e controllo",
+                                    List.of(
+                                            "Immagina di voler incontrare un'amica o un amico. Un disaccordo sull'orario può essere discusso; richieste ripetute di mostrare i messaggi, minacce o ostacoli ai contatti riguardano invece privacy, libertà e sicurezza. Lo scenario non accerta che cosa sia accaduto nella tua relazione né attribuisce intenzioni all'altra persona.",
+                                            "Per orientarti, considera se puoi dire no, mantenere contatti e scegliere senza temere conseguenze. Anche un solo episodio che ti fa temere per la sicurezza merita attenzione indipendentemente dal risultato del test. Se temi una reazione, evita di affrontare la persona o conservare appunti accessibili: chiedi un confronto riservato a un servizio competente quando puoi farlo in sicurezza."
+                                    ),
+                                    List.of(
+                                            "Quale comportamento concreto hai osservato e quale possibilità di scelta avevi?",
+                                            "Dire no o cercare supporto avrebbe potuto esporre te o altre persone a conseguenze?",
+                                            "Se hai bisogno di aiuto, valuta un contatto sicuro con un servizio competente; in pericolo immediato chiama il 112."
+                                    )
                             ),
                             new GuideSection(
                                     "Come leggere il risultato",

@@ -12,7 +12,7 @@ import static java.util.Map.entry;
 public class GuideEditorialHistoryCatalogue {
 
     private static final Map<String, GuideEditorialHistory> HISTORY = Map.ofEntries(
-            entry("autismo-adulti", history("2026-08-13", "2026-08-20")),
+            entry("autismo-adulti", history("2026-08-13", "2026-09-30")),
             entry("adhd-adulti", history("2026-08-13", "2026-08-20")),
             entry("disturbo-ossessivo-compulsivo", history("2026-08-13", "2026-08-20")),
             entry("autostima", history("2026-08-13", "2026-08-20")),
@@ -20,7 +20,7 @@ public class GuideEditorialHistoryCatalogue {
             entry("assertivita", history("2026-08-14", "2026-08-20")),
             entry("intelligenza-emotiva", history("2026-08-14", "2026-08-20")),
             entry("perfezionismo", history("2026-08-14", "2026-08-20")),
-            entry("ansia-sociale", history("2026-08-14", "2026-08-20")),
+            entry("ansia-sociale", history("2026-08-14", "2026-09-30")),
             entry("dinamiche-narcisistiche-coppia", history("2026-08-14", "2026-08-20")),
             entry("ansia-generalizzata", history("2026-08-14", "2026-08-20")),
             entry("umore-depresso", history("2026-08-14", "2026-08-20")),
@@ -45,7 +45,7 @@ public class GuideEditorialHistoryCatalogue {
             entry("orbiting", history("2026-08-28", "2026-08-28")),
             entry("hoovering", history("2026-08-28", "2026-08-30")),
             entry("compatibilita-coppia", history("2026-08-30", "2026-08-30")),
-            entry("relazione-dannosa-benessere", history("2026-08-30", "2026-09-02")),
+            entry("relazione-dannosa-benessere", history("2026-08-30", "2026-09-30")),
             entry("invalidazione-emotiva", history("2026-09-02", "2026-09-05")),
             entry("triangolazione-relazionale", history("2026-09-04", "2026-09-04")),
             entry("disturbo-evitante-personalita", history("2026-09-05", "2026-09-07")),
