@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-09-17",
+  "updatedAt": "2026-09-30",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -155,6 +155,17 @@
     },
     {
       "order": 11,
+      "slug": "ipertrofia-intellettiva",
+      "workingTitle": "Ipertrofia intellettiva",
+      "sourceTopic": "Ipertrofia intellettiva",
+      "sourceDescription": "Tema proposto dall'utente come prossimo test da valutare e delimitare attraverso la ricerca scientifica.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Emozioni, risorse e benessere",
+      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Priorità editoriale richiesta il 2026-09-30. Verificare prima se ipertrofia intellettiva è un costrutto scientificamente definito e distinguibile da intellettualizzazione, ruminazione, alessitimia e stili cognitivi. Non patologizzare il pensiero analitico; delimitare popolazione, aree e restituzione dopo la ricerca o applicare BLOCKED se un test autonomo non è sostenibile." },
+      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+    },
+    {
+      "order": 12,
       "slug": "confini-nella-relazione",
       "workingTitle": "Come vivo i confini nella relazione?",
       "sourceTopic": "Boundary issues nella relazione",
@@ -165,7 +176,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 12,
+      "order": 13,
       "slug": "positivita-tossica",
       "workingTitle": "Tendo a imporre una positività che lascia poco spazio alle emozioni?",
       "sourceTopic": "Toxic positivity",
@@ -176,7 +187,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 13,
+      "order": 14,
       "slug": "tratti-associati-psicopatia-adulto",
       "workingTitle": "Tratti associati alla psicopatia nell'adulto",
       "sourceTopic": "Psicopatia",
@@ -187,7 +198,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 14,
+      "order": 15,
       "slug": "burnout-percepito",
       "workingTitle": "Sto vivendo segnali associati al burnout?",
       "sourceTopic": "Sono in Burnout?",
@@ -198,7 +209,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 15,
+      "order": 16,
       "slug": "empatia-percepita",
       "workingTitle": "Come vivo l'empatia verso gli altri?",
       "sourceTopic": "Empatia",
@@ -209,7 +220,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 16,
+      "order": 17,
       "slug": "introversione-estroversione",
       "workingTitle": "Sono più introverso/a o estroverso/a?",
       "sourceTopic": "Introversione ed estroversione",
@@ -220,7 +231,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 17,
+      "order": 18,
       "slug": "autocompassione",
       "workingTitle": "Quanto pratico l'autocompassione?",
       "sourceTopic": "Autocompassione",
@@ -231,7 +242,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 18,
+      "order": 19,
       "slug": "ruminazione-mentale",
       "workingTitle": "Quanto tendo alla ruminazione mentale?",
       "sourceTopic": "Ruminazione mentale",
@@ -242,7 +253,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 19,
+      "order": 20,
       "slug": "bisogno-controllo",
       "workingTitle": "Quanto sento il bisogno di avere tutto sotto controllo?",
       "sourceTopic": "Bisogno di controllo",
@@ -253,7 +264,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 20,
+      "order": 21,
       "slug": "camaleonte-sociale",
       "workingTitle": "Quanto mi adatto agli altri come un camaleonte sociale?",
       "sourceTopic": "Quanto sei un social chameleon?",
@@ -264,7 +275,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 21,
+      "order": 22,
       "slug": "future-faking",
       "workingTitle": "Future faking: quando le promesse sul futuro creano aspettative senza basi",
       "sourceTopic": "Future faking",
@@ -275,7 +286,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 22,
+      "order": 23,
       "slug": "stonewalling",
       "workingTitle": "Stonewalling: quando il dialogo si interrompe durante il conflitto",
       "sourceTopic": "Stonewalling",
@@ -286,7 +297,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 23,
+      "order": 24,
       "slug": "silent-treatment",
       "workingTitle": "Silent treatment: quando il silenzio diventa pressione",
       "sourceTopic": "Silent treatment",
@@ -297,7 +308,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 24,
+      "order": 25,
       "slug": "trauma-bonding",
       "workingTitle": "Trauma bonding: comprendere i legami nelle relazioni segnate da abuso",
       "sourceTopic": "Trauma bonding",
@@ -308,7 +319,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 25,
+      "order": 26,
       "slug": "rinforzo-intermittente-relazioni",
       "workingTitle": "Rinforzo intermittente: perché l'alternanza tra attenzione e distanza può coinvolgere",
       "sourceTopic": "Intermittent reinforcement",
@@ -319,7 +330,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 26,
+      "order": 27,
       "slug": "guilt-tripping",
       "workingTitle": "Guilt tripping: quando il senso di colpa viene usato per influenzare",
       "sourceTopic": "Guilt tripping",
@@ -330,7 +341,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 27,
+      "order": 28,
       "slug": "ricatto-emotivo",
       "workingTitle": "Ricatto emotivo: paura, obbligo e senso di colpa nelle relazioni",
       "sourceTopic": "Emotional blackmail",
@@ -341,7 +352,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 28,
+      "order": 29,
       "slug": "proiezione-psicologica",
       "workingTitle": "Proiezione psicologica: significato, limiti e interpretazioni",
       "sourceTopic": "Projection",
@@ -352,7 +363,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 29,
+      "order": 30,
       "slug": "blame-shifting",
       "workingTitle": "Blame shifting: quando la responsabilità viene spostata sull'altro",
       "sourceTopic": "Blame shifting",
@@ -363,7 +374,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 30,
+      "order": 31,
       "slug": "darvo",
       "workingTitle": "DARVO: negare, attaccare e ribaltare vittima e responsabile",
       "sourceTopic": "DARVO",
@@ -374,7 +385,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 31,
+      "order": 32,
       "slug": "mirroring-relazioni",
       "workingTitle": "Mirroring nelle relazioni: somiglianza, sintonia o imitazione strategica?",
       "sourceTopic": "Mirroring",
@@ -385,7 +396,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 32,
+      "order": 33,
       "slug": "fawning-risposta-stress",
       "workingTitle": "Fawning: compiacere per affrontare conflitto o pericolo",
       "sourceTopic": "Fawning",
@@ -396,7 +407,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 33,
+      "order": 34,
       "slug": "emotional-dumping",
       "workingTitle": "Emotional dumping: condividere emozioni senza oltrepassare la disponibilità altrui",
       "sourceTopic": "Emotional dumping",
@@ -407,7 +418,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 34,
+      "order": 35,
       "slug": "main-character-syndrome",
       "workingTitle": "Main character syndrome: cosa descrive davvero questa espressione social?",
       "sourceTopic": "Main character syndrome",
@@ -418,7 +429,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 35,
+      "order": 36,
       "slug": "pick-me-behaviour",
       "workingTitle": "Pick-me behaviour: approvazione, confronto e svalutazione del gruppo",
       "sourceTopic": "Pick-me behaviour",
@@ -429,7 +440,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 36,
+      "order": 37,
       "slug": "weaponized-incompetence",
       "workingTitle": "Weaponized incompetence: quando l'incapacità trasferisce il carico agli altri",
       "sourceTopic": "Weaponized incompetence",
@@ -440,7 +451,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 37,
+      "order": 38,
       "slug": "lavoro-emotivo",
       "workingTitle": "Lavoro emotivo: il carico invisibile nelle relazioni e nei ruoli sociali",
       "sourceTopic": "Emotional labor",
@@ -451,7 +462,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 38,
+      "order": 39,
       "slug": "red-green-beige-flags",
       "workingTitle": "Red, green e beige flags: come leggere i segnali nelle relazioni",
       "sourceTopic": "Red flags / green flags / beige flags",
@@ -462,7 +473,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 39,
+      "order": 40,
       "slug": "doomscrolling",
       "workingTitle": "Doomscrolling: quando lo scorrimento automatico alimenta il malessere",
       "sourceTopic": "Scrolling automatico e doomscrolling",
@@ -473,7 +484,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 40,
+      "order": 41,
       "slug": "triade-oscura",
       "workingTitle": "Triade oscura: narcisismo, machiavellismo e psicopatia come tratti",
       "sourceTopic": "Triade oscura",
@@ -484,7 +495,7 @@
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     },
     {
-      "order": 41,
+      "order": 42,
       "slug": "autoefficacia-percepita",
       "workingTitle": "Autoefficacia — Quanto mi sento in grado di affrontare le sfide?",
       "sourceTopic": "Autoefficacia",
@@ -509,7 +520,7 @@
       }
     },
     {
-      "order": 42,
+      "order": 43,
       "slug": "speranza-obiettivi",
       "workingTitle": "Speranza — Riesco a vedere strade verso i miei obiettivi?",
       "sourceTopic": "Speranza",
@@ -534,7 +545,7 @@
       }
     },
     {
-      "order": 43,
+      "order": 44,
       "slug": "ottimismo",
       "workingTitle": "Ottimismo — Come guardo al mio futuro?",
       "sourceTopic": "Ottimismo",
@@ -559,7 +570,7 @@
       }
     },
     {
-      "order": 44,
+      "order": 45,
       "slug": "gratitudine",
       "workingTitle": "Gratitudine — Quanto riconosco ciò che arricchisce la mia vita?",
       "sourceTopic": "Gratitudine",
@@ -584,7 +595,7 @@
       }
     },
     {
-      "order": 45,
+      "order": 46,
       "slug": "assaporare-momenti-positivi",
       "workingTitle": "Assaporare i momenti positivi — Riesco a godermi le cose belle?",
       "sourceTopic": "Savoring",
@@ -609,7 +620,7 @@
       }
     },
     {
-      "order": 46,
+      "order": 47,
       "slug": "significato-vita",
       "workingTitle": "Significato nella vita — Quanto sento che ciò che faccio ha senso?",
       "sourceTopic": "Significato nella vita",
@@ -634,7 +645,7 @@
       }
     },
     {
-      "order": 47,
+      "order": 48,
       "slug": "curiosita-esplorazione",
       "workingTitle": "Curiosità — Quanto spazio do alla scoperta?",
       "sourceTopic": "Curiosità",
@@ -659,7 +670,7 @@
       }
     },
     {
-      "order": 48,
+      "order": 49,
       "slug": "esperienze-flow",
       "workingTitle": "Flow — Quanto mi capita di essere pienamente immerso/a in ciò che faccio?",
       "sourceTopic": "Flow",
@@ -684,7 +695,7 @@
       }
     },
     {
-      "order": 49,
+      "order": 50,
       "slug": "presenza-mentale",
       "workingTitle": "Presenza mentale — Quanto sono presente nelle mie giornate?",
       "sourceTopic": "Presenza mentale e mindfulness",
@@ -709,7 +720,7 @@
       }
     },
     {
-      "order": 50,
+      "order": 51,
       "slug": "flessibilita-psicologica",
       "workingTitle": "Flessibilità psicologica — Riesco ad agire anche con pensieri ed emozioni difficili?",
       "sourceTopic": "Flessibilità psicologica",
@@ -734,7 +745,7 @@
       }
     },
     {
-      "order": 51,
+      "order": 52,
       "slug": "supporto-sociale-percepito",
       "workingTitle": "Supporto sociale — Quanto sento di poter contare sugli altri?",
       "sourceTopic": "Supporto sociale percepito",
@@ -759,7 +770,7 @@
       }
     },
     {
-      "order": 52,
+      "order": 53,
       "slug": "apprezzamento-corpo",
       "workingTitle": "Apprezzamento del corpo — Come vivo il rapporto con il mio corpo?",
       "sourceTopic": "Apprezzamento del corpo",
@@ -784,7 +795,7 @@
       }
     },
     {
-      "order": 53,
+      "order": 54,
       "slug": "motivazione-personale",
       "workingTitle": "Motivazione personale — Cosa mi spinge a perseguire i miei obiettivi?",
       "sourceTopic": "Motivazione personale",
@@ -809,7 +820,7 @@
       }
     },
     {
-      "order": 54,
+      "order": 55,
       "slug": "coinvolgimento-lavoro",
       "workingTitle": "Coinvolgimento nel lavoro — Quanto mi sento coinvolto/a in ciò che faccio?",
       "sourceTopic": "Coinvolgimento nel lavoro",
@@ -834,7 +845,7 @@
       }
     },
     {
-      "order": 55,
+      "order": 56,
       "slug": "recupero-dopo-lavoro",
       "workingTitle": "Recupero dopo il lavoro — Riesco a staccare e ricaricarmi?",
       "sourceTopic": "Recupero dopo il lavoro",
@@ -859,7 +870,7 @@
       }
     },
     {
-      "order": 56,
+      "order": 57,
       "slug": "stress-percepito",
       "workingTitle": "Stress percepito — Quanto mi sento sotto pressione nella vita quotidiana?",
       "sourceTopic": "Stress percepito",
@@ -884,7 +895,7 @@
       }
     },
     {
-      "order": 57,
+      "order": 58,
       "slug": "sonno-riposo",
       "workingTitle": "Sonno e riposo — Come sto vivendo il mio sonno?",
       "sourceTopic": "Sonno e riposo",
@@ -909,7 +920,7 @@
       }
     },
     {
-      "order": 58,
+      "order": 59,
       "slug": "rapporto-rabbia",
       "workingTitle": "Rapporto con la rabbia — Cosa succede quando mi arrabbio?",
       "sourceTopic": "Rapporto con la rabbia",
@@ -934,7 +945,7 @@
       }
     },
     {
-      "order": 59,
+      "order": 60,
       "slug": "confronto-sociale",
       "workingTitle": "Confronto sociale — Quanto mi confronto con gli altri?",
       "sourceTopic": "Confronto sociale",
@@ -959,7 +970,7 @@
       }
     },
     {
-      "order": 60,
+      "order": 61,
       "slug": "stili-decisionali",
       "workingTitle": "Stili decisionali — Come prendo le mie decisioni?",
       "sourceTopic": "Stili decisionali",
