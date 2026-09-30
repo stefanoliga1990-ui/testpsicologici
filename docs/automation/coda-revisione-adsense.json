@@ -189,7 +189,7 @@
         "I test coprono sezioni aggiunte, collegamenti e data editoriale.",
         "Se la porzione è vuota, il rapporto di selezione spiega perché e lo step viene chiuso senza testo artificiale."
       ],
-      "workflow": {"status": "PENDING", "attempts": 0, "lastAttemptAt": null, "readyAt": null, "contentCommitHash": null, "blockReason": null, "outcomeSummary": null}
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T04:54:32+02:00", "readyAt": "2026-09-30T04:54:32+02:00", "contentCommitHash": "60dee3f8c39d00a65eb2ac1c7869bf429eea5568", "blockReason": null, "outcomeSummary": "Tre guide arricchite con esempi contestuali, confronti e domande di auto-osservazione; fonti tracciate, date aggiornate, rendering HTML e dati React verificati; 272 test Maven superati."}
     },
     {
       "order": 8,
