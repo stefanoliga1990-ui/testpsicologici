@@ -204,7 +204,7 @@
         "Fonti, documentazione, data editoriale e test sono aggiornati dove il contenuto cambia.",
         "Se la porzione è vuota, chiudere lo step documentando l'assenza di ulteriori guide selezionate."
       ],
-      "workflow": {"status": "PENDING", "attempts": 0, "lastAttemptAt": null, "readyAt": null, "contentCommitHash": null, "blockReason": null, "outcomeSummary": null}
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T06:01:38+02:00", "readyAt": "2026-09-30T06:01:38+02:00", "contentCommitHash": "a07fa589a198d903ea05e9606f3e41f1f03920a0", "blockReason": null, "outcomeSummary": "Tre guide arricchite con esempi, confronti, domande e indicazioni pratiche; fonti tracciate, date aggiornate, HTML e dati React verificati; 273 test Maven superati."}
     },
     {
       "order": 9,
