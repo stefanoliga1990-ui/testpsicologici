@@ -250,7 +250,7 @@
         "Metadati robots, canonical, sitemap e link interni sono coerenti; i test controllano i casi modificati.",
         "Se il rapporto non individua interventi, lo step è READY con una motivazione verificabile e senza modifiche artificiali."
       ],
-      "workflow": {"status": "PENDING", "attempts": 0, "lastAttemptAt": null, "readyAt": null, "contentCommitHash": null, "blockReason": null, "outcomeSummary": null}
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T08:50:30+02:00", "readyAt": "2026-09-30T08:50:30+02:00", "contentCommitHash": null, "blockReason": null, "outcomeSummary": "Rapporto INDICE-01 verificato su 41 guide: nessun consolidamento o esclusione motivato; robots, canonical, sitemap e link invariati; 274 test Maven superati."}
     }
   ]
 }
