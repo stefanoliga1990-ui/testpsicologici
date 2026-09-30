@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "queueId": "spazio-test-revisione-adsense",
+  "createdAt": "2026-09-29",
+  "objective": "Migliorare il valore editoriale delle guide dopo il rifiuto AdSense per contenuti di scarso valore. La coda non garantisce l'approvazione AdSense.",
+  "targetBranch": "per-revisione-adsense",
+  "catalogueSnapshot": {
+    "guideCount": 41,
+    "newGuidesPolicy": "Le guide aggiunte dopo questa fotografia richiedono una valutazione separata prima della fusione del branch."
+  },
+  "selectionPolicy": {
+    "algorithm": "FIRST_NOT_READY_BY_ORDER",
+    "maximumStepsPerRun": 1,
+    "requiresDependenciesReady": true,
+    "onBlockedStep": "STOP_AND_REPORT",
+    "onTechnicalFailure": "KEEP_PENDING_AND_REPORT"
+  },
+  "statusValues": ["PENDING", "READY", "BLOCKED"],
+  "readyDefinition": "Uno step è READY solo dopo la verifica dei criteri di completamento, i test pertinenti, la suite Maven completa con settings.xml, git diff --check, i commit locali e il push non forzato su origin/per-revisione-adsense. Un problema tecnico non è un blocco editoriale e non autorizza l'avvio dello step successivo.",
+  "executionRules": {
+    "branch": "Lavorare soltanto su per-revisione-adsense e pubblicare i commit verificati su origin/per-revisione-adsense. Non fare merge su main né deploy prima della revisione finale dell'utente.",
+    "workingTree": "Prima di ogni step controllare git status --short --branch. Non sovrascrivere o includere modifiche preesistenti non correlate.",
+    "scope": "Non modificare marketing/. Non aggiungere o cambiare item, scoring o interpretazioni dei questionari in questa coda.",
+    "editorial": "Usare fonti primarie o istituzionali pertinenti e rispettare AGENTS.md. Non presentare i questionari originali come validati; mantenere limiti e messaggi di sicurezza.",
+    "verification": "Eseguire .\\mvnw.cmd -s settings.xml test e git diff --check. Verificare la coerenza fra HTML renderizzato dal server e React.",
+    "commits": "Committare prima il contenuto verificato e poi l'aggiornamento dello stato della coda con l'hash del commit del contenuto. Se lo step non richiede modifiche al contenuto, committare soltanto la decisione documentata e lo stato. Eseguire push non forzato su origin/per-revisione-adsense. Prima di scegliere un nuovo step, pubblicare in sicurezza eventuali commit verificati rimasti locali da un'esecuzione precedente; se il push non riesce, fermarsi."
+  },
+  "selectedGuideSlugs": [
+    "alessitimia",
+    "gelosia-partner",
+    "stili-attaccamento",
+    "soddisfazione-vita",
+    "resilienza-psicologica",
+    "ptsd-adulti",
+    "relazione-dannosa-benessere",
+    "autismo-adulti",
+    "ansia-sociale"
+  ],
+  "selectionReportPath": "docs/automation/selezione-guide-adsense.md",
+  "indexingAuditPath": "docs/automation/valutazione-indicizzazione-guide.md",
+  "steps": [
+    {
+      "order": 1,
+      "id": "CONTRIB-01",
+      "point": "Contributo originale di Spazio Test",
+      "title": "Struttura condivisa e contributi delle prime 10 guide",
+      "dependsOn": [],
+      "guideSlugs": [
+        "ansia-generalizzata",
+        "ansia-sociale",
+        "disturbo-ossessivo-compulsivo",
+        "umore-depresso",
+        "ptsd-adulti",
+        "disturbo-borderline-personalita",
+        "disturbo-evitante-personalita",
+        "adhd-adulti",
+        "autismo-adulti",
+        "intelligenza-linguistica"
+      ],
+      "instructions": "Introdurre nelle pagine delle guide un campo per descrivere il contributo originale specifico e mostrarlo sia nel fallback HTML sia in React. Scrivere per ciascuna delle 10 guide un testo distinto, ancorato a contenuti già presenti: distinzioni, limiti, sintesi o collegamento all'auto-osservazione. Verificare che le pagine introduttive dei test spieghino già l'originalità delle domande senza modificarne il contenuto.",
+      "acceptanceCriteria": [
+        "Il contributo è visibile in entrambe le versioni della pagina per tutte le guide indicate.",
+        "I testi non sono formule generiche ripetute e non introducono nuove affermazioni cliniche non supportate.",
+        "I test controllano che il campo esista e sia visibile per le guide interessate."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-29T22:52:09+02:00", "readyAt": "2026-09-29T22:52:09+02:00", "contentCommitHash": "45d04ea73d775eed981862069bcb347e1e979532", "blockReason": null, "outcomeSummary": "Contributi editoriali distinti per le prime dieci guide, visibili in HTML e React; introduzioni dei questionari verificate; 267 test Maven superati."}
+    },
+    {
+      "order": 2,
+      "id": "CONTRIB-02",
+      "point": "Contributo originale di Spazio Test",
+      "title": "Contributi delle 11 guide su relazioni e attaccamento",
+      "dependsOn": ["CONTRIB-01"],
+      "guideSlugs": [
+        "stili-attaccamento",
+        "disponibilita-emotiva",
+        "parentificazione",
+        "paura-abbandono",
+        "limerenza",
+        "dipendenza-affettiva",
+        "compatibilita-coppia",
+        "gelosia-partner",
+        "dinamiche-narcisistiche-coppia",
+        "situationship",
+        "codipendenza-relazionale"
+      ],
+      "instructions": "Scrivere e mostrare un contributo editoriale specifico per ciascuna guida indicata, distinguendo con cura costrutti vicini e senza attribuire intenzioni, diagnosi o responsabilità al partner.",
+      "acceptanceCriteria": [
+        "Tutte le 11 guide indicate mostrano un contributo distinto e coerente con il testo della pagina.",
+        "Limiti, contesto relazionale e indicazioni di sicurezza restano visibili.",
+        "I test verificano copertura e rendering delle guide interessate."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-29T23:48:00+02:00", "readyAt": "2026-09-29T23:48:00+02:00", "contentCommitHash": "4bf0fea4615fe038556a845e88d7fc9d999385bf", "blockReason": null, "outcomeSummary": "Contributi distinti per undici guide relazionali, visibili in HTML e nei dati React; limiti e sicurezza preservati; 268 test Maven superati."}
+    },
+    {
+      "order": 3,
+      "id": "CONTRIB-03",
+      "point": "Contributo originale di Spazio Test",
+      "title": "Contributi delle 8 guide sulle dinamiche relazionali ambigue",
+      "dependsOn": ["CONTRIB-02"],
+      "guideSlugs": [
+        "relazione-dannosa-benessere",
+        "gaslighting",
+        "love-bombing",
+        "breadcrumbing",
+        "orbiting",
+        "hoovering",
+        "invalidazione-emotiva",
+        "triangolazione-relazionale"
+      ],
+      "instructions": "Scrivere e mostrare un contributo editoriale specifico per ciascuna guida indicata. Chiarire dove i termini si sovrappongono e dove differiscono; non trasformare descrizioni di comportamenti in accertamenti di manipolazione o intenzioni altrui.",
+      "acceptanceCriteria": [
+        "Tutte le 8 guide indicate mostrano un contributo distinto e verificabile nel contenuto.",
+        "I testi mantengono le cautele su sicurezza e limiti delle inferenze.",
+        "I test verificano copertura e rendering delle guide interessate."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T00:48:41+02:00", "readyAt": "2026-09-30T00:48:41+02:00", "contentCommitHash": "98b1557b76c32c6e3eb79f4098601f6489b9158a", "blockReason": null, "outcomeSummary": "Contributi distinti per otto guide sulle dinamiche relazionali ambigue, visibili in HTML e nei dati React; limiti e sicurezza preservati; 269 test Maven superati."}
+    },
+    {
+      "order": 4,
+      "id": "CONTRIB-04",
+      "point": "Contributo originale di Spazio Test",
+      "title": "Contributi delle 6 guide su autostima, approvazione e obiettivi",
+      "dependsOn": ["CONTRIB-03"],
+      "guideSlugs": [
+        "autostima",
+        "sindrome-impostore",
+        "perfezionismo",
+        "people-pleasing",
+        "autosabotaggio",
+        "fomo"
+      ],
+      "instructions": "Scrivere e mostrare un contributo editoriale specifico per ciascuna guida indicata. Evitare che etichette colloquiali o costrutti eterogenei diventino spiegazioni uniche della persona.",
+      "acceptanceCriteria": [
+        "Tutte le 6 guide indicate mostrano un contributo distinto e coerente con le fonti e i limiti presenti.",
+        "I test verificano copertura e rendering delle guide interessate."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T01:49:20+02:00", "readyAt": "2026-09-30T01:49:20+02:00", "contentCommitHash": "319fd3771a2442f8ba35f3c1c027aaf979cc30e0", "blockReason": null, "outcomeSummary": "Contributi distinti per sei guide su autovalutazione e obiettivi, visibili in HTML e nei dati React; limiti e sicurezza preservati; 270 test Maven superati."}
+    },
+    {
+      "order": 5,
+      "id": "CONTRIB-05",
+      "point": "Contributo originale di Spazio Test",
+      "title": "Contributi delle 6 guide su emozioni, risorse e benessere",
+      "dependsOn": ["CONTRIB-04"],
+      "guideSlugs": [
+        "intelligenza-emotiva",
+        "alessitimia",
+        "intelligenza-intrapersonale",
+        "assertivita",
+        "resilienza-psicologica",
+        "soddisfazione-vita"
+      ],
+      "instructions": "Scrivere e mostrare un contributo editoriale specifico per ciascuna guida indicata. Distinguere risorse percepite e auto-osservazione da abilità oggettivamente misurate o risultati clinici.",
+      "acceptanceCriteria": [
+        "Tutte le 6 guide indicate mostrano un contributo distinto e coerente con il testo della pagina.",
+        "L'intero catalogo fotografato di 41 guide è coperto una sola volta dagli step CONTRIB-01–05.",
+        "I test verificano copertura completa e rendering."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T02:50:07+02:00", "readyAt": "2026-09-30T02:50:07+02:00", "contentCommitHash": "b426a90e93e7e6fd8775bd8b9a6f6820b336f734", "blockReason": null, "outcomeSummary": "Contributi distinti per sei guide su emozioni, risorse e benessere; catalogo di 41 guide coperto una sola volta; rendering HTML e dati React verificati; 271 test Maven superati."}
+    },
+    {
+      "order": 6,
+      "id": "NUCLEO-01",
+      "point": "Selezione di un nucleo iniziale di guide",
+      "title": "Audit comparativo e selezione delle guide da arricchire",
+      "dependsOn": ["CONTRIB-05"],
+      "guideSlugs": [],
+      "instructions": "Valutare l'intero catalogo rispetto a qualità e pertinenza delle fonti, trasferibilità agli utenti italiani, differenziazione, utilità concreta, limiti e sicurezza. Documentare criteri e motivazioni nel rapporto di selezione. Inserire in selectedGuideSlugs, in ordine di priorità, da 0 a 9 guide che superano la soglia editoriale; non forzare il numero. Le guide non selezionate rimangono pubblicate salvo decisioni successive.",
+      "outputPath": "docs/automation/selezione-guide-adsense.md",
+      "acceptanceCriteria": [
+        "Il rapporto confronta tutte le guide e documenta perché ciascuna guida selezionata è solida e differenziata.",
+        "selectedGuideSlugs contiene solo slug esistenti, senza duplicati e in ordine di priorità.",
+        "Se non esistono guide sufficientemente solide, il rapporto lo dichiara e non ne seleziona artificialmente."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T03:53:13+02:00", "readyAt": "2026-09-30T03:53:13+02:00", "contentCommitHash": "b887d080e20e21a7159a979421e41ed91cb52cd4", "blockReason": null, "outcomeSummary": "Confrontate tutte le 41 guide per fonti, trasferibilità, differenziazione, utilità, limiti e sicurezza; selezionate nove guide in ordine di priorità; 271 test Maven superati."}
+    },
+    {
+      "order": 7,
+      "id": "ARRICCH-01",
+      "point": "Arricchimento delle guide selezionate",
+      "title": "Esempi, confronti e strumenti di auto-osservazione per le prime 3 guide",
+      "dependsOn": ["NUCLEO-01"],
+      "selectionSlice": {"startInclusive": 0, "endExclusive": 3},
+      "instructions": "Arricchire le guide della porzione indicata di selectedGuideSlugs con esempi non diagnostici, confronti pertinenti, domande di auto-osservazione e indicazioni pratiche specifiche. Aggiungere solo elementi che aiutano davvero a comprendere l'argomento, senza riempitivi o duplicazioni. Per ogni nuova affermazione fattuale verificare e documentare una fonte che la sostenga direttamente; aggiornare la data di revisione del contenuto.",
+      "acceptanceCriteria": [
+        "Ogni guida assegnata ha contenuti nuovi, specifici e utili, con limiti e sicurezza invariati o migliorati.",
+        "Le affermazioni nuove hanno fonti pertinenti e la documentazione richiesta da AGENTS.md.",
+        "I test coprono sezioni aggiunte, collegamenti e data editoriale.",
+        "Se la porzione è vuota, il rapporto di selezione spiega perché e lo step viene chiuso senza testo artificiale."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T04:54:32+02:00", "readyAt": "2026-09-30T04:54:32+02:00", "contentCommitHash": "60dee3f8c39d00a65eb2ac1c7869bf429eea5568", "blockReason": null, "outcomeSummary": "Tre guide arricchite con esempi contestuali, confronti e domande di auto-osservazione; fonti tracciate, date aggiornate, rendering HTML e dati React verificati; 272 test Maven superati."}
+    },
+    {
+      "order": 8,
+      "id": "ARRICCH-02",
+      "point": "Arricchimento delle guide selezionate",
+      "title": "Esempi, confronti e strumenti di auto-osservazione per le guide 4–6",
+      "dependsOn": ["ARRICCH-01"],
+      "selectionSlice": {"startInclusive": 3, "endExclusive": 6},
+      "instructions": "Applicare alle guide della porzione indicata gli stessi criteri di ARRICCH-01, verificando inoltre che confronti ed esempi non ripetano quelli già introdotti nelle prime guide.",
+      "acceptanceCriteria": [
+        "Ogni guida assegnata ha esempi, confronti, domande e indicazioni pertinenti senza affermazioni cliniche non supportate.",
+        "Fonti, documentazione, data editoriale e test sono aggiornati dove il contenuto cambia.",
+        "Se la porzione è vuota, chiudere lo step documentando l'assenza di ulteriori guide selezionate."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T06:01:38+02:00", "readyAt": "2026-09-30T06:01:38+02:00", "contentCommitHash": "a07fa589a198d903ea05e9606f3e41f1f03920a0", "blockReason": null, "outcomeSummary": "Tre guide arricchite con esempi, confronti, domande e indicazioni pratiche; fonti tracciate, date aggiornate, HTML e dati React verificati; 273 test Maven superati."}
+    },
+    {
+      "order": 9,
+      "id": "ARRICCH-03",
+      "point": "Arricchimento delle guide selezionate",
+      "title": "Esempi, confronti e strumenti di auto-osservazione per le guide 7–9",
+      "dependsOn": ["ARRICCH-02"],
+      "selectionSlice": {"startInclusive": 6, "endExclusive": 9},
+      "instructions": "Applicare alle guide della porzione indicata gli stessi criteri di ARRICCH-01. Evitare ripetizioni con le guide già arricchite e ricontrollare la coerenza dell'intero nucleo selezionato.",
+      "acceptanceCriteria": [
+        "Ogni guida assegnata ha esempi, confronti, domande e indicazioni pertinenti senza affermazioni cliniche non supportate.",
+        "Fonti, documentazione, data editoriale e test sono aggiornati dove il contenuto cambia.",
+        "Se la porzione è vuota, chiudere lo step documentando l'assenza di ulteriori guide selezionate."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T06:55:52+02:00", "readyAt": "2026-09-30T06:55:52+02:00", "contentCommitHash": "20e42b1cae723d46ea38ce65cc9ff4b399db0ed9", "blockReason": null, "outcomeSummary": "Tre guide arricchite con esempi, confronti, domande e indicazioni pratiche; fonti tracciate, date aggiornate, HTML e dati React verificati; 274 test Maven superati."}
+    },
+    {
+      "order": 10,
+      "id": "INDICE-01",
+      "point": "Valutazione dell'indicizzazione",
+      "title": "Audit di sovrapposizione e solidità scientifica",
+      "dependsOn": ["ARRICCH-03"],
+      "guideSlugs": [],
+      "instructions": "Esaminare tutte le guide dopo gli arricchimenti. Confrontare pagine vicine per intento e contenuto, qualità delle fonti e valore distinto. Documentare nel rapporto, per ogni candidata, una scelta motivata fra mantenere, migliorare, distinguere, consolidare o escludere temporaneamente dall'indice. Non applicare noindex in questo step; la sola somiglianza non lo giustifica.",
+      "outputPath": "docs/automation/valutazione-indicizzazione-guide.md",
+      "acceptanceCriteria": [
+        "Il rapporto copre tutte le guide attive, compresi eventuali nuovi contenuti sopraggiunti.",
+        "Ogni candidata ha motivazione, fonti o confronto con pagine vicine e azione proposta.",
+        "Nessun metadato robots o elemento della sitemap è modificato in questo step."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T07:58:19+02:00", "readyAt": "2026-09-30T07:58:19+02:00", "contentCommitHash": "28f01621d86259fee3d8d60c7b306bfb7868db66", "blockReason": null, "outcomeSummary": "Audit delle 41 guide completato: 22 mantenere, 12 distinguere, 7 migliorare; nessuna esclusione o consolidamento motivato; 274 test Maven superati."}
+    },
+    {
+      "order": 11,
+      "id": "INDICE-02",
+      "point": "Valutazione dell'indicizzazione",
+      "title": "Applicazione mirata delle decisioni sull'indice",
+      "dependsOn": ["INDICE-01"],
+      "guideSlugs": [],
+      "instructions": "Applicare soltanto le decisioni motivate nel rapporto. Per pagine davvero duplicate o molto simili valutare canonicalizzazione o consolidamento; usare noindex, follow solo dove il rapporto conclude che la pagina non debba comparire temporaneamente nella ricerca. Se si applica noindex, lasciare la pagina accessibile ai crawler, escluderla dalla sitemap e testare HTML e risposta. Se nessuna pagina richiede una modifica, registrare l'esito senza cambiare l'indicizzazione.",
+      "acceptanceCriteria": [
+        "Ogni modifica all'indicizzazione corrisponde a una decisione motivata del rapporto; nessun noindex è applicato automaticamente a tutte le guide.",
+        "Metadati robots, canonical, sitemap e link interni sono coerenti; i test controllano i casi modificati.",
+        "Se il rapporto non individua interventi, lo step è READY con una motivazione verificabile e senza modifiche artificiali."
+      ],
+      "workflow": {"status": "READY", "attempts": 1, "lastAttemptAt": "2026-09-30T08:50:30+02:00", "readyAt": "2026-09-30T08:50:30+02:00", "contentCommitHash": null, "blockReason": null, "outcomeSummary": "Rapporto INDICE-01 verificato su 41 guide: nessun consolidamento o esclusione motivato; robots, canonical, sitemap e link invariati; 274 test Maven superati."}
+    }
+  ]
+}

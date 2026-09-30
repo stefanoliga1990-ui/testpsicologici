@@ -66,6 +66,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Una riunione rumorosa: osservare ambiente e comunicazione",
+                                    List.of(
+                                            "Immagina una riunione con più persone che parlano insieme, luci intense e cambi di programma. Puoi seguire meglio lo scambio quando il turno di parola è chiaro o l'ordine del giorno è disponibile; la fatica in quella stanza, da sola, non indica autismo. Rumore, stress, sonno e familiarità con il gruppo possono cambiare l'esperienza.",
+                                            "Confronta la stessa attività in ambienti diversi e, se ti è utile, chiedi un'informazione scritta o un luogo meno rumoroso. Osservare che cosa cambia può aiutarti a descrivere un bisogno pratico; non ricostruisce la storia dello sviluppo e non sostituisce una valutazione specialistica."
+                                    ),
+                                    List.of(
+                                            "Quale parte della riunione è stata difficile: rumore, turni, cambiamento o altro?",
+                                            "Che cosa è cambiato in un contesto più prevedibile o meno intenso sul piano sensoriale?",
+                                            "Se vuoi chiedere un adattamento, indica una modifica concreta utile per quella situazione, senza dover attribuire subito una causa alla difficoltà."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Supporto",
                                     "Quando può essere utile parlarne con qualcuno",
                                     List.of(
@@ -76,6 +89,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, comunicazione sociale, segnali impliciti, routine, flessibilità, interessi e sensibilità sensoriale. Le risposte offrono una traccia di auto-osservazione e non una conclusione clinica.",
+                    "La guida mette in relazione comunicazione, routine e sensibilità sensoriale con la varietà delle esperienze adulte. Invita a considerare storia dello sviluppo, contesti e possibili spiegazioni alternative prima di attribuire un significato a singole caratteristiche o alle risposte al questionario.",
                     List.of(
                             new GuideReference(
                                     "What is autism? — NHS",
@@ -164,6 +178,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, attenzione, organizzazione, gestione del tempo, irrequietezza e impulsività. Le risposte aiutano a osservare la frequenza percepita di queste esperienze e non costituiscono uno screening validato o una diagnosi.",
+                    "La guida distingue le difficoltà di attenzione e organizzazione che una persona può osservare dalla valutazione dell'ADHD nell'adulto. Collega irrequietezza e impulsività al funzionamento quotidiano, ricordando che storia personale, contesti e altre spiegazioni richiedono un confronto specialistico.",
                     List.of(
                             new GuideReference(
                                     "ADHD in adults — NHS",
@@ -243,6 +258,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, pensieri intrusivi e dubbio, contaminazione e pulizia, controlli, responsabilità, ordine, ripetizione e rituali mentali. Non misura da solo disagio, storia personale e funzionamento necessari per una valutazione clinica.",
+                    "La guida separa il contenuto di un pensiero intrusivo dall'intenzione di agire e descrive il rapporto tra dubbio, sollievo temporaneo e rituali. Questa distinzione aiuta a leggere le risposte al questionario senza scambiare la presenza di un pensiero per una conclusione sulla persona.",
                     List.of(
                             new GuideReference(
                                     "Symptoms – Obsessive compulsive disorder (OCD) — NHS",
@@ -322,6 +338,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, valore personale e autoaccettazione, fiducia ed espressione dei bisogni, risposta a errori e critiche, confronto e bisogno di approvazione. Non misura il valore della persona e non costituisce una valutazione clinica.",
+                    "La guida distingue il valore che una persona attribuisce a sé dalla fiducia in un compito specifico: un errore o una critica possono toccare entrambi, ma non li rendono equivalenti. Propone di osservare se il giudizio su un episodio si estende all'intera persona, lasciando spazio al contesto e ai cambiamenti nel tempo.",
                     List.of(
                             new GuideReference(
                                     "Rosenberg Self-Esteem Scale — University of Maryland",
@@ -406,6 +423,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, paura della separazione e bisogno di rassicurazione, autonomia e interessi personali, confini e reciprocità, regolazione emotiva e centralità della relazione. Non formula diagnosi, non definisce se una relazione sia sana e non rileva abusi o violenza.",
+                    "La guida separa il desiderio di vicinanza dalla centralità del legame quando autonomia e confini si restringono. Legge questi temi nel contesto della relazione e della sicurezza, senza usare l'etichetta di dipendenza come diagnosi o spiegazione della persona.",
                     List.of(
                             new GuideReference(
                                     "I disturbi da addiction nelle dipendenze non legate a sostanze — Ministero della Salute",
@@ -489,6 +507,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, espressione di opinioni, bisogni ed emozioni, capacità di dire no e proteggere i confini, gestione di critiche e disaccordi, richieste, iniziativa e riconoscimento reciproco. Non misura valore, forza o coraggio e non costituisce una valutazione clinica.",
+                    "La guida distingue ciò che una persona riesce a dire dal disagio che prova nel dirlo e dalla scelta di aspettare un momento più sicuro. Propone di osservare richiesta, rifiuto e confronto nel contesto concreto, senza chiamare carenza personale ogni silenzio.",
                     List.of(
                             new GuideReference(
                                     "A 30-Item Schedule for Assessing Assertive Behavior — Rathus",
@@ -572,6 +591,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, la percezione delle proprie abitudini nelle quattro aree del modello: riconoscere le emozioni, utilizzarne le informazioni, comprenderne cause e cambiamenti e regolarne espressione e intensità. Non è una prova di abilità, non assegna un quoziente emotivo e non costituisce una valutazione clinica.",
+                    "La guida usa le quattro aree del modello di abilità come mappa per riflettere su episodi quotidiani, ma separa la percezione delle proprie abitudini dalla prestazione in una prova. Invita a verificare le ipotesi sulle emozioni altrui e a considerare contesto e stanchezza prima di attribuire una capacità stabile.",
                     List.of(
                             new GuideReference(
                                     "The Ability Model of Emotional Intelligence: Principles and Updates — Mayer, Caruso e Salovey",
@@ -651,6 +671,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, standard elevati e valore legato ai risultati, paura degli errori e dubbi, aspettative e giudizio percepiti, ordine e controllo. Descrive la frequenza di alcune dinamiche riferite dalla persona, ma non misura capacità o valore e non costituisce una valutazione clinica.",
+                    "La guida confronta uno standard elevato ma adattabile con la pressione a ottenere un risultato impeccabile. Invita a guardare il costo dei controlli, dei rinvii e della difficoltà a concludere, senza trattare ambizione o precisione come problemi in sé.",
                     List.of(
                             new GuideReference(
                                     "The dimensions of perfectionism — Frost e colleghi",
@@ -725,6 +746,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Una domanda in riunione: distinguere previsione e risposta",
+                                    List.of(
+                                            "Immagina di voler fare una domanda in riunione. Prima temi di sembrare impreparato/a; durante controlli la voce e rinunci a intervenire; dopo interpreti un'espressione neutra come critica. Questa sequenza può aiutarti a distinguere previsione, comportamento e ricordo, ma non dimostra che gli altri ti abbiano giudicato né identifica un disturbo.",
+                                            "Confronta l'episodio con ciò che era osservabile: il tempo disponibile per parlare, le risposte ricevute e le regole del gruppo. In un ambiente dove si viene davvero derisi o esclusi, cercare sostegno o cambiare condizioni può essere più pertinente che chiedersi soltanto come ridurre l'ansia. Un piccolo passo scelto da te, se il contesto è sicuro, può essere preparare una domanda breve; se il disagio limita la vita, valuta un confronto professionale."
+                                    ),
+                                    List.of(
+                                            "Che cosa temevi prima e quali fatti hai potuto osservare durante lo scambio?",
+                                            "Hai rinunciato, chiesto chiarimenti o usato un accorgimento per sentirti più al sicuro?",
+                                            "Se vuoi annotare l'episodio, separa la previsione iniziale da ciò che è successo e da come lo hai ricordato dopo."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Possibili aiuti",
                                     "Affrontare gradualmente ciò che conta",
                                     List.of(
@@ -735,6 +769,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, paura del giudizio e dell'imbarazzo, tensione nelle interazioni, situazioni di prestazione o osservazione e ciclo di anticipazione, protezione, evitamento e ripensamento. Descrive esperienze riferite dalla persona, ma non stabilisce la presenza di un disturbo d'ansia sociale e non sostituisce una valutazione professionale.",
+                    "La guida segue ciò che può accadere prima, durante e dopo un incontro sociale, includendo anticipazione, comportamenti protettivi e ripensamento. Distingue queste esperienze dalla timidezza e considera il contesto, così che le risposte non diventino un'etichetta isolata.",
                     List.of(
                             new GuideReference(
                                     "Social Anxiety Disorder: What You Need to Know — NIMH",
@@ -818,6 +853,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, la percezione di reciprocità ed empatia, centralità e bisogno di ammirazione, gestione di critiche e responsabilità, confini, controllo e impatto emotivo nella relazione. Non valuta direttamente il partner, non diagnostica un disturbo narcisistico di personalità e non può stabilire se una relazione sia abusante o sicura.",
+                    "La guida sposta l'attenzione dall'etichetta del partner a episodi osservabili di reciprocità, confronto, confini e impatto. Distingue il conflitto dai comportamenti di controllo e mantiene la sicurezza rilevante indipendentemente da qualsiasi ipotesi diagnostica.",
                     List.of(
                             new GuideReference(
                                     "Narcissistic Personality Disorder — Merck Manual Professional Edition",
@@ -906,6 +942,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, ampiezza e controllabilità della preoccupazione, tensione e attivazione, concentrazione, affaticamento, irritabilità, sonno e interferenza nella vita quotidiana negli ultimi sei mesi. Non formula una diagnosi e non permette di distinguere da solo ansia generalizzata, stress, altre difficoltà psicologiche o condizioni fisiche.",
+                    "La guida distingue la preoccupazione utile da quella difficile da controllare e collega pensieri, tensione e risorse quotidiane in un possibile ciclo. Le aree del questionario servono a osservare come queste esperienze si distribuiscono, senza trasformare la loro frequenza in una diagnosi.",
                     List.of(
                             new GuideReference(
                                     "Generalized Anxiety Disorder: What You Need to Know — NIMH",
@@ -989,6 +1026,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, umore e capacità di provare piacere, energia e attivazione, pensieri su di sé e sul futuro, sonno, appetito, concentrazione e funzionamento nelle ultime due settimane. Non formula una diagnosi e non valuta pensieri suicidari o rischio di autolesionismo: un risultato basso non esclude la necessità di chiedere aiuto.",
+                    "La guida distingue tristezza, umore depresso e depressione e invita a osservare insieme piacere, energia, pensieri e funzionamento. Propone di leggere il ritiro nel suo contesto e mantiene separati i segnali che richiedono aiuto immediato dal risultato del questionario.",
                     List.of(
                             new GuideReference(
                                     "Depressive disorder (depression) — World Health Organization",
@@ -1091,6 +1129,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, bisogno di approvazione e paura del rifiuto, difficoltà a dire no e mantenere confini, autosilenziamento nel conflitto e sovraresponsabilità verso gli altri. Non formula una diagnosi, non misura quanto una persona sia gentile e non può stabilire da solo se un comportamento sia libero, imposto dal ruolo o necessario per la sicurezza.",
+                    "La guida distingue la cura scelta liberamente dall'adattamento che lascia poco spazio ai propri bisogni. Per leggere un sì o un silenzio suggerisce di considerare desiderio, costo personale, potere e sicurezza nella relazione, senza attribuire alla persona un'identità fissa di people pleaser.",
                     List.of(
                             new GuideReference(
                                     "Distinctions of unmitigated communion from communion: self-neglect and overinvolvement with others — Fritz e Helgeson",
@@ -1188,6 +1227,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, attribuzione dei successi, paura di essere smascherati, pressione perfezionistica e impatto di confronto e feedback sulle opportunità. Non formula una diagnosi e non misura competenza, preparazione o adeguatezza reale: il risultato va letto insieme a evidenze concrete, qualità dei riscontri e caratteristiche dell'ambiente.",
+                    "La guida separa il vissuto di non meritare un risultato dalle prove disponibili su competenze e contributi concreti. Accosta attribuzioni personali, qualità del feedback e condizioni dell'ambiente, così il dubbio non diventa automaticamente una misura di incapacità o una spiegazione individuale di ostacoli reali.",
                     List.of(
                             new GuideReference(
                                     "The imposter phenomenon in high achieving women — Clance e Imes",
@@ -1285,6 +1325,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, avvio e pianificazione, protezione dal giudizio e auto-handicapping, ricerca di sollievo emotivo e capacità di mantenere o adattare il percorso. Non formula una diagnosi, non attribuisce intenzioni e non distingue da solo abitudini modificabili, ostacoli ambientali, condizioni di salute o difficoltà esecutive; non misura volontà, disciplina o valore personale.",
+                    "La guida usa l'etichetta autosabotaggio solo come punto di partenza e chiede prima se l'obiettivo sia ancora proprio e praticabile. Distingue il sollievo breve di un rinvio da riposo necessario, mancanza di risorse e cambiamento sensato di priorità, senza presumere una volontà di farsi del male.",
                     List.of(
                             new GuideReference(
                                     "Self-defeating behavior patterns among normal individuals — Baumeister e Scher",
@@ -1391,6 +1432,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, intensità emotiva e ritorno all'equilibrio, sensibilità alla distanza nelle relazioni, immagine di sé e senso di vuoto, impulsività e reazioni sotto stress. Non è validato, non conta criteri clinici, non valuta autolesionismo o pensieri suicidari e non può confermare, escludere o stimare la presenza di un disturbo borderline di personalità.",
+                    "La guida organizza emozioni, relazioni, immagine di sé e reazioni sotto stress come domini di lettura, senza usarli come checklist diagnostica. Distingue la frequenza recente delle risposte da un pattern duraturo e presenta il supporto professionale e la sicurezza indipendentemente dal profilo ottenuto.",
                     List.of(
                             new GuideReference(
                                     "The Italian Version of the Borderline Personality Disorder Severity Index IV — di Giacomo e colleghi",
@@ -1525,6 +1567,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, sensibilità ai segnali di distanza, ricerca di rassicurazione, pensieri ed emozioni durante la distanza e autonomia nei confini. Non è validato, non classifica uno stile di attaccamento e non può confermare, escludere o stimare una condizione psicologica o la qualità reale di una relazione.",
+                    "La guida segue il passaggio da un segnale di distanza alla sua interpretazione, alla richiesta di rassicurazione e allo spazio rimasto per i propri confini. Mantiene aperta la possibilità che nel rapporto vi siano fatti concreti da considerare, senza dedurre uno stile di attaccamento dalle risposte.",
                     List.of(
                             new GuideReference(
                                     "Italian Validation of the Adult Attachment Scale-Revised — Troisi, Parola e Margherita",
@@ -1655,6 +1698,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato esplora, con finalità esclusivamente informative, inclusione percepita, confronto con alternative, bisogno di restare aggiornati e possibile interferenza su attenzione e scelte. Non è validato, non diagnostica una condizione e non dimostra un uso problematico di social media, Internet o smartphone.",
+                    "La guida scompone la FOMO in ciò che è accaduto, il significato attribuito all'assenza, il controllo degli aggiornamenti e l'effetto sulla scelta presente. Tiene distinti esclusione reale, confronto e abitudini digitali: il tempo online da solo non spiega l'esperienza né identifica un problema.",
                     List.of(
                             new GuideReference(
                                     "Factor structure and psychometric properties of the Italian version of the Fear of Missing Out Scale — Casale e Fioravanti",
@@ -1785,6 +1829,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa la cornice di Gardner soltanto come punto di partenza per osservare la frequenza percepita di comprensione, espressione orale, scrittura e flessibilità linguistica. Non misura intelligenza generale o competenza, non certifica talenti o limiti e non diagnostica condizioni.",
+                    "La guida usa la cornice di Gardner per proporre quattro prospettive di auto-osservazione, ma distingue autopercezione, uso della lingua e prestazione. Considera anche lingue, modalità e opportunità, evitando di trattare le risposte come una misura dell'intelligenza.",
                     List.of(
                             new GuideReference(
                                     "The Theory of Multiple Intelligences — Project Zero, Harvard",
@@ -1915,6 +1960,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa la cornice di Gardner soltanto come punto di partenza per osservare la frequenza percepita di riconoscimento, chiarezza, riflessione e uso delle informazioni su di sé. Non misura intelligenza generale o accuratezza, non certifica talenti o limiti e non diagnostica condizioni.",
+                    "La guida mette alla prova l'utilità dell'auto-osservazione confrontando ciò che si pensava, ciò che si è fatto e ciò che è accaduto. Separa riflessione e insight dall'accuratezza delle spiegazioni che diamo a noi stessi, senza trasformare una frequenza riferita in una misura di intelligenza.",
                     List.of(
                             new GuideReference(
                                     "The Theory of Multiple Intelligences — Project Zero, Harvard",
@@ -2040,6 +2086,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Una difficoltà di cura: distinguere impegno e condizioni",
+                                    List.of(
+                                            "Immagina alcune settimane in cui devi assistere una persona vicina mentre gli orari di lavoro cambiano. Ridurre temporaneamente un'attività può essere una scelta di adattamento, non la prova di una minore resilienza. Se un familiare può aiutare o un servizio è accessibile, cambia il margine d'azione: l'esito non dipende soltanto dal tuo impegno.",
+                                            "Per leggere l'episodio, confronta ciò che era richiesto, le opzioni realmente disponibili e ciò che è cambiato nel tempo. Riprendere tutto subito, rallentare e chiedere sostegno non sono gradini di una scala personale; la loro utilità dipende dal carico e dalla sicurezza del contesto. Questo confronto non valuta la tua capacità futura."
+                                    ),
+                                    List.of(
+                                            "Quale richiesta concreta assorbiva tempo o energie, e quali attività potevano attendere?",
+                                            "Quali aiuti erano disponibili, quali mancavano e quali potevi usare senza aumentare il carico?",
+                                            "Se vuoi fare un passo pratico, annota un bisogno circoscritto da comunicare a una persona o a un servizio pertinente; non usarlo come prova di resilienza."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Supporto e limiti",
                                     "Quando il questionario non basta",
                                     List.of(
@@ -2050,6 +2109,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato descrive la frequenza riferita di alcuni comportamenti di recupero, adattamento, accesso ai supporti e continuità davanti a difficoltà recenti. Non misura una forza personale fissa, non osserva il processo completo né gli esiti e non predice il futuro.",
+                    "La guida legge un episodio difficile distinguendo carico, azioni tentate, sostegni disponibili e cambiamenti nel tempo. Così le risorse riferite restano legate alle opportunità del contesto e non diventano una qualità personale certificata o una previsione dell'esito.",
                     List.of(
                             new GuideReference(
                                     "Psychological Resilience: A Review and Critique — Fletcher e Sarkar",
@@ -2170,6 +2230,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Un messaggio senza risposta: dal dubbio alla scelta",
+                                    List.of(
+                                            "Immagina di avere scritto al partner e di non ricevere risposta per alcune ore. Il fatto osservato è il tempo trascorso; “mi nasconde qualcosa” è un'interpretazione possibile, non una verifica. Puoi provare agitazione senza sapere ancora perché l'altra persona non risponda.",
+                                            "Un chiarimento concordato può riguardare tempi e aspettative di comunicazione. Accedere all'account dell'altra persona o seguirne gli spostamenti senza consenso è invece un comportamento di controllo: il dubbio non lo autorizza. Se temi una reazione violenta, non usare questo schema per avviare un confronto diretto."
+                                    ),
+                                    List.of(
+                                            "Quale accordo concreto sulla comunicazione esisteva prima dell'episodio, e quali informazioni mancano?",
+                                            "Che cosa hai fatto dopo il dubbio? La scelta ha rispettato autonomia e consenso?",
+                                            "Per un episodio successivo, annota soltanto fatto, interpretazione, emozione e azione: il confronto fra episodi può chiarire un andamento, senza dimostrare fedeltà o intenzioni."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Supporto e sicurezza",
                                     "Quando serve un aiuto diverso dal questionario",
                                     List.of(
@@ -2180,6 +2253,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato descrive la frequenza riferita di interpretazioni, reazioni emotive, verifiche e interferenza verso il partner attuale. Non stabilisce se i sospetti siano fondati, non accerta infedeltà e non classifica gelosia, violenza o sicurezza.",
+                    "La guida separa ciò che è accaduto dall'interpretazione, dall'emozione e dalla risposta scelta, distinguendo la ricerca di chiarimenti dal controllo. Tiene presenti gli accordi effettivi e il consenso senza presumere infedeltà né ridurre ogni preoccupazione a insicurezza personale.",
                     List.of(
                             new GuideReference(
                                     "Validation study of the Italian brief Multidimensional Jealousy Scale — Diotaiuti e colleghi",
@@ -2301,6 +2375,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Un ambito che pesa senza cancellare gli altri",
+                                    List.of(
+                                            "Immagina di apprezzare le relazioni con gli amici e, nello stesso periodo, di sentirti poco soddisfatto/a della situazione economica dopo alcune spese impreviste. I due giudizi possono coesistere. La soddisfazione per la vita nel complesso è un'altra domanda: non si ottiene sommando automaticamente queste due risposte.",
+                                            "Il confronto utile riguarda anche il criterio: per te conta di più la stabilità delle spese, il margine per scegliere o la possibilità di chiedere aiuto? Le condizioni concrete possono limitare le possibilità, senza che un giudizio poco soddisfatto sia un errore da correggere. Le otto aree dell'app non stabiliscono quali priorità dovresti avere."
+                                    ),
+                                    List.of(
+                                            "Quale ambito stai valutando e quale criterio personale stai usando oggi?",
+                                            "Che cosa è cambiato negli ultimi tre mesi: la condizione concreta, il criterio o entrambi?",
+                                            "Se desideri parlarne, scegli un bisogno specifico da portare a una persona o a un servizio adatto; non trasformare la barra in un obiettivo numerico."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Supporto e sicurezza",
                                     "Quando il questionario non basta",
                                     List.of(
@@ -2311,6 +2398,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato descrive il grado di soddisfazione riferito in otto ambiti negli ultimi tre mesi. Non è SWLS, WHOQOL-BREF, PWI o una rilevazione ufficiale e non misura felicità, salute mentale, qualità di vita oggettiva o sicurezza.",
+                    "La guida separa il giudizio complessivo sulla vita dalla soddisfazione per singoli ambiti e invita a esplicitare quali criteri personali contano oggi. Gli otto ambiti aiutano a localizzare ciò che pesa nel racconto, senza sommarli in una misura ufficiale di felicità o benessere.",
                     List.of(
                             new GuideReference(
                                     "La Satisfaction With Life Scale: un contributo alla validazione italiana con lavoratori adulti — Di Fabio e Palazzeschi",
@@ -2436,6 +2524,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Un rumore improvviso: distinguere richiamo e sicurezza attuale",
+                                    List.of(
+                                            "Immagina un rumore improvviso che ti mette in allerta dopo un evento molto difficile. La reazione, da sola, non dice se in quel momento esista un pericolo né permette di stabilire un PTSD. Prima di interpretarla, conta ciò che accade qui e ora: un richiamo in un luogo sicuro e una minaccia ancora presente richiedono attenzioni diverse.",
+                                            "Se c'è un pericolo attuale, cerca un luogo sicuro e aiuto immediato. Se non c'è un pericolo immediato ma leggere questa pagina aumenta il disagio, puoi fermarti senza descrivere l'evento. Puoi chiedere a una persona di fiducia o a un professionista di aiutarti a valutare i prossimi passi, anche dicendo soltanto che hai bisogno di sostegno."
+                                    ),
+                                    List.of(
+                                            "Che cosa puoi verificare della sicurezza presente, senza ricostruire l'evento passato?",
+                                            "Ti è utile interrompere ora la lettura o chiedere compagnia in un luogo sicuro?",
+                                            "Se vuoi chiedere aiuto, puoi formulare una richiesta breve come: «Vorrei parlare di come sto, senza raccontare adesso i dettagli»."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Supporto",
                                     "Trattamenti e aiuto richiedono una valutazione personale",
                                     List.of(
@@ -2446,6 +2547,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato descrive la frequenza nell'ultimo mese di esperienze riferite a un evento scelto mentalmente. Non accerta l'esposizione, non è la PCL-5, non diagnostica il PTSD e non valuta durata complessiva, interferenza o sicurezza.",
+                    "La guida distingue evento, reazione e valutazione del PTSD e spiega perché quattro famiglie di esperienze sono soltanto una traccia di auto-osservazione. Ricorda che non occorre raccontare l'evento per leggere la pagina e che sicurezza e supporto non dipendono dal risultato del questionario.",
                     List.of(
                             new GuideReference(
                                     "Italian validation of the PTSD Checklist for DSM-5 — Di Tella e colleghi",
@@ -2557,6 +2659,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Un ritardo nella risposta non definisce uno stile",
+                                    List.of(
+                                            "Immagina un messaggio importante rimasto senza risposta. Una persona può cercare più rassicurazione; un'altra può scegliere di prendere distanza. Sono esempi di possibili risposte in quel momento, non prove di uno stile ansioso o evitante. Conta anche sapere se c'era un accordo sui tempi, se l'assenza è abituale e se la relazione è sicura.",
+                                            "Per confrontare le due dimensioni, chiediti separatamente quanto temi una perdita del legame e quanto ti è difficile affidarti o condividere il bisogno. La stessa risposta può cambiare con la persona e il contesto; nessuna delle due dimensioni misura il comportamento del partner."
+                                    ),
+                                    List.of(
+                                            "Che cosa è accaduto prima della tua risposta, e quali accordi erano espliciti?",
+                                            "Cercavi contatto, prendevi distanza o entrambe le cose in momenti diversi?",
+                                            "Se ti è utile, descrivi un secondo episodio nella stessa relazione e confronta contesto e bisogni, senza assegnarti un'etichetta permanente."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Come leggere il risultato",
                                     "Due barre e quattro vicinanze, senza un punteggio generale",
                                     List.of(
@@ -2576,6 +2691,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali, una scala di rappresentatività e uno scoring dimensionale editoriale. Non è l'ECR-R o l'ECR-12, non assegna uno stile permanente e non valuta partner, qualità o sicurezza della relazione.",
+                    "La guida tiene separate le dimensioni di ansia ed evitamento dai quattro prototipi che ne riassumono le combinazioni. Mostra perché un profilo vicino a più orientamenti e il contesto di una relazione specifica non vanno trasformati in un'identità stabile.",
                     List.of(
                             new GuideReference(
                                     "Attachment styles among young adults — Bartholomew e Horowitz",
@@ -2706,6 +2822,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali, quattro aree editoriali e soglie descrittive. Non è l'LQ-11, non diagnostica limerenza, OCD o dipendenza e non accerta reciprocità, consenso, intenzioni dell'altra persona o pericolosità.",
+                    "La guida distingue la focalizzazione verso una persona dalla reciprocità osservabile e dalle azioni compiute. Riporta l'attenzione su consenso, confini e impatto quotidiano senza equiparare pensieri insistenti a una diagnosi o alle intenzioni dell'altra persona.",
                     List.of(
                             new GuideReference(
                                     "Development and Validation of the Limerence Questionnaire (LQ-11) — Marshall e colleghi",
@@ -2831,6 +2948,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali, una finestra retrospettiva e quattro aree editoriali. Non è una scala clinica, non diagnostica parentificazione o trauma, non attribuisce colpe e non dimostra cause degli eventuali vissuti adulti.",
+                    "La guida mette a confronto l'aiuto familiare con responsabilità che possono diventare sproporzionate per età, obbligo e scarso sostegno. Invita a ricostruire periodi e possibilità concrete prima di leggere un ricordo adulto come prova delle intenzioni dei genitori o causa di difficoltà attuali.",
                     List.of(
                             new GuideReference(
                                     "Parentification Vulnerability, Reactivity, Resilience, and Thriving — Dariotis e colleghi",
@@ -2952,6 +3070,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali riferiti a una sola relazione e quattro aree editoriali. Non accerta i fatti, non dimostra gaslighting, abuso o violenza, non attribuisce intenzioni o diagnosi e non sostituisce una valutazione o un supporto professionale.",
+                    "La guida separa un disaccordo o una bugia isolata da un andamento ripetuto che mette in discussione la credibilità di chi racconta i fatti. Propone di osservare insieme episodi, asimmetrie di potere e spazio per il confronto, senza ricostruire le intenzioni dell'altra persona dalle sole risposte.",
                     List.of(
                             new GuideReference(
                                     "Defining Gaslighting in Gender-Based Violence — Adair",
@@ -3073,6 +3192,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali riferiti a una sola fase di una relazione romantica e quattro aree editoriali. Non dimostra love bombing, manipolazione, abuso o controllo, non attribuisce intenzioni o diagnosi e non sostituisce una valutazione o un supporto professionale.",
+                    "La guida legge l'intensità iniziale alla luce del ritmo scelto da entrambe le persone: distingue gesti affettuosi da pressioni sui confini e osserva se lo spazio personale resta possibile nel tempo. La sequenza aiuta l'auto-osservazione senza trasformare attenzioni o promesse in prove di manipolazione.",
                     List.of(
                             new GuideReference(
                                     "Love-bombing: A Narcissistic Approach to Relationship Formation — Strutzenberg e colleghi",
@@ -3194,6 +3314,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali riferiti a una sola relazione o frequentazione e quattro aree editoriali. Non dimostra breadcrumbing, manipolazione o abuso, non attribuisce intenzioni o diagnosi e non sostituisce una valutazione o un supporto professionale.",
+                    "La guida distingue la semplice disponibilità variabile dall'alternanza fra segnali di interesse e scarso seguito concreto. Invita a confrontare messaggi, proposte e possibilità di chiarire le aspettative in una stessa frequentazione, senza attribuire una strategia all'altra persona.",
                     List.of(
                             new GuideReference(
                                     "Psychological Correlates of Ghosting and Breadcrumbing Experiences — Navarro e colleghi",
@@ -3313,6 +3434,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 12 item originali riferiti ai primi sei mesi dopo l'interruzione di una sola relazione o frequentazione e due aree editoriali congiunte. Non dimostra orbiting, ghosting, manipolazione o cyberstalking, non attribuisce intenzioni e non sostituisce un supporto professionale.",
+                    "La guida tiene distinte due osservazioni che possono coesistere dopo una rottura: la fine del contatto diretto e una presenza online visibile. Se una delle due manca, l'etichetta orbiting descrive meno bene la situazione; visualizzazioni e reazioni sui social non rivelano da sole interesse, controllo o intenzioni.",
                     List.of(
                             new GuideReference(
                                     "Ghosting and orbiting: An analysis of victims' experiences — Pancani e colleghi",
@@ -3423,6 +3545,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 12 item originali, due aree editoriali e una scala di occorrenza riferita ai primi sei mesi dopo una conclusione o richiesta di distanza. Non dimostra hoovering, manipolazione, abuso o stalking, non attribuisce intenzioni e non sostituisce un supporto professionale.",
+                    "La guida sposta l'attenzione dal nome colloquiale hoovering alla differenza fra un tentativo di riconciliazione e contatti che proseguono dopo una richiesta di distanza. Mette al centro la risposta ai confini espressi e la sicurezza, senza dedurre sincerità, manipolazione o pericolo dal numero di ricontatti.",
                     List.of(
                             new GuideReference(
                                     "What Is Hoovering? — Cleveland Clinic",
@@ -3549,6 +3672,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 32 item originali, otto aree editoriali e una scala di rappresentatività riferita alla relazione attuale. Descrive la prospettiva di chi compila, non stabilisce compatibilità oggettiva, durata o sicurezza e non prescrive decisioni sulla relazione.",
+                    "La guida mette in fila domini concreti, come comunicazione, conflitto, sostegno e scelte quotidiane, per rendere discutibili differenze e accordi. Ricorda che la risposta di una persona descrive la sua prospettiva e non stabilisce da sola la compatibilità della coppia o il punto di vista del partner.",
                     List.of(
                             new GuideReference(
                                     "Psychometrical Properties of the Dyadic Adjustment Scale with Italian Couples — Garbarini e colleghi",
@@ -3654,6 +3778,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Una scelta quotidiana: distinguere disaccordo e controllo",
+                                    List.of(
+                                            "Immagina di voler incontrare un'amica o un amico. Un disaccordo sull'orario può essere discusso; richieste ripetute di mostrare i messaggi, minacce o ostacoli ai contatti riguardano invece privacy, libertà e sicurezza. Lo scenario non accerta che cosa sia accaduto nella tua relazione né attribuisce intenzioni all'altra persona.",
+                                            "Per orientarti, considera se puoi dire no, mantenere contatti e scegliere senza temere conseguenze. Anche un solo episodio che ti fa temere per la sicurezza merita attenzione indipendentemente dal risultato del test. Se temi una reazione, evita di affrontare la persona o conservare appunti accessibili: chiedi un confronto riservato a un servizio competente quando puoi farlo in sicurezza."
+                                    ),
+                                    List.of(
+                                            "Quale comportamento concreto hai osservato e quale possibilità di scelta avevi?",
+                                            "Dire no o cercare supporto avrebbe potuto esporre te o altre persone a conseguenze?",
+                                            "Se hai bisogno di aiuto, valuta un contatto sicuro con un servizio competente; in pericolo immediato chiama il 112."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Come leggere il risultato",
                                     "Una media non annulla un episodio importante",
                                     List.of(
@@ -3682,6 +3819,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato è un'autovalutazione informativa originale e non validata. Non stabilisce se la relazione sia tossica, abusante, sicura o da interrompere, non accerta fatti, intenzioni o colpe e non sostituisce supporto professionale o servizi di emergenza.",
+                    "La guida sostituisce l'etichetta generica di relazione tossica con sei osservazioni separate su rispetto, confini, controllo, paura, reciprocità e impatto sul benessere. Ricorda che paura e sicurezza meritano attenzione anche quando la media delle risposte è contenuta, senza chiedere al questionario un verdetto sulla relazione.",
                     List.of(
                             new GuideReference(
                                     "Italian Validation of the Scale of Psychological Abuse in Intimate Partner Violence — Lausi e colleghi",
@@ -3804,6 +3942,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 20 item originali, quattro lenti editoriali e una finestra di tre mesi riferita a una sola relazione sentimentale attuale o recente. È informativo e non validato: non accerta triangolazione intenzionale, manipolazione, abuso, infedeltà, accordi violati, colpa o diagnosi.",
+                    "La guida distingue il coinvolgimento di una terza persona come supporto o mediazione concordata dalle situazioni in cui confronti, messaggi indiretti o richieste di schieramento rendono più difficile il dialogo diretto. Accordi e contesto restano necessari per interpretare l'episodio, senza dedurre un'intenzione manipolativa.",
                     List.of(
                             new GuideReference(
                                     "The Triangulation in Relationships Inventory (TRI) — Bresin e colleghi",
@@ -3920,6 +4059,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 18 item originali, tre lenti editoriali e una finestra di un mese riferita a una sola persona. È informativo e non validato: non accerta invalidazione, manipolazione, abuso, intenzioni, diagnosi o verità dei fatti e non sostituisce supporto professionale.",
+                    "La guida separa il riconoscimento di un'emozione dall'accordo sui fatti o dalle scelte di comportamento. Suggerisce di osservare risposta, ripetizione e possibilità di riparazione, così un disaccordo o un confine rispettoso non diventano automaticamente invalidazione.",
                     List.of(
                             new GuideReference(
                                     "The Perceived Invalidation of Emotion Scale (PIES) — Zielinski e Veilleux",
@@ -4032,6 +4172,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali, quattro lenti editoriali e una finestra di sei mesi. È informativo e non validato: non stabilisce diagnosi, probabilità, gravità, abilità sociale o valore personale e non sostituisce una valutazione professionale.",
+                    "La guida presenta quattro lenti editoriali e le confronta con ansia sociale, introversione e attaccamento evitante. Mette le risposte nel contesto delle opportunità e delle condizioni relazionali, senza ricavarne una probabilità diagnostica o un giudizio sul valore personale.",
                     List.of(
                             new GuideReference(
                                     "Avoidant personality disorder: current insights — Lampe e Malhi",
@@ -4157,6 +4298,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 24 item originali, quattro lenti editoriali e una finestra di tre mesi riferita a una relazione. È informativo e non validato: non stabilisce diagnosi, cause, intenzioni, amore, capacità relazionale, comportamento dell'altra persona o qualità del rapporto.",
+                    "La guida scompone la disponibilità emotiva in accesso al proprio vissuto, condivisione, vulnerabilità e presenza nello scambio. Confronta queste lenti con privacy, ritmo personale e sicurezza della relazione, evitando di attribuire la difficoltà a una sola persona.",
                     List.of(
                             new GuideReference(
                                     "The Brief Accessibility, Responsiveness, and Engagement (BARE) Scale — Sandberg e colleghi",
@@ -4264,6 +4406,19 @@ public class GuideCatalogue {
                                     List.of()
                             ),
                             new GuideSection(
+                                    "Esempio guidato",
+                                    "Da una sensazione a parole possibili, senza forzare un nome",
+                                    List.of(
+                                            "Immagina che, dopo un colloquio difficile, tu noti tensione alle spalle ma sappia dire soltanto “non sto bene”. La tensione è una sensazione; il nome di un'emozione è un'ipotesi ancora aperta. Stanchezza, postura e altri fattori fisici possono contribuire: il segnale non ha una traduzione emotiva obbligatoria.",
+                                            "Potresti voler capire meglio ciò che provi senza volerlo raccontare a nessuno. Identificare il vissuto, trovare parole e scegliere di comunicarle sono passaggi distinti; avere bisogno di tempo o preferire la riservatezza non equivale da solo ad alessitimia."
+                                    ),
+                                    List.of(
+                                            "Che cosa hai notato nel corpo e nella situazione, senza attribuire subito una causa?",
+                                            "Quali parole erano disponibili allora, e quali ti sembrano possibili solo ripensandoci?",
+                                            "Se lo desideri, annota un episodio analogo e confronta parole e contesto; per sintomi fisici nuovi o preoccupanti rivolgiti a un medico."
+                                    )
+                            ),
+                            new GuideSection(
                                     "Limiti della misura",
                                     "Un self-report sull'auto-osservazione ha un limite interno",
                                     List.of(
@@ -4292,6 +4447,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 18 item originali, tre lenti editoriali e una finestra di tre mesi. È informativo e non validato: non è la TAS-20, non diagnostica alessitimia e non misura quante emozioni una persona provi.",
+                    "La guida separa il sentire un cambiamento corporeo dal trovare parole per descriverlo e dal decidere se comunicarlo. Invita a partire da episodi concreti e da spiegazioni alternative, ricordando che riservatezza e difficoltà di descrizione non indicano assenza di emozioni.",
                     List.of(
                             new GuideReference(
                                     "Italian multicenter study of the 20-item Toronto Alexithymia Scale — Bressi e colleghi",
@@ -4418,6 +4574,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 20 item originali, quattro lenti editoriali e una finestra di tre mesi riferita a una sola relazione stretta. È informativo e non validato: non attribuisce un'identità, non giudica la cura e non accerta abuso o intenzioni.",
+                    "La guida confronta cura e interdipendenza con sacrificio di sé, tentativi di controllo e riduzione dello spazio personale. Esplicita le sovrapposizioni con dipendenza affettiva e people pleasing, così le risposte restano esperienze da discutere e non un'identità assegnata alla persona.",
                     List.of(
                             new GuideReference(
                                     "Co-Dependency Revisited: An Integrative Review of Conceptualisations and Mental Health Outcomes - Molina e colleghi",
@@ -4556,6 +4713,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato usa 20 item originali, cinque lenti editoriali e una finestra di tre mesi riferita a una sola relazione o frequentazione. È informativo e non validato: non classifica oggettivamente il rapporto, non accerta intenzioni o reciprocità e non prescrive una forma relazionale.",
+                    "La guida distingue il nome dato al rapporto dagli accordi, dal coinvolgimento percepito e dai bisogni di ciascuno. Permette di osservare se l'incertezza lascia spazio a scelte e confini condivisi, senza considerare l'assenza di un'etichetta un problema in sé.",
                     List.of(
                             new GuideReference(
                                     "Development and Validation of the Romantic Experience Uncertainty Scale (REUS) — Colombo e colleghi",

@@ -23,8 +23,8 @@ function ReviewerSection({ reviewer }) {
       <section className="reviewer-section" aria-labelledby="revisione-professionale">
         <div className="editorial-section-heading reviewer-section-heading">
           <p className="eyebrow">Autorialità e competenze</p>
-          <h2 id="revisione-professionale">Revisione professionale dei questionari</h2>
-          <p>Per ogni nuovo questionario, la revisione professionale accompagna la definizione delle linee guida e il controllo di struttura, linguaggio, limiti e modalità di restituzione prima della pubblicazione.</p>
+          <h2 id="revisione-professionale">Revisione professionale dei contenuti</h2>
+          <p>Alessia Liga ha revisionato tutte le guide pubblicate. Per ogni nuovo questionario, la revisione professionale accompagna la definizione delle linee guida e il controllo di struttura, linguaggio, limiti e modalità di restituzione prima della pubblicazione.</p>
         </div>
         <article className="reviewer-card" itemScope itemType="https://schema.org/Person">
           <div className="reviewer-photo-frame">

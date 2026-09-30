@@ -5,7 +5,12 @@ import ReferenceList from '../components/ReferenceList';
 import RelatedGuides from '../components/RelatedGuides';
 import RecommendedReadings from '../components/RecommendedReadings';
 
-export default function GuidePage({ guide, recommendedReadings = [], relatedGuides, test, topicCluster }) {
+function italianDate(isoDate) {
+  return new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+    .format(new Date(`${isoDate}T12:00:00Z`));
+}
+
+export default function GuidePage({ author, editorialHistory, guide, recommendedReadings = [], relatedGuides, reviewer, test, topicCluster }) {
   return (
     <main className="guide-shell">
       <Navbar />
@@ -15,9 +20,19 @@ export default function GuidePage({ guide, recommendedReadings = [], relatedGuid
       <article className="guide-article">
         <header className="guide-hero">
           <p className="eyebrow">Guida informativa</p><h1>{guide.title}</h1><p className="guide-lead">{guide.summary}</p>
-          <a className="editorial-byline" href="/il-progetto">A cura di Spazio Test</a>
+          <div className="guide-editorial-credits">
+            <p><span>Autore</span> <a href="/il-progetto">{author.name}</a> · {author.description}</p>
+            <p><span>Revisione professionale</span> <a href="/metodo-e-fonti#revisione-professionale">{reviewer.name}</a> · {reviewer.role}</p>
+            <p><span>Pubblicata</span> <time dateTime={editorialHistory.publishedOn}>{italianDate(editorialHistory.publishedOn)}</time><span className="guide-credit-separator" aria-hidden="true"> · </span><span>Ultima revisione del contenuto</span> <time dateTime={editorialHistory.revisedOn}>{italianDate(editorialHistory.revisedOn)}</time></p>
+          </div>
         </header>
         <div className="guide-content">
+          {guide.originalContribution && (
+            <section className="guide-section guide-original-contribution">
+              <p className="eyebrow">Il contributo di Spazio Test</p><h2>Come leggere questa guida</h2>
+              <p>{guide.originalContribution}</p>
+            </section>
+          )}
           {guide.sections.map((section) => (
             <section className="guide-section" key={`${section.eyebrow}-${section.title}`}>
               <p className="eyebrow">{section.eyebrow}</p><h2>{section.title}</h2>

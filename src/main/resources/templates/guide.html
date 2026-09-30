@@ -13,6 +13,8 @@
     <meta property="og:title" th:content="${guide.seoTitle}">
     <meta property="og:description" th:content="${guide.seoDescription}">
     <meta property="og:url" th:content="${canonicalUrl}">
+    <meta property="article:published_time" th:content="${editorialHistory.publishedOn}">
+    <meta property="article:modified_time" th:content="${editorialHistory.revisedOn}">
     <th:block th:replace="~{fragments/brand-head :: socialImage(${socialImageUrl})}"></th:block>
     <meta name="twitter:card" content="summary_large_image">
     <th:block th:replace="~{fragments/brand-head :: icons}"></th:block>
@@ -29,10 +31,19 @@
       "description": /*[[${guide.seoDescription}]]*/ "Descrizione dell'approfondimento",
       "url": /*[[${canonicalUrl}]]*/ "https://example.com/approfondimenti/guida",
       "inLanguage": "it-IT",
+      "datePublished": /*[[${editorialHistory.publishedOn.toString()}]]*/ "2026-08-13",
+      "dateModified": /*[[${editorialHistory.revisedOn.toString()}]]*/ "2026-08-20",
       "author": {
-        "@type": "Organization",
-        "name": "Spazio Test",
+        "@type": "Person",
+        "name": /*[[${author.name}]]*/ "Stefano Liga",
+        "description": /*[[${author.description}]]*/ "Responsabile editoriale di Spazio Test",
         "url": /*[[${projectUrl}]]*/ "https://example.com/il-progetto"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": /*[[${reviewer.name}]]*/ "Alessia Liga",
+        "jobTitle": /*[[${reviewer.role}]]*/ "Psicologa",
+        "url": /*[[${reviewerProfileUrl}]]*/ "https://example.com/metodo-e-fonti#revisione-professionale"
       },
       "publisher": {
         "@type": "Organization",
@@ -75,10 +86,19 @@
             <p class="eyebrow">Guida informativa</p>
             <h1 th:text="${guide.title}">Titolo dell'approfondimento</h1>
             <p class="guide-lead" th:text="${guide.summary}">Introduzione alla guida.</p>
-            <a class="editorial-byline" th:href="@{/il-progetto}">A cura di Spazio Test</a>
+            <div class="guide-editorial-credits">
+                <p><span>Autore</span> <a th:href="@{/il-progetto}" th:text="${author.name}">Stefano Liga</a> · <span th:text="${author.description}">Responsabile editoriale</span></p>
+                <p><span>Revisione professionale</span> <a th:href="${reviewerProfileUrl}" th:text="${reviewer.name}">Alessia Liga</a> · <span th:text="${reviewer.role}">Psicologa</span></p>
+                <p><span>Pubblicata</span> <time th:datetime="${editorialHistory.publishedOn}" th:text="${publishedLabel}">13 agosto 2026</time><span class="guide-credit-separator" aria-hidden="true"> · </span><span>Ultima revisione del contenuto</span> <time th:datetime="${editorialHistory.revisedOn}" th:text="${revisedLabel}">20 agosto 2026</time></p>
+            </div>
         </header>
 
         <div class="guide-content">
+            <section class="guide-section guide-original-contribution" th:if="${guide.originalContribution != null}">
+                <p class="eyebrow">Il contributo di Spazio Test</p>
+                <h2>Come leggere questa guida</h2>
+                <p th:text="${guide.originalContribution}">Il contributo editoriale di questa guida.</p>
+            </section>
             <section class="guide-section" th:each="section : ${guide.sections}">
                 <p class="eyebrow" th:text="${section.eyebrow}">Sezione</p>
                 <h2 th:text="${section.title}">Titolo sezione</h2>
