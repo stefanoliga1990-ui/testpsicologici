@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-10-01",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -162,7 +162,7 @@
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Priorità editoriale richiesta il 2026-09-30. Verificare prima se ipertrofia intellettiva è un costrutto scientificamente definito e distinguibile da intellettualizzazione, ruminazione, alessitimia e stili cognitivi. Non patologizzare il pensiero analitico; delimitare popolazione, aree e restituzione dopo la ricerca o applicare BLOCKED se un test autonomo non è sostenibile." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "BLOCKED", "attempts": 1, "lastAttemptAt": "2026-10-01T13:04:03+02:00", "completedAt": null, "commitHash": null, "blockReason": "La ricerca di fonti scientifiche italiane, europee e internazionali non ha individuato una definizione operativa, una struttura dimensionale o una misura consolidata di 'ipertrofia intellettiva' come costrutto psicologico autonomo. La letteratura italiana sulle difese (DMRS-SR-30 e DSQ) riguarda l'intellettualizzazione e il funzionamento difensivo, non questo termine; ruminazione, alessitimia e stili cognitivi sono costrutti distinti. Tradurre l'etichetta in item e profili richiederebbe una ridefinizione arbitraria e rischierebbe di patologizzare il pensiero analitico o duplicare contenuti esistenti. Un questionario e una restituzione autonomi non sono quindi scientificamente sostenibili allo stato delle evidenze." }
     },
     {
       "order": 12,
