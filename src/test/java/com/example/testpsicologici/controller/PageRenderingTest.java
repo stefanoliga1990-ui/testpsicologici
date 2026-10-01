@@ -1355,7 +1355,31 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("The Resilience Scale for Adults in Italy")))
                 .andExpect(content().string(containsString("27031088")))
                 .andExpect(content().string(containsString("significato molto limitato")))
-                .andExpect(content().string(containsString("href=\"/test/resilienza-psicologica\"")));
+                .andExpect(content().string(containsString("href=\"/test/resilienza-psicologica\"")))
+                .andExpect(content().string(containsString("Resilienza e vulnerabilità psicologica nel corso dello sviluppo")))
+                .andExpect(content().string(containsString("Valutare la resilienza")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
+    }
+
+    @Test
+    void psychologicalResilienceResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
+        mockMvc.perform(get("/test/resilienza-psicologica/risultato")
+                        .session(completedAttempt("resilienza-psicologica", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("Resilienza e vulnerabilità psicologica nel corso dello sviluppo")))
+                .andExpect(content().string(containsString("Valutare la resilienza")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test

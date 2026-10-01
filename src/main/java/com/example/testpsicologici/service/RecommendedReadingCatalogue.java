@@ -280,6 +280,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("resilienza-psicologica", List.of(
+                    new RecommendedReading(
+                            "Resilienza e vulnerabilità psicologica nel corso dello sviluppo",
+                            "Cristiano Inguglia e Alida Lo Coco",
+                            "Un saggio accademico sulla resilienza e sulla vulnerabilità nel corso dello sviluppo, con attenzione a fattori di rischio e protezione, valutazione e adattamento psicosociale.",
+                            "Si concentra sul corso dello sviluppo e sui contesti di vulnerabilità; non misura la resilienza della singola persona e non interpreta le risposte al questionario. Non permette di dedurre come una persona reagirà a un evento difficile.",
+                            "https://www.amazon.it/-/en/Resilienza-vulnerabilit%C3%A0-psicologica-corso-sviluppo/dp/8815246010?dib=eyJ2IjoiMSJ9.ETfISa9uHT7RdlvY_UxYsw.JJ6CcwsMQ7PTpWPP6_vnhxhs4QLqYJfod212KA3gvj4&dib_tag=se&keywords=9788815246011&qid=1790877660&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=c94fae30ef4d613adca5a735b9e197c5&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Valutare la resilienza",
+                            "Francisco Javier Fiz Pérez, Andrea Laudadio e Lavinia Mazzocchetti",
+                            "Un volume che presenta il costrutto della resilienza, i principali modelli teorici e alcuni strumenti derivati da adattamenti italiani della letteratura internazionale.",
+                            "È un testo tecnico su teorie e strumenti di valutazione, non una valutazione individuale. Gli strumenti descritti non convalidano il questionario dell’app e non permettono di tradurre il suo risultato in una misura clinica o predittiva.",
+                            "https://www.amazon.it/-/en/Valutare-resilienza-Teorie-modelli-strumenti/dp/8843057499?dib=eyJ2IjoiMSJ9.0S3atonXxGGUflf51eSxEg.gj2_8O8lXYYXRzSvNZ_gQeL3lAIO8wMO8kcbUgokiKQ&dib_tag=se&keywords=9788843057498&qid=1790877750&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=7fc5c1988e0989afc8d3468e20760834&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",

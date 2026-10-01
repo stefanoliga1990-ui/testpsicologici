@@ -1330,7 +1330,82 @@
     }
   ]
 },
-    { "topicId": "resilienza-psicologica", "testId": "resilienza-psicologica", "guideSlug": "resilienza-psicologica", "title": "Resilienza psicologica", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+  "topicId": "resilienza-psicologica",
+  "testId": "resilienza-psicologica",
+  "guideSlug": "resilienza-psicologica",
+  "title": "Resilienza psicologica",
+  "fallbackTopics": [],
+  "fallbackRationale": null,
+  "researchStatus": "PUBLISHED",
+  "books": [
+    {
+      "title": "Resilienza e vulnerabilità psicologica nel corso dello sviluppo",
+      "placeholderCover": true,
+      "subtitle": null,
+      "authors": [
+        "Cristiano Inguglia",
+        "Alida Lo Coco"
+      ],
+      "publisher": "il Mulino",
+      "isbn13": "9788815246011",
+      "publicationYear": 2013,
+      "format": "brossura",
+      "editorialRole": "Saggio accademico su resilienza, vulnerabilità, fattori di rischio e protezione",
+      "audience": "Studenti, professionisti e lettori interessati alla resilienza come processo psicologico e sociale",
+      "description": "Un saggio accademico sulla resilienza e sulla vulnerabilità nel corso dello sviluppo, con attenzione a fattori di rischio e protezione, valutazione e adattamento psicosociale.",
+      "limit": "Si concentra sul corso dello sviluppo e sui contesti di vulnerabilità; non misura la resilienza della singola persona e non interpreta le risposte al questionario. Non permette di dedurre come una persona reagirà a un evento difficile.",
+      "primarySources": [
+        {
+          "label": "Scheda editore",
+          "url": "https://www.mulino.it/isbn/9788815246011"
+        }
+      ],
+      "amazon": {
+        "marketplace": "amazon.it",
+        "asin": "8815246010",
+        "formatVerified": "Perfect paperback (cartaceo)",
+        "affiliateUrl": "https://www.amazon.it/-/en/Resilienza-vulnerabilit%C3%A0-psicologica-corso-sviluppo/dp/8815246010?dib=eyJ2IjoiMSJ9.ETfISa9uHT7RdlvY_UxYsw.JJ6CcwsMQ7PTpWPP6_vnhxhs4QLqYJfod212KA3gvj4&dib_tag=se&keywords=9788815246011&qid=1790877660&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=c94fae30ef4d613adca5a735b9e197c5&ref_=as_li_ss_tl",
+        "trackingId": "spaziotest-21",
+        "verificationStatus": "VERIFIED"
+      },
+      "publicationStatus": "PUBLISHED"
+    },
+    {
+      "title": "Valutare la resilienza",
+      "placeholderCover": true,
+      "subtitle": "Teorie, modelli e strumenti",
+      "authors": [
+        "Francisco Javier Fiz Pérez",
+        "Andrea Laudadio",
+        "Lavinia Mazzocchetti"
+      ],
+      "publisher": "Carocci",
+      "isbn13": "9788843057498",
+      "publicationYear": 2011,
+      "format": "brossura",
+      "editorialRole": "Introduzione critica a teorie, modelli e strumenti di valutazione della resilienza",
+      "audience": "Studenti, professionisti e lettori con interesse per i modelli psicologici della resilienza",
+      "description": "Un volume che presenta il costrutto della resilienza, i principali modelli teorici e alcuni strumenti derivati da adattamenti italiani della letteratura internazionale.",
+      "limit": "È un testo tecnico su teorie e strumenti di valutazione, non una valutazione individuale. Gli strumenti descritti non convalidano il questionario dell’app e non permettono di tradurre il suo risultato in una misura clinica o predittiva.",
+      "primarySources": [
+        {
+          "label": "Scheda editore",
+          "url": "https://www.carocci.it/prodotto/valutare-la-resilienza"
+        }
+      ],
+      "amazon": {
+        "marketplace": "amazon.it",
+        "asin": "8843057499",
+        "formatVerified": "Paperback (cartaceo)",
+        "affiliateUrl": "https://www.amazon.it/-/en/Valutare-resilienza-Teorie-modelli-strumenti/dp/8843057499?dib=eyJ2IjoiMSJ9.0S3atonXxGGUflf51eSxEg.gj2_8O8lXYYXRzSvNZ_gQeL3lAIO8wMO8kcbUgokiKQ&dib_tag=se&keywords=9788843057498&qid=1790877750&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=7fc5c1988e0989afc8d3468e20760834&ref_=as_li_ss_tl",
+        "trackingId": "spaziotest-21",
+        "verificationStatus": "VERIFIED"
+      },
+      "publicationStatus": "PUBLISHED"
+    }
+  ]
+},
     { "topicId": "gelosia-partner", "testId": "gelosia-partner", "guideSlug": "gelosia-partner", "title": "Gelosia nella relazione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "soddisfazione-vita", "testId": "soddisfazione-vita", "guideSlug": "soddisfazione-vita", "title": "Soddisfazione di vita", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ptsd-adulti", "testId": "ptsd-adulti", "guideSlug": "ptsd-adulti", "title": "Disturbo post-traumatico da stress", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
