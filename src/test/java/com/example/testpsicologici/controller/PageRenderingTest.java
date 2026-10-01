@@ -1132,7 +1132,31 @@ class PageRenderingTest {
                         "The Italian Version of the Borderline Personality Disorder Severity Index IV")))
                 .andExpect(content().string(containsString(
                         "Psychological therapies for people with borderline personality disorder")))
-                .andExpect(content().string(containsString("href=\"/test/tratti-borderline-adulti\"")));
+                .andExpect(content().string(containsString("href=\"/test/tratti-borderline-adulti\"")))
+                .andExpect(content().string(containsString("Superare il Disturbo Borderline di Personalità")))
+                .andExpect(content().string(containsString("Una vita degna di essere vissuta")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
+    }
+
+    @Test
+    void borderlineResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
+        mockMvc.perform(get("/test/tratti-borderline-adulti/risultato")
+                        .session(completedAttempt("tratti-borderline-adulti", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("Superare il Disturbo Borderline di Personalità")))
+                .andExpect(content().string(containsString("Una vita degna di essere vissuta")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test

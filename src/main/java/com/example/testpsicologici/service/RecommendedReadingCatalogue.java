@@ -226,6 +226,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("tratti-borderline-adulti", List.of(
+                    new RecommendedReading(
+                            "Superare il Disturbo Borderline di Personalità",
+                            "Valerie Porr",
+                            "Una guida rivolta soprattutto a familiari e persone vicine, che presenta il disturbo borderline di personalità, i trattamenti psicosociali e alcune strategie di comunicazione e coping.",
+                            "È una guida per familiari e clinici, non uno strumento per riconoscere o confermare una diagnosi. Le strategie proposte non sostituiscono una valutazione, un piano di cura o indicazioni professionali individuali.",
+                            "https://www.amazon.it/-/en/Superare-disturbo-borderline-personalit%C3%A0-familiari/dp/8859023246?dib=eyJ2IjoiMSJ9.2_fvHdqHEytQ7F-WJAbBZQ.-gwtzzRMNbMD2IjD4rOEWNVzYBdA1D99_dng3vFZ4aE&dib_tag=se&keywords=9788859023241&qid=1790823600&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=8b4fb798187b5fe3a851b6abd4fbd470&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Una vita degna di essere vissuta",
+                            "Marsha M. Linehan",
+                            "Un'autobiografia in cui Marsha Linehan racconta il proprio percorso personale e professionale e la nascita della terapia dialettico-comportamentale (DBT).",
+                            "È un racconto autobiografico, non un manuale di auto-aiuto né una guida per autovalutarsi. La storia dell'autrice non permette di interpretare il risultato del questionario o di indicare un trattamento personale.",
+                            "https://www.amazon.it/-/en/Una-vita-degna-essere-vissuta/dp/8832852748?dib=eyJ2IjoiMSJ9.58RRoUggnUMpJxfah6HfbQ._E8-rPynjV8eQVxdr5fWj5Qo7Xq1HsLxElm1Zu7h-WA&dib_tag=se&keywords=9788832852745&qid=1790823665&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=e6b2b432de6199eae87c980f490f60ce&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("autosabotaggio", List.of(
                     new RecommendedReading(
                             "Basta autosabotaggio!",
