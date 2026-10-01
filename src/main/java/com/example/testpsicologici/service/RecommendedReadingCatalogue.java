@@ -262,6 +262,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("intelligenza-intrapersonale", List.of(
+                    new RecommendedReading(
+                            "Conoscere se stessi",
+                            "Stephen M. Fleming",
+                            "Un saggio divulgativo sulla metacognizione e sui modi in cui le persone valutano pensieri, decisioni e conoscenza di sé.",
+                            "Tratta l'autoconsapevolezza e la metacognizione, non misura l'intelligenza intrapersonale e non interpreta le risposte al questionario. Non certifica accuratezza nel conoscere se stessi né sostituisce una valutazione professionale.",
+                            "https://www.amazon.it/-/en/Conoscere-stessi-nuova-scienza-dellautoconsapevolezza/dp/8832854244?dib=eyJ2IjoiMSJ9.HUFrmIF3dCcJlbUdUjMJtw.zmPVBRAYM4Hvu4Sr8BDat1FmjmNV3ozj79EX6bkrPs0&dib_tag=se&keywords=9788832854244&qid=1790867502&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=e30aea70d285f9a2774b9f321c66af4e&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "L'identità personale",
+                            "Massimo Marraffa e Cristina Meini",
+                            "Un saggio di psicologia teorica e filosofia della mente su autocoscienza psicologica, identità narrativa e ruolo delle relazioni nella conoscenza di sé.",
+                            "È una trattazione teorica sull'identità personale e sull'autocoscienza. Non propone un test dell'intelligenza intrapersonale, non traduce il risultato del questionario e non fornisce una lettura clinica individuale.",
+                            "https://www.amazon.it/-/en/Lidentit%C3%A0-personale-Massimo-Marraffa/dp/884308268X?dib=eyJ2IjoiMSJ9.BPoc_UgYc5s099EHnTwwtg.TnwOrdvwXp8Y60S-Rupk-8t2-oQ3O9dru926hb6eocE&dib_tag=se&keywords=9788843082681&qid=1790867539&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=3456f6f5b3adbc62af06cac0094bf517&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",
