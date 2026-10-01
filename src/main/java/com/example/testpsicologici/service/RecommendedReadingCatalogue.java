@@ -244,6 +244,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("fomo", List.of(
+                    new RecommendedReading(
+                            "Fomo Sapiens",
+                            "Patrick J. McGinnis",
+                            "Un saggio divulgativo che presenta i concetti di FOMO e FOBO e invita a riflettere su scelte, alternative percepite e social network.",
+                            "È una prospettiva divulgativa e di auto-riflessione, non un testo clinico: non stabilisce se una persona abbia un uso problematico dei social e non interpreta le risposte al questionario.",
+                            "https://www.amazon.it/-/en/Sapiens-Impara-decidere-travolgere-possibili/dp/8817154695?dib=eyJ2IjoiMSJ9.rtu8DsRBVM9XHiKxMc9bJA.FLu9bzeh6bIzmw2yN87DPAw3PsO7zAouLahWRHJ-z1E&dib_tag=se&keywords=9788817154697&qid=1790845243&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=eecd9fe20e80aca3ab96b9851cb8da7c&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Minimalismo digitale",
+                            "Cal Newport",
+                            "Un saggio divulgativo sul ripensare il rapporto con tecnologie, dispositivi e distrazioni, attraverso la proposta del minimalismo digitale.",
+                            "Non è un libro specifico sulla FOMO e propone una cornice di auto-riflessione: non determina un uso problematico della tecnologia, non interpreta il risultato del questionario e non sostituisce un supporto professionale.",
+                            "https://www.amazon.it/-/en/Minimalismo-digitale-Rimettere-propria-distrazioni/dp/8836200680?&linkCode=ll2&tag=spaziotest-21&linkId=f06843b0b7977dd06ed76bb163e8855c&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("tratti-borderline-adulti", List.of(
                     new RecommendedReading(
                             "Superare il Disturbo Borderline di Personalità",

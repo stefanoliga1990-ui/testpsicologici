@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-10-01",
   "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
   "selectionPolicy": {
     "booksPerTopic": {
@@ -1101,7 +1101,82 @@
         }
       ]
     },
-    { "topicId": "fomo", "testId": "fomo", "guideSlug": "fomo", "title": "FOMO (Fear of Missing Out)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "fomo",
+      "testId": "fomo",
+      "guideSlug": "fomo",
+      "title": "FOMO (Fear of Missing Out)",
+      "fallbackTopics": [
+        "uso dei social e delle tecnologie",
+        "decisioni e sovraccarico di scelte"
+      ],
+      "fallbackRationale": "Fomo Sapiens affronta direttamente FOMO e FOBO; il secondo volume è una lettura più ampia sul rapporto con tecnologie e distrazioni, scelta perché aiuta a contestualizzare l'uso dei social senza presentarlo come spiegazione unica della FOMO.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Fomo Sapiens",
+          "placeholderCover": true,
+          "subtitle": "Impara a decidere senza farti travolgere da un mondo pieno di scelte possibili",
+          "authors": [
+            "Patrick J. McGinnis"
+          ],
+          "publisher": "Rizzoli / BUR",
+          "isbn13": "9788817154697",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo su FOMO, FOBO e scelte",
+          "audience": "Adulti interessati a riflettere su alternative, decisioni e uso dei social",
+          "description": "Un saggio divulgativo che presenta i concetti di FOMO e FOBO e invita a riflettere su scelte, alternative percepite e social network.",
+          "limit": "È una prospettiva divulgativa e di auto-riflessione, non un testo clinico: non stabilisce se una persona abbia un uso problematico dei social e non interpreta le risposte al questionario.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.rizzolilibri.it/libri/fomo-sapiens/"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8817154695",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Sapiens-Impara-decidere-travolgere-possibili/dp/8817154695?dib=eyJ2IjoiMSJ9.rtu8DsRBVM9XHiKxMc9bJA.FLu9bzeh6bIzmw2yN87DPAw3PsO7zAouLahWRHJ-z1E&dib_tag=se&keywords=9788817154697&qid=1790845243&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=eecd9fe20e80aca3ab96b9851cb8da7c&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Minimalismo digitale",
+          "placeholderCover": true,
+          "subtitle": "Rimettere a fuoco la propria vita in un mondo pieno di distrazioni",
+          "authors": [
+            "Cal Newport"
+          ],
+          "publisher": "ROI Edizioni",
+          "isbn13": "9788836200689",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo sul rapporto con tecnologie e attenzione",
+          "audience": "Adulti interessati a riflettere sul proprio uso di dispositivi, social e tempo",
+          "description": "Un saggio divulgativo sul ripensare il rapporto con tecnologie, dispositivi e distrazioni, attraverso la proposta del minimalismo digitale.",
+          "limit": "Non è un libro specifico sulla FOMO e propone una cornice di auto-riflessione: non determina un uso problematico della tecnologia, non interpreta il risultato del questionario e non sostituisce un supporto professionale.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.roiedizioni.it/prodotto/libri/minimalismo-digitale-cal-newport/"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8836200680",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Minimalismo-digitale-Rimettere-propria-distrazioni/dp/8836200680?&linkCode=ll2&tag=spaziotest-21&linkId=f06843b0b7977dd06ed76bb163e8855c&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "intelligenza-linguistica", "testId": "intelligenza-linguistica", "guideSlug": "intelligenza-linguistica", "title": "Intelligenza linguistica", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "intelligenza-intrapersonale", "testId": "intelligenza-intrapersonale", "guideSlug": "intelligenza-intrapersonale", "title": "Intelligenza intrapersonale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "resilienza-psicologica", "testId": "resilienza-psicologica", "guideSlug": "resilienza-psicologica", "title": "Resilienza psicologica", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

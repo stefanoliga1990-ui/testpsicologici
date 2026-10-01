@@ -1226,7 +1226,30 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "Fear of missing out and internet use: a systematic review and meta-analysis")))
                 .andExpect(content().string(containsString("non sono percentuali della persona")))
-                .andExpect(content().string(containsString("href=\"/test/fomo\"")));
+                .andExpect(content().string(containsString("href=\"/test/fomo\"")))
+                .andExpect(content().string(containsString("Fomo Sapiens")))
+                .andExpect(content().string(containsString("Minimalismo digitale")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
+    }
+
+    @Test
+    void fomoResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
+        mockMvc.perform(get("/test/fomo/risultato").session(completedAttempt("fomo", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("Fomo Sapiens")))
+                .andExpect(content().string(containsString("Minimalismo digitale")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
