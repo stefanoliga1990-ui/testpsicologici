@@ -1406,7 +1406,79 @@
     }
   ]
 },
-    { "topicId": "gelosia-partner", "testId": "gelosia-partner", "guideSlug": "gelosia-partner", "title": "Gelosia nella relazione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "gelosia-partner",
+      "testId": "gelosia-partner",
+      "guideSlug": "gelosia-partner",
+      "title": "Gelosia nella relazione",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Psicologia della gelosia e dell'invidia",
+          "placeholderCover": true,
+          "subtitle": null,
+          "authors": [
+            "Valentina D'Urso"
+          ],
+          "publisher": "Carocci",
+          "isbn13": "9788843069521",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Saggio di psicologia delle emozioni su gelosia e invidia",
+          "audience": "Lettori interessati alle dinamiche emotive della gelosia, comprese quelle nella relazione di coppia",
+          "description": "Un saggio di psicologia delle emozioni che affronta gelosia e invidia, includendo la gelosia amorosa, il triangolo relazionale, i contesti culturali e alcune strategie per fronteggiarne le conseguenze.",
+          "limit": "Tratta la gelosia in più contesti, non valuta una relazione specifica e non interpreta le risposte al questionario. Non consente di stabilire se la gelosia sia giustificata, problematica o causata da un singolo fattore.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.carocci.it/prodotto/psicologia-della-gelosia-e-dellinvidia"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8843069527",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Psicologia-della-gelosia-dellinvidia-Valentina/dp/8843069527?dib=eyJ2IjoiMSJ9.7ZeKAu3DFvEYdiI5H5lgTQ.jDzckXcuE0UXLyBnU2GndCYsC_x4ACQQC5ch-KQ_ZXs&dib_tag=se&keywords=9788843069521&qid=1790888457&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=2405d01038819ffa12e283ec1e53651a&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Relazioni d'amore",
+          "placeholderCover": true,
+          "subtitle": "Normalità e patologia",
+          "authors": [
+            "Otto F. Kernberg"
+          ],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788870783728",
+          "publicationYear": 1996,
+          "format": "brossura",
+          "editorialRole": "Saggio psicoanalitico sulle dinamiche delle relazioni di coppia",
+          "audience": "Lettori interessati a una prospettiva teorica su amore, coppia e interazioni emotive",
+          "description": "Un saggio teorico sulle relazioni di coppia, la passione, la sessualità e le interazioni emotive tra partner, letto attraverso la teoria delle relazioni oggettuali.",
+          "limit": "È un testo teorico di orientamento psicoanalitico sulle relazioni amorose. Non misura la gelosia, non determina la qualità o la sicurezza di una relazione e non sostituisce un supporto professionale individuale o di coppia.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.raffaellocortina.it/scheda-libro/otto-f-kernberg/relazioni-damore-9788870783728-407.html"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8870783723",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Relazioni-damore-Normalit%C3%A0-patologia-Kernberg/dp/8870783723?dib=eyJ2IjoiMSJ9.NWTRKD6LsqM-gsEVNzY2aw.ISItZ-tR3rAUcbz-AngomcmV7bJ1dvF9XiGfKGB-F30&dib_tag=se&keywords=9788870783728&qid=1790888517&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=73ec9f0d753e1a0927ad2e2d18f1f225&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "soddisfazione-vita", "testId": "soddisfazione-vita", "guideSlug": "soddisfazione-vita", "title": "Soddisfazione di vita", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ptsd-adulti", "testId": "ptsd-adulti", "guideSlug": "ptsd-adulti", "title": "Disturbo post-traumatico da stress", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "stili-attaccamento", "testId": "stili-attaccamento", "guideSlug": "stili-attaccamento", "title": "Stili di attaccamento nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

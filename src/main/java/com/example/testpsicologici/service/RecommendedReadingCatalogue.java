@@ -298,6 +298,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("gelosia-partner", List.of(
+                    new RecommendedReading(
+                            "Psicologia della gelosia e dell'invidia",
+                            "Valentina D'Urso",
+                            "Un saggio di psicologia delle emozioni che affronta gelosia e invidia, includendo la gelosia amorosa, il triangolo relazionale, i contesti culturali e alcune strategie per fronteggiarne le conseguenze.",
+                            "Tratta la gelosia in più contesti, non valuta una relazione specifica e non interpreta le risposte al questionario. Non consente di stabilire se la gelosia sia giustificata, problematica o causata da un singolo fattore.",
+                            "https://www.amazon.it/-/en/Psicologia-della-gelosia-dellinvidia-Valentina/dp/8843069527?dib=eyJ2IjoiMSJ9.7ZeKAu3DFvEYdiI5H5lgTQ.jDzckXcuE0UXLyBnU2GndCYsC_x4ACQQC5ch-KQ_ZXs&dib_tag=se&keywords=9788843069521&qid=1790888457&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=2405d01038819ffa12e283ec1e53651a&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Relazioni d'amore",
+                            "Otto F. Kernberg",
+                            "Un saggio teorico sulle relazioni di coppia, la passione, la sessualità e le interazioni emotive tra partner, letto attraverso la teoria delle relazioni oggettuali.",
+                            "È un testo teorico di orientamento psicoanalitico sulle relazioni amorose. Non misura la gelosia, non determina la qualità o la sicurezza di una relazione e non sostituisce un supporto professionale individuale o di coppia.",
+                            "https://www.amazon.it/-/en/Relazioni-damore-Normalit%C3%A0-patologia-Kernberg/dp/8870783723?dib=eyJ2IjoiMSJ9.NWTRKD6LsqM-gsEVNzY2aw.ISItZ-tR3rAUcbz-AngomcmV7bJ1dvF9XiGfKGB-F30&dib_tag=se&keywords=9788870783728&qid=1790888517&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=73ec9f0d753e1a0927ad2e2d18f1f225&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",
