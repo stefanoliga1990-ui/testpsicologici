@@ -13,6 +13,16 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon",
+                    "Classificazione OMS consultata per il perimetro occupazionale e le tre dimensioni; non definisce item o soglie dell'app."),
+            entry("https://doi.org/10.3390/ijerph18189469",
+                    "Validazione italiana del BAT su lavoratori di settori diversi consultata per struttura e limiti di trasferibilità; item e proprietà non validano il questionario originale."),
+            entry("https://doi.org/10.5271/sjweh.3935",
+                    "Revisione e consenso europeo consultati per la variabilità delle definizioni e il riferimento a problemi lavorativi prolungati; non sono norme individuali."),
+            entry("https://doi.org/10.3389/fpsyg.2019.00284",
+                    "Meta-analisi consultata per il rapporto tra burnout, depressione e ansia; non consente diagnosi differenziale delle risposte individuali."),
+            entry("https://doi.org/10.1186/s12889-017-4153-7",
+                    "Revisione con meta-analisi consultata per associazioni fra ambiente di lavoro e sintomi di burnout; non attribuisce una causa alla singola persona."),
             entry("https://www.cdc.gov/autism/hcp/diagnosis/index.html",
                     "Riferimento per comunicazione e interazione sociale, comportamenti ripetitivi, interessi, sensibilità sensoriale e necessità di considerare la storia dello sviluppo."),
             entry("https://www.nice.org.uk/guidance/cg142/chapter/Recommendations",

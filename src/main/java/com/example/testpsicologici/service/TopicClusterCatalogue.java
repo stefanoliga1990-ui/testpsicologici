@@ -86,6 +86,11 @@ public class TopicClusterCatalogue {
                             "soddisfazione-vita"
                     )),
             new TopicCluster(
+                    "lavoro-studio-e-stress",
+                    "Lavoro, studio e stress",
+                    "Esperienze legate alle richieste lavorative e al recupero, senza diagnosi online.",
+                    List.of("burnout-percepito")),
+            new TopicCluster(
                     "neurosviluppo-attenzione-e-linguaggio",
                     "Neurosviluppo, attenzione e linguaggio",
                     "Caratteristiche legate ad attenzione, comunicazione, flessibilità e uso del linguaggio.",
@@ -109,6 +114,10 @@ public class TopicClusterCatalogue {
     public List<String> findRelatedTestIds(String testId, int maximum) {
         if (maximum <= 0) {
             return List.of();
+        }
+        if ("burnout-percepito".equals(testId)) {
+            return List.of("resilienza-psicologica", "umore-depresso", "soddisfazione-vita")
+                    .stream().limit(maximum).toList();
         }
         return findByTestId(testId)
                 .map(cluster -> nearestNeighbours(cluster.testIds(), testId, maximum))

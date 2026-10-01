@@ -37,6 +37,12 @@ class TopicClusterCatalogueTest {
             var cluster = topicClusterCatalogue.findByTestId(test.id()).orElseThrow();
             var relatedIds = topicClusterCatalogue.findRelatedTestIds(test.id(), 3);
 
+            if ("burnout-percepito".equals(test.id())) {
+                assertThat(cluster.slug()).isEqualTo("lavoro-studio-e-stress");
+                assertThat(relatedIds).containsExactly("resilienza-psicologica", "umore-depresso", "soddisfazione-vita");
+                continue;
+            }
+
             assertThat(relatedIds)
                     .doesNotContain(test.id())
                     .doesNotHaveDuplicates()

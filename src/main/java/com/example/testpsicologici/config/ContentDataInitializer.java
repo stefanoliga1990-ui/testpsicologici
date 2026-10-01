@@ -87,6 +87,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedSituationshipInformationTest();
         seedRelationalCodependencyInformationTest();
         seedAceExposureQuestionnaire();
+        seedOccupationalBurnoutInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4167,7 +4168,84 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "È legittimo lasciare domande senza risposta e non occorre ricostruire forzatamente i ricordi. Gli ambiti indeterminati non possono essere interpretati come presenza o assenza. " + safety);
     }
 
+    private void seedOccupationalBurnoutInformationTest() {
+        String id = "burnout-percepito";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Sto vivendo esperienze lavorative associate al burnout?",
+                "Auto-osservazione informativa",
+                "Esplora esaurimento, distanza dal lavoro ed efficacia percepita negli ultimi tre mesi di lavoro.",
+                "4 min · 15 domande",
+                "Questionario informativo originale e non validato per adulti che lavorano: rispondi pensando agli ultimi tre mesi; se non hai lavorato o hai iniziato da poco, il risultato è poco interpretabile. Le risposte non accertano burnout, cause, diagnosi o idoneità al lavoro; sonno, salute, ansia e depressione possono contribuire. Se il disagio persiste, parlane con un professionista; in caso di pericolo immediato o pensieri di farti del male, chiama il 112 o vai al Pronto Soccorso.",
+                version, false,
+                "Frequenza media delle esperienze esplorate",
+                "Frequenza delle esperienze nell'area",
+                true, 43)
+                .withSeo("Burnout lavorativo: questionario informativo | Spazio Test",
+                        "15 domande originali su esaurimento, distanza dal lavoro ed efficacia percepita. Risultati descrittivi, non diagnosi di burnout.")
+                .withResponseInstruction("Pensando agli ultimi tre mesi del tuo lavoro, con quale frequenza hai vissuto questa esperienza?"));
+
+        saveArea(id, "esaurimento", "Esaurimento legato al lavoro", 1);
+        saveArea(id, "distacco", "Distanza mentale dal lavoro", 2);
+        saveArea(id, "efficacia", "Efficacia professionale percepita come ridotta", 3);
+
+        saveQuestions(id, List.of(
+                q("esaurimento", "Ho iniziato la giornata lavorativa sentendomi già senza energie."),
+                q("esaurimento", "Ho faticato a mantenere energia durante le ore di lavoro."),
+                q("esaurimento", "Ho terminato la giornata lavorativa sentendomi svuotato."),
+                q("esaurimento", "Ho avuto bisogno di molto tempo per recuperare energia dopo il lavoro."),
+                q("esaurimento", "Ho avuto poche energie per attività importanti per me dopo il lavoro."),
+                q("distacco", "Ho sentito meno interesse per attività lavorative che in passato mi coinvolgevano."),
+                q("distacco", "Ho svolto attività lavorative con distacco emotivo."),
+                q("distacco", "Ho percepito le attività lavorative come prive di significato per me."),
+                q("distacco", "Ho risposto alle richieste lavorative con indifferenza."),
+                q("distacco", "Ho pensato al mio lavoro con sfiducia."),
+                q("efficacia", "Ho dubitato della mia capacità di svolgere compiti lavorativi abituali."),
+                q("efficacia", "Ho avuto difficoltà a riconoscere i risultati del mio lavoro."),
+                q("efficacia", "Ho sentito di contribuire poco agli obiettivi del mio lavoro."),
+                q("efficacia", "Ho faticato a vedere progressi nel mio lavoro."),
+                q("efficacia", "Ho valutato il mio contributo lavorativo come poco utile.")));
+
+        String limits = "Il questionario originale non è validato: le soglie e le barre sono solo editoriali, non misurano gravità, probabilità o diagnosi di burnout. "
+                + "Le risposte non stabiliscono la causa delle esperienze, l'idoneità al lavoro o la qualità della tua prestazione; sonno, condizioni di salute, depressione, ansia e contesto di vita possono contribuire. "
+                + "Se il disagio persiste o interferisce con la vita quotidiana, considera un confronto con il medico o un professionista della salute mentale; per un pericolo immediato o pensieri di farti del male chiama il 112 o vai al Pronto Soccorso.";
+        saveGlobal(id, "LOW", "Le esperienze lavorative associate al burnout risultano poco frequenti",
+                "Le risposte sono poco frequenti in tutte e tre le aree esplorate. Nell'ultimo trimestre lavorativo non emerge una distribuzione ampia di esaurimento, distacco o ridotta efficacia percepita.",
+                "Un profilo contenuto non esclude problemi circoscritti, giornate molto difficili o aspetti del lavoro non inclusi nelle domande. Osserva se il recupero e le richieste cambiano nel tempo e se ci sono episodi che meritano attenzione indipendentemente dalla media. " + limits);
+        saveGlobal(id, "MIXED", "Le esperienze lavorative associate al burnout sono variabili",
+                "Le risposte mostrano frequenze intermedie o differenze tra le tre aree, senza un'area nel livello editoriale più alto. L'andamento può cambiare con compiti, periodi, risorse e possibilità di recupero.",
+                "Può essere utile osservare quando si presenta la fatica, se il distacco riguarda alcune attività e quanto la percezione di efficacia dipende dai feedback ricevuti. Le tre aree descrivono esperienze diverse e una media non spiega da sola la situazione lavorativa. " + limits);
+        saveGlobal(id, "FOCUSED", "Una delle esperienze lavorative associate al burnout emerge maggiormente",
+                "Una delle tre aree raccoglie risposte più frequenti, mentre le altre sono più contenute. Il risultato orienta verso esaurimento, distanza mentale o efficacia percepita senza generalizzare all'intero lavoro.",
+                "Guarda l'area emergente e considera da quanto dura, quali condizioni la accompagnano e se interferisce con salute, relazioni o attività importanti. Un'area elevata non equivale a burnout e le altre aree basse non rendono irrilevante il disagio. " + limits);
+        saveGlobal(id, "BROAD", "Più esperienze lavorative associate al burnout emergono nelle risposte",
+                "Le risposte risultano frequenti in almeno due delle tre aree esplorate. Esaurimento, distanza dal lavoro o ridotta efficacia percepita sembrano quindi coesistere in più modi nel periodo considerato.",
+                "Osserva ampiezza, persistenza e interferenza concreta, senza trasformare le soglie editoriali in una diagnosi o in una misura di gravità. Anche problemi organizzativi, salute, sonno e difficoltà fuori dal lavoro meritano una valutazione distinta; non devi gestire tutto da solo. " + limits);
+
+        saveAreaInsights(id, "esaurimento",
+                "Le esperienze di esaurimento riferite al lavoro sono poco frequenti; non esclude singole giornate impegnative.",
+                "La perdita di energia compare in alcune fasi della giornata o del recupero. Nota richieste, pause, sonno e cambiamenti nel tempo.",
+                "L'esaurimento riferito al lavoro compare spesso. Non dimostra da solo burnout né chiarisce se altre condizioni contribuiscano.");
+        saveAreaInsights(id, "distacco",
+                "Distanza e perdita di interesse verso il lavoro sono poco frequenti; non misura motivazione o valore personale.",
+                "Distanza o minor interesse compaiono in alcune attività. Osserva se cambiano con compiti, autonomia e contesto.",
+                "Distanza e perdita di interesse verso il lavoro compaiono spesso. L'area non attribuisce colpe o intenzioni.");
+        saveAreaInsights(id, "efficacia",
+                "La percezione di efficacia ridotta è poco frequente; non certifica la qualità oggettiva del lavoro.",
+                "Dubbi sui risultati o sul contributo emergono in alcune occasioni. Considera obiettivi, feedback e risorse disponibili.",
+                "La percezione di efficacia ridotta compare spesso. Non misura produttività o competenza reale e non equivale a un giudizio professionale.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("burnout-percepito", List.of(
+                ref("Burn-out an occupational phenomenon — OMS", "https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon"),
+                ref("Italian Burnout Assessment Tool — Consiglio, Mazzetti e Schaufeli", "https://doi.org/10.3390/ijerph18189469"),
+                ref("Harmonized definition of occupational burnout — Guseva Canu e colleghi", "https://doi.org/10.5271/sjweh.3935"),
+                ref("Burnout, depression and anxiety — Koutsimani e colleghi", "https://doi.org/10.3389/fpsyg.2019.00284"),
+                ref("Work environment and burnout symptoms — Aronsson e colleghi", "https://doi.org/10.1186/s12889-017-4153-7")));
         syncReferences("tratti-autistici-adulti", List.of(
                 ref("Clinical testing and diagnosis for autism spectrum disorder — CDC", "https://www.cdc.gov/autism/hcp/diagnosis/index.html"),
                 ref("Autism spectrum disorder in adults: diagnosis and management — NICE CG142", "https://www.nice.org.uk/guidance/cg142/chapter/Recommendations"),

@@ -59,7 +59,8 @@ class PsychometricStructureTest {
             Map.entry("disponibilita-emotiva", "difficoltà di disponibilità emotiva nella relazione"),
             Map.entry("alessitimia", "esperienze associate all'alessitimia"),
             Map.entry("situationship", "ambiguità e accordi nella relazione"),
-            Map.entry("codipendenza-relazionale", "dinamiche relazionali esplorate"));
+            Map.entry("codipendenza-relazionale", "dinamiche relazionali esplorate"),
+            Map.entry("burnout-percepito", "esperienze lavorative associate al burnout"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -69,7 +70,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(41).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(42).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ACE_EXPOSURE".equals(test.scoringModel())) {
@@ -128,6 +129,16 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(4));
+            } else if ("burnout-percepito".equals(test.id())) {
+                assertThat(test.version()).isEqualTo("1.0");
+                assertThat(test.questions()).hasSize(15);
+                assertThat(test.responseInstruction()).contains("ultimi tre mesi", "frequenza");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).extracting(area -> area.code())
+                        .containsExactly("esaurimento", "distacco", "efficacia");
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code()))
+                        .hasSize(5));
             } else if ("invalidazione-emotiva-subita".equals(test.id()) || "alessitimia".equals(test.id())) {
                 assertThat(test.questions()).hasSize(18);
                 assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
@@ -288,6 +299,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("un ambito");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("più ambiti");
+            } else if ("burnout-percepito".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("variabili");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("una delle");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("più esperienze");
             } else if ("alessitimia".equals(test.id())) {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("modo variabile");

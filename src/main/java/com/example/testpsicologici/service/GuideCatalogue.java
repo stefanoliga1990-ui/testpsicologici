@@ -4748,6 +4748,43 @@ public class GuideCatalogue {
                     )
             ),
             new InformationGuide(
+                    "burnout-lavorativo", "burnout-percepito",
+                    "Burnout lavorativo",
+                    "Burnout lavorativo: esaurimento, distanza ed efficacia percepita",
+                    "Burnout lavorativo: significato e segnali | Spazio Test",
+                    "Una guida al burnout come fenomeno occupazionale, alle sue dimensioni e ai limiti dei questionari online.",
+                    "Il burnout riguarda il contesto lavorativo. Esaurimento, distanza mentale dal lavoro e ridotta efficacia percepita possono essere segnali da comprendere nel contesto, non una diagnosi che un questionario online possa stabilire.",
+                    List.of(
+                            new GuideSection("In breve", "Un fenomeno del lavoro, non una diagnosi online", List.of(
+                                    "Nell'ICD-11 l'OMS descrive il burn-out come fenomeno occupazionale associato a stress lavorativo cronico non gestito con successo; non lo classifica come condizione medica. La definizione riguarda il lavoro e non si estende automaticamente allo studio o ad altri compiti di vita.",
+                                    "Sentirsi stanchi dopo una settimana intensa non basta a parlare di burnout. Conta osservare se le esperienze si ripetono, come cambia il recupero e quale interferenza hanno sulla vita quotidiana."), List.of()),
+                            new GuideSection("Tre aree", "Come leggere esaurimento, distanza ed efficacia", List.of(
+                                    "L'esaurimento riguarda l'energia disponibile prima, durante e dopo il lavoro. La distanza mentale riguarda interesse e rapporto con le attività, non il valore morale o la dedizione della persona.",
+                                    "La ridotta efficacia professionale descrive il modo in cui vengono percepiti competenza e contributo. Una percezione negativa non misura la qualità reale delle prestazioni; richieste, obiettivi poco chiari e feedback possono influenzarla."), List.of()),
+                            new GuideSection("Contesto", "Guardare anche alle condizioni di lavoro", List.of(
+                                    "Carichi, autonomia, risorse, sostegno, conflitti e possibilità di recupero possono essere pertinenti. Gli studi sui gruppi non permettono però di attribuire una causa certa alla situazione di una singola persona.",
+                                    "Osservare compiti, orari e cambiamenti concreti può aiutare a formulare una richiesta di supporto. Il questionario non assegna responsabilità al lavoratore o all'organizzazione e non indica da solo una decisione su dimissioni o permanenza."), List.of()),
+                            new GuideSection("Distinzioni", "Burnout, stress, depressione e salute fisica", List.of(
+                                    "La ricerca trova associazioni tra burnout, depressione e ansia, ma i confini non si risolvono con un punteggio. Sonno insufficiente, problemi di salute o difficoltà fuori dal lavoro possono produrre o amplificare esperienze simili.",
+                                    "Se il disagio si estende oltre il lavoro, dura nel tempo o limita il funzionamento, un medico o un professionista della salute mentale può aiutare a valutare spiegazioni diverse e bisogni di cura."), List.of()),
+                            new GuideSection("Risultati", "Che cosa descrive il questionario collegato", List.of(
+                                    "I 15 item originali chiedono la frequenza negli ultimi tre mesi di lavoro. Le tre barre e la media complessiva sono trasformazioni editoriali delle risposte, non percentuali di burnout, norme, cut-off clinici o misure di gravità.",
+                                    "LOW, MIXED, FOCUSED e BROAD descrivono soltanto la distribuzione delle aree. Il questionario non è stato validato e non è una versione breve del BAT o del MBI; la validazione italiana del BAT non si trasferisce alle domande di Spazio Test."), List.of()),
+                            new GuideSection("Supporto", "Quando chiedere un confronto", List.of(
+                                    "Se la fatica persiste, considera un confronto con il medico, uno psicologo o psicoterapeuta e, se pertinente, con il medico competente o con figure di tutela della salute sul lavoro. Scegli il percorso in base alla tua sicurezza e alle possibilità concrete, senza affidarti a un solo numero.",
+                                    "Un malessere acuto o pensieri di farti del male richiedono attenzione indipendentemente dal risultato: in caso di pericolo immediato chiama il 112 o raggiungi il Pronto Soccorso."), List.of())
+                    ),
+                    "Il questionario collegato è originale, informativo e non validato. Osserva tre aree riferite al lavoro; non accerta burnout, cause, malattie o idoneità professionale.",
+                    "La guida circoscrive il tema al lavoro e separa le esperienze riferite da una valutazione clinica o organizzativa. Invita a considerare durata, contesto, recupero e alternative senza ridurre tutto alla media delle risposte.",
+                    List.of(
+                            new GuideReference("Burn-out an occupational phenomenon — OMS", "https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon", "Classificazione istituzionale consultata per contesto occupazionale e tre dimensioni; non fornisce soglie per il questionario."),
+                            new GuideReference("Italian Burnout Assessment Tool — Consiglio, Mazzetti e Schaufeli", "https://doi.org/10.3390/ijerph18189469", "Validazione italiana su 738 lavoratori consultata per la trasferibilità del tema, non per validare gli item originali o trasferire fattori e punteggi."),
+                            new GuideReference("Harmonized definition of occupational burnout — Guseva Canu e colleghi", "https://doi.org/10.5271/sjweh.3935", "Consenso europeo consultato per la variabilità delle definizioni e il legame con esposizione prolungata a problemi lavorativi; non definisce un test individuale."),
+                            new GuideReference("Burnout, depression and anxiety — Koutsimani e colleghi", "https://doi.org/10.3389/fpsyg.2019.00284", "Revisione consultata per le associazioni e i limiti della distinzione da depressione e ansia; non consente diagnosi differenziale del singolo."),
+                            new GuideReference("Work environment and burnout symptoms — Aronsson e colleghi", "https://doi.org/10.1186/s12889-017-4153-7", "Meta-analisi consultata per il ruolo possibile dell'ambiente di lavoro; le associazioni di gruppo non identificano una causa individuale.")
+                    )
+            ),
+            new InformationGuide(
                     "esperienze-avverse-infanzia", "esperienze-avverse-infanzia",
                     "Esperienze avverse nell'infanzia (ACEs)",
                     "Adverse Childhood Experiences (ACEs): capire le esperienze avverse nell'infanzia",
