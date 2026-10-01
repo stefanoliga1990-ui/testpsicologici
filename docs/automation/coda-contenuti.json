@@ -184,7 +184,7 @@
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Non patologizzare ottimismo o speranza; distinguere regolazione, evitamento, comunicazione e invalidazione." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "BLOCKED", "attempts": 1, "lastAttemptAt": "2026-10-01T13:16:53+02:00", "completedAt": null, "commitHash": null, "blockReason": "La revisione di scoping del 2026 su toxic positivity (doi:10.1080/02699931.2026.2707485) rileva definizioni non standardizzate, ricerca empirica limitata e pochi strumenti validati. Le quattro dimensioni proposte mescolano soppressione emotiva personale, invalidazione interpersonale, ottimismo irrealistico e felicità esibita; le prime misure pubblicate in campioni indonesiani o turchi adottano strutture diverse e non studiano specificamente la tendenza ad imporre positività ad altri in adulti italiani. Non sono emerse validazioni italiane pertinenti. Il test già presente sull'invalidazione emotiva descrive le esperienze del destinatario, ma non fornisce una base per dedurre o misurare l'intenzione o il comportamento di chi risponde. Un questionario originale con aree e punteggio autonomi confonderebbe costrutti distinti o attribuirebbe stabilità e intenzionalità non dimostrate; la voce resta non implementata in attesa di migliore delimitazione ed evidenze trasferibili." }
     },
     {
       "order": 14,
