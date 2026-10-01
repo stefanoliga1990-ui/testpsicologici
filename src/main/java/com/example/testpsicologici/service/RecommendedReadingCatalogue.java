@@ -226,6 +226,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("paura-abbandono", List.of(
+                    new RecommendedReading(
+                            "Quaderno di esercizi per vincere la dipendenza affettiva",
+                            "Antonella Lebruto, Giulia Calamai e Laura Caccico",
+                            "Un quaderno operativo in 13 step che propone attività di auto-aiuto su dipendenza affettiva, pensieri, emozioni, evitamenti, bisogni e comportamenti nella relazione.",
+                            "Il volume affronta la dipendenza affettiva, che non coincide con ogni paura dell'abbandono. Gli esercizi non interpretano il risultato del questionario, non definiscono la causa delle difficoltà individuali e non sostituiscono un supporto professionale.",
+                            "https://www.amazon.it/-/en/Quaderno-esercizi-vincere-dipendenza-affettiva/dp/8859043735?dib=eyJ2IjoiMSJ9.irk_ZgbHxtWYpQlHEMJBtg.UBzXjHdrTLyO_2uEuX-sTiftnv6OK_3jaee0S836Ke0&dib_tag=se&keywords=9788859043737&qid=1790834471&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=105ac250eceb8b1a9bc64d6de34c76f2&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Costruzione e rottura dei legami affettivi",
+                            "John Bowlby",
+                            "Una selezione di lezioni e relazioni di John Bowlby che introduce i principi della teoria dell'attaccamento e il ruolo dei legami familiari nello sviluppo.",
+                            "È un testo teorico e storico sullo sviluppo e sull'attaccamento, non una guida per valutare le proprie relazioni. Non permette di collegare automaticamente le esperienze infantili alle difficoltà attuali né di interpretare il risultato del questionario.",
+                            "https://www.amazon.it/-/en/Costruzione-rottura-dei-legami-affettivi/dp/8832857928?dib=eyJ2IjoiMSJ9.InKuP-7GNobphDdSO0qYJQ.ET9F_vegG-bY1KmkGJSd-U016RzbGV-0Lr9q7N_NLWk&dib_tag=se&keywords=9788832857924&qid=1790834549&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=fb61acc7e308cfaed7022426c73fe760&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("tratti-borderline-adulti", List.of(
                     new RecommendedReading(
                             "Superare il Disturbo Borderline di Personalità",
