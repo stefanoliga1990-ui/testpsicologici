@@ -244,6 +244,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("intelligenza-linguistica", List.of(
+                    new RecommendedReading(
+                            "Formae mentis",
+                            "Howard Gardner",
+                            "Il testo di Howard Gardner presenta il modello delle intelligenze multiple, compresa l'intelligenza linguistica, e discute componenti, sviluppo e implicazioni educative.",
+                            "È un saggio teorico sul modello delle intelligenze multiple, non un test personale. Non permette di misurare l'intelligenza linguistica, convalidare il questionario o dedurre capacità certificate dalle risposte.",
+                            "https://www.amazon.it/-/en/Formae-mentis-Gardner/dp/8807882590?&linkCode=ll2&tag=spaziotest-21&linkId=88d2c865a87803234e80732e81ed7981&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Il cervello sintattico",
+                            "Marco Tettamanti",
+                            "Un'introduzione ai meccanismi sintattici del linguaggio, con riferimenti a psicolinguistica, neurolinguistica, acquisizione e funzionamento del cervello sintattico.",
+                            "Approfondisce un ambito specifico del linguaggio e non misura la competenza linguistica nel suo insieme. Non interpreta le risposte al questionario e non consente di dedurre profili cognitivi o condizioni neurologiche individuali.",
+                            "https://www.amazon.it/-/en/cervello-sintattico-Marco-Tettamanti/dp/8843096524?&linkCode=ll2&tag=spaziotest-21&linkId=6af8958af114aca19e783a6e376309a2&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",

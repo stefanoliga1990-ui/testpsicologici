@@ -1177,7 +1177,82 @@
         }
       ]
     },
-    { "topicId": "intelligenza-linguistica", "testId": "intelligenza-linguistica", "guideSlug": "intelligenza-linguistica", "title": "Intelligenza linguistica", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "intelligenza-linguistica",
+      "testId": "intelligenza-linguistica",
+      "guideSlug": "intelligenza-linguistica",
+      "title": "Intelligenza linguistica",
+      "fallbackTopics": [
+        "teoria delle intelligenze multiple",
+        "linguaggio e processi cognitivi"
+      ],
+      "fallbackRationale": "Non esistono testi editoriali adeguati che trasformino l'intelligenza linguistica in una misura personale. Le due letture offrono invece il quadro teorico delle intelligenze multiple e un approfondimento sui processi sintattici del linguaggio, senza equipararli al risultato del questionario.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Formae mentis",
+          "placeholderCover": true,
+          "subtitle": "Saggio sulla pluralità dell'intelligenza",
+          "authors": [
+            "Howard Gardner"
+          ],
+          "publisher": "Giangiacomo Feltrinelli",
+          "isbn13": "9788807882593",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Saggio teorico sulle intelligenze multiple",
+          "audience": "Lettori interessati al modello delle intelligenze multiple e ai suoi impieghi educativi",
+          "description": "Il testo di Howard Gardner presenta il modello delle intelligenze multiple, compresa l'intelligenza linguistica, e discute componenti, sviluppo e implicazioni educative.",
+          "limit": "È un saggio teorico sul modello delle intelligenze multiple, non un test personale. Non permette di misurare l'intelligenza linguistica, convalidare il questionario o dedurre capacità certificate dalle risposte.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.feltrinellieditore.it/opera/formae-mentis-1-2/"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8807882590",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Formae-mentis-Gardner/dp/8807882590?&linkCode=ll2&tag=spaziotest-21&linkId=88d2c865a87803234e80732e81ed7981&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Il cervello sintattico",
+          "placeholderCover": true,
+          "subtitle": null,
+          "authors": [
+            "Marco Tettamanti"
+          ],
+          "publisher": "Carocci",
+          "isbn13": "9788843096527",
+          "publicationYear": 2020,
+          "format": "brossura",
+          "editorialRole": "Introduzione a psicolinguistica e neurolinguistica della sintassi",
+          "audience": "Lettori interessati a processi sintattici, linguaggio e basi cognitive della comunicazione",
+          "description": "Un'introduzione ai meccanismi sintattici del linguaggio, con riferimenti a psicolinguistica, neurolinguistica, acquisizione e funzionamento del cervello sintattico.",
+          "limit": "Approfondisce un ambito specifico del linguaggio e non misura la competenza linguistica nel suo insieme. Non interpreta le risposte al questionario e non consente di dedurre profili cognitivi o condizioni neurologiche individuali.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.carocci.it/prodotto/il-cervello-sintattico"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8843096524",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/cervello-sintattico-Marco-Tettamanti/dp/8843096524?&linkCode=ll2&tag=spaziotest-21&linkId=6af8958af114aca19e783a6e376309a2&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "intelligenza-intrapersonale", "testId": "intelligenza-intrapersonale", "guideSlug": "intelligenza-intrapersonale", "title": "Intelligenza intrapersonale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "resilienza-psicologica", "testId": "resilienza-psicologica", "guideSlug": "resilienza-psicologica", "title": "Resilienza psicologica", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "gelosia-partner", "testId": "gelosia-partner", "guideSlug": "gelosia-partner", "title": "Gelosia nella relazione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

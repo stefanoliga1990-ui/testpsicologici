@@ -1269,7 +1269,31 @@ class PageRenderingTest {
                         "non significa bassa intelligenza")))
                 .andExpect(content().string(containsString("Project Zero, Harvard")))
                 .andExpect(content().string(containsString("L&#39;indagine PIAAC")))
-                .andExpect(content().string(containsString("href=\"/test/intelligenza-linguistica\"")));
+                .andExpect(content().string(containsString("href=\"/test/intelligenza-linguistica\"")))
+                .andExpect(content().string(containsString("Formae mentis")))
+                .andExpect(content().string(containsString("Il cervello sintattico")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
+    }
+
+    @Test
+    void linguisticIntelligenceResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
+        mockMvc.perform(get("/test/intelligenza-linguistica/risultato")
+                        .session(completedAttempt("intelligenza-linguistica", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("Formae mentis")))
+                .andExpect(content().string(containsString("Il cervello sintattico")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
