@@ -173,7 +173,7 @@
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Relazioni e attaccamento",
       "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Valutare una direzione descrittiva o positiva e distinguere espressione, negoziazione e rispetto dei confini." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "BLOCKED", "attempts": 1, "lastAttemptAt": "2026-10-01T13:08:41+02:00", "completedAt": null, "commitHash": null, "blockReason": "Il tema ampio dei confini nella relazione non offre, nelle fonti italiane ed europee individuate, una struttura autonoma sufficientemente delimitata per un nuovo questionario originale. Le componenti osservabili proposte (esprimere bisogni e dire no, negoziare accordi, conservare spazio personale e rispettare limiti) sono già esplorate nei test dell'app su assertività, compatibilità percepita, codipendenza, situationship e impatto della relazione sul benessere. La validazione italiana IIP-32 riguarda problemi interpersonali più ampi, non una misura di confini di coppia; una misura specifica per giovani adulti è stata presentata soltanto in un abstract congressuale statunitense del 2026. Un nuovo punteggio composito duplicherebbe contenuti esistenti o importerebbe aree e interpretazioni non trasferibili. La voce resta non implementata in attesa di una delimitazione editoriale più specifica o di evidenze migliori." }
     },
     {
       "order": 13,
