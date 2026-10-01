@@ -226,6 +226,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("autosabotaggio", List.of(
+                    new RecommendedReading(
+                            "Basta autosabotaggio!",
+                            "Judy Ho",
+                            "Un manuale divulgativo che propone un percorso in sei passaggi per riconoscere abitudini e pensieri controproducenti e riflettere sui propri obiettivi.",
+                            "Le attività proposte sono materiali di auto-aiuto: non interpretano il risultato del questionario, non stabiliscono le cause individuali dell'autosabotaggio e non sostituiscono una valutazione professionale.",
+                            "https://www.amazon.it/dp/885902420X?&linkCode=ll2&tag=spaziotest-21&linkId=4090807f63b50972cba6f1d7f91858a1&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Il piccolo sabotatore dentro di noi",
+                            "Michaela Muthig",
+                            "Una guida divulgativa che usa la metafora del sabotatore interiore per esplorare auto-ostacoli, autocritica e difficoltà a portare avanti progetti importanti.",
+                            "La metafora del sabotatore è una cornice divulgativa e non identifica una parte della personalità, una diagnosi o una spiegazione certa delle difficoltà individuali.",
+                            "https://www.amazon.it/-/en/piccolo-sabotatore-dentro-noi/dp/8807895331?dib=eyJ2IjoiMSJ9.4n1pMd7_ez6MaPXuVyO6Tg.3gRgcc7HhdINU9-ClJ5LvK_UvJ8zRw7fvFgFUc-jI_0&dib_tag=se&keywords=9788807895333&qid=1790812819&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=8af3aafcf014e4d161c94fa6105a8649&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("sindrome-impostore", List.of(
                     new RecommendedReading(
                             "La sindrome dell'impostore",

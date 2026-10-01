@@ -912,7 +912,69 @@
         }
       ]
     },
-    { "topicId": "autosabotaggio", "testId": "autosabotaggio", "guideSlug": "autosabotaggio", "title": "Autosabotaggio e ostacoli agli obiettivi", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "autosabotaggio",
+      "testId": "autosabotaggio",
+      "guideSlug": "autosabotaggio",
+      "title": "Autosabotaggio e ostacoli agli obiettivi",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Basta autosabotaggio!",
+          "placeholderCover": true,
+          "subtitle": "Sblocca le tue qualità e raggiungi i tuoi obiettivi",
+          "authors": ["Judy Ho"],
+          "publisher": "Erickson",
+          "isbn13": "9788859024200",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "editorialRole": "Manuale divulgativo di auto-aiuto",
+          "audience": "Adulti interessati a osservare abitudini, pensieri e comportamenti che ostacolano obiettivi personali",
+          "description": "Un manuale divulgativo che propone un percorso in sei passaggi per riconoscere abitudini e pensieri controproducenti e riflettere sui propri obiettivi.",
+          "limit": "Le attività proposte sono materiali di auto-aiuto: non interpretano il risultato del questionario, non stabiliscono le cause individuali dell'autosabotaggio e non sostituiscono una valutazione professionale.",
+          "primarySources": [
+            {"label": "Approfondimento editore", "url": "https://www.erickson.it/it/mondo-erickson/ci-mettiamo-il-bastone-tra-le-ruote-da-soli"}
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "885902420X",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/885902420X?&linkCode=ll2&tag=spaziotest-21&linkId=4090807f63b50972cba6f1d7f91858a1&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Il piccolo sabotatore dentro di noi",
+          "placeholderCover": true,
+          "subtitle": "Come stanarlo e farselo amico",
+          "authors": ["Michaela Muthig"],
+          "publisher": "Feltrinelli",
+          "isbn13": "9788807895333",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa sull'auto-ostacolo",
+          "audience": "Adulti interessati a riflettere sulla resistenza interiore, sull'autocritica e sui progetti lasciati in sospeso",
+          "description": "Una guida divulgativa che usa la metafora del sabotatore interiore per esplorare auto-ostacoli, autocritica e difficoltà a portare avanti progetti importanti.",
+          "limit": "La metafora del sabotatore è una cornice divulgativa e non identifica una parte della personalità, una diagnosi o una spiegazione certa delle difficoltà individuali.",
+          "primarySources": [
+            {"label": "Scheda editore", "url": "https://www.feltrinellieditore.it/opera/il-piccolo-sabotatore-dentro-di-noi-1/"}
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8807895331",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/piccolo-sabotatore-dentro-noi/dp/8807895331?dib=eyJ2IjoiMSJ9.4n1pMd7_ez6MaPXuVyO6Tg.3gRgcc7HhdINU9-ClJ5LvK_UvJ8zRw7fvFgFUc-jI_0&dib_tag=se&keywords=9788807895333&qid=1790812819&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=8af3aafcf014e4d161c94fa6105a8649&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "disturbo-borderline-personalita", "testId": "tratti-borderline-adulti", "guideSlug": "disturbo-borderline-personalita", "title": "Disturbo borderline di personalità", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "paura-abbandono", "testId": "paura-abbandono", "guideSlug": "paura-abbandono", "title": "Paura dell'abbandono", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "fomo", "testId": "fomo", "guideSlug": "fomo", "title": "FOMO (Fear of Missing Out)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
