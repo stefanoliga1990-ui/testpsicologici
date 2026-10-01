@@ -200,13 +200,13 @@
     {
       "order": 15,
       "slug": "burnout-percepito",
-      "workingTitle": "Sto vivendo segnali associati al burnout?",
+      "workingTitle": "Sto vivendo esperienze lavorative associate al burnout?",
       "sourceTopic": "Sono in Burnout?",
       "sourceDescription": "Esaurimento, distacco dal lavoro o dallo studio e riduzione dell'efficacia percepita.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Lavoro, studio e stress",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Definire popolazione e contesto; distinguere burnout occupazionale, stress, depressione e condizioni mediche senza diagnosi differenziale automatica." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 3, "itemCount": 15, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Questionario originale e non validato per adulti che lavorano; le tre aree descrivono esperienze negli ultimi tre mesi e non accertano burnout, cause, diagnosi o idoneità lavorativa. Distinguere da stress, depressione e condizioni mediche senza diagnosi differenziale automatica." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-01T13:50:52+02:00", "completedAt": "2026-10-01T13:50:52+02:00", "commitHash": "6d0b919d4852a7ccb69ea70cb18ae878fe6b9425", "blockReason": null }
     },
     {
       "order": 16,
