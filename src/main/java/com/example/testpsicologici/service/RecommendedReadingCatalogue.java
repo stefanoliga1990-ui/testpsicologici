@@ -424,6 +424,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("love-bombing", List.of(
+                    new RecommendedReading(
+                            "Love bombing. Il codice segreto della manipolazione",
+                            "Roberta Lippi",
+                            "Un libro che raccoglie sedici storie di love bombing e dinamiche di manipolazione in contesti diversi, dalle relazioni affettive al lavoro, alla famiglia e alle amicizie.",
+                            "Racconta storie e contesti diversi: non permette di stabilire se attenzioni intense, un legame o il risultato del questionario dimostrino love bombing o altre forme di abuso.",
+                            "https://www.amazon.it/dp/8817185485?&linkCode=ll2&tag=spaziotest-21&linkId=062ac2354277882d2fb782386f4c37b5&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Gabbie di parole",
+                            "Carmela Mento, Giovanna Spatari e Maria Rosaria Anna Muscatello (a cura di)",
+                            "Un volume sulle forme di violenza psicologica nelle relazioni di coppia, sulle dinamiche di potere e controllo e sui possibili percorsi di prevenzione e intervento.",
+                            "È un testo per lo studio e le professioni d’aiuto: tratta il love bombing nel quadro più ampio della violenza psicologica, ma non accerta fatti, intenzioni o il significato di una relazione personale.",
+                            "https://www.amazon.it/dp/8835117976?&linkCode=ll2&tag=spaziotest-21&linkId=7e7f77fb0defa14da9f22461c9dd0d18&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",
