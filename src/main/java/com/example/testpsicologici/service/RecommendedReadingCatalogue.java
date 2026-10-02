@@ -406,6 +406,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("gaslighting", List.of(
+                    new RecommendedReading(
+                            "Gabbie di parole",
+                            "Carmela Mento, Giovanna Spatari e Maria Rosaria Anna Muscatello (a cura di)",
+                            "Un volume sulle forme di violenza psicologica nelle relazioni di coppia, sulle dinamiche di potere e controllo e sui possibili percorsi di prevenzione e intervento.",
+                            "È un testo per lo studio e le professioni d’aiuto: non permette di accertare fatti, attribuire intenzioni a una persona o stabilire se una relazione costituisca gaslighting.",
+                            "https://www.amazon.it/-/en/Gabbie-parole-linguaggio-violenza-psicologica/dp/8835117976?&linkCode=ll2&tag=spaziotest-21&linkId=213da80691d35427f9fe5cd9a42b4a3c&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Gaslighting. Contro la manipolazione",
+                            "Hélène Frappat",
+                            "Un saggio che ripercorre il gaslighting dal cinema al dibattito contemporaneo, esaminandone le dimensioni culturali, sociali e politiche.",
+                            "Propone una riflessione storico-culturale sul concetto, non una guida per riconoscere o dimostrare una dinamica in una relazione personale né un’alternativa al supporto professionale o ai servizi di tutela.",
+                            "https://www.amazon.it/dp/8854530026?&linkCode=ll2&tag=spaziotest-21&linkId=54b3d0f50cfcc98cee17da8c98908b27&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",
