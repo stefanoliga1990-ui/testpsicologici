@@ -1576,7 +1576,15 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Due barre e quattro vicinanze, senza un punteggio generale")))
                 .andExpect(content().string(containsString("1.363 adulti italiani")))
                 .andExpect(content().string(containsString("1522")))
-                .andExpect(content().string(containsString("href=\"/test/stili-attaccamento\"")));
+                .andExpect(content().string(containsString("href=\"/test/stili-attaccamento\"")))
+                .andExpect(content().string(containsString("La teoria dell&#39;attaccamento")))
+                .andExpect(content().string(containsString("Una base sicura")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -1614,6 +1622,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Orientamento ansioso-preoccupato")))
                 .andExpect(content().string(containsString("Orientamento evitante-distanziante")))
                 .andExpect(content().string(containsString("Orientamento timoroso-evitante")))
+                .andExpect(content().string(containsString("La teoria dell&#39;attaccamento")))
+                .andExpect(content().string(containsString("Una base sicura")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString("class=\"overall-presence\""))))
                 .andExpect(content().string(org.hamcrest.Matchers.not(containsString(">Le quattro aree<"))));
     }

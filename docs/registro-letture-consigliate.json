@@ -1627,7 +1627,79 @@
         }
       ]
     },
-    { "topicId": "stili-attaccamento", "testId": "stili-attaccamento", "guideSlug": "stili-attaccamento", "title": "Stili di attaccamento nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "stili-attaccamento",
+      "testId": "stili-attaccamento",
+      "guideSlug": "stili-attaccamento",
+      "title": "Stili di attaccamento nelle relazioni",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "La teoria dell'attaccamento",
+          "placeholderCover": true,
+          "subtitle": "John Bowlby e la sua scuola",
+          "authors": [
+            "Jeremy Holmes"
+          ],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860309549",
+          "publicationYear": 2017,
+          "format": "brossura",
+          "editorialRole": "Introduzione storica e aggiornata alla teoria dell’attaccamento",
+          "audience": "Lettori interessati a una presentazione accessibile ma rigorosa della teoria dell’attaccamento e dei suoi sviluppi",
+          "description": "Un’introduzione alla teoria dell’attaccamento che ripercorre il lavoro di John Bowlby e discute sviluppi successivi, tra cui attaccamento disorganizzato, Adult Attachment Interview e studi sull’età adulta.",
+          "limit": "È un testo teorico sulla storia e sugli sviluppi della teoria dell’attaccamento. Non identifica lo stile di attaccamento di una persona, non interpreta il risultato del questionario e non sostituisce una valutazione professionale.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.raffaellocortina.it/scheda-libro/jeremy-holmes/la-teoria-dellattaccamento-9788860309549-2667.html"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8860309549",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/teoria-dellattaccamento-John-Bowlby-scuola/dp/8860309549?dib=eyJ2IjoiMSJ9.86dKY0ioEaXDubTe4WWh6w.ynjDL6SlCoY1G9urfXJpo1gEsSESPKSRVTutloK7IIk&dib_tag=se&keywords=9788860309549&qid=1790920895&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=161d63dfe4b225f702a95372414f0c70&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Una base sicura",
+          "placeholderCover": true,
+          "subtitle": "Applicazioni cliniche della teoria dell’attaccamento",
+          "authors": [
+            "John Bowlby"
+          ],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788870780888",
+          "publicationYear": 1989,
+          "format": "brossura",
+          "editorialRole": "Raccolta di contributi clinici sulla teoria dell’attaccamento",
+          "audience": "Lettori con interesse per i collegamenti tra teoria dell’attaccamento, sviluppo socioemotivo e pratica clinica",
+          "description": "Una raccolta di contributi in cui Bowlby presenta la teoria dell’attaccamento, ricerche sullo sviluppo socioemotivo e alcune applicazioni cliniche della prospettiva dell’attaccamento.",
+          "limit": "È un testo clinico e teorico, non una guida per definire autonomamente il proprio stile di attaccamento o la qualità di una relazione. Non conferma diagnosi, non indica un trattamento individuale e non sostituisce un percorso professionale.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.raffaellocortina.it/scheda-libro/john-bowlby/una-base-sicura-9788870780888-130.html"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8870780880",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/8870780880?&linkCode=ll2&tag=spaziotest-21&linkId=f392f7d17c9023fcb03a53101a112701&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "limerenza", "testId": "limerenza", "guideSlug": "limerenza", "title": "Limerenza e innamoramento ossessivo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "parentificazione", "testId": "parentificazione", "guideSlug": "parentificazione", "title": "Parentificazione e inversione dei ruoli", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "gaslighting", "testId": "gaslighting", "guideSlug": "gaslighting", "title": "Gaslighting nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

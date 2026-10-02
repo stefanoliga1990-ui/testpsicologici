@@ -352,6 +352,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("stili-attaccamento", List.of(
+                    new RecommendedReading(
+                            "La teoria dell'attaccamento",
+                            "Jeremy Holmes",
+                            "Un’introduzione alla teoria dell’attaccamento che ripercorre il lavoro di John Bowlby e discute sviluppi successivi, tra cui attaccamento disorganizzato, Adult Attachment Interview e studi sull’età adulta.",
+                            "È un testo teorico sulla storia e sugli sviluppi della teoria dell’attaccamento. Non identifica lo stile di attaccamento di una persona, non interpreta il risultato del questionario e non sostituisce una valutazione professionale.",
+                            "https://www.amazon.it/-/en/teoria-dellattaccamento-John-Bowlby-scuola/dp/8860309549?dib=eyJ2IjoiMSJ9.86dKY0ioEaXDubTe4WWh6w.ynjDL6SlCoY1G9urfXJpo1gEsSESPKSRVTutloK7IIk&dib_tag=se&keywords=9788860309549&qid=1790920895&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=161d63dfe4b225f702a95372414f0c70&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Una base sicura",
+                            "John Bowlby",
+                            "Una raccolta di contributi in cui Bowlby presenta la teoria dell’attaccamento, ricerche sullo sviluppo socioemotivo e alcune applicazioni cliniche della prospettiva dell’attaccamento.",
+                            "È un testo clinico e teorico, non una guida per definire autonomamente il proprio stile di attaccamento o la qualità di una relazione. Non conferma diagnosi, non indica un trattamento individuale e non sostituisce un percorso professionale.",
+                            "https://www.amazon.it/dp/8870780880?&linkCode=ll2&tag=spaziotest-21&linkId=f392f7d17c9023fcb03a53101a112701&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",
