@@ -388,6 +388,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("parentificazione", List.of(
+                    new RecommendedReading(
+                            "Riconoscere e superare la parentificazione",
+                            "Rosa Il Grande",
+                            "Un volume dedicato alla parentificazione, all’inversione dei ruoli nella relazione genitore-figlio e alle conseguenze che possono riguardare i bisogni evolutivi del minore.",
+                            "È un testo di approfondimento sul fenomeno e sulle sue possibili conseguenze in contesti familiari diversi. Non permette di ricostruire la propria storia in modo definitivo, attribuire responsabilità individuali o interpretare il risultato del questionario.",
+                            "https://www.amazon.it/-/en/Riconoscere-parentificazione-Strumenti-interventi-benessere/dp/8833597555?&linkCode=ll2&tag=spaziotest-21&linkId=a08bfe7b490282cd7e32e1a741e46271&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Young caregiver",
+                            "Paola Limongelli",
+                            "Una ricerca partecipativa sulle esperienze di bambini, bambine e adolescenti che assumono responsabilità di assistenza verso familiari in difficoltà, con attenzione ai loro bisogni di supporto.",
+                            "Il tema degli young caregiver riguarda responsabilità di cura in specifici contesti familiari e non coincide automaticamente con la parentificazione. Il testo non permette di valutare una storia personale né di attribuire cause o colpe a familiari.",
+                            "https://www.amazon.it/-/en/caregiver-partecipativa-adolescenti-impegnati-nellassistenza/dp/8859041430?&linkCode=ll2&tag=spaziotest-21&linkId=e87b6b57eee06ce12eefa0dbd07cfd03&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",
