@@ -316,6 +316,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("soddisfazione-vita", List.of(
+                    new RecommendedReading(
+                            "Psicologia della felicità e dell'infelicità",
+                            "Igor Sotgiu",
+                            "Un saggio che presenta teorie e ricerche psicologiche su felicità e infelicità, includendo il rapporto tra ricchezza economica e soddisfazione di vita, le emozioni quotidiane e le prospettive edonica ed eudaimonica.",
+                            "Tratta concetti e risultati di ricerca a livello generale. Non misura la soddisfazione della singola persona, non determina le sue cause e non traduce il risultato del questionario in felicità, salute mentale o qualità di vita.",
+                            "https://www.amazon.it/-/en/Psicologia-della-felicit%C3%A0-dellinfelicit%C3%A0-Nuova/dp/8829024031?dib=eyJ2IjoiMSJ9.MjTEmo39BidhqbOBD74bPQ.FR1TkSAbhB0yBs6mMhEf-mdD-0jR7ujQuM2gieuYBEo&dib_tag=se&keywords=9788829024032&qid=1790899283&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=c74e1335fae966c0c12968252028c1cd&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Filosofia e psicologia del benessere",
+                            "Antonella Corradini, Nicolò Gaj e Giuseppe Lo Dico",
+                            "Un testo introduttivo che mette in relazione filosofia e psicologia del benessere, discutendo edonismo, appagamento dei desideri, eudaimonia e modi con cui il benessere viene studiato e misurato.",
+                            "È un testo teorico e didattico sul benessere. Non offre una lettura individuale del risultato, non stabilisce quali aspetti della vita debbano essere soddisfacenti e non sostituisce un supporto professionale.",
+                            "https://www.amazon.it/-/en/Filosofia-psicologia-benessere-prospettiva-integrata/dp/8829023191?dib=eyJ2IjoiMSJ9.RVJ8Zp9xKjOL7ZrFvb6WKQ.0b6K_K6ol_zNwjzg9fxKHs1sj5mBiU2TDw3vlaHRGzc&dib_tag=se&keywords=9788829023196&qid=1790899342&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=f6e544ac601dece5a9ef827536a08d90&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",

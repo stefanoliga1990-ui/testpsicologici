@@ -1442,7 +1442,15 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("676 lavoratori italiani")))
                 .andExpect(content().string(containsString("flore.unifi.it")))
                 .andExpect(content().string(containsString("112")))
-                .andExpect(content().string(containsString("href=\"/test/soddisfazione-vita\"")));
+                .andExpect(content().string(containsString("href=\"/test/soddisfazione-vita\"")))
+                .andExpect(content().string(containsString("Psicologia della felicità e dell&#39;infelicità")))
+                .andExpect(content().string(containsString("Filosofia e psicologia del benessere")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -1474,7 +1482,16 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Tempo personale, riposo ed equilibrio con lo stress")))
                 .andExpect(content().string(containsString("Realizzazione, direzione e futuro")))
                 .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
-                .andExpect(content().string(containsString("href=\"/test/soddisfazione-vita/risultato/pdf\"")));
+                .andExpect(content().string(containsString("href=\"/test/soddisfazione-vita/risultato/pdf\"")))
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("Psicologia della felicità e dell&#39;infelicità")))
+                .andExpect(content().string(containsString("Filosofia e psicologia del benessere")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test

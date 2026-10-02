@@ -1479,7 +1479,81 @@
         }
       ]
     },
-    { "topicId": "soddisfazione-vita", "testId": "soddisfazione-vita", "guideSlug": "soddisfazione-vita", "title": "Soddisfazione di vita", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "soddisfazione-vita",
+      "testId": "soddisfazione-vita",
+      "guideSlug": "soddisfazione-vita",
+      "title": "Soddisfazione di vita",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Psicologia della felicità e dell'infelicità",
+          "placeholderCover": true,
+          "subtitle": "Nuova edizione aggiornata e ampliata",
+          "authors": [
+            "Igor Sotgiu"
+          ],
+          "publisher": "Carocci",
+          "isbn13": "9788829024032",
+          "publicationYear": 2024,
+          "format": "brossura",
+          "editorialRole": "Saggio di psicologia su felicità, infelicità e benessere soggettivo",
+          "audience": "Lettori interessati a una panoramica critica sulla felicità e sulla soddisfazione di vita",
+          "description": "Un saggio che presenta teorie e ricerche psicologiche su felicità e infelicità, includendo il rapporto tra ricchezza economica e soddisfazione di vita, le emozioni quotidiane e le prospettive edonica ed eudaimonica.",
+          "limit": "Tratta concetti e risultati di ricerca a livello generale. Non misura la soddisfazione della singola persona, non determina le sue cause e non traduce il risultato del questionario in felicità, salute mentale o qualità di vita.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.carocci.it/prodotto/psicologia-della-felicita-e-dellinfelicita-2"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8829024031",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Psicologia-della-felicit%C3%A0-dellinfelicit%C3%A0-Nuova/dp/8829024031?dib=eyJ2IjoiMSJ9.MjTEmo39BidhqbOBD74bPQ.FR1TkSAbhB0yBs6mMhEf-mdD-0jR7ujQuM2gieuYBEo&dib_tag=se&keywords=9788829024032&qid=1790899283&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=c74e1335fae966c0c12968252028c1cd&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Filosofia e psicologia del benessere",
+          "placeholderCover": true,
+          "subtitle": "Una prospettiva integrata",
+          "authors": [
+            "Antonella Corradini",
+            "Nicolò Gaj",
+            "Giuseppe Lo Dico"
+          ],
+          "publisher": "Carocci",
+          "isbn13": "9788829023196",
+          "publicationYear": 2025,
+          "format": "brossura",
+          "editorialRole": "Saggio interdisciplinare sulle teorie filosofiche e psicologiche del benessere",
+          "audience": "Lettori interessati a distinguere approcci soggettivi e oggettivi al benessere",
+          "description": "Un testo introduttivo che mette in relazione filosofia e psicologia del benessere, discutendo edonismo, appagamento dei desideri, eudaimonia e modi con cui il benessere viene studiato e misurato.",
+          "limit": "È un testo teorico e didattico sul benessere. Non offre una lettura individuale del risultato, non stabilisce quali aspetti della vita debbano essere soddisfacenti e non sostituisce un supporto professionale.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.carocci.it/prodotto/filosofia-e-psicologia-del-benessere"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8829023191",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Filosofia-psicologia-benessere-prospettiva-integrata/dp/8829023191?dib=eyJ2IjoiMSJ9.RVJ8Zp9xKjOL7ZrFvb6WKQ.0b6K_K6ol_zNwjzg9fxKHs1sj5mBiU2TDw3vlaHRGzc&dib_tag=se&keywords=9788829023196&qid=1790899342&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=f6e544ac601dece5a9ef827536a08d90&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "ptsd-adulti", "testId": "ptsd-adulti", "guideSlug": "ptsd-adulti", "title": "Disturbo post-traumatico da stress", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "stili-attaccamento", "testId": "stili-attaccamento", "guideSlug": "stili-attaccamento", "title": "Stili di attaccamento nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "limerenza", "testId": "limerenza", "guideSlug": "limerenza", "title": "Limerenza e innamoramento ossessivo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
