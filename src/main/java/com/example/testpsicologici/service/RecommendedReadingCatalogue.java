@@ -442,6 +442,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("breadcrumbing", List.of(
+                    new RecommendedReading(
+                            "Amore tecnoliquido",
+                            "Tonino Cantelmi e Valeria Carpino",
+                            "Un saggio sulle forme contemporanee di relazione mediate dal digitale; nell'indice affronta anche breadcrumbing, ghosting, zombieing, orbiting e benching.",
+                            "Offre una lettura generale dei cambiamenti relazionali nell'era digitale. Non permette di stabilire le intenzioni di una persona, etichettare un rapporto o interpretare il risultato del questionario.",
+                            "https://www.amazon.it/dp/8891791695?&linkCode=ll2&tag=spaziotest-21&linkId=19b3b2ca4aff212ba96be60c6e21fac9&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "D'amore e non d'accordo",
+                            "Julie Schwartz Gottman e John M. Gottman",
+                            "Un testo sulle modalità con cui le coppie possono affrontare i conflitti e riconoscere bisogni e comunicazione nella relazione.",
+                            "Non riguarda specificamente il breadcrumbing e non permette di dedurre il significato di contatti intermittenti, fare diagnosi di una relazione o interpretare il risultato del questionario.",
+                            "https://www.amazon.it/dp/8832857170?&linkCode=ll2&tag=spaziotest-21&linkId=76e36ca5217e13b75a60b97c27ca374a&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",
