@@ -88,6 +88,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedRelationalCodependencyInformationTest();
         seedAceExposureQuestionnaire();
         seedOccupationalBurnoutInformationTest();
+        seedPerceivedEmpathyInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4239,7 +4240,85 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "La percezione di efficacia ridotta compare spesso. Non misura produttività o competenza reale e non equivale a un giudizio professionale.");
     }
 
+    private void seedPerceivedEmpathyInformationTest() {
+        String id = "empatia-percepita";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Come vivo l'empatia verso gli altri?",
+                "Auto-osservazione informativa",
+                "Esplora la frequenza riferita di attenzione alla prospettiva altrui, partecipazione emotiva e risposta relazionale negli ultimi tre mesi.",
+                "4 min · 15 domande",
+                "Questionario informativo originale e non validato per adulti: pensa alle interazioni realmente avute negli ultimi tre mesi; con poche occasioni il risultato è poco interpretabile. Le risposte non misurano capacità effettiva, qualità del sostegno, moralità o diagnosi e possono variare con cultura, lingua, modalità comunicative, stress e sicurezza del contesto. Per disagio persistente puoi parlare con un professionista; in caso di pericolo immediato chiama il 112.",
+                version, false,
+                "Frequenza media delle esperienze riferite",
+                "Frequenza delle esperienze nell'area",
+                true, 44)
+                .withSeo("Empatia percepita: questionario informativo | Spazio Test",
+                        "15 domande originali su prospettiva, partecipazione emotiva e risposta relazionale. Risultati descrittivi, non una misura di capacità empatica.")
+                .withResponseInstruction("Pensando alle interazioni che hai avuto negli ultimi tre mesi, con quale frequenza hai vissuto questa esperienza?"));
+
+        saveArea(id, "prospettiva", "Attenzione alla prospettiva altrui", 1);
+        saveArea(id, "risonanza", "Partecipazione emotiva riferita", 2);
+        saveArea(id, "risposta", "Risposta relazionale dichiarata", 3);
+
+        saveQuestions(id, List.of(
+                q("prospettiva", "Ho considerato il punto di vista di una persona prima di risponderle."),
+                q("prospettiva", "Ho chiesto a una persona come stava vivendo una situazione prima di interpretarla."),
+                q("prospettiva", "Ho considerato che una stessa situazione potesse avere un significato diverso per un'altra persona."),
+                q("prospettiva", "Ho rivisto una mia interpretazione dopo aver ascoltato la persona interessata."),
+                q("prospettiva", "Ho chiesto conferma di una mia impressione sulle emozioni di un'altra persona."),
+                q("risonanza", "Ho sentito partecipazione quando una persona mi ha raccontato una difficoltà."),
+                q("risonanza", "Ho provato gioia per una buona notizia ricevuta da un'altra persona."),
+                q("risonanza", "Mi sono commosso/a ascoltando un'esperienza importante per un'altra persona."),
+                q("risonanza", "Ho sentito preoccupazione per una persona che attraversava un momento difficile."),
+                q("risonanza", "Ho provato sollievo sapendo che una persona cara stava meglio."),
+                q("risposta", "Ho lasciato spazio a una persona per raccontare ciò che stava vivendo."),
+                q("risposta", "Ho chiesto a una persona quale tipo di ascolto desiderava."),
+                q("risposta", "Ho dedicato tempo a una persona che desiderava parlare."),
+                q("risposta", "Ho riconosciuto a parole il vissuto che una persona mi aveva comunicato."),
+                q("risposta", "Ho rispettato la scelta di una persona di non approfondire un'esperienza personale.")));
+
+        String limits = "Questo questionario originale non è validato: soglie e barre sono editoriali e non certificano capacità empatiche, accuratezza, qualità delle azioni o valore personale. "
+                + "Le occasioni di incontro, la cultura, la lingua, le modalità comunicative, lo stress e la sicurezza del contesto possono cambiare le risposte. "
+                + "Se le relazioni o le emozioni ti causano disagio persistente, puoi confrontarti con un professionista; in caso di pericolo immediato chiama il 112.";
+        saveGlobal(id, "LOW", "Le esperienze di empatia percepita risultano poco frequenti",
+                "Le risposte sono poco frequenti nelle tre aree di prospettiva, partecipazione emotiva e risposta relazionale. Questo descrive soltanto le occasioni ricordate nel periodo considerato.",
+                "Un profilo contenuto non esclude sensibilità o gesti attenti in situazioni non esplorate. Considera quante opportunità di interazione hai avuto e se alcune persone o contesti rendono più facile esprimerti. " + limits);
+        saveGlobal(id, "MIXED", "Le esperienze di empatia percepita variano tra le aree",
+                "Le risposte hanno frequenze intermedie o differiscono tra le tre aree, senza un'area nel livello editoriale più alto. Comprendere, partecipare emotivamente e rispondere non coincidono necessariamente.",
+                "Puoi osservare in quali relazioni o situazioni emergono queste differenze senza interpretarle come una misura di capacità. Anche preferenze di comunicazione, confini personali e opportunità concrete possono contribuire alla variabilità. " + limits);
+        saveGlobal(id, "FOCUSED", "Una delle esperienze di empatia percepita emerge nelle risposte",
+                "Una sola area raccoglie risposte più frequenti, mentre le altre sono più contenute. Il profilo orienta a un aspetto specifico senza generalizzare all'empatia della persona.",
+                "Guarda quale area emerge e quali occasioni concrete hai ricordato. Una maggiore frequenza di ascolto, partecipazione o attenzione alla prospettiva non prova accuratezza o qualità del rapporto; anche le aree meno frequenti possono dipendere dal contesto. " + limits);
+        saveGlobal(id, "BROAD", "Più esperienze di empatia percepita emergono nelle risposte",
+                "Le risposte sono frequenti in almeno due delle tre aree esplorate. L'ampiezza descrive più modi riferiti di prestare attenzione agli altri nel periodo considerato.",
+                "Nota se queste esperienze restano presenti in contesti diversi e come si intrecciano con i tuoi confini e bisogni. Un profilo ampio non certifica una capacità empatica, una qualità morale o la percezione delle persone coinvolte. " + limits);
+
+        saveAreaInsights(id, "prospettiva",
+                "La considerazione riferita dei punti di vista altrui è poco frequente nel periodo; non misura l'accuratezza nel comprenderli.",
+                "L'attenzione alla prospettiva altrui compare in alcune interazioni; osserva quando chiedi chiarimenti invece di supporre.",
+                "L'attenzione riferita alla prospettiva altrui compare spesso; questo non certifica la correttezza delle interpretazioni.");
+        saveAreaInsights(id, "risonanza",
+                "La partecipazione emotiva riferita compare poco; non significa assenza di cura o interesse per gli altri.",
+                "La partecipazione emotiva compare in alcune situazioni; intensità e forma del vissuto possono variare.",
+                "La partecipazione emotiva riferita compare spesso; sentirla non obbliga a intervenire né misura la qualità dell'aiuto.");
+        saveAreaInsights(id, "risposta",
+                "Ascolto, riconoscimento e rispetto dei limiti sono riferiti poco nel periodo; potrebbero esserci state poche occasioni.",
+                "Le risposte relazionali esplorate compaiono in alcune occasioni; non indicano da sole come siano state ricevute.",
+                "Le risposte relazionali esplorate compaiono spesso; sono azioni dichiarate, non una valutazione delle loro motivazioni o effetti.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("empatia-percepita", List.of(
+                ref("Italian Empathy Quotient 15-item — Senese e colleghi", "https://doi.org/10.1027/1015-5759/a000348"),
+                ref("Italian Brief Interpersonal Reactivity Index — Diotaiuti e colleghi", "https://doi.org/10.3389/fpsyg.2021.773363"),
+                ref("Empathy assessment instruments — de Lima e Osório", "https://doi.org/10.3389/fpsyg.2021.781346"),
+                ref("Self-report cognitive empathy and task performance — Murphy e Lilienfeld", "https://doi.org/10.1037/pas0000732"),
+                ref("Measuring empathy across the adult lifespan — Grainger e colleghi", "https://doi.org/10.1177/10731911221127902"),
+                ref("Empathy and prosocial behavior — Davis", "https://doi.org/10.1093/oxfordhb/9780195399813.013.026")));
         syncReferences("burnout-percepito", List.of(
                 ref("Burn-out an occupational phenomenon — OMS", "https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon"),
                 ref("Italian Burnout Assessment Tool — Consiglio, Mazzetti e Schaufeli", "https://doi.org/10.3390/ijerph18189469"),

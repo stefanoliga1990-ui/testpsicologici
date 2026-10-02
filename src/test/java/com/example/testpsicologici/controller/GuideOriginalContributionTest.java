@@ -46,7 +46,7 @@ class GuideOriginalContributionTest {
 
     private static final List<String> WELLBEING_SLUGS = List.of(
             "intelligenza-emotiva", "alessitimia", "intelligenza-intrapersonale",
-            "assertivita", "resilienza-psicologica", "soddisfazione-vita");
+            "assertivita", "resilienza-psicologica", "soddisfazione-vita", "empatia-verso-gli-altri");
 
     @Autowired
     private GuideCatalogue guides;
@@ -165,7 +165,7 @@ class GuideOriginalContributionTest {
                 .map(InformationGuide::slug)
                 .collect(Collectors.toSet());
 
-        assertThat(snapshotSlugs).hasSize(43).doesNotHaveDuplicates();
+        assertThat(snapshotSlugs).hasSize(44).doesNotHaveDuplicates();
         assertThat(catalogueSlugs).containsExactlyInAnyOrderElementsOf(snapshotSlugs);
 
         List<String> contributions = guides.findAll().stream()

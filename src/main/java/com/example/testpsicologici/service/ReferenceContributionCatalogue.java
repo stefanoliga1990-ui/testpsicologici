@@ -13,6 +13,18 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.1027/1015-5759/a000348",
+                    "Studio italiano dell'EQ-15 consultato per distinguere aspetti cognitivi, emotivi e sociali; i 633 adulti e lo strumento diverso non validano item o soglie dell'app."),
+            entry("https://doi.org/10.3389/fpsyg.2021.773363",
+                    "Validazione italiana dell'IRI breve consultata per prospettiva, preoccupazione empatica e disagio personale; il campione di giovani universitari limita la trasferibilità."),
+            entry("https://doi.org/10.3389/fpsyg.2021.781346",
+                    "Revisione sistematica consultata per l'eterogeneità delle misure di empatia e i limiti di validità; non identifica una struttura valida per il test originale."),
+            entry("https://doi.org/10.1037/pas0000732",
+                    "Meta-analisi consultata per la debole relazione tra autovalutazione dell'empatia cognitiva e prestazione comportamentale; non stima la capacità individuale."),
+            entry("https://doi.org/10.1177/10731911221127902",
+                    "Confronto tra autovalutazione, informatori e compiti consultato per i limiti di convergenza in adulti; campione non italiano e misure differenti."),
+            entry("https://doi.org/10.1093/oxfordhb/9780195399813.013.026",
+                    "Revisione consultata per il rapporto non equivalente tra preoccupazione empatica e azioni prosociali; non permette di attribuire motivazioni al singolo gesto."),
             entry("https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon",
                     "Classificazione OMS consultata per il perimetro occupazionale e le tre dimensioni; non definisce item o soglie dell'app."),
             entry("https://doi.org/10.3390/ijerph18189469",

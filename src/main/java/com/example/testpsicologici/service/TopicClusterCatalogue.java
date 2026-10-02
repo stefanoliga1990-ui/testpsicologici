@@ -83,7 +83,8 @@ public class TopicClusterCatalogue {
                             "intelligenza-intrapersonale",
                             "assertivita",
                             "resilienza-psicologica",
-                            "soddisfazione-vita"
+                            "soddisfazione-vita",
+                            "empatia-percepita"
                     )),
             new TopicCluster(
                     "lavoro-studio-e-stress",

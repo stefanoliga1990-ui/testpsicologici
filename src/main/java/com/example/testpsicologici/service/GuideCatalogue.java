@@ -4748,6 +4748,44 @@ public class GuideCatalogue {
                     )
             ),
             new InformationGuide(
+                    "empatia-verso-gli-altri", "empatia-percepita",
+                    "Empatia verso gli altri",
+                    "Empatia verso gli altri: capire, sentire e rispondere",
+                    "Empatia: aspetti cognitivi, emotivi e relazionali | Spazio Test",
+                    "Una guida alle diverse componenti dell'empatia e ai limiti dei questionari di autovalutazione.",
+                    "L'empatia non è un valore unico: considerare il punto di vista altrui, partecipare emotivamente e rispondere con attenzione sono esperienze connesse ma diverse. Nessun questionario online può certificare quanto accuratamente comprendiamo un'altra persona.",
+                    List.of(
+                            new GuideSection("In breve", "Un'esperienza con più componenti", List.of(
+                                    "La ricerca distingue comunemente una componente cognitiva, legata alla prospettiva altrui, e una affettiva, legata alla risposta emotiva. Gli strumenti differiscono su come le definiscono e misurano; non esiste una singola misura riconosciuta come standard per ogni uso.",
+                                    "L'empatia non è una qualità morale tutto-o-nulla. Può variare con la relazione, la situazione, il carico emotivo e le opportunità di ascolto."), List.of()),
+                            new GuideSection("Comprendere", "Prospettiva non significa indovinare", List.of(
+                                    "Chiedere chiarimenti e tenere aperte più interpretazioni può aiutare a considerare il punto di vista di un'altra persona. Pensare di aver capito non equivale però a conoscere con precisione il suo vissuto.",
+                                    "Le ricerche che confrontano autovalutazione e compiti comportamentali trovano una convergenza molto debole per l'empatia cognitiva. Il questionario collegato descrive quindi quanto spesso riferisci certi modi di prestare attenzione, non quanto correttamente riconosci le emozioni altrui."), List.of()),
+                            new GuideSection("Sentire", "Partecipazione emotiva e differenze personali", List.of(
+                                    "Partecipare a una difficoltà o a una gioia altrui può assumere forme diverse. La preoccupazione per un'altra persona va distinta dal disagio personale provato davanti alla sua sofferenza.",
+                                    "Una risposta emotiva meno intensa o meno visibile non dimostra assenza di cura; una risposta intensa non garantisce di aver compreso bene la situazione. Cultura, modalità comunicative, stress e sicurezza possono incidere su ciò che viene sentito o mostrato."), List.of()),
+                            new GuideSection("Rispondere", "L'attenzione si esprime anche nelle azioni", List.of(
+                                    "Ascoltare, chiedere quale sostegno è desiderato e rispettare un limite sono possibili risposte relazionali. Sono comportamenti connessi al tema, ma non una terza capacità empatica certificata.",
+                                    "Un gesto di aiuto può nascere da motivazioni diverse e non sempre chi prova empatia può intervenire. Contano anche consenso, risorse disponibili e ciò che l'altra persona considera utile."), List.of()),
+                            new GuideSection("Il questionario", "Come leggere le tre aree", List.of(
+                                    "I 15 item originali chiedono con quale frequenza sono state riferite esperienze negli ultimi tre mesi. Le aree editoriali riguardano prospettiva, partecipazione emotiva e risposta relazionale; la media non è un quoziente di empatia e le soglie non sono cliniche o normative.",
+                                    "La validazione italiana di EQ-15 e IRI breve riguarda quegli strumenti, non le domande di Spazio Test. Poche occasioni sociali possono abbassare la frequenza anche quando una persona sarebbe disponibile ad ascoltare."), List.of()),
+                            new GuideSection("Contesto e supporto", "Dare significato senza etichette", List.of(
+                                    "Se un risultato sorprende, puoi osservare quali interazioni hai ricordato e, quando appropriato, chiedere riscontro a persone fidate. Il loro punto di vista può essere diverso dal tuo e non diventa a sua volta un verdetto.",
+                                    "Se le relazioni o le emozioni provocano disagio persistente, puoi parlarne con un professionista. Un pericolo immediato richiede aiuto indipendentemente dal risultato: in Italia chiama il 112."), List.of())
+                    ),
+                    "Il questionario collegato è originale e non validato. Le tre aree descrivono solo frequenze riferite: non certificano capacità empatica, accuratezza o qualità morale.",
+                    "Questa guida separa aspetti cognitivi, emotivi e comportamentali e spiega perché l'autovalutazione non può descrivere da sola come l'altra persona vive l'incontro.",
+                    List.of(
+                            new GuideReference("Italian Empathy Quotient 15-item — Senese e colleghi", "https://doi.org/10.1027/1015-5759/a000348", "Studio su 633 adulti italiani consultato per distinguere aspetti cognitivi, emotivi e sociali; non valida il questionario originale dell'app."),
+                            new GuideReference("Italian Brief Interpersonal Reactivity Index — Diotaiuti e colleghi", "https://doi.org/10.3389/fpsyg.2021.773363", "Validazione su giovani universitari italiani consultata per prospettiva, preoccupazione empatica e disagio personale; campione e struttura non sono trasferibili."),
+                            new GuideReference("Empathy assessment instruments — de Lima e Osório", "https://doi.org/10.3389/fpsyg.2021.781346", "Revisione sistematica consultata per eterogeneità delle misure e limiti di validità; non propone norme per questo test."),
+                            new GuideReference("Self-report cognitive empathy and task performance — Murphy e Lilienfeld", "https://doi.org/10.1037/pas0000732", "Meta-analisi consultata per la debole convergenza fra autovalutazione cognitiva e compiti comportamentali; non misura l'accuratezza individuale."),
+                            new GuideReference("Measuring empathy across the adult lifespan — Grainger e colleghi", "https://doi.org/10.1177/10731911221127902", "Studio su adulti consultato per le differenze tra autovalutazione, compiti e informatori; campione non italiano."),
+                            new GuideReference("Empathy and prosocial behavior — Davis", "https://doi.org/10.1093/oxfordhb/9780195399813.013.026", "Revisione consultata per il rapporto, non l'equivalenza, tra preoccupazione empatica e azioni prosociali.")
+                    )
+            ),
+            new InformationGuide(
                     "burnout-lavorativo", "burnout-percepito",
                     "Burnout lavorativo",
                     "Burnout lavorativo: esaurimento, distanza ed efficacia percepita",
