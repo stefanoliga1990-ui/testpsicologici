@@ -1535,7 +1535,31 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("ijerph19095282")))
                 .andExpect(content().string(containsString("112")))
                 .andExpect(content().string(containsString("1522")))
-                .andExpect(content().string(containsString("href=\"/test/ptsd-adulti\"")));
+                .andExpect(content().string(containsString("href=\"/test/ptsd-adulti\"")))
+                .andExpect(content().string(containsString("Il disturbo post-traumatico da stress")))
+                .andExpect(content().string(containsString("Il corpo accusa il colpo")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
+    }
+
+    @Test
+    void ptsdResultRendersTheSameOptionalAffiliateReadingsAsTheGuide() throws Exception {
+        mockMvc.perform(get("/test/ptsd-adulti/risultato")
+                        .session(completedAttempt("ptsd-adulti", 3)))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Letture facoltative")))
+                .andExpect(content().string(containsString("Il disturbo post-traumatico da stress")))
+                .andExpect(content().string(containsString("Il corpo accusa il colpo")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString(
+                        "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test

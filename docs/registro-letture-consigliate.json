@@ -1554,7 +1554,79 @@
         }
       ]
     },
-    { "topicId": "ptsd-adulti", "testId": "ptsd-adulti", "guideSlug": "ptsd-adulti", "title": "Disturbo post-traumatico da stress", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "ptsd-adulti",
+      "testId": "ptsd-adulti",
+      "guideSlug": "ptsd-adulti",
+      "title": "Disturbo post-traumatico da stress",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Il disturbo post-traumatico da stress",
+          "placeholderCover": true,
+          "subtitle": null,
+          "authors": [
+            "Giuseppe Craparo"
+          ],
+          "publisher": "Carocci",
+          "isbn13": "9788843067077",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Saggio introduttivo sul disturbo post-traumatico da stress secondo un approccio evolutivo-relazionale",
+          "audience": "Lettori interessati a una presentazione teorica e clinica del trauma e del disturbo post-traumatico da stress",
+          "description": "Un saggio che raccoglie riflessioni teoriche e dati di ricerca sul trauma e sul disturbo post-traumatico da stress, includendo dissociazione, alessitimia, neurobiologia e diversi approcci al trattamento.",
+          "limit": "È un testo teorico e clinico, non un mezzo per riconoscere autonomamente il disturbo post-traumatico da stress. Non conferma diagnosi, non interpreta il risultato del questionario e non sostituisce una valutazione o un percorso professionale.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.carocci.it/prodotto/il-disturbo-post-traumatico-da-stress"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8843067079",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/disturbo-post-traumatico-stress-Giuseppe-Craparo/dp/8843067079?dib=eyJ2IjoiMSJ9.Nf-AD8XYVbS9N7wiJ2ZXFg.tYNV2UbsJePqHWzqmhQ0q1ohaI4Y4iDOosiq6NNNtf8&dib_tag=se&keywords=9788843067077&qid=1790910061&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=b988692eac3f37307616111f6d384696&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Il corpo accusa il colpo",
+          "placeholderCover": true,
+          "subtitle": "Mente, corpo e cervello nell'elaborazione delle memorie traumatiche",
+          "authors": [
+            "Bessel van der Kolk"
+          ],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860307583",
+          "publicationYear": 2015,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo-clinico sul trauma e sulle memorie traumatiche",
+          "audience": "Lettori interessati a un quadro ampio sul trauma, sulle sue conseguenze e sui percorsi di cura discussi in letteratura",
+          "description": "Un saggio che intreccia ricerca, pratica clinica e neuroscienze per discutere gli effetti del trauma su mente, corpo, memoria, relazioni e capacità di regolazione.",
+          "limit": "Presenta una prospettiva ampia sul trauma e sulle pratiche cliniche discusse dall’autore. Non permette di stabilire se una persona abbia un disturbo post-traumatico da stress, non indica un trattamento individuale e non sostituisce una valutazione professionale.",
+          "primarySources": [
+            {
+              "label": "Scheda editore",
+              "url": "https://www.raffaellocortina.it/scheda-libro/bessel-van-der-kolk/il-corpo-accusa-il-colpo-9788860307583-1630.html"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8860307589",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/accusa-cervello-nellelaborazione-memorie-traumatiche/dp/8860307589?dib=eyJ2IjoiMSJ9.PREneTqS-iK_FleR5EN8Gg.YcTxNrhIA34URwKdX-GZuslqY-qUTTXe88lOGuIO6-Q&dib_tag=se&keywords=9788860307583&qid=1790910125&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=4da4d9a86b626fca7032fc7ee638772b&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "stili-attaccamento", "testId": "stili-attaccamento", "guideSlug": "stili-attaccamento", "title": "Stili di attaccamento nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "limerenza", "testId": "limerenza", "guideSlug": "limerenza", "title": "Limerenza e innamoramento ossessivo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "parentificazione", "testId": "parentificazione", "guideSlug": "parentificazione", "title": "Parentificazione e inversione dei ruoli", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

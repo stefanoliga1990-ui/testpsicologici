@@ -334,6 +334,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("ptsd-adulti", List.of(
+                    new RecommendedReading(
+                            "Il disturbo post-traumatico da stress",
+                            "Giuseppe Craparo",
+                            "Un saggio che raccoglie riflessioni teoriche e dati di ricerca sul trauma e sul disturbo post-traumatico da stress, includendo dissociazione, alessitimia, neurobiologia e diversi approcci al trattamento.",
+                            "È un testo teorico e clinico, non un mezzo per riconoscere autonomamente il disturbo post-traumatico da stress. Non conferma diagnosi, non interpreta il risultato del questionario e non sostituisce una valutazione o un percorso professionale.",
+                            "https://www.amazon.it/-/en/disturbo-post-traumatico-stress-Giuseppe-Craparo/dp/8843067079?dib=eyJ2IjoiMSJ9.Nf-AD8XYVbS9N7wiJ2ZXFg.tYNV2UbsJePqHWzqmhQ0q1ohaI4Y4iDOosiq6NNNtf8&dib_tag=se&keywords=9788843067077&qid=1790910061&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=b988692eac3f37307616111f6d384696&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Il corpo accusa il colpo",
+                            "Bessel van der Kolk",
+                            "Un saggio che intreccia ricerca, pratica clinica e neuroscienze per discutere gli effetti del trauma su mente, corpo, memoria, relazioni e capacità di regolazione.",
+                            "Presenta una prospettiva ampia sul trauma e sulle pratiche cliniche discusse dall’autore. Non permette di stabilire se una persona abbia un disturbo post-traumatico da stress, non indica un trattamento individuale e non sostituisce una valutazione professionale.",
+                            "https://www.amazon.it/-/en/accusa-cervello-nellelaborazione-memorie-traumatiche/dp/8860307589?dib=eyJ2IjoiMSJ9.PREneTqS-iK_FleR5EN8Gg.YcTxNrhIA34URwKdX-GZuslqY-qUTTXe88lOGuIO6-Q&dib_tag=se&keywords=9788860307583&qid=1790910125&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=4da4d9a86b626fca7032fc7ee638772b&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",
