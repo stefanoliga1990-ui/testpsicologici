@@ -370,6 +370,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("limerenza", List.of(
+                    new RecommendedReading(
+                            "La dipendenza affettiva",
+                            "Elena Cabras e Valeria Saladino",
+                            "Un volume che raccoglie testimonianze e contributi su dipendenza affettiva, bisogno di conferme, dinamiche di manipolazione e violenza nelle relazioni.",
+                            "Tratta dipendenza affettiva, manipolazione e violenza in contesti relazionali specifici. Non definisce la limerenza, non stabilisce se una persona abbia una dipendenza affettiva e non interpreta il risultato del questionario.",
+                            "https://www.amazon.it/-/en/dipendenza-affettiva-Testimonianze-manipolazione-violenza/dp/8843096931?dib=eyJ2IjoiMSJ9.-oqawFMSyXcDoQ7S2FoyMQ.3gq44WQeZJdWZvSrvu9EHMdDlO_95G85GU9sk1HkWnU&dib_tag=se&keywords=9788843096930&qid=1790931651&s=books&sr=1-1&linkCode=ll2&tag=spaziotest-21&linkId=363f8878e4685e1784128c00b34bf650&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Illusioni d'amore",
+                            "Jole Baldaro Verde",
+                            "Un saggio sulle motivazioni inconsce nella scelta del partner, sui cambiamenti delle relazioni amorose e su alcuni vissuti legati a innamoramento, sessualità e delusione.",
+                            "È una prospettiva psicoanalitica sulle relazioni amorose. Non definisce la limerenza, non stabilisce se pensieri intensi o il legame con una persona configurino una dipendenza e non sostituisce una valutazione professionale.",
+                            "https://www.amazon.it/-/en/Illusioni-damore-motivazioni-inconscie-partner/dp/886030475X?&linkCode=ll2&tag=spaziotest-21&linkId=1766a672c25ad065b8147ecfb12c1064&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",

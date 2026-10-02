@@ -1923,7 +1923,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("L'esperienza interna non autorizza azioni")))
                 .andExpect(content().string(containsString("Relazioni e attaccamento")))
                 .andExpect(content().string(containsString("href=\"/test/limerenza\"")))
-                .andExpect(content().string(containsString("Approfondimenti collegati")));
+                .andExpect(content().string(containsString("Approfondimenti collegati")))
+                .andExpect(content().string(containsString("La dipendenza affettiva")))
+                .andExpect(content().string(containsString("Illusioni d&#39;amore")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -1940,7 +1947,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/test/limerenza/risultato/pdf\"")))
                 .andExpect(content().string(containsString("Test correlati")))
                 .andExpect(content().string(containsString("href=\"/test/dipendenza-affettiva\"")))
-                .andExpect(content().string(containsString("href=\"/approfondimenti/limerenza\"")));
+                .andExpect(content().string(containsString("href=\"/approfondimenti/limerenza\"")))
+                .andExpect(content().string(containsString("La dipendenza affettiva")))
+                .andExpect(content().string(containsString("Illusioni d&#39;amore")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
