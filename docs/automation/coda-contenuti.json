@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-10-01",
+  "updatedAt": "2026-10-02",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -216,8 +216,8 @@
       "sourceDescription": "Comprensione delle emozioni altrui e risposta partecipe.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Separare componenti cognitive, affettive e comportamentali; descrivere risorse percepite, non capacità certificate." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 3, "itemCount": 15, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Tre aree editoriali: prospettiva, partecipazione emotiva e risposta relazionale dichiarata. Le risposte descrivono frequenze percepite, non capacità empatiche certificate; la terza area è connessa ma non equivalente all'empatia." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-02T13:23:14+02:00", "completedAt": "2026-10-02T13:23:14+02:00", "commitHash": "e857c082a433281bf8f77b3533315009d1d2b516", "blockReason": null }
     },
     {
       "order": 17,
