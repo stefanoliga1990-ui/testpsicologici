@@ -2235,7 +2235,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
                 .andExpect(content().string(containsString("tag=spaziotest-21")))
                 .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
-                .andExpect(content().string(containsString("In qualit\xc3\xa0 di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -2260,7 +2260,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
                 .andExpect(content().string(containsString("tag=spaziotest-21")))
                 .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
-                .andExpect(content().string(containsString("In qualit\xc3\xa0 di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
