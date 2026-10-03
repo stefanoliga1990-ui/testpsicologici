@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-10-03",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -227,8 +227,8 @@
       "sourceDescription": "Preferenza per solitudine o socialità, bisogno di stimoli e modalità di recupero delle energie.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Personalità e tratti",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": "PREVALENT_PROFILE", "notes": "Restituire un profilo prevalente o intermedio, senza applicare LOW/MIXED/FOCUSED/BROAD quando non coerente con il modello teorico." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 3, "itemCount": 12, "answerScale": "FREQUENCY", "resultModel": "PREVALENT_PROFILE", "notes": "Tre aree editoriali: socialità, espressione e vitalità. Profili orientati al polo introverso o estroverso, intermedi o sfaccettati; le soglie sono editoriali e non classificano la personalità." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-03T13:16:04+02:00", "completedAt": "2026-10-03T13:16:04+02:00", "commitHash": "739c2b3cf4587bf830d8170865ab4ce80cf7303d", "blockReason": null }
     },
     {
       "order": 18,
