@@ -2306,7 +2306,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Ambiguità e manipolazione relazionale")))
                 .andExpect(content().string(containsString("href=\"/test/orbiting\"")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/breadcrumbing\"")))
-                .andExpect(content().string(containsString("Approfondimenti collegati")));
+                .andExpect(content().string(containsString("Approfondimenti collegati")))
+                .andExpect(content().string(containsString("Amore tecnoliquido")))
+                .andExpect(content().string(containsString("La crisi della coppia")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -2322,7 +2329,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/test/orbiting/risultato/pdf\"")))
                 .andExpect(content().string(containsString("Test correlati")))
                 .andExpect(content().string(containsString("href=\"/test/breadcrumbing\"")))
-                .andExpect(content().string(containsString("href=\"/approfondimenti/orbiting\"")));
+                .andExpect(content().string(containsString("href=\"/approfondimenti/orbiting\"")))
+                .andExpect(content().string(containsString("Amore tecnoliquido")))
+                .andExpect(content().string(containsString("La crisi della coppia")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test

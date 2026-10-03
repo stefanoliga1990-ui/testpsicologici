@@ -460,6 +460,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("orbiting", List.of(
+                    new RecommendedReading(
+                            "Amore tecnoliquido",
+                            "Tonino Cantelmi e Valeria Carpino",
+                            "Un saggio sulle forme contemporanee di relazione mediate dal digitale; nell'indice affronta anche ghosting, zombieing, orbiting, benching e breadcrumbing.",
+                            "Offre una lettura generale dei cambiamenti relazionali nell'era digitale. Non permette di stabilire le intenzioni di una persona, etichettare un rapporto o interpretare il risultato del questionario.",
+                            "https://www.amazon.it/dp/8891791695?&linkCode=ll2&tag=spaziotest-21&linkId=719dd0c057c512241f3a9a05e4a77b1f&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "La crisi della coppia",
+                            "Maurizio Andolfi (a cura di)",
+                            "Un volume che affronta costruzione, sviluppo, crisi e rottura delle relazioni di coppia, incluse separazione e divorzio.",
+                            "Non riguarda specificamente l'orbiting né consente di dedurre il significato di una presenza online o di definire una situazione personale come crisi di coppia.",
+                            "https://www.amazon.it/dp/8870786056?&linkCode=ll2&tag=spaziotest-21&linkId=78c038f0ee9ebc7d3649ae9674a01046&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("fomo", List.of(
                     new RecommendedReading(
                             "Fomo Sapiens",
