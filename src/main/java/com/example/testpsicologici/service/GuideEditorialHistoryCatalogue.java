@@ -55,7 +55,8 @@ public class GuideEditorialHistoryCatalogue {
             entry("codipendenza-relazionale", history("2026-09-17", "2026-09-17")),
             entry("esperienze-avverse-infanzia", history("2026-09-30", "2026-09-30")),
             entry("burnout-lavorativo", history("2026-10-01", "2026-10-01")),
-            entry("empatia-verso-gli-altri", history("2026-10-02", "2026-10-02"))
+            entry("empatia-verso-gli-altri", history("2026-10-02", "2026-10-02")),
+            entry("introversione-estroversione", history("2026-10-03", "2026-10-03"))
     );
 
     public GuideEditorialHistory forSlug(String slug) {

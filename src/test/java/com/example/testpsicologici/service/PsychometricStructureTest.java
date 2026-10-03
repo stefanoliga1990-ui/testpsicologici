@@ -61,7 +61,8 @@ class PsychometricStructureTest {
             Map.entry("situationship", "ambiguità e accordi nella relazione"),
             Map.entry("codipendenza-relazionale", "dinamiche relazionali esplorate"),
             Map.entry("burnout-percepito", "esperienze lavorative associate al burnout"),
-            Map.entry("empatia-percepita", "esperienze di empatia percepita"));
+            Map.entry("empatia-percepita", "esperienze di empatia percepita"),
+            Map.entry("introversione-estroversione", "esperienze"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -71,7 +72,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(43).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(44).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ACE_EXPOSURE".equals(test.scoringModel())) {
@@ -90,6 +91,14 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(12));
+            } else if ("PREVALENT_PROFILE".equals(test.scoringModel())) {
+                assertThat(test.questions()).hasSize(12);
+                assertThat(test.responseInstruction()).contains("ultimi sei mesi", "frequenza");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).hasSize(3);
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code()))
+                        .hasSize(4));
             } else if ("orbiting".equals(test.id())) {
                 assertThat(test.questions()).hasSize(12);
                 assertThat(test.responseInstruction()).isNotBlank().containsIgnoringCase("frequenza");
@@ -274,7 +283,12 @@ class PsychometricStructureTest {
             assertThat(subject).as("Descrittore del titolo di %s", test.id()).isNotBlank();
             assertThat(profiles).allSatisfy(result ->
                     assertThat(result.general().title()).containsIgnoringCase(subject));
-            if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
+            if ("PREVALENT_PROFILE".equals(test.scoringModel())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("introverso");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("intermedie");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("diverse fra aree");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("estroverso");
+            } else if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("sicuro");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("intermedie");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("ansioso-preoccupato");

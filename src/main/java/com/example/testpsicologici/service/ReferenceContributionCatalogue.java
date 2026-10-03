@@ -13,6 +13,16 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.1007/s12144-025-07584-7",
+                    "Studio italiano del BFI-2-R su 5.362 adulti consultato per le tre faccette dell'estroversione; campione di convenienza e strumento diverso non validano gli item dell'app."),
+            entry("https://doi.org/10.1007/s12144-022-03648-0",
+                    "Adattamento francese del BFI-2 consultato per la struttura in faccette; lingua, campione e strumento non sono trasferibili al questionario originale."),
+            entry("https://doi.org/10.1037/pspp0000096",
+                    "Studio fondativo del BFI-2 consultato per socialità, assertività e livello di energia; non sono trasferiti item, norme o punteggi."),
+            entry("https://doi.org/10.1006/jrpe.1995.1005",
+                    "Ricerca primaria sulla preferenza per la solitudine consultata per distinguerla dal solo tratto di estroversione; non definisce le risposte individuali."),
+            entry("https://www.nice.org.uk/guidance/cg159/chapter/recommendations",
+                    "Linea guida sull'ansia sociale consultata per distinguere paura, evitamento e interferenza dalle preferenze di tratto; non definisce soglie del questionario."),
             entry("https://doi.org/10.1027/1015-5759/a000348",
                     "Studio italiano dell'EQ-15 consultato per distinguere aspetti cognitivi, emotivi e sociali; i 633 adulti e lo strumento diverso non validano item o soglie dell'app."),
             entry("https://doi.org/10.3389/fpsyg.2021.773363",

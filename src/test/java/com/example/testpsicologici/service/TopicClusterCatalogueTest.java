@@ -110,9 +110,9 @@ class TopicClusterCatalogueTest {
         assertThat(cluster.slug()).isEqualTo("personalita-e-tratti");
         assertThat(cluster.title()).isEqualTo("Personalità e tratti");
         assertThat(cluster.testIds()).containsExactly(
-                "tratti-borderline-adulti", "tratti-evitanti-personalita-adulti");
+                "introversione-estroversione", "tratti-borderline-adulti", "tratti-evitanti-personalita-adulti");
         assertThat(topicClusterCatalogue.findByTestId("tratti-borderline-adulti")).contains(cluster);
         assertThat(topicClusterCatalogue.findRelatedTestIds("tratti-evitanti-personalita-adulti", 3))
-                .containsExactly("tratti-borderline-adulti");
+                .containsExactly("introversione-estroversione", "tratti-borderline-adulti");
     }
 }

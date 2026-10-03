@@ -45,6 +45,9 @@ public class TestResultService {
         if ("ATTACHMENT_DIMENSIONAL".equals(test.scoringModel())) {
             return analyzeAttachment(test, attempt);
         }
+        if ("PREVALENT_PROFILE".equals(test.scoringModel())) {
+            return analyzePrevalentProfile(test, attempt);
+        }
 
         List<AreaScore> areaScores = test.areas().stream()
                 .map(area -> new AreaScore(area, scoreForArea(test, attempt, area.code())))
@@ -68,6 +71,21 @@ public class TestResultService {
                 catalogue.findGlobalInterpretation(test.id(), profileCode),
                 areaResults,
                 List.of());
+    }
+
+    private TestResult analyzePrevalentProfile(PsychologicalTest test, TestAttempt attempt) {
+        List<AreaScore> scores = test.areas().stream()
+                .map(area -> new AreaScore(area, scoreForArea(test, attempt, area.code())))
+                .toList();
+        boolean hasLow = scores.stream().anyMatch(area -> area.score() < LOW_LIMIT);
+        boolean hasHigh = scores.stream().anyMatch(area -> area.score() >= HIGH_LIMIT);
+        String profile = hasLow && hasHigh ? "FACETED"
+                : scores.stream().allMatch(area -> area.score() < LOW_LIMIT) ? "INTROVERT_LEANING"
+                : scores.stream().allMatch(area -> area.score() >= HIGH_LIMIT) ? "EXTRAVERT_LEANING"
+                : "INTERMEDIATE";
+        return new TestResult(attempt.score(), 0,
+                catalogue.findGlobalInterpretation(test.id(), profile),
+                scores.stream().map(this::toAreaResult).toList(), List.of());
     }
 
     private TestResult analyzeAttachment(PsychologicalTest test, TestAttempt attempt) {

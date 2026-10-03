@@ -44,6 +44,7 @@ public class TopicClusterCatalogue {
                     "Personalità e tratti",
                     "Pattern di esperienza e relazione da osservare nel tempo e nei contesti, senza trasformarli in diagnosi online.",
                     List.of(
+                            "introversione-estroversione",
                             "tratti-borderline-adulti",
                             "tratti-evitanti-personalita-adulti"
                     )),

@@ -4864,6 +4864,43 @@ public class GuideCatalogue {
                             new GuideReference("Risk and Protective Factors — CDC", "https://www.cdc.gov/aces/risk-factors/index.html", "Sintesi istituzionale sul contesto protettivo; non implica compensazione numerica o immunità."),
                             new GuideReference("1522 — Dipartimento per le Pari Opportunità", "https://www.pariopportunita.gov.it/it/numeri-utili/1522-numero-antiviolenza-e-antistalking/", "Servizio italiano di orientamento per violenza e stalking; non sostituisce il 112 nelle emergenze.")
                     )
+            ),
+            new InformationGuide(
+                    "introversione-estroversione", "introversione-estroversione",
+                    "Introversione ed estroversione",
+                    "Introversione ed estroversione: un continuum, non due etichette",
+                    "Introversione ed estroversione: guida | Spazio Test",
+                    "Capire il continuum introversione–estroversione, le sue diverse sfaccettature e i limiti di un questionario informativo.",
+                    "Introversione ed estroversione descrivono differenze di tratto, non qualità migliori o peggiori. Socialità, iniziativa nello scambio e vitalità possono combinarsi in modi diversi.",
+                    List.of(
+                            new GuideSection("In breve", "Un continuum di personalità", List.of(
+                                    "Nella ricerca sui Big Five l'estroversione è un tratto ampio. Il polo introverso non indica assenza di interesse per le persone, né una difficoltà psicologica di per sé.",
+                                    "I tratti descrivono tendenze, non un comportamento obbligato in ogni situazione. Una persona può apprezzare gli incontri e scegliere anche molto tempo tranquillo."), List.of()),
+                            new GuideSection("Tre sfaccettature", "Socialità, iniziativa e vitalità", List.of(
+                                    "Il BFI-2 distingue socialità, assertività e livello di energia. Il questionario originale collegato usa tre aree editoriali ispirate a questa distinzione, ma non è una forma abbreviata o validata del BFI-2.",
+                                    "Cercare incontri, prendere parola e preferire attività vivaci non devono avere la stessa frequenza. Guardare le tre aree separatamente evita di ridurre ogni esperienza a un'etichetta unica."), List.of()),
+                            new GuideSection("Distinzioni", "Solitudine scelta, timidezza e ansia sociale", List.of(
+                                    "Preferire momenti da soli non coincide necessariamente con bassa estroversione: la solitudine può avere funzioni e significati diversi. Neppure il numero di contatti descrive da solo la soddisfazione relazionale.",
+                                    "La timidezza può comprendere esitazione o disagio; nell'ansia sociale diventano importanti paura, evitamento, sofferenza e interferenza. Un profilo di tratto non identifica né esclude questi vissuti."), List.of()),
+                            new GuideSection("Contesto", "Le occasioni contano", List.of(
+                                    "Lavoro, salute, lingua, cultura, relazioni disponibili e sicurezza possono cambiare le opportunità di incontrare persone e prendere parola. Un periodo di stanchezza o isolamento non definisce da solo la personalità.",
+                                    "Può essere più utile domandarsi quali situazioni si scelgono liberamente e quali invece si evitano per paura, ostacoli pratici o mancanza di occasioni."), List.of()),
+                            new GuideSection("Risultati", "Come leggere il questionario collegato", List.of(
+                                    "Le 12 domande originali esplorano esperienze riferite negli ultimi sei mesi. I profili descrivono frequenze simili al polo introverso o estroverso, intermedie o sfaccettate; non assegnano una identità stabile.",
+                                    "Le soglie sono editoriali, non norme. Il questionario non è validato, non misura abilità sociali e non indica quale stile sia preferibile."), List.of()),
+                            new GuideSection("Supporto", "Quando può servire un confronto", List.of(
+                                    "Se le relazioni o le situazioni sociali ti causano sofferenza persistente, un professionista può aiutarti a distinguere preferenze, timore, contesto e bisogni di supporto. Non occorre aspettare un particolare risultato online.",
+                                    "Se preferisci pochi scambi e questo ti soddisfa, non c'è alcun obbligo di diventare più espansivo/a. In caso di pericolo immediato chiama il 112."), List.of())
+                    ),
+                    "Il questionario è originale, informativo e non validato; esplora tre aree senza diagnosticare, classificare rigidamente o confrontare con norme.",
+                    "Questa guida distingue il tratto dalla paura sociale e dalla solitudine scelta, considera opportunità e contesti e spiega i limiti delle soglie editoriali.",
+                    List.of(
+                            new GuideReference("Italian BFI-2-R — Burro, Bianchi e Raccanello", "https://doi.org/10.1007/s12144-025-07584-7", "Studio italiano su 5.362 adulti consultato per la struttura in tre faccette; campione di convenienza e strumento diverso non validano il questionario."),
+                            new GuideReference("French BFI-2-Fr — Lignier e colleghi", "https://doi.org/10.1007/s12144-022-03648-0", "Adattamento francese consultato per la struttura gerarchica; lingua e misura non sono trasferibili automaticamente."),
+                            new GuideReference("The next Big Five Inventory — Soto e John", "https://doi.org/10.1037/pspp0000096", "Studio fondativo del BFI-2 consultato per le faccette dell'estroversione; nessun item o punteggio è copiato."),
+                            new GuideReference("Individual Differences in Preference for Solitude — Burger", "https://doi.org/10.1006/jrpe.1995.1005", "Ricerca primaria consultata per distinguere preferenza per la solitudine dal solo continuum di estroversione."),
+                            new GuideReference("Social anxiety disorder — NICE CG159", "https://www.nice.org.uk/guidance/cg159/chapter/recommendations", "Linea guida usata per distinguere paura, evitamento, sofferenza e interferenza dal tratto; non fornisce soglie per questo questionario.")
+                    )
             )
     );
 

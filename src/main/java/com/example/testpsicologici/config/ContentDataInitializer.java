@@ -89,6 +89,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedAceExposureQuestionnaire();
         seedOccupationalBurnoutInformationTest();
         seedPerceivedEmpathyInformationTest();
+        seedIntroversionExtraversionTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4311,7 +4312,81 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Le risposte relazionali esplorate compaiono spesso; sono azioni dichiarate, non una valutazione delle loro motivazioni o effetti.");
     }
 
+    private void seedIntroversionExtraversionTest() {
+        String id = "introversione-estroversione";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Sono più introverso/a o estroverso/a?",
+                "Auto-osservazione informativa",
+                "Esplora socialità, espressione e vitalità riferite negli ultimi sei mesi, senza assegnare un'identità o una diagnosi.",
+                "4 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti: pensa agli ultimi sei mesi e alle occasioni realmente avute, considerando contesto, salute e possibilità di incontro. Introversione non equivale ad ansia sociale, timidezza o difficoltà relazionale; estroversione non certifica abilità sociali e le soglie sono editoriali. Se il contatto con gli altri ti causa sofferenza persistente, puoi parlarne con un professionista; per un pericolo immediato chiama il 112.",
+                version, false,
+                "Frequenza media delle esperienze riferite",
+                "Frequenza delle esperienze nell'area",
+                true, 45)
+                .withScoringModel("PREVALENT_PROFILE")
+                .withSeo("Introversione ed estroversione: questionario informativo | Spazio Test",
+                        "12 domande originali su socialità, espressione e vitalità. Risultati descrittivi senza etichette rigide o diagnosi.")
+                .withResponseInstruction("Pensando agli ultimi sei mesi e alle occasioni che hai avuto, con quale frequenza hai vissuto quanto descritto?"));
+
+        saveArea(id, "socialita", "Socialità", 1);
+        saveArea(id, "espressione", "Espressione e iniziativa", 2);
+        saveArea(id, "vitalita", "Ritmo e vitalità", 3);
+        saveQuestions(id, List.of(
+                q("socialita", "Ho proposto di trascorrere del tempo con altre persone."),
+                q("socialita", "Ho cercato occasioni per conversare con altre persone."),
+                q("socialita", "Ho scelto di partecipare a incontri di gruppo quando ne avevo la possibilità."),
+                q("socialita", "Ho trovato piacevole conversare con persone incontrate da poco."),
+                q("espressione", "Ho avviato una conversazione in un gruppo."),
+                q("espressione", "Ho preso parola davanti a più persone."),
+                q("espressione", "Ho proposto una mia idea durante una discussione."),
+                q("espressione", "Ho coordinato uno scambio quando serviva organizzarlo."),
+                q("vitalita", "Ho affrontato le attività quotidiane con slancio."),
+                q("vitalita", "Ho scelto attività dal ritmo vivace."),
+                q("vitalita", "Ho partecipato attivamente alle attività condivise."),
+                q("vitalita", "Ho cercato occasioni per fare qualcosa di dinamico.")));
+
+        String limits = "Il questionario è originale e non validato: le soglie sono editoriali e non definiscono la tua personalità. "
+                + "Opportunità sociali, cultura, lingua, lavoro, salute, stress e sicurezza del contesto possono cambiare le risposte. "
+                + "Se il contatto con gli altri ti causa sofferenza persistente, puoi parlarne con un professionista; in caso di pericolo immediato chiama il 112.";
+        saveGlobal(id, "INTROVERT_LEANING", "Esperienze esplorate più vicine al polo introverso",
+                "Le esperienze di socialità, espressione e vitalità risultano poco frequenti negli ultimi sei mesi. Le risposte descrivono questo periodo, non stabiliscono che tu sia una persona introversa.",
+                "Puoi osservare se stare con poche persone o scegliere ritmi tranquilli corrisponde a una preferenza libera e soddisfacente. Poche occasioni, stanchezza o un ambiente poco sicuro possono portare a risposte simili. Una frequenza contenuta non esclude momenti di iniziativa e piacere nello scambio. " + limits);
+        saveGlobal(id, "INTERMEDIATE", "Esperienze di introversione–estroversione intermedie",
+                "Le frequenze sono prevalentemente intermedie oppure differiscono moderatamente fra socialità, espressione e vitalità. Non emerge un unico polo netto nelle esperienze esplorate dal questionario.",
+                "Una persona può cercare compagnia in alcuni momenti e preferire ritmi più quieti in altri. Osserva quali occasioni, relazioni e ambienti favoriscono le esperienze che hai indicato. Il risultato non è una categoria stabile né una media normativa della popolazione. " + limits);
+        saveGlobal(id, "FACETED", "Esperienze di introversione–estroversione diverse fra aree",
+                "Almeno un'area risulta poco frequente e un'altra frequente. Il profilo mette in luce una distribuzione sfaccettata, senza assegnare un polo prevalente all'intera persona.",
+                "Guarda le tre schede d'area senza ordinare differenze minime come una classifica. Cercare contatto, prendere parola e scegliere attività vivaci possono variare indipendentemente nel periodo. Il contesto può rendere un aspetto più accessibile di un altro. " + limits);
+        saveGlobal(id, "EXTRAVERT_LEANING", "Esperienze esplorate più vicine al polo estroverso",
+                "Le esperienze di socialità, espressione e vitalità risultano frequenti negli ultimi sei mesi. Il profilo descrive la diffusione delle risposte, non certifica che tu sia una persona estroversa.",
+                "Nota se queste esperienze sono presenti in contesti diversi e se rispecchiano ciò che scegli. Frequente iniziativa sociale non misura la qualità delle relazioni né elimina il bisogno di momenti tranquilli. Le risposte non predicono come ti comporterai in ogni situazione. " + limits);
+
+        saveAreaInsights(id, "socialita",
+                "La ricerca di occasioni di incontro e conversazione è stata poco frequente; non indica da sola isolamento o disagio.",
+                "La ricerca di occasioni di incontro e conversazione è comparsa a volte; può dipendere dalle opportunità disponibili.",
+                "La ricerca di occasioni di incontro e conversazione è stata frequente; non misura qualità o soddisfazione delle relazioni.");
+        saveAreaInsights(id, "espressione",
+                "Prendere parola o proporre idee è stato poco frequente; non misura competenza, paura o valore delle idee.",
+                "L'iniziativa nello scambio è comparsa a volte; gruppo e contesto possono cambiare la partecipazione.",
+                "L'iniziativa nello scambio è stata frequente; non certifica efficacia comunicativa o sicurezza in ogni situazione.");
+        saveAreaInsights(id, "vitalita",
+                "Slancio e scelta di attività vivaci sono stati poco frequenti; salute e possibilità concrete possono influire.",
+                "Slancio e scelta di attività vivaci sono comparsi a volte; il ritmo preferito può variare con i contesti.",
+                "Slancio e scelta di attività vivaci sono stati frequenti; questo non definisce un bisogno costante di stimoli.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("introversione-estroversione", List.of(
+                ref("Italian BFI-2-R — Burro, Bianchi e Raccanello", "https://doi.org/10.1007/s12144-025-07584-7"),
+                ref("French BFI-2-Fr — Lignier e colleghi", "https://doi.org/10.1007/s12144-022-03648-0"),
+                ref("The next Big Five Inventory — Soto e John", "https://doi.org/10.1037/pspp0000096"),
+                ref("Individual Differences in Preference for Solitude — Burger", "https://doi.org/10.1006/jrpe.1995.1005"),
+                ref("Social anxiety disorder: recognition, assessment and treatment — NICE CG159", "https://www.nice.org.uk/guidance/cg159/chapter/recommendations")));
         syncReferences("empatia-percepita", List.of(
                 ref("Italian Empathy Quotient 15-item — Senese e colleghi", "https://doi.org/10.1027/1015-5759/a000348"),
                 ref("Italian Brief Interpersonal Reactivity Index — Diotaiuti e colleghi", "https://doi.org/10.3389/fpsyg.2021.773363"),
