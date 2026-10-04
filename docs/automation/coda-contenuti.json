@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-10-03",
+  "updatedAt": "2026-10-04",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -238,8 +238,8 @@
       "sourceDescription": "Trattarsi con comprensione nei momenti di errore, fallimento o difficoltà.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Direzione positiva; non confondere autocompassione con indulgenza, autostima o assenza di responsabilità." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 3, "itemCount": 12, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Tre lenti editoriali sulle sole risposte compassionevoli: gentilezza verso sé, umanità condivisa e attenzione equilibrata. Nessun punteggio globale visibile; soglie descrittive editoriali, non sottoscale validate né misura di autocritica." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-04T13:15:57+02:00", "completedAt": "2026-10-04T13:15:57+02:00", "commitHash": "079c5b385f235e3262b455d16020cfff65fa8511", "blockReason": null }
     },
     {
       "order": 19,
