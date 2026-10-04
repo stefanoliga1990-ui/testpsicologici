@@ -430,7 +430,17 @@ public class ReferenceContributionCatalogue {
             entry("https://pubmed.ncbi.nlm.nih.gov/30892562/",
                     "Meta-analisi consultata per la differenza tra rilevazioni prospettiche e ricordi retrospettivi; non giudica il singolo ricordo."),
             entry("https://www.cdc.gov/aces/risk-factors/index.html",
-                    "Sintesi istituzionale sui fattori protettivi; non sostiene una compensazione numerica delle esposizioni né una previsione personale."));
+                    "Sintesi istituzionale sui fattori protettivi; non sostiene una compensazione numerica delle esposizioni né una previsione personale."),
+            entry("https://doi.org/10.1007/s12671-025-02516-9",
+                    "Sei campioni italiani consultati per distinguere risposte compassionevoli e non compassionevoli; non validano gli item originali."),
+            entry("https://doi.org/10.1016/j.paid.2017.06.028",
+                    "Studio italiano consultato per la struttura della Self-Compassion Scale e la distinzione dall'autostima; non fornisce norme per questo questionario."),
+            entry("https://doi.org/10.1002/cpp.702",
+                    "Studio europeo della scala breve consultato per i limiti di misura e interpretazione; non valida gli item originali dell'app."),
+            entry("https://doi.org/10.1080/15298860309027",
+                    "Lavoro fondativo consultato per la cornice delle tre componenti teoriche; nessun item protetto o punteggio della scala viene trasferito."),
+            entry("https://doi.org/10.1177/0146167212445599",
+                    "Esperimenti consultati per non equiparare autocompassione e rinuncia a migliorare; effetti di gruppo non garantiscono esiti individuali."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

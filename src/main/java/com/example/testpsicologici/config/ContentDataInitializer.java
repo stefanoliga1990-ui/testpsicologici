@@ -90,6 +90,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedOccupationalBurnoutInformationTest();
         seedPerceivedEmpathyInformationTest();
         seedIntroversionExtraversionTest();
+        seedSelfCompassionInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4380,7 +4381,80 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Slancio e scelta di attività vivaci sono stati frequenti; questo non definisce un bisogno costante di stimoli.");
     }
 
+    private void seedSelfCompassionInformationTest() {
+        String id = "autocompassione";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Quanto pratico l'autocompassione?",
+                "Auto-osservazione informativa",
+                "Esplora risposte compassionevoli riferite dopo errori, delusioni e difficoltà negli ultimi sei mesi.",
+                "4 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti: pensa agli errori, alle delusioni e alle difficoltà vissute negli ultimi sei mesi; se ricordi poche occasioni, il risultato è poco interpretabile. Esplora solo alcune risposte compassionevoli, non misura autocritica, valore personale, capacità emotiva o diagnosi; le soglie sono editoriali. Se la sofferenza persiste puoi parlarne con un professionista; in caso di pericolo immediato chiama il 112.",
+                version, false,
+                "Frequenza media delle risposte riferite",
+                "Frequenza delle risposte nell'area",
+                true, 46)
+                .withSeo("Autocompassione: questionario informativo | Spazio Test",
+                        "12 domande originali su gentilezza verso sé, umanità condivisa e attenzione equilibrata nelle difficoltà. Risultati descrittivi, non validati.")
+                .withResponseInstruction("Pensando ai momenti difficili che hai vissuto negli ultimi sei mesi, con quale frequenza hai avuto l'esperienza descritta?"));
+
+        saveArea(id, "gentilezza", "Gentilezza verso di sé", 1);
+        saveArea(id, "umanita", "Umanità condivisa", 2);
+        saveArea(id, "equilibrio", "Attenzione equilibrata al vissuto", 3);
+        saveQuestions(id, List.of(
+                q("gentilezza", "Ho usato parole rispettose verso me stesso/a dopo un errore."),
+                q("gentilezza", "Ho riconosciuto un mio bisogno di conforto in un momento difficile."),
+                q("gentilezza", "Mi sono concesso/a una pausa dopo una delusione."),
+                q("gentilezza", "Ho cercato un gesto di cura verso me stesso/a quando ero in difficoltà."),
+                q("umanita", "Ho ricordato che anche altre persone commettono errori."),
+                q("umanita", "Ho riconosciuto che anche altre persone attraversano momenti dolorosi."),
+                q("umanita", "Ho considerato umano aver bisogno di sostegno in una difficoltà."),
+                q("umanita", "Ho riconosciuto somiglianze tra una mia difficoltà e quelle di altre persone."),
+                q("equilibrio", "Ho riconosciuto un'emozione difficile mentre la vivevo."),
+                q("equilibrio", "Ho osservato i miei pensieri mentre affrontavo una difficoltà."),
+                q("equilibrio", "Ho osservato come cambiava il mio stato emotivo durante una difficoltà."),
+                q("equilibrio", "Ho dedicato attenzione a ciò che provavo prima di decidere come agire.")));
+
+        String limits = "Il questionario è originale e non validato: le soglie e le barre sono editoriali, non misurano una capacità, un valore personale o una diagnosi. "
+                + "Numero di occasioni, tempo, sicurezza, salute, lingua e cultura possono influire sulle risposte. "
+                + "Se vivi sofferenza persistente, puoi confrontarti con un professionista; per un pericolo immediato chiama il 112.";
+        saveGlobal(id, "LOW", "Le risposte di autocompassione esplorate sono poco frequenti",
+                "Le risposte compassionevoli riferite risultano poco frequenti nelle tre aree di gentilezza, umanità condivisa e attenzione al vissuto. Questo descrive soltanto le occasioni ricordate negli ultimi sei mesi.",
+                "Un profilo contenuto non esclude gesti di cura in situazioni non esplorate né indica una difficoltà stabile. Osserva se sono mancate occasioni, tempo o condizioni sicure per fermarti durante un momento difficile. L'autocompassione non richiede di ignorare errori o responsabilità. " + limits);
+        saveGlobal(id, "MIXED", "Le risposte di autocompassione variano tra le aree",
+                "Le frequenze sono intermedie oppure differiscono tra le tre aree, senza un'area nel livello editoriale più alto. La variabilità descrive modi diversi di reagire ai momenti difficili, non un giudizio sulla persona.",
+                "Puoi notare se trattarti con rispetto, ricordare esperienze condivise e osservare il tuo vissuto diventano più accessibili in contesti diversi. Un'area poco frequente non rende prive di significato le altre risposte. Il risultato non è un confronto con la popolazione e non misura l'intera autocompassione. " + limits);
+        saveGlobal(id, "FOCUSED", "Un'area di autocompassione emerge nelle risposte",
+                "Una delle tre aree raccoglie risposte più frequenti, mentre le altre restano più contenute. Il profilo orienta a quella lente senza generalizzare alla capacità di prendersi cura di sé.",
+                "Guarda quale area emerge e quali episodi specifici hai ricordato, senza trasformare le tre barre in una classifica. Gentilezza, umanità condivisa e attenzione al vissuto possono comparire in tempi diversi. Una risposta frequente in un'area non dimostra benessere o assenza di autocritica. " + limits);
+        saveGlobal(id, "BROAD", "Più aree di autocompassione emergono nelle risposte",
+                "Le risposte compassionevoli sono frequenti in almeno due delle tre aree esplorate. L'ampiezza descrive più modi riferiti di stare con sé nei momenti difficili del periodo considerato.",
+                "Osserva se queste modalità compaiono in situazioni diverse e quali condizioni le rendono possibili. Una frequenza alta non garantisce che ogni difficoltà sia facile né che la sofferenza sia assente. Il profilo non certifica abilità emotiva, guarigione o un tratto permanente. " + limits);
+
+        saveAreaInsights(id, "gentilezza",
+                "Parole rispettose e gesti di cura verso di sé sono stati poco frequenti; opportunità e risorse disponibili possono incidere.",
+                "Parole rispettose e gesti di cura verso di sé sono comparsi in alcune difficoltà; non misurano il valore personale.",
+                "Parole rispettose e gesti di cura verso di sé sono stati frequenti; non implicano assenza di responsabilità.");
+        saveAreaInsights(id, "umanita",
+                "Riconoscere aspetti condivisi della difficoltà è stato poco frequente; non significa mancanza di empatia.",
+                "Riconoscere aspetti condivisi della difficoltà è comparso a volte; le storie personali restano differenti.",
+                "Riconoscere aspetti condivisi della difficoltà è stato frequente; questo non riduce il peso della tua esperienza.");
+        saveAreaInsights(id, "equilibrio",
+                "Osservare emozioni e pensieri durante la difficoltà è stato poco frequente; non misura consapevolezza emotiva stabile.",
+                "Osservare emozioni e pensieri durante la difficoltà è comparso a volte; il contesto può cambiare lo spazio disponibile.",
+                "Osservare emozioni e pensieri durante la difficoltà è stato frequente; non certifica controllo o accuratezza emotiva.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("autocompassione", List.of(
+                ref("Italian Self-Compassion Scale — Veneziani, Fuochi e Voci", "https://doi.org/10.1016/j.paid.2017.06.028"),
+                ref("Italian SCS-SF — Fuochi, Voci e Moè", "https://doi.org/10.1007/s12671-025-02516-9"),
+                ref("Self-Compassion Scale Short Form — Raes e colleghi", "https://doi.org/10.1002/cpp.702"),
+                ref("Development of the Self-Compassion Scale — Neff", "https://doi.org/10.1080/15298860309027"),
+                ref("Self-compassion and self-improvement motivation — Breines e Chen", "https://doi.org/10.1177/0146167212445599")));
         syncReferences("introversione-estroversione", List.of(
                 ref("Italian BFI-2-R — Burro, Bianchi e Raccanello", "https://doi.org/10.1007/s12144-025-07584-7"),
                 ref("French BFI-2-Fr — Lignier e colleghi", "https://doi.org/10.1007/s12144-022-03648-0"),

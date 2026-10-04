@@ -4901,6 +4901,43 @@ public class GuideCatalogue {
                             new GuideReference("Individual Differences in Preference for Solitude — Burger", "https://doi.org/10.1006/jrpe.1995.1005", "Ricerca primaria consultata per distinguere preferenza per la solitudine dal solo continuum di estroversione."),
                             new GuideReference("Social anxiety disorder — NICE CG159", "https://www.nice.org.uk/guidance/cg159/chapter/recommendations", "Linea guida usata per distinguere paura, evitamento, sofferenza e interferenza dal tratto; non fornisce soglie per questo questionario.")
                     )
+            ),
+            new InformationGuide(
+                    "autocompassione", "autocompassione",
+                    "Autocompassione",
+                    "Autocompassione: come mi tratto nei momenti difficili?",
+                    "Autocompassione: guida | Spazio Test",
+                    "Una guida alle risposte compassionevoli verso di sé, ai loro limiti e alle differenze da autostima e indulgenza.",
+                    "L'autocompassione riguarda il modo in cui ci si rivolge a sé quando qualcosa è difficile. Gentilezza, riconoscimento di esperienze umane condivise e attenzione equilibrata possono comparire in misura diversa, senza definire il valore di una persona.",
+                    List.of(
+                            new GuideSection("In breve", "Una risposta alla difficoltà, non un giudizio sul valore", List.of(
+                                    "Nella cornice teorica di Neff, l'autocompassione comprende gentilezza verso di sé, senso di umanità condivisa e attenzione equilibrata all'esperienza. Non richiede di stare bene né di apprezzare ogni propria scelta.",
+                                    "La ricerca italiana distingue le risposte compassionevoli da quelle autocritiche: non è corretto trattarle automaticamente come estremi opposti di un unico punteggio. Il questionario collegato esplora soltanto alcune risposte compassionevoli riferite."), List.of()),
+                            new GuideSection("Tre lenti", "Gentilezza, umanità condivisa ed equilibrio", List.of(
+                                    "La gentilezza può apparire nel linguaggio usato con sé e nel concedersi una pausa. L'umanità condivisa consiste nel ricordare che difficoltà ed errori fanno parte dell'esperienza umana, senza minimizzare la propria situazione.",
+                                    "L'attenzione equilibrata riguarda il riconoscere ciò che si prova senza esserne completamente assorbiti. Le tre aree del questionario sono lenti editoriali, non fattori psicometrici dimostrati per questi item."), List.of()),
+                            new GuideSection("Distinzioni", "Non coincide con autostima o indulgenza", List.of(
+                                    "L'autostima riguarda la valutazione del proprio valore o delle proprie capacità; l'autocompassione riguarda la risposta a sé in una difficoltà. I due aspetti possono intrecciarsi, ma non sono identici.",
+                                    "Trattarsi con rispetto non equivale a evitare responsabilità o rinunciare a migliorare. Alcuni esperimenti hanno studiato la motivazione dopo un errore, ma non dimostrano che ogni persona diventi più motivata in ogni contesto."), List.of()),
+                            new GuideSection("Contesto", "Le circostanze cambiano le possibilità", List.of(
+                                    "Stanchezza, stress, isolamento, norme culturali e qualità delle relazioni possono influenzare il modo in cui una persona si tratta. Una risposta poco frequente negli ultimi mesi non identifica un tratto immutabile.",
+                                    "Essere gentili con sé non sostituisce sostegno concreto, protezione o cambiamenti nelle condizioni che producono difficoltà. Osservare quando una risposta è possibile e quando manca può essere più utile che giudicarsi."), List.of()),
+                            new GuideSection("Risultati", "Come leggere il questionario collegato", List.of(
+                                    "Le 12 domande originali chiedono quanto spesso, negli ultimi sei mesi, sono comparse alcune risposte compassionevoli. I risultati descrivono la distribuzione delle risposte tra tre aree; non misurano l'intera autocompassione o l'autocritica.",
+                                    "Le soglie sono editoriali, senza norme o cut-off validati. Questo strumento non è una forma breve della Self-Compassion Scale e non permette diagnosi, graduatorie o confronti clinici."), List.of()),
+                            new GuideSection("Supporto", "Quando parlarne con qualcuno", List.of(
+                                    "Se la sofferenza o l'autocritica interferiscono con la vita quotidiana, un professionista può aiutarti a comprendere la situazione nel suo contesto, indipendentemente da questo risultato.",
+                                    "Una frequenza elevata di risposte gentili non esclude altre difficoltà o il bisogno di aiuto. Se sei in pericolo immediato in Italia, chiama il 112."), List.of())
+                    ),
+                    "Questionario originale, informativo e non validato: esplora solo alcune risposte compassionevoli verso di sé, senza misurare l'intero costrutto né assegnare valori clinici.",
+                    "Questa guida separa le risposte compassionevoli dall'autocritica, distingue autocompassione da autostima e indulgenza e contestualizza le soglie editoriali del questionario.",
+                    List.of(
+                            new GuideReference("Italian self-compassion structure — Fuochi, Voci e Moè", "https://doi.org/10.1007/s12671-025-02516-9", "Sei campioni italiani consultati per distinguere risposte compassionevoli e non compassionevoli; non validano gli item originali."),
+                            new GuideReference("Italian Self-Compassion Scale — Veneziani, Fuochi e Voci", "https://doi.org/10.1016/j.paid.2017.06.028", "Studio italiano consultato per la struttura dello strumento esistente e la distinzione dall'autostima; non fornisce norme per questo questionario."),
+                            new GuideReference("Self-Compassion Scale short form — Raes e colleghi", "https://doi.org/10.1002/cpp.702", "Studio europeo consultato per la cautela nell'interpretazione di una forma breve; misura e campioni diversi non sono trasferibili."),
+                            new GuideReference("Self-Compassion — Neff", "https://doi.org/10.1080/15298860309027", "Lavoro fondativo consultato per le tre componenti teoriche; nessun item della scala è riprodotto."),
+                            new GuideReference("Self-compassion and motivation — Breines e Chen", "https://doi.org/10.1177/0146167212445599", "Esperimenti consultati per non equiparare gentilezza e rinuncia a migliorare; effetti di gruppo non garantiscono esiti individuali.")
+                    )
             )
     );
 

@@ -79,6 +79,7 @@ public class TopicClusterCatalogue {
                     "Emozioni, risorse e benessere",
                     "Consapevolezza emotiva, comunicazione, adattamento e percezione del proprio benessere.",
                     List.of(
+                            "autocompassione",
                             "intelligenza-emotiva",
                             "alessitimia",
                             "intelligenza-intrapersonale",
@@ -119,6 +120,10 @@ public class TopicClusterCatalogue {
         }
         if ("burnout-percepito".equals(testId)) {
             return List.of("resilienza-psicologica", "umore-depresso", "soddisfazione-vita")
+                    .stream().limit(maximum).toList();
+        }
+        if ("autocompassione".equals(testId)) {
+            return List.of("resilienza-psicologica", "intelligenza-intrapersonale", "empatia-percepita")
                     .stream().limit(maximum).toList();
         }
         return findByTestId(testId)
