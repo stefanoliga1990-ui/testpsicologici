@@ -4520,11 +4520,21 @@ public class ContentDataInitializer implements ApplicationRunner {
     private void seedAppearanceConcernsInformationTest() {
         String id = "dismorfofobia";
         String version = "1.0";
-        if (!requiresSeed(id, version)) return;
+        String title = "Dismorfofobia: test informativo";
+        String seoTitle = "Dismorfofobia: test informativo | Spazio Test";
+        if (!requiresSeed(id, version)) {
+            testRepository.findById(id).ifPresent(test -> {
+                if (!title.equals(test.getTitle()) || !seoTitle.equals(test.getSeoTitle())) {
+                    test.updatePresentation(title, seoTitle);
+                    saveTest(test);
+                }
+            });
+            return;
+        }
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(id,
-                "Quanto spazio occupano le preoccupazioni per il mio aspetto?",
+                title,
                 "Auto-osservazione informativa",
                 "Esplora pensieri, verifiche, gestione e interferenza riferiti all'aspetto nell'ultimo mese.",
                 "5 min · 16 domande",
@@ -4533,7 +4543,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza media delle risposte riferite",
                 "Frequenza delle risposte nell'area",
                 true, 48)
-                .withSeo("Preoccupazioni per l'aspetto: questionario informativo | Spazio Test",
+                .withSeo(seoTitle,
                         "16 domande originali sulle esperienze legate all'aspetto. Risultati descrittivi e guida sulla dismorfofobia, senza diagnosi.")
                 .withResponseInstruction("Nell'ultimo mese, con quale frequenza hai vissuto quanto descritto rispetto al tuo aspetto fisico?"));
 

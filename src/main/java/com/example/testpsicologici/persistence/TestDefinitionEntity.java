@@ -73,6 +73,11 @@ public class TestDefinitionEntity {
         return this;
     }
 
+    public void updatePresentation(String title, String seoTitle) {
+        this.title = title;
+        this.seoTitle = seoTitle;
+    }
+
     public TestDefinitionEntity withResponseInstruction(String responseInstruction) {
         this.responseInstruction = responseInstruction;
         return this;

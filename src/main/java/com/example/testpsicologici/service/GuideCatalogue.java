@@ -4980,7 +4980,7 @@ public class GuideCatalogue {
             ),
             new InformationGuide(
                     "dismorfofobia", "dismorfofobia",
-                    "Preoccupazioni per l'aspetto",
+                    "Dismorfofobia (disturbo da dismorfismo corporeo)",
                     "Dismorfofobia e disturbo da dismorfismo corporeo: che cosa osservare",
                     "Dismorfofobia: guida sul dismorfismo corporeo | Spazio Test",
                     "Pensieri sull'aspetto, verifiche, evitamento e impatto quotidiano: una guida prudente al disturbo da dismorfismo corporeo e ai limiti del questionario.",

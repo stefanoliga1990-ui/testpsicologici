@@ -1,8 +1,10 @@
 package com.example.testpsicologici.controller;
 
+import com.example.testpsicologici.config.ContentDataInitializer;
 import com.example.testpsicologici.model.PsychologicalTest;
 import com.example.testpsicologici.model.TestAttempt;
 import com.example.testpsicologici.model.TestResult;
+import com.example.testpsicologici.persistence.TestDefinitionRepository;
 import com.example.testpsicologici.service.TestCatalogue;
 import com.example.testpsicologici.service.TestResultService;
 import com.example.testpsicologici.service.TopicClusterCatalogue;
@@ -10,10 +12,12 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.DefaultApplicationArguments;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
@@ -33,11 +37,31 @@ class BodyDysmorphiaContentTest {
     @Autowired private TestCatalogue catalogue;
     @Autowired private TestResultService resultService;
     @Autowired private TopicClusterCatalogue clusters;
+    @Autowired private TestDefinitionRepository definitions;
+    @Autowired private ContentDataInitializer initializer;
+
+    @Test
+    @Transactional
+    void startupUpdatesExistingTitleWithoutReseedingTheQuestionnaire() {
+        var definition = definitions.findById("dismorfofobia").orElseThrow();
+        definition.updatePresentation("Titolo precedente", "Titolo precedente | Spazio Test");
+        definitions.saveAndFlush(definition);
+
+        initializer.run(new DefaultApplicationArguments(new String[0]));
+
+        PsychologicalTest updated = catalogue.findById("dismorfofobia");
+        assertThat(updated.title()).isEqualTo("Dismorfofobia: test informativo");
+        assertThat(updated.seoTitle()).isEqualTo("Dismorfofobia: test informativo | Spazio Test");
+        assertThat(updated.version()).isEqualTo("1.0");
+        assertThat(updated.questions()).hasSize(16);
+    }
 
     @Test
     void blueprintHasFourBalancedInterleavedAreasAndExplicitLimits() {
         PsychologicalTest test = catalogue.findById("dismorfofobia");
         assertThat(test.version()).isEqualTo("1.0");
+        assertThat(test.title()).isEqualTo("Dismorfofobia: test informativo");
+        assertThat(test.seoTitle()).startsWith("Dismorfofobia:");
         assertThat(test.scoringModel()).isEqualTo("AREA_PROFILE");
         assertThat(test.scoreVisible()).isFalse();
         assertThat(test.answerScale()).isEqualTo("FREQUENCY");
@@ -85,6 +109,7 @@ class BodyDysmorphiaContentTest {
                 .andExpect(content().string(containsString("/approfondimenti/dismorfofobia")));
         mvc.perform(get("/approfondimenti/dismorfofobia"))
                 .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Dismorfofobia (disturbo da dismorfismo corporeo)")))
                 .andExpect(content().string(containsString("disturbo da dismorfismo corporeo")))
                 .andExpect(content().string(containsString("Letture facoltative")))
                 .andExpect(content().string(containsString("Alessia Liga")))
@@ -107,7 +132,7 @@ class BodyDysmorphiaContentTest {
                 .andReturn();
         try (PDDocument document = PDDocument.load(pdf.getResponse().getContentAsByteArray())) {
             assertThat(new PDFTextStripper().getText(document))
-                    .contains("Quanto spazio occupano", "Pensieri sull'aspetto")
+                    .contains("Dismorfofobia: test informativo", "Pensieri sull'aspetto")
                     .doesNotContain("FREQUENZA MEDIA DELLE RISPOSTE RIFERITE");
         }
         mvc.perform(get("/sitemap.xml"))

@@ -1,8 +1,10 @@
-# Preoccupazioni legate all'aspetto — specifica psicometrica v1.0
+# Dismorfofobia — specifica psicometrica v1.0
 
 ## Costrutto e uso
 
 Questionario originale, informativo e non validato per adulti. Esplora nell'ultimo mese pensieri ricorrenti sull'aspetto fisico, verifiche e confronti, modifiche delle attività e interferenza percepita. Il nome editoriale «Dismorfofobia» collega il tema alla guida sul disturbo da dismorfismo corporeo (BDD), ma le risposte **non identificano né escludono** il disturbo. L'uso previsto è auto-osservazione e psicoeducazione, non screening, diagnosi, triage, valutazione di sicurezza o monitoraggio clinico. Il questionario non chiede se un difetto sia reale, visibile o immaginario, né quale parte del corpo sia coinvolta.
+
+Titolo pubblico del test: «Dismorfofobia: test informativo». Titolo della card della guida: «Dismorfofobia (disturbo da dismorfismo corporeo)». Il termine clinico rende riconoscibile l'argomento, mentre «informativo» e i limiti nella pagina evitano di presentare il questionario originale come strumento diagnostico. Questa revisione editoriale non cambia item, istruzioni, scoring o interpretazioni: la versione del questionario resta 1.0.
 
 La guida offre anche una lettura facoltativa della revisora Alessia Liga su Substack, separata in pagina e nei dati dalle fonti scientifiche e non usata per giustificare item o interpretazioni.
 
