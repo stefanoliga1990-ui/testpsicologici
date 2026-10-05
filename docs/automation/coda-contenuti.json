@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-10-04",
+  "updatedAt": "2026-10-05",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -244,13 +244,13 @@
     {
       "order": 19,
       "slug": "ruminazione-mentale",
-      "workingTitle": "Quanto tendo alla ruminazione mentale?",
+      "workingTitle": "Quanto torno con il pensiero a episodi difficili?",
       "sourceTopic": "Ruminazione mentale",
       "sourceDescription": "Tendenza a ripensare ripetutamente a errori, problemi, conversazioni o situazioni negative.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Ansia, umore e trauma",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Distinguere riflessione, preoccupazione, ruminazione depressiva e pensieri intrusivi senza diagnosi." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 3, "itemCount": 12, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Tre aree editoriali: ritorno agli episodi, valutazione ripetuta, persistenza e attenzione. Solo episodi già avvenuti nell'ultimo mese; nessun punteggio globale visibile. Soglie descrittive editoriali, non sottoscale validate; distinguere riflessione utile e preoccupazione futura." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-05T13:21:19+02:00", "completedAt": "2026-10-05T13:21:19+02:00", "commitHash": "e8c95bfc8b8555756e9d391f56b5c05771cedeca", "blockReason": null }
     },
     {
       "order": 20,
