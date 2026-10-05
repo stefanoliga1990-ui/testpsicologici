@@ -440,7 +440,21 @@ public class ReferenceContributionCatalogue {
             entry("https://doi.org/10.1080/15298860309027",
                     "Lavoro fondativo consultato per la cornice delle tre componenti teoriche; nessun item protetto o punteggio della scala viene trasferito."),
             entry("https://doi.org/10.1177/0146167212445599",
-                    "Esperimenti consultati per non equiparare autocompassione e rinuncia a migliorare; effetti di gruppo non garantiscono esiti individuali."));
+                    "Esperimenti consultati per non equiparare autocompassione e rinuncia a migliorare; effetti di gruppo non garantiscono esiti individuali."),
+            entry("https://doi.org/10.1285/i17201632vXn17p15",
+                    "Studio italiano della RRS su 462 studenti consultato per componenti della ruminazione depressiva; misura e campione non validano gli item originali."),
+            entry("https://doi.org/10.1007/s41811-023-00162-4",
+                    "Studio trasversale italiano su 324 adulti consultato per il pensiero negativo ripetitivo; campione di convenienza e associazioni non provano causalità."),
+            entry("https://doi.org/10.1027/1015-5759/a000231",
+                    "Analisi belga della RRS consultata per la struttura non uniforme di brooding e reflection; fattori e proprietà non sono trasferibili."),
+            entry("https://doi.org/10.1016/j.jbtep.2010.12.003",
+                    "Sviluppo europeo del PTQ consultato per ripetizione, intrusione e difficoltà di distacco; include anche contenuti futuri e non valida i nuovi item."),
+            entry("https://doi.org/10.1037/0033-2909.134.2.163",
+                    "Revisione consultata per il ruolo di contesto e modalità astratta o concreta nel pensiero ripetitivo; non offre cut-off individuali."),
+            entry("https://doi.org/10.1111/j.1745-6924.2008.00088.x",
+                    "Revisione consultata per i confini tra ruminazione, preoccupazione e depressione; non consente diagnosi del singolo."),
+            entry("https://doi.org/10.3205/psm000062",
+                    "Studio tedesco su 221 studenti consultato per la distinzione imperfetta tra preoccupazione e ruminazione nella lingua comune; non stabilisce confini clinici netti."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

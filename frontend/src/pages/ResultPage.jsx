@@ -76,10 +76,12 @@ export default function ResultPage({ aceExposure, areaResults, contributionsEnab
         )}
         {areaResults.length > 0 && !isAttachmentStyles && !isAceExposure && (
           <>
-            <div className="overall-presence">
-              <div className="overall-presence-label">{test.overallMetricLabel}</div>
-              <ProgressBar className="overall-presence-track" label={test.overallMetricLabel} value={percentage} />
-            </div>
+            {test.id !== 'ruminazione-mentale' && (
+              <div className="overall-presence">
+                <div className="overall-presence-label">{test.overallMetricLabel}</div>
+                <ProgressBar className="overall-presence-track" label={test.overallMetricLabel} value={percentage} />
+              </div>
+            )}
             <div className="area-results">
               <div className="area-results-heading">
                 <p className="eyebrow">Le aree esplorate</p><h2>Una lettura più completa</h2>

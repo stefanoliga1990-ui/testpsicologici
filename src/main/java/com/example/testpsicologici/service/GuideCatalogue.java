@@ -4938,6 +4938,45 @@ public class GuideCatalogue {
                             new GuideReference("Self-Compassion — Neff", "https://doi.org/10.1080/15298860309027", "Lavoro fondativo consultato per le tre componenti teoriche; nessun item della scala è riprodotto."),
                             new GuideReference("Self-compassion and motivation — Breines e Chen", "https://doi.org/10.1177/0146167212445599", "Esperimenti consultati per non equiparare gentilezza e rinuncia a migliorare; effetti di gruppo non garantiscono esiti individuali.")
                     )
+            ),
+            new InformationGuide(
+                    "ruminazione-mentale", "ruminazione-mentale",
+                    "Pensieri ripetitivi sul passato",
+                    "Ruminazione mentale: quando il pensiero torna agli episodi difficili",
+                    "Ruminazione mentale: guida | Spazio Test",
+                    "Comprendere il ritorno ripetuto a esperienze già avvenute, distinguendo riflessione, preoccupazione futura e limiti di un questionario informativo.",
+                    "Ripensare a un errore o a una conversazione può aiutare a capire e scegliere. A volte, però, gli stessi temi ritornano senza aggiungere informazioni o un passo concreto: questa guida esplora il processo senza attribuire una diagnosi.",
+                    List.of(
+                            new GuideSection("In breve", "Che cosa intendiamo qui per ruminazione", List.of(
+                                    "Il termine può indicare forme diverse di pensiero ripetitivo. Qui ci riferiamo soprattutto al ritorno su episodi spiacevoli già avvenuti, alle valutazioni che ne seguono e alla difficoltà di distogliere l'attenzione.",
+                                    "La ricerca sulla ruminazione depressiva e sul pensiero negativo ripetitivo usa strumenti e popolazioni differenti. Un pensiero frequente non identifica da solo depressione, ansia o un disturbo ossessivo."), List.of()),
+                            new GuideSection("Tre lenti", "Ritorno, valutazione e persistenza", List.of(
+                                    "Si può tornare mentalmente su un episodio, chiedersi che cosa significhi e poi notare che quel tema occupa attenzione durante altre attività. Questi passaggi non devono essere presenti insieme né nella stessa misura.",
+                                    "Le tre aree del questionario collegato sono lenti editoriali: gli studi su RRS e PTQ non ne convalidano la struttura, gli item o le soglie. Piccole differenze tra barre non rappresentano una classifica personale."), List.of()),
+                            new GuideSection("Distinzioni", "Riflessione utile e preoccupazione futura", List.of(
+                                    "Tornare a un fatto può servire a comprenderlo, imparare o decidere un'azione. Contano contenuto, contesto e modalità concreta o astratta, non soltanto il numero di volte in cui il pensiero compare.",
+                                    "La preoccupazione riguarda spesso ciò che potrebbe accadere; la guida e il test qui collegati delimitano il focus a ciò che è già avvenuto. Le esperienze possono sovrapporsi, ma i risultati non distinguono clinicamente ruminazione e rimuginio."), List.of()),
+                            new GuideSection("Contesto", "Perché un episodio può restare aperto", List.of(
+                                    "Un conflitto irrisolto, un cambiamento importante, stress, dolore o mancanza di informazioni possono far tornare un pensiero. Il questionario non stabilisce se la situazione sia stata ingiusta né se il problema abbia una soluzione semplice.",
+                                    "Anche sonno, tempo disponibile, sostegno e condizioni di sicurezza possono influenzare l'attenzione. Un risultato non attribuisce a chi risponde la responsabilità delle circostanze che sta vivendo."), List.of()),
+                            new GuideSection("Risultati", "Come leggere il questionario", List.of(
+                                    "Le 12 domande originali chiedono frequenza nell'ultimo mese e restituiscono tre aree descrittive. Il punteggio globale non è mostrato e le soglie sono editoriali, non norme, percentili o valori clinici.",
+                                    "Lo strumento non è validato, non è una forma breve della RRS o del PTQ e non misura la qualità delle conclusioni raggiunte. Una risposta bassa non esclude un episodio molto difficile; una risposta alta non prova una condizione clinica."), List.of()),
+                            new GuideSection("Supporto", "Se i pensieri occupano troppo spazio", List.of(
+                                    "Se i pensieri causano sofferenza persistente o interferiscono con sonno, attività e relazioni, puoi parlarne con un medico o un professionista della salute mentale. Il confronto può considerare eventi, contesto, altri sintomi e possibilità di sostegno senza affidarsi a una scheda online.",
+                                    "Il test non rileva pensieri suicidari né valuta la sicurezza. In caso di pericolo immediato in Italia chiama il 112; non aspettare un particolare profilo del questionario."), List.of())
+                    ),
+                    "Questionario originale, informativo e non validato: descrive alcune esperienze nell'ultimo mese senza diagnosi, punteggio clinico o norme.",
+                    "La guida distingue pensiero sul passato e preoccupazione futura, chiarisce che la riflessione può essere utile e spiega i limiti delle tre aree editoriali.",
+                    List.of(
+                            new GuideReference("Italian Ruminative Responses Scale — Palmieri, Gasparre e Lanciano", "https://doi.org/10.1285/i17201632vXn17p15", "Studio italiano di 462 studenti consultato per componenti della ruminazione depressiva; campione, misura e metodo non validano il questionario originale."),
+                            new GuideReference("Italian repetitive negative thinking — Ghezzi e colleghi", "https://doi.org/10.1007/s41811-023-00162-4", "Studio trasversale italiano su 324 adulti consultato per il processo ripetitivo; campione di convenienza e associazioni non dimostrano causalità."),
+                            new GuideReference("Belgian RRS factor structure — Griffith e Raes", "https://doi.org/10.1027/1015-5759/a000231", "Analisi europea consultata per la struttura non uniforme di brooding e reflection; non fornisce fattori o punteggi trasferibili."),
+                            new GuideReference("Perseverative Thinking Questionnaire — Ehring e colleghi", "https://doi.org/10.1016/j.jbtep.2010.12.003", "Sviluppo del PTQ consultato per ripetizione, intrusione e distacco dell'attenzione; include contenuti futuri e non valida questi item."),
+                            new GuideReference("Constructive and unconstructive thought — Watkins", "https://doi.org/10.1037/0033-2909.134.2.163", "Revisione consultata per distinguere riflessione costruttiva e ripetizione meno utile; non consente di giudicare il singolo episodio."),
+                            new GuideReference("Rethinking Rumination — Nolen-Hoeksema e colleghi", "https://doi.org/10.1111/j.1745-6924.2008.00088.x", "Revisione consultata per confini con depressione e preoccupazione; risultati di gruppo non si trasferiscono a diagnosi individuali."),
+                            new GuideReference("Worry and rumination distinction — Hoyer e colleghi", "https://doi.org/10.3205/psm000062", "Studio tedesco di studenti consultato per la distinzione imperfetta dei termini quotidiani; non stabilisce confini clinici netti.")
+                    )
             )
     );
 

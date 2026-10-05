@@ -91,6 +91,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedPerceivedEmpathyInformationTest();
         seedIntroversionExtraversionTest();
         seedSelfCompassionInformationTest();
+        seedMentalRuminationInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4448,7 +4449,82 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Osservare emozioni e pensieri durante la difficoltà è stato frequente; non certifica controllo o accuratezza emotiva.");
     }
 
+    private void seedMentalRuminationInformationTest() {
+        String id = "ruminazione-mentale";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Quanto torno con il pensiero a episodi difficili?",
+                "Auto-osservazione informativa",
+                "Esplora la frequenza di pensieri ripetitivi su episodi spiacevoli già avvenuti nell'ultimo mese.",
+                "4 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti: pensa a episodi spiacevoli già avvenuti nell'ultimo mese; se non ricordi episodi pertinenti, il risultato è poco interpretabile. Esplora solo alcuni modi di tornare con il pensiero sul passato, non misura depressione, ossessioni, trauma o preoccupazione per il futuro; le soglie sono editoriali. Se il disagio persiste puoi parlarne con un professionista; per un pericolo immediato chiama il 112.",
+                version, false,
+                "Frequenza media delle risposte riferite",
+                "Frequenza delle risposte nell'area",
+                true, 47)
+                .withSeo("Pensieri ripetitivi su episodi passati | Spazio Test",
+                        "12 domande originali sui pensieri ripetitivi dopo episodi difficili. Risultati descrittivi, non validati e senza diagnosi.")
+                .withResponseInstruction("Pensando a episodi spiacevoli già avvenuti nell'ultimo mese, con quale frequenza hai avuto l'esperienza descritta?"));
+
+        saveArea(id, "ritorno", "Ritorno agli episodi", 1);
+        saveArea(id, "valutazione", "Valutazione ripetuta", 2);
+        saveArea(id, "persistenza", "Persistenza e attenzione", 3);
+        saveQuestions(id, List.of(
+                q("ritorno", "Ho ripercorso più volte nella mente una conversazione spiacevole."),
+                q("ritorno", "Ho ripensato ripetutamente a un errore già commesso."),
+                q("ritorno", "Ho rivisto nella mente un episodio spiacevole dopo che era finito."),
+                q("ritorno", "Ho ripensato più volte a come mi ero sentito/a in un momento difficile."),
+                q("valutazione", "Ho cercato a lungo una spiegazione generale del perché un episodio fosse andato male."),
+                q("valutazione", "Ho confrontato ciò che è successo con come avrei voluto agire."),
+                q("valutazione", "Ho rivolto a me stesso/a giudizi ripetuti dopo un episodio difficile."),
+                q("valutazione", "Ho cercato di capire che cosa un errore dicesse di me come persona."),
+                q("persistenza", "Un pensiero su un episodio già avvenuto è tornato mentre svolgevo un'altra attività."),
+                q("persistenza", "Ho avuto difficoltà a spostare l'attenzione da un episodio già accaduto."),
+                q("persistenza", "Ho continuato a pensare a un fatto passato anche dopo aver deciso cosa fare."),
+                q("persistenza", "Ho continuato a ripensare a un episodio mentre avevo un'attività da svolgere.")));
+
+        String limits = "Questo questionario è originale e non validato: soglie e barre sono editoriali, non misurano diagnosi, gravità o probabilità. "
+                + "Il contesto, il numero di episodi e le occasioni di riflessione possono cambiare le risposte. "
+                + "Se i pensieri causano sofferenza persistente, puoi parlarne con un professionista; in caso di pericolo immediato chiama il 112.";
+        saveGlobal(id, "LOW", "I pensieri ripetitivi sul passato sono poco frequenti nelle risposte",
+                "Le risposte su ritorno agli episodi, valutazione ripetuta e persistenza dell'attenzione risultano poco frequenti nell'ultimo mese. Questo descrive soltanto le situazioni ricordate e le tre aree esplorate.",
+                "Un profilo contenuto non esclude un singolo episodio che abbia occupato molto spazio o difficoltà non rappresentate dagli item. Osserva se il periodo ha offerto poche occasioni pertinenti oppure se i pensieri sono rimasti circoscritti. Il risultato non indica che ogni riflessione sia stata facile o utile. " + limits);
+        saveGlobal(id, "MIXED", "I pensieri ripetitivi sul passato variano tra le aree",
+                "Le risposte sono intermedie oppure variano tra ritorno agli episodi, valutazione e persistenza, senza un'area nel livello editoriale più alto. La distribuzione può cambiare con gli eventi e non definisce un'abitudine stabile.",
+                "Puoi osservare in quali episodi il pensiero è tornato, se ha portato a un'azione concreta e quando invece è rimasto aperto. La frequenza intermedia non dimostra né esclude un problema clinico. Riflessione utile e pensiero ripetitivo possono coesistere nello stesso periodo. " + limits);
+        saveGlobal(id, "FOCUSED", "Un'area di pensieri ripetitivi sul passato emerge nelle risposte",
+                "Una delle tre aree raccoglie risposte più frequenti, mentre le altre restano più contenute. Questo orienta a un aspetto riferito dell'esperienza, senza generalizzarlo a tutto il modo di pensare.",
+                "Guarda quale area emerge e se riguarda pochi episodi importanti oppure situazioni diverse. Tornare su un fatto, valutarlo e faticare a distogliere l'attenzione non hanno necessariamente lo stesso significato. Il profilo non stabilisce cause, diagnosi o la presenza di depressione. " + limits);
+        saveGlobal(id, "BROAD", "Più aree di pensieri ripetitivi sul passato emergono nelle risposte",
+                "Le risposte risultano frequenti in almeno due delle tre aree riferite agli episodi già avvenuti. L'ampiezza descrive il periodo considerato, non la gravità di una condizione o un destino individuale.",
+                "Osserva se i pensieri ritornano in contesti diversi, quanto durano e se occupano tempo che vorresti dedicare ad altro. Anche un profilo ampio non distingue da solo ruminazione, stress, ansia, umore o ricordi difficili. La frequenza non dice se un singolo pensiero abbia aiutato a capire qualcosa. " + limits);
+
+        saveAreaInsights(id, "ritorno",
+                "Tornare su conversazioni, errori ed episodi è stato poco frequente; un evento isolato può comunque essere significativo.",
+                "Il ritorno a episodi passati è comparso a volte; la funzione dei pensieri può variare secondo l'evento.",
+                "Il ritorno a episodi passati è stato frequente; non indica da solo un disturbo o l'inutilità della riflessione.");
+        saveAreaInsights(id, "valutazione",
+                "Valutare ripetutamente significato e alternative è stato poco frequente; questo non misura capacità di apprendere.",
+                "La valutazione ripetuta è comparsa a volte; può intrecciarsi con tentativi concreti di capire o decidere.",
+                "La valutazione ripetuta è stata frequente; nota se resta astratta oppure conduce a passi praticabili.");
+        saveAreaInsights(id, "persistenza",
+                "Il ritorno dei pensieri durante altre attività è stato poco frequente; non esclude distrazioni circoscritte.",
+                "La persistenza dei pensieri è comparsa a volte; carico e importanza dell'episodio possono influire.",
+                "La persistenza dei pensieri è stata frequente; osserva eventuale interferenza senza attribuirle una causa unica.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("ruminazione-mentale", List.of(
+                ref("Italian Ruminative Responses Scale — Palmieri, Gasparre e Lanciano", "https://doi.org/10.1285/i17201632vXn17p15"),
+                ref("Italian repetitive negative thinking — Ghezzi e colleghi", "https://doi.org/10.1007/s41811-023-00162-4"),
+                ref("Belgian RRS factor structure — Griffith e Raes", "https://doi.org/10.1027/1015-5759/a000231"),
+                ref("Perseverative Thinking Questionnaire — Ehring e colleghi", "https://doi.org/10.1016/j.jbtep.2010.12.003"),
+                ref("Constructive and unconstructive thought — Watkins", "https://doi.org/10.1037/0033-2909.134.2.163"),
+                ref("Rethinking Rumination — Nolen-Hoeksema e colleghi", "https://doi.org/10.1111/j.1745-6924.2008.00088.x"),
+                ref("Worry and rumination distinction — Hoyer e colleghi", "https://doi.org/10.3205/psm000062")));
         syncReferences("autocompassione", List.of(
                 ref("Italian Self-Compassion Scale — Veneziani, Fuochi e Voci", "https://doi.org/10.1016/j.paid.2017.06.028"),
                 ref("Italian SCS-SF — Fuochi, Voci e Moè", "https://doi.org/10.1007/s12671-025-02516-9"),

@@ -23,7 +23,7 @@
     <p class="detail" th:text="${result.detail}">Approfondimento generale.</p>
 </div>
 
-<div class="overall-block" th:unless="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL'}">
+<div class="overall-block" th:unless="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' or test.id == 'ruminazione-mentale'}">
     <p class="bar-label" th:text="${test.overallMetricLabel}">Presenza complessiva del tratto</p>
     <div class="bar-track overall-track">
         <span th:style="|width: ${percentage}%|"></span>

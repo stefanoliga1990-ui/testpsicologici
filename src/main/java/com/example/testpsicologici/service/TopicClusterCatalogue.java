@@ -20,6 +20,7 @@ public class TopicClusterCatalogue {
                             "ansia-sociale",
                             "tratti-ossessivo-compulsivi",
                             "umore-depresso",
+                            "ruminazione-mentale",
                             "ptsd-adulti"
                     )),
             new TopicCluster(
@@ -124,6 +125,10 @@ public class TopicClusterCatalogue {
         }
         if ("autocompassione".equals(testId)) {
             return List.of("resilienza-psicologica", "intelligenza-intrapersonale", "empatia-percepita")
+                    .stream().limit(maximum).toList();
+        }
+        if ("ruminazione-mentale".equals(testId)) {
+            return List.of("umore-depresso", "ansia-generalizzata", "tratti-ossessivo-compulsivi")
                     .stream().limit(maximum).toList();
         }
         return findByTestId(testId)
