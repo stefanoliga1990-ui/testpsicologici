@@ -40,6 +40,17 @@ export default function GuidePage({ author, editorialHistory, guide, recommended
               {section.points.length > 0 && <ul>{section.points.map((point) => <li key={point}>{point}</li>)}</ul>}
             </section>
           ))}
+          {guide.slug === 'ptsd-adulti' && (
+            <section className="guide-section">
+              <p className="eyebrow">Letture facoltative</p>
+              <h2>Articoli su dolore e trauma</h2>
+              <p>Puoi leggere anche questi articoli di Alessia Liga, revisora professionale della guida. Sono riflessioni divulgative, distinte dalle fonti scientifiche e dalla valutazione personale.</p>
+              <ul>
+                <li><a href="https://specialmente.substack.com/p/il-valore-del-dolore" target="_blank" rel="noopener noreferrer">Il valore del dolore ↗</a></li>
+                <li><a href="https://specialmente.substack.com/p/dal-trauma-alla-crescita-interiore" target="_blank" rel="noopener noreferrer">Dal trauma alla crescita interiore ↗</a></li>
+              </ul>
+            </section>
+          )}
           <RecommendedReadings readings={recommendedReadings} />
           {test && <aside className="guide-test-cta">
             <div><p className="eyebrow">Auto-osservazione</p><h2>Questionario: {test.title}</h2><p>{guide.testConnection}</p></div>

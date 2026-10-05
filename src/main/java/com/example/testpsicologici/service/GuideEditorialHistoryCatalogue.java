@@ -35,7 +35,7 @@ public class GuideEditorialHistoryCatalogue {
             entry("resilienza-psicologica", history("2026-08-21", "2026-09-30")),
             entry("gelosia-partner", history("2026-08-24", "2026-09-30")),
             entry("soddisfazione-vita", history("2026-08-25", "2026-09-30")),
-            entry("ptsd-adulti", history("2026-08-25", "2026-09-30")),
+            entry("ptsd-adulti", history("2026-08-25", "2026-10-05")),
             entry("stili-attaccamento", history("2026-08-25", "2026-09-30")),
             entry("limerenza", history("2026-08-26", "2026-08-27")),
             entry("parentificazione", history("2026-08-27", "2026-08-28")),

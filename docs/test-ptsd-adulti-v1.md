@@ -1,5 +1,15 @@
 # Esperienze associate al disturbo post-traumatico da stress (PTSD) — specifica psicometrica v1.0
 
+## Aggiornamento editoriale della sola guida — 5 ottobre 2026
+
+La guida usa la dicitura italiana «disturbo da stress post-traumatico» e chiarisce che i sintomi dopo un trauma non equivalgono automaticamente al PTSD. La valutazione complessiva considera tipologia del trauma, esposizione, andamento, durata, interferenza con la routine, sicurezza e altre spiegazioni. La guida ribadisce che si può leggere senza raccontare l'evento e che salute, sicurezza e supporto non dipendono dal questionario. Il testo nomina l'Organizzazione mondiale della sanità come OMS. Item, istruzioni, risposte, scoring, soglie e interpretazioni del questionario restano alla v1.0.
+
+| Affermazione o scelta progettuale | Fonte | Tipo di evidenza | Popolazione | Limite |
+|---|---|---|---|---|
+| Reazioni dopo eventi minacciosi non equivalgono automaticamente al PTSD; una valutazione considera esposizione, decorso, durata, interferenza e alternative | [OMS, scheda sul PTSD](https://www.who.int/news-room/fact-sheets/detail/post-traumatic-stress-disorder); [NICE NG116](https://www.nice.org.uk/guidance/ng116/chapter/Recommendations) | Sintesi istituzionale e linea guida clinica | Persone esposte a eventi traumatici, anche adulte | Non consentono di valutare il singolo lettore tramite questa guida o il questionario |
+| Non richiedere il racconto dell'evento per leggere la guida; supporto e sicurezza sono indipendenti dal risultato | [OMS, Psychological first aid](https://www.who.int/publications/i/item/9789241548205); [NICE NG116](https://www.nice.org.uk/guidance/ng116/chapter/Recommendations) | Guida di primo supporto e linea guida clinica | Persone dopo eventi stressanti e operatori; contesto clinico britannico | Non è una tecnica terapeutica né una valutazione della sicurezza attuale |
+| Collegare due articoli di Alessia Liga come letture editoriali facoltative su dolore e trauma | [Il valore del dolore](https://specialmente.substack.com/p/il-valore-del-dolore); [Dal trauma alla crescita interiore](https://specialmente.substack.com/p/dal-trauma-alla-crescita-interiore) | Articoli divulgativi della revisora, titoli e attribuzione verificati nelle pagine originali | Lettori generali | Non sono fonti scientifiche, non provano un esito di crescita dopo trauma e non sostituiscono supporto professionale |
+
 ## Stato, popolazione e uso previsto
 
 | Campo | Decisione |

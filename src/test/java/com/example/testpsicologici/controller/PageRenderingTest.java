@@ -322,7 +322,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/ptsd-adulti\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Disturbo post-traumatico da stress</h3>")))
+                        "<h3>Disturbo da stress post-traumatico</h3>")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/stili-attaccamento\"")))
                 .andExpect(content().string(containsString(
@@ -1524,10 +1524,17 @@ class PageRenderingTest {
         mockMvc.perform(get("/approfondimenti/ptsd-adulti"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString(
-                        "<title>PTSD nell&#39;adulto: sintomi e supporto | Spazio Test</title>")))
+                        "<title>Disturbo da stress post-traumatico nell&#39;adulto | Spazio Test</title>")))
                 .andExpect(content().string(containsString(
                         "href=\"http://localhost/approfondimenti/ptsd-adulti\"")))
                 .andExpect(content().string(containsString("Evento, reazione e PTSD non sono la stessa cosa")))
+                .andExpect(content().string(containsString("Disturbo da stress post-traumatico nell&#39;adulto: esperienze, valutazione e supporto")))
+                .andExpect(content().string(containsString("Secondo l&#39;OMS")))
+                .andExpect(content().string(containsString("interferenza con la routine, sicurezza e altre spiegazioni")))
+                .andExpect(content().string(containsString("Non occorre esporsi raccontando l&#39;evento")))
+                .andExpect(content().string(containsString("la tua salute, la tua sicurezza e il supporto che ricevi")))
+                .andExpect(content().string(containsString("https://specialmente.substack.com/p/il-valore-del-dolore")))
+                .andExpect(content().string(containsString("https://specialmente.substack.com/p/dal-trauma-alla-crescita-interiore")))
                 .andExpect(content().string(containsString("Quattro famiglie usate per orientare il colloquio clinico")))
                 .andExpect(content().string(containsString("Quando allerta ed evitamento possono essere protettivi")))
                 .andExpect(content().string(containsString("Non è necessario raccontare o rivivere l&#39;evento")))

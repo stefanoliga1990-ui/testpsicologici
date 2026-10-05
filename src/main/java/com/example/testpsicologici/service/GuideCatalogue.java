@@ -2450,17 +2450,17 @@ public class GuideCatalogue {
             new InformationGuide(
                     "ptsd-adulti",
                     "ptsd-adulti",
-                    "Disturbo post-traumatico da stress",
-                    "PTSD nell'adulto: esperienze, valutazione e supporto",
-                    "PTSD nell'adulto: sintomi e supporto | Spazio Test",
+                    "Disturbo da stress post-traumatico",
+                    "Disturbo da stress post-traumatico nell'adulto: esperienze, valutazione e supporto",
+                    "Disturbo da stress post-traumatico nell'adulto | Spazio Test",
                     "Una guida prudente a evento potenzialmente traumatico, quattro famiglie di esperienze, valutazione professionale, supporto e limiti dei test online.",
-                    "Il disturbo post-traumatico da stress può comparire dopo specifiche forme di esposizione a eventi traumatici. Reazioni di sofferenza dopo un evento molto minaccioso o sconvolgente sono possibili e non equivalgono automaticamente a PTSD: esposizione, andamento, durata, interferenza, sicurezza e spiegazioni alternative richiedono una valutazione complessiva.",
+                    "Il disturbo da stress post-traumatico può comparire dopo specifiche forme di esposizione a eventi traumatici. È possibile che emergano alcuni sintomi come reazioni a traumi ed eventi minacciosi, ma questi non equivalgono automaticamente a PTSD. È richiesta una valutazione complessiva che includa tipologia del trauma, esposizione, andamento, durata, interferenza con la routine, sicurezza e altre spiegazioni.",
                     List.of(
                             new GuideSection(
                                     "In breve",
                                     "Evento, reazione e PTSD non sono la stessa cosa",
                                     List.of(
-                                            "Molte persone attraversano ricordi disturbanti, allerta, difficoltà del sonno o bisogno di evitare alcuni richiami dopo eventi molto minacciosi. Secondo la WHO, la maggior parte delle persone esposte a eventi potenzialmente traumatici non sviluppa PTSD; la presenza di una singola esperienza non permette quindi una conclusione diagnostica.",
+                                            "Molte persone attraversano ricordi disturbanti, allerta, difficoltà del sonno o bisogno di evitare alcuni richiami dopo eventi molto minacciosi. Secondo l'OMS, la maggior parte delle persone esposte a eventi potenzialmente traumatici non sviluppa PTSD; la presenza di una singola esperienza non permette quindi una conclusione diagnostica.",
                                             "Il significato delle reazioni dipende anche dal tipo di esposizione, dal tempo trascorso, da eventuali eventi ripetuti, dalla sicurezza attuale, dalla salute e dal sostegno disponibile. Le associazioni osservate nei gruppi non spiegano automaticamente il singolo caso."
                                     ),
                                     List.of()
@@ -2547,7 +2547,7 @@ public class GuideCatalogue {
                             )
                     ),
                     "Il questionario collegato descrive la frequenza nell'ultimo mese di esperienze riferite a un evento scelto mentalmente. Non accerta l'esposizione, non è la PCL-5, non diagnostica il PTSD e non valuta durata complessiva, interferenza o sicurezza.",
-                    "La guida distingue evento, reazione e valutazione del PTSD e spiega perché quattro famiglie di esperienze sono soltanto una traccia di auto-osservazione. Ricorda che non occorre raccontare l'evento per leggere la pagina e che sicurezza e supporto non dipendono dal risultato del questionario.",
+                    "La guida distingue evento, reazione e valutazione del PTSD e spiega perché quattro famiglie di esperienze sono soltanto una traccia di auto-osservazione. Non occorre esporsi raccontando l'evento. E ricorda che la tua salute, la tua sicurezza e il supporto che ricevi non dipendono dal risultato del questionario.",
                     List.of(
                             new GuideReference(
                                     "Italian validation of the PTSD Checklist for DSM-5 — Di Tella e colleghi",
