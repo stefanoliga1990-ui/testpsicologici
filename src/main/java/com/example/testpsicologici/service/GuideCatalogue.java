@@ -205,7 +205,7 @@ public class GuideCatalogue {
             new InformationGuide(
                     "disturbo-ossessivo-compulsivo",
                     "tratti-ossessivo-compulsivi",
-                    "Pensieri ossessivi e compulsioni (DOC)",
+                    "Disturbo ossessivo-compulsivo (DOC)",
                     "Disturbo ossessivo-compulsivo (DOC): pensieri e compulsioni",
                     "Disturbo ossessivo-compulsivo (DOC): sintomi | Spazio Test",
                     "Una guida concisa al disturbo ossessivo-compulsivo: ossessioni, compulsioni, rituali mentali, impatto quotidiano e possibilità di supporto.",
@@ -698,9 +698,9 @@ public class GuideCatalogue {
             new InformationGuide(
                     "ansia-sociale",
                     "ansia-sociale",
-                    "Ansia sociale",
-                    "Ansia sociale: comprendere paura del giudizio ed evitamento",
-                    "Ansia sociale: sintomi e come affrontarla | Spazio Test",
+                    "Disturbo d'ansia sociale",
+                    "Disturbo d'ansia sociale: paura del giudizio ed evitamento",
+                    "Disturbo d'ansia sociale: sintomi e guida | Spazio Test",
                     "Una guida concisa all'ansia sociale: differenze dalla timidezza, paura del giudizio, sintomi, evitamento, ciclo di mantenimento e possibili aiuti.",
                     "L'ansia sociale riguarda una paura intensa di essere osservati, valutati, umiliati o rifiutati nelle interazioni e nelle situazioni di prestazione. Un certo disagio sociale è comune; diventa importante chiedere aiuto quando la paura persiste, causa forte sofferenza o limita relazioni, studio, lavoro e attività desiderate.",
                     List.of(
@@ -885,9 +885,9 @@ public class GuideCatalogue {
             new InformationGuide(
                     "ansia-generalizzata",
                     "ansia-generalizzata",
-                    "Ansia generalizzata",
-                    "Ansia generalizzata: comprendere preoccupazione e tensione persistenti",
-                    "Ansia generalizzata: sintomi e cosa fare | Spazio Test",
+                    "Disturbo d'ansia generalizzata",
+                    "Disturbo d'ansia generalizzata: preoccupazione e tensione persistenti",
+                    "Disturbo d'ansia generalizzata: sintomi | Spazio Test",
                     "Una guida concisa all'ansia generalizzata: differenze dalla normale preoccupazione, sintomi fisici e cognitivi, sonno e possibili forme di aiuto.",
                     "Preoccuparsi è una risposta comune davanti a problemi e incertezze. Nell'ansia generalizzata, però, la preoccupazione tende a riguardare molti ambiti, a presentarsi con frequenza, a essere difficile da controllare e ad accompagnarsi a tensione, affaticamento o difficoltà quotidiane.",
                     List.of(
@@ -969,8 +969,8 @@ public class GuideCatalogue {
             new InformationGuide(
                     "umore-depresso",
                     "umore-depresso",
-                    "Umore depresso e sintomi depressivi",
-                    "Umore depresso e sintomi depressivi: come riconoscerli",
+                    "Depressione: umore e sintomi depressivi",
+                    "Depressione: sintomi, valutazione e supporto",
                     "Depressione: sintomi e segnali da conoscere | Spazio Test",
                     "Una guida a umore depresso e sintomi della depressione: perdita di interesse, energia, sonno, pensieri, funzionamento, trattamenti e richiesta di aiuto.",
                     "Sentirsi tristi o scarichi in alcuni periodi fa parte dell'esperienza umana. Un quadro depressivo coinvolge invece un cambiamento più persistente dell'umore o della capacità di provare interesse e piacere, insieme ad altri sintomi che possono incidere sulla vita quotidiana.",

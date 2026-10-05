@@ -276,18 +276,20 @@ public class ContentDataInitializer implements ApplicationRunner {
     private void seedObsessiveCompulsiveInformationTest() {
         String id = "tratti-ossessivo-compulsivi";
         String version = "1.7";
-        if (!requiresSeed(id, version)) return;
+        String title = "Disturbo ossessivo-compulsivo (DOC): test informativo";
+        String seoTitle = "Test disturbo ossessivo-compulsivo (DOC) online | Spazio Test";
+        if (syncPresentationIfSeeded(id, version, title, seoTitle)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Pensieri ossessivi e compulsioni (DOC)",
+                title,
                 "Autovalutazione informativa",
                 "Esplora pensieri intrusivi, dubbio, bisogno di certezza, contaminazione, controlli e rituali nella vita quotidiana.",
                 "6 min · 24 domande",
                 "Questo questionario per adulti è informativo, non diagnostico né clinicamente validato. Rispondi pensando all'ultimo mese; pensieri indesiderati o dubbi non indicano l'intenzione di agire. Una valutazione del DOC considera anche disagio, tempo occupato, interferenza e spiegazioni alternative.",
                 version, false, true, 3).withSeo(
-                "Test disturbo ossessivo-compulsivo (DOC) online | Spazio Test",
+                seoTitle,
                 "Questionario informativo su pensieri ossessivi, compulsioni, dubbi, controlli e rituali. 24 domande, circa 6 minuti, senza registrazione; non diagnostico.")
                 .withResponseInstruction("Pensando all'ultimo mese, con quale frequenza ti è capitato?"));
 
@@ -820,12 +822,14 @@ public class ContentDataInitializer implements ApplicationRunner {
     private void seedSocialAnxietyInformationTest() {
         String id = "ansia-sociale";
         String version = "1.6";
-        if (!requiresSeed(id, version)) return;
+        String title = "Disturbo d'ansia sociale: test informativo";
+        String seoTitle = "Test sul disturbo d'ansia sociale | Spazio Test";
+        if (syncPresentationIfSeeded(id, version, title, seoTitle)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Ansia sociale",
+                title,
                 "Autovalutazione informativa",
                 "Esplora paura del giudizio, tensione nelle interazioni, autocontrollo, situazioni sotto osservazione ed evitamento sociale.",
                 "6 min · 24 domande",
@@ -834,7 +838,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza complessiva delle esperienze di ansia sociale",
                 "Frequenza delle esperienze",
                 true, 9).withSeo(
-                "Test ansia sociale online | Spazio Test",
+                seoTitle,
                 "Questionario informativo su paura del giudizio, tensione, autocontrollo ed evitamento sociale. 24 domande, circa 6 minuti, senza registrazione; non diagnostico.")
                 .withResponseInstruction("Pensando agli ultimi tre mesi e ai diversi contesti sociali, con quale frequenza ti è capitato?"));
 
@@ -1001,12 +1005,14 @@ public class ContentDataInitializer implements ApplicationRunner {
     private void seedGeneralizedAnxietyInformationTest() {
         String id = "ansia-generalizzata";
         String version = "1.6";
-        if (!requiresSeed(id, version)) return;
+        String title = "Disturbo d'ansia generalizzata: test informativo";
+        String seoTitle = "Test sul disturbo d'ansia generalizzata | Spazio Test";
+        if (syncPresentationIfSeeded(id, version, title, seoTitle)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Ansia generalizzata",
+                title,
                 "Autovalutazione informativa",
                 "Esplora preoccupazione difficile da controllare, tensione, affaticamento, sonno e interferenza nella vita quotidiana.",
                 "6 min · 24 domande",
@@ -1015,7 +1021,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza complessiva delle esperienze di ansia",
                 "Frequenza delle esperienze",
                 true, 11).withSeo(
-                "Test ansia generalizzata online | Spazio Test",
+                seoTitle,
                 "Questionario informativo su preoccupazione diffusa, tensione, affaticamento, sonno e impatto quotidiano. 24 domande, circa 6 minuti; non diagnostico.")
                 .withResponseInstruction("Pensando agli ultimi sei mesi, con quale frequenza ti è capitato?"));
 
@@ -1092,12 +1098,14 @@ public class ContentDataInitializer implements ApplicationRunner {
     private void seedDepressedMoodInformationTest() {
         String id = "umore-depresso";
         String version = "1.6";
-        if (!requiresSeed(id, version)) return;
+        String title = "Depressione: test informativo sui sintomi";
+        String seoTitle = "Test depressione online: umore e sintomi | Spazio Test";
+        if (syncPresentationIfSeeded(id, version, title, seoTitle)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(
                 id,
-                "Umore depresso e sintomi depressivi",
+                title,
                 "Autovalutazione informativa",
                 "Esplora umore, perdita di interesse, energia, pensieri su di sé e funzionamento quotidiano nelle ultime due settimane.",
                 "6 min · 24 domande",
@@ -1106,7 +1114,7 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Frequenza complessiva delle esperienze legate all'umore",
                 "Frequenza delle esperienze",
                 true, 12).withSeo(
-                "Test depressione online: umore e sintomi | Spazio Test",
+                seoTitle,
                 "Questionario su umore, interesse, energia e funzionamento nelle ultime due settimane. 24 domande; non diagnostico e non valuta il rischio suicidario.")
                 .withResponseInstruction("Pensando alle ultime due settimane, con quale frequenza ti è capitato?"));
 
@@ -4522,15 +4530,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         String version = "1.0";
         String title = "Dismorfofobia: test informativo";
         String seoTitle = "Dismorfofobia: test informativo | Spazio Test";
-        if (!requiresSeed(id, version)) {
-            testRepository.findById(id).ifPresent(test -> {
-                if (!title.equals(test.getTitle()) || !seoTitle.equals(test.getSeoTitle())) {
-                    test.updatePresentation(title, seoTitle);
-                    saveTest(test);
-                }
-            });
-            return;
-        }
+        if (syncPresentationIfSeeded(id, version, title, seoTitle)) return;
         removeTest(id);
 
         saveTest(new TestDefinitionEntity(id,
@@ -4919,6 +4919,17 @@ public class ContentDataInitializer implements ApplicationRunner {
 
     private ReferenceSeed ref(String title, String url) {
         return new ReferenceSeed(title, url);
+    }
+
+    private boolean syncPresentationIfSeeded(String testId, String version, String title, String seoTitle) {
+        if (requiresSeed(testId, version)) return false;
+        testRepository.findById(testId).ifPresent(test -> {
+            if (!title.equals(test.getTitle()) || !seoTitle.equals(test.getSeoTitle())) {
+                test.updatePresentation(title, seoTitle);
+                saveTest(test);
+            }
+        });
+        return true;
     }
 
     private boolean requiresSeed(String testId, String version) {

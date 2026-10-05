@@ -418,7 +418,7 @@ class TestResultServiceTest {
     void generalizedAnxietyTestIsLoadedWithTwentyFourQuestionsAndSpecificLabels() {
         PsychologicalTest test = catalogue.findById("ansia-generalizzata");
 
-        assertThat(test.title()).isEqualTo("Ansia generalizzata");
+        assertThat(test.title()).isEqualTo("Disturbo d'ansia generalizzata: test informativo");
         assertThat(test.questions()).hasSize(24);
         assertThat(test.areas()).hasSize(4);
         assertThat(test.areas()).allSatisfy(area ->
@@ -457,7 +457,7 @@ class TestResultServiceTest {
     void depressedMoodTestIsLoadedWithTwentyFourQuestionsAndSafetyInformation() {
         PsychologicalTest test = catalogue.findById("umore-depresso");
 
-        assertThat(test.title()).isEqualTo("Umore depresso e sintomi depressivi");
+        assertThat(test.title()).isEqualTo("Depressione: test informativo sui sintomi");
         assertThat(test.questions()).hasSize(24);
         assertThat(test.areas()).hasSize(4);
         assertThat(test.areas()).allSatisfy(area ->

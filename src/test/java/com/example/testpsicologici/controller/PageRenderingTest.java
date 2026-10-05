@@ -249,7 +249,7 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("ADHD nell&#39;adulto")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/disturbo-ossessivo-compulsivo\"")))
-                .andExpect(content().string(containsString("Pensieri ossessivi e compulsioni (DOC)")))
+                .andExpect(content().string(containsString("Disturbo ossessivo-compulsivo (DOC)")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/autostima\"")))
                 .andExpect(content().string(containsString("<h3>Autostima</h3>")))
                 .andExpect(content().string(containsString(
@@ -263,18 +263,18 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("href=\"/approfondimenti/perfezionismo\"")))
                 .andExpect(content().string(containsString("<h3>Perfezionismo</h3>")))
                 .andExpect(content().string(containsString("href=\"/approfondimenti/ansia-sociale\"")))
-                .andExpect(content().string(containsString("<h3>Ansia sociale</h3>")))
+                .andExpect(content().string(containsString("<h3>Disturbo d&#39;ansia sociale</h3>")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/dinamiche-narcisistiche-coppia\"")))
                 .andExpect(content().string(containsString(
                         "<h3>Dinamiche narcisistiche nella coppia</h3>")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/ansia-generalizzata\"")))
-                .andExpect(content().string(containsString("<h3>Ansia generalizzata</h3>")))
+                .andExpect(content().string(containsString("<h3>Disturbo d&#39;ansia generalizzata</h3>")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/umore-depresso\"")))
                 .andExpect(content().string(containsString(
-                        "<h3>Umore depresso e sintomi depressivi</h3>")))
+                        "<h3>Depressione: umore e sintomi depressivi</h3>")))
                 .andExpect(content().string(containsString(
                         "href=\"/approfondimenti/people-pleasing\"")))
                 .andExpect(content().string(containsString(
@@ -739,7 +739,7 @@ class PageRenderingTest {
         mockMvc.perform(get("/approfondimenti/ansia-sociale"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString(
-                        "<title>Ansia sociale: sintomi e come affrontarla | Spazio Test</title>")))
+                        "<title>Disturbo d&#39;ansia sociale: sintomi e guida | Spazio Test</title>")))
                 .andExpect(content().string(containsString(
                         "href=\"http://localhost/approfondimenti/ansia-sociale\"")))
                 .andExpect(content().string(containsString("Che cos&#39;è l&#39;ansia sociale")))
@@ -851,7 +851,7 @@ class PageRenderingTest {
         mockMvc.perform(get("/approfondimenti/ansia-generalizzata"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString(
-                        "<title>Ansia generalizzata: sintomi e cosa fare | Spazio Test</title>")))
+                        "<title>Disturbo d&#39;ansia generalizzata: sintomi | Spazio Test</title>")))
                 .andExpect(content().string(containsString(
                         "href=\"http://localhost/approfondimenti/ansia-generalizzata\"")))
                 .andExpect(content().string(containsString("Che cos&#39;è l&#39;ansia generalizzata")))

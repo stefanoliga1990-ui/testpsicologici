@@ -50,13 +50,14 @@ class GuideEnrichmentAdsense03Test {
             assertThat(section.eyebrow()).isEqualTo("Esempio guidato");
             assertThat(section.paragraphs()).hasSize(2);
             assertThat(section.points()).hasSize(3);
-            assertThat(history.forSlug(slug).revisedOn()).isEqualTo(LocalDate.parse("2026-09-30"));
+            String revisedOn = slug.equals("ansia-sociale") ? "2026-10-05" : "2026-09-30";
+            assertThat(history.forSlug(slug).revisedOn()).isEqualTo(LocalDate.parse(revisedOn));
 
             String html = new String(mvc.perform(get("/approfondimenti/{slug}", slug))
                     .andExpect(status().isOk()).andReturn().getResponse().getContentAsByteArray(),
                     StandardCharsets.UTF_8);
             assertThat(html).contains("<h2>" + expected.getValue() + "</h2>",
-                    section.points().get(0), "dateModified", "2026-09-30", "Fonti consultate");
+                    section.points().get(0), "dateModified", revisedOn, "Fonti consultate");
             assertThat(html).contains(guide.references().get(0).url());
 
             Matcher matcher = PAGE_DATA.matcher(html);
@@ -64,7 +65,7 @@ class GuideEnrichmentAdsense03Test {
             String data = matcher.group(1).replace("\\/", "/");
             assertThat(data).contains("\"guide\"", "\"sections\"", expected.getValue(),
                     section.paragraphs().get(0), section.points().get(0),
-                    "\"revisedOn\":\"2026-09-30\"", "\"references\"");
+                    "\"revisedOn\":\"" + revisedOn + "\"", "\"references\"");
         }
 
         String relation = new String(mvc.perform(get("/approfondimenti/relazione-dannosa-benessere"))
