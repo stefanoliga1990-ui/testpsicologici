@@ -118,6 +118,15 @@
                 </ul>
             </section>
 
+            <section class="guide-section" th:if="${guide.slug == 'dismorfofobia'}">
+                <p class="eyebrow">Letture facoltative</p>
+                <h2>Un articolo sulla dismorfofobia</h2>
+                <p>Puoi leggere anche questo articolo di Alessia Liga, revisora professionale della guida. È una lettura divulgativa, distinta dalle fonti scientifiche e dalla valutazione personale.</p>
+                <ul>
+                    <li><a href="https://specialmente.substack.com/p/la-dismorfofobia" target="_blank" rel="noopener noreferrer">La dismorfofobia ↗</a></li>
+                </ul>
+            </section>
+
             <section class="recommended-readings" aria-labelledby="recommended-readings-title-fallback"
                      th:if="${!#lists.isEmpty(recommendedReadings)}">
                 <p class="eyebrow">Letture facoltative</p>

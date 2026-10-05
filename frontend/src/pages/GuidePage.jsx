@@ -51,6 +51,16 @@ export default function GuidePage({ author, editorialHistory, guide, recommended
               </ul>
             </section>
           )}
+          {guide.slug === 'dismorfofobia' && (
+            <section className="guide-section">
+              <p className="eyebrow">Letture facoltative</p>
+              <h2>Un articolo sulla dismorfofobia</h2>
+              <p>Puoi leggere anche questo articolo di Alessia Liga, revisora professionale della guida. È una lettura divulgativa, distinta dalle fonti scientifiche e dalla valutazione personale.</p>
+              <ul>
+                <li><a href="https://specialmente.substack.com/p/la-dismorfofobia" target="_blank" rel="noopener noreferrer">La dismorfofobia ↗</a></li>
+              </ul>
+            </section>
+          )}
           <RecommendedReadings readings={recommendedReadings} />
           {test && <aside className="guide-test-cta">
             <div><p className="eyebrow">Auto-osservazione</p><h2>Questionario: {test.title}</h2><p>{guide.testConnection}</p></div>

@@ -76,7 +76,7 @@ export default function ResultPage({ aceExposure, areaResults, contributionsEnab
         )}
         {areaResults.length > 0 && !isAttachmentStyles && !isAceExposure && (
           <>
-            {test.id !== 'ruminazione-mentale' && (
+            {test.id !== 'ruminazione-mentale' && test.id !== 'dismorfofobia' && (
               <div className="overall-presence">
                 <div className="overall-presence-label">{test.overallMetricLabel}</div>
                 <ProgressBar className="overall-presence-track" label={test.overallMetricLabel} value={percentage} />

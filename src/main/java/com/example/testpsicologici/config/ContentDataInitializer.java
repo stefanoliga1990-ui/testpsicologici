@@ -92,6 +92,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedIntroversionExtraversionTest();
         seedSelfCompassionInformationTest();
         seedMentalRuminationInformationTest();
+        seedAppearanceConcernsInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4516,7 +4517,91 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "La persistenza dei pensieri è stata frequente; osserva eventuale interferenza senza attribuirle una causa unica.");
     }
 
+    private void seedAppearanceConcernsInformationTest() {
+        String id = "dismorfofobia";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Quanto spazio occupano le preoccupazioni per il mio aspetto?",
+                "Auto-osservazione informativa",
+                "Esplora pensieri, verifiche, gestione e interferenza riferiti all'aspetto nell'ultimo mese.",
+                "5 min · 16 domande",
+                "Questionario originale, informativo e non validato per adulti sulle esperienze legate all'aspetto nell'ultimo mese. Le quattro aree e le soglie sono editoriali: il risultato non identifica né esclude il disturbo da dismorfismo corporeo, un disturbo alimentare o una condizione medica. Se il disagio o l'interferenza sono importanti puoi parlarne con un professionista indipendentemente dal risultato; in caso di pericolo immediato chiama il 112.",
+                version, false,
+                "Frequenza media delle risposte riferite",
+                "Frequenza delle risposte nell'area",
+                true, 48)
+                .withSeo("Preoccupazioni per l'aspetto: questionario informativo | Spazio Test",
+                        "16 domande originali sulle esperienze legate all'aspetto. Risultati descrittivi e guida sulla dismorfofobia, senza diagnosi.")
+                .withResponseInstruction("Nell'ultimo mese, con quale frequenza hai vissuto quanto descritto rispetto al tuo aspetto fisico?"));
+
+        saveArea(id, "pensieri", "Pensieri sull'aspetto", 1);
+        saveArea(id, "verifiche", "Verifiche e confronti", 2);
+        saveArea(id, "gestione", "Copertura ed evitamento", 3);
+        saveArea(id, "interferenza", "Interferenza riferita", 4);
+        saveQuestions(id, List.of(
+                q("pensieri", "Ho ripensato più volte a un aspetto del mio corpo."),
+                q("pensieri", "Ho dedicato molto tempo a pensare al mio aspetto."),
+                q("pensieri", "Ho faticato a spostare l'attenzione da un pensiero sul mio aspetto."),
+                q("pensieri", "Ho pensato al mio aspetto prima di incontrare altre persone."),
+                q("verifiche", "Ho controllato il mio aspetto allo specchio più volte."),
+                q("verifiche", "Ho riguardato mie foto per verificare il mio aspetto."),
+                q("verifiche", "Ho confrontato il mio aspetto con quello di altre persone."),
+                q("verifiche", "Ho chiesto ad altre persone un parere sul mio aspetto più volte."),
+                q("gestione", "Ho coperto con i vestiti una parte del corpo che mi preoccupava."),
+                q("gestione", "Ho cambiato più volte il mio aspetto prima di uscire."),
+                q("gestione", "Ho evitato di comparire in una foto quando ero preoccupato/a per il mio aspetto."),
+                q("gestione", "Ho evitato di guardarmi allo specchio quando ero preoccupato/a per il mio aspetto."),
+                q("interferenza", "Ho tardato a iniziare un'attività mentre pensavo al mio aspetto."),
+                q("interferenza", "Ho perso concentrazione durante un'attività mentre pensavo al mio aspetto."),
+                q("interferenza", "Ho rinunciato a un incontro mentre ero preoccupato/a per il mio aspetto."),
+                q("interferenza", "Ho provato disagio mentre pensavo al mio aspetto.")));
+
+        String limits = "Il questionario è originale e non validato: le soglie sono editoriali, non sono diagnosi, norme o misure di gravità. "
+                + "Aspetto, condizioni mediche, stigma, contesto sociale e occasioni vissute possono influire sulle risposte. "
+                + "Se il disagio o l'interferenza sono importanti puoi parlarne con un professionista qualunque sia il profilo; per un pericolo immediato chiama il 112.";
+        saveGlobal(id, "LOW", "Le preoccupazioni per l'aspetto sono poco frequenti nelle risposte",
+                "Nell'ultimo mese le risposte sono poco frequenti nelle quattro aree esplorate. La distribuzione descrive solo le esperienze chieste e le occasioni ricordate.",
+                "Un profilo contenuto non esclude un singolo episodio molto difficile né forme di disagio non rappresentate dalle domande. Osserva se hai avuto poche occasioni pertinenti o se alcuni pensieri sono rimasti circoscritti. Anche con risposte basse può essere utile chiedere sostegno quando qualcosa pesa sulla vita quotidiana. " + limits);
+        saveGlobal(id, "MIXED", "Le preoccupazioni per l'aspetto variano tra le aree",
+                "Le risposte sono intermedie o distribuite in modo diverso tra pensieri, verifiche, gestione e interferenza, senza aree nel livello editoriale più alto. Questa variabilità non definisce una condizione stabile.",
+                "Puoi osservare in quali situazioni compare la preoccupazione e quando invece l'aspetto occupa meno attenzione. Una verifica o una scelta di abbigliamento può avere funzioni diverse secondo il contesto. La variabilità non conferma né esclude sofferenza significativa. " + limits);
+        saveGlobal(id, "FOCUSED", "Una o due aree di preoccupazioni per l'aspetto emergono nelle risposte",
+                "Una o due delle quattro aree raccolgono risposte più frequenti, mentre le altre restano più contenute. Il profilo orienta verso esperienze riferite, senza estenderle all'intera vita della persona.",
+                "Guarda quali aree emergono e se riguardano una situazione particolare o contesti diversi. Pensieri frequenti, verifiche ed evitamento non hanno necessariamente lo stesso significato. Questo profilo non identifica un disturbo e non valuta se una caratteristica fisica richieda cure. " + limits);
+        saveGlobal(id, "BROAD", "Più aree di preoccupazioni per l'aspetto emergono nelle risposte",
+                "Le risposte sono frequenti in almeno tre delle quattro aree esplorate nell'ultimo mese. L'ampiezza descrive le esperienze riferite, non la gravità o la probabilità di un disturbo.",
+                "Osserva se i pensieri e le azioni occupano tempo o interferiscono con attività, relazioni e benessere. Condizioni mediche, pressioni sociali e altre difficoltà possono intrecciarsi con queste esperienze. Un quadro ampio merita attenzione, ma non sostituisce una valutazione professionale. " + limits);
+
+        saveAreaInsights(id, "pensieri",
+                "I pensieri sull'aspetto sono stati poco frequenti; questo non esclude preoccupazioni circoscritte.",
+                "I pensieri sull'aspetto sono comparsi a volte; durata e contesto possono variare.",
+                "I pensieri sull'aspetto sono stati frequenti; la frequenza da sola non identifica un disturbo.");
+        saveAreaInsights(id, "verifiche",
+                "Verifiche e confronti sono stati poco frequenti; non misura la qualità della cura personale.",
+                "Verifiche e confronti sono comparsi a volte; osserva quando ti sono stati utili o meno.",
+                "Verifiche e confronti sono stati frequenti; nota il tempo occupato senza trasformarli in un'etichetta clinica.");
+        saveAreaInsights(id, "gestione",
+                "Copertura ed evitamento sono stati poco frequenti; le opportunità di foto e incontri possono variare.",
+                "Copertura ed evitamento sono comparsi a volte; contesto e sicurezza personale sono importanti.",
+                "Copertura ed evitamento sono stati frequenti; non indicano da soli una causa o una diagnosi.");
+        saveAreaInsights(id, "interferenza",
+                "L'interferenza riferita è stata poco frequente; un episodio isolato può comunque pesare.",
+                "L'interferenza riferita è comparsa a volte; osserva dove il disagio ha inciso di più.",
+                "L'interferenza riferita è stata frequente; il supporto è utile anche senza un'etichetta diagnostica.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("dismorfofobia", List.of(
+                ref("Italian Body Image Concern Inventory — Luca e colleghi", "https://doi.org/10.1016/j.bodyim.2011.04.007"),
+                ref("Italian Questionario sul Dismorfismo Corporeo — Cerea e colleghi", "https://doi.org/10.24193/jebp.2017.1.4"),
+                ref("NICE OCD and BDD guideline CG31", "https://www.nice.org.uk/guidance/cg31/chapter/Recommendations"),
+                ref("COSMIN review of BDD self-report measures — Hogg e colleghi", "https://doi.org/10.1016/j.jocrd.2026.101000"),
+                ref("Muscle dysmorphia systematic review — Cooper e colleghi", "https://doi.org/10.1002/eat.23349"),
+                ref("BDD treatment consensus — Fineberg e colleghi", "https://doi.org/10.1097/YIC.0000000000000342"),
+                ref("WHO ICD-11 clinical descriptions", "https://www.who.int/publications/i/item/9789240077263")));
         syncReferences("ruminazione-mentale", List.of(
                 ref("Italian Ruminative Responses Scale — Palmieri, Gasparre e Lanciano", "https://doi.org/10.1285/i17201632vXn17p15"),
                 ref("Italian repetitive negative thinking — Ghezzi e colleghi", "https://doi.org/10.1007/s41811-023-00162-4"),

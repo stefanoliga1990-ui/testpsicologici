@@ -1065,6 +1065,24 @@
         "notes": "Verificare qualità delle evidenze, bias di genere e culturali, e differenza da espressività non problematica o ricerca di approvazione. Non costruire etichette morali o diagnosi da auto-risposte; bloccare se non sostenibile."
       },
       "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+    },
+    {
+      "order": 66,
+      "slug": "dismorfofobia",
+      "workingTitle": "Quanto spazio occupano le preoccupazioni per il mio aspetto?",
+      "sourceTopic": "Dismorfofobia",
+      "sourceDescription": "Pensieri ricorrenti sull'aspetto, controlli o evitamenti e interferenza percepita nella vita quotidiana.",
+      "contentMode": "TEST_AND_GUIDE",
+      "categoryHint": "Ansia, umore e trauma",
+      "questionnaire": {
+        "enabled": true,
+        "areaCount": 4,
+        "itemCount": 16,
+        "answerScale": "FREQUENCY",
+        "resultModel": "AREA_PROFILE",
+        "notes": "Quattro aree editoriali: pensieri sull'aspetto, verifiche e confronti, copertura ed evitamento, interferenza riferita. Periodo: ultimo mese; nessun punteggio globale visibile. Nessuna diagnosi, sottoscala validata o soglia clinica; muscolatura compresa nel tema senza item dedicati. Supporto indipendente dal profilo."
+      },
+      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
     }
   ]
 }

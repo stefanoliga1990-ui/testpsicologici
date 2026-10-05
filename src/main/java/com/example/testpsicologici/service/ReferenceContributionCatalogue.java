@@ -454,7 +454,21 @@ public class ReferenceContributionCatalogue {
             entry("https://doi.org/10.1111/j.1745-6924.2008.00088.x",
                     "Revisione consultata per i confini tra ruminazione, preoccupazione e depressione; non consente diagnosi del singolo."),
             entry("https://doi.org/10.3205/psm000062",
-                    "Studio tedesco su 221 studenti consultato per la distinzione imperfetta tra preoccupazione e ruminazione nella lingua comune; non stabilisce confini clinici netti."));
+                    "Studio tedesco su 221 studenti consultato per la distinzione imperfetta tra preoccupazione e ruminazione nella lingua comune; non stabilisce confini clinici netti."),
+            entry("https://doi.org/10.1016/j.bodyim.2011.04.007",
+                    "Studio italiano I-BICI su 412 volontari consultato per la misurazione locale; campione non clinico e regionale, proprietà non trasferibili."),
+            entry("https://doi.org/10.24193/jebp.2017.1.4",
+                    "Studio italiano QDC su 615 persone di comunità consultato per il costrutto; item, struttura e cut-off non sono trasferibili."),
+            entry("https://www.nice.org.uk/guidance/cg31/chapter/Recommendations",
+                    "Linea guida NICE consultata per valutazione contestuale, interferenza e orientamento ai servizi; non convalida il questionario originale."),
+            entry("https://doi.org/10.1016/j.jocrd.2026.101000",
+                    "Revisione COSMIN di 42 studi consultata per i limiti delle misure self-report di BDD, in particolare invarianza ed errore di misura."),
+            entry("https://doi.org/10.1002/eat.23349",
+                    "Revisione sistematica sulla dismorfia muscolare consultata per includerla nel tema senza trattarla come sottoscala o diagnosi autonoma."),
+            entry("https://doi.org/10.1097/YIC.0000000000000342",
+                    "Consenso clinico europeo/internazionale consultato per il ruolo del supporto professionale, non per inferenze dal profilo individuale."),
+            entry("https://www.who.int/publications/i/item/9789240077263",
+                    "Manuale clinico WHO ICD-11 consultato per i confini della valutazione professionale; non fornisce soglie al test informativo."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

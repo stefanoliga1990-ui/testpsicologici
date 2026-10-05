@@ -4977,6 +4977,45 @@ public class GuideCatalogue {
                             new GuideReference("Rethinking Rumination — Nolen-Hoeksema e colleghi", "https://doi.org/10.1111/j.1745-6924.2008.00088.x", "Revisione consultata per confini con depressione e preoccupazione; risultati di gruppo non si trasferiscono a diagnosi individuali."),
                             new GuideReference("Worry and rumination distinction — Hoyer e colleghi", "https://doi.org/10.3205/psm000062", "Studio tedesco di studenti consultato per la distinzione imperfetta dei termini quotidiani; non stabilisce confini clinici netti.")
                     )
+            ),
+            new InformationGuide(
+                    "dismorfofobia", "dismorfofobia",
+                    "Preoccupazioni per l'aspetto",
+                    "Dismorfofobia e disturbo da dismorfismo corporeo: che cosa osservare",
+                    "Dismorfofobia: guida sul dismorfismo corporeo | Spazio Test",
+                    "Pensieri sull'aspetto, verifiche, evitamento e impatto quotidiano: una guida prudente al disturbo da dismorfismo corporeo e ai limiti del questionario.",
+                    "Le preoccupazioni sull'aspetto sono esperienze umane diverse. Quando occupano molto tempo o interferiscono con la vita quotidiana, meritano ascolto e una valutazione contestuale, non una diagnosi ricavata da un test online.",
+                    List.of(
+                            new GuideSection("In breve", "Dismorfofobia e diagnosi non sono sinonimi di disagio per l'aspetto", List.of(
+                                    "Dismorfofobia è un termine usato per parlare del disturbo da dismorfismo corporeo. La valutazione clinica considera preoccupazioni persistenti per caratteristiche percepite dell'aspetto, comportamenti ripetitivi o evitamento, disagio o interferenza e possibili spiegazioni alternative.",
+                                    "Questa guida non può stabilire se una caratteristica fisica sia visibile agli altri né se una persona abbia il disturbo. Disagio e bisogno di aiuto sono reali anche quando una diagnosi non è presente o non è nota."), List.of()),
+                            new GuideSection("Esperienze", "Pensieri, verifiche e scelte quotidiane", List.of(
+                                    "Alcune persone tornano spesso con il pensiero a un aspetto del corpo, controllano immagini o specchi, cercano pareri oppure evitano certe situazioni. Verifica ed evitamento possono comparire in momenti diversi nella stessa persona.",
+                                    "Nessuna di queste azioni, presa da sola, dimostra un disturbo: contano tempo occupato, disagio, interferenza, contesto e significato per chi le vive. Vestirsi, curarsi e fare sport non sono comportamenti patologici in sé."), List.of()),
+                            new GuideSection("Confini", "Muscolatura, salute e disturbi alimentari", List.of(
+                                    "La preoccupazione può riguardare qualunque aspetto, inclusa la muscolatura; non è necessario praticare bodybuilding e il questionario non presume un focus corporeo specifico. La ricerca sulla dismorfia muscolare non risolve ancora del tutto la sua collocazione rispetto ad altri quadri.",
+                                    "Condizioni dermatologiche o mediche, cambiamenti del corpo, stigma e disturbi alimentari possono richiedere percorsi differenti o coesistere. Un professionista può esplorare anche questi aspetti; un questionario generico non può distinguerli in modo affidabile."), List.of()),
+                            new GuideSection("Ricerca", "Che cosa mostrano gli studi italiani", List.of(
+                                    "In Italia sono stati studiati il Body Image Concern Inventory in un campione volontario del Centro e Sud e il Questionario sul Dismorfismo Corporeo in un campione di comunità. Sono strumenti diversi da quello di Spazio Test, con campioni e proprietà specifici.",
+                                    "Una revisione metodologica del 2026 ha trovato strumenti self-report promettenti, ma poca evidenza su equivalenza fra gruppi ed errore di misura. Nessuno studio citato convalida le quattro aree, i 16 item o le soglie di questo questionario."), List.of()),
+                            new GuideSection("Risultati", "Come leggere il questionario collegato", List.of(
+                                    "Le domande originali descrivono la frequenza nell'ultimo mese di pensieri, verifiche, gestione ed interferenza riferita. Le barre delle quattro aree sono trasformazioni delle risposte; le soglie sono editoriali, non valori clinici o confronti con altre persone.",
+                                    "Il risultato non identifica né esclude il disturbo da dismorfismo corporeo, non valuta la sicurezza e non sostituisce una visita. Un profilo basso non cancella una difficoltà importante; un profilo alto non stabilisce la causa o una diagnosi."), List.of()),
+                            new GuideSection("Supporto", "Quando chiedere un confronto", List.of(
+                                    "Se i pensieri sull'aspetto causano disagio o interferiscono con attività, relazioni, sonno o salute, parlane con un medico o un professionista della salute mentale indipendentemente dal profilo ottenuto. Una valutazione può considerare anche condizioni fisiche, alimentazione, contesto sociale e sicurezza.",
+                                    "Per il disturbo da dismorfismo corporeo esistono percorsi di cura studiati, tra cui interventi psicologici specifici secondo le linee guida NICE. Il questionario non propone un trattamento personalizzato né rileva pensieri di autolesionismo; se c'è un pericolo immediato in Italia chiama il 112."), List.of())
+                    ),
+                    "Questionario originale, informativo e non validato: non diagnostica il disturbo da dismorfismo corporeo né esclude altre cause di disagio.",
+                    "La guida distingue preoccupazioni per l'aspetto, disturbo clinico e possibili contesti alternativi, spiegando quando il sostegno professionale può essere utile.",
+                    List.of(
+                            new GuideReference("Italian Body Image Concern Inventory — Luca e colleghi", "https://doi.org/10.1016/j.bodyim.2011.04.007", "Studio psicometrico su 412 volontari italiani consultato per il contesto linguistico; campione non clinico e regionale, nessuna proprietà trasferita."),
+                            new GuideReference("Italian Questionario sul Dismorfismo Corporeo — Cerea e colleghi", "https://doi.org/10.24193/jebp.2017.1.4", "Studio su 615 persone di comunità italiane consultato per la misurazione locale; struttura, item e cut-off non sono trasferibili."),
+                            new GuideReference("NICE OCD and BDD guideline CG31", "https://www.nice.org.uk/guidance/cg31/chapter/Recommendations", "Linea guida consultata per valutazione contestuale, attenzione all'interferenza e orientamento ai servizi; non convalida il test."),
+                            new GuideReference("COSMIN review of BDD self-report measures — Hogg e colleghi", "https://doi.org/10.1016/j.jocrd.2026.101000", "Revisione di 42 studi consultata per limiti di invarianza ed errore di misura; non include questo questionario."),
+                            new GuideReference("Muscle dysmorphia systematic review — Cooper e colleghi", "https://doi.org/10.1002/eat.23349", "Revisione di 40 studi consultata per includere la muscolatura nel tema senza farne una diagnosi o sottoscala separata."),
+                            new GuideReference("BDD treatment consensus — Fineberg e colleghi", "https://doi.org/10.1097/YIC.0000000000000342", "Consenso clinico consultato per il valore del supporto professionale; nessun trattamento viene dedotto dal risultato individuale."),
+                            new GuideReference("WHO ICD-11 clinical descriptions", "https://www.who.int/publications/i/item/9789240077263", "Manuale clinico consultato per confini diagnostici e necessità di valutazione professionale; non è uno strumento di screening dell'app.")
+                    )
             )
     );
 
