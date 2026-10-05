@@ -1082,7 +1082,7 @@
         "resultModel": "AREA_PROFILE",
         "notes": "Quattro aree editoriali: pensieri sull'aspetto, verifiche e confronti, copertura ed evitamento, interferenza riferita. Periodo: ultimo mese; nessun punteggio globale visibile. Nessuna diagnosi, sottoscala validata o soglia clinica; muscolatura compresa nel tema senza item dedicati. Supporto indipendente dal profilo."
       },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-05T22:25:26+02:00", "completedAt": "2026-10-05T22:25:26+02:00", "commitHash": "7264bc927cd143b05941ebdb9a3b912afef90f4e", "blockReason": null }
     }
   ]
 }
