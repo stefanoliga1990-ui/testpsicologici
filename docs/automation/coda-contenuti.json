@@ -255,13 +255,13 @@
     {
       "order": 20,
       "slug": "bisogno-controllo",
-      "workingTitle": "Quanto sento il bisogno di avere tutto sotto controllo?",
+      "workingTitle": "Bisogno di controllo e prevedibilità: test informativo",
       "sourceTopic": "Bisogno di controllo",
       "sourceDescription": "Difficoltà nell'accettare incertezza, imprevisti, delega e situazioni non completamente prevedibili.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Ansia, umore e trauma",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Distinguere bisogno di controllo, responsabilità, pianificazione, intolleranza dell'incertezza e compulsioni." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 3, "itemCount": 12, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Tre aree editoriali: anticipo e prevedibilità, gestione diretta, adattamento ai cambiamenti; nessun punteggio globale visibile. Distinguere preferenze e responsabilità pratiche da intolleranza dell'incertezza, perfezionismo e compulsioni. Soglie descrittive non validate." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-06T13:16:38+02:00", "completedAt": "2026-10-06T13:16:38+02:00", "commitHash": "bea2d4b4d72596b3d579fc85a2d188993f059d15", "blockReason": null }
     },
     {
       "order": 21,
