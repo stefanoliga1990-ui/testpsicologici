@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05",
+  "updatedAt": "2026-10-06",
   "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
   "selectionPolicy": {
     "booksPerTopic": {
@@ -1751,7 +1751,47 @@
       ],
       "books": []
     },
-    { "topicId": "relazione-dannosa-benessere", "testId": "relazione-dannosa-benessere", "guideSlug": "relazione-dannosa-benessere", "title": "Relazione e benessere", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "relazione-dannosa-benessere",
+      "testId": "relazione-dannosa-benessere",
+      "guideSlug": "relazione-dannosa-benessere",
+      "title": "Relazione e benessere",
+      "fallbackTopics": ["conflitti nella coppia", "violenza psicologica nelle relazioni"],
+      "fallbackRationale": "Le letture affrontano separatamente conflitto e riparazione nella coppia e dinamiche di controllo o violenza psicologica. Il questionario copre entrambi, ma un conflitto non equivale automaticamente a violenza e le strategie per una crisi di coppia non sostituiscono un supporto orientato alla sicurezza quando vi sono paura o coercizione.",
+      "researchStatus": "PENDING_PUBLICATION",
+      "pendingReason": "Le schede cartacee sono state verificate sui siti degli editori, ma il browser interno non riesce a caricare Amazon.it (ERR_FAILED). Non sono quindi verificati ASIN, formato su Amazon e link SiteStripe: non pubblicare schede finché questi controlli non sono completati.",
+      "lastAttemptAt": "2026-10-06T13:01:08Z",
+      "researchCandidates": [
+        {
+          "title": "Se la coppia è in crisi",
+          "subtitle": "Smetti di lottare, riconcilia le differenze e rafforza la relazione con l'Acceptance and Commitment Therapy",
+          "authors": ["Russ Harris"],
+          "editors": ["Francesca Scaglia", "Massimo Ronchei"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835176459",
+          "publicationYear": 2026,
+          "format": "edizione cartacea",
+          "primarySource": "https://www.francoangeli.it/Libro/Se-la-coppia-%C3%A8-in-crisi-Smetti-di-lottare%2C-riconcilia-le-differenze-e-rafforza-la-relazione-con-l%27Acceptance-and-Commitment-Therapy?Id=30368",
+          "editorialRole": "Lettura generale sui conflitti, i confini e il benessere nella coppia",
+          "audience": "Adulti che desiderano riflettere su una relazione di coppia in difficoltà",
+          "limit": "Non valuta la relazione individuale; in presenza di paura, coercizione o violenza, le tecniche di riparazione di coppia non sostituiscono un supporto orientato alla sicurezza."
+        },
+        {
+          "title": "Gabbie di parole",
+          "subtitle": "Il linguaggio della violenza psicologica: valutazione, prevenzione e intervento",
+          "authors": ["Carmela Mento", "Giovanna Spatari", "Maria Rosaria Anna Muscatello"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835117971",
+          "publicationYear": 2021,
+          "format": "edizione cartacea",
+          "primarySource": "https://www.francoangeli.it/Libro/Gabbie-di-parole-Il-linguaggio-della-violenza-psicologica%3A-valutazione%2C-prevenzione-e-intervento?Id=27064",
+          "editorialRole": "Approfondimento specialistico su manipolazione, controllo e violenza psicologica nelle relazioni",
+          "audience": "Lettori adulti interessati a una prospettiva clinica e professionisti",
+          "limit": "Esamina dinamiche gravi e usa una cornice clinica; non permette di classificare ogni conflitto come abuso né di diagnosticare il partner."
+        }
+      ],
+      "books": []
+    },
     { "topicId": "triangolazione-relazionale", "testId": "triangolazione-subita", "guideSlug": "triangolazione-relazionale", "title": "Triangolazione relazionale", "fallbackTopics": ["dinamiche familiari", "manipolazione nelle relazioni"], "fallbackRationale": "Se mancano testi dedicati, usare fonti divulgative affidabili su triangolazione, confini e dinamiche relazionali più ampie.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "invalidazione-emotiva", "testId": "invalidazione-emotiva-subita", "guideSlug": "invalidazione-emotiva", "title": "Invalidazione emotiva", "fallbackTopics": ["comunicazione nelle relazioni", "violenza psicologica"], "fallbackRationale": "Il tema può essere coperto da testi più generali su comunicazione, confini e dinamiche relazionali dannose.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "disturbo-evitante-personalita", "testId": "tratti-evitanti-personalita-adulti", "guideSlug": "disturbo-evitante-personalita", "title": "Disturbo evitante di personalità", "fallbackTopics": ["ansia sociale", "evitamento"], "fallbackRationale": "Se non emergono testi divulgativi responsabili sul tema specifico, usare letture su ansia sociale ed evitamento senza equiparare i costrutti.", "researchStatus": "PENDING_RESEARCH", "books": [] },
