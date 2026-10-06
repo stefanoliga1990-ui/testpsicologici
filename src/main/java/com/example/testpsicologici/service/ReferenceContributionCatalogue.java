@@ -468,7 +468,15 @@ public class ReferenceContributionCatalogue {
             entry("https://doi.org/10.1097/YIC.0000000000000342",
                     "Consenso clinico europeo/internazionale consultato per il ruolo del supporto professionale, non per inferenze dal profilo individuale."),
             entry("https://www.who.int/publications/i/item/9789240077263",
-                    "Manuale clinico WHO ICD-11 consultato per i confini della valutazione professionale; non fornisce soglie al test informativo."));
+                    "Manuale clinico WHO ICD-11 consultato per i confini della valutazione professionale; non fornisce soglie al test informativo."),
+            entry("https://doi.org/10.1371/journal.pmen.0000325",
+                    "Studio italiano BALCI-IT consultato per distinguere paura di perdere il controllo e bisogno di prevedibilità; non valida il questionario originale."),
+            entry("https://doi.org/10.5114/hpr/195733",
+                    "Studio belga NCP-q consultato per il bisogno di controllabilità e prevedibilità; lingua, campioni, item e struttura non sono trasferibili."),
+            entry("https://doi.org/10.1007/BF00994052",
+                    "Studio fondativo DCS consultato per distinguere motivazione al controllo e locus of control; nessun item o punteggio viene riprodotto."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/8831161/",
+                    "Revisione concettuale consultata per distinguere controllo oggettivo, percepito e desiderato; non fornisce evidenza psicometrica per l'app."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

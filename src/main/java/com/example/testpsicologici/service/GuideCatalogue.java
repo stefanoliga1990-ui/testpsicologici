@@ -5016,6 +5016,41 @@ public class GuideCatalogue {
                             new GuideReference("BDD treatment consensus — Fineberg e colleghi", "https://doi.org/10.1097/YIC.0000000000000342", "Consenso clinico consultato per il valore del supporto professionale; nessun trattamento viene dedotto dal risultato individuale."),
                             new GuideReference("WHO ICD-11 clinical descriptions", "https://www.who.int/publications/i/item/9789240077263", "Manuale clinico consultato per confini diagnostici e necessità di valutazione professionale; non è uno strumento di screening dell'app.")
                     )
+            ),
+            new InformationGuide(
+                    "bisogno-controllo", "bisogno-controllo",
+                    "Bisogno di controllo e prevedibilità",
+                    "Bisogno di controllo: quando cercare prevedibilità diventa faticoso",
+                    "Bisogno di controllo e prevedibilità: guida | Spazio Test",
+                    "Prevedibilità, responsabilità e cambiamenti quotidiani: come distinguere una scelta utile da una rigidità che pesa.",
+                    "Cercare informazioni, pianificare e preferire una certa autonomia sono spesso risposte ragionevoli. Può essere utile osservare quando la ricerca di controllo sostiene una scelta e quando invece rende difficile condividerla o adattarla.",
+                    List.of(
+                            new GuideSection("In breve", "Che cosa significa qui bisogno di controllo", List.of(
+                                    "Il desiderio di influire sugli eventi della propria vita è diverso dalla possibilità effettiva di farlo. La ricerca distingue anche il bisogno di controllabilità dalla prevedibilità di ciò che accade: sono temi vicini, ma non identici in ogni situazione.",
+                                    "Questa guida riguarda attività quotidiane e margini di scelta personali. Non identifica un disturbo e non valuta il controllo esercitato su altre persone."), List.of()),
+                            new GuideSection("Tre lenti", "Anticipo, gestione diretta e cambiamenti", List.of(
+                                    "Prima di agire si possono cercare dettagli e programmare passaggi. Durante un'attività si può preferire occuparsi personalmente delle decisioni o ricontrollare un compito condiviso. Dopo un imprevisto si può aver bisogno di tempo per trovare un'alternativa.",
+                                    "Sono tre lenti editoriali del questionario collegato, non tre fattori scientificamente dimostrati per questi item. Le occasioni di delegare, decidere e incontrare imprevisti non sono distribuite allo stesso modo tra le persone."), List.of()),
+                            new GuideSection("Distinzioni", "Non è sinonimo di ansia, perfezionismo o compulsioni", List.of(
+                                    "Una pianificazione frequente può dipendere da responsabilità concrete, richieste di lavoro, salute o poca prevedibilità dell'ambiente. L'intolleranza dell'incertezza riguarda la risposta all'ignoto; il perfezionismo gli standard; le compulsioni hanno caratteristiche e contesti specifici. Un comportamento visibile può avere funzioni diverse.",
+                                    "La ricerca italiana sulla paura di perdere il controllo considera soprattutto pensieri, emozioni, corpo e comportamento. Non convalida una misura generale del desiderio di controllare gli eventi quotidiani e non autorizza a trasferirne punteggi."), List.of()),
+                            new GuideSection("Contesto", "Il controllo possibile non è uguale per tutti", List.of(
+                                    "Un imprevisto costoso, poche risorse, obblighi di cura o un ambiente instabile possono rendere prudente verificare dettagli e preparare alternative. Al contrario, in una situazione sicura, delegare o cambiare piano può essere più semplice.",
+                                    "Chiedersi quale scelta fosse realisticamente disponibile è più informativo che giudicare una risposta isolata. Il questionario non misura la qualità delle decisioni né attribuisce responsabilità per circostanze esterne."), List.of()),
+                            new GuideSection("Risultati", "Come leggere il test collegato", List.of(
+                                    "Le dodici domande originali riguardano gli ultimi tre mesi e descrivono la frequenza delle risposte in tre aree. Le barre trasformano le risposte; le soglie sono editoriali, non norme, cut-off o percentili.",
+                                    "Il questionario non è validato, non è una versione breve di DCS o NCP-q e non mostra un punteggio globale. Un profilo contenuto non esclude una difficoltà circoscritta; uno ampio non indica una diagnosi."), List.of()),
+                            new GuideSection("Supporto", "Quando confrontarsi con qualcuno", List.of(
+                                    "Se anticipare, verificare o affrontare cambiamenti richiede molto tempo, provoca sofferenza o limita attività e relazioni, puoi parlarne con un professionista indipendentemente dal risultato. Un confronto considera contesto, durata, funzione dei comportamenti e alternative praticabili.",
+                                    "Questo test non valuta la sicurezza né suggerisce trattamenti individuali. In caso di pericolo immediato in Italia chiama il 112."), List.of())
+                    ),
+                    "Questionario originale, informativo e non validato: descrive alcune risposte di controllo e prevedibilità senza diagnosi, norme o misura di gravità.",
+                    "La guida distingue desiderio e possibilità di controllo, contestualizza pianificazione e imprevisti e chiarisce la differenza rispetto ad ansia, perfezionismo e compulsioni.",
+                    List.of(
+                            new GuideReference("Italian Beliefs About Losing Control Inventory — Pardini e colleghi", "https://doi.org/10.1371/journal.pmen.0000325", "Studio italiano su paura di perdere il controllo, distinto dalla preferenza per prevedibilità quotidiana; non valida il questionario originale."),
+                            new GuideReference("Need for Controllability and Predictability questionnaire — Ramakers e colleghi", "https://doi.org/10.5114/hpr/195733", "Studio belga sul bisogno di controllabilità e prevedibilità consultato per delimitare il tema; lingua, campioni e struttura non si trasferiscono."),
+                            new GuideReference("The desirability of control — Burger e Cooper", "https://doi.org/10.1007/BF00994052", "Studio fondativo consultato per distinguere motivazione al controllo e locus of control; non fornisce item o soglie per l'app."),
+                            new GuideReference("A guide to constructs of control — Skinner", "https://pubmed.ncbi.nlm.nih.gov/8831161/", "Revisione concettuale consultata per distinguere controllo possibile e percepito; non costituisce validazione psicometrica."))
             )
     );
 

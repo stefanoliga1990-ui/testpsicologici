@@ -93,6 +93,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedSelfCompassionInformationTest();
         seedMentalRuminationInformationTest();
         seedAppearanceConcernsInformationTest();
+        seedNeedForControlInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4603,7 +4604,79 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "L'interferenza riferita è stata frequente; il supporto è utile anche senza un'etichetta diagnostica.");
     }
 
+    private void seedNeedForControlInformationTest() {
+        String id = "bisogno-controllo";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Bisogno di controllo e prevedibilità: test informativo",
+                "Auto-osservazione informativa",
+                "Esplora anticipo, gestione diretta e adattamento ai cambiamenti negli ultimi tre mesi.",
+                "4 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti: le tre aree e le soglie sono editoriali, non misurano diagnosi, gravità o capacità. Pianificare e assumersi responsabilità può essere utile; occasioni di condividere compiti e imprevisti cambiano secondo il contesto. Se una difficoltà causa sofferenza puoi parlarne con un professionista indipendentemente dal risultato; in caso di pericolo immediato chiama il 112.",
+                version, false,
+                "Frequenza media delle risposte riferite",
+                "Frequenza delle risposte nell'area",
+                true, 49)
+                .withSeo("Bisogno di controllo e prevedibilità: test | Spazio Test",
+                        "12 domande originali su prevedibilità, gestione diretta e imprevisti. Risultati descrittivi, non validati e senza diagnosi.")
+                .withResponseInstruction("Negli ultimi tre mesi, con quale frequenza ti è capitato quanto descritto nelle normali attività quotidiane?"));
+
+        saveArea(id, "anticipo", "Anticipo e prevedibilità", 1);
+        saveArea(id, "gestione", "Gestione diretta", 2);
+        saveArea(id, "cambiamenti", "Adattamento ai cambiamenti", 3);
+        saveQuestions(id, List.of(
+                q("anticipo", "Ho cercato di conoscere i dettagli di un'attività prima di iniziarla."),
+                q("anticipo", "Ho preferito definire in anticipo i passaggi di un'attività quotidiana."),
+                q("anticipo", "Ho rimandato una scelta finché non avevo più informazioni sul suo esito."),
+                q("anticipo", "Ho preparato più piani per una situazione quotidiana ancora incerta."),
+                q("gestione", "Ho preferito occuparmi personalmente di un compito che potevo condividere."),
+                q("gestione", "Ho ricontrollato un compito dopo averlo affidato a un'altra persona."),
+                q("gestione", "Ho seguito da vicino il modo in cui un'altra persona svolgeva un compito condiviso."),
+                q("gestione", "Ho preferito decidere personalmente un dettaglio che poteva essere concordato."),
+                q("cambiamenti", "Ho faticato a modificare un programma quando è cambiata una condizione."),
+                q("cambiamenti", "Ho avuto bisogno di tempo per riprendere un'attività dopo un imprevisto."),
+                q("cambiamenti", "Ho continuato a pensare a un esito diverso da quello previsto."),
+                q("cambiamenti", "Ho avuto difficoltà a scegliere un'alternativa dopo un cambio di programma.")));
+
+        String limits = "Il questionario è originale e non validato: le soglie sono editoriali, non norme, diagnosi o misure di gravità. "
+                + "Responsabilità, opportunità, risorse e sicurezza possono cambiare le risposte. "
+                + "Se queste esperienze causano sofferenza o interferenza puoi chiedere supporto a prescindere dal profilo; per un pericolo immediato chiama il 112.";
+        saveGlobal(id, "LOW", "Il bisogno di controllo e prevedibilità compare poco nelle risposte",
+                "Negli ultimi tre mesi le esperienze esplorate sono state poco frequenti nelle tre aree. Il profilo descrive soltanto le situazioni ricordate, non la tua capacità di organizzarti.",
+                "Una frequenza contenuta non esclude difficoltà circoscritte o un imprevisto particolarmente importante. Osserva quali occasioni hai effettivamente avuto per scegliere, condividere compiti e cambiare programmi. Anche una singola situazione difficile può meritare attenzione. " + limits);
+        saveGlobal(id, "MIXED", "Il bisogno di controllo e prevedibilità varia tra le aree",
+                "Le risposte sono intermedie oppure diverse fra anticipo, gestione diretta e adattamento, senza un'area nel livello editoriale più alto. Questa variabilità descrive il periodo e non un tratto stabile.",
+                "Può essere utile notare in quali contesti organizzarsi è una scelta utile e in quali diventa faticoso cambiare rotta. Ruoli, responsabilità e margini di scelta possono spiegare parte delle differenze. Il profilo non permette di attribuire una causa unica. " + limits);
+        saveGlobal(id, "FOCUSED", "Un'area del bisogno di controllo e prevedibilità emerge nelle risposte",
+                "Una delle tre aree raccoglie risposte più frequenti, mentre le altre sono più contenute. L'esperienza riferita sembra quindi concentrarsi in un aspetto, non distribuirsi in ogni situazione.",
+                "Guarda se emerge soprattutto l'anticipo, la gestione diretta o la fatica davanti ai cambiamenti. Una differenza tra aree può dipendere anche dalle occasioni avute negli ultimi mesi. Un'area frequente non equivale a un disturbo né va generalizzata alla persona. " + limits);
+        saveGlobal(id, "BROAD", "Più aree del bisogno di controllo e prevedibilità emergono nelle risposte",
+                "Almeno due delle tre aree raccolgono risposte frequenti negli ultimi tre mesi. L'ampiezza riguarda le esperienze chieste, non indica gravità o probabilità di una condizione.",
+                "Osserva se le esperienze compaiono in contesti diversi, persistono e interferiscono con scelte o relazioni. Pianificare può anche essere funzionale; imprevisti reali e responsabilità elevate possono aumentare alcune risposte. Se il costo quotidiano è significativo, un confronto professionale può aiutare a distinguere necessità pratiche e margini di flessibilità. " + limits);
+
+        saveAreaInsights(id, "anticipo",
+                "L'anticipo dei dettagli è comparso poco; non misura la qualità delle tue decisioni.",
+                "L'anticipo dei dettagli è comparso a volte; importanza e contesto delle scelte contano.",
+                "L'anticipo dei dettagli è stato frequente; può essere utile o faticoso secondo la situazione.");
+        saveAreaInsights(id, "gestione",
+                "La preferenza per gestire direttamente è comparsa poco; le occasioni di condividere compiti possono essere state limitate.",
+                "La gestione diretta è comparsa a volte; responsabilità e accordi influenzano il significato delle risposte.",
+                "La gestione diretta è stata frequente; non indica da sola sfiducia o controllo delle altre persone.");
+        saveAreaInsights(id, "cambiamenti",
+                "La fatica davanti ai cambiamenti è comparsa poco; un episodio isolato può comunque pesare.",
+                "La fatica davanti ai cambiamenti è comparsa a volte; le alternative disponibili non sono sempre uguali.",
+                "La fatica davanti ai cambiamenti è stata frequente; osserva contesto e impatto senza attribuirle una causa unica.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("bisogno-controllo", List.of(
+                ref("Italian Beliefs About Losing Control Inventory — Pardini e colleghi", "https://doi.org/10.1371/journal.pmen.0000325"),
+                ref("Need for Controllability and Predictability questionnaire — Ramakers e colleghi", "https://doi.org/10.5114/hpr/195733"),
+                ref("The desirability of control — Burger e Cooper", "https://doi.org/10.1007/BF00994052"),
+                ref("A guide to constructs of control — Skinner", "https://pubmed.ncbi.nlm.nih.gov/8831161/")));
         syncReferences("dismorfofobia", List.of(
                 ref("Italian Body Image Concern Inventory — Luca e colleghi", "https://doi.org/10.1016/j.bodyim.2011.04.007"),
                 ref("Italian Questionario sul Dismorfismo Corporeo — Cerea e colleghi", "https://doi.org/10.24193/jebp.2017.1.4"),

@@ -21,6 +21,7 @@ public class TopicClusterCatalogue {
                             "tratti-ossessivo-compulsivi",
                             "umore-depresso",
                             "ruminazione-mentale",
+                            "bisogno-controllo",
                             "dismorfofobia",
                             "ptsd-adulti"
                     )),
@@ -130,6 +131,10 @@ public class TopicClusterCatalogue {
         }
         if ("ruminazione-mentale".equals(testId)) {
             return List.of("umore-depresso", "ansia-generalizzata", "tratti-ossessivo-compulsivi")
+                    .stream().limit(maximum).toList();
+        }
+        if ("bisogno-controllo".equals(testId)) {
+            return List.of("ansia-generalizzata", "tratti-ossessivo-compulsivi", "ruminazione-mentale")
                     .stream().limit(maximum).toList();
         }
         if ("dismorfofobia".equals(testId)) {

@@ -65,7 +65,8 @@ class PsychometricStructureTest {
             Map.entry("introversione-estroversione", "esperienze"),
             Map.entry("autocompassione", "autocompassione"),
             Map.entry("ruminazione-mentale", "pensieri ripetitivi sul passato"),
-            Map.entry("dismorfofobia", "preoccupazioni per l'aspetto"));
+            Map.entry("dismorfofobia", "preoccupazioni per l'aspetto"),
+            Map.entry("bisogno-controllo", "bisogno di controllo e prevedibilità"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -75,7 +76,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(47).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(48).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ACE_EXPOSURE".equals(test.scoringModel())) {
@@ -109,6 +110,16 @@ class PsychometricStructureTest {
                 assertThat(test.answerScale()).isEqualTo("FREQUENCY");
                 assertThat(test.areas()).extracting(area -> area.code())
                         .containsExactly("pensieri", "verifiche", "gestione", "interferenza");
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code()))
+                        .hasSize(4));
+            } else if ("bisogno-controllo".equals(test.id())) {
+                assertThat(test.version()).isEqualTo("1.0");
+                assertThat(test.questions()).hasSize(12);
+                assertThat(test.responseInstruction()).contains("ultimi tre mesi", "frequenza");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).extracting(area -> area.code())
+                        .containsExactly("anticipo", "gestione", "cambiamenti");
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(4));
@@ -355,6 +366,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco frequenti");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("una o due aree");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
+            } else if ("bisogno-controllo".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("compare poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("varia");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("un'area");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
             } else if ("ruminazione-mentale".equals(test.id())) {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco frequenti");
