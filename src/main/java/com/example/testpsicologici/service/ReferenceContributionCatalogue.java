@@ -476,7 +476,15 @@ public class ReferenceContributionCatalogue {
             entry("https://doi.org/10.1007/BF00994052",
                     "Studio fondativo DCS consultato per distinguere motivazione al controllo e locus of control; nessun item o punteggio viene riprodotto."),
             entry("https://pubmed.ncbi.nlm.nih.gov/8831161/",
-                    "Revisione concettuale consultata per distinguere controllo oggettivo, percepito e desiderato; non fornisce evidenza psicometrica per l'app."));
+                    "Revisione concettuale consultata per distinguere controllo oggettivo, percepito e desiderato; non fornisce evidenza psicometrica per l'app."),
+            entry("https://doi.org/10.1482/26764",
+                    "Studio italiano su 291 partecipanti consultato per l'eterogeneità dell'auto-monitoraggio; scala, struttura e punteggi non validano gli item originali."),
+            entry("https://doi.org/10.1016/j.cpr.2021.102080",
+                    "Revisione europea di 29 studi consultata per distinguere il camuffamento autistico dall'adattamento sociale generico; non consente inferenze individuali."),
+            entry("https://doi.org/10.1037/0022-3514.46.6.1349",
+                    "Revisione della scala di auto-monitoraggio consultata per distinguere segnali sociali e modifica espressiva; item e fattori non sono trasferiti."),
+            entry("https://doi.org/10.1037/h0037039",
+                    "Lavoro fondativo consultato per l'auto-presentazione sensibile al contesto; non implica che adattarsi sia inautentico né convalida questo test."));
 
     public String findByUrl(String url) {
         return CONTRIBUTIONS.getOrDefault(url, DEFAULT_CONTRIBUTION);

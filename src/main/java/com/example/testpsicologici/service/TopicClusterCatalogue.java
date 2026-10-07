@@ -74,6 +74,7 @@ public class TopicClusterCatalogue {
                             "sindrome-impostore",
                             "perfezionismo",
                             "people-pleasing",
+                            "camaleonte-sociale",
                             "autosabotaggio",
                             "fomo"
                     )),
@@ -135,6 +136,10 @@ public class TopicClusterCatalogue {
         }
         if ("bisogno-controllo".equals(testId)) {
             return List.of("ansia-generalizzata", "tratti-ossessivo-compulsivi", "ruminazione-mentale")
+                    .stream().limit(maximum).toList();
+        }
+        if ("camaleonte-sociale".equals(testId)) {
+            return List.of("people-pleasing", "autostima", "sindrome-impostore")
                     .stream().limit(maximum).toList();
         }
         if ("dismorfofobia".equals(testId)) {

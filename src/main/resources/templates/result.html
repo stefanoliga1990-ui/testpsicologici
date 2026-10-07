@@ -39,7 +39,7 @@
             </div>
             <p th:if="${aceExposure.partial}">Alcune domande non hanno una risposta utilizzabile; il quadro è parziale.</p>
         </section>
-        <div class="overall-presence" th:if="${!#lists.isEmpty(areaResults) and test.scoringModel != 'ATTACHMENT_DIMENSIONAL' and test.id != 'ruminazione-mentale' and test.id != 'dismorfofobia' and test.id != 'bisogno-controllo'}">
+        <div class="overall-presence" th:if="${!#lists.isEmpty(areaResults) and test.scoringModel != 'ATTACHMENT_DIMENSIONAL' and test.id != 'ruminazione-mentale' and test.id != 'dismorfofobia' and test.id != 'bisogno-controllo' and test.id != 'camaleonte-sociale'}">
             <div class="overall-presence-label" th:text="${test.overallMetricLabel}">Presenza complessiva del tratto</div>
             <div class="overall-presence-track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
                  th:aria-label="${test.overallMetricLabel}"

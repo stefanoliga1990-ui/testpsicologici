@@ -5051,6 +5051,41 @@ public class GuideCatalogue {
                             new GuideReference("Need for Controllability and Predictability questionnaire — Ramakers e colleghi", "https://doi.org/10.5114/hpr/195733", "Studio belga sul bisogno di controllabilità e prevedibilità consultato per delimitare il tema; lingua, campioni e struttura non si trasferiscono."),
                             new GuideReference("The desirability of control — Burger e Cooper", "https://doi.org/10.1007/BF00994052", "Studio fondativo consultato per distinguere motivazione al controllo e locus of control; non fornisce item o soglie per l'app."),
                             new GuideReference("A guide to constructs of control — Skinner", "https://pubmed.ncbi.nlm.nih.gov/8831161/", "Revisione concettuale consultata per distinguere controllo possibile e percepito; non costituisce validazione psicometrica."))
+            ),
+            new InformationGuide(
+                    "camaleonte-sociale", "camaleonte-sociale",
+                    "Camaleonte sociale: adattarsi agli altri",
+                    "Camaleonte sociale: quando cambia il modo di presentarsi",
+                    "Camaleonte sociale e adattamento sociale: guida | Spazio Test",
+                    "Che cosa significa adattare il modo di parlare e presentarsi agli altri, quando può essere utile e quando può pesare.",
+                    "Cambiare tono, parole o ciò che si dichiara in contesti diversi è comune. La metafora del camaleonte sociale aiuta a osservare queste differenze, ma non descrive una diagnosi o una personalità falsa.",
+                    List.of(
+                            new GuideSection("In breve", "Che cosa significa camaleonte sociale", List.of(
+                                    "La ricerca sull'auto-monitoraggio sociale studia come alcune persone osservano i segnali del contesto e regolano la propria presentazione. I modelli psicometrici non coincidono perfettamente: anche uno studio italiano ha trovato componenti distinte, anziché un'unica dimensione semplice.",
+                                    "Nel linguaggio comune 'camaleonte sociale' può comprendere sia cambiamenti utili alla comunicazione sia scelte vissute come costose. Questa guida non equipara la frequenza dell'adattamento a inautenticità."), List.of()),
+                            new GuideSection("Tre lenti", "Segnali, espressione e posizioni dichiarate", List.of(
+                                    "Si può osservare il tono delle persone presenti, cambiare il proprio registro linguistico o scegliere se dichiarare un'opinione. Sono comportamenti differenti: notare un segnale non significa necessariamente cambiare posizione.",
+                                    "Le tre aree del questionario collegato sono scelte editoriali per descrivere risposte, non fattori validati. Una posizione dichiarata diversa può anche riflettere un reale ripensamento, oppure una scelta prudente in un contesto poco sicuro."), List.of()),
+                            new GuideSection("Distinzioni", "Adattamento, compiacenza e camuffamento non coincidono", List.of(
+                                    "Il people pleasing riguarda soprattutto la priorità data all'approvazione altrui, spesso con difficoltà a proteggere i propri bisogni. Cambiare modo di parlare, invece, può semplicemente rendere un messaggio comprensibile a interlocutori diversi.",
+                                    "Il camuffamento autistico è studiato in un ambito specifico, con esperienze e possibili costi propri. Il questionario qui proposto non identifica neurodivergenza né deduce camuffamento da una risposta frequente."), List.of()),
+                            new GuideSection("Contesto", "Quando l'adattamento è scelto e quando pesa", List.of(
+                                    "Lavoro, lingua, cultura, rapporti gerarchici e sicurezza possono richiedere registri diversi. Osservare il margine di scelta reale è più utile che etichettare un gesto come sincero o falso.",
+                                    "Se dopo alcune interazioni rimangono fatica, sensazione di non poter esprimere dissenso o timore delle conseguenze, può essere utile riflettere su quali contesti lo provocano. Non tutte le persone possono esporsi allo stesso modo senza rischi."), List.of()),
+                            new GuideSection("Risultati", "Come leggere il test collegato", List.of(
+                                    "Le dodici domande originali chiedono la frequenza negli ultimi tre mesi in tre aree. Le barre sono trasformazioni delle risposte e le soglie sono editoriali; non esistono norme, cut-off o punteggi clinici per questo questionario.",
+                                    "Non viene mostrato un punteggio globale: aree diverse non vengono sommate come se fossero una sola qualità. Un profilo basso non esclude un episodio importante e uno ampio non implica falsità o disagio."), List.of()),
+                            new GuideSection("Supporto", "Quando chiedere un confronto", List.of(
+                                    "Se adattarti agli altri richiede molta energia, limita ciò che puoi dire o interferisce con relazioni e benessere, puoi parlarne con un professionista indipendentemente dal risultato. Esplorare contesto, sicurezza e alternative disponibili conta più di una soglia editoriale.",
+                                    "Il questionario non valuta la sicurezza né suggerisce una causa individuale. Se temi una reazione violenta al dissenso, cerca sostegno adatto al contesto; per un pericolo immediato in Italia chiama il 112."), List.of())
+                    ),
+                    "Questionario originale, informativo e non validato: descrive alcuni modi di adattare la presentazione sociale, senza misurare autenticità o formulare diagnosi.",
+                    "La guida distingue adattamento sociale, people pleasing e camuffamento autistico, considerando scelta, contesto e sicurezza.",
+                    List.of(
+                            new GuideReference("Italian standardization of the Self Monitoring Scale — Delle Grazie", "https://doi.org/10.1482/26764", "Studio italiano su 291 persone consultato per la struttura non unidimensionale dell'auto-monitoraggio; la scala diversa non valida il test originale."),
+                            new GuideReference("Autistic camouflaging systematic review — Cook e colleghi", "https://doi.org/10.1016/j.cpr.2021.102080", "Revisione europea di 29 studi consultata per distinguere il camuffamento autistico dall'adattamento sociale generico; non identifica neurodivergenza nel singolo."),
+                            new GuideReference("Revision of the self-monitoring scale — Lennox e Wolfe", "https://doi.org/10.1037/0022-3514.46.6.1349", "Revisione statunitense consultata per distinguere attenzione ai segnali, modifica della presentazione e preoccupazione per l'appropriatezza; nessun fattore è trasferito."),
+                            new GuideReference("Self-monitoring of expressive behavior — Snyder", "https://doi.org/10.1037/h0037039", "Lavoro fondativo consultato per l'idea di regolazione della presentazione secondo i segnali sociali; non valida item o soglie dell'app."))
             )
     );
 

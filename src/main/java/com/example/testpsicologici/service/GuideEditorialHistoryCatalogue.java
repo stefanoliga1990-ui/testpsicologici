@@ -60,7 +60,8 @@ public class GuideEditorialHistoryCatalogue {
             entry("autocompassione", history("2026-10-04", "2026-10-04")),
             entry("ruminazione-mentale", history("2026-10-05", "2026-10-05")),
             entry("dismorfofobia", history("2026-10-05", "2026-10-05")),
-            entry("bisogno-controllo", history("2026-10-06", "2026-10-06"))
+            entry("bisogno-controllo", history("2026-10-06", "2026-10-06")),
+            entry("camaleonte-sociale", history("2026-10-07", "2026-10-07"))
     );
 
     public GuideEditorialHistory forSlug(String slug) {

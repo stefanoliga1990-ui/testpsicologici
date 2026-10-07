@@ -94,6 +94,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedMentalRuminationInformationTest();
         seedAppearanceConcernsInformationTest();
         seedNeedForControlInformationTest();
+        seedSocialChameleonInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4671,7 +4672,79 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "La fatica davanti ai cambiamenti è stata frequente; osserva contesto e impatto senza attribuirle una causa unica.");
     }
 
+    private void seedSocialChameleonInformationTest() {
+        String id = "camaleonte-sociale";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Camaleonte sociale: come adatto il mio modo di presentarmi?",
+                "Auto-osservazione informativa",
+                "Esplora attenzione al contesto, cambiamenti espressivi e posizioni dichiarate negli ultimi tre mesi.",
+                "4 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti: le tre aree e le soglie sono editoriali, non misurano autenticità, capacità sociale, diagnosi o gravità. Adattarsi può essere utile, richiesto o protettivo; le risposte non ne spiegano il motivo. Se queste esperienze causano sofferenza puoi parlarne con un professionista indipendentemente dal risultato; in caso di pericolo immediato chiama il 112.",
+                version, false,
+                "Frequenza media delle risposte riferite",
+                "Frequenza delle risposte nell'area",
+                true, 50)
+                .withSeo("Camaleonte sociale: test sull'adattamento sociale | Spazio Test",
+                        "12 domande originali su segnali sociali, espressione e posizioni dichiarate. Risultati descrittivi, non validati e senza diagnosi.")
+                .withResponseInstruction("Negli ultimi tre mesi, con quale frequenza ti è capitato quanto descritto quando eri con persone diverse?"));
+
+        saveArea(id, "segnali", "Attenzione ai segnali sociali", 1);
+        saveArea(id, "espressione", "Adattamento del modo di esprimersi", 2);
+        saveArea(id, "posizioni", "Posizioni espresse agli altri", 3);
+        saveQuestions(id, List.of(
+                q("segnali", "Ho osservato il modo di parlare delle persone prima di intervenire."),
+                q("segnali", "Ho notato il tono usato dagli altri prima di rispondere."),
+                q("segnali", "Ho osservato la reazione degli altri dopo un mio intervento."),
+                q("segnali", "Ho cercato di capire le consuetudini di un gruppo prima di partecipare."),
+                q("espressione", "Ho cambiato il tono della voce secondo le persone presenti."),
+                q("espressione", "Ho cambiato le parole che usavo secondo le persone presenti."),
+                q("espressione", "Ho modificato i miei gesti secondo le persone presenti."),
+                q("espressione", "Ho reso il mio modo di parlare più formale con alcune persone."),
+                q("posizioni", "Ho espresso un'opinione diversa secondo le persone presenti."),
+                q("posizioni", "Ho dichiarato una preferenza diversa secondo le persone presenti."),
+                q("posizioni", "Ho evitato di esprimere un dissenso davanti ad alcune persone."),
+                q("posizioni", "Ho espresso accordo con una proposta che in privato non condividevo.")));
+
+        String limits = "Il questionario è originale e non validato: aree e soglie sono editoriali, non norme o misure di autenticità. "
+                + "Ruoli, cultura, sicurezza e occasioni di incontro possono cambiare le risposte. "
+                + "Se l'adattamento causa sofferenza o limita le tue scelte puoi chiedere supporto qualunque sia il profilo; in caso di pericolo immediato chiama il 112.";
+        saveGlobal(id, "LOW", "L'adattamento della presentazione sociale compare poco nelle risposte",
+                "Negli ultimi tre mesi i comportamenti esplorati sono stati poco frequenti nelle tre aree. Il profilo descrive solo le situazioni ricordate, non una capacità o un'identità.",
+                "Una frequenza contenuta non esclude un episodio difficile o un adattamento concentrato in un contesto. Considera quali occasioni hai avuto per interagire con persone diverse. Una scelta singola può essere importante anche se non frequente. " + limits);
+        saveGlobal(id, "MIXED", "L'adattamento della presentazione sociale varia tra le aree",
+                "Le risposte sono intermedie oppure diverse tra attenzione ai segnali, espressione e posizioni dichiarate, senza un'area nel livello editoriale più alto. La variabilità riguarda il periodo, non un tratto fisso.",
+                "Potresti osservare se cambiare parole è comune mentre esprimere opinioni diverse lo è meno, o viceversa. Il contesto e le opportunità di incontro possono spiegare parte delle differenze. Il profilo non attribuisce un motivo alle tue scelte. " + limits);
+        saveGlobal(id, "FOCUSED", "Un'area dell'adattamento della presentazione sociale emerge nelle risposte",
+                "Una delle tre aree raccoglie risposte più frequenti, mentre le altre restano contenute. L'adattamento riferito appare concentrato in un aspetto, non in ogni situazione.",
+                "Guarda se emerge soprattutto l'attenzione ai segnali, l'espressione o la posizione dichiarata. Una differenza può dipendere dalle occasioni avute e dalle richieste del contesto. Un'area frequente non significa essere poco autentici o avere un disturbo. " + limits);
+        saveGlobal(id, "BROAD", "Più aree dell'adattamento della presentazione sociale emergono nelle risposte",
+                "Almeno due delle tre aree raccolgono risposte frequenti negli ultimi tre mesi. L'ampiezza descrive comportamenti riferiti e non indica falsità, gravità o diagnosi.",
+                "Osserva se l'adattamento compare in contesti diversi, quanto persiste e se è scelto oppure faticoso. Ruoli, norme sociali e sicurezza possono rendere sensato cambiare presentazione. Se il costo quotidiano o l'interferenza sono importanti, un confronto professionale può aiutare a comprenderli senza colpevolizzarti. " + limits);
+
+        saveAreaInsights(id, "segnali",
+                "L'attenzione ai segnali sociali è comparsa poco; le occasioni di incontro possono essere state limitate.",
+                "L'attenzione ai segnali sociali è comparsa a volte; osservare gli altri può facilitare la conversazione.",
+                "L'attenzione ai segnali sociali è stata frequente; non indica da sola vigilanza o difficoltà.");
+        saveAreaInsights(id, "espressione",
+                "I cambiamenti espressivi sono comparsi poco; non misura flessibilità o capacità sociale.",
+                "I cambiamenti espressivi sono comparsi a volte; ruoli e interlocutori possono richiederli.",
+                "I cambiamenti espressivi sono stati frequenti; il risultato non ne stabilisce motivo o costo.");
+        saveAreaInsights(id, "posizioni",
+                "Le differenze nelle posizioni espresse sono comparse poco; un episodio può comunque contare.",
+                "Le differenze nelle posizioni espresse sono comparse a volte; sicurezza e contesto contano.",
+                "Le differenze nelle posizioni espresse sono state frequenti; non dimostrano compiacenza o falsità.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("camaleonte-sociale", List.of(
+                ref("Italian standardization of the Self Monitoring Scale — Delle Grazie", "https://doi.org/10.1482/26764"),
+                ref("Autistic camouflaging systematic review — Cook e colleghi", "https://doi.org/10.1016/j.cpr.2021.102080"),
+                ref("Revision of the self-monitoring scale — Lennox e Wolfe", "https://doi.org/10.1037/0022-3514.46.6.1349"),
+                ref("Self-monitoring of expressive behavior — Snyder", "https://doi.org/10.1037/h0037039")));
         syncReferences("bisogno-controllo", List.of(
                 ref("Italian Beliefs About Losing Control Inventory — Pardini e colleghi", "https://doi.org/10.1371/journal.pmen.0000325"),
                 ref("Need for Controllability and Predictability questionnaire — Ramakers e colleghi", "https://doi.org/10.5114/hpr/195733"),
