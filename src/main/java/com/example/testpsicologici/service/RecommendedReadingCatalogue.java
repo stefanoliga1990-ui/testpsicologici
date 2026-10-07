@@ -550,6 +550,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("triangolazione-subita", List.of(
+                    new RecommendedReading(
+                            "Perché non ci capiamo?",
+                            "Mauro Cason",
+                            "Una guida divulgativa sulla comunicazione interpersonale, sui messaggi indiretti e sui giochi relazionali in famiglia, nella coppia e in altri contesti.",
+                            "Il volume tratta la comunicazione in generale: non permette di attribuire intenzioni a terze persone o di interpretare il risultato del questionario.",
+                            "https://www.amazon.it/-/en/capiamo-relazionali-psicologici-meccanismi-comunicazione/dp/8856836319?crid=1GRPCXKGJ3J5W&dib=eyJ2IjoiMSJ9.ehzf8PHMuIjJucmCpuBa7Q.9YAEy8bXh2Z2MTcnUGdYzFm2rl1A1iT5S16ee_pMtAk&dib_tag=se&keywords=9788856836318&qid=1791378217&sprefix=9788856836%2Caps%2C186&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=cc495fa51ddc232c1e47a4e8652989cf&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "La crisi della coppia",
+                            "Maurizio Andolfi (a cura di)",
+                            "Un volume specialistico che considera costruzione, crisi e rottura della coppia da una prospettiva sistemico-relazionale.",
+                            "Si concentra sulla coppia, non su ogni forma di triangolazione; non consente di stabilire che una terza persona stia manipolando una relazione concreta.",
+                            "https://www.amazon.it/-/en/crisi-della-coppia-prospettiva-sistemico-relazionale/dp/8870786056?dib=eyJ2IjoiMSJ9.3A0pavkCxt9f9EexPy4GBg.G2jtVTxDmjzvaysdU_EDg9pifeu_UznC1E9JqX8Qfk0&dib_tag=se&keywords=9788870786057&qid=1791378446&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=1721a2446fbe564737393750396f800b&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",

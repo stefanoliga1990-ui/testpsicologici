@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-06",
+  "updatedAt": "2026-10-07",
   "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
   "selectionPolicy": {
     "booksPerTopic": {
@@ -1792,7 +1792,65 @@
       ],
       "books": []
     },
-    { "topicId": "triangolazione-relazionale", "testId": "triangolazione-subita", "guideSlug": "triangolazione-relazionale", "title": "Triangolazione relazionale", "fallbackTopics": ["dinamiche familiari", "manipolazione nelle relazioni"], "fallbackRationale": "Se mancano testi dedicati, usare fonti divulgative affidabili su triangolazione, confini e dinamiche relazionali più ampie.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "triangolazione-relazionale",
+      "testId": "triangolazione-subita",
+      "guideSlug": "triangolazione-relazionale",
+      "title": "Triangolazione relazionale",
+      "fallbackTopics": ["comunicazione interpersonale", "dinamiche sistemico-relazionali nella coppia"],
+      "fallbackRationale": "Non è stato individuato un volume divulgativo italiano sufficientemente solido dedicato esattamente al costrutto operativo del questionario. Il primo libro affronta messaggi indiretti e comunicazione in varie relazioni; il secondo offre una prospettiva specialistica sulle dinamiche di coppia. Nessuno dei due prova intenzioni manipolative, tradimenti o la presenza di una triangolazione nel singolo caso.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Perché non ci capiamo?",
+          "placeholderCover": true,
+          "subtitle": "Giochi relazionali, aspetti psicologici e meccanismi della comunicazione",
+          "authors": ["Mauro Cason"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788856836318",
+          "publicationYear": 2011,
+          "format": "brossura",
+          "editorialRole": "Lettura divulgativa sulle modalità di comunicazione e sui messaggi indiretti nelle relazioni",
+          "audience": "Adulti interessati alle dinamiche di comunicazione in coppia, famiglia e altri contesti",
+          "description": "Una guida divulgativa sulla comunicazione interpersonale, sui messaggi indiretti e sui giochi relazionali in famiglia, nella coppia e in altri contesti.",
+          "limit": "Il volume tratta la comunicazione in generale: non permette di attribuire intenzioni a terze persone o di interpretare il risultato del questionario.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/Libro?id=19078"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8856836319",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/capiamo-relazionali-psicologici-meccanismi-comunicazione/dp/8856836319?crid=1GRPCXKGJ3J5W&dib=eyJ2IjoiMSJ9.ehzf8PHMuIjJucmCpuBa7Q.9YAEy8bXh2Z2MTcnUGdYzFm2rl1A1iT5S16ee_pMtAk&dib_tag=se&keywords=9788856836318&qid=1791378217&sprefix=9788856836%2Caps%2C186&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=cc495fa51ddc232c1e47a4e8652989cf&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "La crisi della coppia",
+          "placeholderCover": true,
+          "subtitle": "Una prospettiva sistemico-relazionale",
+          "authors": ["Maurizio Andolfi (a cura di)"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788870786057",
+          "publicationYear": 1999,
+          "format": "brossura",
+          "editorialRole": "Approfondimento specialistico sulle dinamiche e sulle crisi della coppia da una prospettiva sistemico-relazionale",
+          "audience": "Studenti, professionisti e lettori interessati alle dinamiche della coppia",
+          "description": "Un volume specialistico che considera costruzione, crisi e rottura della coppia da una prospettiva sistemico-relazionale.",
+          "limit": "Si concentra sulla coppia, non su ogni forma di triangolazione; non consente di stabilire che una terza persona stia manipolando una relazione concreta.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/autori-vari/la-crisi-della-coppia-9788870786057-657.html"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8870786056",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/crisi-della-coppia-prospettiva-sistemico-relazionale/dp/8870786056?dib=eyJ2IjoiMSJ9.3A0pavkCxt9f9EexPy4GBg.G2jtVTxDmjzvaysdU_EDg9pifeu_UznC1E9JqX8Qfk0&dib_tag=se&keywords=9788870786057&qid=1791378446&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=1721a2446fbe564737393750396f800b&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "invalidazione-emotiva", "testId": "invalidazione-emotiva-subita", "guideSlug": "invalidazione-emotiva", "title": "Invalidazione emotiva", "fallbackTopics": ["comunicazione nelle relazioni", "violenza psicologica"], "fallbackRationale": "Il tema può essere coperto da testi più generali su comunicazione, confini e dinamiche relazionali dannose.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "disturbo-evitante-personalita", "testId": "tratti-evitanti-personalita-adulti", "guideSlug": "disturbo-evitante-personalita", "title": "Disturbo evitante di personalità", "fallbackTopics": ["ansia sociale", "evitamento"], "fallbackRationale": "Se non emergono testi divulgativi responsabili sul tema specifico, usare letture su ansia sociale ed evitamento senza equiparare i costrutti.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "disponibilita-emotiva", "testId": "disponibilita-emotiva", "guideSlug": "disponibilita-emotiva", "title": "Disponibilità emotiva", "fallbackTopics": ["intimità nelle relazioni", "comunicazione emotiva"], "fallbackRationale": "Il costrutto può richiedere testi più ampi su intimità, ascolto e comunicazione emotiva.", "researchStatus": "PENDING_RESEARCH", "books": [] },

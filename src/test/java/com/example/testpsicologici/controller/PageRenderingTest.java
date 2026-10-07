@@ -2679,7 +2679,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Supporto e terze persone possono avere funzioni diverse")))
                 .andExpect(content().string(containsString("Frequenze editoriali, non una percentuale di manipolazione")))
                 .andExpect(content().string(containsString("href=\"/test/triangolazione-subita\"")))
-                .andExpect(content().string(containsString("Approfondimenti collegati")));
+                .andExpect(content().string(containsString("Approfondimenti collegati")))
+                .andExpect(content().string(containsString("Perché non ci capiamo?")))
+                .andExpect(content().string(containsString("La crisi della coppia")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -2696,7 +2703,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
                 .andExpect(content().string(containsString("href=\"/test/triangolazione-subita/risultato/pdf\"")))
                 .andExpect(content().string(containsString("href=\"/test/relazione-dannosa-benessere\"")))
-                .andExpect(content().string(containsString("href=\"/approfondimenti/triangolazione-relazionale\"")));
+                .andExpect(content().string(containsString("href=\"/approfondimenti/triangolazione-relazionale\"")))
+                .andExpect(content().string(containsString("Perché non ci capiamo?")))
+                .andExpect(content().string(containsString("La crisi della coppia")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
 
         MvcResult mvcResult = mockMvc.perform(get("/test/triangolazione-subita/risultato/pdf")
                         .session(completedAttempt("triangolazione-subita", 5)))
