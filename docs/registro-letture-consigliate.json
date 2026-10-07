@@ -1864,6 +1864,7 @@
     { "topicId": "autocompassione", "testId": "autocompassione", "guideSlug": "autocompassione", "title": "Autocompassione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ruminazione-mentale", "testId": "ruminazione-mentale", "guideSlug": "ruminazione-mentale", "title": "Ruminazione mentale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "dismorfofobia", "testId": "dismorfofobia", "guideSlug": "dismorfofobia", "title": "Dismorfofobia (disturbo da dismorfismo corporeo)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
-    { "topicId": "bisogno-controllo", "testId": "bisogno-controllo", "guideSlug": "bisogno-controllo", "title": "Bisogno di controllo e prevedibilità", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
+    { "topicId": "bisogno-controllo", "testId": "bisogno-controllo", "guideSlug": "bisogno-controllo", "title": "Bisogno di controllo e prevedibilità", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "camaleonte-sociale", "testId": "camaleonte-sociale", "guideSlug": "camaleonte-sociale", "title": "Camaleonte sociale: adattarsi agli altri", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
   ]
 }
