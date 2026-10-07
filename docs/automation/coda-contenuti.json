@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-10-05",
+  "updatedAt": "2026-10-07",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -266,13 +266,13 @@
     {
       "order": 21,
       "slug": "camaleonte-sociale",
-      "workingTitle": "Quanto mi adatto agli altri come un camaleonte sociale?",
+      "workingTitle": "Camaleonte sociale: come adatto il mio modo di presentarmi?",
       "sourceTopic": "Quanto sei un social chameleon?",
       "sourceDescription": "Modifica di opinioni, comportamento o modo di parlare in base alle persone presenti.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Autostima, approvazione e obiettivi",
-      "questionnaire": { "enabled": true, "areaCount": null, "itemCount": null, "answerScale": null, "resultModel": null, "notes": "Distinguere adattamento sociale, masking, impression management, flessibilità e perdita di autenticità percepita." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "questionnaire": { "enabled": true, "areaCount": 3, "itemCount": 12, "answerScale": "FREQUENCY", "resultModel": "AREA_PROFILE", "notes": "Tre aree editoriali: attenzione ai segnali, adattamento espressivo e posizioni dichiarate; nessun punteggio globale visibile. Non inferire autenticità, compiacenza, masking autistico o diagnosi dalla frequenza. Soglie descrittive non validate." },
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-07T13:16:43+02:00", "completedAt": "2026-10-07T13:16:43+02:00", "commitHash": "ed9fafa03595e9ecd94a9781d03e05b79905fe72", "blockReason": null }
     },
     {
       "order": 22,
