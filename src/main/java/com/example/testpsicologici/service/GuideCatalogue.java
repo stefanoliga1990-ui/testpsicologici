@@ -5086,6 +5086,45 @@ public class GuideCatalogue {
                             new GuideReference("Autistic camouflaging systematic review — Cook e colleghi", "https://doi.org/10.1016/j.cpr.2021.102080", "Revisione europea di 29 studi consultata per distinguere il camuffamento autistico dall'adattamento sociale generico; non identifica neurodivergenza nel singolo."),
                             new GuideReference("Revision of the self-monitoring scale — Lennox e Wolfe", "https://doi.org/10.1037/0022-3514.46.6.1349", "Revisione statunitense consultata per distinguere attenzione ai segnali, modifica della presentazione e preoccupazione per l'appropriatezza; nessun fattore è trasferito."),
                             new GuideReference("Self-monitoring of expressive behavior — Snyder", "https://doi.org/10.1037/h0037039", "Lavoro fondativo consultato per l'idea di regolazione della presentazione secondo i segnali sociali; non valida item o soglie dell'app."))
+            ),
+            new InformationGuide(
+                    "stonewalling", "stonewalling",
+                    "Stonewalling nelle relazioni",
+                    "Stonewalling: quando il dialogo si interrompe durante un conflitto",
+                    "Stonewalling nelle relazioni: significato e limiti | Spazio Test",
+                    "Che cosa descrive lo stonewalling, come distinguerlo da una pausa e perché il contesto conta più di un'etichetta.",
+                    "Stonewalling è una parola usata per descrivere il ritiro dal dialogo durante un conflitto. Una conversazione interrotta può avere significati diversi: osservare come avviene e se si riesce a riprenderla è più utile che indovinare le intenzioni dell'altra persona.",
+                    List.of(
+                            new GuideSection("In breve", "Un comportamento nel conflitto, non una diagnosi", List.of(
+                                    "Nella ricerca sulle coppie il ritiro dall'interazione è studiato spesso insieme alle richieste di confronto o cambiamento dell'altro partner. Stonewalling descrive la chiusura del dialogo in quel contesto, ma non è una diagnosi né una prova di indifferenza o manipolazione.",
+                                    "Una risposta breve, il silenzio o l'allontanamento non bastano da soli a stabilire che cosa stia accadendo. Contano la situazione, la possibilità di interrompersi in sicurezza e ciò che succede quando il conflitto si è calmato."), List.of()),
+                            new GuideSection("Dinamica", "Quando il confronto si blocca", List.of(
+                                    "Può accadere che una persona chieda di discutere un problema mentre l'altra smette di rispondere, cambia argomento o si allontana. Se il confronto resta irrisolto e il ritiro si ripete, entrambe possono vivere più fatica nel comunicare.",
+                                    "Uno studio italiano e una meta-analisi hanno trovato associazioni tra la dinamica richiesta–ritiro e la soddisfazione di coppia. Non dimostrano che una persona causi da sola il problema, né permettono di prevedere l'esito di una relazione."), List.of()),
+                            new GuideSection("Distinzioni", "Pausa, sovraccarico e silenzio punitivo", List.of(
+                                    "Una pausa comunicata per calmarsi, con la possibilità di concordare quando riprendere, è diversa dal lasciare sistematicamente senza risposta una questione importante. Anche il sovraccarico emotivo può accompagnare un conflitto: non se ne può dedurre la causa da ciò che si vede dall'esterno.",
+                                    "Il silent treatment indica spesso un silenzio usato come esclusione o pressione; stonewalling, nel senso qui usato, riguarda il ritiro durante il conflitto. I due termini possono sovrapporsi nel linguaggio comune, ma nessuno dei due consente di accertare intenzioni punitive in un caso specifico."), List.of()),
+                            new GuideSection("Contesto", "Osservare senza attribuire colpe", List.of(
+                                    "Può essere utile chiedersi se il dialogo riprende, se entrambi possono fare una pausa, se il tema viene poi affrontato e se è possibile esprimere un disaccordo senza paura. Un solo episodio non definisce l'intera relazione.",
+                                    "L'età, la durata della relazione, le condizioni di stress e la sicurezza possono cambiare il modo in cui una coppia affronta il conflitto. Gli studi citati riguardano soprattutto coppie e non forniscono regole universali per ogni relazione o persona."), List.of()),
+                            new GuideSection("Supporto", "Quando la sicurezza viene prima del confronto", List.of(
+                                    "Se i conflitti restano bloccati e questo causa sofferenza, un confronto con un professionista può aiutare a comprendere il contesto e le possibilità concrete, senza trasformare un'etichetta in una diagnosi. Non è necessario forzare una conversazione quando non ci si sente al sicuro.",
+                                    "Controllo, intimidazione, isolamento o minacce richiedono attenzione indipendentemente dalla presenza di silenzio. In Italia, in caso di pericolo immediato chiama il 112; per violenza di genere o stalking il servizio pubblico 1522 offre orientamento."), List.of()),
+                            new GuideSection("Ricerca e limiti", "Che cosa gli studi non possono dirti", List.of(
+                                    "Le ricerche italiane ed europee consultate studiano principalmente la dinamica richiesta–ritiro nelle coppie, non una misura autonoma dello stonewalling. Gli studi internazionali distinguono forme di disimpegno e riportano associazioni, ma non leggono le intenzioni della persona di cui stai pensando.",
+                                    "Questa guida è informativa: non offre domande, punteggi o un test e non accerta se una relazione sia sana o dannosa. Le esperienze individuali richiedono ascolto e contesto, soprattutto quando sono presenti paura o limitazioni della libertà."), List.of())
+                    ),
+                    null,
+                    "Questa guida distingue il ritiro nel conflitto dalla pausa comunicata e dal silenzio usato come pressione, mantenendo separati comportamento osservabile, contesto e intenzioni non verificabili.",
+                    List.of(
+                            new GuideReference("Demand-withdraw, couple satisfaction and relationship duration — Donato e colleghi", "https://doi.org/10.1016/j.sbspro.2014.04.410", "Studio italiano longitudinale su 176 coppie consultato per la dinamica richiesta–ritiro e le sue associazioni; non identifica cause o intenzioni individuali."),
+                            new GuideReference("Spouses' demand and withdrawal during marital conflict — Siffert e Schwarz", "https://doi.org/10.1177/0265407510382061", "Studio europeo su 126 coppie consultato per distinguere comportamenti dei partner e benessere riferito; non stabilisce colpe o causalità."),
+                            new GuideReference("Demand/withdraw meta-analysis — Schrodt, Witt e Shimkowski", "https://doi.org/10.1080/03637751.2013.813632", "Meta-analisi di 74 studi consultata per l'associazione con esiti relazionali e comunicativi; non consente previsioni sul singolo rapporto."),
+                            new GuideReference("Two types of disengagement during couples' conflicts — Nichols e colleghi", "https://doi.org/10.1037/pas0000045", "Tre studi statunitensi consultati per distinguere ritiro e immobilità passiva; lo strumento studiato non viene trasferito all'app."),
+                            new GuideReference("Emotional flooding in couple conflicts — Malik, Heyman e Slep", "https://doi.org/10.1037/fam0000584", "Studio statunitense su 233 coppie consultato per il ruolo possibile del sovraccarico emotivo; non dimostra la causa del ritiro individuale."),
+                            new GuideReference("Violenza psicologica: definizioni e indicatori — ISTAT", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "Definizioni italiane consultate per distinguere controllo, intimidazione e isolamento dal solo ritiro nel conflitto; dati riferiti alle donne."),
+                            new GuideReference("Psychological violence — EIGE", "https://eige.europa.eu/publications-resources/thesaurus/terms/1241", "Definizione istituzionale europea consultata per mantenere la sicurezza distinta dall'etichetta stonewalling; non classifica un singolo episodio."),
+                            new GuideReference("Il 1522 — Dipartimento per le Pari Opportunità", "https://www.1522.eu/cose-1522/", "Servizio pubblico italiano citato per l'orientamento in situazioni di violenza di genere o stalking; non sostituisce il 112 nelle emergenze."))
             )
     );
 
