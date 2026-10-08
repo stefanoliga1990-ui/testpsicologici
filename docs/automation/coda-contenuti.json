@@ -283,7 +283,7 @@
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Ambiguità e manipolazione relazionale",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "BLOCKED", "attempts": 1, "lastAttemptAt": "2026-10-08T13:04:47+02:00", "completedAt": null, "commitHash": null, "blockReason": "Future faking non ha una definizione scientifica sufficientemente consolidata per attribuire l'intenzione di non mantenere promesse; le evidenze sulle assicurazioni riguardo al futuro non accertano l'intento individuale. Il tema si sovrappone in modo sostanziale alle guide gia presenti su love bombing e breadcrumbing. Non e responsabile pubblicare una scheda autonoma con questa premessa." }
     },
     {
       "order": 23,
