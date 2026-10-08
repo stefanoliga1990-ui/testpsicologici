@@ -294,7 +294,7 @@
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Relazioni e attaccamento",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-08T13:11:49+02:00", "completedAt": "2026-10-08T13:11:49+02:00", "commitHash": "f9a4f568747c45e60cf07349dfc5cc6997ee4960", "blockReason": null }
     },
     {
       "order": 24,
