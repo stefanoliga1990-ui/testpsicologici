@@ -1851,7 +1851,65 @@
         }
       ]
     },
-    { "topicId": "invalidazione-emotiva", "testId": "invalidazione-emotiva-subita", "guideSlug": "invalidazione-emotiva", "title": "Invalidazione emotiva", "fallbackTopics": ["comunicazione nelle relazioni", "violenza psicologica"], "fallbackRationale": "Il tema può essere coperto da testi più generali su comunicazione, confini e dinamiche relazionali dannose.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "invalidazione-emotiva",
+      "testId": "invalidazione-emotiva-subita",
+      "guideSlug": "invalidazione-emotiva",
+      "title": "Invalidazione emotiva",
+      "fallbackTopics": ["comunicazione nelle relazioni", "violenza psicologica"],
+      "fallbackRationale": "Non è stato individuato un testo italiano sufficientemente solido dedicato esattamente all'invalidazione emotiva descritta dal questionario. Il primo libro affronta ascolto ed espressione emotiva nelle relazioni; il secondo considera forme più gravi di violenza psicologica nella coppia. I due ambiti non sono equivalenti: disaccordo e singole risposte svalutanti non dimostrano abuso.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Relazioni in armonia",
+          "placeholderCover": true,
+          "subtitle": "Sviluppare l'intelligenza emotiva e le abilità comunicative per stare meglio con gli altri e con se stessi. Teorie, tecniche, esercizi, testimonianze",
+          "authors": ["Enrico Cheli"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788846456182",
+          "publicationYear": 2005,
+          "format": "brossura",
+          "editorialRole": "Lettura divulgativa su ascolto, espressione emotiva e comunicazione assertiva nelle relazioni",
+          "audience": "Adulti interessati alla comunicazione nella coppia, in famiglia, tra amici e al lavoro",
+          "description": "Una guida divulgativa su ascolto, empatia, espressione dei bisogni e gestione costruttiva dei conflitti nelle relazioni.",
+          "limit": "Tratta la comunicazione in generale, non l'invalidazione emotiva come costrutto specifico; gli esercizi non interpretano il risultato del questionario.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/Libro?id=12137"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8846456181",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Relazioni-armonia-Sviluppare-lintelligenza-comunicative/dp/8846456181?dib=eyJ2IjoiMSJ9.Lbb_6Rqi4d04okoZiU_ueg.9g_XLRST4fIuSan6j8x-5PvQc0g-KkTIGUjwH0X4hDg&dib_tag=se&keywords=9788846456182&qid=1791464581&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=ad4ba4bf9efbf3574b944fbabd77240d&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Gabbie di parole",
+          "placeholderCover": true,
+          "subtitle": "Il linguaggio della violenza psicologica: valutazione, prevenzione e intervento",
+          "authors": ["Carmela Mento (a cura di)", "Giovanna Spatari (a cura di)", "Maria Rosaria Anna Muscatello (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835117971",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "editorialRole": "Approfondimento specialistico sulle dinamiche di violenza psicologica nella coppia",
+          "audience": "Studenti, professionisti e lettori adulti interessati alle dinamiche di abuso psicologico",
+          "description": "Un volume specialistico sul linguaggio della violenza psicologica, sulle dinamiche di potere e controllo nella coppia e sulla prevenzione.",
+          "limit": "Esamina situazioni più gravi della comune invalidazione emotiva: una risposta svalutante o un disaccordo non provano abuso, né questo libro consente di valutare una relazione individuale.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/Libro/Gabbie-di-parole-Il-linguaggio-della-violenza-psicologica:-valutazione,-prevenzione-e-intervento?Id=27064"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8835117976",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Gabbie-parole-linguaggio-violenza-psicologica/dp/8835117976?dib=eyJ2IjoiMSJ9.v66qeXy715yEAn0IwoDIeg.M9NFc-n01b1iRqtLE7GxHRetNbPFwNK85DBVFXg1Nns&dib_tag=se&keywords=9788835117971&qid=1791464626&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=7b2831c8327e2fc26a27fe008e9edca7&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "disturbo-evitante-personalita", "testId": "tratti-evitanti-personalita-adulti", "guideSlug": "disturbo-evitante-personalita", "title": "Disturbo evitante di personalità", "fallbackTopics": ["ansia sociale", "evitamento"], "fallbackRationale": "Se non emergono testi divulgativi responsabili sul tema specifico, usare letture su ansia sociale ed evitamento senza equiparare i costrutti.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "disponibilita-emotiva", "testId": "disponibilita-emotiva", "guideSlug": "disponibilita-emotiva", "title": "Disponibilità emotiva", "fallbackTopics": ["intimità nelle relazioni", "comunicazione emotiva"], "fallbackRationale": "Il costrutto può richiedere testi più ampi su intimità, ascolto e comunicazione emotiva.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "alessitimia", "testId": "alessitimia", "guideSlug": "alessitimia", "title": "Alessitimia", "fallbackTopics": ["consapevolezza emotiva", "regolazione emotiva"], "fallbackRationale": "In assenza di libri dedicati accessibili, usare testi su riconoscimento, linguaggio e regolazione delle emozioni senza assimilare i costrutti.", "researchStatus": "PENDING_RESEARCH", "books": [] },

@@ -568,6 +568,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("invalidazione-emotiva-subita", List.of(
+                    new RecommendedReading(
+                            "Relazioni in armonia",
+                            "Enrico Cheli",
+                            "Una guida divulgativa su ascolto, empatia, espressione dei bisogni e gestione costruttiva dei conflitti nelle relazioni.",
+                            "Tratta la comunicazione in generale, non l'invalidazione emotiva come costrutto specifico; gli esercizi non interpretano il risultato del questionario.",
+                            "https://www.amazon.it/-/en/Relazioni-armonia-Sviluppare-lintelligenza-comunicative/dp/8846456181?dib=eyJ2IjoiMSJ9.Lbb_6Rqi4d04okoZiU_ueg.9g_XLRST4fIuSan6j8x-5PvQc0g-KkTIGUjwH0X4hDg&dib_tag=se&keywords=9788846456182&qid=1791464581&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=ad4ba4bf9efbf3574b944fbabd77240d&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Gabbie di parole",
+                            "Carmela Mento, Giovanna Spatari e Maria Rosaria Anna Muscatello (a cura di)",
+                            "Un volume specialistico sul linguaggio della violenza psicologica, sulle dinamiche di potere e controllo nella coppia e sulla prevenzione.",
+                            "Esamina situazioni più gravi della comune invalidazione emotiva: una risposta svalutante o un disaccordo non provano abuso, né questo libro consente di valutare una relazione individuale.",
+                            "https://www.amazon.it/-/en/Gabbie-parole-linguaggio-violenza-psicologica/dp/8835117976?dib=eyJ2IjoiMSJ9.v66qeXy715yEAn0IwoDIeg.M9NFc-n01b1iRqtLE7GxHRetNbPFwNK85DBVFXg1Nns&dib_tag=se&keywords=9788835117971&qid=1791464626&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=7b2831c8327e2fc26a27fe008e9edca7&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",

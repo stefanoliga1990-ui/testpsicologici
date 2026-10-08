@@ -2612,7 +2612,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Che cosa non basta per parlare di invalidazione")))
                 .andExpect(content().string(containsString("Frequenze editoriali, non una percentuale di invalidazione")))
                 .andExpect(content().string(containsString("href=\"/test/invalidazione-emotiva-subita\"")))
-                .andExpect(content().string(containsString("Approfondimenti collegati")));
+                .andExpect(content().string(containsString("Approfondimenti collegati")))
+                .andExpect(content().string(containsString("Relazioni in armonia")))
+                .andExpect(content().string(containsString("Gabbie di parole")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -2628,7 +2635,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
                 .andExpect(content().string(containsString("href=\"/test/invalidazione-emotiva-subita/risultato/pdf\"")))
                 .andExpect(content().string(containsString("href=\"/test/relazione-dannosa-benessere\"")))
-                .andExpect(content().string(containsString("href=\"/approfondimenti/invalidazione-emotiva\"")));
+                .andExpect(content().string(containsString("href=\"/approfondimenti/invalidazione-emotiva\"")))
+                .andExpect(content().string(containsString("Relazioni in armonia")))
+                .andExpect(content().string(containsString("Gabbie di parole")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
 
         MvcResult mvcResult = mockMvc.perform(get("/test/invalidazione-emotiva-subita/risultato/pdf")
                         .session(completedAttempt("invalidazione-emotiva-subita", 5)))
