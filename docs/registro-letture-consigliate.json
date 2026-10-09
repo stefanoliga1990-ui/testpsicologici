@@ -1910,7 +1910,65 @@
         }
       ]
     },
-    { "topicId": "disturbo-evitante-personalita", "testId": "tratti-evitanti-personalita-adulti", "guideSlug": "disturbo-evitante-personalita", "title": "Disturbo evitante di personalità", "fallbackTopics": ["ansia sociale", "evitamento"], "fallbackRationale": "Se non emergono testi divulgativi responsabili sul tema specifico, usare letture su ansia sociale ed evitamento senza equiparare i costrutti.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "disturbo-evitante-personalita",
+      "testId": "tratti-evitanti-personalita-adulti",
+      "guideSlug": "disturbo-evitante-personalita",
+      "title": "Disturbo evitante di personalità",
+      "fallbackTopics": ["ansia sociale", "evitamento"],
+      "fallbackRationale": "Il manuale clinico scelto distingue disturbo evitante e ansia sociale e dedica capitoli a entrambi. Il secondo testo è una risorsa più accessibile su ansia sociale ed evitamento: affronta esperienze in parte sovrapposte senza equiparare i due disturbi o interpretare il questionario.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Ansia sociale",
+          "placeholderCover": true,
+          "subtitle": "Clinica e terapia in una prospettiva cognitivista integrata",
+          "authors": ["Pietro Grimaldi (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788891788399",
+          "publicationYear": 2019,
+          "format": "brossura",
+          "editorialRole": "Manuale clinico sulle distinzioni e sugli interventi per ansia sociale e disturbo evitante di personalità",
+          "audience": "Psicologi, psicoterapeuti, studenti e lettori adulti interessati a un approfondimento specialistico",
+          "description": "Un manuale clinico che tratta sia l'ansia sociale sia il disturbo evitante di personalità, con capitoli sulle differenze e sui percorsi terapeutici.",
+          "limit": "È destinato soprattutto a professionisti e non consente di interpretare il risultato del questionario o formulare una diagnosi personale.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/Libro?id=25856"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8891788392",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/sociale-Clinica-prospettiva-cognitivista-integrata/dp/8891788392?dib=eyJ2IjoiMSJ9.OQsxGXYfBpiHVOyVLQ2c7g.vU98dsmcMukDp5r75ptLkn5_T0qiCBOGaf9iZsu3lwY&dib_tag=se&keywords=9788891788399&qid=1791550954&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=1d025102f66d9dc1b09c967078a23e08&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",
+          "placeholderCover": true,
+          "subtitle": "Strategie per affrontare e gestire la timidezza",
+          "authors": ["Nicola Marsigli"],
+          "publisher": "Erickson",
+          "isbn13": "9788859016335",
+          "publicationYear": 2018,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa di auto-aiuto sul timore del giudizio e sull'evitamento sociale",
+          "audience": "Adulti interessati a esplorare ansia anticipatoria, timore del giudizio ed evitamento nelle situazioni sociali",
+          "description": "Una guida di auto-aiuto su timore del giudizio, ansia anticipatoria ed evitamento nelle situazioni sociali, con esercizi basati sulla terapia cognitivo-comportamentale.",
+          "limit": "Riguarda l'ansia sociale, che non coincide con il disturbo evitante di personalità; gli esercizi non diagnosticano né sostituiscono un supporto professionale.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.erickson.it/it/stop-all-ansia-sociale"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859016339",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/allansia-sociale-Strategie-affrontare-timidezza/dp/8859016339?dib=eyJ2IjoiMSJ9.JKTYAqEHzOcxkdSH2jJXyQ.JLCrSqfn71eh-Ztbx8hreFDqgslXUp-tV5NsTrgS1J4&dib_tag=se&keywords=9788859016335&qid=1791550997&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=eeee0b6d6f9ea9fd51c357bde0eff829&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "disponibilita-emotiva", "testId": "disponibilita-emotiva", "guideSlug": "disponibilita-emotiva", "title": "Disponibilità emotiva", "fallbackTopics": ["intimità nelle relazioni", "comunicazione emotiva"], "fallbackRationale": "Il costrutto può richiedere testi più ampi su intimità, ascolto e comunicazione emotiva.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "alessitimia", "testId": "alessitimia", "guideSlug": "alessitimia", "title": "Alessitimia", "fallbackTopics": ["consapevolezza emotiva", "regolazione emotiva"], "fallbackRationale": "In assenza di libri dedicati accessibili, usare testi su riconoscimento, linguaggio e regolazione delle emozioni senza assimilare i costrutti.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "situationship", "testId": "situationship", "guideSlug": "situationship", "title": "Situationship", "fallbackTopics": ["incertezza relazionale", "comunicazione e confini"], "fallbackRationale": "Se non emergono testi dedicati e affidabili, selezionare letture su incertezza, definizione della relazione, comunicazione e confini.", "researchStatus": "PENDING_RESEARCH", "books": [] },

@@ -586,6 +586,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("tratti-evitanti-personalita-adulti", List.of(
+                    new RecommendedReading(
+                            "Ansia sociale",
+                            "Pietro Grimaldi (a cura di)",
+                            "Un manuale clinico che tratta sia l'ansia sociale sia il disturbo evitante di personalità, con capitoli sulle differenze e sui percorsi terapeutici.",
+                            "È destinato soprattutto a professionisti e non consente di interpretare il risultato del questionario o formulare una diagnosi personale.",
+                            "https://www.amazon.it/-/en/sociale-Clinica-prospettiva-cognitivista-integrata/dp/8891788392?dib=eyJ2IjoiMSJ9.OQsxGXYfBpiHVOyVLQ2c7g.vU98dsmcMukDp5r75ptLkn5_T0qiCBOGaf9iZsu3lwY&dib_tag=se&keywords=9788891788399&qid=1791550954&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=1d025102f66d9dc1b09c967078a23e08&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",
+                            "Nicola Marsigli",
+                            "Una guida di auto-aiuto su timore del giudizio, ansia anticipatoria ed evitamento nelle situazioni sociali, con esercizi basati sulla terapia cognitivo-comportamentale.",
+                            "Riguarda l'ansia sociale, che non coincide con il disturbo evitante di personalità; gli esercizi non diagnosticano né sostituiscono un supporto professionale.",
+                            "https://www.amazon.it/-/en/allansia-sociale-Strategie-affrontare-timidezza/dp/8859016339?dib=eyJ2IjoiMSJ9.JKTYAqEHzOcxkdSH2jJXyQ.JLCrSqfn71eh-Ztbx8hreFDqgslXUp-tV5NsTrgS1J4&dib_tag=se&keywords=9788859016335&qid=1791550997&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=eeee0b6d6f9ea9fd51c357bde0eff829&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",

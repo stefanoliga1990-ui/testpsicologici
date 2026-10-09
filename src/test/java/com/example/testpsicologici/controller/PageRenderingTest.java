@@ -2776,7 +2776,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Ansia sociale, introversione e attaccamento evitante")))
                 .andExpect(content().string(containsString("Frequenze editoriali, non una probabilità diagnostica")))
                 .andExpect(content().string(containsString("href=\"/test/tratti-evitanti-personalita-adulti\"")))
-                .andExpect(content().string(containsString("Approfondimenti collegati")));
+                .andExpect(content().string(containsString("Approfondimenti collegati")))
+                .andExpect(content().string(containsString("Ansia sociale")))
+                .andExpect(content().string(containsString("Stop all&#39;ansia sociale")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -2793,7 +2800,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
                 .andExpect(content().string(containsString("href=\"/test/tratti-evitanti-personalita-adulti/risultato/pdf\"")))
                 .andExpect(content().string(containsString("href=\"/test/tratti-borderline-adulti\"")))
-                .andExpect(content().string(containsString("href=\"/approfondimenti/disturbo-evitante-personalita\"")));
+                .andExpect(content().string(containsString("href=\"/approfondimenti/disturbo-evitante-personalita\"")))
+                .andExpect(content().string(containsString("Ansia sociale")))
+                .andExpect(content().string(containsString("Stop all&#39;ansia sociale")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
 
         MvcResult mvcResult = mockMvc.perform(get("/test/tratti-evitanti-personalita-adulti/risultato/pdf")
                         .session(completedAttempt("tratti-evitanti-personalita-adulti", 5)))
