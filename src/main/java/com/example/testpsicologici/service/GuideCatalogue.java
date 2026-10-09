@@ -5125,6 +5125,42 @@ public class GuideCatalogue {
                             new GuideReference("Violenza psicologica: definizioni e indicatori — ISTAT", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "Definizioni italiane consultate per distinguere controllo, intimidazione e isolamento dal solo ritiro nel conflitto; dati riferiti alle donne."),
                             new GuideReference("Psychological violence — EIGE", "https://eige.europa.eu/publications-resources/thesaurus/terms/1241", "Definizione istituzionale europea consultata per mantenere la sicurezza distinta dall'etichetta stonewalling; non classifica un singolo episodio."),
                             new GuideReference("Il 1522 — Dipartimento per le Pari Opportunità", "https://www.1522.eu/cose-1522/", "Servizio pubblico italiano citato per l'orientamento in situazioni di violenza di genere o stalking; non sostituisce il 112 nelle emergenze."))
+            ),
+            new InformationGuide(
+                    "silent-treatment", "silent-treatment",
+                    "Silent treatment nelle relazioni",
+                    "Silent treatment: quando il silenzio diventa esclusione",
+                    "Silent treatment: significato, effetti e limiti | Spazio Test",
+                    "Che cosa indica il silent treatment, come distinguerlo da una pausa e quando considerare contesto e sicurezza.",
+                    "Essere ignorati da una persona significativa può lasciare domande senza risposta. Silent treatment è un nome per questa esperienza di esclusione comunicativa, non una diagnosi né una prova delle intenzioni dell'altra persona.",
+                    List.of(
+                            new GuideSection("In breve", "Che cosa si intende per silent treatment", List.of(
+                                    "Si parla di silent treatment quando in una relazione stretta una persona smette di rispondere o di rivolgersi all'altra e quest'ultima vive il silenzio come esclusione. Il termine descrive una dinamica possibile, non dice da solo perché accade o chi ne sia responsabile.",
+                                    "La ricerca disponibile riguarda soprattutto relazioni adulte e riporta esperienze diverse. Per capire un episodio contano durata, ripetizione, circostanze e ciò che accade dopo, non soltanto l'assenza di parole."), List.of()),
+                            new GuideSection("Esperienza", "Incertezza e reazioni possibili", List.of(
+                                    "Quando mancano spiegazioni può essere difficile capire se e quando il dialogo riprenderà. Tristezza, rabbia, colpa o il desiderio di cercare una risposta sono reazioni possibili, non una misura della causa del silenzio.",
+                                    "Due studi italiani hanno esaminato emozioni associate a episodi ricordati o a scenari di silent treatment. Non permettono di dedurre l'intenzione di una persona concreta né di prevedere l'effetto a lungo termine su una relazione."), List.of()),
+                            new GuideSection("Distinzioni", "Non ogni silenzio è esclusione", List.of(
+                                    "Una pausa comunicata per calmarsi, il silenzio condiviso senza disagio e la scelta di interrompere contatti per proteggersi non equivalgono automaticamente al silent treatment. Anche differenze culturali, stanchezza o difficoltà a parlare possono contare: il motivo non è leggibile dall'esterno.",
+                                    "Lo stonewalling, trattato in una guida separata, riguarda soprattutto il ritiro dal confronto durante un conflitto. Le situazioni possono sovrapporsi, ma qui il fuoco è l'esperienza di essere lasciati senza comunicazione o chiarimento, anche fuori da una discussione."), List.of()),
+                            new GuideSection("Contesto", "Osservare il modello, non attribuire intenzioni", List.of(
+                                    "Può essere utile notare se il silenzio ricorre dopo alcune richieste o divergenze, quanto dura, se è possibile concordare una ripresa e come incide sulla libertà di esprimersi. Sono osservazioni personali, non criteri per classificare una persona o una relazione.",
+                                    "Se il contesto è sicuro, si può chiedere con chiarezza se serve una pausa e quando sia possibile tornare a parlare. Non è un obbligo inseguire una risposta: proteggere i propri confini e cercare sostegno sono alternative legittime."), List.of()),
+                            new GuideSection("Sicurezza", "Quando il silenzio si accompagna ad altri segnali", List.of(
+                                    "Se oltre al silenzio ci sono minacce, isolamento, controllo o paura delle conseguenze del dissenso, la priorità è la sicurezza. Le definizioni ISTAT considerano queste condotte nel loro insieme; una mancata risposta, da sola, non prova violenza psicologica.",
+                                    "In Italia il 1522 offre orientamento per violenza di genere e stalking; per un pericolo immediato chiama il 112. Non tentare un confronto se potrebbe esporti a un rischio maggiore."), List.of()),
+                            new GuideSection("Limiti", "Una guida, non una valutazione della relazione", List.of(
+                                    "La revisione disponibile riunisce pochi studi eterogenei, spesso basati su racconti dei partecipanti. Le evidenze italiane specifiche non bastano per applicare categorie o previsioni a una coppia adulta individuale.",
+                                    "Questa scheda non contiene un test, domande o punteggi e non stabilisce se qualcuno agisca per punire. Se l'esperienza si ripete o pesa sul benessere, parlarne con una persona fidata o un professionista può aiutare a considerare il contesto senza affidarsi a un'etichetta."), List.of())
+                    ),
+                    null,
+                    "Questa guida distingue il silenzio vissuto come esclusione da pause, silenzi condivisi e confini di sicurezza, mantenendo separati impatto riferito e intenzioni non verificabili.",
+                    List.of(
+                            new GuideReference("Silent treatment in close adult relationships — Dubey e colleghi", "https://doi.org/10.3389/fpsyg.2026.1659694", "Revisione sistematica di 15 studi consultata per la descrizione e i limiti delle associazioni relazionali; non chiarisce intenzioni individuali."),
+                            new GuideReference("Emotional reactions following silent treatment — Scarci e colleghi", "https://doi.org/10.1080/00224545.2026.2679679", "Due studi italiani consultati per le emozioni riportate o evocate dall'esclusione; ricordi e scenari non sono generalizzabili a ogni coppia adulta."),
+                            new GuideReference("Intimate sounds of silence — Weinstein e colleghi", "https://doi.org/10.1007/s11031-024-10078-x", "Quattro studi consultati per distinguere funzioni diverse del silenzio tra partner; non identificano il motivo di un episodio di esclusione."),
+                            new GuideReference("Violenza psicologica: definizioni e indicatori — ISTAT", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "Definizioni italiane consultate per distinguere controllo, isolamento e minacce dalla sola mancata risposta; rilevazioni riferite alle donne."),
+                            new GuideReference("Il 1522 — Dipartimento per le Pari Opportunità", "https://www.1522.eu/cose-1522/", "Servizio pubblico italiano citato per l'orientamento in situazioni di violenza di genere o stalking; non sostituisce il 112 nelle emergenze."))
             )
     );
 
