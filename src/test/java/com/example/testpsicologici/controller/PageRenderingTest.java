@@ -2860,7 +2860,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("Attaccamento evitante, alessitimia e regolazione emotiva")))
                 .andExpect(content().string(containsString("Frequenze editoriali, non percentuali di disponibilità")))
                 .andExpect(content().string(containsString("href=\"/test/disponibilita-emotiva\"")))
-                .andExpect(content().string(containsString("Approfondimenti collegati")));
+                .andExpect(content().string(containsString("Approfondimenti collegati")))
+                .andExpect(content().string(containsString("Stringimi forte")))
+                .andExpect(content().string(containsString("Relazioni in armonia")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -2877,7 +2884,14 @@ class PageRenderingTest {
                 .andExpect(content().string(containsString("aria-valuenow=\"100\"")))
                 .andExpect(content().string(containsString("href=\"/test/disponibilita-emotiva/risultato/pdf\"")))
                 .andExpect(content().string(containsString("href=\"/test/parentificazione\"")))
-                .andExpect(content().string(containsString("href=\"/approfondimenti/disponibilita-emotiva\"")));
+                .andExpect(content().string(containsString("href=\"/approfondimenti/disponibilita-emotiva\"")))
+                .andExpect(content().string(containsString("Stringimi forte")))
+                .andExpect(content().string(containsString("Relazioni in armonia")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
 
         MvcResult mvcResult = mockMvc.perform(get("/test/disponibilita-emotiva/risultato/pdf")
                         .session(completedAttempt("disponibilita-emotiva", 5)))

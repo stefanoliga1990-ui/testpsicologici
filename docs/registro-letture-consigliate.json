@@ -1969,7 +1969,65 @@
         }
       ]
     },
-    { "topicId": "disponibilita-emotiva", "testId": "disponibilita-emotiva", "guideSlug": "disponibilita-emotiva", "title": "Disponibilità emotiva", "fallbackTopics": ["intimità nelle relazioni", "comunicazione emotiva"], "fallbackRationale": "Il costrutto può richiedere testi più ampi su intimità, ascolto e comunicazione emotiva.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "disponibilita-emotiva",
+      "testId": "disponibilita-emotiva",
+      "guideSlug": "disponibilita-emotiva",
+      "title": "Disponibilità emotiva",
+      "fallbackTopics": ["intimità nella coppia", "comunicazione emotiva nelle relazioni"],
+      "fallbackRationale": "La disponibilità emotiva del questionario è un insieme editoriale di processi, non un costrutto clinico unitario con manuali dedicati. Il primo libro considera il legame e le conversazioni emotive soprattutto nella coppia; il secondo affronta ascolto ed espressione in relazioni anche non sentimentali. Nessuno dei due misura una caratteristica stabile della persona.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Stringimi forte",
+          "placeholderCover": true,
+          "subtitle": "Sette passi per una vita piena d'amore",
+          "authors": ["Sue Johnson"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788832854497",
+          "publicationYear": 2022,
+          "format": "brossura",
+          "editorialRole": "Lettura divulgativa sulle conversazioni e sulla connessione emotiva nella coppia",
+          "audience": "Adulti interessati alla comunicazione emotiva nelle relazioni sentimentali",
+          "description": "Una lettura sulle conversazioni e sugli scambi emotivi nella coppia, con storie ed esercizi ispirati alla terapia focalizzata sulle emozioni.",
+          "limit": "Riguarda principalmente la coppia e propone un modello specifico: non misura la disponibilità emotiva individuale né interpreta il risultato del questionario.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/sue-johnson/stringimi-forte-9788832854497-3760.html"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "883285449X",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Stringimi-forte-Sette-passi-damore/dp/883285449X?dib=eyJ2IjoiMSJ9.DNEfdrvtejL908doTIZGRQ.cgCkGZWWMKJiqorz_TCMrn34v9A8-WUCOVks_4iGf4o&dib_tag=se&keywords=9788832854497&qid=1791637384&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=c8a4a4df58a5894ad6ff11e4be03926a&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Relazioni in armonia",
+          "placeholderCover": true,
+          "subtitle": "Sviluppare l'intelligenza emotiva e le abilità comunicative per stare meglio con gli altri e con se stessi. Teorie, tecniche, esercizi, testimonianze",
+          "authors": ["Enrico Cheli"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788846456182",
+          "publicationYear": 2005,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa su ascolto, empatia ed espressione dei bisogni nelle relazioni",
+          "audience": "Adulti interessati alla comunicazione nella coppia, in famiglia, tra amici e al lavoro",
+          "description": "Una guida divulgativa sull'ascolto, l'empatia e l'espressione dei bisogni nelle relazioni personali e in altri contesti.",
+          "limit": "Tratta la comunicazione in generale; non definisce un livello di disponibilità emotiva, non interpreta il test e non sostituisce un confronto professionale.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/Libro?id=12137"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8846456181",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Relazioni-armonia-Sviluppare-lintelligenza-comunicative/dp/8846456181?dib=eyJ2IjoiMSJ9.Lbb_6Rqi4d04okoZiU_ueg.9g_XLRST4fIuSan6j8x-5PvQc0g-KkTIGUjwH0X4hDg&dib_tag=se&keywords=9788846456182&qid=1791637432&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=01df2beca0ea24d1f54e01b3d73e6565&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "alessitimia", "testId": "alessitimia", "guideSlug": "alessitimia", "title": "Alessitimia", "fallbackTopics": ["consapevolezza emotiva", "regolazione emotiva"], "fallbackRationale": "In assenza di libri dedicati accessibili, usare testi su riconoscimento, linguaggio e regolazione delle emozioni senza assimilare i costrutti.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "situationship", "testId": "situationship", "guideSlug": "situationship", "title": "Situationship", "fallbackTopics": ["incertezza relazionale", "comunicazione e confini"], "fallbackRationale": "Se non emergono testi dedicati e affidabili, selezionare letture su incertezza, definizione della relazione, comunicazione e confini.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "codipendenza-relazionale", "testId": "codipendenza-relazionale", "guideSlug": "codipendenza-relazionale", "title": "Codipendenza relazionale", "fallbackTopics": ["autonomia nella relazione", "confini relazionali"], "fallbackRationale": "Il concetto è discusso e si sovrappone a costrutti vicini; se non emergono testi dedicati e responsabili, considerare letture su autonomia, confini e cura di sé nelle relazioni senza trasformarle in diagnosi.", "researchStatus": "PENDING_RESEARCH", "books": [] },

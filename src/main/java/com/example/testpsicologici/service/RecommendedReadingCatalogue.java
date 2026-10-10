@@ -604,6 +604,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("disponibilita-emotiva", List.of(
+                    new RecommendedReading(
+                            "Stringimi forte",
+                            "Sue Johnson",
+                            "Una lettura sulle conversazioni e sugli scambi emotivi nella coppia, con storie ed esercizi ispirati alla terapia focalizzata sulle emozioni.",
+                            "Riguarda principalmente la coppia e propone un modello specifico: non misura la disponibilità emotiva individuale né interpreta il risultato del questionario.",
+                            "https://www.amazon.it/-/en/Stringimi-forte-Sette-passi-damore/dp/883285449X?dib=eyJ2IjoiMSJ9.DNEfdrvtejL908doTIZGRQ.cgCkGZWWMKJiqorz_TCMrn34v9A8-WUCOVks_4iGf4o&dib_tag=se&keywords=9788832854497&qid=1791637384&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=c8a4a4df58a5894ad6ff11e4be03926a&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Relazioni in armonia",
+                            "Enrico Cheli",
+                            "Una guida divulgativa sull'ascolto, l'empatia e l'espressione dei bisogni nelle relazioni personali e in altri contesti.",
+                            "Tratta la comunicazione in generale; non definisce un livello di disponibilità emotiva, non interpreta il test e non sostituisce un confronto professionale.",
+                            "https://www.amazon.it/-/en/Relazioni-armonia-Sviluppare-lintelligenza-comunicative/dp/8846456181?dib=eyJ2IjoiMSJ9.Lbb_6Rqi4d04okoZiU_ueg.9g_XLRST4fIuSan6j8x-5PvQc0g-KkTIGUjwH0X4hDg&dib_tag=se&keywords=9788846456182&qid=1791637432&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=01df2beca0ea24d1f54e01b3d73e6565&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",
