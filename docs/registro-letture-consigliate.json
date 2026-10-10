@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-09",
+  "updatedAt": "2026-10-10",
   "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
   "selectionPolicy": {
     "booksPerTopic": {
@@ -2041,6 +2041,7 @@
     { "topicId": "bisogno-controllo", "testId": "bisogno-controllo", "guideSlug": "bisogno-controllo", "title": "Bisogno di controllo e prevedibilità", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "camaleonte-sociale", "testId": "camaleonte-sociale", "guideSlug": "camaleonte-sociale", "title": "Camaleonte sociale: adattarsi agli altri", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "stonewalling", "testId": "stonewalling", "guideSlug": "stonewalling", "title": "Stonewalling nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
-    { "topicId": "silent-treatment", "testId": "silent-treatment", "guideSlug": "silent-treatment", "title": "Silent treatment nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
+    { "topicId": "silent-treatment", "testId": "silent-treatment", "guideSlug": "silent-treatment", "title": "Silent treatment nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "trauma-bonding", "testId": "trauma-bonding", "guideSlug": "trauma-bonding", "title": "Trauma bonding nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
   ]
 }
