@@ -5161,6 +5161,44 @@ public class GuideCatalogue {
                             new GuideReference("Intimate sounds of silence — Weinstein e colleghi", "https://doi.org/10.1007/s11031-024-10078-x", "Quattro studi consultati per distinguere funzioni diverse del silenzio tra partner; non identificano il motivo di un episodio di esclusione."),
                             new GuideReference("Violenza psicologica: definizioni e indicatori — ISTAT", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "Definizioni italiane consultate per distinguere controllo, isolamento e minacce dalla sola mancata risposta; rilevazioni riferite alle donne."),
                             new GuideReference("Il 1522 — Dipartimento per le Pari Opportunità", "https://www.1522.eu/cose-1522/", "Servizio pubblico italiano citato per l'orientamento in situazioni di violenza di genere o stalking; non sostituisce il 112 nelle emergenze."))
+            ),
+            new InformationGuide(
+                    "trauma-bonding", "trauma-bonding",
+                    "Trauma bonding nelle relazioni",
+                    "Trauma bonding: comprendere il legame in una relazione abusiva",
+                    "Trauma bonding nelle relazioni: significato e limiti | Spazio Test",
+                    "Che cosa indica il trauma bonding nelle relazioni abusive, quali sono i limiti della ricerca e perché la sicurezza viene prima delle etichette.",
+                    "Provare affetto o desiderare vicinanza verso una persona che ha fatto del male può sembrare contraddittorio. Trauma bonding è un termine usato per studiare questo legame in contesti di abuso e controllo, non una diagnosi né una spiegazione automatica della storia di qualcuno.",
+                    List.of(
+                            new GuideSection("In breve", "Un legame possibile, non una diagnosi", List.of(
+                                    "Nella ricerca, trauma bonding descrive un attaccamento verso una persona che esercita violenza o controllo nella relazione. Alcuni studi hanno considerato l'asimmetria di potere e l'alternanza tra maltrattamento e momenti di vicinanza, ma non ogni persona in una relazione abusiva sviluppa lo stesso legame.",
+                                    "Il termine non significa che due persone si avvicinino perché condividono un trauma. Non permette neppure di dedurre abuso da un sentimento intenso o da una relazione difficile: contano le condotte concrete e il contesto."), List.of()),
+                            new GuideSection("Dinamica", "Perché l'attaccamento può coesistere con il danno", List.of(
+                                    "Uno studio fondativo su donne recentemente uscite da relazioni abusive ha trovato associazioni tra attaccamento successivo alla separazione, maltrattamento intermittente e differenze di potere. È una possibile lente di lettura, non la prova che un ciclo identico si verifichi in ogni relazione.",
+                                    "Affetto, ricordi positivi, speranza di cambiamento e paura possono coesistere. Il controllo, l'isolamento, le risorse economiche, i figli e la sicurezza possono restringere le alternative disponibili: restare o tornare non dimostra consenso alla violenza né una mancanza di volontà."), List.of()),
+                            new GuideSection("Distinzioni", "Non confondere il legame con un'etichetta per ogni alternanza", List.of(
+                                    "Attenzioni discontinue o conflitti non bastano per parlare di trauma bonding. In questa guida il contesto rilevante è quello di violenza o controllo, non la sola incertezza di una frequentazione. La guida su situazioni relazionali ambigue tratta un problema diverso.",
+                                    "Neppure uno stile di attaccamento o un'esperienza infantile spiegano da soli ciò che accade oggi. Uno studio italiano ha esaminato attaccamento e storia di avversità in donne che avevano subito violenza, senza misurare direttamente il trauma bonding e senza attribuire loro la responsabilità degli abusi."), List.of()),
+                            new GuideSection("Evidenze", "Che cosa gli studi non possono stabilire", List.of(
+                                    "Gli studi specifici sul trauma bonding hanno campioni selezionati e non forniscono un criterio per riconoscerlo online o prevedere chi lascerà una relazione. Le associazioni con esperienze infantili o sintomi post-traumatici non dimostrano una causa nel singolo caso.",
+                                    "La ricerca sul controllo coercitivo riporta associazioni con sofferenza psicologica, ma studia un fenomeno più ampio del trauma bonding. Non esiste qui un test, un punteggio o una soglia: un'etichetta non sostituisce l'ascolto della persona e la valutazione delle sue possibilità concrete."), List.of()),
+                            new GuideSection("Sicurezza", "Quando cercare sostegno", List.of(
+                                    "Minacce, isolamento, controllo degli spostamenti o delle risorse, paura e limitazioni della libertà meritano attenzione indipendentemente da quanto forte sia il legame. Se temi una reazione, non è necessario affrontare l'altra persona o interrompere la relazione secondo un piano suggerito online.",
+                                    "Un servizio competente può aiutarti a considerare sicurezza, bisogni pratici e sostegno senza imporre decisioni. In Italia il 1522 offre orientamento per violenza di genere e stalking; se c'è un pericolo immediato chiama il 112. Se il contatto potrebbe essere controllato, valuta un momento e un mezzo sicuri per chiedere aiuto."), List.of()),
+                            new GuideSection("Limiti", "Usare il termine senza colpevolizzare", List.of(
+                                    "Trauma bonding non è una caratteristica della persona né una diagnosi del partner. Non è necessario riconoscersi nella definizione per prendere sul serio una condotta violenta o chiedere aiuto.",
+                                    "Questa scheda è informativa e non decide se una relazione sia abusiva, se andarsene o quale percorso seguire. Un confronto con professionisti o servizi adatti al proprio contesto può tenere insieme vissuti, vincoli materiali, sicurezza e scelte della persona."), List.of())
+                    ),
+                    null,
+                    "Questa guida separa l'attaccamento possibile in un contesto di abuso dai comportamenti di controllo e dai vincoli concreti, evitando di attribuire alla persona che subisce violenza la responsabilità del legame o della permanenza.",
+                    List.of(
+                            new GuideReference("Violenza psicologica: definizioni e indicatori — ISTAT", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "Definizioni italiane consultate per descrivere isolamento, controllo e intimidazione; non misurano il trauma bonding né classificano una relazione individuale."),
+                            new GuideReference("Complex trauma and attachment in IPV — Speranza e colleghi", "https://doi.org/10.3389/fpsyg.2021.769584", "Studio italiano su 98 donne reclutate nei servizi e 81 controlli consultato per distinguere storia di attaccamento e responsabilità della violenza; non misura il trauma bonding."),
+                            new GuideReference("Emotional attachments in abusive relationships — Dutton e Painter", "https://pubmed.ncbi.nlm.nih.gov/8193053/", "Studio canadese su 75 donne consultato per le associazioni tra intermittenza, potere e attaccamento dopo la separazione; non prevede il singolo caso."),
+                            new GuideReference("Risk factors for traumatic bonding — Shaughnessy e colleghi", "https://doi.org/10.1016/j.chiabu.2023.106390", "Studio statunitense su 354 persone in relazioni abusive consultato per le associazioni con attaccamento e sintomi post-traumatici; il modello non prova causalità."),
+                            new GuideReference("Coercive control and mental health — Lohmann e colleghi", "https://doi.org/10.1177/15248380231162972", "Meta-analisi consultata per le associazioni tra controllo coercitivo e salute mentale; non studia direttamente il trauma bonding e non diagnostica individui."),
+                            new GuideReference("Health care for women subjected to IPV — WHO", "https://www.who.int/publications/i/item/WHO-RHR-14.26", "Manuale clinico consultato per il principio di sostegno centrato sulla persona e sulla sicurezza; non prescrive decisioni individuali dalla guida."),
+                            new GuideReference("Il 1522 — Dipartimento per le Pari Opportunità", "https://www.1522.eu/cose-1522/", "Servizio pubblico italiano citato per l'orientamento in situazioni di violenza di genere o stalking; non sostituisce il 112 nelle emergenze."))
             )
     );
 

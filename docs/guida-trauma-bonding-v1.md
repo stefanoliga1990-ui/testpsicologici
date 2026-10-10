@@ -1,0 +1,23 @@
+# Trauma bonding — specifica editoriale e matrice delle fonti (v1)
+
+## Perimetro
+
+Guida informativa autonoma per adulti sul termine *trauma bonding* nel contesto di violenza o controllo in una relazione intima. Descrive la possibilità di provare attaccamento verso una persona che ha fatto del male, anche quando la relazione comprende paura, limitazioni della libertà e fasi di apparente vicinanza. Non è una diagnosi, un'etichetta da applicare a una singola relazione, una spiegazione universale della permanenza o del ritorno, né un questionario. Non sono previsti item, scoring, profili, analisi, card del test o CTA verso un test.
+
+La guida distingue l'attaccamento in un contesto di abuso dal semplice condividere esperienze traumatiche, dalle difficoltà relazionali prive di coercizione e dalla sola alternanza di attenzioni. L'attenzione resta su condotte e possibilità concrete, non su un presunto difetto della persona che subisce violenza. Nessuna indicazione generica a lasciare o confrontarsi deve sostituire una valutazione della sicurezza e delle opzioni disponibili.
+
+## Matrice affermazione/scelta → fonte → evidenza → popolazione → limite
+
+| Affermazione o scelta | Fonte | Tipo di evidenza | Popolazione | Limite |
+|---|---|---|---|---|
+| Il contesto italiano della violenza psicologica comprende isolamento, controllo, svalutazione e intimidazione; non coincide con la sola ambivalenza affettiva | ISTAT, *Definizioni e indicatori* | Definizioni e indicatori istituzionali | Rilevazioni sulla violenza contro le donne in Italia | Non misura il trauma bonding né descrive tutte le popolazioni o il singolo rapporto |
+| Le esperienze pregresse e le rappresentazioni di attaccamento possono essere studiate in persone che hanno subito violenza, senza attribuire loro responsabilità | Speranza et al., 2022, doi:10.3389/fpsyg.2021.769584 | Studio italiano con interviste e confronto tra gruppi | 98 donne reclutate in servizi di sostegno e rifugi in Italia; 81 controlli | Campioni selezionati, differenze tra gruppi non provano causalità; non misura direttamente il trauma bonding |
+| Intermittenza del maltrattamento e asimmetria di potere sono state associate all'attaccamento dopo la separazione | Dutton e Painter, 1993, PMID:8193053 | Studio longitudinale fondativo a due rilevazioni | 75 donne recentemente uscite da relazioni abusive in Canada | Campione piccolo, storico e selezionato; associazioni di gruppo, non meccanismo inevitabile o previsione individuale |
+| L'attaccamento verso un partner violento è stato studiato insieme a esperienze infantili, insicurezza dell'attaccamento e sintomi post-traumatici | Shaughnessy et al., 2023, doi:10.1016/j.chiabu.2023.106390 | Studio osservazionale con modello di percorsi | 354 persone ad alto rischio in relazioni abusive negli Stati Uniti | Modello associativo su campione selezionato; non dimostra che le esperienze infantili causino la relazione attuale né trasferisce risultati agli utenti italiani |
+| Il controllo coercitivo è associato a sintomi post-traumatici e depressivi a livello di gruppo | Lohmann et al., 2024, doi:10.1177/15248380231162972 | Revisione sistematica e meta-analisi di studi osservazionali | Adulti dei campioni inclusi | Non misura il trauma bonding, non formula diagnosi individuali e non prova causalità |
+| Il primo sostegno a chi subisce violenza considera bisogni emotivi, fisici, sicurezza e supporto nel tempo | WHO, *Clinical handbook*, 2014 | Manuale clinico istituzionale | Principalmente donne adulte che subiscono violenza da partner o sessuale | Indicazioni per operatori, non piano individuale automatico; applicabilità ad altri gruppi da valutare |
+| Per violenza di genere o stalking in Italia è disponibile il 1522; in emergenza il 112 | Dipartimento per le Pari Opportunità, 1522 | Servizio pubblico istituzionale | Persone in Italia | Orientamento non sostitutivo dell'emergenza; la sicurezza del contatto va considerata |
+
+## Verifiche editoriali
+
+La ricerca italiana ed europea esplicita non ha trovato una validazione italiana di un modello unitario di trauma bonding applicabile a un questionario dell'app. Lo studio italiano citato riguarda violenza e attaccamento, non prova un meccanismo di trauma bonding. Le fonti statunitensi e canadesi hanno campioni specifici e non permettono di trasformare alternanza o attaccamento in criteri individuali. La guida non trasferisce frequenze, cut-off, prevalenze, predizioni o spiegazioni biologiche non accertate. In UI e sitemap deve apparire solo l'approfondimento autonomo, senza test, risultati, PDF o CTA verso un questionario.
