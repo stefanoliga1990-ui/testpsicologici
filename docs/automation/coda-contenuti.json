@@ -310,13 +310,13 @@
     {
       "order": 25,
       "slug": "trauma-bonding",
-      "workingTitle": "Trauma bonding: comprendere i legami nelle relazioni segnate da abuso",
+      "workingTitle": "Trauma bonding: comprendere il legame in una relazione abusiva",
       "sourceTopic": "Trauma bonding",
       "sourceDescription": "Legame intenso che può svilupparsi in relazioni caratterizzate dall'alternanza tra sofferenza e forte gratificazione.",
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Ambiguità e manipolazione relazionale",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-10T13:07:18+02:00", "completedAt": "2026-10-10T13:07:18+02:00", "commitHash": "9521174570cd88ed0340634f39c15ef3373650bc", "blockReason": null }
     },
     {
       "order": 26,
