@@ -5199,6 +5199,43 @@ public class GuideCatalogue {
                             new GuideReference("Coercive control and mental health — Lohmann e colleghi", "https://doi.org/10.1177/15248380231162972", "Meta-analisi consultata per le associazioni tra controllo coercitivo e salute mentale; non studia direttamente il trauma bonding e non diagnostica individui."),
                             new GuideReference("Health care for women subjected to IPV — WHO", "https://www.who.int/publications/i/item/WHO-RHR-14.26", "Manuale clinico consultato per il principio di sostegno centrato sulla persona e sulla sicurezza; non prescrive decisioni individuali dalla guida."),
                             new GuideReference("Il 1522 — Dipartimento per le Pari Opportunità", "https://www.1522.eu/cose-1522/", "Servizio pubblico italiano citato per l'orientamento in situazioni di violenza di genere o stalking; non sostituisce il 112 nelle emergenze."))
+            ),
+            new InformationGuide(
+                    "rinforzo-intermittente-relazioni", "rinforzo-intermittente-relazioni",
+                    "Rinforzo intermittente nelle relazioni",
+                    "Rinforzo intermittente nelle relazioni: significato e limiti",
+                    "Rinforzo intermittente nelle relazioni: significato e limiti | Spazio Test",
+                    "Che cosa significa rinforzo intermittente, perché non spiega da solo una relazione e come distinguere incertezza e segnali di controllo.",
+                    "Attenzioni e distanza possono alternarsi e lasciare incertezza. 'Rinforzo intermittente' è un termine della psicologia dell'apprendimento spesso usato per raccontare queste esperienze, ma non è una diagnosi né una prova del perché una persona resti coinvolta.",
+                    List.of(
+                            new GuideSection("In breve", "Dal laboratorio alle relazioni: un passaggio da non dare per scontato", List.of(
+                                    "Negli esperimenti di apprendimento, un comportamento può ricevere una conseguenza favorevole solo alcune volte. In certe condizioni questa storia di rinforzo parziale rende la risposta più persistente, ma la ricerca descrive anche eccezioni.",
+                                    "In una relazione non conosciamo un programma di ricompense definito dal ricercatore: persone, accordi e circostanze cambiano. Chiamare rinforzo intermittente un'alternanza di vicinanza e distanza può aiutare a formulare una domanda, non a dimostrare un meccanismo o un'intenzione."), List.of()),
+                            new GuideSection("Evidenze", "Che cosa mostrano gli studi sulle coppie", List.of(
+                                    "In un piccolo studio su coppie non sposate, la minore prevedibilità del partner non era associata a maggiore coesione come ipotizzato: il risultato semplice andava nella direzione opposta. Non basta dunque ripetere che l'imprevedibilità lega sempre di più.",
+                                    "La ricerca su rotture e riconciliazioni documenta l'instabilità di alcune relazioni, ma non misura il rinforzo di un comportamento. Gli studi disponibili non permettono di spiegare dall'esterno perché una persona sia coinvolta in una specifica relazione."), List.of()),
+                            new GuideSection("Distinzioni", "Incostanza, ambiguità e abuso non sono la stessa cosa", List.of(
+                                    "Disponibilità variabile può dipendere da bisogni, eventi e aspettative differenti. Contatti che riprendono senza chiarire la direzione della frequentazione sono il tema della guida sul breadcrumbing; un ciclo di separazioni e riconciliazioni è ancora un fenomeno diverso.",
+                                    "In relazioni abusive, un vecchio studio ha osservato associazioni tra maltrattamento intermittente, differenze di potere e attaccamento dopo la separazione. Non autorizza a chiamare abuso ogni oscillazione affettiva né a spiegare la permanenza di una persona con una sola causa: la guida sul trauma bonding riguarda quel contesto specifico."), List.of()),
+                            new GuideSection("Osservare", "Partire dai fatti e dai propri bisogni", List.of(
+                                    "Può essere utile distinguere ciò che è accaduto da ciò che si immagina: con quale frequenza cambiano i contatti, se gli accordi vengono rispettati, se i chiarimenti sono possibili e come ci si sente nel tempo. Nessuno di questi elementi, isolato, rivela uno scopo nascosto.",
+                                    "Se la situazione è sicura, esprimere con chiarezza il proprio bisogno di continuità o di spazio può aiutare a verificare se le aspettative siano compatibili. Non è necessario attendere una spiegazione scientifica per prendere sul serio un disagio o chiedere sostegno."), List.of()),
+                            new GuideSection("Sicurezza", "Quando l'attenzione deve spostarsi sulla protezione", List.of(
+                                    "Controllo degli spostamenti o delle risorse, isolamento, minacce e paura non sono semplici varianti di disponibilità incostante. Le definizioni italiane di violenza psicologica considerano queste condotte, non la sola alternanza fra messaggi e silenzi.",
+                                    "Se temi conseguenze per un confronto o per una scelta, cerca supporto con un mezzo e in un momento sicuri. In Italia il 1522 offre orientamento per violenza di genere e stalking; in un'emergenza chiama il 112. Una guida online non può valutare la sicurezza della tua situazione."), List.of()),
+                            new GuideSection("Limiti", "Una lente possibile, non una legge delle relazioni", List.of(
+                                    "La ricerca italiana ed europea esaminata non conferma un modello generale di 'rinforzo intermittente' applicabile alle coppie adulte. I risultati sperimentali, lo studio sulle coppie e quello sulle relazioni abusive riguardano situazioni e popolazioni diverse.",
+                                    "Questa scheda non include un test o un punteggio, non attribuisce una dipendenza e non stabilisce se qualcuno stia manipolando l'altra persona. Il contesto, la libertà di scelta, il benessere e la sicurezza contano più dell'etichetta."), List.of())
+                    ),
+                    null,
+                    "Questa guida separa il concetto sperimentale di rinforzo parziale dall'uso colloquiale nelle relazioni e mette in primo piano uno studio sulle coppie che non conferma la previsione più diffusa, evitando deduzioni causali o colpevolizzanti.",
+                    List.of(
+                            new GuideReference("The two paradigms of persistence — Pittenger", "https://pubmed.ncbi.nlm.nih.gov/12401034/", "Revisione consultata per l'effetto di rinforzo parziale e le sue eccezioni nei compiti di apprendimento; non studia direttamente le coppie."),
+                            new GuideReference("Exchange, perceived alternatives, and reinforcement schedule — Alessio", "https://doi.org/10.1080/00223980.1984.9712598", "Studio su 60 coppie non sposate consultato per il risultato contrario all'ipotesi che la minore prevedibilità aumenti la coesione; è storico e correlazionale."),
+                            new GuideReference("Relationship churning in emerging adulthood — Halpern-Meekin e colleghi", "https://doi.org/10.1177/0743558412464524", "Studio statunitense su giovani adulti consultato per distinguere rotture e riconciliazioni da un programma di rinforzo; non accerta motivi individuali."),
+                            new GuideReference("Emotional attachments in abusive relationships — Dutton e Painter", "https://pubmed.ncbi.nlm.nih.gov/8193053/", "Studio canadese su 75 donne consultato per l'associazione tra intermittenza del maltrattamento, potere e attaccamento; non è trasferibile a ogni relazione incerta."),
+                            new GuideReference("Violenza psicologica: definizioni e indicatori — ISTAT", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "Definizioni italiane consultate per distinguere controllo, isolamento e intimidazione dalla sola discontinuità delle attenzioni; non classificano coppie individuali."),
+                            new GuideReference("Il 1522 — Dipartimento per le Pari Opportunità", "https://www.1522.eu/cose-1522/", "Servizio pubblico italiano citato per l'orientamento in situazioni di violenza di genere o stalking; non sostituisce il 112 nelle emergenze."))
             )
     );
 

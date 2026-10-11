@@ -64,7 +64,8 @@ public class GuideEditorialHistoryCatalogue {
             entry("camaleonte-sociale", history("2026-10-07", "2026-10-07")),
             entry("stonewalling", history("2026-10-08", "2026-10-08")),
             entry("silent-treatment", history("2026-10-09", "2026-10-09")),
-            entry("trauma-bonding", history("2026-10-10", "2026-10-10"))
+            entry("trauma-bonding", history("2026-10-10", "2026-10-10")),
+            entry("rinforzo-intermittente-relazioni", history("2026-10-11", "2026-10-11"))
     );
 
     public GuideEditorialHistory forSlug(String slug) {

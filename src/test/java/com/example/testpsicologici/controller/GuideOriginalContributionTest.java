@@ -39,7 +39,8 @@ class GuideOriginalContributionTest {
     private static final List<String> AMBIGUOUS_DYNAMICS_SLUGS = List.of(
             "relazione-dannosa-benessere", "gaslighting", "love-bombing",
             "breadcrumbing", "orbiting", "hoovering", "invalidazione-emotiva",
-            "triangolazione-relazionale", "stonewalling", "silent-treatment", "trauma-bonding");
+            "triangolazione-relazionale", "stonewalling", "silent-treatment", "trauma-bonding",
+            "rinforzo-intermittente-relazioni");
 
     private static final List<String> SELF_EVALUATION_SLUGS = List.of(
             "autostima", "sindrome-impostore", "perfezionismo",
@@ -166,7 +167,7 @@ class GuideOriginalContributionTest {
                 .map(InformationGuide::slug)
                 .collect(Collectors.toSet());
 
-        assertThat(snapshotSlugs).hasSize(53).doesNotHaveDuplicates();
+        assertThat(snapshotSlugs).hasSize(54).doesNotHaveDuplicates();
         assertThat(catalogueSlugs).containsExactlyInAnyOrderElementsOf(snapshotSlugs);
 
         List<String> contributions = guides.findAll().stream()
