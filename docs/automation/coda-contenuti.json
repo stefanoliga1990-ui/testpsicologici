@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-10-07",
+  "updatedAt": "2026-10-11",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -321,13 +321,13 @@
     {
       "order": 26,
       "slug": "rinforzo-intermittente-relazioni",
-      "workingTitle": "Rinforzo intermittente: perché l'alternanza tra attenzione e distanza può coinvolgere",
+      "workingTitle": "Rinforzo intermittente nelle relazioni: significato e limiti",
       "sourceTopic": "Intermittent reinforcement",
       "sourceDescription": "Alternanza imprevedibile tra attenzione e rifiuto che può rendere una relazione particolarmente coinvolgente.",
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Ambiguità e manipolazione relazionale",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-11T13:07:35+02:00", "completedAt": "2026-10-11T13:07:35+02:00", "commitHash": "7ed0e5c921ccac5540c0741a2e5e4b0a7ad1cb12", "blockReason": null }
     },
     {
       "order": 27,
