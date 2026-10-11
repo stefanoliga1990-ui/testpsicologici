@@ -622,6 +622,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("alessitimia", List.of(
+                    new RecommendedReading(
+                            "Alessitimia. I progressi della ricerca, della teoria e della pratica clinica",
+                            "Olivier Luminet, R. Michael Bagby e Graeme J. Taylor (a cura di)",
+                            "Un volume specialistico che raccoglie ricerche sul costrutto, sulla sua valutazione e sui rapporti con linguaggio, consapevolezza corporea e regolazione emotiva.",
+                            "È rivolto soprattutto a professionisti e ricercatori: non serve a interpretare il risultato del questionario né a formulare un'autodiagnosi.",
+                            "https://www.amazon.it/-/en/Alessitimia-progressi-ricerca-pratica-clinica/dp/883625005X?dib=eyJ2IjoiMSJ9.zCPqPxw_OVdIYEZNKK7JVA.u73Z_fMXOsrYgfhAk7vc143WeMegtTFSqlgXcXgKr7Y&dib_tag=se&keywords=9788836250059&qid=1791723733&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=4dcd9ac467fb607944164bfa0a14e623&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Allenamento emotivo",
+                            "Sara Salzano e Massimiliano Conson",
+                            "Un quaderno di esercizi sulla regolazione delle emozioni che include attività per riconoscerle ed esprimerle.",
+                            "Tratta abilità emotive più ampie dell'alessitimia: gli esercizi non misurano il costrutto, non interpretano il test e non sostituiscono un supporto professionale.",
+                            "https://www.amazon.it/-/en/Allenamento-Programma-auto-aiuto-regolazione-espansione/dp/8835175941?dib=eyJ2IjoiMSJ9.mTlB618v8arorYoZ2ZS98g.9wPDDotHwQqi2wvpLYaSRUsZT-ONTCuGVyOafP8CXUk&dib_tag=se&keywords=9788835175940&qid=1791723862&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=c5d2e3915da6ed2a38d0e8bdabb3bb8a&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",
