@@ -1,0 +1,23 @@
+# Guilt-tripping nelle relazioni — specifica editoriale e matrice delle fonti (v1)
+
+## Perimetro
+
+Guida informativa autonoma per adulti sull'espressione colloquiale *guilt-tripping*: comunicazioni che fanno leva sul senso di colpa dell'altra persona per orientare una scelta. Il fuoco è sulle parole, sul contesto, sulla ripetizione, sullo spazio per un rifiuto e sull'impatto percepito, non sull'accertamento di intenzioni. La guida distingue il senso di colpa proporzionato a una responsabilità concreta e la possibilità di riparare un danno da richieste che trasformano ogni limite in prova di scarso affetto. Non è una diagnosi, una classificazione della relazione né un questionario: non sono previsti item, scoring, analisi, risultati, card del test o CTA verso un test.
+
+La scheda è distinta da quella prevista sul ricatto emotivo: qui si tratta specificamente la leva della colpa in scambi quotidiani; minacce, obbligo imposto, paura e controllo coercitivo richiedono un inquadramento più ampio e la priorità della sicurezza. Il titolo della coda viene reso meno intenzionalistico, preservando il termine richiesto. Nessuna fonte citata valida il *guilt-tripping* come costrutto clinico o offre criteri per attribuire una motivazione a una persona concreta.
+
+## Matrice affermazione/scelta → fonte → evidenza → popolazione → limite
+
+| Affermazione o scelta | Fonte | Tipo di evidenza | Popolazione | Limite |
+|---|---|---|---|---|
+| La colpa può avere una funzione di riparazione delle relazioni; non è di per sé un segnale di manipolazione | Baumeister, Stillwell e Heatherton, 1995, doi:10.1080/01973533.1995.9646138 | Due studi su narrazioni personali di colpa spontanea e indotta | Partecipanti a studi statunitensi su relazioni strette | Ricordi e autodescrizioni; non forniscono una regola per valutare uno scambio individuale |
+| Indurre colpa in conversazione è una forma studiata di influenza interpersonale, non un indicatore automatico di abuso | Vangelisti, Daly e Rudnick, 1991, doi:10.1111/j.1468-2958.1991.tb00527.x | Quattro studi sulle conversazioni e le tecniche riferite | Partecipanti a studi statunitensi | Studio storico e contestuale; intenzione e significato dipendono dalla situazione |
+| Strategie indirette negative in coppia hanno esiti diversi secondo il contesto e le caratteristiche della persona destinataria | Jayamaha, Antonellis e Overall, 2016, doi:10.1111/pere.12128 | Tre studi, inclusi resoconti di coppia e discussioni osservate | Coppie e individui in relazioni romantiche in Nuova Zelanda | Associazioni e moderazione di gruppo; nessun esito o stile trasferibile a una singola coppia italiana |
+| In discussioni di coppia osservate, l'induzione di colpa può accompagnarsi a costi per la soddisfazione del partner | Overall, Girme, Lemay e Hammond, 2014, PMID:24079298 | Studi di diario e osservazione del conflitto | Adulti in relazioni romantiche, soprattutto Nuova Zelanda | Campioni e disegni specifici; non autorizzano a dedurre intenzione, diagnosi o causalità individuale |
+| Le richieste che fanno leva sulla colpa non producono risposte uniformi; valutazione della responsabilità e contesto contano | Graton e Mailliez, 2019, doi:10.3390/bs9120117 | Revisione teorica della ricerca sperimentale sugli appelli alla colpa | Studi di persuasione, autori in Francia | Letteratura non centrata sulle coppie italiane; non fornisce una soglia di pressione relazionale |
+| In Italia controllo, isolamento, svalutazione e intimidazione sono indicatori di violenza psicologica, distinti dal solo provare colpa | ISTAT, *Definizioni e indicatori* | Definizioni istituzionali e indicatori d'indagine | Violenza contro le donne in Italia | Non classifica un rapporto individuale né implica che ogni richiesta emotiva sia violenza |
+| Il 1522 orienta nelle situazioni di violenza di genere e stalking in Italia | Dipartimento per le Pari Opportunità, *Il 1522* | Servizio pubblico istituzionale | Persone in Italia | Non sostituisce il 112 in emergenza; contattarlo con modalità sicure |
+
+## Limiti e trasferibilità
+
+La ricerca italiana ed europea specifica non ha individuato una validazione del *guilt-tripping* come categoria autonoma per adulti italiani. La revisione francese riguarda appelli alla colpa in contesti più ampi; le evidenze dirette sulle coppie provengono soprattutto da Nuova Zelanda e Stati Uniti. Le definizioni ISTAT servono soltanto a distinguere il contesto di controllo e violenza. La guida non traduce correlazioni di gruppo in spiegazioni del singolo caso, non decide se una persona debba restare o interrompere una relazione e non suggerisce il confronto quando potrebbe essere pericoloso. La pagina deve comparire come sola guida autonoma in indice e sitemap, senza un test associato.

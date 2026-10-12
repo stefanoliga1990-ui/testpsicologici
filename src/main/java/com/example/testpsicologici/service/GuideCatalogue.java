@@ -5236,6 +5236,44 @@ public class GuideCatalogue {
                             new GuideReference("Emotional attachments in abusive relationships — Dutton e Painter", "https://pubmed.ncbi.nlm.nih.gov/8193053/", "Studio canadese su 75 donne consultato per l'associazione tra intermittenza del maltrattamento, potere e attaccamento; non è trasferibile a ogni relazione incerta."),
                             new GuideReference("Violenza psicologica: definizioni e indicatori — ISTAT", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "Definizioni italiane consultate per distinguere controllo, isolamento e intimidazione dalla sola discontinuità delle attenzioni; non classificano coppie individuali."),
                             new GuideReference("Il 1522 — Dipartimento per le Pari Opportunità", "https://www.1522.eu/cose-1522/", "Servizio pubblico italiano citato per l'orientamento in situazioni di violenza di genere o stalking; non sostituisce il 112 nelle emergenze."))
+            ),
+            new InformationGuide(
+                    "guilt-tripping", "guilt-tripping",
+                    "Guilt-tripping nelle relazioni",
+                    "Guilt-tripping: quando la colpa pesa sulle scelte",
+                    "Guilt-tripping nelle relazioni: significato e limiti | Spazio Test",
+                    "Che cosa si intende per guilt-tripping, come distinguere responsabilità e pressione e quando dare priorità alla sicurezza.",
+                    "Sentirsi in colpa dopo una richiesta non significa necessariamente che qualcuno stia manipolando. Guilt-tripping è un'espressione colloquiale per descrivere scambi in cui la colpa viene usata come leva; contesto e possibilità di scelta contano più dell'etichetta.",
+                    List.of(
+                            new GuideSection("In breve", "Una pressione possibile, non una diagnosi", List.of(
+                                    "Guilt-tripping indica l'uso di parole o gesti che richiamano la colpa per orientare la scelta di un'altra persona. Gli studi parlano di induzione di colpa e appelli alla colpa, ma non forniscono un criterio clinico per riconoscere il guilt-tripping in una relazione.",
+                                    "Conta osservare che cosa viene chiesto, come viene presentata la responsabilità, se si può dissentire e se lo scambio si ripete. Una frase isolata non rivela un'intenzione nascosta."), List.of()),
+                            new GuideSection("Distinzioni", "Responsabilità e riparazione non sono la stessa cosa della pressione", List.of(
+                                    "Il senso di colpa può accompagnare il riconoscimento di un danno concreto e il desiderio di ripararlo. Chiedere scusa o parlare di un bisogno non equivale automaticamente a esercitare pressione.",
+                                    "La situazione cambia quando ogni limite viene trattato come prova di scarso affetto o quando una richiesta lascia poco spazio a un rifiuto senza colpevolizzazione. Anche qui serve considerare i fatti e il contesto: non si può stabilire dall'esterno chi abbia ragione."), List.of()),
+                            new GuideSection("Ricerca", "Gli effetti non sono uguali in tutte le coppie", List.of(
+                                    "Studi sulle relazioni romantiche hanno esaminato l'induzione di colpa durante richieste di cambiamento e conflitti. Riportano esiti diversi secondo le persone e il contesto, e in alcuni casi costi per la soddisfazione del partner.",
+                                    "Questi risultati riguardano gruppi e situazioni studiate, soprattutto fuori dall'Italia. Non dimostrano che una specifica frase sia stata detta per manipolare né predicono che cosa accadrà in una coppia."), List.of()),
+                            new GuideSection("Osservare", "Domande utili senza etichettare una persona", List.of(
+                                    "Può essere utile chiedersi se la richiesta riguarda una responsabilità concreta, se è possibile spiegare un limite, se il disaccordo viene ascoltato e se dopo il confronto rimane libertà di scelta. Notare frequenza e conseguenze aiuta a descrivere l'esperienza senza trasformarla in un verdetto.",
+                                    "Se è sicuro farlo, si può distinguere il bisogno espresso dal modo in cui viene chiesto e dire quale forma di confronto è sostenibile. Cercare un parere fidato può aiutare quando colpa e responsabilità restano difficili da separare."), List.of()),
+                            new GuideSection("Sicurezza", "Quando la questione è più ampia della colpa", List.of(
+                                    "Minacce, controllo, isolamento, intimidazione o paura delle conseguenze del dissenso richiedono attenzione indipendentemente dall'etichetta guilt-tripping. Le definizioni ISTAT di violenza psicologica riguardano condotte e contesti più ampi, non il solo sentirsi in colpa.",
+                                    "Non è necessario affrontare l'altra persona se questo potrebbe aumentare il pericolo. In Italia il 1522 offre orientamento per violenza di genere e stalking; se c'è un pericolo immediato chiama il 112. Per chiedere aiuto scegli, se possibile, un momento e un mezzo sicuri."), List.of()),
+                            new GuideSection("Limiti", "Una guida non decide al posto tuo", List.of(
+                                    "Non sono emerse evidenze italiane sufficienti per trattare il guilt-tripping come una categoria validata nelle relazioni adulte. Una revisione europea riguarda gli appelli alla colpa in contesti più ampi, mentre gli studi di coppia citati provengono soprattutto da altri Paesi.",
+                                    "Questa scheda non contiene un test, domande o punteggi, non attribuisce intenzioni e non classifica una relazione. Se la pressione si ripete o pesa sul benessere, un confronto con una persona fidata o un professionista può tenere insieme vissuti, fatti e sicurezza."), List.of())
+                    ),
+                    null,
+                    "Questa guida distingue la colpa legata a una responsabilità concreta dalla pressione ripetuta nelle richieste, senza dedurre intenzioni o confondere il fenomeno con il più ampio controllo coercitivo.",
+                    List.of(
+                            new GuideReference("Violenza psicologica: definizioni e indicatori — ISTAT", "https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/", "Definizioni italiane consultate per distinguere controllo e intimidazione dalla sola esperienza della colpa; non classificano una relazione individuale."),
+                            new GuideReference("Il 1522 — Dipartimento per le Pari Opportunità", "https://www.1522.eu/cose-1522/", "Servizio pubblico italiano citato per l'orientamento in situazioni di violenza di genere o stalking; non sostituisce il 112 nelle emergenze."),
+                            new GuideReference("A theory of guilt appeals — Graton e Mailliez", "https://doi.org/10.3390/bs9120117", "Revisione teorica europea sugli appelli alla colpa consultata per il ruolo del contesto e della responsabilità percepita; non studia direttamente le coppie italiane."),
+                            new GuideReference("Attachment insecurity and inducing guilt — Jayamaha, Antonellis e Overall", "https://doi.org/10.1111/pere.12128", "Tre studi sulle relazioni romantiche consultati per l'eterogeneità delle risposte all'induzione di colpa; non permettono conclusioni sulla singola coppia."),
+                            new GuideReference("Attachment anxiety and reactions to relationship threat — Overall e colleghi", "https://pubmed.ncbi.nlm.nih.gov/24079298/", "Studi di diario e osservazione del conflitto consultati per i possibili costi relazionali dell'induzione di colpa; non identificano motivazioni individuali."),
+                            new GuideReference("Personal narratives about guilt — Baumeister, Stillwell e Heatherton", "https://doi.org/10.1080/01973533.1995.9646138", "Studi sulle narrazioni della colpa consultati per distinguere riparazione e influenza interpersonale; ricordi e autodescrizioni non sono criteri diagnostici."),
+                            new GuideReference("Making people feel guilty in conversations — Vangelisti, Daly e Rudnick", "https://doi.org/10.1111/j.1468-2958.1991.tb00527.x", "Quattro studi sulle conversazioni consultati per la descrizione dell'induzione di colpa; sono storici e non stabiliscono intenzioni in scambi individuali."))
             )
     );
 
