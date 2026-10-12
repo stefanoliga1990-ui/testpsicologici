@@ -622,6 +622,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("situationship", List.of(
+                    new RecommendedReading(
+                            "L'epoca delle relazioni in crisi (e come uscirne)",
+                            "Enrico Cheli",
+                            "Una lettura sulle trasformazioni delle relazioni e delle aspettative reciproche, con spunti per comunicare anche nella coppia.",
+                            "Tratta molti contesti relazionali e non definisce né valuta una situationship; l'assenza di un'etichetta non rende automaticamente problematica una relazione.",
+                            "https://www.amazon.it/-/en/Lepoca-relazioni-uscirne-Coppia-famiglia/dp/8820413647?dib=eyJ2IjoiMSJ9.Q6lBg_FxpwcvB62chW8Hhw.4gHmFszEUQ5JJpWkGHNJjsYq7_29hGVjjACs_ebamLY&dib_tag=se&keywords=9788820413644&qid=1791810167&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=1343f5fe9261d105cf3f103b2ab53cf7&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Relazioni in armonia",
+                            "Enrico Cheli",
+                            "Una guida divulgativa con esercizi su ascolto, espressione dei bisogni, comunicazione assertiva e gestione dei conflitti.",
+                            "Riguarda la comunicazione in vari rapporti e non indica quali accordi o quale grado di impegno siano giusti per una relazione specifica.",
+                            "https://www.amazon.it/-/en/Relazioni-armonia-Sviluppare-lintelligenza-comunicative/dp/8846456181?dib=eyJ2IjoiMSJ9.Lbb_6Rqi4d04okoZiU_ueg.9g_XLRST4fIuSan6j8x-5PvQc0g-KkTIGUjwH0X4hDg&dib_tag=se&keywords=9788846456182&qid=1791810202&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=8f7295a9db103bd10525de617ee5a51e&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("alessitimia", List.of(
                     new RecommendedReading(
                             "Alessitimia. I progressi della ricerca, della teoria e della pratica clinica",

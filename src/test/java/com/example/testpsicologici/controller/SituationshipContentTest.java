@@ -51,7 +51,14 @@ class SituationshipContentTest {
                 .andExpect(content().string(containsString("Situationship: quando vicinanza e definizione non coincidono")))
                 .andExpect(content().string(containsString("L'assenza di un'etichetta non rende automaticamente problematica una relazione")))
                 .andExpect(content().string(containsString("href=\"/test/situationship\"")))
-                .andExpect(content().string(containsString("Romantic Experience Uncertainty Scale")));
+                .andExpect(content().string(containsString("Romantic Experience Uncertainty Scale")))
+                .andExpect(content().string(containsString("L&#39;epoca delle relazioni in crisi (e come uscirne)")))
+                .andExpect(content().string(containsString("Relazioni in armonia")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -66,7 +73,14 @@ class SituationshipContentTest {
                 .andExpect(content().string(containsString("Accordi e confini")))
                 .andExpect(content().string(containsString("Bisogni e impatto")))
                 .andExpect(content().string(containsString("non dimostra una situationship")))
-                .andExpect(content().string(containsString("href=\"/approfondimenti/situationship\"")));
+                .andExpect(content().string(containsString("href=\"/approfondimenti/situationship\"")))
+                .andExpect(content().string(containsString("L&#39;epoca delle relazioni in crisi (e come uscirne)")))
+                .andExpect(content().string(containsString("Relazioni in armonia")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
 
         MvcResult mvcResult = mockMvc.perform(get("/test/situationship/risultato/pdf").session(session))
                 .andExpect(status().isOk())

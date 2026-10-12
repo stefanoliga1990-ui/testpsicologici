@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11",
+  "updatedAt": "2026-10-12",
   "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
   "selectionPolicy": {
     "booksPerTopic": {
@@ -2088,7 +2088,65 @@
         }
       ]
     },
-    { "topicId": "situationship", "testId": "situationship", "guideSlug": "situationship", "title": "Situationship", "fallbackTopics": ["incertezza relazionale", "comunicazione e confini"], "fallbackRationale": "Se non emergono testi dedicati e affidabili, selezionare letture su incertezza, definizione della relazione, comunicazione e confini.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "situationship",
+      "testId": "situationship",
+      "guideSlug": "situationship",
+      "title": "Situationship",
+      "fallbackTopics": ["trasformazioni delle relazioni", "aspettative reciproche", "comunicazione e confini"],
+      "fallbackRationale": "Non sono emersi due testi italiani dedicati specificamente alle situationship con adeguata solidità editoriale. Le due letture selezionate trattano cambiamenti nelle forme di relazione, aspettative, ascolto e comunicazione: temi utili per riflettere su chiarezza e accordi senza presumere che l'assenza di un'etichetta sia un problema.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "L'epoca delle relazioni in crisi (e come uscirne)",
+          "placeholderCover": true,
+          "subtitle": "Coppia, famiglia, scuola, sanità, lavoro",
+          "authors": ["Enrico Cheli"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788820413644",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo sui cambiamenti delle relazioni e delle aspettative reciproche",
+          "audience": "Adulti interessati a comprendere i rapporti contemporanei in diversi contesti",
+          "description": "Una lettura sulle trasformazioni delle relazioni e delle aspettative reciproche, con spunti per comunicare anche nella coppia.",
+          "limit": "Tratta molti contesti relazionali e non definisce né valuta una situationship; l'assenza di un'etichetta non rende automaticamente problematica una relazione.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/Libro/L%27epoca-delle-relazioni-in-crisi-%28e-come-uscirne%29-Coppia%2C-famiglia%2C-scuola%2C-sanit%C3%A0%2C-lavoro?Id=20783"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8820413647",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Lepoca-relazioni-uscirne-Coppia-famiglia/dp/8820413647?dib=eyJ2IjoiMSJ9.Q6lBg_FxpwcvB62chW8Hhw.4gHmFszEUQ5JJpWkGHNJjsYq7_29hGVjjACs_ebamLY&dib_tag=se&keywords=9788820413644&qid=1791810167&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=1343f5fe9261d105cf3f103b2ab53cf7&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Relazioni in armonia",
+          "placeholderCover": true,
+          "subtitle": "Sviluppare l'intelligenza emotiva e le abilità comunicative per stare meglio con gli altri e con se stessi",
+          "authors": ["Enrico Cheli"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788846456182",
+          "publicationYear": 2005,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa con esercizi di ascolto e comunicazione assertiva",
+          "audience": "Adulti interessati a riflettere su bisogni e comunicazione nelle relazioni",
+          "description": "Una guida divulgativa con esercizi su ascolto, espressione dei bisogni, comunicazione assertiva e gestione dei conflitti.",
+          "limit": "Riguarda la comunicazione in vari rapporti e non indica quali accordi o quale grado di impegno siano giusti per una relazione specifica.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/libro?id=12137"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8846456181",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Relazioni-armonia-Sviluppare-lintelligenza-comunicative/dp/8846456181?dib=eyJ2IjoiMSJ9.Lbb_6Rqi4d04okoZiU_ueg.9g_XLRST4fIuSan6j8x-5PvQc0g-KkTIGUjwH0X4hDg&dib_tag=se&keywords=9788846456182&qid=1791810202&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=8f7295a9db103bd10525de617ee5a51e&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "codipendenza-relazionale", "testId": "codipendenza-relazionale", "guideSlug": "codipendenza-relazionale", "title": "Codipendenza relazionale", "fallbackTopics": ["autonomia nella relazione", "confini relazionali"], "fallbackRationale": "Il concetto è discusso e si sovrappone a costrutti vicini; se non emergono testi dedicati e responsabili, considerare letture su autonomia, confini e cura di sé nelle relazioni senza trasformarle in diagnosi.", "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "esperienze-avverse-infanzia", "testId": "esperienze-avverse-infanzia", "guideSlug": "esperienze-avverse-infanzia", "title": "Esperienze avverse nell'infanzia (ACEs)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "burnout-lavorativo", "testId": "burnout-percepito", "guideSlug": "burnout-lavorativo", "title": "Burnout lavorativo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
