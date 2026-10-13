@@ -640,6 +640,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("codipendenza-relazionale", List.of(
+                    new RecommendedReading(
+                            "Se la coppia è in crisi",
+                            "Russ Harris",
+                            "Una guida basata sull'ACT per riflettere su valori, comunicazione, cura di sé e confini nella relazione di coppia.",
+                            "Riguarda le difficoltà di coppia attraverso un modello specifico: non definisce la codipendenza, non interpreta il questionario e non indica se restare in una relazione.",
+                            "https://www.amazon.it/-/en/riconcilia-differenze-relazione-lAcceptance-Commitment/dp/883517645X?dib=eyJ2IjoiMSJ9.0Rkq-bgm_2HOKZEciCY09g.ZLvj9O-Bqmn__IeRpeg5LVguiFIwGK9rhPX_2j5VNoc&dib_tag=se&keywords=9788835176459&qid=1791896509&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=dd99ca2a9e95223ef5c4c81abfeedfe9&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Rispettati! Affermare se stessi senza sensi di colpa",
+                            "Gianfranco Damico",
+                            "Una lettura divulgativa sull'assertività e sulla definizione dei propri confini e obiettivi nei rapporti con gli altri.",
+                            "Non riguarda specificamente la codipendenza o la coppia: non tutte le concessioni sono dannose e il libro non interpreta il risultato del test.",
+                            "https://www.amazon.it/-/en/Rispettati-Affermare-stessi-senza-sensi/dp/8807091526?dib=eyJ2IjoiMSJ9.UQtBZTd0nbybk9VmCH2lbg.lK4dQ7tw4X5pQlJfs4M6NHLqV-X8bq8wHO9XHrac5Jw&dib_tag=se&keywords=9788807091520&qid=1791896548&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=9d4d479f34c5c7571dbc3cd18e3215ec&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("alessitimia", List.of(
                     new RecommendedReading(
                             "Alessitimia. I progressi della ricerca, della teoria e della pratica clinica",

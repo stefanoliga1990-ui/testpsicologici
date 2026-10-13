@@ -46,7 +46,14 @@ class RelationalCodependencyContentTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("un concetto discusso da leggere con cautela")))
                 .andExpect(content().string(containsString("non una diagnosi autonoma")))
-                .andExpect(content().string(containsString("href=\"/test/codipendenza-relazionale\"")));
+                .andExpect(content().string(containsString("href=\"/test/codipendenza-relazionale\"")))
+                .andExpect(content().string(containsString("Se la coppia è in crisi")))
+                .andExpect(content().string(containsString("Rispettati! Affermare se stessi senza sensi di colpa")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
     }
 
     @Test
@@ -58,7 +65,14 @@ class RelationalCodependencyContentTest {
                 .andExpect(content().string(containsString("Sacrificio di bisogni e scelte")))
                 .andExpect(content().string(containsString("Responsabilità e controllo relazionale")))
                 .andExpect(content().string(containsString("Spazio per identità ed emozioni")))
-                .andExpect(content().string(containsString("non dimostra codipendenza")));
+                .andExpect(content().string(containsString("non dimostra codipendenza")))
+                .andExpect(content().string(containsString("Se la coppia è in crisi")))
+                .andExpect(content().string(containsString("Rispettati! Affermare se stessi senza sensi di colpa")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")));
 
         MvcResult pdf = mockMvc.perform(get("/test/codipendenza-relazionale/risultato/pdf").session(session))
                 .andExpect(status().isOk()).andExpect(content().contentType("application/pdf")).andReturn();

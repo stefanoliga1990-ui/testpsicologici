@@ -2147,7 +2147,66 @@
         }
       ]
     },
-    { "topicId": "codipendenza-relazionale", "testId": "codipendenza-relazionale", "guideSlug": "codipendenza-relazionale", "title": "Codipendenza relazionale", "fallbackTopics": ["autonomia nella relazione", "confini relazionali"], "fallbackRationale": "Il concetto è discusso e si sovrappone a costrutti vicini; se non emergono testi dedicati e responsabili, considerare letture su autonomia, confini e cura di sé nelle relazioni senza trasformarle in diagnosi.", "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "codipendenza-relazionale",
+      "testId": "codipendenza-relazionale",
+      "guideSlug": "codipendenza-relazionale",
+      "title": "Codipendenza relazionale",
+      "fallbackTopics": ["autonomia nella relazione", "confini relazionali", "assertività"],
+      "fallbackRationale": "La codipendenza è un concetto discusso e non sono emersi due testi dedicati che offrano una lettura più solida delle dinamiche esplorate. Questi volumi trattano valori, comunicazione e cura di sé nella coppia, e assertività e confini nei rapporti in generale; offrono spunti di riflessione senza trasformare le risposte in diagnosi né considerare ogni forma di interdipendenza problematica.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Se la coppia è in crisi",
+          "placeholderCover": true,
+          "subtitle": "Smetti di lottare, riconcilia le differenze e rafforza la relazione con l'Acceptance and Commitment Therapy",
+          "authors": ["Russ Harris"],
+          "editors": ["Francesca Scaglia", "Massimo Ronchei"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835176459",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa basata sull'ACT per riflettere sulle relazioni di coppia",
+          "audience": "Adulti che desiderano riflettere su valori, comunicazione e confini nella coppia",
+          "description": "Una guida basata sull'ACT per riflettere su valori, comunicazione, cura di sé e confini nella relazione di coppia.",
+          "limit": "Riguarda le difficoltà di coppia attraverso un modello specifico: non definisce la codipendenza, non interpreta il questionario e non indica se restare in una relazione.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://francoangeli.it/Libro/Se-la-coppia-%C3%A8-in-crisi?Id=30368"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "883517645X",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/riconcilia-differenze-relazione-lAcceptance-Commitment/dp/883517645X?dib=eyJ2IjoiMSJ9.0Rkq-bgm_2HOKZEciCY09g.ZLvj9O-Bqmn__IeRpeg5LVguiFIwGK9rhPX_2j5VNoc&dib_tag=se&keywords=9788835176459&qid=1791896509&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=dd99ca2a9e95223ef5c4c81abfeedfe9&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Rispettati! Affermare se stessi senza sensi di colpa",
+          "placeholderCover": true,
+          "subtitle": null,
+          "authors": ["Gianfranco Damico"],
+          "publisher": "Feltrinelli",
+          "isbn13": "9788807091520",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo sull'assertività e la definizione dei confini personali",
+          "audience": "Adulti interessati a riflettere su assertività e spazio personale nei rapporti",
+          "description": "Una lettura divulgativa sull'assertività e sulla definizione dei propri confini e obiettivi nei rapporti con gli altri.",
+          "limit": "Non riguarda specificamente la codipendenza o la coppia: non tutte le concessioni sono dannose e il libro non interpreta il risultato del test.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.feltrinellieditore.it/opera/rispettati/"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8807091526",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Rispettati-Affermare-stessi-senza-sensi/dp/8807091526?dib=eyJ2IjoiMSJ9.UQtBZTd0nbybk9VmCH2lbg.lK4dQ7tw4X5pQlJfs4M6NHLqV-X8bq8wHO9XHrac5Jw&dib_tag=se&keywords=9788807091520&qid=1791896548&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=9d4d479f34c5c7571dbc3cd18e3215ec&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "esperienze-avverse-infanzia", "testId": "esperienze-avverse-infanzia", "guideSlug": "esperienze-avverse-infanzia", "title": "Esperienze avverse nell'infanzia (ACEs)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "burnout-lavorativo", "testId": "burnout-percepito", "guideSlug": "burnout-lavorativo", "title": "Burnout lavorativo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "empatia-percepita", "testId": "empatia-percepita", "guideSlug": "empatia-verso-gli-altri", "title": "Empatia verso gli altri", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
