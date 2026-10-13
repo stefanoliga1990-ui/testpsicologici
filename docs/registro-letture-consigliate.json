@@ -2220,6 +2220,7 @@
     { "topicId": "silent-treatment", "testId": "silent-treatment", "guideSlug": "silent-treatment", "title": "Silent treatment nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "trauma-bonding", "testId": "trauma-bonding", "guideSlug": "trauma-bonding", "title": "Trauma bonding nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "rinforzo-intermittente-relazioni", "testId": null, "guideSlug": "rinforzo-intermittente-relazioni", "title": "Rinforzo intermittente nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
-    { "topicId": "guilt-tripping", "testId": null, "guideSlug": "guilt-tripping", "title": "Guilt-tripping nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
+    { "topicId": "guilt-tripping", "testId": null, "guideSlug": "guilt-tripping", "title": "Guilt-tripping nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "ricatto-emotivo", "testId": null, "guideSlug": "ricatto-emotivo", "title": "Ricatto emotivo nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
   ]
 }
