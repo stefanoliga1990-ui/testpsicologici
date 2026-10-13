@@ -40,7 +40,7 @@ class GuideOriginalContributionTest {
             "relazione-dannosa-benessere", "gaslighting", "love-bombing",
             "breadcrumbing", "orbiting", "hoovering", "invalidazione-emotiva",
             "triangolazione-relazionale", "stonewalling", "silent-treatment", "trauma-bonding",
-            "rinforzo-intermittente-relazioni", "guilt-tripping");
+            "rinforzo-intermittente-relazioni", "guilt-tripping", "ricatto-emotivo");
 
     private static final List<String> SELF_EVALUATION_SLUGS = List.of(
             "autostima", "sindrome-impostore", "perfezionismo",
@@ -167,7 +167,7 @@ class GuideOriginalContributionTest {
                 .map(InformationGuide::slug)
                 .collect(Collectors.toSet());
 
-        assertThat(snapshotSlugs).hasSize(55).doesNotHaveDuplicates();
+        assertThat(snapshotSlugs).hasSize(56).doesNotHaveDuplicates();
         assertThat(catalogueSlugs).containsExactlyInAnyOrderElementsOf(snapshotSlugs);
 
         List<String> contributions = guides.findAll().stream()
