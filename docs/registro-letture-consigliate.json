@@ -2207,7 +2207,67 @@
         }
       ]
     },
-    { "topicId": "esperienze-avverse-infanzia", "testId": "esperienze-avverse-infanzia", "guideSlug": "esperienze-avverse-infanzia", "title": "Esperienze avverse nell'infanzia (ACEs)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "esperienze-avverse-infanzia",
+      "testId": null,
+      "guideSlug": "esperienze-avverse-infanzia",
+      "title": "Esperienze avverse nell'infanzia (ACEs)",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["trauma in età evolutiva", "memorie traumatiche"],
+      "fallbackRationale": "La guida tratta le ACEs senza equiparare tutte le esperienze avverse a un trauma o a un disturbo. Il volume curato da Vicari affronta anche lo studio ACE nell'ambito dei traumi in età evolutiva; quello di van der Kolk tratta il trauma in senso più ampio e offre un diverso livello divulgativo. Nessuno dei due consente di prevedere gli esiti individuali delle esperienze infantili.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Trauma e psicopatologia",
+          "placeholderCover": true,
+          "subtitle": "Biologia, clinica e prospettive di cura per l'età evolutiva",
+          "authors": [],
+          "editors": ["Stefano Vicari"],
+          "publisher": "Erickson",
+          "isbn13": "9788859032021",
+          "publicationYear": 2023,
+          "format": "brossura",
+          "editorialRole": "Volume specialistico sulle esperienze traumatiche e gli interventi in età evolutiva, con un capitolo sul modello ACE",
+          "audience": "Psicologi, psicoterapeuti e altri professionisti interessati al trauma infantile",
+          "description": "Un volume specialistico sui possibili effetti delle esperienze traumatiche in età evolutiva e sugli interventi rivolti a bambini e adolescenti.",
+          "limit": "È destinato soprattutto a professionisti: le esperienze avverse non comportano necessariamente un trauma o un disturbo e il libro non interpreta una storia individuale.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.erickson.it/it/trauma-e-psicopatologia-202309"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859032024",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/psicopatologia-Biologia-clinica-prospettive-evolutiva/dp/8859032024?dib=eyJ2IjoiMSJ9.REVefUYuPma55I0iOgwEaA.ml96M06tw5UQyyVa7uCxnlixHalR5faiZ6Jqho1vzrQ&dib_tag=se&keywords=9788859032021&qid=1791982879&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=ab6f22da96b5513d5e76b39ba80477fe&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Il corpo accusa il colpo",
+          "placeholderCover": true,
+          "subtitle": "Mente, corpo e cervello nell'elaborazione delle memorie traumatiche",
+          "authors": ["Bessel van der Kolk"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860307583",
+          "publicationYear": 2015,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo sul trauma e sulle sue possibili manifestazioni corporee e relazionali",
+          "audience": "Adulti interessati a comprendere il trauma in senso ampio; lettura potenzialmente intensa per chi ha vissuto esperienze difficili",
+          "description": "Un saggio divulgativo sulle memorie traumatiche e sulle connessioni tra esperienza, corpo e relazioni, con casi clinici e prospettive di trattamento.",
+          "limit": "Tratta il trauma in senso più ampio delle ACEs; i casi e le spiegazioni proposte non prevedono l'esito di una singola storia infantile e non consentono autodiagnosi.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/bessel-van-der-kolk/il-corpo-accusa-il-colpo-9788860307583-1630.html"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8860307589",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/accusa-cervello-nellelaborazione-memorie-traumatiche/dp/8860307589?dib=eyJ2IjoiMSJ9.PREneTqS-iK_FleR5EN8Gg.YcTxNrhIA34URwKdX-GZuslqY-qUTTXe88lOGuIO6-Q&dib_tag=se&keywords=9788860307583&qid=1791982900&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=6aa925969ba42d288a2206393c64e80f&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "burnout-lavorativo", "testId": "burnout-percepito", "guideSlug": "burnout-lavorativo", "title": "Burnout lavorativo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "empatia-percepita", "testId": "empatia-percepita", "guideSlug": "empatia-verso-gli-altri", "title": "Empatia verso gli altri", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "introversione-estroversione", "testId": "introversione-estroversione", "guideSlug": "introversione-estroversione", "title": "Introversione ed estroversione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

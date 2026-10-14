@@ -65,6 +65,13 @@ class AceContentIntegrationTest {
         mvc.perform(get("/approfondimenti/" + TEST_ID))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Adverse Childhood Experiences (ACEs)")))
+                .andExpect(content().string(containsString("Trauma e psicopatologia")))
+                .andExpect(content().string(containsString("Il corpo accusa il colpo")))
+                .andExpect(content().string(containsString("class=\"recommended-reading-cover\"")))
+                .andExpect(content().string(containsString("recommended-reading-card has-placeholder-cover")))
+                .andExpect(content().string(containsString("tag=spaziotest-21")))
+                .andExpect(content().string(containsString("rel=\"noopener noreferrer sponsored\"")))
+                .andExpect(content().string(containsString("In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.")))
                 .andExpect(content().string(not(containsString("href=\"/test/" + TEST_ID + "\""))));
         mvc.perform(get("/sitemap.xml"))
                 .andExpect(status().isOk())

@@ -640,6 +640,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("esperienze-avverse-infanzia", List.of(
+                    new RecommendedReading(
+                            "Trauma e psicopatologia",
+                            "Stefano Vicari (a cura di)",
+                            "Un volume specialistico sui possibili effetti delle esperienze traumatiche in età evolutiva e sugli interventi rivolti a bambini e adolescenti.",
+                            "È destinato soprattutto a professionisti: le esperienze avverse non comportano necessariamente un trauma o un disturbo e il libro non interpreta una storia individuale.",
+                            "https://www.amazon.it/-/en/psicopatologia-Biologia-clinica-prospettive-evolutiva/dp/8859032024?dib=eyJ2IjoiMSJ9.REVefUYuPma55I0iOgwEaA.ml96M06tw5UQyyVa7uCxnlixHalR5faiZ6Jqho1vzrQ&dib_tag=se&keywords=9788859032021&qid=1791982879&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=ab6f22da96b5513d5e76b39ba80477fe&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Il corpo accusa il colpo",
+                            "Bessel van der Kolk",
+                            "Un saggio divulgativo sulle memorie traumatiche e sulle connessioni tra esperienza, corpo e relazioni, con casi clinici e prospettive di trattamento.",
+                            "Tratta il trauma in senso più ampio delle ACEs; i casi e le spiegazioni proposte non prevedono l'esito di una singola storia infantile e non consentono autodiagnosi.",
+                            "https://www.amazon.it/-/en/accusa-cervello-nellelaborazione-memorie-traumatiche/dp/8860307589?dib=eyJ2IjoiMSJ9.PREneTqS-iK_FleR5EN8Gg.YcTxNrhIA34URwKdX-GZuslqY-qUTTXe88lOGuIO6-Q&dib_tag=se&keywords=9788860307583&qid=1791982900&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=6aa925969ba42d288a2206393c64e80f&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("codipendenza-relazionale", List.of(
                     new RecommendedReading(
                             "Se la coppia è in crisi",
