@@ -5313,6 +5313,43 @@ public class GuideCatalogue {
                             new GuideReference("Coercive control and mental health — Lohmann e colleghi", "https://doi.org/10.1177/15248380231162972", "Meta-analisi di studi osservazionali consultata per le associazioni tra controllo coercitivo e salute mentale; non dimostra causalità né misura il ricatto emotivo isolato."),
                             new GuideReference("Health care for women subjected to IPV — WHO", "https://www.who.int/publications/i/item/WHO-RHR-14.26", "Manuale clinico consultato per ascolto, autonomia e sicurezza nel sostegno; è rivolto ai professionisti e non offre un algoritmo per una pagina online."),
                             new GuideReference("Il 1522 — Dipartimento per le Pari Opportunità", "https://www.1522.eu/cose-1522/", "Servizio pubblico italiano citato per l'orientamento in situazioni di violenza di genere o stalking; non sostituisce il 112 nelle emergenze."))
+            ),
+            new InformationGuide(
+                    "proiezione-psicologica", "proiezione-psicologica",
+                    "Proiezione psicologica",
+                    "Proiezione psicologica: che cos'è e cosa non possiamo dedurre",
+                    "Proiezione psicologica: significato e limiti | Spazio Test",
+                    "Significato della proiezione psicologica, differenza dalla proiezione sociale e limiti nell'interpretare gli altri.",
+                    "La proiezione psicologica indica, in una tradizione teorica, l'attribuzione ad altri di vissuti propri difficili da riconoscere. La ricerca usa anche 'proiezione sociale' per un fenomeno diverso: partire da sé per prevedere gli altri. Nessuno dei due concetti permette di leggere la mente di una persona da una frase.",
+                    List.of(
+                            new GuideSection("In breve", "Due usi diversi della parola proiezione", List.of(
+                                    "Nel modello psicodinamico delle difese, la proiezione descrive l'attribuzione ad altri di sentimenti o caratteristiche proprie che possono essere difficili da riconoscere. È un'ipotesi sul funzionamento psicologico, non un'etichetta da applicare dopo un disaccordo.",
+                                    "Nella psicologia sociale, proiezione può indicare l'uso della propria esperienza per stimare ciò che pensano o farebbero altre persone. Questo non implica necessariamente una difesa, un'emozione negata o un intento di ingannare."), List.of()),
+                            new GuideSection("Ricerca", "Che cosa mostrano gli studi", List.of(
+                                    "La proiezione come difesa compare in strumenti di ricerca sui meccanismi difensivi studiati anche in Italia. La validazione preliminare italiana della DMRS-SR-30 riguarda soprattutto il funzionamento difensivo generale: non autorizza a identificare una difesa specifica da una frase o da un singolo comportamento.",
+                                    "Studi sperimentali hanno osservato effetti compatibili con una funzione difensiva in condizioni controllate, mentre una revisione critica ha rilevato che il ruolo difensivo classico non è dimostrato in modo uniforme. Risultati medi di laboratorio e valutazioni cliniche strutturate non sono prove sulla motivazione di una persona concreta."), List.of()),
+                            new GuideSection("Distinzioni", "Somiglianza presunta non significa difesa inconscia", List.of(
+                                    "Quando immaginiamo come reagirebbe qualcun altro, usare noi stessi come punto di partenza può essere una scorciatoia utile, ma può anche portarci a trascurare differenze importanti. La ricerca sulla proiezione sociale studia questi giudizi, non diagnostica un meccanismo di difesa.",
+                                    "Una somiglianza tra ciò che una persona pensa e ciò che attribuisce agli altri non basta neppure a dimostrare che abbia usato sé stessa come modello: potrebbe basarsi su informazioni reali sull'altra persona o su conoscenze generali. Questo limite metodologico rende ancora meno giustificato dedurre motivazioni nascoste da uno scambio quotidiano."), List.of()),
+                            new GuideSection("Nelle relazioni", "Partire dai fatti prima delle spiegazioni", List.of(
+                                    "Se qualcuno ti attribuisce un'emozione o un'intenzione che non riconosci, puoi distinguere le parole pronunciate, il comportamento osservato e l'interpretazione proposta. Chiedere su quali elementi si basi un'affermazione può chiarire il confronto quando è sicuro farlo.",
+                                    "Dire 'stai proiettando' non confuta una critica e non sostituisce l'ascolto dei fatti. Viceversa, ricevere un'accusa di proiezione non significa che la tua preoccupazione sia falsa. Quando ci sono intimidazioni o paura, la sicurezza e il sostegno contano più della ricerca di un'etichetta psicologica."), List.of()),
+                            new GuideSection("Riflessione", "Tenere aperte più ipotesi", List.of(
+                                    "Può essere utile chiedersi che cosa si è osservato direttamente, che cosa è stato inferito e quali altre spiegazioni sono plausibili. L'altra persona potrebbe aver colto qualcosa di reale, essersi sbagliata o usare informazioni incomplete; una guida non può scegliere fra queste ipotesi.",
+                                    "Se le attribuzioni reciproche diventano ripetitive o dolorose, un confronto con una persona fidata o un professionista può aiutare a distinguere esperienze, comunicazione e confini. Non serve attribuire una difesa inconscia a qualcuno per riconoscere il proprio disagio."), List.of()),
+                            new GuideSection("Limiti", "Una spiegazione non è una prova", List.of(
+                                    "Le evidenze italiane citate riguardano strumenti e contesti di ricerca specifici; non esiste qui una regola validata per riconoscere la proiezione nelle conversazioni quotidiane. Gli studi europei sulla proiezione sociale esaminano un uso diverso della parola.",
+                                    "Questa pagina non comprende un test, domande o punteggi, non identifica diagnosi né stabilisce chi abbia ragione in una relazione. Il concetto può aiutare a formulare domande, non a squalificare l'esperienza altrui o a spiegare con certezza il comportamento di un individuo."), List.of())
+                    ),
+                    null,
+                    "Questa guida separa la proiezione come ipotesi psicodinamica dalla proiezione sociale studiata sperimentalmente e mostra perché nessuna delle due permette di attribuire con certezza motivi inconsci in un conflitto.",
+                    List.of(
+                            new GuideReference("Italian DMRS-SR-30 preliminary validation — Di Giuseppe e colleghi", "https://doi.org/10.3389/fpsyt.2020.00870", "Studio italiano consultato per la collocazione della proiezione fra le difese e per i limiti delle sottoscale; non valida valutazioni informali della singola persona."),
+                            new GuideReference("DMRS-Q defense mechanisms hierarchy — Di Giuseppe e Perry", "https://doi.org/10.3389/fpsyg.2021.718440", "Lavoro italiano consultato per il metodo osservativo delle difese; la valutazione strutturata non è equivalente all'interpretazione di una frase isolata."),
+                            new GuideReference("Social projection: simulation or theory? — Bazinger e Kühberger", "https://doi.org/10.1016/j.newideapsych.2012.01.002", "Analisi metodologica europea consultata per distinguere l'uso di sé come modello dalla semplice correlazione tra giudizi; non studia difese cliniche."),
+                            new GuideReference("From social projection to social behaviour — Krueger", "https://doi.org/10.1080/10463280701284645", "Revisione consultata per utilità e limiti delle inferenze basate su sé; riguarda la cognizione sociale e non una diagnosi individuale."),
+                            new GuideReference("Freudian defense mechanisms and empirical findings — Baumeister, Dale e Sommer", "https://doi.org/10.1111/1467-6494.00043", "Revisione critica consultata per la cautela sulla funzione difensiva classica; è storica e non risolve ogni interpretazione della proiezione."),
+                            new GuideReference("Projection of a feared trait — Schimel, Greenberg e Martens", "https://pubmed.ncbi.nlm.nih.gov/15189616/", "Due esperimenti consultati come evidenza circoscritta della funzione difensiva sotto manipolazione; gli effetti di gruppo non identificano motivi individuali."))
             )
     );
 

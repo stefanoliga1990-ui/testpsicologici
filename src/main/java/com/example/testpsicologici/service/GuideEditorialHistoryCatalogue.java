@@ -67,7 +67,8 @@ public class GuideEditorialHistoryCatalogue {
             entry("trauma-bonding", history("2026-10-10", "2026-10-10")),
             entry("rinforzo-intermittente-relazioni", history("2026-10-11", "2026-10-11")),
             entry("guilt-tripping", history("2026-10-12", "2026-10-12")),
-            entry("ricatto-emotivo", history("2026-10-13", "2026-10-13"))
+            entry("ricatto-emotivo", history("2026-10-13", "2026-10-13")),
+            entry("proiezione-psicologica", history("2026-10-14", "2026-10-14"))
     );
 
     public GuideEditorialHistory forSlug(String slug) {
