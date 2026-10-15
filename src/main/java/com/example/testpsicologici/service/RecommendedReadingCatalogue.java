@@ -694,6 +694,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("burnout-percepito", List.of(
+                    new RecommendedReading(
+                            "Burnout e organizzazione",
+                            "Christina Maslach e Michael P. Leiter",
+                            "Un'analisi del burnout nel contesto lavorativo, con attenzione al carico, all'autonomia, ai riconoscimenti, alle relazioni, all'equità e ai valori nell'organizzazione.",
+                            "È un testo basato su uno specifico modello e rivolto anche a professionisti: non valida il questionario dell'app e non permette di attribuire una causa alle singole risposte.",
+                            "https://www.amazon.it/-/en/Burnout-organizzazione-Modificare-strutturali-demotivazione/dp/8879463349?dib=eyJ2IjoiMSJ9.IUgOm1dEiAAoa1T86UMM1A.fVB78PPRuuVcN7ZMzpn6kjzfWCi3O0qvLFgZl3WE38I&dib_tag=se&keywords=9788879463348&qid=1792069368&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=f4327bf1b556b0af183a990b9dd7067d&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Mindful Self-Compassion per il burnout",
+                            "Kristin Neff e Christopher Germer",
+                            "Una guida con pratiche di auto-compassione per riflettere sul rapporto con lo stress e l'esaurimento, anche nei contesti di lavoro.",
+                            "Le pratiche personali non sostituiscono interventi sulle condizioni lavorative né un supporto professionale quando necessario; il libro non interpreta il risultato del test.",
+                            "https://www.amazon.it/-/en/self-compassion-burnout-Strumenti-ritrovare-prosciugato/dp/8835187583?dib=eyJ2IjoiMSJ9.rgKMrHEAVx68z2Yibx9woQ.9rjzE6zGhtlPkDtLCqVTq2vuuEdnMfy17fdkI8ogf7c&dib_tag=se&keywords=9788835187585&qid=1792069442&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=4df54de20f9f30b5963afc7ed7fdd054&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",

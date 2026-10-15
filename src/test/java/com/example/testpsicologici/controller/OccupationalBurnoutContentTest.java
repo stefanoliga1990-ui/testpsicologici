@@ -110,6 +110,26 @@ class OccupationalBurnoutContentTest {
                 .andExpect(content().string(containsString("http://localhost/approfondimenti/burnout-lavorativo")));
     }
 
+    @Test
+    void guideAndResultShowTheSameVerifiedAffiliateReadings() throws Exception {
+        for (MvcResult page : List.of(
+                mvc.perform(get("/approfondimenti/burnout-lavorativo")).andExpect(status().isOk()).andReturn(),
+                mvc.perform(get("/test/burnout-percepito/risultato").session(completedAttempt(3)))
+                        .andExpect(status().isOk()).andReturn())) {
+            String html = page.getResponse().getContentAsString();
+            assertThat(html).contains(
+                    "Burnout e organizzazione",
+                    "Mindful Self-Compassion per il burnout",
+                    "/dp/8879463349",
+                    "/dp/8835187583",
+                    "tag=spaziotest-21",
+                    "rel=\"noopener noreferrer sponsored\"",
+                    "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.",
+                    "recommended-reading-card has-placeholder-cover",
+                    "class=\"recommended-reading-cover\"");
+        }
+    }
+
     private TestResult analyze(int exhaustion, int distancing, int efficacy) {
         PsychologicalTest test = catalogue.findById("burnout-percepito");
         TestAttempt attempt = new TestAttempt(test.questions().size());

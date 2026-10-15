@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12",
+  "updatedAt": "2026-10-15",
   "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
   "selectionPolicy": {
     "booksPerTopic": {
@@ -2268,7 +2268,65 @@
         }
       ]
     },
-    { "topicId": "burnout-lavorativo", "testId": "burnout-percepito", "guideSlug": "burnout-lavorativo", "title": "Burnout lavorativo", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "burnout-lavorativo",
+      "testId": "burnout-percepito",
+      "guideSlug": "burnout-lavorativo",
+      "title": "Burnout lavorativo",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Burnout e organizzazione",
+          "subtitle": "Modificare i fattori strutturali della demotivazione al lavoro",
+          "placeholderCover": true,
+          "authors": ["Christina Maslach", "Michael P. Leiter"],
+          "publisher": "Erickson",
+          "isbn13": "9788879463348",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Analisi dei fattori organizzativi legati al burnout",
+          "audience": "Adulti interessati al contesto lavorativo e professionisti",
+          "description": "Un'analisi del burnout nel contesto lavorativo, con attenzione al carico, all'autonomia, ai riconoscimenti, alle relazioni, all'equità e ai valori nell'organizzazione.",
+          "limit": "È un testo basato su uno specifico modello e rivolto anche a professionisti: non valida il questionario dell'app e non permette di attribuire una causa alle singole risposte.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.erickson.it/it/burnout-e-organizzazione"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8879463349",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Burnout-organizzazione-Modificare-strutturali-demotivazione/dp/8879463349?dib=eyJ2IjoiMSJ9.IUgOm1dEiAAoa1T86UMM1A.fVB78PPRuuVcN7ZMzpn6kjzfWCi3O0qvLFgZl3WE38I&dib_tag=se&keywords=9788879463348&qid=1792069368&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=f4327bf1b556b0af183a990b9dd7067d&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Mindful Self-Compassion per il burnout",
+          "subtitle": "Strumenti per ritrovare energia quando lo stress ha prosciugato ogni risorsa",
+          "placeholderCover": true,
+          "authors": ["Kristin Neff", "Christopher Germer"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835187585",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Guida pratica sull'auto-compassione in relazione al burnout",
+          "audience": "Adulti interessati a pratiche personali per affrontare lo stress",
+          "description": "Una guida con pratiche di auto-compassione per riflettere sul rapporto con lo stress e l'esaurimento, anche nei contesti di lavoro.",
+          "limit": "Le pratiche personali non sostituiscono interventi sulle condizioni lavorative né un supporto professionale quando necessario; il libro non interpreta il risultato del test.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/Libro/Mindful-Self-Compassion-per-il-burnout?Id=30471"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8835187583",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/self-compassion-burnout-Strumenti-ritrovare-prosciugato/dp/8835187583?dib=eyJ2IjoiMSJ9.rgKMrHEAVx68z2Yibx9woQ.9rjzE6zGhtlPkDtLCqVTq2vuuEdnMfy17fdkI8ogf7c&dib_tag=se&keywords=9788835187585&qid=1792069442&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=4df54de20f9f30b5963afc7ed7fdd054&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "empatia-percepita", "testId": "empatia-percepita", "guideSlug": "empatia-verso-gli-altri", "title": "Empatia verso gli altri", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "introversione-estroversione", "testId": "introversione-estroversione", "guideSlug": "introversione-estroversione", "title": "Introversione ed estroversione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "autocompassione", "testId": "autocompassione", "guideSlug": "autocompassione", "title": "Autocompassione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
