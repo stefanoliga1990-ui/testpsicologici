@@ -1,0 +1,22 @@
+# Blame shifting — specifica editoriale e matrice delle fonti (v1)
+
+## Perimetro
+
+Guida informativa autonoma per adulti, senza questionario. *Blame shifting* viene usato in senso descrittivo per uno scambio in cui, dopo un comportamento contestato, la conversazione si sposta dalla condotta e dalle sue conseguenze alla presunta colpa dell'altra persona, senza chiarire la responsabilità della condotta iniziale. Non è una diagnosi, un criterio clinico o una prova di intenzione manipolativa. La guida aiuta a distinguere fatti, spiegazioni, responsabilità e riparazione, considerando sicurezza e potere. Non sono previsti item, scoring, analisi, risultati, card del test o CTA verso un test.
+
+La scheda è distinta da *guilt-tripping*, che riguarda l'uso della colpa per orientare una scelta, e da *ricatto emotivo*, che riguarda una pressione condizionale. Non trasforma ogni replica difensiva o ogni differenza di ricordo in una dinamica abusiva. Non consiglia un confronto diretto quando potrebbe aumentare il pericolo.
+
+## Matrice affermazione/scelta → fonte → tipo di evidenza → popolazione → limite
+
+| Affermazione o scelta | Fonte | Tipo di evidenza | Popolazione | Limite |
+|---|---|---|---|---|
+| Le attribuzioni di colpa alle vittime di violenza di genere hanno antecedenti e conseguenze sociali e non vanno confuse con la responsabilità di chi compie un atto | Penone e Spaccatini, 2019, doi:10.1482/94264 | Revisione della letteratura pubblicata in una rivista scientifica italiana | Studi su attribuzioni di colpa da parte di osservatori in casi di violenza di genere | Non studia direttamente scambi di coppia né valida *blame shifting* come categoria autonoma |
+| La violenza psicologica rilevata da ISTAT include condotte più ampie, come denigrazione, controllo e intimidazione | ISTAT, *Definizioni e indicatori*, https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/ | Definizioni operative istituzionali | Donne in Italia nell'indagine sulla violenza | Non ogni attribuzione di colpa è violenza psicologica e la pagina non qualifica un caso individuale |
+| Negazione, minimizzazione, giustificazione e colpevolizzazione coesistono in parte della ricerca sulla violenza del partner; le funzioni proposte sono eterogenee | Smyth, Teicher e Wilde, 2024, doi:10.1177/15248380231196108 | Revisione sistematica di 31 studi con valutazione di qualità | Uomini adulti autori di violenza su partner donne in contesti occidentali | Non generalizzabile ai conflitti ordinari, a tutti i generi o alle motivazioni di una persona specifica |
+| Le attribuzioni di responsabilità nel conflitto di coppia possono dipendere dall'episodio, non solo da un tratto stabile | Backer-Fulghum, Anders e Sanford, 2018, doi:10.1177/1073191116662909 | Due studi di sviluppo di misura | 2452 persone sposate/conviventi e 172 persone in relazioni di frequentazione, negli Stati Uniti | Misura le attribuzioni, non la verità dei fatti, l'intenzionalità o l'abuso; scala e risultati non sono trasferibili alla guida |
+| Non è giustificato spiegare ogni attribuzione con una tendenza universale a scusare sé stessi e incolpare gli altri | Malle, 2006, doi:10.1037/0033-2909.132.6.895 | Meta-analisi di 173 studi | Paradigmi di attribuzione eterogenei, prevalentemente non clinici | Non descrive specificamente le relazioni abusive; orienta solo la cautela verso spiegazioni automatiche |
+| In Italia il 1522 offre orientamento su violenza di genere e stalking | Dipartimento per le Pari Opportunità, *Il 1522*, https://www.1522.eu/cose-1522/ | Servizio pubblico istituzionale | Persone che chiedono aiuto in Italia | Non sostituisce il 112 in caso di pericolo immediato |
+
+## Limiti e trasferibilità
+
+La ricerca italiana individuata sul tema riguarda soprattutto la colpevolizzazione delle vittime da parte di osservatori e le definizioni ISTAT di violenza psicologica, non una misura italiana del *blame shifting* nei conflitti quotidiani. La revisione britannica riguarda uomini che hanno commesso violenza su partner donne; le sue conclusioni non vanno trasferite a ogni relazione o a un disaccordo isolato. Gli studi statunitensi sulle attribuzioni di coppia descrivono giudizi situati, non dimostrano la responsabilità effettiva di una persona. La guida non inferisce una strategia intenzionale, non decide se un rapporto sia abusivo e non equipara responsabilità condivise in un conflitto alla responsabilità per minacce o violenza, che rimane di chi le compie.

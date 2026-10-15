@@ -90,7 +90,7 @@ class SourceQualityAuditTest {
 
     @Test
     void everyGuideHasTraceableSpecificSourcesAndNoThirdPartyScientificCopies() {
-        assertThat(guideCatalogue.findAll()).hasSize(57).allSatisfy(guide -> {
+        assertThat(guideCatalogue.findAll()).hasSize(58).allSatisfy(guide -> {
             assertThat(guide.references()).hasSizeGreaterThanOrEqualTo(3);
             assertThat(guide.references()).extracting(GuideReference::url)
                     .allMatch(url -> url.startsWith("https://"))
@@ -106,7 +106,7 @@ class SourceQualityAuditTest {
         assertThat(guideCatalogue.findAll()).extracting(InformationGuide::testId)
                 .containsExactlyInAnyOrderElementsOf(java.util.stream.Stream.concat(
                         testCatalogue.findAll().stream().map(PsychologicalTest::id),
-                        java.util.stream.Stream.of("esperienze-avverse-infanzia", "stonewalling", "silent-treatment", "trauma-bonding", "rinforzo-intermittente-relazioni", "guilt-tripping", "ricatto-emotivo", "proiezione-psicologica")).toList());
+                        java.util.stream.Stream.of("esperienze-avverse-infanzia", "stonewalling", "silent-treatment", "trauma-bonding", "rinforzo-intermittente-relazioni", "guilt-tripping", "ricatto-emotivo", "proiezione-psicologica", "blame-shifting")).toList());
 
         InformationGuide peoplePleasing = guideCatalogue.findBySlug("people-pleasing").orElseThrow();
         assertThat(peoplePleasing.sections().stream()
