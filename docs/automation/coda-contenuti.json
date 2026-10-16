@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-10-15",
+  "updatedAt": "2026-10-16",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -382,7 +382,7 @@
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Ambiguità e manipolazione relazionale",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-16T13:05:40+02:00", "completedAt": "2026-10-16T13:05:40+02:00", "commitHash": "9a7cca615bab0e12e3b54c1235bed1b8782844c5", "blockReason": null }
     },
     {
       "order": 32,
