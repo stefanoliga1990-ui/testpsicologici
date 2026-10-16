@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-15",
+  "updatedAt": "2026-10-16",
   "purpose": "Registro editoriale dei libri e materiali facoltativi associabili a un test e al relativo approfondimento. Non è un catalogo di fonti scientifiche e non guida la restituzione dei risultati.",
   "selectionPolicy": {
     "booksPerTopic": {
@@ -2327,7 +2327,64 @@
         }
       ]
     },
-    { "topicId": "empatia-percepita", "testId": "empatia-percepita", "guideSlug": "empatia-verso-gli-altri", "title": "Empatia verso gli altri", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "empatia-percepita",
+      "testId": "empatia-percepita",
+      "guideSlug": "empatia-verso-gli-altri",
+      "title": "Empatia verso gli altri",
+      "fallbackTopics": [],
+      "fallbackRationale": null,
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Sentire l'altro",
+          "subtitle": "Conoscere e praticare l'empatia",
+          "placeholderCover": true,
+          "authors": ["Laura Boella"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860300164",
+          "publicationYear": 2006,
+          "format": "brossura",
+          "editorialRole": "Saggio filosofico sull'empatia nelle relazioni",
+          "audience": "Adulti interessati a una riflessione filosofica sulle relazioni e sull'esperienza altrui",
+          "description": "Una riflessione filosofica sull'empatia e sui diversi modi di incontrare e comprendere l'esperienza di un'altra persona nelle relazioni.",
+          "limit": "È un saggio filosofico, non un manuale di valutazione: non misura le capacità empatiche né interpreta le risposte al questionario.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/laura-boella/sentire-laltro-9788860300164-67.html"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8860300169",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Sentire-laltro-Conoscere-praticare-lempatia/dp/8860300169?dib=eyJ2IjoiMSJ9.3yZ-HtYGJJoSmqz_Xcms7g.fC3EbFyj1BhBEIehf9tNe0vfbuSBDZySuifNLwVJbeU&dib_tag=se&keywords=9788860300164&qid=1792155776&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=5c9fd21dfd67a40cf43f847237609bb4&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Empatia versus benevolenza",
+          "placeholderCover": true,
+          "authors": ["Paolo Contini (a cura di)", "Maria Sinatra (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835174905",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Approfondimento interdisciplinare sui significati dell'empatia",
+          "audience": "Lettori interessati a un volume accademico di psicologia e scienze umane",
+          "description": "Un volume interdisciplinare che esplora le diverse definizioni di empatia e le distingue da benevolenza, simpatia, compassione e altruismo.",
+          "limit": "È una raccolta accademica, non una guida personale: non certifica l'empatia di chi legge e non valida il questionario dell'app.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/Libro/Empatia-versus-benevolenza?Id=30149"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8835174902",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Empatia-versus-benevolenza-Paolo-Contini/dp/8835174902?dib=eyJ2IjoiMSJ9.U4_quQqk4K3AYPWbg12hmw.CtdGRtNVI65S9HOrsLCFrOY93y1zzSJisppY9Ri1Nm0&dib_tag=se&keywords=9788835174905&qid=1792155798&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=8db41c9f98b9e01e5337894ff238cbfa&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "introversione-estroversione", "testId": "introversione-estroversione", "guideSlug": "introversione-estroversione", "title": "Introversione ed estroversione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "autocompassione", "testId": "autocompassione", "guideSlug": "autocompassione", "title": "Autocompassione", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ruminazione-mentale", "testId": "ruminazione-mentale", "guideSlug": "ruminazione-mentale", "title": "Ruminazione mentale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

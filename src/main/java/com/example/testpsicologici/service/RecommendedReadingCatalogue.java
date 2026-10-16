@@ -712,6 +712,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("empatia-percepita", List.of(
+                    new RecommendedReading(
+                            "Sentire l'altro",
+                            "Laura Boella",
+                            "Una riflessione filosofica sull'empatia e sui diversi modi di incontrare e comprendere l'esperienza di un'altra persona nelle relazioni.",
+                            "È un saggio filosofico, non un manuale di valutazione: non misura le capacità empatiche né interpreta le risposte al questionario.",
+                            "https://www.amazon.it/-/en/Sentire-laltro-Conoscere-praticare-lempatia/dp/8860300169?dib=eyJ2IjoiMSJ9.3yZ-HtYGJJoSmqz_Xcms7g.fC3EbFyj1BhBEIehf9tNe0vfbuSBDZySuifNLwVJbeU&dib_tag=se&keywords=9788860300164&qid=1792155776&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=5c9fd21dfd67a40cf43f847237609bb4&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Empatia versus benevolenza",
+                            "Paolo Contini e Maria Sinatra (a cura di)",
+                            "Un volume interdisciplinare che esplora le diverse definizioni di empatia e le distingue da benevolenza, simpatia, compassione e altruismo.",
+                            "È una raccolta accademica, non una guida personale: non certifica l'empatia di chi legge e non valida il questionario dell'app.",
+                            "https://www.amazon.it/-/en/Empatia-versus-benevolenza-Paolo-Contini/dp/8835174902?dib=eyJ2IjoiMSJ9.U4_quQqk4K3AYPWbg12hmw.CtdGRtNVI65S9HOrsLCFrOY93y1zzSJisppY9Ri1Nm0&dib_tag=se&keywords=9788835174905&qid=1792155798&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=8db41c9f98b9e01e5337894ff238cbfa&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",

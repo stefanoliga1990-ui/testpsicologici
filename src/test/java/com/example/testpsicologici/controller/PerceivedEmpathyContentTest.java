@@ -108,6 +108,26 @@ class PerceivedEmpathyContentTest {
                 .andExpect(content().string(containsString("http://localhost/approfondimenti/empatia-verso-gli-altri")));
     }
 
+    @Test
+    void guideAndResultShowTheSameVerifiedAffiliateReadings() throws Exception {
+        for (MvcResult page : List.of(
+                mvc.perform(get("/approfondimenti/empatia-verso-gli-altri")).andExpect(status().isOk()).andReturn(),
+                mvc.perform(get("/test/empatia-percepita/risultato").session(completedAttempt(3)))
+                        .andExpect(status().isOk()).andReturn())) {
+            String html = page.getResponse().getContentAsString();
+            assertThat(html).contains(
+                    "Sentire l'altro",
+                    "Empatia versus benevolenza",
+                    "/dp/8860300169",
+                    "/dp/8835174902",
+                    "tag=spaziotest-21",
+                    "rel=\"noopener noreferrer sponsored\"",
+                    "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.",
+                    "recommended-reading-card has-placeholder-cover",
+                    "class=\"recommended-reading-cover\"");
+        }
+    }
+
     private TestResult analyze(int perspective, int resonance, int response) {
         PsychologicalTest test = catalogue.findById("empatia-percepita");
         TestAttempt attempt = new TestAttempt(test.questions().size());
