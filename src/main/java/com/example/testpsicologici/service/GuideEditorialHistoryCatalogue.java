@@ -70,7 +70,8 @@ public class GuideEditorialHistoryCatalogue {
             entry("ricatto-emotivo", history("2026-10-13", "2026-10-13")),
             entry("proiezione-psicologica", history("2026-10-14", "2026-10-14")),
             entry("blame-shifting", history("2026-10-15", "2026-10-15")),
-            entry("darvo", history("2026-10-16", "2026-10-16"))
+            entry("darvo", history("2026-10-16", "2026-10-16")),
+            entry("mirroring-relazioni", history("2026-10-17", "2026-10-17"))
     );
 
     public GuideEditorialHistory forSlug(String slug) {

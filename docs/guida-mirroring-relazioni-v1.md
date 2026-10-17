@@ -1,0 +1,22 @@
+# Mirroring nelle relazioni — specifica editoriale e matrice delle fonti (v1)
+
+## Perimetro
+
+Guida psicoeducativa per adulti, senza questionario. Nel linguaggio comune *mirroring* può riferirsi all'imitazione di gesti, postura o modi di parlare, ma anche al dichiararsi simili nei gusti e nei valori. La ricerca citata qui riguarda soprattutto la prima accezione: imitazione motoria e comportamentale, spesso spontanea. Non offre un metodo per stabilire che qualcuno stia imitando deliberatamente gusti o valori per ottenere fiducia. La guida preserva il tema della coda, correggendo questa attribuzione di intenzione non verificabile. Non sono previsti item, scoring, risultati, card del test o CTA verso un test.
+
+La scheda si distingue dalla guida sulla compatibilità di coppia, che riguarda conoscenza reciproca e scelte condivise, e da quella sul love bombing, che riguarda l'intensità dell'attenzione e il ritmo della relazione. Una somiglianza iniziale non dimostra né compatibilità né manipolazione. Se compaiono controllo, minacce o intimidazione, la sicurezza va considerata indipendentemente dal termine *mirroring*.
+
+## Matrice affermazione/scelta → fonte → tipo di evidenza → popolazione → limite
+
+| Affermazione o scelta | Fonte | Tipo di evidenza | Popolazione | Limite |
+|---|---|---|---|---|
+| L'imitazione osservata di un comportamento può variare con la familiarità e il contesto | Maglieri, Zanoli, Giunchi e Palagi, 2023, doi:10.1007/s12110-023-09443-5, https://iris.unito.it/handle/2318/2053390 | Studio italiano naturalistico non longitudinale; 1.608 eventi in 248 persone | Persone osservate nell'uso dello smartphone in Italia dopo il lockdown | Non studia coppie, gusti o valori né distingue l'intenzione di chi imita |
+| L'imitazione motoria automatica può differire fra partner romantici e persone vicine | Maister e Tsakiris, 2016, doi:10.1016/j.cognition.2016.03.018, https://pubmed.ncbi.nlm.nih.gov/27045464/ | Studio sperimentale britannico | Partecipanti adulti in relazioni romantiche, in laboratorio | Non mostra un'imitazione deliberata per ottenere fiducia; compito motorio non equivale a identità di valori |
+| L'associazione media fra essere imitati e apprezzamento dipende dalle condizioni di controllo, con elevata eterogeneità | Trzmielewska e Rak, 2026, doi:10.1007/s10919-026-00528-0, https://link.springer.com/article/10.1007/s10919-026-00528-0 | Meta-analisi europea di paradigmi sperimentali con confederati | Partecipanti a studi di laboratorio | Non misura relazioni intime, intenzioni nascoste o effetti garantiti nei singoli incontri |
+| La mimica comportamentale comprende gesti, posture e manierismi e può essere spontanea | Chartrand e Lakin, 2013, doi:10.1146/annurev-psych-113011-143754, https://pubmed.ncbi.nlm.nih.gov/23020640/ | Revisione scientifica internazionale | Studi di psicologia sociale in varie popolazioni | Offre un quadro generale, non un criterio per classificare una persona |
+| Controllo, denigrazione e intimidazione sono indicatori distinti nelle definizioni italiane di violenza psicologica | ISTAT, *Definizioni e indicatori*, https://www.istat.it/statistiche-per-temi/focus/violenza-sulle-donne/il-contesto/definizioni-e-indicatori/ | Definizioni operative istituzionali | Donne in Italia nell'indagine sulla violenza | Non misura il mirroring e non consente un verdetto sulla singola relazione |
+| Il 1522 offre orientamento per violenza di genere e stalking in Italia | Dipartimento per le Pari Opportunità, *Il 1522*, https://www.1522.eu/cose-1522/ | Servizio pubblico istituzionale | Persone che chiedono aiuto in Italia | Non sostituisce il 112 in caso di pericolo immediato |
+
+## Limiti e trasferibilità
+
+La ricerca esplicita di studi italiani ed europei ha individuato osservazioni italiane di imitazione nell'uso dello smartphone, uno studio britannico di imitazione motoria in coppie e una meta-analisi europea sul gradimento in laboratorio. Nessuno di questi verifica la definizione editoriale originaria come strategia deliberata di imitare gusti o valori per creare rapidamente affinità. I risultati medi non permettono di inferire motivazioni o qualità di una relazione individuale. La guida separa comportamento osservabile, somiglianza dichiarata e interpretazione dell'intenzione; evita liste di «segnali» da usare come diagnosi. La presenza di pressioni, controllo o paura merita ascolto e supporto a prescindere dalla spiegazione del mirroring.
