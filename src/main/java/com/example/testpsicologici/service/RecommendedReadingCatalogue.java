@@ -730,6 +730,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("introversione-estroversione", List.of(
+                    new RecommendedReading(
+                            "Quiet. Il potere degli introversi in un mondo che non sa smettere di parlare",
+                            "Susan Cain",
+                            "Un saggio divulgativo su esperienze di introversione e aspettative sociali che spesso privilegiano l'estroversione.",
+                            "È una prospettiva narrativa centrata sull'introversione: non descrive tutte le persone, non misura un tratto e non interpreta il risultato del questionario.",
+                            "https://www.amazon.it/-/en/Quiet-potere-introversi-smettere-parlare/dp/8845294064?dib=eyJ2IjoiMSJ9.RRpUyuhVn-Z4b1K5zbS8QA.-5c346Pj68Eabc6I1Px_73V-y-U4Qs8mIqhBaFFAXSk&dib_tag=se&keywords=9788845294068&qid=1792242160&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=574739eec7aff000f4754cd9f3ca7b94&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Psicologia della personalità. Prospettive e applicazioni",
+                            "Patrizia Steca",
+                            "Un manuale che colloca i tratti individuali, inclusa l'estroversione, nel quadro dei modelli e della ricerca sulla personalità.",
+                            "È una lettura accademica più ampia del tema introversione-estroversione: non è una guida personale e non valida né interpreta il questionario dell'app.",
+                            "https://www.amazon.it/-/en/Psicologia-personalit%C3%A0-Prospettive-applicazioni-espansione/dp/8832855623?dib=eyJ2IjoiMSJ9.nJBhAIKo0RZl51FJjqG9aw.ka0mKZSJP4gfXJkmAKTxEE43jE0WeBblIFij59ZpWHg&dib_tag=se&keywords=9788832855623&qid=1792242177&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=68293ec8a6829375f5f7bab2ef323f53&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",

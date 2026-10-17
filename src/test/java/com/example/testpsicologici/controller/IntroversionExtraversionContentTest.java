@@ -102,6 +102,32 @@ class IntroversionExtraversionContentTest {
                 .andExpect(content().string(containsString("http://localhost/approfondimenti/introversione-estroversione")));
     }
 
+    @Test
+    void guideAndResultShowTheSameVerifiedAffiliateReadings() throws Exception {
+        MockMvc mvc = webAppContextSetup(context).build();
+        PsychologicalTest test = catalogue.findById("introversione-estroversione");
+        TestAttempt attempt = new TestAttempt(test.questions().size());
+        for (int i = 0; i < test.questions().size(); i++) attempt.answer(i, 3);
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-introversione-estroversione", attempt);
+        for (MvcResult page : List.of(
+                mvc.perform(get("/approfondimenti/introversione-estroversione")).andExpect(status().isOk()).andReturn(),
+                mvc.perform(get("/test/introversione-estroversione/risultato").session(session))
+                        .andExpect(status().isOk()).andReturn())) {
+            String html = page.getResponse().getContentAsString();
+            assertThat(html).contains(
+                    "Quiet. Il potere degli introversi in un mondo che non sa smettere di parlare",
+                    "Psicologia della personalità. Prospettive e applicazioni",
+                    "/dp/8845294064",
+                    "/dp/8832855623",
+                    "tag=spaziotest-21",
+                    "rel=\"noopener noreferrer sponsored\"",
+                    "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.",
+                    "recommended-reading-card has-placeholder-cover",
+                    "class=\"recommended-reading-cover\"");
+        }
+    }
+
     private TestResult analyze(int socialita, int espressione, int vitalita) {
         PsychologicalTest test = catalogue.findById("introversione-estroversione");
         TestAttempt attempt = new TestAttempt(test.questions().size());
