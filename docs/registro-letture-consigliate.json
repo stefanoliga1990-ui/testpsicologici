@@ -2209,10 +2209,10 @@
     },
     {
       "topicId": "esperienze-avverse-infanzia",
-      "testId": null,
+      "testId": "esperienze-avverse-infanzia",
       "guideSlug": "esperienze-avverse-infanzia",
       "title": "Esperienze avverse nell'infanzia (ACEs)",
-      "contentMode": "GUIDE_ONLY",
+      "contentMode": "TEST_AND_GUIDE",
       "fallbackTopics": ["trauma in età evolutiva", "memorie traumatiche"],
       "fallbackRationale": "La guida tratta le ACEs senza equiparare tutte le esperienze avverse a un trauma o a un disturbo. Il volume curato da Vicari affronta anche lo studio ACE nell'ambito dei traumi in età evolutiva; quello di van der Kolk tratta il trauma in senso più ampio e offre un diverso livello divulgativo. Nessuno dei due consente di prevedere gli esiti individuali delle esperienze infantili.",
       "researchStatus": "PUBLISHED",
@@ -2515,6 +2515,7 @@
     { "topicId": "proiezione-psicologica", "testId": null, "guideSlug": "proiezione-psicologica", "title": "Proiezione psicologica", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "blame-shifting", "testId": null, "guideSlug": "blame-shifting", "title": "Blame shifting nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "darvo", "testId": null, "guideSlug": "darvo", "title": "DARVO nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
-    { "topicId": "mirroring-relazioni", "testId": null, "guideSlug": "mirroring-relazioni", "title": "Mirroring nelle relazioni: imitazione, sintonia e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
+    { "topicId": "mirroring-relazioni", "testId": null, "guideSlug": "mirroring-relazioni", "title": "Mirroring nelle relazioni: imitazione, sintonia e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "fawning-risposta-stress", "testId": null, "guideSlug": "fawning-risposta-stress", "title": "Fawning: compiacere in situazioni di pressione o minaccia", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
   ]
 }
