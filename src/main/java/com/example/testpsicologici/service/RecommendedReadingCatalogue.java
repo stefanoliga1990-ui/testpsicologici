@@ -748,6 +748,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("autocompassione", List.of(
+                    new RecommendedReading(
+                            "La self-compassion. Il potere dell'essere gentili con se stessi",
+                            "Kristin Neff (a cura di Gina Siddu Pilia)",
+                            "Un saggio introduttivo sulla gentilezza verso di sé, sull'umanità condivisa e sulla consapevolezza nei momenti difficili.",
+                            "Alterna ricerca, esperienze personali ed esercizi: non interpreta le risposte al questionario e non garantisce un cambiamento o sostituisce un supporto professionale.",
+                            "https://www.amazon.it/-/en/self-compassion-potere-dellessere-gentili-stessi/dp/8891781673?dib=eyJ2IjoiMSJ9.60gUAXji3OKZMEQvQZJUzA.uTXx2J7N_94xJbuJ2sZ0B6eL4VGncKfUglH_ZMlk2vA&dib_tag=se&keywords=9788891781673&qid=1792328557&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=b83394609ea239915e4df2743d5b79b7&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Programma di autocompassione e mindfulness. Esercizi e meditazioni guidate",
+                            "Christopher Germer e Kristin Neff (a cura di Fabio Giommi e Antonella Commellato)",
+                            "Un percorso pratico basato sul programma Mindful Self-Compassion, con esercizi e meditazioni guidate da svolgere secondo le proprie possibilità.",
+                            "Il libro propone attività personali, non una valutazione individuale: non valida né interpreta il questionario e non sostituisce un percorso professionale quando necessario.",
+                            "https://www.amazon.it/-/en/Programma-autocompassione-mindfulness-Esercizi-meditazioni/dp/882145505X?dib=eyJ2IjoiMSJ9.nVBuPFxvqoWUVUJLhwm9dw.C-Jn3LUx_JPcE0EQO7nn9xFOsqSSpc44Vjk6LfUIblY&dib_tag=se&keywords=9788821455056&qid=1792328601&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=3d36111d7cc0cf045547b553a7c1c3f5&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ansia-sociale", List.of(
                     new RecommendedReading(
                             "Stop all'ansia sociale. Strategie per affrontare e gestire la timidezza",

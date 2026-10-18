@@ -107,6 +107,32 @@ class SelfCompassionContentTest {
                 .andExpect(content().string(containsString("http://localhost/approfondimenti/autocompassione")));
     }
 
+    @Test
+    void guideAndResultShowTheSameVerifiedAffiliateReadings() throws Exception {
+        MockMvc mvc = webAppContextSetup(context).build();
+        PsychologicalTest test = catalogue.findById("autocompassione");
+        TestAttempt attempt = new TestAttempt(test.questions().size());
+        for (int i = 0; i < test.questions().size(); i++) attempt.answer(i, 3);
+        MockHttpSession session = new MockHttpSession();
+        session.setAttribute("test-attempt-autocompassione", attempt);
+        for (MvcResult page : List.of(
+                mvc.perform(get("/approfondimenti/autocompassione")).andExpect(status().isOk()).andReturn(),
+                mvc.perform(get("/test/autocompassione/risultato").session(session))
+                        .andExpect(status().isOk()).andReturn())) {
+            String html = page.getResponse().getContentAsString();
+            assertThat(html).contains(
+                    "La self-compassion. Il potere dell'essere gentili con se stessi",
+                    "Programma di autocompassione e mindfulness. Esercizi e meditazioni guidate",
+                    "/dp/8891781673",
+                    "/dp/882145505X",
+                    "tag=spaziotest-21",
+                    "rel=\"noopener noreferrer sponsored\"",
+                    "In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei.",
+                    "recommended-reading-card has-placeholder-cover",
+                    "class=\"recommended-reading-cover\"");
+        }
+    }
+
     private TestResult analyze(int gentilezza, int umanita, int equilibrio) {
         PsychologicalTest test = catalogue.findById("autocompassione");
         TestAttempt attempt = new TestAttempt(test.questions().size());
