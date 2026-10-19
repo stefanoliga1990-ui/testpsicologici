@@ -2502,7 +2502,63 @@
         }
       ]
     },
-    { "topicId": "ruminazione-mentale", "testId": "ruminazione-mentale", "guideSlug": "ruminazione-mentale", "title": "Ruminazione mentale", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "ruminazione-mentale",
+      "testId": "ruminazione-mentale",
+      "guideSlug": "ruminazione-mentale",
+      "title": "Ruminazione mentale",
+      "fallbackTopics": ["pensiero ripetitivo", "rimuginio"],
+      "fallbackRationale": "Il volume Catene mentali tratta direttamente la ruminazione; Rimuginio esamina più ampiamente il pensiero negativo ripetitivo, includendo la ruminazione accanto alle preoccupazioni per il futuro. Questa sovrapposizione rende il secondo testo pertinente senza equiparare i due processi.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Catene mentali. Psicologia e psicopatologia della ruminazione",
+          "placeholderCover": true,
+          "authors": ["Carmela Mento (a cura di)", "Clara Lombardo (a cura di)", "Chiara La Barbiera (a cura di)", "Maria Rosaria Anna Muscatello (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835188209",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Approfondimento scientifico sulla ruminazione in contesti clinici e di ricerca",
+          "audience": "Professionisti, studenti e lettori interessati a una trattazione tecnica",
+          "description": "Un volume scientifico che esamina la ruminazione e il rimuginio in diversi contesti clinici e di ricerca.",
+          "limit": "È un testo tecnico destinato soprattutto a professionisti e studenti: non permette di interpretare il questionario né di attribuire un disturbo a chi legge.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/Libro/Catene-mentali-Psicologia-e-psicopatologia-della-ruminazione?Id=30563"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8835188202",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Catene-mentali-Psicologia-psicopatologia-ruminazione/dp/8835188202?dib=eyJ2IjoiMSJ9.C5TXGbXbeC7u33xW_NQq4g.z8XAuJ_8obDaTa-rhQmP8xuTe4CXlnO2ErKZzusIlBo&dib_tag=se&keywords=9788835188209&qid=1792414900&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=2ded8748a0c32dedefbca0ca9deb91f4&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Rimuginio. Teoria e terapia del pensiero ripetitivo",
+          "placeholderCover": true,
+          "authors": ["Gabriele Caselli", "Giovanni M. Ruggiero", "Sandra Sassaroli"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860309020",
+          "publicationYear": 2017,
+          "format": "brossura",
+          "editorialRole": "Quadro teorico, empirico e clinico del pensiero negativo ripetitivo",
+          "audience": "Professionisti, studenti e lettori con interesse clinico",
+          "description": "Una trattazione teorica, empirica e clinica del pensiero negativo ripetitivo, che include rimuginio e ruminazione.",
+          "limit": "Il focus è più ampio della ruminazione mentale e il testo è rivolto soprattutto a lettori con interesse clinico: non è una guida di autodiagnosi o un'interpretazione del risultato.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/gabriele-caselli-giovanni-m-ruggiero-sandra-sassaroli/rimuginio-9788860309020-2543.html"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8860309026",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Rimuginio-Teoria-terapia-pensiero-ripetitivo/dp/8860309026?dib=eyJ2IjoiMSJ9.PHEpTm6OnHEohhblIoMy-A.9flKnlBdTorKbTqfwU-TbMbTtym_olrBk8winVwD8_A&dib_tag=se&keywords=9788860309020&qid=1792414974&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=8270e5432ee43bf609dfed9c87b2dc82&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "dismorfofobia", "testId": "dismorfofobia", "guideSlug": "dismorfofobia", "title": "Dismorfofobia (disturbo da dismorfismo corporeo)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "bisogno-controllo", "testId": "bisogno-controllo", "guideSlug": "bisogno-controllo", "title": "Bisogno di controllo e prevedibilità", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "camaleonte-sociale", "testId": "camaleonte-sociale", "guideSlug": "camaleonte-sociale", "title": "Camaleonte sociale: adattarsi agli altri", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

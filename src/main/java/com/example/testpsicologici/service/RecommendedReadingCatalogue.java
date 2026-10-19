@@ -748,6 +748,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("ruminazione-mentale", List.of(
+                    new RecommendedReading(
+                            "Catene mentali. Psicologia e psicopatologia della ruminazione",
+                            "Carmela Mento, Clara Lombardo, Chiara La Barbiera e Maria Rosaria Anna Muscatello (a cura di)",
+                            "Un volume scientifico che esamina la ruminazione e il rimuginio in diversi contesti clinici e di ricerca.",
+                            "È un testo tecnico destinato soprattutto a professionisti e studenti: non permette di interpretare il questionario né di attribuire un disturbo a chi legge.",
+                            "https://www.amazon.it/-/en/Catene-mentali-Psicologia-psicopatologia-ruminazione/dp/8835188202?dib=eyJ2IjoiMSJ9.C5TXGbXbeC7u33xW_NQq4g.z8XAuJ_8obDaTa-rhQmP8xuTe4CXlnO2ErKZzusIlBo&dib_tag=se&keywords=9788835188209&qid=1792414900&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=2ded8748a0c32dedefbca0ca9deb91f4&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Rimuginio. Teoria e terapia del pensiero ripetitivo",
+                            "Gabriele Caselli, Giovanni M. Ruggiero e Sandra Sassaroli",
+                            "Una trattazione teorica, empirica e clinica del pensiero negativo ripetitivo, che include rimuginio e ruminazione.",
+                            "Il focus è più ampio della ruminazione mentale e il testo è rivolto soprattutto a lettori con interesse clinico: non è una guida di autodiagnosi o un'interpretazione del risultato.",
+                            "https://www.amazon.it/-/en/Rimuginio-Teoria-terapia-pensiero-ripetitivo/dp/8860309026?dib=eyJ2IjoiMSJ9.PHEpTm6OnHEohhblIoMy-A.9flKnlBdTorKbTqfwU-TbMbTtym_olrBk8winVwD8_A&dib_tag=se&keywords=9788860309020&qid=1792414974&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=8270e5432ee43bf609dfed9c87b2dc82&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("autocompassione", List.of(
                     new RecommendedReading(
                             "La self-compassion. Il potere dell'essere gentili con se stessi",
