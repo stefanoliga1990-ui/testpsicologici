@@ -72,7 +72,8 @@ public class GuideEditorialHistoryCatalogue {
             entry("blame-shifting", history("2026-10-15", "2026-10-15")),
             entry("darvo", history("2026-10-16", "2026-10-16")),
             entry("mirroring-relazioni", history("2026-10-17", "2026-10-17")),
-            entry("fawning-risposta-stress", history("2026-10-18", "2026-10-18"))
+            entry("fawning-risposta-stress", history("2026-10-18", "2026-10-18")),
+            entry("emotional-dumping", history("2026-10-19", "2026-10-19"))
     );
 
     public GuideEditorialHistory forSlug(String slug) {
