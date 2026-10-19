@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-10-18",
+  "updatedAt": "2026-10-19",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -409,13 +409,13 @@
     {
       "order": 34,
       "slug": "emotional-dumping",
-      "workingTitle": "Emotional dumping: condividere emozioni senza oltrepassare la disponibilità altrui",
+      "workingTitle": "Emotional dumping: condividere emozioni e rispettare la disponibilità all'ascolto",
       "sourceTopic": "Emotional dumping",
       "sourceDescription": "Riversare ripetutamente emozioni e problemi senza considerare la disponibilità dell'altra persona.",
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Relazioni e attaccamento",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-19T13:10:21+02:00", "completedAt": "2026-10-19T13:10:21+02:00", "commitHash": "92c3d227defc5c6be824d59b5a98c3f7aa1e657a", "blockReason": null }
     },
     {
       "order": 35,
