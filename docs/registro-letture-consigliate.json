@@ -2572,6 +2572,7 @@
     { "topicId": "blame-shifting", "testId": null, "guideSlug": "blame-shifting", "title": "Blame shifting nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "darvo", "testId": null, "guideSlug": "darvo", "title": "DARVO nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "mirroring-relazioni", "testId": null, "guideSlug": "mirroring-relazioni", "title": "Mirroring nelle relazioni: imitazione, sintonia e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
-    { "topicId": "fawning-risposta-stress", "testId": null, "guideSlug": "fawning-risposta-stress", "title": "Fawning: compiacere in situazioni di pressione o minaccia", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
+    { "topicId": "fawning-risposta-stress", "testId": null, "guideSlug": "fawning-risposta-stress", "title": "Fawning: compiacere in situazioni di pressione o minaccia", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "emotional-dumping", "testId": null, "guideSlug": "emotional-dumping", "title": "Emotional dumping: condividere emozioni e rispettare la disponibilità all'ascolto", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
   ]
 }
