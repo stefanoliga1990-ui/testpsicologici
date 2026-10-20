@@ -2559,7 +2559,63 @@
         }
       ]
     },
-    { "topicId": "dismorfofobia", "testId": "dismorfofobia", "guideSlug": "dismorfofobia", "title": "Dismorfofobia (disturbo da dismorfismo corporeo)", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "dismorfofobia",
+      "testId": "dismorfofobia",
+      "guideSlug": "dismorfofobia",
+      "title": "Dismorfofobia (disturbo da dismorfismo corporeo)",
+      "fallbackTopics": ["immagine corporea", "modificazioni corporee"],
+      "fallbackRationale": "Il manuale di Scarinci e Lorenzini tratta direttamente il disturbo di dismorfismo corporeo. Il volume di Lemma affronta più ampiamente l'immagine e le modificazioni corporee da una prospettiva psicoanalitica, includendo il dismorfismo corporeo senza equiparare tatuaggi, piercing o chirurgia estetica a sintomi di un disturbo.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Disturbo di dismorfismo corporeo. Assessment, diagnosi e trattamento",
+          "placeholderCover": true,
+          "authors": ["Antonio Scarinci", "Roberto Lorenzini"],
+          "publisher": "Erickson",
+          "isbn13": "9788859008279",
+          "publicationYear": 2015,
+          "format": "brossura",
+          "editorialRole": "Manuale clinico dedicato al disturbo di dismorfismo corporeo",
+          "audience": "Professionisti della salute mentale, studenti e ricercatori",
+          "description": "Un manuale clinico italiano dedicato alla comprensione, alla valutazione professionale e al trattamento del disturbo di dismorfismo corporeo.",
+          "limit": "È rivolto a professionisti e ricercatori: non è uno strumento per autodiagnosticarsi, non interpreta il questionario dell'app e non sostituisce una valutazione professionale.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.erickson.it/it/disturbo-di-dismorfismo-corporeo"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859008271",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Disturbo-dismorfismo-corporeo-Assessment-trattamento/dp/8859008271?dib=eyJ2IjoiMSJ9.DSgGkoTFWsH5gSg7oSwiWg.u-Y452-hOluqXQk7Kl04hc00ZR2XwoL5c4mO_siyK2o&dib_tag=se&keywords=9788859008279&qid=1792501346&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=f604d262fb80f2ba23f2ac6372b8455e&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Sotto la pelle. Psicoanalisi delle modificazioni corporee",
+          "placeholderCover": true,
+          "authors": ["Alessandra Lemma"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860303981",
+          "publicationYear": 2011,
+          "format": "brossura",
+          "editorialRole": "Approfondimento clinico sull'immagine corporea e sulle modificazioni del corpo",
+          "audience": "Professionisti, studenti e lettori interessati alla prospettiva psicoanalitica",
+          "description": "Una lettura clinica sull'immagine corporea e sulle modificazioni del corpo, che dedica spazio anche al disturbo di dismorfismo corporeo.",
+          "limit": "Adotta una prospettiva psicoanalitica più ampia del tema della pagina: tatuaggi, piercing o chirurgia estetica non indicano di per sé un disturbo e il libro non valida il questionario.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/alessandra-lemma/sotto-la-pelle-9788860303981-1302.html"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8860303982",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Sotto-pelle-Psicoanalisi-modificazioni-corporee/dp/8860303982?dib=eyJ2IjoiMSJ9.Zvwcj26ubOU7f1jR4Ity4w.nP5kzxzJ7QuHAcBZ4-GsPNFiag-YyF0TuR7ewpfYQG8&dib_tag=se&keywords=9788860303981&qid=1792501383&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=0c53cc18013c32e64a3cee7b1c95d870&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "bisogno-controllo", "testId": "bisogno-controllo", "guideSlug": "bisogno-controllo", "title": "Bisogno di controllo e prevedibilità", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "camaleonte-sociale", "testId": "camaleonte-sociale", "guideSlug": "camaleonte-sociale", "title": "Camaleonte sociale: adattarsi agli altri", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "stonewalling", "testId": "stonewalling", "guideSlug": "stonewalling", "title": "Stonewalling nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

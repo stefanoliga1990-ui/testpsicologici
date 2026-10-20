@@ -748,6 +748,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("dismorfofobia", List.of(
+                    new RecommendedReading(
+                            "Disturbo di dismorfismo corporeo. Assessment, diagnosi e trattamento",
+                            "Antonio Scarinci e Roberto Lorenzini",
+                            "Un manuale clinico italiano dedicato alla comprensione, alla valutazione professionale e al trattamento del disturbo di dismorfismo corporeo.",
+                            "È rivolto a professionisti e ricercatori: non è uno strumento per autodiagnosticarsi, non interpreta il questionario dell'app e non sostituisce una valutazione professionale.",
+                            "https://www.amazon.it/-/en/Disturbo-dismorfismo-corporeo-Assessment-trattamento/dp/8859008271?dib=eyJ2IjoiMSJ9.DSgGkoTFWsH5gSg7oSwiWg.u-Y452-hOluqXQk7Kl04hc00ZR2XwoL5c4mO_siyK2o&dib_tag=se&keywords=9788859008279&qid=1792501346&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=f604d262fb80f2ba23f2ac6372b8455e&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Sotto la pelle. Psicoanalisi delle modificazioni corporee",
+                            "Alessandra Lemma",
+                            "Una lettura clinica sull'immagine corporea e sulle modificazioni del corpo, che dedica spazio anche al disturbo di dismorfismo corporeo.",
+                            "Adotta una prospettiva psicoanalitica più ampia del tema della pagina: tatuaggi, piercing o chirurgia estetica non indicano di per sé un disturbo e il libro non valida il questionario.",
+                            "https://www.amazon.it/-/en/Sotto-pelle-Psicoanalisi-modificazioni-corporee/dp/8860303982?dib=eyJ2IjoiMSJ9.Zvwcj26ubOU7f1jR4Ity4w.nP5kzxzJ7QuHAcBZ4-GsPNFiag-YyF0TuR7ewpfYQG8&dib_tag=se&keywords=9788860303981&qid=1792501383&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=0c53cc18013c32e64a3cee7b1c95d870&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ruminazione-mentale", List.of(
                     new RecommendedReading(
                             "Catene mentali. Psicologia e psicopatologia della ruminazione",
