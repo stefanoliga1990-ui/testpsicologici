@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-10-20",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -426,7 +426,7 @@
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Personalità e tratti",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-20T13:10:38+02:00", "completedAt": "2026-10-20T13:10:38+02:00", "commitHash": "64b6880c46bbe9b8884928056952c3984e19b739", "blockReason": null }
     },
     {
       "order": 36,
