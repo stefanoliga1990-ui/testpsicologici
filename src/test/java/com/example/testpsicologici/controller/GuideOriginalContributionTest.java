@@ -50,7 +50,7 @@ class GuideOriginalContributionTest {
             "intelligenza-emotiva", "alessitimia", "intelligenza-intrapersonale",
             "assertivita", "resilienza-psicologica", "soddisfazione-vita", "empatia-verso-gli-altri");
 
-    private static final List<String> THEORY_GUIDE_SLUGS = List.of("proiezione-psicologica");
+    private static final List<String> THEORY_GUIDE_SLUGS = List.of("proiezione-psicologica", "main-character-syndrome");
 
     @Autowired
     private GuideCatalogue guides;
@@ -169,7 +169,7 @@ class GuideOriginalContributionTest {
                 .map(InformationGuide::slug)
                 .collect(Collectors.toSet());
 
-        assertThat(snapshotSlugs).hasSize(62).doesNotHaveDuplicates();
+        assertThat(snapshotSlugs).hasSize(63).doesNotHaveDuplicates();
         assertThat(catalogueSlugs).containsExactlyInAnyOrderElementsOf(snapshotSlugs);
 
         List<String> contributions = guides.findAll().stream()

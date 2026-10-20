@@ -1,0 +1,20 @@
+# Main character syndrome — specifica editoriale e matrice delle fonti (v1)
+
+## Perimetro
+
+Guida psicoeducativa per adulti e giovani adulti, senza questionario. «Main character syndrome» è un'espressione dei social per descrivere un modo di raccontarsi come protagonisti della propria vita; non è una diagnosi e non identifica da sola un disturbo di personalità. La scheda distingue l'identità narrativa, la presentazione di sé online e l'eventuale difficoltà nelle relazioni senza equipararle. La ricerca diretta sul termine è iniziale: uno studio del 2026 propone la scala MCS-10 in due campioni libanesi, ma non stabilisce soglie cliniche né consente di classificare persone italiane. Non sono previsti item, scoring, profili, card del test o CTA verso un test.
+
+Il valore originale della guida è separare tre domande spesso confuse: come una persona dà senso alla propria storia, come sceglie di mostrarsi online e come si comporta concretamente con gli altri. La preoccupazione per una relazione va descritta con episodi, reciprocità e contesto, non dedotta da un'etichetta social. Le domande riflessive suggerite nel testo sono spunti editoriali, non uno strumento validato.
+
+## Matrice affermazione/scelta → fonte → tipo di evidenza → popolazione → limite
+
+| Affermazione o scelta | Fonte | Tipo di evidenza | Popolazione | Limite |
+|---|---|---|---|---|
+| Le persone possono organizzare la propria esperienza in una storia di vita in evoluzione; ciò non è di per sé patologico | McAdams e McLean, 2013, *Narrative Identity*, doi:10.1177/0963721413475622, https://www.psychologicalscience.org/journals/current-directions/0963721413475622/ | Rassegna teorica e della ricerca sulla identità narrativa | Letteratura sullo sviluppo dell'identità, soprattutto dall'adolescenza | Non studia l'etichetta social «main character syndrome» né giudica la reciprocità di una relazione |
+| Una prima scala sul termine ha mostrato struttura e associazioni in due campioni di giovani adulti libanesi | Chaaban, Kheir e Tohme, 2026, *Development and validation of the main character syndrome scale (MCS-10)*, doi:10.1016/j.actpsy.2026.107730, https://pubmed.ncbi.nlm.nih.gov/42696901/ | Studio psicometrico iniziale, due campioni indipendenti | 135 e 263 giovani adulti libanesi | Validazione iniziale della scala degli autori, non di un test di Spazio Test; correlazioni non causali, nessuna validazione italiana o indicazione diagnostica |
+| In Italia la presentazione di sé sui social può servire a raccontare esperienze quotidiane e a gestire pubblici diversi | Marino, 2020, *Riorganizzazione continua dell'identità online*, Università di Urbino, https://ora.uniurb.it/handle/11576/2673820 | Tesi di dottorato, studio a metodi misti | Giovani italiani di 18–34 anni reclutati via social; 16 interviste | Campione non rappresentativo, contesto Instagram Stories; non misura «main character syndrome» né inferisce tratti clinici |
+| L'attività e l'autenticità online hanno relazioni diverse con l'esplorazione dell'identità; il solo tempo sui social dice poco | Avci, Baams e Kretschmer, 2025, *A Systematic Review of Social Media Use and Adolescent Identity Development*, doi:10.1007/s40894-024-00251-1, https://pubmed.ncbi.nlm.nih.gov/40385471/ | Revisione sistematica europea di 32 studi | 19.658 adolescenti/giovani, età media 16,43 anni | Studi eterogenei e spesso osservazionali; non riguarda specificamente il termine e non si trasferisce automaticamente agli adulti italiani |
+
+## Limiti e trasferibilità
+
+La ricerca esplicita di studi italiani ed europei non ha individuato una validazione italiana o europea della MCS-10. La tesi italiana e la revisione europea descrivono processi adiacenti, non convalidano l'etichetta social. Lo studio libanese è recente e non permette di affermare prevalenza, cause, rischio, diagnosi o gravità individuale. Le correlazioni con narcisismo e altre misure non rendono i costrutti equivalenti. Una presenza online curata o un linguaggio da «protagonista» non dimostrano scarsa empatia, mentre una sofferenza relazionale concreta merita attenzione anche senza questa etichetta.

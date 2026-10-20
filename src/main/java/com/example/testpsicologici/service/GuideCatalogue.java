@@ -5535,6 +5535,41 @@ public class GuideCatalogue {
                             new GuideReference("Intrapersonal, interpersonal, and social outcomes of the social sharing of emotion — Rimé e colleghi", "https://pubmed.ncbi.nlm.nih.gov/31590107/", "Revisione europea consultata per la natura interpersonale e gli esiti non univoci della condivisione emotiva; non definisce soglie."),
                             new GuideReference("Investigating links between co-rumination and personality, social functioning, and emotional well-being in a representative sample of adults — Denson e colleghi", "https://doi.org/10.1371/journal.pone.0349391", "Indagine britannica trasversale sugli adulti consultata per associazioni piccole e di direzione diversa con benessere relazionale e ansia; non prova causalità."),
                             new GuideReference("Reconceptualizing co-rumination — DiGiovanni, Tudder e Peters", "https://pubmed.ncbi.nlm.nih.gov/41538206/", "Revisione concettuale consultata per il carattere diadico ed eterogeneo della co-ruminazione; non classifica gli scambi individuali."))
+            ),
+            new InformationGuide(
+                    "main-character-syndrome", "main-character-syndrome",
+                    "Main character syndrome: significato e limiti",
+                    "Main character syndrome: cosa descrive davvero questa espressione social?",
+                    "Main character syndrome: significato e ricerca | Spazio Test",
+                    "Che cosa significa main character syndrome, cosa dice la ricerca iniziale e perché non è una diagnosi né un sinonimo di narcisismo.",
+                    "Main character syndrome è un'espressione nata nei social per parlare di una vita raccontata come se si fosse il personaggio principale. Può essere usata con ironia o come critica, ma non è una diagnosi: il modo di raccontarsi non basta per descrivere come una persona sta o tratta gli altri.",
+                    List.of(
+                            new GuideSection("In breve", "Un'espressione social, non una diagnosi", List.of(
+                                    "L'idea di essere il «personaggio principale» può indicare il desiderio di dare senso alla propria esperienza, la scelta di come mostrarsi online oppure una critica al modo in cui qualcuno occupa lo spazio nelle relazioni. Questi significati non sono equivalenti e la stessa frase può cambiare senso da un contesto all'altro.",
+                                    "Main character syndrome non è una diagnosi clinica. Non basta un video, un post o un'impressione per attribuire a una persona un tratto stabile o un disturbo di personalità."), List.of()),
+                            new GuideSection("Identità", "Raccontare la propria vita è diverso dal mettersi al centro di tutto", List.of(
+                                    "La ricerca sull'identità narrativa descrive il modo in cui le persone collegano ricordi, presente e futuro in una storia personale in evoluzione. Avere un punto di vista sulla propria vita è quindi un processo umano studiato, non un segnale di patologia.",
+                                    "La ricerca italiana sulle Instagram Stories mostra anche che condividere momenti quotidiani può avere a che fare con il pubblico a cui ci si rivolge e con il controllo della propria visibilità. Quello studio non dice che pubblicare una storia significhi cercare di dominare l'attenzione altrui."), List.of()),
+                            new GuideSection("Ricerca", "Una misura iniziale, con confini ancora stretti", List.of(
+                                    "Nel 2026 è stata pubblicata una prima ricerca che propone una scala di dieci domande sul cosiddetto main character syndrome. Gli autori l'hanno studiata in due campioni di giovani adulti libanesi e hanno osservato associazioni con altre misure di identità, uso problematico dei social e narcisismo.",
+                                    "Sono correlazioni di gruppo, non prove che un comportamento online causi difficoltà psicologiche o che le persone con certi post abbiano un disturbo. Lo studio non fornisce una validazione italiana né soglie cliniche; una scala di ricerca proposta dagli autori non è un test disponibile su Spazio Test."), List.of()),
+                            new GuideSection("Distinzioni", "Non confonderlo con il narcisismo", List.of(
+                                    "Nello studio iniziale l'espressione e la misura del narcisismo sono correlate ma distinte. Usare «main character» come sinonimo di disturbo narcisistico di personalità cancellerebbe questa distinzione e trasformerebbe una critica colloquiale in una diagnosi impropria.",
+                                    "Anche la ricerca europea sull'identità online suggerisce di guardare a ciò che le persone fanno e al contesto, non soltanto al tempo trascorso sui social. Una presentazione curata di sé non dimostra scarsa considerazione degli altri; allo stesso modo, difficoltà concrete nelle relazioni non diventano irrilevanti solo perché l'etichetta è imprecisa."), List.of()),
+                            new GuideSection("Orientarsi", "Osservare comportamenti e reciprocità", List.of(
+                                    "Se una relazione lascia poco spazio alle tue esperienze, può essere più utile descrivere episodi specifici: quando provi a parlare, l'altra persona ascolta? I bisogni di entrambi trovano posto? Il modo di stare insieme cambia secondo la situazione? Sono domande per riflettere, non criteri di un test.",
+                                    "Quando è possibile e sicuro, parlare di un episodio e del proprio bisogno può essere più chiaro che definire l'altra persona «main character». Se il disagio è persistente o riguarda controllo, paura o isolamento, cercare sostegno qualificato è possibile senza dover prima trovare un'etichetta."), List.of()),
+                            new GuideSection("Limiti", "Che cosa questa guida non può stabilire", List.of(
+                                    "Non esiste qui una valutazione individuale del main character syndrome. Le evidenze dirette sono iniziali e provengono da due campioni libanesi; gli studi italiani ed europei citati riguardano la presentazione di sé e l'identità, non validano questa etichetta per la popolazione italiana.",
+                                    "Questa scheda non contiene questionario, punteggi o profili. Non permette di dedurre intenzioni, empatia o diagnosi da un post o da una singola conversazione; se una situazione ti provoca sofferenza, contano il contesto e i fatti concreti, non il nome social attribuito."), List.of())
+                    ),
+                    null,
+                    "Questa guida separa identità narrativa, presentazione di sé online e reciprocità nelle relazioni, chiarendo perché la ricerca iniziale sul main character syndrome non autorizza diagnosi o etichette personali.",
+                    List.of(
+                            new GuideReference("Narrative Identity — McAdams e McLean", "https://www.psychologicalscience.org/journals/current-directions/0963721413475622/", "Rassegna sulla costruzione di una storia personale in evoluzione; non studia l'etichetta main character syndrome né giudica relazioni individuali."),
+                            new GuideReference("Development and validation of the main character syndrome scale — Chaaban, Kheir e Tohme", "https://pubmed.ncbi.nlm.nih.gov/42696901/", "Studio psicometrico iniziale in due campioni di giovani libanesi consultato per la definizione operativa e le correlazioni; non offre soglie cliniche o validazione italiana."),
+                            new GuideReference("Riorganizzazione continua dell'identità online — Marino", "https://ora.uniurb.it/handle/11576/2673820", "Tesi italiana a metodi misti sulla presentazione di sé tramite Instagram Stories; non misura main character syndrome e usa un campione non rappresentativo."),
+                            new GuideReference("A Systematic Review of Social Media Use and Adolescent Identity Development — Avci, Baams e Kretschmer", "https://pubmed.ncbi.nlm.nih.gov/40385471/", "Revisione sistematica europea su identità e attività online in adolescenti; non studia direttamente l'etichetta né è trasferibile automaticamente agli adulti italiani."))
             )
     );
 
