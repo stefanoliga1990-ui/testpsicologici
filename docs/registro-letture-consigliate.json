@@ -2616,7 +2616,63 @@
         }
       ]
     },
-    { "topicId": "bisogno-controllo", "testId": "bisogno-controllo", "guideSlug": "bisogno-controllo", "title": "Bisogno di controllo e prevedibilità", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "bisogno-controllo",
+      "testId": "bisogno-controllo",
+      "guideSlug": "bisogno-controllo",
+      "title": "Bisogno di controllo e prevedibilità",
+      "fallbackTopics": ["tolleranza dell'incertezza", "eventi imprevisti"],
+      "fallbackRationale": "I libri disponibili affrontano aspetti più ampi del tema: Conniff e Templar-Lewis discutono la risposta all'incertezza quotidiana, mentre Harris propone strumenti per affrontare eventi imprevisti. Sono pertinenti alla ricerca di prevedibilità senza trasformare il bisogno di controllo in una diagnosi o trattare i due volumi come strumenti di misura.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "L'incertezza. Imparare a gestire l'ignoto",
+          "placeholderCover": true,
+          "authors": ["Sam Conniff", "Katherine Templar-Lewis"],
+          "publisher": "Giunti Psicologia.io",
+          "isbn13": "9791255741275",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo sulla tolleranza dell'incertezza",
+          "audience": "Adulti interessati a riflettere sulle reazioni all'incertezza quotidiana",
+          "description": "Un saggio divulgativo sul rapporto con l'incertezza quotidiana e sulle reazioni agli eventi che non possiamo prevedere.",
+          "limit": "Propone esempi ed esercizi generali: non misura il bisogno di controllo, non interpreta il risultato del questionario e non garantisce benefici individuali.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://giunti.it/products/l-incertezza-conniff-sam-9791255741275"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "B0GHSYH7CB",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Lincertezza-Imparare-gestire-lignoto-Conniff/dp/B0GHSYH7CB?dib=eyJ2IjoiMSJ9.9YKwCdV8bA85x6koxl9LHQ.5KOBuZC4C39vReDE_oVRuL8PjPAV7A0VIHyxT_6oXEA&dib_tag=se&keywords=9791255741275&qid=1792587732&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=4b6615b8e9bd205463402533d4857b1f&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Se il mondo ti crolla addosso. Imparare a veleggiare tra le ondate della vita",
+          "placeholderCover": true,
+          "authors": ["Russ Harris", "Giovambattista Presti (presentazione all'edizione italiana)"],
+          "publisher": "Erickson",
+          "isbn13": "9788859026198",
+          "publicationYear": 2022,
+          "format": "brossura",
+          "editorialRole": "Guida di autoaiuto ispirata all'Acceptance and Commitment Therapy",
+          "audience": "Adulti interessati ad affrontare cambiamenti e difficoltà imprevisti",
+          "description": "Una guida basata sull'Acceptance and Commitment Therapy per affrontare cambiamenti e difficoltà imprevisti, distinguendo ciò su cui si può agire da ciò che resta incerto.",
+          "limit": "Parla di crisi e dolore in generale, non specificamente del bisogno di prevedibilità: non è un trattamento personalizzato e non valida il questionario.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.erickson.it/it/se-il-mondo-ti-crolla-addosso-202201"}, {"label": "Anteprima editore con ISBN cartaceo", "url": "https://static.erickson.it/prod/files/ItemVariant/itemvariant_sfoglialibro/181402_9788859026198_edi2003_se-il-mondo-ti-crolla-addosso.pdf"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8859026199",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/crolla-addosso-Imparare-veleggiare-ondate/dp/8859026199?dib=eyJ2IjoiMSJ9.P6IoQPOohHxjf4WLqbzz1w.nIFpXzvQhZopbeMfE10MT2gnQjeC8WeMC7EfJxmFT5c&dib_tag=se&keywords=9788859026198&qid=1792587833&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=4196c9a2bc39133d0047da13ac44ae1c&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "camaleonte-sociale", "testId": "camaleonte-sociale", "guideSlug": "camaleonte-sociale", "title": "Camaleonte sociale: adattarsi agli altri", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "stonewalling", "testId": "stonewalling", "guideSlug": "stonewalling", "title": "Stonewalling nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "silent-treatment", "testId": "silent-treatment", "guideSlug": "silent-treatment", "title": "Silent treatment nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

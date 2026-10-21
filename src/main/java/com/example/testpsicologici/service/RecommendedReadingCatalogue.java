@@ -766,6 +766,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("bisogno-controllo", List.of(
+                    new RecommendedReading(
+                            "L'incertezza. Imparare a gestire l'ignoto",
+                            "Sam Conniff e Katherine Templar-Lewis",
+                            "Un saggio divulgativo sul rapporto con l'incertezza quotidiana e sulle reazioni agli eventi che non possiamo prevedere.",
+                            "Propone esempi ed esercizi generali: non misura il bisogno di controllo, non interpreta il risultato del questionario e non garantisce benefici individuali.",
+                            "https://www.amazon.it/-/en/Lincertezza-Imparare-gestire-lignoto-Conniff/dp/B0GHSYH7CB?dib=eyJ2IjoiMSJ9.9YKwCdV8bA85x6koxl9LHQ.5KOBuZC4C39vReDE_oVRuL8PjPAV7A0VIHyxT_6oXEA&dib_tag=se&keywords=9791255741275&qid=1792587732&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=4b6615b8e9bd205463402533d4857b1f&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Se il mondo ti crolla addosso. Imparare a veleggiare tra le ondate della vita",
+                            "Russ Harris, con presentazione all'edizione italiana di Giovambattista Presti",
+                            "Una guida basata sull'Acceptance and Commitment Therapy per affrontare cambiamenti e difficoltà imprevisti, distinguendo ciò su cui si può agire da ciò che resta incerto.",
+                            "Parla di crisi e dolore in generale, non specificamente del bisogno di prevedibilità: non è un trattamento personalizzato e non valida il questionario.",
+                            "https://www.amazon.it/-/en/crolla-addosso-Imparare-veleggiare-ondate/dp/8859026199?dib=eyJ2IjoiMSJ9.P6IoQPOohHxjf4WLqbzz1w.nIFpXzvQhZopbeMfE10MT2gnQjeC8WeMC7EfJxmFT5c&dib_tag=se&keywords=9788859026198&qid=1792587833&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=4196c9a2bc39133d0047da13ac44ae1c&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ruminazione-mentale", List.of(
                     new RecommendedReading(
                             "Catene mentali. Psicologia e psicopatologia della ruminazione",
