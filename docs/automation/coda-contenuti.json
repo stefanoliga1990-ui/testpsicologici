@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-10-20",
+  "updatedAt": "2026-10-21",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -437,7 +437,7 @@
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Autostima, approvazione e obiettivi",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-21T13:07:54+02:00", "completedAt": "2026-10-21T13:07:54+02:00", "commitHash": "94e21d67005f484e3fc1406901cc9a45b35f3260", "blockReason": null }
     },
     {
       "order": 37,
