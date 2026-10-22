@@ -442,13 +442,13 @@
     {
       "order": 37,
       "slug": "weaponized-incompetence",
-      "workingTitle": "Weaponized incompetence: quando l'incapacità trasferisce il carico agli altri",
+      "workingTitle": "Weaponized incompetence: compiti, responsabilità e intenzioni",
       "sourceTopic": "Weaponized incompetence",
       "sourceDescription": "Mostrarsi volutamente incapaci di svolgere qualcosa affinché qualcun altro se ne faccia carico.",
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Ambiguità e manipolazione relazionale",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-22T13:09:51+02:00", "completedAt": "2026-10-22T13:09:51+02:00", "commitHash": "fb172b0baa7423e2680ba1e7b14e7848ba8cd073", "blockReason": null }
     },
     {
       "order": 38,
