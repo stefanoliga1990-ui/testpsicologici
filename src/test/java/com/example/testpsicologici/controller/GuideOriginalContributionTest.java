@@ -34,7 +34,7 @@ class GuideOriginalContributionTest {
             "stili-attaccamento", "disponibilita-emotiva", "parentificazione",
             "paura-abbandono", "limerenza", "dipendenza-affettiva",
             "compatibilita-coppia", "gelosia-partner", "dinamiche-narcisistiche-coppia",
-            "situationship", "codipendenza-relazionale", "emotional-dumping");
+            "situationship", "codipendenza-relazionale", "emotional-dumping", "lavoro-emotivo");
 
     private static final List<String> AMBIGUOUS_DYNAMICS_SLUGS = List.of(
             "relazione-dannosa-benessere", "gaslighting", "love-bombing",
@@ -169,7 +169,7 @@ class GuideOriginalContributionTest {
                 .map(InformationGuide::slug)
                 .collect(Collectors.toSet());
 
-        assertThat(snapshotSlugs).hasSize(65).doesNotHaveDuplicates();
+        assertThat(snapshotSlugs).hasSize(66).doesNotHaveDuplicates();
         assertThat(catalogueSlugs).containsExactlyInAnyOrderElementsOf(snapshotSlugs);
 
         List<String> contributions = guides.findAll().stream()
