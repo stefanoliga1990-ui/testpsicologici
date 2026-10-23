@@ -2673,7 +2673,63 @@
         }
       ]
     },
-    { "topicId": "camaleonte-sociale", "testId": "camaleonte-sociale", "guideSlug": "camaleonte-sociale", "title": "Camaleonte sociale: adattarsi agli altri", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "camaleonte-sociale",
+      "testId": "camaleonte-sociale",
+      "guideSlug": "camaleonte-sociale",
+      "title": "Camaleonte sociale: adattarsi agli altri",
+      "fallbackTopics": ["assertività", "comunicazione nelle relazioni"],
+      "fallbackRationale": "Non sono emersi due libri solidi dedicati specificamente alla metafora del camaleonte sociale. Questi volumi affrontano invece l'espressione di sé e l'adattamento della comunicazione ai contesti: un collegamento parziale, che non equipara l'adattamento sociale a scarsa assertività né prescrive di esporsi in situazioni poco sicure.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Come essere assertivi in ogni situazione",
+          "placeholderCover": true,
+          "authors": ["Sue Hadfield", "Gill Hasson"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788820413231",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa all'assertività nelle relazioni quotidiane",
+          "audience": "Adulti interessati a esprimere bisogni e limiti nelle relazioni",
+          "description": "Una guida pratica su come comunicare bisogni e limiti, gestire aspettative e critiche in contesti personali e professionali.",
+          "limit": "Tratta l'assertività, non misura l'adattamento sociale e non implica che cambiare registro sia un problema. Le strategie non vanno applicate senza considerare sicurezza e margine di scelta nel contesto.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/ricerca/scheda_libro.asp?codiceisbn=9788820413231"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "882041323X",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/882041323X?&linkCode=ll2&tag=spaziotest-21&linkId=0af31b59693e585538dfa1e033907cef&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Manuale di assertività. Teoria e pratica delle abilità relazionali: alla scoperta di sé e degli altri",
+          "placeholderCover": true,
+          "authors": ["Roberto Anchisi", "Mia Gambotto Dessy"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788820414290",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Manuale teorico e pratico sulle abilità relazionali",
+          "audience": "Studenti e professionisti di psicologia, comunicazione e formazione",
+          "description": "Un manuale che approfondisce le abilità relazionali e l'espressione di sé senza prevaricare o soffocare i propri bisogni.",
+          "limit": "È un testo tecnico, più ampio della presentazione sociale descritta nel test; non interpreta il questionario né rende l'assertività una misura di autenticità.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.francoangeli.it/libro?id=21130"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8820414295",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Manuale-assertivit%C3%A0-pratica-abilit%C3%A0-relazionali/dp/8820414295?dib=eyJ2IjoiMSJ9.RqrSkEC_CKmKX4ORiK7h_A.-PdBQ8mWXkS4P4q4APw794jGMqp4zuYsRhpF8BAvmGw&dib_tag=se&keywords=9788820414290&qid=1792760425&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=51b6de94f726efc01b3b3143cff7eae5&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "stonewalling", "testId": "stonewalling", "guideSlug": "stonewalling", "title": "Stonewalling nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "silent-treatment", "testId": "silent-treatment", "guideSlug": "silent-treatment", "title": "Silent treatment nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "trauma-bonding", "testId": "trauma-bonding", "guideSlug": "trauma-bonding", "title": "Trauma bonding nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

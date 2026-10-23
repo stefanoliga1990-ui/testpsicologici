@@ -784,6 +784,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("camaleonte-sociale", List.of(
+                    new RecommendedReading(
+                            "Come essere assertivi in ogni situazione",
+                            "Sue Hadfield e Gill Hasson",
+                            "Una guida pratica su come comunicare bisogni e limiti, gestire aspettative e critiche in contesti personali e professionali.",
+                            "Tratta l'assertività, non misura l'adattamento sociale e non implica che cambiare registro sia un problema. Le strategie richiedono attenzione alla sicurezza e al margine di scelta.",
+                            "https://www.amazon.it/dp/882041323X?&linkCode=ll2&tag=spaziotest-21&linkId=0af31b59693e585538dfa1e033907cef&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Manuale di assertività. Teoria e pratica delle abilità relazionali: alla scoperta di sé e degli altri",
+                            "Roberto Anchisi e Mia Gambotto Dessy",
+                            "Un manuale che approfondisce le abilità relazionali e l'espressione di sé senza prevaricare o soffocare i propri bisogni.",
+                            "È un testo tecnico, più ampio della presentazione sociale descritta nel test; non interpreta il questionario né rende l'assertività una misura di autenticità.",
+                            "https://www.amazon.it/-/en/Manuale-assertivit%C3%A0-pratica-abilit%C3%A0-relazionali/dp/8820414295?dib=eyJ2IjoiMSJ9.RqrSkEC_CKmKX4ORiK7h_A.-PdBQ8mWXkS4P4q4APw794jGMqp4zuYsRhpF8BAvmGw&dib_tag=se&keywords=9788820414290&qid=1792760425&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=51b6de94f726efc01b3b3143cff7eae5&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ruminazione-mentale", List.of(
                     new RecommendedReading(
                             "Catene mentali. Psicologia e psicopatologia della ruminazione",
