@@ -77,7 +77,8 @@ public class GuideEditorialHistoryCatalogue {
             entry("main-character-syndrome", history("2026-10-20", "2026-10-20")),
             entry("pick-me-behaviour", history("2026-10-21", "2026-10-21")),
             entry("weaponized-incompetence", history("2026-10-22", "2026-10-22")),
-            entry("lavoro-emotivo", history("2026-10-23", "2026-10-23"))
+            entry("lavoro-emotivo", history("2026-10-23", "2026-10-23")),
+            entry("red-green-beige-flags", history("2026-10-24", "2026-10-24"))
     );
 
     public GuideEditorialHistory forSlug(String slug) {
