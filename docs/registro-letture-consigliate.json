@@ -2730,7 +2730,64 @@
         }
       ]
     },
-    { "topicId": "stonewalling", "testId": "stonewalling", "guideSlug": "stonewalling", "title": "Stonewalling nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "stonewalling",
+      "testId": null,
+      "guideSlug": "stonewalling",
+      "title": "Stonewalling nelle relazioni",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["conflitto di coppia", "comunicazione nella coppia"],
+      "fallbackRationale": "Non sono emersi due libri italiani solidi dedicati esclusivamente allo stonewalling. Gottman e Schwartz Gottman trattano il conflitto nella coppia, mentre Harris affronta differenze e comunicazione con una prospettiva ACT. Il collegamento riguarda il ritiro durante i conflitti, senza attribuire intenzioni a un partner o presumere che il confronto sia sempre sicuro.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "D'amore e non d'accordo. Quando litigare rafforza la coppia",
+          "placeholderCover": true,
+          "authors": ["John M. Gottman", "Julie Schwartz Gottman"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788832857177",
+          "publicationYear": 2025,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa sui conflitti di coppia",
+          "audience": "Adulti interessati a comprendere e gestire i conflitti nella coppia",
+          "description": "Una guida che affronta i modi in cui le coppie litigano e propone esercizi per riconoscere comportamenti che bloccano il dialogo.",
+          "limit": "Il volume è centrato sul conflitto di coppia, non identifica lo stonewalling in una persona e non accerta le intenzioni del partner. In presenza di intimidazione o violenza, la sicurezza viene prima degli esercizi di confronto.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/john-m-gottman-julie-schwartz-gottman/damore-e-non-daccordo-9788832857177-4453.html"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8832857170",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/8832857170?&linkCode=ll2&tag=spaziotest-21&linkId=d34def9f3e23e539476227f0e1cc42ee&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Se la coppia è in crisi. Smetti di lottare, riconcilia le differenze e rafforza la relazione con l'Acceptance and Commitment Therapy",
+          "placeholderCover": true,
+          "authors": ["Russ Harris", "Francesca Scaglia (a cura di)", "Massimo Ronchei (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835176459",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Guida per coppie basata sull'Acceptance and Commitment Therapy",
+          "audience": "Adulti che desiderano riflettere sui conflitti e sulle differenze nella coppia",
+          "description": "Una guida pratica per osservare i conflitti, distinguere differenze e scegliere come rispondere nelle relazioni di coppia.",
+          "limit": "Riguarda le difficoltà di coppia in generale, non specificamente lo stonewalling; non interpreta il comportamento del partner né sostituisce un supporto professionale o una valutazione della sicurezza.",
+          "primarySources": [{"label": "Scheda editore", "url": "https://francoangeli.it/Libro/Se-la-coppia-%C3%A8-in-crisi-Smetti-di-lottare%2C-riconcilia-le-differenze-e-rafforza-la-relazione-con-l%27Acceptance-and-Commitment-Therapy?Id=30368"}],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "883517645X",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/883517645X?&linkCode=ll2&tag=spaziotest-21&linkId=f4af1656ef804adf4bf0d32ca7506791&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "silent-treatment", "testId": "silent-treatment", "guideSlug": "silent-treatment", "title": "Silent treatment nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "trauma-bonding", "testId": "trauma-bonding", "guideSlug": "trauma-bonding", "title": "Trauma bonding nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "rinforzo-intermittente-relazioni", "testId": null, "guideSlug": "rinforzo-intermittente-relazioni", "title": "Rinforzo intermittente nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

@@ -802,6 +802,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("stonewalling", List.of(
+                    new RecommendedReading(
+                            "D'amore e non d'accordo. Quando litigare rafforza la coppia",
+                            "John M. Gottman e Julie Schwartz Gottman",
+                            "Una guida che affronta i modi in cui le coppie litigano e propone esercizi per riconoscere comportamenti che bloccano il dialogo.",
+                            "Il volume è centrato sul conflitto di coppia, non identifica lo stonewalling in una persona e non accerta le intenzioni del partner. In presenza di intimidazione o violenza, la sicurezza viene prima degli esercizi di confronto.",
+                            "https://www.amazon.it/dp/8832857170?&linkCode=ll2&tag=spaziotest-21&linkId=d34def9f3e23e539476227f0e1cc42ee&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Se la coppia è in crisi. Smetti di lottare, riconcilia le differenze e rafforza la relazione con l'Acceptance and Commitment Therapy",
+                            "Russ Harris (a cura di Francesca Scaglia e Massimo Ronchei)",
+                            "Una guida pratica per osservare i conflitti, distinguere differenze e scegliere come rispondere nelle relazioni di coppia.",
+                            "Riguarda le difficoltà di coppia in generale, non specificamente lo stonewalling; non interpreta il comportamento del partner né sostituisce un supporto professionale o una valutazione della sicurezza.",
+                            "https://www.amazon.it/dp/883517645X?&linkCode=ll2&tag=spaziotest-21&linkId=f4af1656ef804adf4bf0d32ca7506791&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("ruminazione-mentale", List.of(
                     new RecommendedReading(
                             "Catene mentali. Psicologia e psicopatologia della ruminazione",
