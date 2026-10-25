@@ -475,13 +475,13 @@
     {
       "order": 40,
       "slug": "doomscrolling",
-      "workingTitle": "Doomscrolling: quando lo scorrimento automatico alimenta il malessere",
+      "workingTitle": "Doomscrolling: quando le notizie negative diventano difficili da interrompere",
       "sourceTopic": "Scrolling automatico e doomscrolling",
       "sourceDescription": null,
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Benessere digitale",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-25T13:05:16+01:00", "completedAt": "2026-10-25T13:05:16+01:00", "commitHash": "9c4d9411f3881f7b1a1950ada71fe5f48ca1d5fe", "blockReason": null }
     },
     {
       "order": 41,
