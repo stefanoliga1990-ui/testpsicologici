@@ -51,6 +51,7 @@ class GuideOriginalContributionTest {
             "assertivita", "resilienza-psicologica", "soddisfazione-vita", "empatia-verso-gli-altri");
 
     private static final List<String> THEORY_GUIDE_SLUGS = List.of("proiezione-psicologica", "main-character-syndrome", "pick-me-behaviour");
+    private static final List<String> DIGITAL_GUIDE_SLUGS = List.of("doomscrolling");
 
     @Autowired
     private GuideCatalogue guides;
@@ -162,14 +163,14 @@ class GuideOriginalContributionTest {
     void wellbeingGuidesCompleteSnapshotCoverageAndRenderDistinctContributions() throws Exception {
         MockMvc mvc = webAppContextSetup(context).build();
         List<String> snapshotSlugs = Stream.of(SLUGS, RELATIONSHIP_SLUGS,
-                        AMBIGUOUS_DYNAMICS_SLUGS, SELF_EVALUATION_SLUGS, WELLBEING_SLUGS, THEORY_GUIDE_SLUGS)
+                        AMBIGUOUS_DYNAMICS_SLUGS, SELF_EVALUATION_SLUGS, WELLBEING_SLUGS, THEORY_GUIDE_SLUGS, DIGITAL_GUIDE_SLUGS)
                 .flatMap(List::stream)
                 .toList();
         Set<String> catalogueSlugs = guides.findAll().stream()
                 .map(InformationGuide::slug)
                 .collect(Collectors.toSet());
 
-        assertThat(snapshotSlugs).hasSize(67).doesNotHaveDuplicates();
+        assertThat(snapshotSlugs).hasSize(68).doesNotHaveDuplicates();
         assertThat(catalogueSlugs).containsExactlyInAnyOrderElementsOf(snapshotSlugs);
 
         List<String> contributions = guides.findAll().stream()
