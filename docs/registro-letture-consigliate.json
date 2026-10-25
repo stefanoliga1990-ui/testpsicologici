@@ -2845,6 +2845,7 @@
     { "topicId": "pick-me-behaviour", "testId": null, "guideSlug": "pick-me-behaviour", "title": "Pick-me behaviour: approvazione, confronto e svalutazione del gruppo", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "weaponized-incompetence", "testId": null, "guideSlug": "weaponized-incompetence", "title": "Weaponized incompetence: significato e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "lavoro-emotivo", "testId": null, "guideSlug": "lavoro-emotivo", "title": "Lavoro emotivo: significato e contesti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
-    { "topicId": "red-green-beige-flags", "testId": null, "guideSlug": "red-green-beige-flags", "title": "Red, green e beige flags: significato e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
+    { "topicId": "red-green-beige-flags", "testId": null, "guideSlug": "red-green-beige-flags", "title": "Red, green e beige flags: significato e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "doomscrolling", "testId": null, "guideSlug": "doomscrolling", "title": "Doomscrolling: notizie negative e scorrimento continuo", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
   ]
 }
