@@ -2788,7 +2788,49 @@
         }
       ]
     },
-    { "topicId": "silent-treatment", "testId": "silent-treatment", "guideSlug": "silent-treatment", "title": "Silent treatment nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "silent-treatment",
+      "testId": null,
+      "guideSlug": "silent-treatment",
+      "title": "Silent treatment nelle relazioni",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["significati del silenzio", "violenza psicologica nelle relazioni"],
+      "fallbackRationale": "Non sono stati individuati due libri italiani solidi dedicati esclusivamente al silent treatment. Fabiano e Sinelli distinguono diversi usi del silenzio, anche nelle forme coercitive; Gabbie di parole affronta dinamiche di controllo e violenza psicologica nella coppia. Nessuno dei due permette di attribuire intenzioni o classificare un singolo episodio.",
+      "researchStatus": "PENDING_PUBLICATION",
+      "pendingReason": "Le edizioni cartacee e gli ISBN di entrambi i libri sono stati verificati su Amazon.it, ma SiteStripe continua a copiare un URL riferito all'ASIN 883517645X, diverso dagli ASIN correnti 8835161509 e 8835117976. Non pubblicare le schede finché entrambi i link non puntano ai prodotti corretti.",
+      "lastAttemptAt": "2026-10-25T14:01:26Z",
+      "researchCandidates": [
+        {
+          "title": "Del silenzio non si può tacere",
+          "subtitle": "Un viaggio nell’universo del silenzio. Nuova edizione",
+          "authors": ["Giuseppe Fabiano", "Stefano Sinelli"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835161509",
+          "publicationYear": 2024,
+          "format": "brossura",
+          "amazonAsin": "8835161509",
+          "primarySource": "https://francoangeli.it/Libro/Del-silenzio-non-si-pu%C3%B2-tacere?Id=29280",
+          "editorialRole": "Saggio divulgativo sui diversi significati e usi del silenzio, comprese le forme coercitive",
+          "audience": "Adulti interessati a riflettere sul silenzio nei contesti quotidiani e relazionali",
+          "limit": "Il libro affronta molti ambiti oltre alle relazioni di coppia; il silenzio non indica di per sé esclusione intenzionale o violenza."
+        },
+        {
+          "title": "Gabbie di parole",
+          "subtitle": "Il linguaggio della violenza psicologica: valutazione, prevenzione e intervento",
+          "authors": ["Carmela Mento (a cura di)", "Giovanna Spatari (a cura di)", "Maria Rosaria Anna Muscatello (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835117971",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "amazonAsin": "8835117976",
+          "primarySource": "https://www.francoangeli.it/Libro/Gabbie-di-parole-Il-linguaggio-della-violenza-psicologica%3A-valutazione%2C-prevenzione-e-intervento?Id=27064",
+          "editorialRole": "Volume collettaneo sulle dinamiche di potere, controllo e violenza psicologica nella coppia",
+          "audience": "Professionisti, studenti e lettori interessati alla violenza psicologica nelle relazioni",
+          "limit": "Il testo esamina forme ampie di violenza psicologica e usa anche categorie cliniche: un episodio di silenzio non consente di inferire diagnosi, intenzioni o una dinamica coercitiva."
+        }
+      ],
+      "books": []
+    },
     { "topicId": "trauma-bonding", "testId": "trauma-bonding", "guideSlug": "trauma-bonding", "title": "Trauma bonding nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "rinforzo-intermittente-relazioni", "testId": null, "guideSlug": "rinforzo-intermittente-relazioni", "title": "Rinforzo intermittente nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "guilt-tripping", "testId": null, "guideSlug": "guilt-tripping", "title": "Guilt-tripping nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
