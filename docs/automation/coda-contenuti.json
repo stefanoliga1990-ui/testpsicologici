@@ -492,7 +492,7 @@
       "contentMode": "GUIDE_ONLY",
       "categoryHint": "Personalità e tratti",
       "questionnaire": { "enabled": false, "reason": "Scelta editoriale indicata nella lista sorgente.", "notes": "Mantenere distinti tratti di ricerca, diagnosi cliniche e giudizi sulle singole persone." },
-      "workflow": { "status": "PENDING", "attempts": 0, "lastAttemptAt": null, "completedAt": null, "commitHash": null, "blockReason": null }
+      "workflow": { "status": "COMPLETED", "attempts": 1, "lastAttemptAt": "2026-10-26T13:10:26+01:00", "completedAt": "2026-10-26T13:10:26+01:00", "commitHash": "bed52002f892b6beed17123b99921a8da1932778", "blockReason": null }
     },
     {
       "order": 42,
