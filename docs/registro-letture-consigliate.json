@@ -2831,7 +2831,49 @@
       ],
       "books": []
     },
-    { "topicId": "trauma-bonding", "testId": "trauma-bonding", "guideSlug": "trauma-bonding", "title": "Trauma bonding nelle relazioni", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "trauma-bonding",
+      "testId": null,
+      "guideSlug": "trauma-bonding",
+      "title": "Trauma bonding nelle relazioni",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["legami in contesti di violenza domestica", "controllo e manipolazione nella coppia"],
+      "fallbackRationale": "Non sono stati individuati due libri italiani solidi dedicati esclusivamente al trauma bonding. Il volume di Reale contiene una trattazione dei legami traumatici nel maltrattamento familiare; Gabbie di parole esamina controllo e manipolazione nella coppia. Questi testi offrono contesto, ma non permettono di stabilire la natura di una relazione individuale.",
+      "researchStatus": "PENDING_PUBLICATION",
+      "pendingReason": "Le edizioni cartacee e gli ISBN dei due volumi sono stati verificati su Amazon.it; SiteStripe però copia ancora il link del prodotto con ASIN 883517645X, invece dei prodotti correnti 8856837641 e 8835117976. Non pubblicare schede con un collegamento errato.",
+      "lastAttemptAt": "2026-10-26T13:58:50Z",
+      "researchCandidates": [
+        {
+          "title": "Maltrattamento e violenza sulle donne. Vol. II",
+          "subtitle": "Criteri, metodi e strumenti dell'intervento clinico",
+          "authors": ["Elvira Reale"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788856837643",
+          "publicationYear": 2011,
+          "format": "brossura",
+          "amazonAsin": "8856837641",
+          "primarySource": "https://www.francoangeli.it/Libro/Maltrattamento-e-violenza-sulle-donne.-Vol.-II.-Criteri%2C-metodi-e-strumenti-dell%27intervento-clinico?Id=19266",
+          "editorialRole": "Manuale professionale sull'intervento clinico in contesti di violenza domestica, con una sezione sui legami traumatici",
+          "audience": "Psicologi clinici, psicoterapeuti e operatori che lavorano con donne vittime di violenza",
+          "limit": "È rivolto a professionisti e alla violenza contro le donne; non trasferisce automaticamente i suoi modelli ad altre popolazioni e non consente di valutare una relazione personale senza contesto."
+        },
+        {
+          "title": "Gabbie di parole",
+          "subtitle": "Il linguaggio della violenza psicologica: valutazione, prevenzione e intervento",
+          "authors": ["Carmela Mento (a cura di)", "Giovanna Spatari (a cura di)", "Maria Rosaria Anna Muscatello (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835117971",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "amazonAsin": "8835117976",
+          "primarySource": "https://www.francoangeli.it/Libro/Gabbie-di-parole-Il-linguaggio-della-violenza-psicologica%3A-valutazione%2C-prevenzione-e-intervento?Id=27064",
+          "editorialRole": "Volume collettaneo su controllo, manipolazione e violenza psicologica nella coppia",
+          "audience": "Professionisti, studenti e lettori interessati alle dinamiche di potere nelle relazioni",
+          "limit": "Il libro tratta forme più ampie di violenza psicologica e usa anche categorie cliniche; non dimostra che una relazione specifica sia un legame traumatico."
+        }
+      ],
+      "books": []
+    },
     { "topicId": "rinforzo-intermittente-relazioni", "testId": null, "guideSlug": "rinforzo-intermittente-relazioni", "title": "Rinforzo intermittente nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "guilt-tripping", "testId": null, "guideSlug": "guilt-tripping", "title": "Guilt-tripping nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ricatto-emotivo", "testId": null, "guideSlug": "ricatto-emotivo", "title": "Ricatto emotivo nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
