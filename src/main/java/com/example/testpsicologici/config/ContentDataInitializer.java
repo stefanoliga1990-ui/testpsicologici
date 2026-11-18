@@ -95,6 +95,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedAppearanceConcernsInformationTest();
         seedNeedForControlInformationTest();
         seedSocialChameleonInformationTest();
+        seedPerceivedSelfEfficacyInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4739,7 +4740,80 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Le differenze nelle posizioni espresse sono state frequenti; non dimostrano compiacenza o falsità.");
     }
 
+    private void seedPerceivedSelfEfficacyInformationTest() {
+        String id = "autoefficacia-percepita";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Autoefficacia percepita: quanto mi sento in grado di affrontare le sfide?",
+                "Auto-osservazione informativa",
+                "Esplora quanto ti senti in grado oggi di avviare compiti, adattare un piano e riprendere dopo un'interruzione.",
+                "4 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti: pensa a compiti concreti della vita attuale e a ciò che ti senti in grado di fare ora, non a quanto spesso lo hai fatto. Aree e soglie sono editoriali; il risultato non certifica competenze, successo futuro o valore personale e dipende anche da salute, tempo, accessibilità e aiuto disponibile. Se il disagio persiste puoi parlarne con un professionista; in caso di pericolo immediato chiama il 112.",
+                version, false,
+                "Convinzioni riferite nelle situazioni esplorate",
+                "Convinzioni riferite nell'area",
+                true, 50)
+                .withSeo("Autoefficacia percepita: questionario informativo | Spazio Test",
+                        "12 domande originali sulla fiducia di poter agire davanti a compiti e ostacoli. Risultati descrittivi, non validati e non diagnostici.")
+                .withResponseInstruction("Pensando a compiti e sfide concrete della tua vita attuale, quanto è vera per te questa affermazione?")
+                .withAnswerScale("AGREEMENT"));
+
+        saveArea(id, "avvio", "Avviare un compito", 1);
+        saveArea(id, "adattamento", "Adattare un piano", 2);
+        saveArea(id, "continuita", "Riprendere un'azione", 3);
+        saveQuestions(id, List.of(
+                q("avvio", "Mi sento in grado di individuare un primo passo per un compito impegnativo."),
+                q("avvio", "Mi sento in grado di chiarire ciò che un compito richiede prima di iniziarlo."),
+                q("avvio", "Mi sento in grado di cercare le informazioni necessarie per un compito nuovo."),
+                q("avvio", "Mi sento in grado di mettere in ordine i passi di un'attività complessa."),
+                q("adattamento", "Davanti a un ostacolo, mi sento in grado di considerare un modo diverso di procedere."),
+                q("adattamento", "Davanti a una strategia inefficace, mi sento in grado di rivedere il piano."),
+                q("adattamento", "Davanti a indicazioni poco chiare, mi sento in grado di chiedere chiarimenti."),
+                q("adattamento", "Quando serve un aiuto pratico, mi sento in grado di cercarlo."),
+                q("continuita", "Dopo un'interruzione, mi sento in grado di riprendere un compito importante."),
+                q("continuita", "Se un compito è troppo ampio, mi sento in grado di scegliere una parte affrontabile."),
+                q("continuita", "Dopo un errore, mi sento in grado di tornare al compito."),
+                q("continuita", "Se il tempo disponibile cambia, mi sento in grado di riorganizzare i prossimi passi.")));
+
+        String limits = "Il questionario è originale e non validato: aree, soglie e barre sono editoriali, non misurano capacità effettiva, valore personale o probabilità di riuscita. "
+                + "Contano compito, esperienza, salute, tempo, accessibilità e supporti; non si può dedurre una disposizione permanente. "
+                + "Se il disagio persiste puoi confrontarti con un professionista; per un pericolo immediato chiama il 112.";
+        saveGlobal(id, "LOW", "Le convinzioni di autoefficacia esplorate sono contenute nelle risposte",
+                "Le affermazioni sul sentirti in grado di agire risultano poco vere per te nelle tre aree esplorate. Questo descrive la tua valutazione attuale, non ciò che sai fare realmente.",
+                "Un profilo contenuto non esclude fiducia in compiti o contesti non esplorati. Osserva quali richieste hai tenuto presenti e se mancano informazioni, tempo o aiuto concreto. Non trasformare questa fotografia in un giudizio su di te. " + limits);
+        saveGlobal(id, "MIXED", "Le convinzioni di autoefficacia esplorate variano tra le aree",
+                "Le affermazioni risultano in parte vere oppure variano tra avvio, adattamento e continuità, senza un'area nel livello editoriale più alto. La variabilità può riflettere sfide e condizioni differenti.",
+                "Puoi osservare in quali compiti ti senti più pronto/a e quali richiedono un sostegno diverso. Differenze piccole tra aree non costituiscono una classifica. Il risultato non dice se riuscirai o meno in un'attività futura. " + limits);
+        saveGlobal(id, "FOCUSED", "Un'area di autoefficacia percepita emerge nelle risposte",
+                "Una delle tre aree raccoglie convinzioni di poter agire più marcate, mentre le altre sono più contenute. Il profilo orienta a quella lente, senza generalizzare a tutte le tue attività.",
+                "Guarda quale tipo di azione hai immaginato e quali condizioni ne facilitano la fattibilità. Un'area più alta non annulla ostacoli reali o bisogno di aiuto. Le altre risposte restano importanti e non misurano un deficit. " + limits);
+        saveGlobal(id, "BROAD", "Più aree di autoefficacia percepita emergono nelle risposte",
+                "Le affermazioni sul sentirti in grado di agire sono molto vere per te in almeno due delle tre aree esplorate. Questo descrive un'ampiezza nelle convinzioni attuali, non una capacità certificata.",
+                "Osserva se la fiducia cambia con difficoltà, tempo e aiuto disponibile. Anche una convinzione forte può convivere con errori, impedimenti o un bisogno di supporto. Il profilo non prevede il successo e non indica che tu debba affrontare tutto da solo/a. " + limits);
+
+        saveAreaInsights(id, "avvio",
+                "Sentirti in grado di iniziare e organizzare un compito risulta poco vero nelle situazioni immaginate; questo non misura abilità reali.",
+                "La fiducia nell'avviare un compito è intermedia; chiarezza della richiesta e risorse disponibili possono cambiare la valutazione.",
+                "Ti senti spesso in grado di preparare l'avvio di un compito; questo non garantisce un risultato concreto.");
+        saveAreaInsights(id, "adattamento",
+                "La fiducia nel rivedere un piano o cercare aiuto è contenuta; ostacoli e supporti disponibili contano.",
+                "La fiducia nell'adattare un piano varia o è intermedia; osserva quali impedimenti hai immaginato.",
+                "Ti senti in grado di cercare alternative davanti a ostacoli; ciò non significa controllare ogni esito.");
+        saveAreaInsights(id, "continuita",
+                "Sentirti in grado di riprendere dopo interruzioni è poco vero per te; tempo e carico possono incidere.",
+                "La fiducia nel riprendere un'azione è intermedia; le condizioni possono variare da un compito all'altro.",
+                "Ti senti in grado di tornare a un compito dopo difficoltà; questo non certifica perseveranza futura.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("autoefficacia-percepita", List.of(
+                ref("Italian New General Self-Efficacy Scale — Rossi e colleghi", "https://doi.org/10.3390/jcm14061988"),
+                ref("General Self-Efficacy Scale: multicultural validation — Luszczynska, Scholz e Schwarzer", "https://doi.org/10.3200/JRLP.139.5.439-457"),
+                ref("Guide for Constructing Self-Efficacy Scales — Bandura", "https://www.emerald.com/books/edited-volume/18068/chapter-abstract/101339715/Guide-for-Constructing-Self-Efficacy-Scales"),
+                ref("Italian adaptation of the General Self-Efficacy Scale — Sibilia, Schwarzer e Jerusalem", "https://userpage.fu-berlin.de/~health/italian.htm")));
         syncReferences("camaleonte-sociale", List.of(
                 ref("Italian standardization of the Self Monitoring Scale — Delle Grazie", "https://doi.org/10.1482/26764"),
                 ref("Autistic camouflaging systematic review — Cook e colleghi", "https://doi.org/10.1016/j.cpr.2021.102080"),

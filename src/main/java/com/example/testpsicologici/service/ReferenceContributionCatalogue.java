@@ -13,6 +13,14 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.3390/jcm14061988",
+                    "Validazione italiana NGSES su 811 adulti online consultata per la distinzione tra misura generale esistente e lenti editoriali; non valida gli item originali."),
+            entry("https://doi.org/10.3200/JRLP.139.5.439-457",
+                    "Studio multiculturale con campioni tedeschi, polacchi e sudcoreani consultato per il contesto europeo; non offre norme o invarianza per l'app."),
+            entry("https://www.emerald.com/books/edited-volume/18068/chapter-abstract/101339715/Guide-for-Constructing-Self-Efficacy-Scales",
+                    "Capitolo metodologico fondativo consultato per formulare convinzioni di poter agire davanti a compiti e ostacoli, non intenzioni o risultati."),
+            entry("https://userpage.fu-berlin.de/~health/italian.htm",
+                    "Pagina degli autori per l'adattamento italiano della scala storica: nessun item o punteggio è riprodotto o trasferito al questionario originale."),
             entry("https://doi.org/10.1007/s12144-025-07584-7",
                     "Studio italiano del BFI-2-R su 5.362 adulti consultato per le tre faccette dell'estroversione; campione di convenienza e strumento diverso non validano gli item dell'app."),
             entry("https://doi.org/10.1007/s12144-022-03648-0",

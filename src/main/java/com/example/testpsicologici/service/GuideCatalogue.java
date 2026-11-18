@@ -5785,6 +5785,41 @@ public class GuideCatalogue {
                             new GuideReference("Validation of the Short Dark Triad in a German Sample — Wehner e colleghi", "https://doi.org/10.1027/1015-5759/a000617", "Studio tedesco del 2021 su 969 persone: confronto di modelli che sostiene tre fattori per lo strumento esaminato; non stabilisce norme universali o italiane."),
                             new GuideReference("The Dark Triad of personality: Narcissism, Machiavellianism, and psychopathy — Paulhus e Williams", "https://doi.org/10.1016/S0092-6566(02)00505-6", "Studio fondativo del 2002 su 245 studenti: definisce i tre costrutti subclinici e ne documenta sovrapposizione senza equivalenza; il campione non rappresenta gli adulti italiani."),
                             new GuideReference("A Critical Appraisal of the Dark-Triad Literature and Suggestions for Moving Forward — Miller e colleghi", "https://www.psychologicalscience.org/journals/current-directions/0963721419838233/", "Revisione critica del 2019 su multidimensionalità, sovrapposizione delle misure e limiti di campionamento e metodo; non diagnostica né predice il singolo caso."))
+            ),
+            new InformationGuide(
+                    "autoefficacia-percepita", "autoefficacia-percepita",
+                    "Autoefficacia percepita",
+                    "Autoefficacia percepita: sentirsi in grado di agire",
+                    "Autoefficacia percepita: significato e limiti | Spazio Test",
+                    "Che cosa significa autoefficacia percepita, come si distingue da autostima e competenza e come leggere un questionario informativo senza considerarlo una previsione.",
+                    "L'autoefficacia percepita riguarda la convinzione di poter compiere azioni specifiche davanti a richieste concrete. Può cambiare tra situazioni e nel tempo: non è una misura del valore personale né una garanzia di riuscita.",
+                    List.of(
+                            new GuideSection("In breve", "Sentirsi in grado non è avere già dimostrato", List.of(
+                                    "Nella teoria di Bandura, l'autoefficacia riguarda ciò che una persona ritiene di poter fare rispetto a compiti e impedimenti. La convinzione è diversa sia dall'intenzione di agire sia dal risultato atteso: sentirsi pronti non garantisce un esito e un'incertezza non prova incapacità.",
+                                    "La domanda utile non è «quanto valgo?», ma «in quale azione, davanti a quale richiesta, mi sento in grado di procedere oggi?». Tempo, informazioni, salute e sostegno disponibile possono cambiare la risposta."), List.of()),
+                            new GuideSection("Ricerca", "Esistono scale studiate, ma non sono questo questionario", List.of(
+                                    "Uno studio italiano del 2025 ha esaminato la New General Self-Efficacy Scale in 811 adulti reclutati online e ne ha sostenuto una struttura unidimensionale nel campione. Uno studio precedente ha confrontato la General Self-Efficacy Scale in Germania, Polonia e Corea del Sud. Sono strumenti diversi dalle dodici domande originali di Spazio Test.",
+                                    "I campioni online e quelli di Paesi diversi non offrono automaticamente norme per tutti gli adulti italiani. Le proprietà psicometriche e le associazioni osservate per quelle scale non si trasferiscono al questionario collegato."), List.of()),
+                            new GuideSection("Distinzioni", "Auto-efficacia, autostima e resilienza", List.of(
+                                    "L'autostima riguarda una valutazione di sé; l'autoefficacia, una convinzione su azioni possibili. La resilienza descrive processi di adattamento quando una difficoltà è vissuta: non coincide con la fiducia espressa prima di agire. Neppure motivazione e ottimismo sono la stessa cosa: desiderare un obiettivo o sperare in un esito favorevole non dice quanto ci si sente capaci di compiere un passo preciso.",
+                                    "Una persona può sentirsi capace di organizzare un'attività e avere comunque bisogno di aiuto o incontrare un ostacolo non controllabile. Il contesto non è un dettaglio da sottrarre al risultato."), List.of()),
+                            new GuideSection("Tre lenti", "Avvio, adattamento e continuità", List.of(
+                                    "Il questionario invita a pensare a compiti concreti della vita attuale. Chiede quanto è vera la convinzione di poter preparare un'azione, rivedere una strada davanti a un ostacolo o riprendere dopo un'interruzione. Non chiede quante volte queste azioni siano state realmente svolte.",
+                                    "Le tre aree sono lenti editoriali per leggere risposte differenti, non sottoscale validate. La NGSES italiana è stata studiata come misura unidimensionale: non fornisce una prova che avvio, adattamento e continuità siano fattori separati nell'app."), List.of()),
+                            new GuideSection("Orientarsi", "Scegliere un compito e una condizione reale", List.of(
+                                    "Se una risposta ti sorprende, puoi chiederti quale compito avevi in mente e quale ostacolo sembrava più rilevante. Un passo più piccolo, informazioni migliori o una persona di supporto possono cambiare la situazione; sono possibilità pratiche, non interventi clinici dimostrati da questo questionario.",
+                                    "Se la sfiducia in te stesso/a si accompagna a sofferenza persistente o interferisce con la vita quotidiana, puoi discuterne con un professionista. Non serve una soglia del test per chiedere aiuto."), List.of()),
+                            new GuideSection("Limiti", "Una fotografia delle risposte, non una previsione", List.of(
+                                    "Le dodici domande sono originali e non validate. Le soglie e i profili sono editoriali; le barre non sono percentuali di capacità, percentili o stime di successo. Piccole differenze fra aree non definiscono una classifica delle tue abilità e non autorizzano confronti con la popolazione.",
+                                    "Una risposta bassa non dimostra incompetenza; una risposta alta non certifica prestazione futura. Condizioni materiali, discriminazione, disabilità e opportunità possono limitare ciò che è possibile indipendentemente dalla convinzione personale. In un pericolo immediato in Italia chiama il 112."), List.of())
+                    ),
+                    "Questionario originale informativo di dodici affermazioni: le tre aree e le soglie sono editoriali, non misure validate di capacità o successo futuro.",
+                    "Questa guida separa convinzione di poter agire, competenza osservata e condizioni concrete, mostrando perché i risultati delle scale italiane ed europee non si trasferiscono al questionario originale.",
+                    List.of(
+                            new GuideReference("The Italian Version of the New General Self-Efficacy Scale — Rossi e colleghi", "https://doi.org/10.3390/jcm14061988", "Validazione italiana del 2025 su 811 adulti reclutati online: struttura dello strumento esistente, non delle tre aree o degli item originali dell'app."),
+                            new GuideReference("The General Self-Efficacy Scale: Multicultural Validation Studies — Luszczynska, Scholz e Schwarzer", "https://doi.org/10.3200/JRLP.139.5.439-457", "Studio comparativo del 2005 con campioni tedeschi, polacchi e sudcoreani; associazioni e misura non forniscono norme italiane per l'app."),
+                            new GuideReference("Guide for Constructing Self-Efficacy Scales — Bandura", "https://www.emerald.com/books/edited-volume/18068/chapter-abstract/101339715/Guide-for-Constructing-Self-Efficacy-Scales", "Capitolo metodologico del 2006 usato per distinguere capacità percepita, intenzione, autostima ed esiti e per legare le frasi a compiti e ostacoli."),
+                            new GuideReference("Italian Adaptation of the General Self-Efficacy Scale — Sibilia, Schwarzer e Jerusalem", "https://userpage.fu-berlin.de/~health/italian.htm", "Pagina degli autori dell'adattamento italiano storico, distinta dalla NGSES e dal questionario originale; nessun item è riprodotto."))
             )
     );
 

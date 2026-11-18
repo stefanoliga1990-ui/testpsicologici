@@ -76,6 +76,7 @@ public class TopicClusterCatalogue {
                             "people-pleasing",
                             "camaleonte-sociale",
                             "autosabotaggio",
+                            "autoefficacia-percepita",
                             "fomo"
                     )),
             new TopicCluster(
