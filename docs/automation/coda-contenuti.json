@@ -504,18 +504,18 @@
       "categoryHint": "Autostima, approvazione e obiettivi",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 3,
+        "itemCount": 12,
+        "answerScale": "AGREEMENT",
+        "resultModel": "AREA_PROFILE",
         "notes": "Direzione positiva: distinguere fiducia nell'agire, valore personale e competenza oggettiva; non certificare capacità."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-18T13:06:03+01:00",
+        "completedAt": "2026-11-18T13:06:03+01:00",
+        "commitHash": "25e1e1bfddcf335de9ad4b42f60357281fa8e763",
         "blockReason": null
       }
     },
