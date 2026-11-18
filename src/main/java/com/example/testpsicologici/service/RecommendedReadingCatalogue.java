@@ -802,6 +802,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("rinforzo-intermittente-relazioni", List.of(
+                    new RecommendedReading(
+                            "Se la coppia è in crisi",
+                            "Russ Harris (a cura di Francesca Scaglia e Massimo Ronchei)",
+                            "Una guida pratica per osservare i conflitti, chiarire i bisogni e scegliere come rispondere alle differenze nella coppia.",
+                            "Non studia il rinforzo intermittente nelle coppie e non permette di attribuire intenzioni al partner. Gli esercizi di confronto non vanno applicati senza considerare la sicurezza in presenza di controllo o violenza.",
+                            "https://www.amazon.it/dp/883517645X?th=1&linkCode=ll2&tag=spaziotest-21&linkId=1e5fe6081a1de2f7e916d85fc1cfc99f&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Legami che fanno soffrire",
+                            "Patrizia Velotti (a cura di)",
+                            "Una raccolta di contributi sulle dinamiche affettive e sui percorsi di intervento nelle relazioni di coppia violente.",
+                            "Riguarda situazioni di violenza: non è trasferibile a ogni relazione incerta e non prova che l'alternanza di vicinanza e distanza derivi da rinforzo intermittente o da intenzioni manipolative.",
+                            "https://www.amazon.it/dp/8815240357?th=1&linkCode=ll2&tag=spaziotest-21&linkId=035a766dd504710d49c5243648d09de2&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",

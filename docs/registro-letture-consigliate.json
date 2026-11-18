@@ -2874,7 +2874,60 @@
       ],
       "books": []
     },
-    { "topicId": "rinforzo-intermittente-relazioni", "testId": null, "guideSlug": "rinforzo-intermittente-relazioni", "title": "Rinforzo intermittente nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "rinforzo-intermittente-relazioni",
+      "testId": null,
+      "guideSlug": "rinforzo-intermittente-relazioni",
+      "title": "Rinforzo intermittente nelle relazioni",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["conflitti e incertezza nella coppia", "legami nelle relazioni violente"],
+      "fallbackRationale": "Non sono emersi due libri italiani solidi dedicati all'applicazione del rinforzo intermittente alle relazioni. Harris offre strumenti generali per riflettere su conflitti, differenze e confini nella coppia; Velotti approfondisce legami e regolazione emotiva in coppie violente. Sono contesti distinti: nessuno dei due volumi dimostra che l'incostanza di un partner sia un programma di rinforzo o un abuso.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Se la coppia è in crisi",
+          "subtitle": "Smetti di lottare, riconcilia le differenze e rafforza la relazione con l'Acceptance and Commitment Therapy",
+          "placeholderCover": true,
+          "authors": ["Russ Harris", "Francesca Scaglia (a cura di)", "Massimo Ronchei (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835176459",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa ACT sui conflitti, le differenze e i confini nella coppia",
+          "audience": "Adulti interessati a riflettere sulle difficoltà e sulle scelte nelle relazioni di coppia",
+          "description": "Una guida pratica per osservare i conflitti, chiarire i bisogni e scegliere come rispondere alle differenze nella coppia.",
+          "limit": "Non studia il rinforzo intermittente nelle coppie e non permette di attribuire intenzioni al partner. Gli esercizi di confronto non vanno applicati senza considerare la sicurezza in presenza di controllo o violenza.",
+          "primarySources": [{ "label": "Scheda editore", "url": "https://francoangeli.it/Libro?id=30368" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "883517645X", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/883517645X?th=1&linkCode=ll2&tag=spaziotest-21&linkId=1e5fe6081a1de2f7e916d85fc1cfc99f&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Legami che fanno soffrire",
+          "subtitle": "Dinamica e trattamento delle relazioni di coppia violente",
+          "placeholderCover": true,
+          "authors": ["Patrizia Velotti (a cura di)"],
+          "publisher": "il Mulino",
+          "isbn13": "9788815240354",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Volume specialistico su attaccamento, regolazione emotiva e violenza nella coppia",
+          "audience": "Professionisti, studenti e lettori interessati alla ricerca clinica sulle relazioni violente",
+          "description": "Una raccolta di contributi sulle dinamiche affettive e sui percorsi di intervento nelle relazioni di coppia violente.",
+          "limit": "Riguarda situazioni di violenza: non è trasferibile a ogni relazione incerta e non prova che l'alternanza di vicinanza e distanza derivi da rinforzo intermittente o da intenzioni manipolative.",
+          "primarySources": [{ "label": "Scheda editore", "url": "https://www.mulino.it/isbn/9788815240354" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8815240357", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/dp/8815240357?th=1&linkCode=ll2&tag=spaziotest-21&linkId=035a766dd504710d49c5243648d09de2&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "guilt-tripping", "testId": null, "guideSlug": "guilt-tripping", "title": "Guilt-tripping nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ricatto-emotivo", "testId": null, "guideSlug": "ricatto-emotivo", "title": "Ricatto emotivo nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "proiezione-psicologica", "testId": null, "guideSlug": "proiezione-psicologica", "title": "Proiezione psicologica", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
