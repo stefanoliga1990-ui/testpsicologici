@@ -522,25 +522,25 @@
     {
       "order": 43,
       "slug": "speranza-obiettivi",
-      "workingTitle": "Speranza — Riesco a vedere strade verso i miei obiettivi?",
+      "workingTitle": "Speranza orientata agli obiettivi: quali strade vedo per procedere?",
       "sourceTopic": "Speranza",
       "sourceDescription": "Possibilità future percepite, motivazione a procedere e percorsi alternativi verso obiettivi significativi.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
-        "notes": "Distinguere speranza, ottimismo e resilienza; scegliere il modello teorico dopo la ricerca senza combinare concezioni eterogenee."
+        "areaCount": 2,
+        "itemCount": 12,
+        "answerScale": "AGREEMENT",
+        "resultModel": "AREA_PROFILE",
+        "notes": "Modello goal-directed di Snyder con percorsi e slancio come lenti editoriali, non sottoscale validate; un solo obiettivo personale della vita attuale, nessun totale o previsione. Distinguere da ottimismo, resilienza e autoefficacia."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-19T13:06:17+01:00",
+        "completedAt": "2026-11-19T13:06:17+01:00",
+        "commitHash": "268e486eb68f27dd56d7f037f780227e7e625fb5",
         "blockReason": null
       }
     },
