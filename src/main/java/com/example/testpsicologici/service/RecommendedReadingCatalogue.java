@@ -820,6 +820,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("guilt-tripping", List.of(
+                    new RecommendedReading(
+                            "Il senso di colpa. Liberarsi dai ricatti morali",
+                            "Susan Forward e Donna Frazier",
+                            "Una guida divulgativa che esplora come paura, obbligo e senso di colpa possano entrare nelle richieste interpersonali.",
+                            "Non ogni richiesta che suscita colpa è una manipolazione; la lettura non permette di stabilire le intenzioni altrui o valutare da sola la sicurezza di una relazione.",
+                            "https://www.amazon.it/-/en/senso-colpa-Liberarsi-ricatti-morali/dp/8850276788?dib=eyJ2IjoiMSJ9.09BhrsmLXcwRiZ2uDE9c8w.ZA-BzolnGNRM1qKncMtEHcFG2W4GhRni7Z804tIQkSA&dib_tag=se&keywords=9788850276783&qid=1795096978&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=9be47ce7c829b0f033d58014cacc900d&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Sapersi perdonare",
+                            "Grant Dewar",
+                            "Un manuale con attività su autocolpevolizzazione, vergogna, valori personali e compassione verso di sé.",
+                            "Riguarda la colpa provata da chi legge e non analizza il guilt-tripping come comportamento altrui. Gli esercizi non sostituiscono un supporto professionale.",
+                            "https://www.amazon.it/-/en/perdonare-Imparare-accettarsi-mindfulness-compassion/dp/8835174260?dib=eyJ2IjoiMSJ9.L8liz9IEMAG_zpyt8-Hjpg.WeydPmnusZ8R8_trTZCe-l1YQTHuOslxzsAOCInXyRg&dib_tag=se&keywords=9788835174264&qid=1795097030&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=064598206617b583667b15a0e3e217ee&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",

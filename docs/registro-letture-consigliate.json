@@ -2928,7 +2928,60 @@
         }
       ]
     },
-    { "topicId": "guilt-tripping", "testId": null, "guideSlug": "guilt-tripping", "title": "Guilt-tripping nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "guilt-tripping",
+      "testId": null,
+      "guideSlug": "guilt-tripping",
+      "title": "Guilt-tripping nelle relazioni",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["ricatto morale", "autocolpevolizzazione e vergogna"],
+      "fallbackRationale": "Il guilt-tripping indica il ricorso alla colpa per influenzare una persona, ma non sono emersi due libri italiani solidi dedicati soltanto a questo termine. Forward e Frazier descrivono il ricatto morale in diversi rapporti, di cui la colpevolizzazione può essere una componente; Dewar affronta invece l'autocolpevolizzazione e la vergogna vissute da chi legge. Il secondo volume tratta la risposta alla colpa, non le intenzioni di chi la suscita.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Il senso di colpa",
+          "subtitle": "Liberarsi dai ricatti morali",
+          "placeholderCover": true,
+          "authors": ["Susan Forward", "Donna Frazier", "Cecilia Scerbanenco (traduzione)"],
+          "publisher": "TEA",
+          "isbn13": "9788850276783",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa sui ricatti morali e sul ruolo della colpa nelle relazioni",
+          "audience": "Adulti interessati a osservare le pressioni e i confini nelle relazioni personali e lavorative",
+          "description": "Una guida divulgativa che esplora come paura, obbligo e senso di colpa possano entrare nelle richieste interpersonali.",
+          "limit": "Il volume usa il linguaggio del ricatto morale: non ogni richiesta che suscita colpa è una manipolazione e la lettura non permette di stabilire le intenzioni di un'altra persona o valutare da sola la sicurezza di una relazione.",
+          "primarySources": [{ "label": "Scheda bibliografica dell'edizione 2026", "url": "https://www.libreriauniversitaria.it/senso-colpa-liberarsi-ricatti-morali/libro/9788850276783" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8850276788", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/senso-colpa-Liberarsi-ricatti-morali/dp/8850276788?dib=eyJ2IjoiMSJ9.09BhrsmLXcwRiZ2uDE9c8w.ZA-BzolnGNRM1qKncMtEHcFG2W4GhRni7Z804tIQkSA&dib_tag=se&keywords=9788850276783&qid=1795096978&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=9be47ce7c829b0f033d58014cacc900d&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Sapersi perdonare",
+          "subtitle": "Imparare ad accettarsi e a superare la vergogna con la mindfulness e la self compassion",
+          "placeholderCover": true,
+          "authors": ["Grant Dewar", "Russ Harris (presentazione)", "Silvia Di Trapani (traduzione)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835174264",
+          "publicationYear": 2025,
+          "format": "brossura",
+          "editorialRole": "Manuale divulgativo di autoaiuto su autocolpevolizzazione, vergogna e compassione verso di sé",
+          "audience": "Adulti interessati a riflettere sul proprio senso di colpa e sul rapporto con sé stessi",
+          "description": "Un manuale con attività su autocolpevolizzazione, vergogna, valori personali e compassione verso di sé.",
+          "limit": "Riguarda la colpa provata da chi legge e non analizza il guilt-tripping come comportamento altrui. Gli esercizi non sostituiscono un supporto professionale, specialmente quando sono presenti traumi o violenza.",
+          "primarySources": [{ "label": "Scheda editore", "url": "https://www.francoangeli.it/Libro/Sapersi-perdonare?Id=30069" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8835174260", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/perdonare-Imparare-accettarsi-mindfulness-compassion/dp/8835174260?dib=eyJ2IjoiMSJ9.L8liz9IEMAG_zpyt8-Hjpg.WeydPmnusZ8R8_trTZCe-l1YQTHuOslxzsAOCInXyRg&dib_tag=se&keywords=9788835174264&qid=1795097030&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=064598206617b583667b15a0e3e217ee&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "ricatto-emotivo", "testId": null, "guideSlug": "ricatto-emotivo", "title": "Ricatto emotivo nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "proiezione-psicologica", "testId": null, "guideSlug": "proiezione-psicologica", "title": "Proiezione psicologica", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "blame-shifting", "testId": null, "guideSlug": "blame-shifting", "title": "Blame shifting nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
