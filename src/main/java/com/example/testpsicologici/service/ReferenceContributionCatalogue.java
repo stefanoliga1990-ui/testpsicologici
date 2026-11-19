@@ -13,6 +13,14 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://pubmed.ncbi.nlm.nih.gov/2037968/",
+                    "Studio fondativo di Snyder su agency e pathways verso obiettivi; i suoi item, punteggi e campioni non sono trasferiti al questionario originale."),
+            entry("https://doi.org/10.1007/s10902-021-00405-1",
+                    "Studio italiano su 185 adulti con disturbo da uso di sostanze e 185 senza, usato per descrivere associazioni di gruppo e limiti di trasferibilità."),
+            entry("https://doi.org/10.1007/s12144-025-08801-z",
+                    "Validazione italiana della Perceived Hope Scale in due campioni di giovani adulti, utile a distinguere una concezione diversa e non a validare le due aree dell'app."),
+            entry("https://doi.org/10.1007/s11482-021-09967-x",
+                    "Revisione sistematica concettuale europea usata per esplicitare la varietà delle definizioni di speranza e il perimetro scelto."),
             entry("https://doi.org/10.3390/jcm14061988",
                     "Validazione italiana NGSES su 811 adulti online consultata per la distinzione tra misura generale esistente e lenti editoriali; non valida gli item originali."),
             entry("https://doi.org/10.3200/JRLP.139.5.439-457",

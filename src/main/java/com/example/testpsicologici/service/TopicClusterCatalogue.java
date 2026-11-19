@@ -90,6 +90,7 @@ public class TopicClusterCatalogue {
                             "intelligenza-intrapersonale",
                             "assertivita",
                             "resilienza-psicologica",
+                            "speranza-obiettivi",
                             "soddisfazione-vita",
                             "empatia-percepita"
                     )),
@@ -145,6 +146,10 @@ public class TopicClusterCatalogue {
         }
         if ("dismorfofobia".equals(testId)) {
             return List.of("tratti-ossessivo-compulsivi", "ansia-sociale", "umore-depresso")
+                    .stream().limit(maximum).toList();
+        }
+        if ("speranza-obiettivi".equals(testId)) {
+            return List.of("resilienza-psicologica", "soddisfazione-vita", "autocompassione")
                     .stream().limit(maximum).toList();
         }
         return findByTestId(testId)

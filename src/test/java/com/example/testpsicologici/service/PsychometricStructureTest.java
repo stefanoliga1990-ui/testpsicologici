@@ -68,7 +68,8 @@ class PsychometricStructureTest {
             Map.entry("dismorfofobia", "preoccupazioni per l'aspetto"),
             Map.entry("bisogno-controllo", "bisogno di controllo e prevedibilità"),
             Map.entry("camaleonte-sociale", "adattamento della presentazione sociale"),
-            Map.entry("autoefficacia-percepita", "autoefficacia"));
+            Map.entry("autoefficacia-percepita", "autoefficacia"),
+            Map.entry("speranza-obiettivi", "obiettivo"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -78,7 +79,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(50).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(51).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ACE_EXPOSURE".equals(test.scoringModel())) {
@@ -115,6 +116,14 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(4));
+            } else if ("speranza-obiettivi".equals(test.id())) {
+                assertThat(test.version()).isEqualTo("1.0");
+                assertThat(test.questions()).hasSize(12);
+                assertThat(test.responseInstruction()).contains("vita attuale", "quanto è vera per te");
+                assertThat(test.answerScale()).isEqualTo("AGREEMENT");
+                assertThat(test.areas()).extracting(area -> area.code()).containsExactly("percorsi", "slancio");
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code())).hasSize(6));
             } else if ("autoefficacia-percepita".equals(test.id())) {
                 assertThat(test.version()).isEqualTo("1.0");
                 assertThat(test.questions()).hasSize(12);
@@ -388,6 +397,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("una o due aree");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
+            } else if ("speranza-obiettivi".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("contenuti");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("un aspetto");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("insieme");
             } else if ("autoefficacia-percepita".equals(test.id())) {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("contenute");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");

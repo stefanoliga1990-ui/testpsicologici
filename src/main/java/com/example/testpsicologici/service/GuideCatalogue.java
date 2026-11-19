@@ -5820,6 +5820,41 @@ public class GuideCatalogue {
                             new GuideReference("The General Self-Efficacy Scale: Multicultural Validation Studies — Luszczynska, Scholz e Schwarzer", "https://doi.org/10.3200/JRLP.139.5.439-457", "Studio comparativo del 2005 con campioni tedeschi, polacchi e sudcoreani; associazioni e misura non forniscono norme italiane per l'app."),
                             new GuideReference("Guide for Constructing Self-Efficacy Scales — Bandura", "https://www.emerald.com/books/edited-volume/18068/chapter-abstract/101339715/Guide-for-Constructing-Self-Efficacy-Scales", "Capitolo metodologico del 2006 usato per distinguere capacità percepita, intenzione, autostima ed esiti e per legare le frasi a compiti e ostacoli."),
                             new GuideReference("Italian Adaptation of the General Self-Efficacy Scale — Sibilia, Schwarzer e Jerusalem", "https://userpage.fu-berlin.de/~health/italian.htm", "Pagina degli autori dell'adattamento italiano storico, distinta dalla NGSES e dal questionario originale; nessun item è riprodotto."))
+            ),
+            new InformationGuide(
+                    "speranza-obiettivi", "speranza-obiettivi",
+                    "Speranza orientata agli obiettivi",
+                    "Speranza orientata agli obiettivi: percorsi e slancio",
+                    "Speranza orientata agli obiettivi: percorsi e slancio | Spazio Test",
+                    "Che cosa significa speranza orientata agli obiettivi, come distinguerla da ottimismo e autoefficacia e come leggere un questionario informativo.",
+                    "La speranza orientata agli obiettivi riguarda le strade che una persona intravede e lo slancio che sente nel percorrerle. Non promette risultati e non esaurisce ogni significato della parola speranza.",
+                    List.of(
+                            new GuideSection("In breve", "Un obiettivo, strade possibili e slancio", List.of(
+                                    "La teoria di Snyder descrive la speranza rivolta agli obiettivi attraverso due aspetti collegati: la possibilità percepita di trovare percorsi e la spinta a seguirli. Si tratta di una definizione specifica, non dell'unico modo di intendere la speranza.",
+                                    "Un obiettivo può essere importante e allo stesso tempo difficile da raggiungere. Condizioni materiali, salute, sicurezza, opportunità e aiuti disponibili incidono sulle strade praticabili: una difficoltà reale non è prova di poca volontà."), List.of()),
+                            new GuideSection("Distinzioni", "Speranza, ottimismo e autoefficacia", List.of(
+                                    "L'ottimismo riguarda più ampiamente le aspettative sugli esiti futuri. L'autoefficacia percepita riguarda il sentirsi in grado di compiere azioni. Nel modello di Snyder la speranza mette insieme percorsi immaginati e slancio verso un obiettivo: questi concetti si possono sovrapporre, ma non sono equivalenti.",
+                                    "Sentire slancio non obbliga ad agire e immaginare un percorso non dimostra che sia disponibile. Cambiare o abbandonare un obiettivo in condizioni sfavorevoli può essere una scelta sensata, non un difetto personale."), List.of()),
+                            new GuideSection("Ricerca italiana", "Misure diverse, campioni diversi", List.of(
+                                    "Uno studio italiano ha usato la Adult Hope Scale in 185 adulti con disturbo da uso di sostanze e 185 senza; le associazioni con la soddisfazione di vita sono risultati di gruppo in un contesto specifico. Non prevedono ciò che accadrà alla singola persona.",
+                                    "Una validazione italiana del 2026 ha studiato la Perceived Hope Scale in due campioni di giovani adulti tra 18 e 30 anni. Quella scala usa una concezione più generale e un fattore unico: non convalida le due aree di questo questionario originale."), List.of()),
+                            new GuideSection("Altre prospettive", "La speranza non ha una sola definizione", List.of(
+                                    "Una revisione sistematica europea ha trovato definizioni diverse della speranza tra discipline. Alcune includono fiducia, relazioni, emozioni o significati oltre alla pianificazione di obiettivi. Qui esploriamo soltanto la prospettiva dei percorsi e dello slancio verso un obiettivo personale.",
+                                    "La scelta di un obiettivo concreto aiuta a rispondere con un riferimento comune, ma restringe l'interpretazione. Le risposte potrebbero cambiare scegliendo un altro obiettivo o in un altro momento."), List.of()),
+                            new GuideSection("Leggere le risposte", "Le due aree restano descrittive", List.of(
+                                    "Il questionario chiede quanto dodici frasi originali siano vere per te adesso, pensando sempre allo stesso obiettivo. Sei frasi riguardano i percorsi e sei lo slancio. Le aree, le soglie e i profili sono scelte editoriali, non sottoscale validate.",
+                                    "Una barra più alta non è una percentuale di speranza, una previsione di successo o una classifica delle tue capacità. Puoi chiederti quale passo o condizione avevi in mente quando hai risposto e quali risorse concrete sono disponibili."), List.of()),
+                            new GuideSection("Supporto e limiti", "Quando fermarsi o chiedere aiuto", List.of(
+                                    "Se non hai un obiettivo pertinente, puoi interrompere il questionario. Se un obiettivo non è più sicuro o realistico, rivederlo non richiede alcun permesso del test. Una risposta bassa non equivale a una diagnosi o a una misura di disperazione clinica.",
+                                    "Se sentimenti di vuoto o sfiducia persistono o interferiscono con la vita quotidiana, puoi parlarne con un professionista. Il questionario non valuta il pericolo immediato; se sei in pericolo in Italia chiama il 112."), List.of())
+                    ),
+                    "Questionario informativo originale su percorsi e slancio verso un solo obiettivo: non validato, senza norme o previsioni individuali.",
+                    "Questa guida delimita la speranza orientata agli obiettivi rispetto ad altre definizioni e chiarisce perché evidenze italiane su scale diverse non validano i dodici item dell'app.",
+                    List.of(
+                            new GuideReference("The will and the ways — Snyder e colleghi", "https://pubmed.ncbi.nlm.nih.gov/2037968/", "Studio fondativo del 1991 su agency e pathways; non fornisce item, norme o soglie al questionario originale dell'app."),
+                            new GuideReference("Career Adaptability, Hope, and Life Satisfaction — Di Maggio e colleghi", "https://doi.org/10.1007/s10902-021-00405-1", "Studio italiano del 2021 su due gruppi da 185 adulti, uno con disturbo da uso di sostanze; associazioni di gruppo e campioni specifici."),
+                            new GuideReference("Towards a new conceptualization of hope in Italy — Regnoli e colleghi", "https://doi.org/10.1007/s12144-025-08801-z", "Validazione italiana del 2026 della PHS su 200 e 405 giovani adulti: costrutto e struttura diversi dal questionario dell'app."),
+                            new GuideReference("Characterizing Hope — Pleeging, van Exel e Burger", "https://doi.org/10.1007/s11482-021-09967-x", "Revisione sistematica concettuale del 2021 che documenta definizioni diverse della speranza; non valida punteggi individuali."))
             )
     );
 

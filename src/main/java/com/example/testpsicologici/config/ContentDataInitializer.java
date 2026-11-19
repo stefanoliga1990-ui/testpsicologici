@@ -96,6 +96,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedNeedForControlInformationTest();
         seedSocialChameleonInformationTest();
         seedPerceivedSelfEfficacyInformationTest();
+        seedGoalDirectedHopeInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4808,7 +4809,75 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Ti senti in grado di tornare a un compito dopo difficoltà; questo non certifica perseveranza futura.");
     }
 
+    private void seedGoalDirectedHopeInformationTest() {
+        String id = "speranza-obiettivi";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Speranza orientata agli obiettivi: quali strade vedo per procedere?",
+                "Auto-osservazione informativa",
+                "Esplora percorsi possibili e slancio riferiti a un obiettivo personale della vita attuale.",
+                "4 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti: scegli mentalmente un obiettivo personale significativo della tua vita attuale e mantienilo come riferimento. Se non trovi un obiettivo pertinente, puoi interrompere; percorsi e motivazione dipendono anche da condizioni materiali, salute e supporti. Le soglie sono editoriali e le risposte non misurano valore personale né probabilità di riuscita; se il disagio persiste puoi parlarne con un professionista.",
+                version, false,
+                "Risposte riferite all'obiettivo scelto",
+                "Risposte riferite all'area",
+                true, 51)
+                .withSeo("Speranza orientata agli obiettivi: questionario informativo | Spazio Test",
+                        "12 domande originali su percorsi e slancio verso un obiettivo personale. Risultati descrittivi, non validati e non predittivi.")
+                .withResponseInstruction("Pensando a un obiettivo personale significativo della tua vita attuale, quanto è vera per te questa affermazione?")
+                .withAnswerScale("AGREEMENT"));
+
+        saveArea(id, "percorsi", "Vedere percorsi", 1);
+        saveArea(id, "slancio", "Sentire slancio", 2);
+        saveQuestions(id, List.of(
+                q("percorsi", "Per questo obiettivo, riesco a immaginare un primo passo concreto."),
+                q("percorsi", "Riesco a immaginare una sequenza di passi verso questo obiettivo."),
+                q("percorsi", "Se una strada si interrompe, riesco a immaginare un'alternativa."),
+                q("percorsi", "Riesco a individuare un'informazione utile per scegliere come procedere."),
+                q("percorsi", "Riesco a individuare una risorsa a cui potrei ricorrere per questo obiettivo."),
+                q("percorsi", "Riesco a pensare a una versione più piccola di questo obiettivo."),
+                q("slancio", "Sento una spinta a compiere un passo verso questo obiettivo."),
+                q("slancio", "Sono disposto/a a dedicare tempo a questo obiettivo."),
+                q("slancio", "Dopo una pausa, sento di poter tornare a occuparmi di questo obiettivo."),
+                q("slancio", "Mi interessa mantenere questo obiettivo tra le mie priorità attuali."),
+                q("slancio", "Davanti a una difficoltà, sento la motivazione a cercare un passo possibile."),
+                q("slancio", "Sento di voler scegliere un'azione concreta per questo obiettivo.")));
+
+        String limits = "Il questionario è originale e non validato: aree, soglie e barre sono editoriali, non misurano valore personale, salute mentale o probabilità di raggiungere l'obiettivo. "
+                + "Vincoli reali, sicurezza, salute e supporti disponibili possono cambiare le risposte; la media non indica quanta speranza possiedi. "
+                + "Se il disagio persiste puoi confrontarti con un professionista; in caso di pericolo immediato in Italia chiama il 112.";
+        saveGlobal(id, "LOW", "Percorsi e slancio verso l'obiettivo scelto risultano contenuti",
+                "Le affermazioni sui percorsi possibili e sullo slancio sono poco vere per te rispetto all'obiettivo scelto. Questa fotografia riguarda le due aree esplorate adesso e non esclude speranza in altri contesti o obiettivi.",
+                "Potresti aver pensato a un obiettivo con ostacoli importanti o a una fase in cui le risorse sono limitate. Osserva se un passo diverso, più tempo o un aiuto concreto cambierebbero le possibilità percepite. Una risposta contenuta non dimostra incapacità o mancanza di volontà. " + limits);
+        saveGlobal(id, "MIXED", "Percorsi e slancio verso l'obiettivo scelto variano nelle risposte",
+                "Almeno una delle due aree è in una fascia editoriale intermedia e nessuna nella più alta. Le risposte possono variare fra il vedere strade e il sentirsi pronti a seguirle.",
+                "Guarda quale dei due aspetti ti sembra più incerto per l'obiettivo che hai scelto. Una differenza piccola non stabilisce una classifica personale e può dipendere dalle condizioni del momento. Puoi osservare se informazioni, tempo o supporto modificano quella valutazione. " + limits);
+        saveGlobal(id, "FOCUSED", "Un aspetto della speranza verso l'obiettivo scelto emerge",
+                "Una delle due aree raccoglie risposte più alte, mentre l'altra resta più contenuta. Il profilo segnala un aspetto emergente dell'obiettivo scelto, senza generalizzare alla tua vita.",
+                "Vedere percorsi e sentire slancio non devono procedere insieme in ogni momento. Osserva se l'area più contenuta riguarda ostacoli concreti, energia disponibile o il valore attuale dell'obiettivo. Una risposta alta in un'area non garantisce che l'obiettivo sarà raggiunto. " + limits);
+        saveGlobal(id, "BROAD", "Percorsi e slancio verso l'obiettivo scelto emergono insieme",
+                "Le affermazioni risultano molto vere per te in entrambe le aree esplorate. Questo descrive un'ampiezza delle possibilità e della motivazione percepite adesso, non un esito futuro.",
+                "Puoi notare quali passi e risorse rendono plausibile questa valutazione. Anche quando percorsi e slancio sono presenti, condizioni esterne e cambiamenti possono interrompere o riorientare un piano. Chiedere aiuto o cambiare obiettivo può restare una scelta appropriata. " + limits);
+
+        saveAreaInsights(id, "percorsi",
+                "Le strade verso l'obiettivo scelto risultano poco visibili nelle risposte; ostacoli e informazioni disponibili contano.",
+                "Vedi alcune possibilità verso l'obiettivo scelto; puoi osservare quali passaggi restano incerti.",
+                "Riferisci diverse possibilità di procedere; questo non garantisce che siano tutte praticabili.");
+        saveAreaInsights(id, "slancio",
+                "Lo slancio verso l'obiettivo scelto risulta contenuto; energie e priorità attuali possono incidere.",
+                "Lo slancio verso l'obiettivo scelto è intermedio; può cambiare con tempi e condizioni.",
+                "Riferisci slancio verso l'obiettivo scelto; questo non equivale a un obbligo di procedere.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("speranza-obiettivi", List.of(
+                ref("Hope Theory and Adult Hope Scale — Snyder e colleghi", "https://pubmed.ncbi.nlm.nih.gov/2037968/"),
+                ref("Career adaptability and hope in Italian adults — Di Maggio e colleghi", "https://doi.org/10.1007/s10902-021-00405-1"),
+                ref("Italian Perceived Hope Scale — Regnoli e colleghi", "https://doi.org/10.1007/s12144-025-08801-z"),
+                ref("Interdisciplinary systematic review of hope — Pleeging e colleghi", "https://doi.org/10.1007/s11482-021-09967-x")));
         syncReferences("autoefficacia-percepita", List.of(
                 ref("Italian New General Self-Efficacy Scale — Rossi e colleghi", "https://doi.org/10.3390/jcm14061988"),
                 ref("General Self-Efficacy Scale: multicultural validation — Luszczynska, Scholz e Schwarzer", "https://doi.org/10.3200/JRLP.139.5.439-457"),
