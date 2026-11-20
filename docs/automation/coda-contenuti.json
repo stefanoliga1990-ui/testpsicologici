@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-11-13",
+  "updatedAt": "2026-11-20",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -547,25 +547,25 @@
     {
       "order": 44,
       "slug": "ottimismo",
-      "workingTitle": "Ottimismo — Come guardo al mio futuro?",
+      "workingTitle": "Ottimismo: quali aspettative ho sul futuro?",
       "sourceTopic": "Ottimismo",
       "sourceDescription": "Aspettative favorevoli e sfavorevoli rispetto al futuro.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 2,
+        "itemCount": 10,
+        "answerScale": "AGREEMENT",
+        "resultModel": "AREA_PROFILE",
         "notes": "Non equiparare ottimismo a positività obbligatoria né pessimismo a disturbo; non prevedere esiti individuali."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-20T13:09:34+01:00",
+        "completedAt": "2026-11-20T13:09:34+01:00",
+        "commitHash": "410e564387d27c7605308877accd7f5726992c87",
         "blockReason": null
       }
     },
