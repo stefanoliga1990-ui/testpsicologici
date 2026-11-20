@@ -5855,6 +5855,41 @@ public class GuideCatalogue {
                             new GuideReference("Career Adaptability, Hope, and Life Satisfaction — Di Maggio e colleghi", "https://doi.org/10.1007/s10902-021-00405-1", "Studio italiano del 2021 su due gruppi da 185 adulti, uno con disturbo da uso di sostanze; associazioni di gruppo e campioni specifici."),
                             new GuideReference("Towards a new conceptualization of hope in Italy — Regnoli e colleghi", "https://doi.org/10.1007/s12144-025-08801-z", "Validazione italiana del 2026 della PHS su 200 e 405 giovani adulti: costrutto e struttura diversi dal questionario dell'app."),
                             new GuideReference("Characterizing Hope — Pleeging, van Exel e Burger", "https://doi.org/10.1007/s11482-021-09967-x", "Revisione sistematica concettuale del 2021 che documenta definizioni diverse della speranza; non valida punteggi individuali."))
+            ),
+            new InformationGuide(
+                    "ottimismo", "ottimismo",
+                    "Ottimismo",
+                    "Ottimismo: aspettative favorevoli e sfavorevoli sul futuro",
+                    "Ottimismo: aspettative sul futuro | Spazio Test",
+                    "Che cos'è l'ottimismo disposizionale, perché aspettative favorevoli e sfavorevoli possono coesistere e come leggere il questionario informativo.",
+                    "Pensare al futuro può includere possibilità desiderate e difficoltà temute. L'ottimismo riguarda le aspettative sugli esiti, non l'obbligo di sentirsi positivi.",
+                    List.of(
+                            new GuideSection("In breve", "Che cosa si intende per ottimismo", List.of(
+                                    "Nella ricerca sull'ottimismo disposizionale contano le aspettative generalizzate sugli esiti futuri. Avere aspettative favorevoli non significa prevedere correttamente gli eventi né controllarli.",
+                                    "Le aspettative possono cambiare con salute, risorse economiche, sicurezza e opportunità. Riconoscere un ostacolo concreto non è una carenza personale e non obbliga a pensare positivo."), List.of()),
+                            new GuideSection("Due direzioni", "Ottimismo e pessimismo possono coesistere", List.of(
+                                    "La struttura della Life Orientation Test-Revised è dibattuta: alcuni studi trattano ottimismo e pessimismo come estremi di un continuum, altri trovano due fattori. Uno studio italiano del 2024 su universitari ha sostenuto la seconda lettura, che resta specifica di quello strumento e campione.",
+                                    "Per questo il nostro questionario mostra separatamente aspettative favorevoli e sfavorevoli. Puoi immaginare opportunità in un ambito e difficoltà in un altro. Le due barre non si sottraggono per ottenere un punteggio unico."), List.of()),
+                            new GuideSection("Ricerca italiana ed europea", "Evidenze su strumenti esistenti", List.of(
+                                    "Uno studio su 2.862 adulti italiani ha analizzato le proprietà degli item della LOT-R e possibili differenze di funzionamento per età e genere. Uno studio in una popolazione tedesca ha sostenuto la lettura separata delle due direzioni.",
+                                    "Questi lavori riguardano la LOT-R, non le dieci frasi originali di Spazio Test. Campioni, lingua, item e scopi differiscono: non possiamo trasferire norme, affidabilità o interpretazioni individuali."), List.of()),
+                            new GuideSection("Distinzioni", "Ottimismo non è speranza o autoefficacia", List.of(
+                                    "La speranza orientata agli obiettivi riguarda strade possibili e slancio verso un obiettivo scelto. L'autoefficacia percepita riguarda il sentirsi in grado di compiere azioni. L'ottimismo qui riguarda le aspettative più generali sugli esiti futuri.",
+                                    "Una persona può sentirsi capace di agire e aspettarsi comunque ostacoli esterni. Nessuno di questi concetti attribuisce colpa per condizioni sfavorevoli."), List.of()),
+                            new GuideSection("Leggere le risposte", "Due aree senza una previsione", List.of(
+                                    "Le dieci frasi chiedono quanto siano vere per te dalla situazione attuale. Cinque riguardano esiti favorevoli e cinque esiti sfavorevoli. Le soglie e i profili sono scelte editoriali, non una misura validata.",
+                                    "Un profilo con entrambe le aree alte descrive coesistenza, non molto ottimismo. Una barra non è una percentuale della persona o la probabilità di un evento. Chiediti quali situazioni concrete avevi in mente quando hai risposto."), List.of()),
+                            new GuideSection("Supporto e limiti", "Quando cercare un confronto", List.of(
+                                    "Aspettative sfavorevoli non equivalgono a un disturbo e aspettative favorevoli non garantiscono benessere. Se i pensieri sul futuro causano sofferenza persistente o interferiscono con la vita quotidiana, puoi parlarne con un professionista.",
+                                    "Il questionario non valuta urgenze o sicurezza personale. In caso di pericolo immediato in Italia chiama il 112. Non serve una soglia del test per chiedere aiuto."), List.of())
+                    ),
+                    "Questionario originale informativo su aspettative favorevoli e sfavorevoli: non validato, senza punteggio unico, norme o previsioni.",
+                    "Questa guida spiega la scelta di mostrare due direzioni dell'aspettativa e separa i risultati dell'app dalle evidenze italiane ed europee sulla LOT-R.",
+                    List.of(
+                            new GuideReference("Bidimensional Life Orientation Test-Revised — Tommasi e Sartori", "https://doi.org/10.14605/CS1722402", "Studio italiano del 2024 su 161 universitari a sostegno di due fattori nella LOT-R; campione specifico e strumento diverso dall'app."),
+                            new GuideReference("LOT-R item response analysis — Steca e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25078402/", "Studio del 2015 su 2.862 adulti italiani e funzionamento degli item della LOT-R; non valida gli item originali."),
+                            new GuideReference("Psychometric properties and population-based norms of the LOT-R — Glaesmer e colleghi", "https://pubmed.ncbi.nlm.nih.gov/22106985/", "Studio tedesco di popolazione che sostiene la bidimensionalità della LOT-R; le sue norme non sono trasferibili."),
+                            new GuideReference("Distinguishing optimism from neuroticism (and trait anxiety, self-mastery, and self-esteem): a reevaluation of the Life Orientation Test — Scheier, Carver e Bridges", "https://pubmed.ncbi.nlm.nih.gov/7815302/", "Studio fondativo del 1994 sulla revisione della LOT e le aspettative generalizzate; nessun item o punteggio è copiato."))
             )
     );
 

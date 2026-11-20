@@ -97,6 +97,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedSocialChameleonInformationTest();
         seedPerceivedSelfEfficacyInformationTest();
         seedGoalDirectedHopeInformationTest();
+        seedOptimismInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4872,7 +4873,72 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Riferisci slancio verso l'obiettivo scelto; questo non equivale a un obbligo di procedere.");
     }
 
+    private void seedOptimismInformationTest() {
+        String id = "ottimismo";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Ottimismo: quali aspettative ho sul futuro?",
+                "Auto-osservazione informativa",
+                "Esplora separatamente aspettative favorevoli e sfavorevoli sul futuro.",
+                "4 min · 10 domande",
+                "Questionario originale, informativo e non validato per adulti: le aspettative favorevoli e sfavorevoli possono coesistere e dipendono anche dalle circostanze concrete. Le soglie sono editoriali, senza punteggio complessivo né previsioni di eventi o salute mentale. Se le preoccupazioni persistono o interferiscono con la vita quotidiana, puoi parlarne con un professionista.",
+                version, false,
+                "Aspettative sul futuro nella vita attuale",
+                "Risposte riferite all'area",
+                true, 52)
+                .withSeo("Ottimismo: questionario sulle aspettative future | Spazio Test",
+                        "10 domande originali su aspettative favorevoli e sfavorevoli. Risultati descrittivi, senza diagnosi o previsioni.")
+                .withResponseInstruction("Pensando al futuro dalla tua situazione attuale, quanto è vera per te ciascuna affermazione?")
+                .withAnswerScale("AGREEMENT"));
+
+        saveArea(id, "favorevoli", "Aspettative favorevoli", 1);
+        saveArea(id, "sfavorevoli", "Aspettative sfavorevoli", 2);
+        saveQuestions(id, List.of(
+                q("favorevoli", "Nel mio futuro vedo la possibilità di eventi favorevoli."),
+                q("sfavorevoli", "Nel mio futuro mi aspetto eventi sfavorevoli."),
+                q("favorevoli", "Di fronte ai cambiamenti che mi attendono, immagino anche sviluppi favorevoli."),
+                q("sfavorevoli", "Di fronte ai cambiamenti che mi attendono, immagino sviluppi sfavorevoli."),
+                q("favorevoli", "Quando penso a situazioni future impreviste, considero possibili esiti favorevoli."),
+                q("sfavorevoli", "Quando penso a situazioni future impreviste, considero possibili esiti sfavorevoli."),
+                q("favorevoli", "Mi aspetto di incontrare occasioni positive nel tempo che verrà."),
+                q("sfavorevoli", "Mi aspetto di incontrare ostacoli nel tempo che verrà."),
+                q("favorevoli", "Guardando avanti, intravedo sviluppi che potrebbero andare bene per me."),
+                q("sfavorevoli", "Guardando avanti, intravedo sviluppi che potrebbero andare male per me.")));
+
+        String limits = "Il questionario è originale e non validato: aree, barre e soglie sono editoriali, non norme, diagnosi o previsioni. "
+                + "Salute, sicurezza, opportunità e condizioni materiali possono influenzare le risposte. "
+                + "Se la preoccupazione persiste o interferisce con la vita quotidiana puoi parlarne con un professionista; in caso di pericolo immediato in Italia chiama il 112.";
+        saveGlobal(id, "LOW", "Aspettative sul futuro poco definite in entrambe le direzioni",
+                "Le frasi su sviluppi favorevoli e sfavorevoli risultano poco vere per te adesso. Questo non esclude aspettative più chiare in situazioni particolari della tua vita.",
+                "Potresti avere davanti un futuro difficile da immaginare o una fase di cambiamento. Osserva se ci sono ambiti in cui hai attese più definite. Risposte contenute nelle due aree non indicano assenza di interesse per il futuro. " + limits);
+        saveGlobal(id, "MIXED", "Aspettative sul futuro variabili nelle due aree",
+                "Almeno un tipo di aspettativa è rappresentato in misura intermedia, senza risposte alte nelle due aree. Le risposte possono cambiare a seconda degli eventi che avevi in mente.",
+                "Guarda le due aree separatamente e considera il contesto attuale. Piccole differenze fra barre non stabiliscono quale atteggiamento ti definisca. Puoi osservare quali situazioni rendono più o meno plausibili gli esiti immaginati. " + limits);
+        saveGlobal(id, "FOCUSED", "Aspettative sul futuro: un tipo emerge nelle risposte",
+                "Una sola area raccoglie risposte più alte: verifica nella scheda se riguarda sviluppi favorevoli o sfavorevoli. L'altra area è più contenuta e non va interpretata come il suo contrario automatico.",
+                "Aspettative favorevoli e sfavorevoli possono rispondere a circostanze differenti. Osserva quali fatti, ostacoli o opportunità stai considerando. Un orientamento espresso oggi non determina ciò che accadrà né definisce tutta la tua esperienza. " + limits);
+        saveGlobal(id, "BROAD", "Aspettative sul futuro: favorevoli e sfavorevoli coesistono",
+                "Entrambe le aree raccolgono risposte alte: descrivono la presenza contemporanea di esiti favorevoli e sfavorevoli immaginati. Questo profilo non significa molto ottimismo né una contraddizione personale.",
+                "È possibile intravedere opportunità e ostacoli nello stesso periodo. Osserva se riguardano ambiti o tempi diversi e quanto incidono sulle scelte quotidiane. Il risultato non stabilisce quale aspettativa sia più realistica. " + limits);
+        saveAreaInsights(id, "favorevoli",
+                "Le aspettative favorevoli compaiono poco nelle risposte; questo non dimostra che manchino opportunità.",
+                "Alcune aspettative favorevoli sono presenti; possono dipendere dal contesto.",
+                "Riferisci diverse aspettative favorevoli; non sono una previsione di successo.");
+        saveAreaInsights(id, "sfavorevoli",
+                "Le aspettative sfavorevoli compaiono poco nelle risposte; questo non esclude difficoltà concrete.",
+                "Alcune aspettative sfavorevoli sono presenti; osserva a quali situazioni si riferiscono.",
+                "Riferisci diverse aspettative sfavorevoli; non equivalgono a un disturbo né a una previsione.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("ottimismo", List.of(
+                ref("Italian bidimensional LOT-R — Tommasi e Sartori", "https://doi.org/10.14605/CS1722402"),
+                ref("LOT-R item analysis in Italian adults — Steca e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25078402/"),
+                ref("German population LOT-R study — Glaesmer e colleghi", "https://pubmed.ncbi.nlm.nih.gov/22106985/"),
+                ref("Original Life Orientation Test-Revised — Scheier, Carver e Bridges", "https://pubmed.ncbi.nlm.nih.gov/7815302/")));
         syncReferences("speranza-obiettivi", List.of(
                 ref("Hope Theory and Adult Hope Scale — Snyder e colleghi", "https://pubmed.ncbi.nlm.nih.gov/2037968/"),
                 ref("Career adaptability and hope in Italian adults — Di Maggio e colleghi", "https://doi.org/10.1007/s10902-021-00405-1"),

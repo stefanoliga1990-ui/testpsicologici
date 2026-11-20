@@ -13,6 +13,14 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.14605/CS1722402",
+                    "Studio italiano del 2024 sulla struttura a due fattori della LOT-R in universitari; non valida le due aree originali dell'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/25078402/",
+                    "Analisi delle proprietà degli item LOT-R in 2.862 adulti italiani, utile a contestualizzare la misura ma non a trasferire punteggi."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/22106985/",
+                    "Studio tedesco di popolazione sulla struttura della LOT-R; le sue norme e interpretazioni non si applicano agli item dell'app."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/7815302/",
+                    "Studio fondativo della LOT-R sulle aspettative generalizzate; nessun item, cut-off o risultato individuale è riprodotto."),
             entry("https://pubmed.ncbi.nlm.nih.gov/2037968/",
                     "Studio fondativo di Snyder su agency e pathways verso obiettivi; i suoi item, punteggi e campioni non sono trasferiti al questionario originale."),
             entry("https://doi.org/10.1007/s10902-021-00405-1",

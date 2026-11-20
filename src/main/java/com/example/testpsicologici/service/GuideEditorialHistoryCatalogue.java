@@ -82,7 +82,8 @@ public class GuideEditorialHistoryCatalogue {
             entry("doomscrolling", history("2026-10-25", "2026-10-25")),
             entry("triade-oscura", history("2026-10-26", "2026-10-26")),
             entry("autoefficacia-percepita", history("2026-11-18", "2026-11-18")),
-            entry("speranza-obiettivi", history("2026-11-19", "2026-11-19"))
+            entry("speranza-obiettivi", history("2026-11-19", "2026-11-19")),
+            entry("ottimismo", history("2026-11-20", "2026-11-20"))
     );
 
     public GuideEditorialHistory forSlug(String slug) {
