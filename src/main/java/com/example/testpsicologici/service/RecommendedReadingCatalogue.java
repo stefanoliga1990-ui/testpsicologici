@@ -838,6 +838,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("ricatto-emotivo", List.of(
+                    new RecommendedReading(
+                            "Il senso di colpa. Liberarsi dai ricatti morali",
+                            "Susan Forward e Donna Frazier",
+                            "Una guida divulgativa che esplora come paura, obbligo e senso di colpa possano entrare nelle richieste interpersonali.",
+                            "Il linguaggio del ricatto morale non permette di dedurre le intenzioni altrui da un singolo episodio; la lettura non sostituisce una valutazione della sicurezza della relazione.",
+                            "https://www.amazon.it/-/en/senso-colpa-Liberarsi-ricatti-morali/dp/8850276788?dib=eyJ2IjoiMSJ9.09BhrsmLXcwRiZ2uDE9c8w.ZA-BzolnGNRM1qKncMtEHcFG2W4GhRni7Z804tIQkSA&dib_tag=se&keywords=9788850276783&qid=1795183152&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=cc072c2872b40cdfe6df31aa8ea0b93a&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Gabbie di parole. Il linguaggio della violenza psicologica: valutazione, prevenzione e intervento",
+                            "Carmela Mento, Giovanna Spatari e Maria Rosaria Anna Muscatello (a cura di)",
+                            "Un volume specialistico che esamina il linguaggio, la manipolazione affettiva e le dinamiche di potere nelle relazioni di coppia.",
+                            "Tratta soprattutto situazioni di violenza psicologica ed è un testo tecnico: non consente di diagnosticare una persona, attribuire intenzioni o classificare ogni pressione emotiva come violenza.",
+                            "https://www.amazon.it/-/en/Gabbie-parole-linguaggio-violenza-psicologica/dp/8835117976?dib=eyJ2IjoiMSJ9.v66qeXy715yEAn0IwoDIeg.M9NFc-n01b1iRqtLE7GxHRetNbPFwNK85DBVFXg1Nns&dib_tag=se&keywords=9788835117971&qid=1795183238&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=303df5a5cf11c2b12d3a76a41075286e&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",

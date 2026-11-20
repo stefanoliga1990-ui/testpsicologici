@@ -2982,7 +2982,60 @@
         }
       ]
     },
-    { "topicId": "ricatto-emotivo", "testId": null, "guideSlug": "ricatto-emotivo", "title": "Ricatto emotivo nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "ricatto-emotivo",
+      "testId": null,
+      "guideSlug": "ricatto-emotivo",
+      "title": "Ricatto emotivo nelle relazioni",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["ricatto morale e senso di colpa", "manipolazione affettiva e violenza psicologica nella coppia"],
+      "fallbackRationale": "Il ricatto emotivo può includere pressioni basate su paura, obbligo e colpa. Forward e Frazier trattano il ricatto morale in rapporti diversi; il volume collettaneo curato da Mento, Spatari e Muscatello analizza la manipolazione affettiva e il controllo nelle relazioni di coppia. Quest'ultimo riguarda anche situazioni di violenza psicologica, che non vanno attribuite automaticamente a ogni conflitto o richiesta emotivamente difficile.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Il senso di colpa",
+          "subtitle": "Liberarsi dai ricatti morali",
+          "placeholderCover": true,
+          "authors": ["Susan Forward", "Donna Frazier", "Cecilia Scerbanenco (traduzione)"],
+          "publisher": "TEA",
+          "isbn13": "9788850276783",
+          "publicationYear": 2026,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa sui ricatti morali e sul ruolo della colpa nelle relazioni",
+          "audience": "Adulti interessati a osservare pressioni, richieste e confini nelle relazioni personali e lavorative",
+          "description": "Una guida divulgativa che esplora come paura, obbligo e senso di colpa possano entrare nelle richieste interpersonali.",
+          "limit": "Il linguaggio del ricatto morale non permette di dedurre le intenzioni altrui da un singolo episodio; la lettura non sostituisce una valutazione della sicurezza della relazione.",
+          "primarySources": [{ "label": "Scheda bibliografica dell'edizione TEA 2026", "url": "https://www.libreriauniversitaria.it/senso-colpa-liberarsi-ricatti-morali/libro/9788850276783" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8850276788", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/senso-colpa-Liberarsi-ricatti-morali/dp/8850276788?dib=eyJ2IjoiMSJ9.09BhrsmLXcwRiZ2uDE9c8w.ZA-BzolnGNRM1qKncMtEHcFG2W4GhRni7Z804tIQkSA&dib_tag=se&keywords=9788850276783&qid=1795183152&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=cc072c2872b40cdfe6df31aa8ea0b93a&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Gabbie di parole",
+          "subtitle": "Il linguaggio della violenza psicologica: valutazione, prevenzione e intervento",
+          "placeholderCover": true,
+          "authors": ["Carmela Mento (a cura di)", "Giovanna Spatari (a cura di)", "Maria Rosaria Anna Muscatello (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835117971",
+          "publicationYear": 2021,
+          "format": "brossura; prima ristampa 2025",
+          "editorialRole": "Volume collettaneo specialistico su manipolazione affettiva, controllo e violenza psicologica nella coppia",
+          "audience": "Professionisti e studenti dell'area psicologica, psicosociale ed educativa; adulti interessati a un approfondimento tecnico",
+          "description": "Un volume specialistico che esamina il linguaggio, la manipolazione affettiva e le dinamiche di potere nelle relazioni di coppia.",
+          "limit": "Tratta soprattutto situazioni di violenza psicologica ed è un testo tecnico: non consente di diagnosticare una persona, attribuire intenzioni o classificare ogni pressione emotiva come violenza. Amazon indica una data 2026, mentre l'editore riporta prima edizione 2021 e ristampa 2025 per lo stesso ISBN cartaceo.",
+          "primarySources": [{ "label": "Scheda editore dell'edizione a stampa", "url": "https://www.francoangeli.it/Libro/Gabbie-di-parole-Il-linguaggio-della-violenza-psicologica%3A-valutazione%2C-prevenzione-e-intervento?Id=27064" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8835117976", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Gabbie-parole-linguaggio-violenza-psicologica/dp/8835117976?dib=eyJ2IjoiMSJ9.v66qeXy715yEAn0IwoDIeg.M9NFc-n01b1iRqtLE7GxHRetNbPFwNK85DBVFXg1Nns&dib_tag=se&keywords=9788835117971&qid=1795183238&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=303df5a5cf11c2b12d3a76a41075286e&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "proiezione-psicologica", "testId": null, "guideSlug": "proiezione-psicologica", "title": "Proiezione psicologica", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "blame-shifting", "testId": null, "guideSlug": "blame-shifting", "title": "Blame shifting nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "darvo", "testId": null, "guideSlug": "darvo", "title": "DARVO nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
