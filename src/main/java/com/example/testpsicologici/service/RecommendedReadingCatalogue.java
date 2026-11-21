@@ -856,6 +856,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("proiezione-psicologica", List.of(
+                    new RecommendedReading(
+                            "L'Io e i meccanismi di difesa",
+                            "Anna Freud",
+                            "Un testo classico sulla teoria delle difese dell'Io e sul loro ruolo nella tradizione psicoanalitica.",
+                            "L'impostazione è storica e psicoanalitica; non dimostra da sola la funzione difensiva della proiezione in ogni contesto e non permette di interpretare una persona da un episodio quotidiano.",
+                            "https://www.amazon.it/-/en/LIo-Meccanismi-Difesa-Anna-Freud/dp/8809768507?dib=eyJ2IjoiMSJ9.O4AsRZVtDIYw_4_kJb5DuQ.kFVLYTSK_HUWTM0TF-IYZs9-bCnmtzC0-_iQU-ezttI&dib_tag=se&keywords=9788809768505&qid=1795269822&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=3b6ede354860e5f414979bdec653795f&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "I meccanismi di difesa. Teoria, valutazione, clinica",
+                            "Vittorio Lingiardi e Fabio Madeddu",
+                            "Un manuale aggiornato che collega modelli teorici, ricerca empirica ed esempi clinici sui meccanismi di difesa.",
+                            "È rivolto soprattutto a professionisti e studenti; gli strumenti clinici discussi non autorizzano ad attribuire una difesa specifica a un'altra persona sulla base di una conversazione.",
+                            "https://www.amazon.it/-/en/meccanismi-difesa-Teoria-valutazione-clinica/dp/8832855607?dib=eyJ2IjoiMSJ9.1SrKjOdXblVUhTMMGxgX1g.RyQf1TgB09JEqZlUPRoUZMZBlh-bCCkOCNutnPeYEXM&dib_tag=se&keywords=9788832855609&qid=1795269862&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=cd0dc47bca6cf88229f22e819548ee61&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",

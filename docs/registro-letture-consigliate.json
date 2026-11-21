@@ -3036,7 +3036,60 @@
         }
       ]
     },
-    { "topicId": "proiezione-psicologica", "testId": null, "guideSlug": "proiezione-psicologica", "title": "Proiezione psicologica", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "proiezione-psicologica",
+      "testId": null,
+      "guideSlug": "proiezione-psicologica",
+      "title": "Proiezione psicologica",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["meccanismi di difesa nella tradizione psicodinamica"],
+      "fallbackRationale": "La proiezione come difesa è un concetto più specifico del tema trattato da entrambi i volumi. Freud offre il quadro storico della teoria delle difese; Lingiardi e Madeddu ne discutono i modelli, la valutazione e la ricerca in una trattazione aggiornata. Nessuno dei due libri tratta la proiezione sociale come fenomeno di cognizione sociale né consente di riconoscere una difesa dalle parole di una persona.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "L'Io e i meccanismi di difesa",
+          "subtitle": null,
+          "placeholderCover": true,
+          "authors": ["Anna Freud", "L. Zeller Tolentino (traduzione)"],
+          "publisher": "Giunti Psicologia.IO",
+          "isbn13": "9788809768505",
+          "publicationYear": 2012,
+          "format": "brossura",
+          "editorialRole": "Opera storica fondativa della teoria psicoanalitica dei meccanismi di difesa",
+          "audience": "Studenti e lettori interessati alla storia della psicologia dinamica e della psicoanalisi",
+          "description": "Un testo classico sulla teoria delle difese dell'Io e sul loro ruolo nella tradizione psicoanalitica.",
+          "limit": "L'impostazione è storica e psicoanalitica; non dimostra da sola la funzione difensiva della proiezione in ogni contesto e non permette di interpretare una persona da un episodio quotidiano.",
+          "primarySources": [{ "label": "Scheda editore dell'edizione 2012", "url": "https://giunti.it/products/lio-e-i-meccanismi-di-difesa-freud-anna-9788809768505" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8809768507", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/LIo-Meccanismi-Difesa-Anna-Freud/dp/8809768507?dib=eyJ2IjoiMSJ9.O4AsRZVtDIYw_4_kJb5DuQ.kFVLYTSK_HUWTM0TF-IYZs9-bCnmtzC0-_iQU-ezttI&dib_tag=se&keywords=9788809768505&qid=1795269822&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=3b6ede354860e5f414979bdec653795f&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "I meccanismi di difesa",
+          "subtitle": "Teoria, valutazione, clinica - Terza edizione",
+          "placeholderCover": true,
+          "authors": ["Vittorio Lingiardi", "Fabio Madeddu"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788832855609",
+          "publicationYear": 2023,
+          "format": "brossura",
+          "editorialRole": "Manuale specialistico sulla teoria, la valutazione clinica e la ricerca sui meccanismi di difesa",
+          "audience": "Clinici, ricercatori e studenti di psicologia; lettori interessati a un approfondimento tecnico",
+          "description": "Un manuale aggiornato che collega modelli teorici, ricerca empirica ed esempi clinici sui meccanismi di difesa.",
+          "limit": "È rivolto soprattutto a professionisti e studenti; gli strumenti clinici discussi non autorizzano ad attribuire una difesa specifica a un'altra persona sulla base di una conversazione.",
+          "primarySources": [{ "label": "Scheda editore della terza edizione", "url": "https://www.raffaellocortina.it/scheda-libro/vittorio-lingiardi-fabio-madeddu/i-meccanismi-di-difesa-9788832855609-4049.html" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8832855607", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/meccanismi-difesa-Teoria-valutazione-clinica/dp/8832855607?dib=eyJ2IjoiMSJ9.1SrKjOdXblVUhTMMGxgX1g.RyQf1TgB09JEqZlUPRoUZMZBlh-bCCkOCNutnPeYEXM&dib_tag=se&keywords=9788832855609&qid=1795269862&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=cd0dc47bca6cf88229f22e819548ee61&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "blame-shifting", "testId": null, "guideSlug": "blame-shifting", "title": "Blame shifting nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "darvo", "testId": null, "guideSlug": "darvo", "title": "DARVO nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "mirroring-relazioni", "testId": null, "guideSlug": "mirroring-relazioni", "title": "Mirroring nelle relazioni: imitazione, sintonia e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
