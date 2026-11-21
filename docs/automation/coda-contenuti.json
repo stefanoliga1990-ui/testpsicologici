@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-11-20",
+  "updatedAt": "2026-11-21",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -572,25 +572,25 @@
     {
       "order": 45,
       "slug": "gratitudine",
-      "workingTitle": "Gratitudine — Quanto riconosco ciò che arricchisce la mia vita?",
+      "workingTitle": "Gratitudine: che cosa riconosco nella mia vita?",
       "sourceTopic": "Gratitudine",
       "sourceDescription": "Riconoscimento e apprezzamento di aiuti, gesti e aspetti positivi della propria esperienza.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 2,
+        "itemCount": 10,
+        "answerScale": "FREQUENCY",
+        "resultModel": "AREA_PROFILE",
         "notes": "Direzione positiva, senza obbligo di riconoscenza, giudizi morali o minimizzazione della sofferenza."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-21T13:12:07+01:00",
+        "completedAt": "2026-11-21T13:12:07+01:00",
+        "commitHash": "5557d429b592e37a83b0af8cbf5ffc3721ebe8b7",
         "blockReason": null
       }
     },
