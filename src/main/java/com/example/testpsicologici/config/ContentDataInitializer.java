@@ -98,6 +98,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedPerceivedSelfEfficacyInformationTest();
         seedGoalDirectedHopeInformationTest();
         seedOptimismInformationTest();
+        seedGratitudeInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4933,7 +4934,73 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Riferisci diverse aspettative sfavorevoli; non equivalgono a un disturbo né a una previsione.");
     }
 
+    private void seedGratitudeInformationTest() {
+        String id = "gratitudine";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Gratitudine: che cosa riconosco nella mia vita?",
+                "Auto-osservazione informativa",
+                "Esplora il riconoscimento di contributi altrui e l'apprezzamento di aspetti della vita attuale.",
+                "4 min · 10 domande",
+                "Questionario originale, informativo e non validato per adulti: negli ultimi tre mesi, quante volte hai riconosciuto contributi altrui o aspetti della tua esperienza che apprezzi? Le soglie sono editoriali; poche occasioni di aiuto o condizioni difficili possono incidere sulle risposte senza indicare ingratitudine. Nessuno è tenuto a provare riconoscenza verso chi lo ha danneggiato; se il disagio persiste, puoi parlarne con un professionista.",
+                version, false,
+                "Risposte riferite agli ultimi tre mesi",
+                "Risposte riferite all'area",
+                true, 53)
+                .withSeo("Gratitudine: questionario informativo | Spazio Test",
+                        "10 domande originali sul riconoscimento di contributi altrui e sull'apprezzamento della propria esperienza. Risultati descrittivi, non validati.")
+                .withResponseInstruction("Negli ultimi tre mesi, con quale frequenza hai vissuto quanto descritto?")
+                .withAnswerScale("FREQUENCY"));
+
+        saveArea(id, "contributi", "Contributi altrui riconosciuti", 1);
+        saveArea(id, "esperienza", "Aspetti della vita apprezzati", 2);
+        saveQuestions(id, List.of(
+                q("contributi", "Ho riconosciuto un aiuto concreto ricevuto da qualcuno."),
+                q("esperienza", "Ho notato un aspetto della mia giornata che ho considerato prezioso."),
+                q("contributi", "Ho notato un gesto di attenzione rivolto a me."),
+                q("esperienza", "Ho apprezzato una possibilità concreta presente nella mia vita."),
+                q("contributi", "Ho apprezzato il tempo che una persona mi ha dedicato."),
+                q("esperienza", "Ho riconosciuto il valore di una risorsa disponibile nella mia vita."),
+                q("contributi", "Ho riconosciuto il contributo di qualcuno a un'esperienza positiva per me."),
+                q("esperienza", "Ho dato valore a un momento ordinario della mia vita."),
+                q("contributi", "Ho provato riconoscenza per un sostegno ricevuto."),
+                q("esperienza", "Ripensando alla mia vita attuale, ho individuato qualcosa che apprezzo.")));
+
+        String limits = "Il questionario è originale e non validato: aree, barre e soglie sono editoriali, non misure del valore personale o norme. "
+                + "Occasioni reali, salute, perdite e condizioni materiali possono influenzare le risposte; nessuno deve sentirsi grato verso chi lo ha danneggiato. "
+                + "Se il disagio persiste o interferisce con la vita quotidiana puoi parlarne con un professionista; in caso di pericolo immediato in Italia chiama il 112.";
+        saveGlobal(id, "LOW", "Riconoscimento e apprezzamento compaiono poco nelle risposte sulla gratitudine",
+                "Negli ultimi tre mesi le frasi sui contributi altrui e sugli aspetti apprezzati della vita sono risultate poco frequenti. Questo non esclude esperienze circoscritte e non indica ingratitudine o un difetto personale.",
+                "Potresti aver avuto poche occasioni di aiuto o attraversato condizioni difficili. Osserva se alcune frasi erano poco applicabili alla tua situazione e se il periodo scelto è stato particolare. La frequenza riferita non stabilisce la capacità di provare gratitudine. " + limits);
+        saveGlobal(id, "MIXED", "Riconoscimento e apprezzamento variano nelle risposte sulla gratitudine",
+                "Almeno una delle due aree è in una fascia editoriale intermedia e nessuna nella più alta. Le esperienze riferite possono essere state diverse per contributi altrui e aspetti della propria vita.",
+                "Guarda le schede delle aree senza trasformare una piccola differenza fra barre in una classifica. Disponibilità di aiuto, contesto e periodi di fatica possono incidere in modo diverso. Puoi osservare quali episodi avevi in mente senza sentirti tenuto a cercarne altri. " + limits);
+        saveGlobal(id, "FOCUSED", "Un'area del riconoscimento emerge nelle risposte sulla gratitudine",
+                "Una sola area raccoglie risposte più frequenti: consulta la scheda per capire se riguarda persone o aspetti della vita. L'altra area resta più contenuta e non indica un limite generale della persona.",
+                "È possibile apprezzare aspetti della vita anche con poco supporto altrui, oppure riconoscere aiuti ricevuti durante un periodo difficile. Osserva se le due aree avevano occasioni comparabili negli ultimi tre mesi. Una sola area alta non certifica un tratto stabile. " + limits);
+        saveGlobal(id, "BROAD", "Riconoscimento e apprezzamento emergono insieme nelle risposte sulla gratitudine",
+                "Le frasi sui contributi altrui e sugli aspetti apprezzati della vita risultano frequenti in entrambe le aree. Questo descrive le esperienze riferite negli ultimi tre mesi, non un grado di bontà o benessere.",
+                "Puoi distinguere quali occasioni erano legate a persone e quali a risorse o momenti della tua vita. Anche risposte frequenti possono coesistere con perdita, rabbia o sofferenza. Il risultato non impone positività né dimostra che ogni relazione sia sicura. " + limits);
+        saveAreaInsights(id, "contributi",
+                "Hai riferito pochi contributi altrui riconosciuti; potrebbero esserci state poche occasioni di aiuto.",
+                "Hai riferito alcune occasioni di riconoscimento di gesti e sostegni altrui.",
+                "Hai riferito frequenti occasioni di riconoscimento di contributi altrui; non implica un obbligo di ricambiare.");
+        saveAreaInsights(id, "esperienza",
+                "Hai riferito pochi aspetti della vita apprezzati nel periodo considerato; il contesto può incidere.",
+                "Hai riferito alcune occasioni di apprezzamento di aspetti della tua esperienza.",
+                "Hai riferito frequenti occasioni di apprezzamento della tua esperienza; questo non esclude difficoltà.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("gratitudine", List.of(
+                ref("Italian GRAT validation — Di Fabio", "https://doi.org/10.14605/CS921617"),
+                ref("Italian GQ-6 study — Di Fabio", "https://doi.org/10.14605/CS1522206"),
+                ref("Italian GQ-6 translation and validation — Caputo", "https://doi.org/10.5502/ijw.v6i2.492"),
+                ref("Dutch GQ-6 and SGRAT comparison — Jans-Beken e colleghi", "https://doi.org/10.5334/pb.bd"),
+                ref("The grateful disposition — McCullough, Emmons e Tsang", "https://pubmed.ncbi.nlm.nih.gov/11811629/")));
         syncReferences("ottimismo", List.of(
                 ref("Italian bidimensional LOT-R — Tommasi e Sartori", "https://doi.org/10.14605/CS1722402"),
                 ref("LOT-R item analysis in Italian adults — Steca e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25078402/"),

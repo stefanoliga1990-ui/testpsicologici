@@ -92,6 +92,7 @@ public class TopicClusterCatalogue {
                             "resilienza-psicologica",
                             "speranza-obiettivi",
                             "ottimismo",
+                            "gratitudine",
                             "soddisfazione-vita",
                             "empatia-percepita"
                     )),
@@ -155,6 +156,10 @@ public class TopicClusterCatalogue {
         }
         if ("ottimismo".equals(testId)) {
             return List.of("speranza-obiettivi", "soddisfazione-vita", "resilienza-psicologica")
+                    .stream().limit(maximum).toList();
+        }
+        if ("gratitudine".equals(testId)) {
+            return List.of("soddisfazione-vita", "autocompassione", "speranza-obiettivi")
                     .stream().limit(maximum).toList();
         }
         return findByTestId(testId)

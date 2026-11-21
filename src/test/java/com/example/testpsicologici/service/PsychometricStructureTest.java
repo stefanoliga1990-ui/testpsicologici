@@ -70,7 +70,8 @@ class PsychometricStructureTest {
             Map.entry("camaleonte-sociale", "adattamento della presentazione sociale"),
             Map.entry("autoefficacia-percepita", "autoefficacia"),
             Map.entry("speranza-obiettivi", "obiettivo"),
-            Map.entry("ottimismo", "aspettative sul futuro"));
+            Map.entry("ottimismo", "aspettative sul futuro"),
+            Map.entry("gratitudine", "gratitudine"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -80,7 +81,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(52).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(53).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ACE_EXPOSURE".equals(test.scoringModel())) {
@@ -117,6 +118,14 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(4));
+            } else if ("gratitudine".equals(test.id())) {
+                assertThat(test.version()).isEqualTo("1.0");
+                assertThat(test.questions()).hasSize(10);
+                assertThat(test.responseInstruction()).contains("ultimi tre mesi", "frequenza");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).extracting(area -> area.code()).containsExactly("contributi", "esperienza");
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code())).hasSize(5));
             } else if ("ottimismo".equals(test.id())) {
                 assertThat(test.version()).isEqualTo("1.0");
                 assertThat(test.questions()).hasSize(10);
@@ -406,6 +415,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("una o due aree");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
+            } else if ("gratitudine".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("un'area");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("insieme");
             } else if ("ottimismo".equals(test.id())) {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco definite");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variabili");

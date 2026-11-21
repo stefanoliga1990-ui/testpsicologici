@@ -13,6 +13,16 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.14605/CS921617",
+                    "Primo studio italiano della GRAT su 319 adulti e tre dimensioni, utile a distinguere apprezzamento di altri e di aspetti semplici senza validare le aree dell'app."),
+            entry("https://doi.org/10.14605/CS1522206",
+                    "Studio italiano della GQ-6 su 321 adulti toscani e struttura unidimensionale; non fornisce item, soglie o struttura allo strumento originale."),
+            entry("https://doi.org/10.5502/ijw.v6i2.492",
+                    "Traduzione e studio italiano GQ-6 in 204 adulti reclutati online; associazioni e proprietà della scala non si trasferiscono all'app."),
+            entry("https://doi.org/10.5334/pb.bd",
+                    "Confronto neerlandese di GQ-6 e SGRAT in adulti, utile al contesto europeo e ai limiti delle misure esistenti."),
+            entry("https://pubmed.ncbi.nlm.nih.gov/11811629/",
+                    "Studio fondativo sulla gratitudine come disposizione e sul riconoscimento di contributi altrui, senza copiare item o norme."),
             entry("https://doi.org/10.14605/CS1722402",
                     "Studio italiano del 2024 sulla struttura a due fattori della LOT-R in universitari; non valida le due aree originali dell'app."),
             entry("https://pubmed.ncbi.nlm.nih.gov/25078402/",

@@ -5890,6 +5890,42 @@ public class GuideCatalogue {
                             new GuideReference("LOT-R item response analysis — Steca e colleghi", "https://pubmed.ncbi.nlm.nih.gov/25078402/", "Studio del 2015 su 2.862 adulti italiani e funzionamento degli item della LOT-R; non valida gli item originali."),
                             new GuideReference("Psychometric properties and population-based norms of the LOT-R — Glaesmer e colleghi", "https://pubmed.ncbi.nlm.nih.gov/22106985/", "Studio tedesco di popolazione che sostiene la bidimensionalità della LOT-R; le sue norme non sono trasferibili."),
                             new GuideReference("Distinguishing optimism from neuroticism (and trait anxiety, self-mastery, and self-esteem): a reevaluation of the Life Orientation Test — Scheier, Carver e Bridges", "https://pubmed.ncbi.nlm.nih.gov/7815302/", "Studio fondativo del 1994 sulla revisione della LOT e le aspettative generalizzate; nessun item o punteggio è copiato."))
+            ),
+            new InformationGuide(
+                    "gratitudine", "gratitudine",
+                    "Gratitudine",
+                    "Gratitudine: riconoscere contributi e apprezzare la propria esperienza",
+                    "Gratitudine: contributi e aspetti della vita | Spazio Test",
+                    "Che cosa si intende per gratitudine, quali forme di riconoscimento sono state studiate e come leggere un questionario informativo senza giudizi morali.",
+                    "La gratitudine può riguardare un contributo ricevuto da qualcuno o il valore attribuito a un aspetto della propria esperienza. Non è un obbligo verso gli altri né un requisito per stare bene.",
+                    List.of(
+                            new GuideSection("In breve", "Riconoscere ciò che ha valore", List.of(
+                                    "La ricerca ha descritto la gratitudine come riconoscimento e risposta emotiva a un beneficio ricevuto, spesso da altre persone. Altri modelli includono l'apprezzamento di aspetti semplici della vita. Le definizioni e gli strumenti non coincidono del tutto.",
+                                    "Notare un contributo o una risorsa non cancella ostacoli, perdite o ingiustizie. Nessuno è tenuto a ringraziare una persona che ha fatto del male, né a trovare qualcosa di positivo in una situazione dannosa."), List.of()),
+                            new GuideSection("Modelli diversi", "Una misura generale e una multidimensionale", List.of(
+                                    "La GQ-6 descrive una disposizione generale alla gratitudine. La GRAT distingue apprezzamento degli altri, apprezzamento semplice e senso di abbondanza. Il nostro questionario originale esplora solo i primi due temi in modo editoriale e non è una forma breve di nessuna delle due scale.",
+                                    "Il riconoscimento di un aiuto dipende anche dall'averlo ricevuto. L'apprezzamento di una risorsa può dipendere dalle opportunità effettivamente disponibili. Le due aree non autorizzano a classificare le persone come grate o ingrate."), List.of()),
+                            new GuideSection("Ricerca italiana ed europea", "Che cosa mostrano gli studi sulle scale esistenti", List.of(
+                                    "Due studi italiani della GQ-6 hanno esaminato una struttura unidimensionale: uno in 204 adulti reclutati online e uno in 321 adulti della Toscana. Uno studio italiano della GRAT ha esaminato tre dimensioni in 319 adulti. Questi campioni non rappresentano automaticamente tutti gli adulti italiani.",
+                                    "Un confronto in adulti di lingua neerlandese ha valutato la GQ-6 e la SGRAT. Le proprietà psicometriche di queste scale, in quelle lingue e popolazioni, non si trasferiscono alle dieci frasi originali di Spazio Test."), List.of()),
+                            new GuideSection("Distinzioni", "Gratitudine, piacere e soddisfazione", List.of(
+                                    "Apprezzare un aspetto della propria vita non equivale a prolungare un momento piacevole: quest'ultimo è più vicino al savoring. La soddisfazione di vita riguarda una valutazione più ampia della propria esistenza. Provare riconoscenza per un aiuto è ancora diverso dal giudicare complessivamente la relazione con chi lo ha offerto.",
+                                    "Le risposte possono variare durante lutti, malattie, precarietà o periodi con poche occasioni di supporto. Una frequenza contenuta non dimostra un tratto stabile o una mancanza di sensibilità."), List.of()),
+                            new GuideSection("Leggere le risposte", "Due aree e limiti del questionario", List.of(
+                                    "Dieci frasi originali chiedono la frequenza negli ultimi tre mesi: cinque sui contributi altrui e cinque su aspetti della propria esperienza. Le soglie, le barre e i quattro profili sono editoriali; non esiste un totale visibile o una norma per questo strumento.",
+                                    "Osserva se avevi davvero occasioni pertinenti per rispondere alle frasi. Differenze piccole fra barre non sono una classifica. Puoi interrompere se le domande non descrivono la tua situazione; non devi cambiare il modo in cui ti senti per ottenere un risultato diverso."), List.of()),
+                            new GuideSection("Supporto", "Quando chiedere un confronto", List.of(
+                                    "La gratitudine può coesistere con sofferenza e la sua assenza nelle risposte non è una diagnosi. Se il disagio persiste o interferisce con la vita quotidiana, puoi parlarne con un professionista senza attendere alcuna soglia del questionario.",
+                                    "Questo strumento non valuta urgenze o sicurezza personale. In caso di pericolo immediato in Italia chiama il 112. Le indicazioni di supporto valgono per qualunque profilo."), List.of())
+                    ),
+                    "Questionario originale di dieci frasi su contributi altrui e aspetti della propria vita: non validato, senza norme o giudizi morali.",
+                    "Questa guida mette a confronto definizioni diverse della gratitudine e chiarisce come opportunità reali e contesto limitino l'interpretazione delle risposte.",
+                    List.of(
+                            new GuideReference("Gratitude Resentment and Appreciation Test: Primo contributo alla validazione della versione italiana — Di Fabio", "https://doi.org/10.14605/CS921617", "Studio italiano del 2016 su 319 adulti e tre dimensioni della GRAT; non valida le due aree originali dell'app."),
+                            new GuideReference("Gratitude Questionnaire-6: Proprietà psicometriche della versione italiana — Di Fabio", "https://doi.org/10.14605/CS1522206", "Studio del 2022 su 321 adulti della Toscana e struttura unidimensionale GQ-6; campione regionale e strumento diverso."),
+                            new GuideReference("Italian translation and validation of the Gratitude Questionnaire (GQ-6) — Caputo", "https://doi.org/10.5502/ijw.v6i2.492", "Studio del 2016 su 204 adulti italiani reclutati online; non trasferisce struttura o punteggi alle frasi dell'app."),
+                            new GuideReference("Measuring Gratitude: A Comparative Validation of the Dutch GQ6 and SGRAT — Jans-Beken e colleghi", "https://doi.org/10.5334/pb.bd", "Confronto del 2015 in adulti di lingua neerlandese fra due scale esistenti; nessuna norma italiana per l'app."),
+                            new GuideReference("The grateful disposition: a conceptual and empirical topography — McCullough, Emmons e Tsang", "https://pubmed.ncbi.nlm.nih.gov/11811629/", "Studio fondativo del 2002 sulla disposizione alla gratitudine e la GQ-6; nessun item o cut-off è copiato."))
             )
     );
 
