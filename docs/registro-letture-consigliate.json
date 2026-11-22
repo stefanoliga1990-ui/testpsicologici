@@ -3158,6 +3158,7 @@
     { "topicId": "autoefficacia-percepita", "testId": "autoefficacia-percepita", "guideSlug": "autoefficacia-percepita", "title": "Autoefficacia percepita: sentirsi in grado di agire", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "speranza-obiettivi", "testId": "speranza-obiettivi", "guideSlug": "speranza-obiettivi", "title": "Speranza orientata agli obiettivi", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "ottimismo", "testId": "ottimismo", "guideSlug": "ottimismo", "title": "Ottimismo", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
-    { "topicId": "gratitudine", "testId": "gratitudine", "guideSlug": "gratitudine", "title": "Gratitudine", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
+    { "topicId": "gratitudine", "testId": "gratitudine", "guideSlug": "gratitudine", "title": "Gratitudine", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "assaporare-momenti-positivi", "testId": "assaporare-momenti-positivi", "guideSlug": "assaporare-momenti-positivi", "title": "Assaporare i momenti positivi", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
   ]
 }
