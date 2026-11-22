@@ -3090,7 +3090,60 @@
         }
       ]
     },
-    { "topicId": "blame-shifting", "testId": null, "guideSlug": "blame-shifting", "title": "Blame shifting nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "blame-shifting",
+      "testId": null,
+      "guideSlug": "blame-shifting",
+      "title": "Blame shifting nelle relazioni",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["comunicazione nonviolenta e responsabilità nel dialogo", "gestione del conflitto di coppia"],
+      "fallbackRationale": "Il blame shifting è una dinamica più specifica dei temi trattati dai due libri. Rosenberg propone un linguaggio che distingue osservazioni, sentimenti e richieste dalle accuse; Gottman e Schwartz Gottman descrivono come affrontare il conflitto nella coppia. Sono strumenti per riflettere sul dialogo e sulla responsabilità, non criteri per stabilire le intenzioni altrui o classificare una relazione.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Le parole sono finestre (oppure muri)",
+          "subtitle": "Introduzione alla Comunicazione Nonviolenta",
+          "placeholderCover": true,
+          "authors": ["Marshall B. Rosenberg", "Vilma Costetti (a cura di)"],
+          "publisher": "Esserci",
+          "isbn13": "9788896985625",
+          "publicationYear": 2017,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa alla Comunicazione Nonviolenta, con esempi di dialogo e un capitolo sulla mediazione dei conflitti",
+          "audience": "Adulti interessati a comunicazione, ascolto e gestione dei conflitti nelle relazioni",
+          "description": "Una guida pratica che distingue osservazioni, emozioni, bisogni e richieste e invita a formulare il confronto senza accuse.",
+          "limit": "Non è dedicata al blame shifting e non permette di dedurre le intenzioni di un'altra persona da una conversazione. Gli esercizi di dialogo non sostituiscono la valutazione della propria sicurezza o un supporto qualificato in relazioni coercitive.",
+          "primarySources": [{ "label": "Scheda editore della nuova edizione", "url": "https://www.centroesserci.it/shop/le-parole-sono-finestre/" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8896985625", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/parole-finestre-Introduzione-comunicazione-nonviolenta/dp/8896985625?dib=eyJ2IjoiMSJ9.IONsbAUcjYlYSaZMmSMbeA.pdYUqgdHq_XYK1arV9YndMH-7SgR79SDL1Vpn_GrJsg&dib_tag=se&keywords=9788896985625&qid=1795356172&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=55aa022a40d3ccc7fdd445b330cc9451&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "D'amore e non d'accordo",
+          "subtitle": "Quando litigare rafforza la coppia",
+          "placeholderCover": true,
+          "authors": ["John M. Gottman", "Julie Schwartz Gottman"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788832857177",
+          "publicationYear": 2025,
+          "format": "brossura",
+          "editorialRole": "Guida divulgativa, fondata sul lavoro degli autori con le coppie, con esercizi per osservare e gestire il conflitto",
+          "audience": "Adulti in relazione di coppia e professionisti interessati alle dinamiche del conflitto",
+          "description": "Una guida sui modi di affrontare i disaccordi di coppia e sui comportamenti che possono ostacolare il dialogo.",
+          "limit": "Si concentra sulla coppia e sul conflitto in generale, non sul blame shifting come categoria autonoma. Non accerta le intenzioni del partner e gli esercizi di confronto non sono appropriati quando vi sono intimidazione o violenza.",
+          "primarySources": [{ "label": "Scheda editore", "url": "https://www.raffaellocortina.it/scheda-libro/john-m-gottman-julie-schwartz-gottman/damore-e-non-daccordo-9788832857177-4453.html" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8832857170", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Damore-daccordo-Quando-litigare-rafforza/dp/8832857170?dib=eyJ2IjoiMSJ9.Jze9yZztHGbBAkPhIOiOEg.atP9rW19a8pwlVNNeUYOs4DmEse43vQFRxxkrfiR63Y&dib_tag=se&keywords=9788832857177&qid=1795356269&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=79b336e7ba38f34e05f77922499fd312&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "darvo", "testId": null, "guideSlug": "darvo", "title": "DARVO nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "mirroring-relazioni", "testId": null, "guideSlug": "mirroring-relazioni", "title": "Mirroring nelle relazioni: imitazione, sintonia e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "fawning-risposta-stress", "testId": null, "guideSlug": "fawning-risposta-stress", "title": "Fawning: compiacere in situazioni di pressione o minaccia", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

@@ -874,6 +874,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("blame-shifting", List.of(
+                    new RecommendedReading(
+                            "Le parole sono finestre (oppure muri). Introduzione alla Comunicazione Nonviolenta",
+                            "Marshall B. Rosenberg (a cura di Vilma Costetti)",
+                            "Una guida pratica che distingue osservazioni, emozioni, bisogni e richieste e invita a formulare il confronto senza accuse.",
+                            "Non è dedicata al blame shifting e non permette di dedurre le intenzioni di un'altra persona da una conversazione. Gli esercizi di dialogo non sostituiscono la valutazione della propria sicurezza o un supporto qualificato in relazioni coercitive.",
+                            "https://www.amazon.it/-/en/parole-finestre-Introduzione-comunicazione-nonviolenta/dp/8896985625?dib=eyJ2IjoiMSJ9.IONsbAUcjYlYSaZMmSMbeA.pdYUqgdHq_XYK1arV9YndMH-7SgR79SDL1Vpn_GrJsg&dib_tag=se&keywords=9788896985625&qid=1795356172&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=55aa022a40d3ccc7fdd445b330cc9451&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "D'amore e non d'accordo. Quando litigare rafforza la coppia",
+                            "John M. Gottman e Julie Schwartz Gottman",
+                            "Una guida sui modi di affrontare i disaccordi di coppia e sui comportamenti che possono ostacolare il dialogo.",
+                            "Si concentra sulla coppia e sul conflitto in generale, non sul blame shifting come categoria autonoma. Non accerta le intenzioni del partner e gli esercizi di confronto non sono appropriati quando vi sono intimidazione o violenza.",
+                            "https://www.amazon.it/-/en/Damore-daccordo-Quando-litigare-rafforza/dp/8832857170?dib=eyJ2IjoiMSJ9.Jze9yZztHGbBAkPhIOiOEg.atP9rW19a8pwlVNNeUYOs4DmEse43vQFRxxkrfiR63Y&dib_tag=se&keywords=9788832857177&qid=1795356269&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=79b336e7ba38f34e05f77922499fd312&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",
