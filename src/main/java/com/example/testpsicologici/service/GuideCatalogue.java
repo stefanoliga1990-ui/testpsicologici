@@ -5926,6 +5926,41 @@ public class GuideCatalogue {
                             new GuideReference("Italian translation and validation of the Gratitude Questionnaire (GQ-6) — Caputo", "https://doi.org/10.5502/ijw.v6i2.492", "Studio del 2016 su 204 adulti italiani reclutati online; non trasferisce struttura o punteggi alle frasi dell'app."),
                             new GuideReference("Measuring Gratitude: A Comparative Validation of the Dutch GQ6 and SGRAT — Jans-Beken e colleghi", "https://doi.org/10.5334/pb.bd", "Confronto del 2015 in adulti di lingua neerlandese fra due scale esistenti; nessuna norma italiana per l'app."),
                             new GuideReference("The grateful disposition: a conceptual and empirical topography — McCullough, Emmons e Tsang", "https://pubmed.ncbi.nlm.nih.gov/11811629/", "Studio fondativo del 2002 sulla disposizione alla gratitudine e la GQ-6; nessun item o cut-off è copiato."))
+            ),
+            new InformationGuide(
+                    "assaporare-momenti-positivi", "assaporare-momenti-positivi",
+                    "Assaporare i momenti positivi",
+                    "Savoring: anticipare, vivere e ricordare esperienze piacevoli",
+                    "Savoring e momenti positivi | Spazio Test",
+                    "Che cosa significa assaporare un'esperienza piacevole e come leggere un questionario informativo sulle tre prospettive temporali.",
+                    "Il savoring riguarda l'attenzione rivolta a un'esperienza piacevole prima, durante o dopo il suo verificarsi. Non è un obbligo di sentirsi bene.",
+                    List.of(
+                            new GuideSection("In breve", "Tre modi di soffermarsi sul piacevole", List.of(
+                                    "Si può provare piacere nell'attesa di un'occasione concreta, prestare attenzione a un'esperienza positiva mentre accade e richiamarne il ricordo. Le tre forme sono distinte nella ricerca sul savoring, ma non devono comparire con la stessa frequenza in ogni persona.",
+                                    "Le occasioni piacevoli non sono distribuite in modo uguale. Salute, perdite, stress e condizioni materiali possono ridurle; non è necessario trovare aspetti positivi in esperienze dolorose."), List.of()),
+                            new GuideSection("Modelli e misure", "Convinzioni e vissuti non sono la stessa cosa", List.of(
+                                    "La Savoring Beliefs Inventory studia le convinzioni sulla propria capacità di trarre piacere dall'anticipazione, dal momento e dal ricordo. Il questionario originale di Spazio Test chiede invece con quale frequenza la persona riferisce esperienze concrete negli ultimi tre mesi.",
+                                    "Le nostre tre aree sono una scelta editoriale ispirata al modello temporale: non copiano gli item SBI, non ne riproducono punteggi e non hanno una struttura fattoriale dimostrata."), List.of()),
+                            new GuideSection("Ricerca italiana ed europea", "Evidenze pertinenti e limiti", List.of(
+                                    "Uno studio italiano del 2023 ha valutato preliminarmente un intervento online sul savoring in giovani adulti durante la pandemia. Gli autori segnalano campionamento di convenienza, controllo passivo e misure allora non validate in italiano; il risultato non si estende automaticamente alla popolazione adulta generale.",
+                                    "Un preprint del 2026 su 553 giovani italiani di 17–31 anni propone un adattamento della SBI, ma non è ancora una validazione peer-reviewed. Uno studio francofono su 335 partecipanti ha trovato sostegno per i tre orientamenti temporali della SBI; il campione era soprattutto giovane e femminile. Nessuno dei due studi valida le frasi di questa pagina."), List.of()),
+                            new GuideSection("Distinzioni", "Savoring, gratitudine e soddisfazione", List.of(
+                                    "La gratitudine può riguardare il riconoscimento di un beneficio o di un contributo altrui. Il savoring riguarda l'attenzione al vissuto piacevole, anche quando non è legato a un aiuto ricevuto. La soddisfazione di vita è una valutazione più ampia della propria esperienza.",
+                                    "Si può apprezzare un momento e avere comunque problemi importanti, oppure ricordare un'esperienza gradevole senza giudicare positivo un intero periodo della vita."), List.of()),
+                            new GuideSection("Leggere le risposte", "Tre aree descrittive, nessuna norma", List.of(
+                                    "Dodici frasi originali chiedono la frequenza riferita negli ultimi tre mesi: quattro per l'anticipazione, quattro per il momento e quattro per il ricordo. I profili e le barre sono scelte editoriali; non misurano abilità, percentili o benessere.",
+                                    "Una frequenza bassa può riflettere poche occasioni reali. Differenze piccole fra barre non stabiliscono quale forma ti caratterizzi. Puoi decidere di non completare il questionario se le occasioni descritte non sono state disponibili."), List.of()),
+                            new GuideSection("Supporto", "Quando cercare un confronto", List.of(
+                                    "Se la difficoltà a provare piacere persiste o interferisce con la vita quotidiana, puoi parlarne con un professionista qualificato. Il questionario non distingue le possibili cause e non sostituisce una valutazione.",
+                                    "Le indicazioni di supporto valgono per ogni profilo. In caso di pericolo immediato in Italia chiama il 112; non serve attendere alcuna soglia del questionario."), List.of())
+                    ),
+                    "Questionario informativo originale di dodici frasi sul savoring; non validato e senza norme.",
+                    "Questa guida distingue esperienze riferite e convinzioni di capacità, mostrando anche i limiti delle evidenze italiane ed europee.",
+                    List.of(
+                            new GuideReference("Savoring life during pandemic: an online intervention to promote well-being in emerging adults — Villani e colleghi", "https://doi.org/10.1186/s40359-023-01225-z", "Studio italiano preliminare del 2023 su giovani adulti durante la pandemia; misure allora non validate in italiano e generalizzabilità limitata."),
+                            new GuideReference("Validation of an Italian Version of the Savoring Beliefs Inventory — Pancini e colleghi", "https://doi.org/10.21203/rs.3.rs-8871514/v1", "Preprint italiano del 2026 su 553 giovani di 17–31 anni: non peer-reviewed e relativo a convinzioni, non agli item originali dell'app."),
+                            new GuideReference("Confirmatory Factor Analysis of the French Version of the Savoring Beliefs Inventory — Golay e colleghi", "https://doi.org/10.3389/fpsyg.2018.00181", "Studio francofono del 2018 su 335 partecipanti, prevalentemente giovani donne; sostiene tre orientamenti della SBI, non le aree originali dell'app."),
+                            new GuideReference("Savoring Beliefs Inventory: A scale for measuring beliefs about savouring — Bryant", "https://doi.org/10.1080/0963823031000103489", "Studio fondativo del 2003 sulla SBI e sulle tre prospettive temporali; nessun item o punteggio è trasferito."))
             )
     );
 

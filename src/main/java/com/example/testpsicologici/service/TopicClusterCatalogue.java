@@ -93,6 +93,7 @@ public class TopicClusterCatalogue {
                             "speranza-obiettivi",
                             "ottimismo",
                             "gratitudine",
+                            "assaporare-momenti-positivi",
                             "soddisfazione-vita",
                             "empatia-percepita"
                     )),
@@ -160,6 +161,10 @@ public class TopicClusterCatalogue {
         }
         if ("gratitudine".equals(testId)) {
             return List.of("soddisfazione-vita", "autocompassione", "speranza-obiettivi")
+                    .stream().limit(maximum).toList();
+        }
+        if ("assaporare-momenti-positivi".equals(testId)) {
+            return List.of("gratitudine", "soddisfazione-vita", "autocompassione")
                     .stream().limit(maximum).toList();
         }
         return findByTestId(testId)

@@ -99,6 +99,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedGoalDirectedHopeInformationTest();
         seedOptimismInformationTest();
         seedGratitudeInformationTest();
+        seedSavoringInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -4994,7 +4995,79 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Hai riferito frequenti occasioni di apprezzamento della tua esperienza; questo non esclude difficoltà.");
     }
 
+    private void seedSavoringInformationTest() {
+        String id = "assaporare-momenti-positivi";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Assaporare i momenti positivi: come vivo le esperienze piacevoli?",
+                "Auto-osservazione informativa",
+                "Esplora anticipazione, attenzione al momento e ricordo di esperienze piacevoli.",
+                "5 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti: negli ultimi tre mesi, con quale frequenza ti sei soffermato/a su esperienze piacevoli prima, durante o dopo averle vissute? Considera soltanto occasioni realmente disponibili: poche occasioni, stress o perdite possono influenzare le risposte. Non misura capacità di essere felici né richiede di trovare qualcosa di positivo in situazioni dolorose.",
+                version, false,
+                "Risposte riferite agli ultimi tre mesi",
+                "Risposte riferite all'area",
+                true, 54)
+                .withSeo("Assaporare i momenti positivi: questionario | Spazio Test",
+                        "12 domande originali sul savoring: anticipazione, momento e ricordo. Risultati descrittivi, non validati.")
+                .withResponseInstruction("Negli ultimi tre mesi, con quale frequenza hai vissuto quanto descritto?")
+                .withAnswerScale("FREQUENCY"));
+
+        saveArea(id, "anticipazione", "Anticipazione di esperienze piacevoli", 1);
+        saveArea(id, "momento", "Attenzione al momento piacevole", 2);
+        saveArea(id, "ricordo", "Ricordo di esperienze piacevoli", 3);
+        saveQuestions(id, List.of(
+                q("anticipazione", "Ho provato piacere pensando a un'esperienza piacevole prevista."),
+                q("momento", "Ho notato una sensazione piacevole mentre vivevo un momento positivo."),
+                q("ricordo", "Ho richiamato alla mente un episodio piacevole vissuto."),
+                q("anticipazione", "Mi sono soffermato/a su un aspetto piacevole di un'attività che aspettavo."),
+                q("momento", "Mi sono soffermato/a su ciò che apprezzavo in un momento piacevole."),
+                q("ricordo", "Ho ripensato a un dettaglio piacevole di un'esperienza passata."),
+                q("anticipazione", "Ho immaginato un momento piacevole che avevo in programma."),
+                q("momento", "Ho dedicato attenzione a un dettaglio piacevole di un'esperienza in corso."),
+                q("ricordo", "Ho provato piacere ricordando un momento vissuto."),
+                q("anticipazione", "Ho sentito piacere nell'attesa di un'occasione desiderata."),
+                q("momento", "Ho lasciato spazio alla sensazione piacevole mentre la vivevo."),
+                q("ricordo", "Mi sono soffermato/a sul ricordo di un'esperienza piacevole.")));
+
+        String limits = "Il questionario è originale e non validato: aree, barre e soglie sono editoriali, non misure di abilità o benessere. "
+                + "Occasioni reali, salute, stress e condizioni materiali possono influenzare le risposte. "
+                + "Se il disagio persiste o interferisce con la vita quotidiana puoi parlarne con un professionista; in caso di pericolo immediato in Italia chiama il 112.";
+        saveGlobal(id, "LOW", "Esperienze di savoring poco frequenti nelle tre aree",
+                "Negli ultimi tre mesi le frasi su anticipazione, momento e ricordo piacevole sono risultate poco frequenti. Questo non esclude episodi circoscritti e non indica incapacità di provare piacere.",
+                "Potresti aver avuto poche occasioni piacevoli o attraversato un periodo impegnativo. Osserva se le tre forme erano davvero disponibili nella tua situazione. Una frequenza contenuta non definisce una caratteristica stabile della persona. " + limits);
+        saveGlobal(id, "MIXED", "Esperienze di savoring variabili fra le tre aree",
+                "Almeno una delle tre aree si colloca in una fascia editoriale intermedia e nessuna nella più alta. Anticipazione, momento e ricordo possono aver avuto occasioni differenti.",
+                "Guarda le schede delle aree senza trasformare piccole differenze fra barre in una classifica. Il periodo, le attività disponibili e il contesto possono spiegare parte della variabilità. Puoi osservare quali episodi avevi in mente mentre rispondevi. " + limits);
+        saveGlobal(id, "FOCUSED", "Una forma di savoring emerge nelle risposte",
+                "Una sola area raccoglie risposte più frequenti: consulta la scheda per vedere se riguarda anticipazione, momento o ricordo. Le altre aree restano più contenute e non indicano un limite generale.",
+                "È possibile ricordare con piacere anche quando il futuro appare incerto, oppure apprezzare momenti presenti senza ripensarci spesso. Osserva quali occasioni erano disponibili per ciascuna forma. Un'area più alta non certifica una capacità stabile. " + limits);
+        saveGlobal(id, "BROAD", "Più forme di savoring emergono nelle risposte",
+                "Almeno due aree raccolgono risposte più frequenti, tra anticipazione, momento e ricordo. Questo descrive esperienze riferite nel periodo, non il livello di felicità della persona.",
+                "Puoi distinguere le occasioni future immaginate, quelle vissute e i ricordi richiamati. Anche risposte frequenti possono coesistere con dolore, stress o difficoltà in altri ambiti. Il risultato non impone positività né prevede benessere futuro. " + limits);
+        saveAreaInsights(id, "anticipazione",
+                "Hai riferito poche occasioni di piacere nell'attesa; considera quali eventi erano realmente prevedibili.",
+                "Hai riferito alcune occasioni di piacere legate all'attesa di esperienze concrete.",
+                "Hai riferito frequenti occasioni di piacere nell'attesa; non è una previsione sugli eventi futuri.");
+        saveAreaInsights(id, "momento",
+                "Hai riferito pochi momenti di attenzione a esperienze piacevoli; il contesto può incidere.",
+                "Hai riferito alcune occasioni di attenzione a sensazioni o dettagli piacevoli nel momento.",
+                "Hai riferito frequenti occasioni di attenzione al momento piacevole; questo non esclude difficoltà.");
+        saveAreaInsights(id, "ricordo",
+                "Hai riferito poche occasioni di richiamo piacevole; non misura la qualità della memoria.",
+                "Hai riferito alcune occasioni di richiamo di esperienze piacevoli vissute.",
+                "Hai riferito frequenti occasioni di richiamo piacevole; non implica una valutazione positiva del passato nel suo insieme.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("assaporare-momenti-positivi", List.of(
+                ref("Italian savoring intervention — Villani e colleghi", "https://doi.org/10.1186/s40359-023-01225-z"),
+                ref("Italian SBI preprint — Pancini e colleghi", "https://doi.org/10.21203/rs.3.rs-8871514/v1"),
+                ref("French SBI factor analysis — Golay e colleghi", "https://doi.org/10.3389/fpsyg.2018.00181"),
+                ref("Original Savoring Beliefs Inventory — Bryant", "https://doi.org/10.1080/0963823031000103489")));
         syncReferences("gratitudine", List.of(
                 ref("Italian GRAT validation — Di Fabio", "https://doi.org/10.14605/CS921617"),
                 ref("Italian GQ-6 study — Di Fabio", "https://doi.org/10.14605/CS1522206"),

@@ -71,7 +71,8 @@ class PsychometricStructureTest {
             Map.entry("autoefficacia-percepita", "autoefficacia"),
             Map.entry("speranza-obiettivi", "obiettivo"),
             Map.entry("ottimismo", "aspettative sul futuro"),
-            Map.entry("gratitudine", "gratitudine"));
+            Map.entry("gratitudine", "gratitudine"),
+            Map.entry("assaporare-momenti-positivi", "savoring"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -81,7 +82,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(53).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(54).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ACE_EXPOSURE".equals(test.scoringModel())) {
@@ -118,6 +119,16 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(4));
+            } else if ("assaporare-momenti-positivi".equals(test.id())) {
+                assertThat(test.version()).isEqualTo("1.0");
+                assertThat(test.questions()).hasSize(12);
+                assertThat(test.responseInstruction()).contains("ultimi tre mesi", "frequenza");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).extracting(area -> area.code())
+                        .containsExactly("anticipazione", "momento", "ricordo");
+                assertThat(test.questions()).extracting(question -> question.areaCode())
+                        .containsExactly("anticipazione", "momento", "ricordo", "anticipazione", "momento", "ricordo",
+                                "anticipazione", "momento", "ricordo", "anticipazione", "momento", "ricordo");
             } else if ("gratitudine".equals(test.id())) {
                 assertThat(test.version()).isEqualTo("1.0");
                 assertThat(test.questions()).hasSize(10);
@@ -415,6 +426,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("una o due aree");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
+            } else if ("assaporare-momenti-positivi".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco frequenti");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("variabili");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("una forma");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("più forme");
             } else if ("gratitudine".equals(test.id())) {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("poco");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");

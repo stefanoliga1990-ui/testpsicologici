@@ -13,6 +13,14 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.1186/s40359-023-01225-z",
+                    "Studio italiano preliminare su un intervento di savoring in giovani adulti durante la pandemia; non valida il questionario originale."),
+            entry("https://doi.org/10.21203/rs.3.rs-8871514/v1",
+                    "Preprint italiano 2026 sulla SBI in 553 giovani di 17–31 anni, non ancora peer-reviewed; riguarda convinzioni e non frequenze delle frasi dell'app."),
+            entry("https://doi.org/10.3389/fpsyg.2018.00181",
+                    "Studio francofono su 335 partecipanti a sostegno delle tre prospettive temporali della SBI; campione specifico e strumento diverso."),
+            entry("https://doi.org/10.1080/0963823031000103489",
+                    "Studio fondativo sulla SBI e sulle convinzioni di anticipazione, momento e ricordo; nessun item o punteggio è copiato."),
             entry("https://doi.org/10.14605/CS921617",
                     "Primo studio italiano della GRAT su 319 adulti e tre dimensioni, utile a distinguere apprezzamento di altri e di aspetti semplici senza validare le aree dell'app."),
             entry("https://doi.org/10.14605/CS1522206",
