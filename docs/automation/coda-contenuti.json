@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-11-21",
+  "updatedAt": "2026-11-22",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -597,25 +597,25 @@
     {
       "order": 46,
       "slug": "assaporare-momenti-positivi",
-      "workingTitle": "Assaporare i momenti positivi — Riesco a godermi le cose belle?",
+      "workingTitle": "Assaporare i momenti positivi: come vivo le esperienze piacevoli?",
       "sourceTopic": "Savoring",
       "sourceDescription": "Soffermarsi sulle esperienze piacevoli, anticiparle e richiamarle alla memoria.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 3,
+        "itemCount": 12,
+        "answerScale": "FREQUENCY",
+        "resultModel": "AREA_PROFILE",
         "notes": "Distinguere savoring, gratitudine e soddisfazione di vita; separare convinzioni sulle proprie risorse ed esperienze riferite; verificare lo stato delle evidenze italiane."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-22T13:16:25+01:00",
+        "completedAt": "2026-11-22T13:16:25+01:00",
+        "commitHash": "d080399d97005b41b9b483a95daf565fc925c69a",
         "blockReason": null
       }
     },
