@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-11-22",
+  "updatedAt": "2026-11-23",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -622,25 +622,25 @@
     {
       "order": 47,
       "slug": "significato-vita",
-      "workingTitle": "Significato nella vita — Quanto sento che ciò che faccio ha senso?",
+      "workingTitle": "Significato nella vita: cosa sento e cosa sto cercando?",
       "sourceTopic": "Significato nella vita",
       "sourceDescription": "Presenza di significato e ricerca di una direzione personale.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 2,
+        "itemCount": 12,
+        "answerScale": "AGREEMENT",
+        "resultModel": "AREA_PROFILE",
         "notes": "Tenere distinte presenza e ricerca di significato; non sommarle automaticamente né considerare la ricerca un deficit; distinguere soddisfazione e conoscenza di sé."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-23T13:11:30+01:00",
+        "completedAt": "2026-11-23T13:11:30+01:00",
+        "commitHash": "66ca2916c3885ff28c282566ad6b542513456a6f",
         "blockReason": null
       }
     },
