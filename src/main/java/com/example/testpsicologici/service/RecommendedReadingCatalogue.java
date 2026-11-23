@@ -892,6 +892,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("darvo", List.of(
+                    new RecommendedReading(
+                            "Gabbie di parole. Il linguaggio della violenza psicologica: valutazione, prevenzione e intervento",
+                            "Carmela Mento, Giovanna Spatari e Maria Rosaria Anna Muscatello (a cura di)",
+                            "Un volume che esamina parole, inganno e manipolazione in alcune relazioni di coppia e discute prevenzione e intervento.",
+                            "Tratta prevalentemente situazioni di violenza psicologica e usa anche un lessico clinico specifico. Non definisce DARVO, non permette di attribuire intenzioni o diagnosi a una persona e non classifica ogni conflitto come violenza.",
+                            "https://www.amazon.it/-/en/Gabbie-parole-linguaggio-violenza-psicologica/dp/8835117976?dib=eyJ2IjoiMSJ9.v66qeXy715yEAn0IwoDIeg.M9NFc-n01b1iRqtLE7GxHRetNbPFwNK85DBVFXg1Nns&dib_tag=se&keywords=9788835117971&qid=1795442675&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=6b2e58615f5f1525b86df45ea75a734a&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Che genere di violenza. Conoscere e affrontare la violenza contro le donne",
+                            "Maria Luisa Bonura (con la collaborazione di Marcella Pirrone)",
+                            "Una guida sulle forme e le dinamiche della violenza contro le donne, sugli stereotipi e sulle modalità di ascolto e sostegno.",
+                            "È dedicata alla violenza maschile contro le donne, non a ogni relazione o disaccordo e non presenta DARVO come strumento di valutazione. Non consente di stabilire che cosa sia accaduto in un caso individuale.",
+                            "https://www.amazon.it/-/en/genere-violenza-Conoscere-affrontare-violenza/dp/8859012295?dib=eyJ2IjoiMSJ9.6rAJNX-3ZJ494IBaWaWsjw._e8zIulWo6kFeLmODmU0AyK2hCBGRdsNwZ2vuP04Yac&dib_tag=se&keywords=9788859012290&qid=1795442715&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=2028c68d2e37dc968eb9c6d9cb5e45df&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",

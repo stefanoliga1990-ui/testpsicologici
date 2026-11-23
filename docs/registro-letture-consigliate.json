@@ -3144,7 +3144,60 @@
         }
       ]
     },
-    { "topicId": "darvo", "testId": null, "guideSlug": "darvo", "title": "DARVO nelle relazioni", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "darvo",
+      "testId": null,
+      "guideSlug": "darvo",
+      "title": "DARVO nelle relazioni",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["linguaggio della violenza psicologica nella coppia", "colpevolizzazione e sostegno nelle situazioni di violenza di genere"],
+      "fallbackRationale": "DARVO descrive una sequenza specifica di negazione, attacco e ribaltamento dei ruoli che i due volumi non trattano come categoria autonoma. Mento, Spatari e Muscatello approfondiscono il linguaggio e la manipolazione nelle relazioni di coppia; Bonura esamina dinamiche, stereotipi e risposte di sostegno nella violenza contro le donne. Il collegamento riguarda la negazione e la colpevolizzazione, non autorizza ad applicare ai conflitti ordinari conclusioni tratte da contesti di violenza né ad accertare responsabilità individuali.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Gabbie di parole",
+          "subtitle": "Il linguaggio della violenza psicologica: valutazione, prevenzione e intervento",
+          "placeholderCover": true,
+          "authors": ["Carmela Mento (a cura di)", "Giovanna Spatari (a cura di)", "Maria Rosaria Anna Muscatello (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835117971",
+          "publicationYear": 2021,
+          "format": "brossura",
+          "editorialRole": "Volume specialistico sul linguaggio, le dinamiche di potere e la violenza psicologica nelle relazioni di coppia",
+          "audience": "Professionisti della salute mentale e lettori interessati alle dinamiche di violenza psicologica nella coppia",
+          "description": "Un volume che esamina parole, inganno e manipolazione in alcune relazioni di coppia e discute prevenzione e intervento.",
+          "limit": "Tratta prevalentemente situazioni di violenza psicologica e usa anche un lessico clinico specifico. Non definisce DARVO, non permette di attribuire intenzioni o diagnosi a una persona e non classifica ogni conflitto come violenza.",
+          "primarySources": [{ "label": "Scheda editore dell'edizione a stampa", "url": "https://www.francoangeli.it/Libro/Gabbie-di-parole-Il-linguaggio-della-violenza-psicologica%3A-valutazione%2C-prevenzione-e-intervento?Id=27064" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8835117976", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Gabbie-parole-linguaggio-violenza-psicologica/dp/8835117976?dib=eyJ2IjoiMSJ9.v66qeXy715yEAn0IwoDIeg.M9NFc-n01b1iRqtLE7GxHRetNbPFwNK85DBVFXg1Nns&dib_tag=se&keywords=9788835117971&qid=1795442675&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=6b2e58615f5f1525b86df45ea75a734a&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Che genere di violenza",
+          "subtitle": "Conoscere e affrontare la violenza contro le donne",
+          "placeholderCover": true,
+          "authors": ["Maria Luisa Bonura", "Marcella Pirrone (collaborazione)"],
+          "publisher": "Erickson",
+          "isbn13": "9788859012290",
+          "publicationYear": 2016,
+          "format": "brossura",
+          "editorialRole": "Guida informativa e operativa sulle forme della violenza contro le donne e sui percorsi di sostegno",
+          "audience": "Lettori, familiari, persone di supporto e professionisti che vogliono comprendere la violenza di genere e le risposte di aiuto",
+          "description": "Una guida sulle forme e le dinamiche della violenza contro le donne, sugli stereotipi e sulle modalità di ascolto e sostegno.",
+          "limit": "È dedicata alla violenza maschile contro le donne, non a ogni relazione o disaccordo e non presenta DARVO come strumento di valutazione. Non consente di stabilire che cosa sia accaduto in un caso individuale.",
+          "primarySources": [{ "label": "Scheda editore", "url": "https://www.erickson.it/it/che-genere-di-violenza" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8859012295", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/genere-violenza-Conoscere-affrontare-violenza/dp/8859012295?dib=eyJ2IjoiMSJ9.6rAJNX-3ZJ494IBaWaWsjw._e8zIulWo6kFeLmODmU0AyK2hCBGRdsNwZ2vuP04Yac&dib_tag=se&keywords=9788859012290&qid=1795442715&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=2028c68d2e37dc968eb9c6d9cb5e45df&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "mirroring-relazioni", "testId": null, "guideSlug": "mirroring-relazioni", "title": "Mirroring nelle relazioni: imitazione, sintonia e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "fawning-risposta-stress", "testId": null, "guideSlug": "fawning-risposta-stress", "title": "Fawning: compiacere in situazioni di pressione o minaccia", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "emotional-dumping", "testId": null, "guideSlug": "emotional-dumping", "title": "Emotional dumping: condividere emozioni e rispettare la disponibilità all'ascolto", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
