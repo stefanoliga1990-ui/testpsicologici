@@ -5961,6 +5961,41 @@ public class GuideCatalogue {
                             new GuideReference("Validation of an Italian Version of the Savoring Beliefs Inventory — Pancini e colleghi", "https://doi.org/10.21203/rs.3.rs-8871514/v1", "Preprint italiano del 2026 su 553 giovani di 17–31 anni: non peer-reviewed e relativo a convinzioni, non agli item originali dell'app."),
                             new GuideReference("Confirmatory Factor Analysis of the French Version of the Savoring Beliefs Inventory — Golay e colleghi", "https://doi.org/10.3389/fpsyg.2018.00181", "Studio francofono del 2018 su 335 partecipanti, prevalentemente giovani donne; sostiene tre orientamenti della SBI, non le aree originali dell'app."),
                             new GuideReference("Savoring Beliefs Inventory: A scale for measuring beliefs about savouring — Bryant", "https://doi.org/10.1080/0963823031000103489", "Studio fondativo del 2003 sulla SBI e sulle tre prospettive temporali; nessun item o punteggio è trasferito."))
+            ),
+            new InformationGuide(
+                    "significato-vita", "significato-vita",
+                    "Significato nella vita",
+                    "Significato nella vita: ciò che sentiamo e ciò che cerchiamo",
+                    "Significato nella vita: presenza e ricerca | Spazio Test",
+                    "Una guida alla presenza percepita e alla ricerca di significato, con i limiti del questionario informativo e delle fonti scientifiche.",
+                    "Riconoscere aspetti significativi della propria vita e interrogarsi su nuove direzioni sono esperienze distinte. La ricerca non è necessariamente un segno di mancanza.",
+                    List.of(
+                            new GuideSection("In breve", "Presenza e ricerca", List.of(
+                                    "La presenza di significato riguarda il modo in cui una persona percepisce coerenza, direzione o valore nella propria vita. La ricerca riguarda domande e tentativi di capire meglio ciò che conta. Si possono vivere entrambe, una sola o nessuna in un dato periodo.",
+                                    "Non esiste un unico significato corretto da trovare. Cultura, relazioni, transizioni e opportunità reali influenzano quali domande si pongono e quali possibilità si possono esplorare."), List.of()),
+                            new GuideSection("Modelli e misure", "Due dimensioni, altri modi di definire il significato", List.of(
+                                    "La Meaning in Life Questionnaire distingue presenza e ricerca come dimensioni separate. Una cornice teorica più ampia distingue coerenza delle esperienze, direzione e percezione di valore: sono temi utili a descrivere la presenza, non tre punteggi del questionario di Spazio Test.",
+                                    "Le dodici frasi dell'app sono originali. Non riproducono la MLQ, non ne usano le norme e non permettono di stabilire se la propria vita abbia oggettivamente un senso."), List.of()),
+                            new GuideSection("Ricerca italiana ed europea", "Che cosa si può trasferire e che cosa no", List.of(
+                                    "Uno studio su 464 adulti italiani di 20–60 anni ha sostenuto la struttura a due fattori della MLQ. Si tratta di una scala diversa, studiata in un campione specifico: le sue proprietà non validano i nostri item o le nostre soglie.",
+                                    "Un'analisi della MLQ in 3.867 adulti di 17 Paesi, inclusa l'Italia, ha trovato maggiore variabilità nel funzionamento della dimensione ricerca. I campioni locali non erano rappresentativi. Per questo evitiamo confronti fra persone o culture e non trattiamo la ricerca come deficit."), List.of()),
+                            new GuideSection("Distinzioni", "Significato, soddisfazione, speranza e conoscenza di sé", List.of(
+                                    "La soddisfazione di vita è una valutazione generale di come vanno le cose. La speranza orientata agli obiettivi riguarda percorsi e slancio verso mete concrete. L'autoriflessione riguarda l'osservazione di sé. Nessuno di questi concetti coincide automaticamente con il significato attribuito alla propria vita.",
+                                    "Una persona può sentire significato in un'attività e non essere soddisfatta della propria situazione. Può cercare una nuova direzione senza essere in crisi. Le risposte non identificano cause o esiti futuri."), List.of()),
+                            new GuideSection("Leggere i risultati", "Due aree senza punteggio unico", List.of(
+                                    "Le dodici frasi chiedono quanto ciascuna sia vera per te nella vita attuale: sei riguardano la presenza percepita e sei la ricerca. Le due aree sono mostrate separatamente e non si sommano. Soglie e profili sono descrittivi ed editoriali.",
+                                    "Una barra alta nella ricerca non significa automaticamente disagio; una bassa non significa assenza di interesse. Anche il profilo con entrambe le barre alte non è una graduatoria di benessere. Considera quali scelte e opportunità erano realmente disponibili quando hai risposto."), List.of()),
+                            new GuideSection("Supporto", "Quando parlarne con qualcuno", List.of(
+                                    "Non sei tenuto a trovare un senso nella sofferenza. Se domande sul significato o difficoltà persistenti ti causano disagio o interferiscono con la vita quotidiana, puoi parlarne con un professionista qualificato senza attendere alcuna soglia del test.",
+                                    "Il questionario non valuta sicurezza o urgenze. In caso di pericolo immediato in Italia chiama il 112; questa indicazione vale per ogni profilo."), List.of())
+                    ),
+                    "Questionario originale informativo su presenza e ricerca di significato, senza punteggio unico, norme o validazione.",
+                    "Questa guida distingue due aspetti del significato, discute le evidenze italiane e internazionali e chiarisce perché la ricerca non è un deficit.",
+                    List.of(
+                            new GuideReference("Italian Validation of the Meaning in Life Questionnaire — Negri, Bassi e Delle Fave", "https://doi.org/10.1177/0033294118821302", "Studio italiano del 2020 su 464 adulti di 20–60 anni e struttura a due fattori MLQ; non valida gli item originali dell'app."),
+                            new GuideReference("Measurement Invariance of the Meaning in Life Questionnaire Across 17 Countries — Schutte e colleghi", "https://doi.org/10.1007/s11482-023-10150-7", "Studio del 2023 su 3.867 adulti in 17 Paesi, inclusa l'Italia; la ricerca è meno invariante e i campioni non sono rappresentativi."),
+                            new GuideReference("The Meaning in Life Questionnaire: Assessing the Presence of and Search for Meaning in Life — Steger e colleghi", "https://doi.org/10.1037/0022-0167.53.1.80", "Studio fondativo del 2006 sulle due dimensioni MLQ; nessun item, punteggio o norma è trasferito all'app."),
+                            new GuideReference("The three meanings of meaning in life: Distinguishing coherence, purpose, and significance — Martela e Steger", "https://doi.org/10.1080/17439760.2015.1137623", "Analisi teorica del 2016 su coerenza, direzione e valore; non dimostra la struttura dei nostri item."))
             )
     );
 

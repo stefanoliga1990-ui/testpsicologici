@@ -100,6 +100,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedOptimismInformationTest();
         seedGratitudeInformationTest();
         seedSavoringInformationTest();
+        seedMeaningInLifeInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -5062,7 +5063,74 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Hai riferito frequenti occasioni di richiamo piacevole; non implica una valutazione positiva del passato nel suo insieme.");
     }
 
+    private void seedMeaningInLifeInformationTest() {
+        String id = "significato-vita";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Significato nella vita: cosa sento e cosa sto cercando?",
+                "Auto-osservazione informativa",
+                "Esplora separatamente la presenza percepita e la ricerca di significato nella vita attuale.",
+                "5 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti: pensando alla tua vita attuale, quanto senti presenti aspetti significativi e quanto esplori ciò che potrebbe contare per te? Le due aree sono distinte e cercare significato non indica di per sé una mancanza. Scelte possibili, cultura, transizioni e condizioni materiali possono influenzare le risposte; non devi trovare un senso nella sofferenza.",
+                version, false,
+                "Risposte riferite alla vita attuale",
+                "Risposte riferite all'area",
+                true, 55)
+                .withSeo("Significato nella vita: questionario informativo | Spazio Test",
+                        "12 frasi originali su presenza e ricerca di significato. Due risultati separati, descrittivi e non validati.")
+                .withResponseInstruction("Pensando alla tua vita attuale, quanto è vera per te ciascuna frase?")
+                .withAnswerScale("AGREEMENT"));
+
+        saveArea(id, "presenza", "Presenza percepita di significato", 1);
+        saveArea(id, "ricerca", "Ricerca di significato", 2);
+        saveQuestions(id, List.of(
+                q("presenza", "Riesco a riconoscere un filo conduttore in alcune scelte importanti della mia vita."),
+                q("ricerca", "Mi interrogo su ciò che conta di più per me nella vita."),
+                q("presenza", "Alcune esperienze della mia vita formano per me una storia comprensibile."),
+                q("ricerca", "Rifletto su quali esperienze hanno per me un significato personale."),
+                q("presenza", "Ho una direzione personale che orienta alcune mie decisioni."),
+                q("ricerca", "Considero diverse direzioni possibili per la mia vita."),
+                q("presenza", "Alcuni impegni attuali esprimono la direzione che desidero seguire."),
+                q("ricerca", "Esploro attività che potrebbero avere per me un significato personale."),
+                q("presenza", "Alcuni aspetti della mia vita hanno per me un valore profondo."),
+                q("ricerca", "Rivedo le mie priorità quando penso alla direzione della mia vita."),
+                q("presenza", "Riconosco valore in almeno una parte di ciò che faccio."),
+                q("ricerca", "Mi domando quale direzione vorrei dare a una parte della mia vita.")));
+
+        String limits = "Il questionario è originale e non validato: barre, aree e soglie sono editoriali, non norme o misure del valore personale. "
+                + "Non esiste un punteggio unico: presenza e ricerca di significato non si sommano e nessuna delle due determina salute mentale o qualità delle scelte. "
+                + "Se il disagio persiste o interferisce con la vita quotidiana puoi parlarne con un professionista; in caso di pericolo immediato in Italia chiama il 112.";
+        saveGlobal(id, "LOW", "Presenza e ricerca di significato poco rappresentate nelle risposte",
+                "Le frasi sulla presenza percepita e sulla ricerca di significato risultano poco vere per te nella vita attuale. Questo non esclude aspetti circoscritti che hanno significato per te.",
+                "Una fase di pausa, poche possibilità di scelta o il modo in cui intendi la parola significato possono incidere sulle risposte. Osserva se alcuni ambiti della vita erano meno rappresentati dalle frasi. Due aree contenute non definiscono la tua persona né impongono di iniziare una ricerca. " + limits);
+        saveGlobal(id, "MIXED", "Presenza e ricerca di significato rappresentate in modo variabile",
+                "Almeno una delle due aree è in una fascia editoriale intermedia e nessuna nella più alta. La presenza percepita e la ricerca possono avere un peso diverso nella tua vita attuale.",
+                "Guarda le due schede separatamente e considera quali ambiti avevi in mente. Una piccola differenza fra barre non è una classifica e può dipendere dal periodo o dalle parole usate. Puoi osservare se le domande sulla direzione sono pertinenti alla tua situazione concreta. " + limits);
+        saveGlobal(id, "FOCUSED", "Presenza o ricerca di significato emerge in una sola area",
+                "Una delle due aree raccoglie risposte più alte: la scheda indica se riguarda presenza percepita o ricerca. L'altra area più contenuta non ne è il contrario e non segnala da sola una difficoltà.",
+                "Si può cercare pur riconoscendo un senso nella propria vita, oppure sentire una direzione senza esplorarne altre in questo momento. Osserva quale area emerge e quali condizioni favoriscono o limitano le tue scelte. Una sola area alta non certifica una caratteristica stabile. " + limits);
+        saveGlobal(id, "BROAD", "Presenza e ricerca di significato coesistono nelle risposte",
+                "Entrambe le aree raccolgono risposte più alte: riferisci significato percepito e insieme esplorazione di ciò che conta. Questa compresenza non indica un livello superiore di benessere.",
+                "Una direzione già sentita può convivere con nuove domande o cambiamenti. Osserva se la ricerca è vissuta come interesse, transizione o fatica, senza attribuirle automaticamente un valore positivo o negativo. Il risultato non prevede esiti futuri e non misura soddisfazione generale. " + limits);
+        saveAreaInsights(id, "presenza",
+                "Hai riconosciuto poca presenza di significato nelle frasi proposte; questo non esclude aspetti importanti non descritti.",
+                "Hai riconosciuto alcuni aspetti di coerenza, direzione o valore nella tua vita attuale.",
+                "Hai riconosciuto diversi aspetti di significato nella vita attuale; questo non esclude difficoltà o nuove domande.");
+        saveAreaInsights(id, "ricerca",
+                "Hai riferito poca esplorazione del significato nella vita attuale; questo non indica una mancanza.",
+                "Hai riferito alcune domande o esplorazioni su ciò che conta per te.",
+                "Hai riferito frequenti domande o esplorazioni sul significato; non indicano di per sé disagio.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("significato-vita", List.of(
+                ref("Italian Meaning in Life Questionnaire — Negri, Bassi e Delle Fave", "https://doi.org/10.1177/0033294118821302"),
+                ref("MLQ invariance across 17 countries — Schutte e colleghi", "https://doi.org/10.1007/s11482-023-10150-7"),
+                ref("The Meaning in Life Questionnaire — Steger e colleghi", "https://doi.org/10.1037/0022-0167.53.1.80"),
+                ref("Coherence, purpose and significance — Martela e Steger", "https://doi.org/10.1080/17439760.2015.1137623")));
         syncReferences("assaporare-momenti-positivi", List.of(
                 ref("Italian savoring intervention — Villani e colleghi", "https://doi.org/10.1186/s40359-023-01225-z"),
                 ref("Italian SBI preprint — Pancini e colleghi", "https://doi.org/10.21203/rs.3.rs-8871514/v1"),

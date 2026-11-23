@@ -13,6 +13,14 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.1177/0033294118821302",
+                    "Validazione italiana MLQ su 464 adulti e due dimensioni; la struttura e le proprietà dello strumento non validano gli item originali."),
+            entry("https://doi.org/10.1007/s11482-023-10150-7",
+                    "Studio MLQ in 17 Paesi, inclusa l'Italia: la ricerca varia maggiormente fra campioni, senza autorizzare confronti o norme per l'app."),
+            entry("https://doi.org/10.1037/0022-0167.53.1.80",
+                    "Studio fondativo MLQ su presenza e ricerca come dimensioni distinte; nessun item, punteggio o soglia è copiato."),
+            entry("https://doi.org/10.1080/17439760.2015.1137623",
+                    "Analisi teorica su coerenza, direzione e valore del significato; i temi non costituiscono fattori validati dell'app."),
             entry("https://doi.org/10.1186/s40359-023-01225-z",
                     "Studio italiano preliminare su un intervento di savoring in giovani adulti durante la pandemia; non valida il questionario originale."),
             entry("https://doi.org/10.21203/rs.3.rs-8871514/v1",
