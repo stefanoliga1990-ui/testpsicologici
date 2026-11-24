@@ -910,6 +910,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("mirroring-relazioni", List.of(
+                    new RecommendedReading(
+                            "La mente imitativa. Come e perché il nostro comportamento è influenzato dagli altri",
+                            "Paola Farneti e Linda Savelli",
+                            "Esamina l'imitazione nelle interazioni sociali e nello sviluppo, insieme al rapporto fra imitazione, empatia e osservazione delle azioni.",
+                            "Il centro del volume è lo sviluppo e l'apprendimento imitativo, non il mirroring come etichetta delle relazioni sentimentali. Un gesto simile non permette di stabilire motivazioni, accordo o manipolazione.",
+                            "https://www.amazon.it/-/en/imitativa-perch%C3%A9-nostro-comportamento-influenzato/dp/8820416395?dib=eyJ2IjoiMSJ9.GhrETPEst33vl-o2tOqCdw.fldYYBffwU2DbPhcxgLRR2zdvUeCmbiTdEBKjSnErJg&dib_tag=se&keywords=9788820416393&qid=1795529071&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=5497576f3a2cfcddc3dab6b8476f667a&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "So quel che fai. Il cervello che agisce e i neuroni specchio",
+                            "Giacomo Rizzolatti e Corrado Sinigaglia",
+                            "Presenta la ricerca neurofisiologica sui neuroni specchio e sul rapporto fra osservazione delle azioni e comportamento.",
+                            "I meccanismi neurali descritti non spiegano da soli la sintonia fra persone né permettono di dedurre intenzioni, empatia o manipolazione da gesti simili. Il volume risale al 2006 e va letto come quadro storico di un filone di ricerca.",
+                            "https://www.amazon.it/-/en/quel-cervello-agisce-neuroni-specchio/dp/8860300029?dib=eyJ2IjoiMSJ9.eHSuAknNYvJRXIVpqndihw.zwGPfpukp2Fp6JaYawvLrUJmg8oO83mlXtp_q2C6WMM&dib_tag=se&keywords=9788860300027&qid=1795529118&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=c0f91c0d75e97c7d09b1ae0773545bfb&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",

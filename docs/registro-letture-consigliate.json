@@ -3198,7 +3198,60 @@
         }
       ]
     },
-    { "topicId": "mirroring-relazioni", "testId": null, "guideSlug": "mirroring-relazioni", "title": "Mirroring nelle relazioni: imitazione, sintonia e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "mirroring-relazioni",
+      "testId": null,
+      "guideSlug": "mirroring-relazioni",
+      "title": "Mirroring nelle relazioni: imitazione, sintonia e limiti",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["imitazione sociale e sviluppo", "osservazione delle azioni e neuroni specchio"],
+      "fallbackRationale": "Il mirroring nelle relazioni è un'etichetta ampia che può riferirsi sia a piccoli gesti imitativi sia alla somiglianza dichiarata di gusti e valori. Farneti e Savelli trattano l'imitazione nella vita sociale e nello sviluppo; Rizzolatti e Sinigaglia spiegano i meccanismi di osservazione delle azioni. I volumi offrono contesto su processi più generali, ma non dimostrano che la somiglianza tra due persone riveli intenzioni nascoste, una tecnica di manipolazione o una particolare qualità della relazione.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "La mente imitativa",
+          "subtitle": "Come e perché il nostro comportamento è influenzato dagli altri",
+          "placeholderCover": true,
+          "authors": ["Paola Farneti", "Linda Savelli"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788820416393",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Introduzione scientifica all'imitazione dall'infanzia all'età adulta, con esempi di apprendimento e influenza sociale",
+          "audience": "Studenti universitari, insegnanti, genitori e operatori interessati alla psicologia dell'imitazione",
+          "description": "Esamina l'imitazione nelle interazioni sociali e nello sviluppo, insieme al rapporto fra imitazione, empatia e osservazione delle azioni.",
+          "limit": "Il centro del volume è lo sviluppo e l'apprendimento imitativo, non il mirroring come etichetta delle relazioni sentimentali. Un gesto simile non permette di stabilire motivazioni, accordo o manipolazione.",
+          "primarySources": [{ "label": "Scheda editore dell'edizione a stampa", "url": "https://www.francoangeli.it/Libro/9788820416393" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8820416395", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/imitativa-perch%C3%A9-nostro-comportamento-influenzato/dp/8820416395?dib=eyJ2IjoiMSJ9.GhrETPEst33vl-o2tOqCdw.fldYYBffwU2DbPhcxgLRR2zdvUeCmbiTdEBKjSnErJg&dib_tag=se&keywords=9788820416393&qid=1795529071&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=5497576f3a2cfcddc3dab6b8476f667a&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "So quel che fai",
+          "subtitle": "Il cervello che agisce e i neuroni specchio",
+          "placeholderCover": true,
+          "authors": ["Giacomo Rizzolatti", "Corrado Sinigaglia"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860300027",
+          "publicationYear": 2006,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo di neuroscienze sull'osservazione delle azioni e sui neuroni specchio",
+          "audience": "Lettori interessati alle neuroscienze, studenti e professionisti delle scienze umane",
+          "description": "Presenta la ricerca neurofisiologica sui neuroni specchio e sul rapporto fra osservazione delle azioni e comportamento.",
+          "limit": "I meccanismi neurali descritti non spiegano da soli la sintonia fra persone né permettono di dedurre intenzioni, empatia o manipolazione da gesti simili. Il volume risale al 2006 e va letto come quadro storico di un filone di ricerca.",
+          "primarySources": [{ "label": "Scheda editore dell'edizione cartacea", "url": "https://www.raffaellocortina.it/scheda-libro/giacomo-rizzolatti-corrado-sinigaglia/so-quel-che-fai-9788860300027-1084.html" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8860300029", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/quel-cervello-agisce-neuroni-specchio/dp/8860300029?dib=eyJ2IjoiMSJ9.eHSuAknNYvJRXIVpqndihw.zwGPfpukp2Fp6JaYawvLrUJmg8oO83mlXtp_q2C6WMM&dib_tag=se&keywords=9788860300027&qid=1795529118&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=c0f91c0d75e97c7d09b1ae0773545bfb&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "fawning-risposta-stress", "testId": null, "guideSlug": "fawning-risposta-stress", "title": "Fawning: compiacere in situazioni di pressione o minaccia", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "emotional-dumping", "testId": null, "guideSlug": "emotional-dumping", "title": "Emotional dumping: condividere emozioni e rispettare la disponibilità all'ascolto", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "main-character-syndrome", "testId": null, "guideSlug": "main-character-syndrome", "title": "Main character syndrome: cosa descrive davvero questa espressione social?", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
