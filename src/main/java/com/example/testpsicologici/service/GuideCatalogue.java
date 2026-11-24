@@ -5996,6 +5996,41 @@ public class GuideCatalogue {
                             new GuideReference("Measurement Invariance of the Meaning in Life Questionnaire Across 17 Countries — Schutte e colleghi", "https://doi.org/10.1007/s11482-023-10150-7", "Studio del 2023 su 3.867 adulti in 17 Paesi, inclusa l'Italia; la ricerca è meno invariante e i campioni non sono rappresentativi."),
                             new GuideReference("The Meaning in Life Questionnaire: Assessing the Presence of and Search for Meaning in Life — Steger e colleghi", "https://doi.org/10.1037/0022-0167.53.1.80", "Studio fondativo del 2006 sulle due dimensioni MLQ; nessun item, punteggio o norma è trasferito all'app."),
                             new GuideReference("The three meanings of meaning in life: Distinguishing coherence, purpose, and significance — Martela e Steger", "https://doi.org/10.1080/17439760.2015.1137623", "Analisi teorica del 2016 su coerenza, direzione e valore; non dimostra la struttura dei nostri item."))
+            ),
+            new InformationGuide(
+                    "curiosita-esplorazione", "curiosita-esplorazione",
+                    "Curiosità ed esplorazione",
+                    "Curiosità ed esplorazione nella vita quotidiana",
+                    "Curiosità ed esplorazione: guida | Spazio Test",
+                    "Come distinguerne alcune manifestazioni quotidiane, leggere le ricerche italiane ed europee e interpretare con prudenza il questionario informativo.",
+                    "La curiosità può comparire nel cercare spiegazioni e nel provare possibilità nuove. Le occasioni concrete contano quanto le preferenze personali.",
+                    List.of(
+                            new GuideSection("In breve", "Domande e possibilità", List.of(
+                                    "Cercare di capire un argomento e sperimentare un'attività sono due modi possibili di esplorare. Il questionario li descrive in aree editoriali separate, senza dire quale sia migliore.",
+                                    "Curiosità non significa intelligenza, cultura generale o socievolezza. Può esserci interesse anche quando tempo, salute, denaro o sicurezza impediscono di agire."), List.of()),
+                            new GuideSection("Modelli e misure", "Un costrutto con più definizioni", List.of(
+                                    "La Curiosity and Exploration Inventory-II ha proposto ricerca di conoscenze ed esperienze e disponibilità verso la novità. La 5DCR distingue ancora più sfaccettature. Questi modelli riguardano strumenti diversi e non validano le due aree originali dell'app.",
+                                    "Uno studio spagnolo recente ha messo in discussione la separazione delle sottoscale CEI-II nel suo campione. Perciò non presentiamo le nostre due aree come fattori psicometrici accertati."), List.of()),
+                            new GuideSection("Ricerca italiana ed europea", "Cosa mostrano i campioni disponibili", List.of(
+                                    "Un pilota svolto a Padova con 100 volontari di 18–35 anni ha usato una traduzione italiana della CEI-II e osservazioni in realtà virtuale. Il legame fra autorisposte e comportamento esplorativo è risultato limitato: il pilota non costituisce una validazione generale della traduzione né del nostro questionario.",
+                                    "Un'analisi di 849 studenti spagnoli ha favorito una soluzione unidimensionale per la CEI-II; uno studio Germania–Regno Unito sulla diversa 5DCR ha invece esaminato più sfaccettature. Campioni, misure e modelli diversi non forniscono norme applicabili agli adulti italiani."), List.of()),
+                            new GuideSection("Distinzioni", "Curiosità, opportunità e disagio", List.of(
+                                    "Una frequenza bassa di prove nuove può riflettere vincoli o una scelta ragionevole, non assenza di curiosità. Una frequenza alta non implica prestazioni, benessere o disponibilità al rischio.",
+                                    "L'interesse per nuove informazioni può restare privato e non richiedere interazioni sociali. Il test non valuta motivazione scolastica, creatività, depressione o capacità cognitive."), List.of()),
+                            new GuideSection("Leggere i risultati", "Due aree descrittive", List.of(
+                                    "Le dodici domande riguardano gli ultimi tre mesi: sei chiedono azioni di ricerca di informazioni e sei prove di possibilità nuove. Le aree sono mostrate separatamente, senza punteggio unico visibile. Soglie e profili sono editoriali, non confronti normativi.",
+                                    "Una differenza fra barre può dipendere dalle occasioni disponibili. Il profilo con entrambe le aree alte non equivale a maggiore valore personale. Considera che cosa avevi concretamente modo di fare nel periodo."), List.of()),
+                            new GuideSection("Supporto", "Se una difficoltà pesa", List.of(
+                                    "Il questionario non misura salute mentale. Se una difficoltà persistente limita la vita quotidiana, puoi parlarne con un professionista senza attendere alcuna soglia del test.",
+                                    "In caso di pericolo immediato in Italia chiama il 112; questa indicazione non dipende dal risultato."), List.of())
+                    ),
+                    "Questionario originale informativo su ricerca di informazioni e prove di possibilità nuove, senza validazione o norme.",
+                    "Questa guida chiarisce i limiti degli studi italiani ed europei e perché le opportunità concrete influiscono sulle azioni esplorative.",
+                    List.of(
+                            new GuideReference("Curiosity in a Novel Virtual Reality Scenario and Its Association With Symptoms of Depression — Eliasson e colleghi", "https://doi.org/10.2196/80120", "Pilota osservazionale del 2026 a Padova su 100 volontari selezionati di 18–35 anni; traduzione italiana CEI-II nello studio, non validazione generale; legame autorisposta–comportamento limitato."),
+                            new GuideReference("Revalidation of the Curiosity and Exploration Inventory-II Using Network Analysis — Navas-León e colleghi", "https://doi.org/10.3389/fpsyg.2025.1514959", "Studio spagnolo del 2025 su 849 universitari: soluzione unidimensionale CEI-II nel campione, non proprietà degli item dell'app."),
+                            new GuideReference("Measuring Six Facets of Curiosity in Germany and the UK — Grüning e Lechner", "https://doi.org/10.1080/00223891.2022.2057318", "Adattamento europeo della diversa 5DCR, pubblicato nel 2023; campione tedesco di 486 adulti e confronto britannico, non norme per l'app."),
+                            new GuideReference("The Curiosity and Exploration Inventory-II: Development, Factor Structure, and Psychometrics — Kashdan e colleghi", "https://doi.org/10.1016/j.jrp.2009.04.011", "Studio fondativo del 2009 su curiosità ed esplorazione; nessun item, fattore o punteggio trasferito."))
             )
     );
 

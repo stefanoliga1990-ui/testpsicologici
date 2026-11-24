@@ -95,6 +95,7 @@ public class TopicClusterCatalogue {
                             "gratitudine",
                             "assaporare-momenti-positivi",
                             "significato-vita",
+                            "curiosita-esplorazione",
                             "soddisfazione-vita",
                             "empatia-percepita"
                     )),
@@ -170,6 +171,10 @@ public class TopicClusterCatalogue {
         }
         if ("significato-vita".equals(testId)) {
             return List.of("soddisfazione-vita", "speranza-obiettivi", "intelligenza-intrapersonale")
+                    .stream().limit(maximum).toList();
+        }
+        if ("curiosita-esplorazione".equals(testId)) {
+            return List.of("significato-vita", "intelligenza-intrapersonale", "assaporare-momenti-positivi")
                     .stream().limit(maximum).toList();
         }
         return findByTestId(testId)

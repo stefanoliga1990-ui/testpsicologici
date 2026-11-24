@@ -86,7 +86,8 @@ public class GuideEditorialHistoryCatalogue {
             entry("ottimismo", history("2026-11-20", "2026-11-20")),
             entry("gratitudine", history("2026-11-21", "2026-11-21")),
             entry("assaporare-momenti-positivi", history("2026-11-22", "2026-11-22")),
-            entry("significato-vita", history("2026-11-23", "2026-11-23"))
+            entry("significato-vita", history("2026-11-23", "2026-11-23")),
+            entry("curiosita-esplorazione", history("2026-11-24", "2026-11-24"))
     );
 
     public GuideEditorialHistory forSlug(String slug) {

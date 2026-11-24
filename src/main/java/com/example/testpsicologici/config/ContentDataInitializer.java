@@ -101,6 +101,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedGratitudeInformationTest();
         seedSavoringInformationTest();
         seedMeaningInLifeInformationTest();
+        seedCuriosityExplorationInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -5125,7 +5126,74 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Hai riferito frequenti domande o esplorazioni sul significato; non indicano di per sé disagio.");
     }
 
+    private void seedCuriosityExplorationInformationTest() {
+        String id = "curiosita-esplorazione";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Curiosità ed esplorazione: come le vivo nella quotidianità?",
+                "Auto-osservazione informativa",
+                "Esplora la frequenza di ricerca di informazioni e di piccole esperienze nuove negli ultimi tre mesi.",
+                "5 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti: negli ultimi tre mesi, quanto spesso hai cercato di capire qualcosa e provato possibilità nuove alla tua portata? Le due aree descrivono azioni riferite, non intelligenza o apertura certificata. Tempo, risorse, salute, sicurezza e occasioni disponibili possono influenzare le risposte.",
+                version, false,
+                "Risposte riferite agli ultimi tre mesi",
+                "Risposte riferite all'area",
+                true, 56)
+                .withSeo("Curiosità ed esplorazione: questionario informativo | Spazio Test",
+                        "12 domande originali sulla ricerca di informazioni e sull'esplorazione quotidiana, con risultati descrittivi non validati.")
+                .withResponseInstruction("Negli ultimi tre mesi, quanto spesso hai fatto quanto descritto?")
+                .withAnswerScale("FREQUENCY"));
+
+        saveArea(id, "informazioni", "Ricerca di informazioni", 1);
+        saveArea(id, "possibilita", "Esplorazione di possibilità nuove", 2);
+        saveQuestions(id, List.of(
+                q("informazioni", "Ho cercato informazioni su un argomento che conoscevo poco."),
+                q("possibilita", "Ho provato un'attività per me nuova."),
+                q("informazioni", "Ho posto una domanda per capire meglio un argomento."),
+                q("possibilita", "Ho sperimentato un modo diverso di svolgere un'attività abituale."),
+                q("informazioni", "Ho approfondito un tema oltre la prima spiegazione trovata."),
+                q("possibilita", "Ho esplorato un'opzione prima di scegliere come agire."),
+                q("informazioni", "Ho cercato una spiegazione di qualcosa che non capivo."),
+                q("possibilita", "Ho dedicato tempo a qualcosa fuori dalle mie abitudini."),
+                q("informazioni", "Ho seguito un nuovo interesse per saperne di più."),
+                q("possibilita", "Ho osservato con attenzione un contesto per me nuovo."),
+                q("informazioni", "Ho confrontato spiegazioni diverse su un tema che mi interessava."),
+                q("possibilita", "Ho tentato una piccola variazione nella mia routine.")));
+
+        String limits = "Il questionario è originale e non validato: aree, barre e soglie sono editoriali, non norme o misure dell'intelligenza. "
+                + "Le risposte non dimostrano un tratto stabile e le due aree non sono sottoscale validate; occasioni e vincoli reali contano. "
+                + "Se una difficoltà persistente limita la vita quotidiana puoi parlarne con un professionista; in caso di pericolo immediato in Italia chiama il 112.";
+        saveGlobal(id, "LOW", "Ricerca ed esplorazione poco frequenti nelle risposte",
+                "Negli ultimi tre mesi hai riferito poche azioni di ricerca di informazioni e poche prove di possibilità nuove tra quelle proposte. Questo non esclude interessi circoscritti o curiosità espressa in altri modi.",
+                "Un periodo denso di impegni o opportunità limitate può ridurre le azioni disponibili senza indicare disinteresse. Osserva quali domande avresti voluto porre e quali possibilità erano concretamente accessibili. Le frasi non coprono ogni forma di curiosità. " + limits);
+        saveGlobal(id, "MIXED", "Ricerca ed esplorazione variabili nelle risposte",
+                "Almeno un'area è nella fascia editoriale intermedia e nessuna in quella più alta. Le due aree possono comparire con frequenze diverse negli ultimi tre mesi.",
+                "Guarda le schede separatamente e considera le situazioni a cui hai pensato. Differenze piccole tra barre non stabiliscono una classifica personale. Puoi osservare se alcune occasioni di approfondimento o prova erano più accessibili di altre. " + limits);
+        saveGlobal(id, "FOCUSED", "Ricerca o esplorazione emerge in una sola area",
+                "Una sola area raccoglie risposte più frequenti: la scheda indica se si tratta di informazioni o possibilità nuove. L'altra area più contenuta non significa minore valore o capacità.",
+                "Cercare spiegazioni e sperimentare attività non richiedono le stesse occasioni. Osserva in quale ambito hai avuto spazio di scelta e se l'altro era limitato dal contesto. Un'area alta non certifica una caratteristica permanente. " + limits);
+        saveGlobal(id, "BROAD", "Ricerca ed esplorazione frequenti nelle risposte",
+                "Negli ultimi tre mesi hai riferito spesso sia ricerca di informazioni sia prove di possibilità nuove. Questa compresenza descrive le tue risposte e non un livello superiore di benessere o intelligenza.",
+                "Le occasioni possono essere state favorite da tempo, contesto o interessi specifici. Osserva quali esperienze ti sono risultate utili o piacevoli, senza dover continuare allo stesso ritmo. Il profilo non prevede prestazioni o scelte future. " + limits);
+        saveAreaInsights(id, "informazioni",
+                "Hai riferito poche ricerche o domande tra quelle proposte; non esclude interessi espressi altrove.",
+                "Hai riferito alcune occasioni di domanda o approfondimento negli ultimi tre mesi.",
+                "Hai riferito frequenti ricerche e approfondimenti; non misura la qualità delle informazioni trovate.");
+        saveAreaInsights(id, "possibilita",
+                "Hai riferito poche prove di possibilità nuove; vincoli pratici possono aver limitato le occasioni.",
+                "Hai riferito alcune prove o variazioni nelle attività quotidiane.",
+                "Hai riferito frequenti prove di possibilità nuove; non implica una maggiore disponibilità al rischio.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("curiosita-esplorazione", List.of(
+                ref("Italian VR curiosity pilot — Eliasson e colleghi", "https://doi.org/10.2196/80120"),
+                ref("Spanish CEI-II network revalidation — Navas-León e colleghi", "https://doi.org/10.3389/fpsyg.2025.1514959"),
+                ref("Germany and UK 5DCR adaptation — Grüning e Lechner", "https://doi.org/10.1080/00223891.2022.2057318"),
+                ref("Original Curiosity and Exploration Inventory-II — Kashdan e colleghi", "https://doi.org/10.1016/j.jrp.2009.04.011")));
         syncReferences("significato-vita", List.of(
                 ref("Italian Meaning in Life Questionnaire — Negri, Bassi e Delle Fave", "https://doi.org/10.1177/0033294118821302"),
                 ref("MLQ invariance across 17 countries — Schutte e colleghi", "https://doi.org/10.1007/s11482-023-10150-7"),

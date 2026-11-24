@@ -13,6 +13,14 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.2196/80120",
+                    "Pilota osservazionale a Padova con traduzione italiana della CEI-II e comportamento VR: legame limitato; non valida la struttura dell'app."),
+            entry("https://doi.org/10.3389/fpsyg.2025.1514959",
+                    "Analisi spagnola CEI-II che favorisce una soluzione unidimensionale nel campione: impone cautela sulle aree editoriali dell'app."),
+            entry("https://doi.org/10.1080/00223891.2022.2057318",
+                    "Adattamento tedesco e confronto britannico della 5DCR: documenta la pluralità di sfaccettature, senza validare il questionario originale."),
+            entry("https://doi.org/10.1016/j.jrp.2009.04.011",
+                    "Studio fondativo CEI-II su curiosità ed esplorazione: item, fattori e norme non vengono trasferiti all'app."),
             entry("https://doi.org/10.1177/0033294118821302",
                     "Validazione italiana MLQ su 464 adulti e due dimensioni; la struttura e le proprietà dello strumento non validano gli item originali."),
             entry("https://doi.org/10.1007/s11482-023-10150-7",
