@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-11-23",
+  "updatedAt": "2026-11-24",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -647,25 +647,25 @@
     {
       "order": 48,
       "slug": "curiosita-esplorazione",
-      "workingTitle": "Curiosità — Quanto spazio do alla scoperta?",
+      "workingTitle": "Curiosità ed esplorazione: come le vivo nella quotidianità?",
       "sourceTopic": "Curiosità",
       "sourceDescription": "Interesse per nuove conoscenze, esplorazione e disponibilità verso esperienze poco familiari.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 2,
+        "itemCount": 12,
+        "answerScale": "FREQUENCY",
+        "resultModel": "AREA_PROFILE",
         "notes": "Descrivere interesse e occasioni di esplorazione, non intelligenza, cultura generale o valore dell'estroversione."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-24T13:11:27+01:00",
+        "completedAt": "2026-11-24T13:11:27+01:00",
+        "commitHash": "58fb19bf43065a5abf513ee93df2e727712b9f39",
         "blockReason": null
       }
     },
