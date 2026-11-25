@@ -102,6 +102,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedSavoringInformationTest();
         seedMeaningInLifeInformationTest();
         seedCuriosityExplorationInformationTest();
+        seedFlowExperiencesInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -5188,7 +5189,79 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Hai riferito frequenti prove di possibilità nuove; non implica una maggiore disponibilità al rischio.");
     }
 
+    private void seedFlowExperiencesInformationTest() {
+        String id = "esperienze-flow";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Flow: come vivo l'immersione nelle attività?",
+                "Auto-osservazione informativa",
+                "Esplora tre aspetti delle esperienze di coinvolgimento in una specifica attività svolta negli ultimi tre mesi.",
+                "5 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti. Pensa a una specifica attività che hai svolto più volte negli ultimi tre mesi e considera sempre quella stessa attività, per esempio un hobby, lo studio o il lavoro. Le risposte descrivono esperienze riferite, non certificano uno stato di flow o una prestazione; se non hai un'attività adatta, il questionario potrebbe non essere pertinente.",
+                version, false,
+                "Risposte riferite agli ultimi tre mesi e alla stessa attività",
+                "Risposte riferite all'area",
+                true, 57)
+                .withSeo("Flow nelle attività: questionario informativo | Spazio Test",
+                        "12 domande originali su assorbimento, fluidità percepita e gratificazione durante una specifica attività; risultati non validati.")
+                .withResponseInstruction("Negli ultimi tre mesi, quanto spesso hai vissuto quanto descritto mentre svolgevi quell'attività?")
+                .withAnswerScale("FREQUENCY"));
+
+        saveArea(id, "assorbimento", "Assorbimento nell'attività", 1);
+        saveArea(id, "fluidita", "Fluidità percepita dell'azione", 2);
+        saveArea(id, "gratificazione", "Gratificazione durante l'attività", 3);
+        saveQuestions(id, List.of(
+                q("assorbimento", "Ho mantenuto l'attenzione sull'attività per un periodo continuativo."),
+                q("fluidita", "I passaggi dell'attività mi sono sembrati scorrere con fluidità."),
+                q("gratificazione", "Ho trovato piacevole svolgere l'attività in sé."),
+                q("assorbimento", "Mi sono sentito/a immerso/a in ciò che facevo."),
+                q("fluidita", "Ho sentito di poter orientare le mie azioni durante l'attività."),
+                q("gratificazione", "Ho provato interesse mentre svolgevo l'attività."),
+                q("assorbimento", "Il tempo mi è sembrato passare rapidamente mentre ero impegnato/a nell'attività."),
+                q("fluidita", "Sono passato/a da un passaggio al successivo con naturalezza."),
+                q("gratificazione", "Ho desiderato continuare l'attività per l'esperienza che stavo vivendo."),
+                q("assorbimento", "La mia attenzione è rimasta concentrata sul passaggio che stavo svolgendo."),
+                q("fluidita", "Ho adattato il mio modo di agire mentre l'attività proseguiva."),
+                q("gratificazione", "Mi sono sentito/a gratificato/a durante lo svolgimento dell'attività.")));
+
+        String limits = "Il questionario è originale e non validato: aree, barre e soglie sono editoriali, non norme o misure di prestazione. "
+                + "Le risposte non certificano uno stato di flow; attività, interruzioni e possibilità di scelta possono influenzarle. "
+                + "Se un disagio persistente interferisce con la vita quotidiana puoi parlarne con un professionista; in caso di pericolo immediato in Italia chiama il 112.";
+        saveGlobal(id, "LOW", "Aspetti dell'esperienza di flow poco riferiti nell'attività scelta",
+                "Negli ultimi tre mesi hai riferito poche occasioni di assorbimento, fluidità percepita e gratificazione nell'attività scelta. Questo non esclude singoli momenti significativi o esperienze in altre attività.",
+                "L'attività può aver avuto interruzioni, richieste elevate o scarso margine di scelta. Osserva se il contesto ha reso difficile concentrarti o provare piacere durante il fare. Un profilo contenuto non indica una difficoltà personale stabile. " + limits);
+        saveGlobal(id, "MIXED", "Aspetti dell'esperienza di flow variabili nell'attività scelta",
+                "Almeno un'area è nella fascia editoriale intermedia e nessuna in quella più alta. Assorbimento, fluidità e gratificazione possono comparire con frequenze diverse nella stessa attività.",
+                "Guarda le tre schede nell'ordine proposto e considera episodi diversi. Piccole differenze tra barre non individuano una causa o una classifica di abilità. Puoi osservare quali condizioni dell'attività hanno accompagnato le esperienze riferite. " + limits);
+        saveGlobal(id, "FOCUSED", "Un aspetto dell'esperienza di flow emerge nell'attività scelta",
+                "Una sola area raccoglie risposte più frequenti: la scheda indica quale. Gli altri due aspetti più contenuti non annullano quell'esperienza e non indicano da soli un problema.",
+                "Ci si può sentire concentrati senza trovare piacevole l'attività, oppure provare interesse senza fluidità. Osserva quale aspetto è emerso e se la situazione cambiava tra gli episodi. Un'area alta non certifica flow né rendimento. " + limits);
+        saveGlobal(id, "BROAD", "Più aspetti dell'esperienza di flow emergono nell'attività scelta",
+                "Almeno due delle tre aree raccolgono risposte più frequenti nella stessa attività. Questa ampiezza descrive le esperienze riferite, senza stabilire che lo stato di flow fosse completo o costante.",
+                "L'assorbimento può convivere con variazioni nella fluidità o nella gratificazione. Osserva anche l'area meno rappresentata e il tempo di recupero dopo l'attività. Il profilo non misura la qualità della prestazione né predice benessere futuro. " + limits);
+        saveAreaInsights(id, "assorbimento",
+                "Hai riferito poche occasioni di attenzione assorbita nell'attività scelta; le interruzioni possono incidere.",
+                "Hai riferito alcune occasioni di attenzione assorbita durante l'attività.",
+                "Hai riferito frequenti occasioni di attenzione assorbita; la concentrazione da sola non certifica flow.");
+        saveAreaInsights(id, "fluidita",
+                "Hai riferito poca fluidità percepita durante l'attività; non misura le tue abilità.",
+                "Hai riferito alcuni momenti in cui l'azione è sembrata scorrere con fluidità.",
+                "Hai riferito frequenti momenti di fluidità percepita; non dimostra controllo oggettivo o prestazione.");
+        saveAreaInsights(id, "gratificazione",
+                "Hai riferito poca gratificazione durante l'attività; non equivale a un giudizio sulla sua utilità.",
+                "Hai riferito alcune occasioni di interesse o piacere nello svolgere l'attività.",
+                "Hai riferito frequente gratificazione durante l'attività; non misura la soddisfazione di vita generale.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("esperienze-flow", List.of(
+                ref("Italian DFS-2 validation — Riva e colleghi", "https://doi.org/10.1371/journal.pone.0182201"),
+                ref("Polish PFS adaptation — Wojtasiński e colleghi", "https://doi.org/10.1371/journal.pone.0335907"),
+                ref("European flow theory analysis — Farrokh e colleghi", "https://doi.org/10.1177/09593543241237492"),
+                ref("Psychological Flow Scale development — Norsworthy e colleghi", "https://doi.org/10.1007/s41042-023-00092-8")));
         syncReferences("curiosita-esplorazione", List.of(
                 ref("Italian VR curiosity pilot — Eliasson e colleghi", "https://doi.org/10.2196/80120"),
                 ref("Spanish CEI-II network revalidation — Navas-León e colleghi", "https://doi.org/10.3389/fpsyg.2025.1514959"),

@@ -6031,6 +6031,41 @@ public class GuideCatalogue {
                             new GuideReference("Revalidation of the Curiosity and Exploration Inventory-II Using Network Analysis — Navas-León e colleghi", "https://doi.org/10.3389/fpsyg.2025.1514959", "Studio spagnolo del 2025 su 849 universitari: soluzione unidimensionale CEI-II nel campione, non proprietà degli item dell'app."),
                             new GuideReference("Measuring Six Facets of Curiosity in Germany and the UK — Grüning e Lechner", "https://doi.org/10.1080/00223891.2022.2057318", "Adattamento europeo della diversa 5DCR, pubblicato nel 2023; campione tedesco di 486 adulti e confronto britannico, non norme per l'app."),
                             new GuideReference("The Curiosity and Exploration Inventory-II: Development, Factor Structure, and Psychometrics — Kashdan e colleghi", "https://doi.org/10.1016/j.jrp.2009.04.011", "Studio fondativo del 2009 su curiosità ed esplorazione; nessun item, fattore o punteggio trasferito."))
+            ),
+            new InformationGuide(
+                    "esperienze-flow", "esperienze-flow",
+                    "Flow",
+                    "Flow: immersione, fluidità e gratificazione nelle attività",
+                    "Flow nelle attività: guida | Spazio Test",
+                    "Una guida alle esperienze di flow, ai modelli di ricerca italiani ed europei e ai limiti del questionario informativo.",
+                    "Il flow è descritto come un'esperienza di coinvolgimento assorbente e gratificante. Conta l'attività concreta, non un talento o una prestazione certificata.",
+                    List.of(
+                            new GuideSection("In breve", "Che cosa si intende per flow", List.of(
+                                    "Il termine flow indica un'esperienza in cui una persona si sente molto coinvolta in ciò che sta facendo. Attenzione, fluidità percepita e gratificazione sono modi di descriverla, ma nessuna singola risposta conferma uno stato di flow.",
+                                    "Le esperienze possono comparire in attività ricreative, creative, fisiche, di studio o di lavoro. La possibilità di scegliere, le interruzioni e i vincoli quotidiani cambiano le occasioni di viverle."), List.of()),
+                            new GuideSection("Modelli e misure", "Esperienza e condizioni favorenti", List.of(
+                                    "Alcuni modelli considerano chiarezza degli obiettivi, feedback e rapporto tra richieste e abilità come condizioni che possono favorire il flow. Assorbimento, fluidità e gratificazione descrivono invece ciò che si vive durante l'attività. La distinzione non dimostra una catena causale nel singolo caso.",
+                                    "Le scale DFS-2 e PFS studiano aspetti del flow con strutture diverse. Il nostro questionario usa dodici frasi originali e tre aree editoriali: non è una loro versione breve e non ne eredita validità o norme."), List.of()),
+                            new GuideSection("Ricerca italiana ed europea", "Dove arrivano le evidenze", List.of(
+                                    "Uno studio italiano su 843 persone di 15–74 anni, tra atleti, studenti e lavoratori, ha valutato la DFS-2 italiana, una scala disposizionale diversa. La varietà delle attività mostra l'importanza del contesto ma non valida le nostre aree o soglie.",
+                                    "Un adattamento polacco della PFS ha studiato assorbimento, fluidità e gratificazione con misure ripetute. Un'analisi teorica europea discute ancora come spiegare il flow. Questi lavori non forniscono frequenze attese o confronti per utenti italiani dell'app."), List.of()),
+                            new GuideSection("Distinzioni", "Flow, concentrazione e rendimento", List.of(
+                                    "Essere concentrati può accadere anche senza piacere; trovare piacevole un'attività non implica immersione. Il flow non equivale a lavorare senza pause, a produrre di più o a controllare perfettamente un compito.",
+                                    "Il test non valuta ADHD, burnout, sonno, abilità sportive o qualità del lavoro. Le risposte riferite non spiegano cause né prevedono risultati futuri."), List.of()),
+                            new GuideSection("Leggere i risultati", "Una stessa attività, tre aree", List.of(
+                                    "Per rispondere, scegli mentalmente una specifica attività svolta più volte negli ultimi tre mesi e considera sempre quella. Le dodici frasi riguardano la frequenza di esperienze durante quell'attività. Se non hai un'attività adatta, il questionario potrebbe non essere pertinente.",
+                                    "Le tre aree sono mostrate separatamente; soglie e profili sono editoriali e nessun totale è interpretato. Due aree alte non certificano uno stato completo di flow. Guarda anche l'area meno rappresentata e le condizioni concrete dell'attività."), List.of()),
+                            new GuideSection("Supporto", "Quando chiedere aiuto", List.of(
+                                    "Non occorre provare flow per vivere bene o svolgere un'attività con valore. Se un disagio persistente interferisce con la vita quotidiana, puoi parlarne con un professionista indipendentemente dal risultato.",
+                                    "Il questionario non valuta urgenze; in caso di pericolo immediato in Italia chiama il 112."), List.of())
+                    ),
+                    "Questionario originale informativo su esperienze riferite in una singola attività, senza validazione o norme.",
+                    "Questa guida distingue esperienza e condizioni favorenti, discute gli studi italiani ed europei e spiega i limiti delle tre aree editoriali.",
+                    List.of(
+                            new GuideReference("Measuring Dispositional Flow: Validity and reliability of the Dispositional Flow State Scale 2, Italian version — Riva e colleghi", "https://doi.org/10.1371/journal.pone.0182201", "Validazione italiana del 2017 su 843 persone di 15–74 anni tra atleti, studenti e lavoratori; strumento disposizionale differente, nessuna proprietà trasferita."),
+                            new GuideReference("The flow experience: Polish adaptation and validation of the psychological flow scale — Wojtasiński e colleghi", "https://doi.org/10.1371/journal.pone.0335907", "Adattamento polacco PFS del 2025 con misure ripetute; riguarda uno strumento e un contesto diversi, non norme italiane."),
+                            new GuideReference("Why isn't flow flowing? Metatheoretical issues in explanations of flow — Farrokh e colleghi", "https://doi.org/10.1177/09593543241237492", "Analisi teorica del 2024 sui limiti delle spiegazioni causali del flow; non è una validazione di item o profili."),
+                            new GuideReference("Psychological Flow Scale: Development and Preliminary Validation — Norsworthy e colleghi", "https://doi.org/10.1007/s41042-023-00092-8", "Sviluppo preliminare PFS del 2023 su 936 partecipanti; tre temi esperienziali, senza trasferire fattori o punteggi all'app."))
             )
     );
 

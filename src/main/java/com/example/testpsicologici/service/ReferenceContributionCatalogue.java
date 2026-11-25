@@ -13,6 +13,14 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.1371/journal.pone.0182201",
+                    "Validazione italiana della DFS-2 in persone di attività diverse: documenta il costrutto, non valida gli item originali o le soglie dell'app."),
+            entry("https://doi.org/10.1371/journal.pone.0335907",
+                    "Adattamento polacco PFS a misure ripetute: informa le tre componenti esperienziali, senza fornire norme italiane all'app."),
+            entry("https://doi.org/10.1177/09593543241237492",
+                    "Analisi teorica europea sui limiti delle spiegazioni del flow: sostiene la cautela nel separare esperienza e possibili condizioni."),
+            entry("https://doi.org/10.1007/s41042-023-00092-8",
+                    "Sviluppo preliminare PFS su assorbimento, fluidità e gratificazione: temi di progettazione, non fattori validati dell'app."),
             entry("https://doi.org/10.2196/80120",
                     "Pilota osservazionale a Padova con traduzione italiana della CEI-II e comportamento VR: legame limitato; non valida la struttura dell'app."),
             entry("https://doi.org/10.3389/fpsyg.2025.1514959",

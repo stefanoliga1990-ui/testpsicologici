@@ -74,7 +74,8 @@ class PsychometricStructureTest {
             Map.entry("gratitudine", "gratitudine"),
             Map.entry("assaporare-momenti-positivi", "savoring"),
             Map.entry("significato-vita", "significato"),
-            Map.entry("curiosita-esplorazione", "esplorazione"));
+            Map.entry("curiosita-esplorazione", "esplorazione"),
+            Map.entry("esperienze-flow", "flow"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -84,7 +85,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(56).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(57).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ACE_EXPOSURE".equals(test.scoringModel())) {
@@ -121,6 +122,15 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(4));
+            } else if ("esperienze-flow".equals(test.id())) {
+                assertThat(test.version()).isEqualTo("1.0");
+                assertThat(test.questions()).hasSize(12);
+                assertThat(test.responseInstruction()).contains("ultimi tre mesi", "quell'attività");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).extracting(area -> area.code())
+                        .containsExactly("assorbimento", "fluidita", "gratificazione");
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code())).hasSize(4));
             } else if ("curiosita-esplorazione".equals(test.id())) {
                 assertThat(test.version()).isEqualTo("1.0");
                 assertThat(test.questions()).hasSize(12);
@@ -444,6 +454,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("una o due aree");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
+            } else if ("esperienze-flow".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("flow poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("flow variabili");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("flow emerge");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("flow emergono");
             } else if ("curiosita-esplorazione".equals(test.id())) {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("ricerca ed esplorazione");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variabili");
