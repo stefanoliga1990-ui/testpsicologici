@@ -3320,6 +3320,7 @@
     { "topicId": "gratitudine", "testId": "gratitudine", "guideSlug": "gratitudine", "title": "Gratitudine", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "assaporare-momenti-positivi", "testId": "assaporare-momenti-positivi", "guideSlug": "assaporare-momenti-positivi", "title": "Assaporare i momenti positivi", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "significato-vita", "testId": "significato-vita", "guideSlug": "significato-vita", "title": "Significato nella vita", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
-    { "topicId": "curiosita-esplorazione", "testId": "curiosita-esplorazione", "guideSlug": "curiosita-esplorazione", "title": "Curiosità ed esplorazione nella vita quotidiana", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
+    { "topicId": "curiosita-esplorazione", "testId": "curiosita-esplorazione", "guideSlug": "curiosita-esplorazione", "title": "Curiosità ed esplorazione nella vita quotidiana", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    { "topicId": "esperienze-flow", "testId": "esperienze-flow", "guideSlug": "esperienze-flow", "title": "Flow: immersione, fluidità e gratificazione nelle attività", "contentMode": "TEST_AND_GUIDE", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] }
   ]
 }
