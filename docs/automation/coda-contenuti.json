@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-11-24",
+  "updatedAt": "2026-11-25",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -672,25 +672,25 @@
     {
       "order": 49,
       "slug": "esperienze-flow",
-      "workingTitle": "Flow — Quanto mi capita di essere pienamente immerso/a in ciò che faccio?",
+      "workingTitle": "Flow: come vivo l'immersione nelle attività?",
       "sourceTopic": "Flow",
       "sourceDescription": "Esperienze di concentrazione e coinvolgimento in attività scelte, come hobby, sport, studio o lavoro.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 3,
+        "itemCount": 12,
+        "answerScale": "FREQUENCY",
+        "resultModel": "AREA_PROFILE",
         "notes": "Definire attività e occasioni di riferimento; distinguere flow, assorbimento generico e coinvolgimento lavorativo; non certificare prestazione."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-25T13:04:41+01:00",
+        "completedAt": "2026-11-25T13:04:41+01:00",
+        "commitHash": "f540de3b797a12e5d87a063122581cf54341b850",
         "blockReason": null
       }
     },
