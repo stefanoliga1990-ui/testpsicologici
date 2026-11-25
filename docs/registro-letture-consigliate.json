@@ -3252,7 +3252,60 @@
         }
       ]
     },
-    { "topicId": "fawning-risposta-stress", "testId": null, "guideSlug": "fawning-risposta-stress", "title": "Fawning: compiacere in situazioni di pressione o minaccia", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "fawning-risposta-stress",
+      "testId": null,
+      "guideSlug": "fawning-risposta-stress",
+      "title": "Fawning: compiacere in situazioni di pressione o minaccia",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["conseguenze del trauma e sicurezza nelle relazioni", "assertività e possibilità di esprimere i propri bisogni"],
+      "fallbackRationale": "Fawning è una cornice ancora discussa e i due libri non la definiscono come risposta autonoma e misurabile. Van der Kolk esamina le conseguenze del trauma sulle relazioni e sul senso di sicurezza; Anchisi e Gambotto Dessy trattano l'espressione di bisogni e limiti nelle interazioni. Il primo aiuta a comprendere il contesto di minaccia, il secondo le possibilità di comunicazione quando il contesto è sicuro. Nessuno dei due permette di dedurre un trauma da un comportamento accomodante; esercitarsi a dire no non è appropriato se potrebbe esporre a ritorsioni.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Il corpo accusa il colpo",
+          "subtitle": "Mente, corpo e cervello nell'elaborazione delle memorie traumatiche",
+          "placeholderCover": true,
+          "authors": ["Bessel van der Kolk"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860307583",
+          "publicationYear": 2015,
+          "format": "brossura",
+          "editorialRole": "Saggio di psicotraumatologia sulle conseguenze del trauma e sulle relazioni",
+          "audience": "Lettori interessati al trauma, studenti e professionisti della salute mentale",
+          "description": "Esamina come esperienze traumatiche possano influire sul corpo, sulla fiducia e sulla sicurezza nelle relazioni.",
+          "limit": "Tratta il trauma in generale, non convalida il fawning come risposta specifica e non permette di inferire una storia traumatica da un sì o da un comportamento accomodante. Non sostituisce una valutazione professionale.",
+          "primarySources": [{ "label": "Scheda editore dell'edizione cartacea", "url": "https://www.raffaellocortina.it/scheda-libro/bessel-van-der-kolk/il-corpo-accusa-il-colpo-9788860307583-1630.html" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8860307589", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/accusa-cervello-nellelaborazione-memorie-traumatiche/dp/8860307589?dib=eyJ2IjoiMSJ9.PREneTqS-iK_FleR5EN8Gg.YcTxNrhIA34URwKdX-GZuslqY-qUTTXe88lOGuIO6-Q&dib_tag=se&keywords=9788860307583&qid=1795615389&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=e4bd6e05ab9e5bf6cfce74ad1b3e5520&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Manuale di assertività",
+          "subtitle": "Teoria e pratica delle abilità relazionali: alla scoperta di sè e degli altri",
+          "placeholderCover": true,
+          "authors": ["Roberto Anchisi", "Mia Gambotto Dessy"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788820414290",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Manuale teorico e pratico sulle abilità comunicative e relazionali assertive",
+          "audience": "Studenti di psicologia, comunicazione e formazione e professionisti che lavorano nelle relazioni",
+          "description": "Presenta i principi dell'assertività, l'espressione di bisogni e opinioni e le abilità per comunicare limiti in modo rispettoso.",
+          "limit": "Non studia il fawning né dimostra che dire no sia sempre possibile o sicuro. Le tecniche comunicative non vanno usate come prova di forza in situazioni di intimidazione, controllo o ritorsione.",
+          "primarySources": [{ "label": "Scheda editore dell'edizione a stampa", "url": "https://www.francoangeli.it/Libro/9788820414290" }],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8820414295", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Manuale-assertivit%C3%A0-pratica-abilit%C3%A0-relazionali/dp/8820414295?dib=eyJ2IjoiMSJ9.RqrSkEC_CKmKX4ORiK7h_A.-PdBQ8mWXkS4P4q4APw794jGMqp4zuYsRhpF8BAvmGw&dib_tag=se&keywords=9788820414290&qid=1795615432&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=159b2b1ee0efe3e8f055a8fff96997f7&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "emotional-dumping", "testId": null, "guideSlug": "emotional-dumping", "title": "Emotional dumping: condividere emozioni e rispettare la disponibilità all'ascolto", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "main-character-syndrome", "testId": null, "guideSlug": "main-character-syndrome", "title": "Main character syndrome: cosa descrive davvero questa espressione social?", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "pick-me-behaviour", "testId": null, "guideSlug": "pick-me-behaviour", "title": "Pick-me behaviour: approvazione, confronto e svalutazione del gruppo", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

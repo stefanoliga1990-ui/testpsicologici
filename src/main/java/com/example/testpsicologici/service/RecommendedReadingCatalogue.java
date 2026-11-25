@@ -928,6 +928,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("fawning-risposta-stress", List.of(
+                    new RecommendedReading(
+                            "Il corpo accusa il colpo. Mente, corpo e cervello nell'elaborazione delle memorie traumatiche",
+                            "Bessel van der Kolk",
+                            "Esamina come esperienze traumatiche possano influire sul corpo, sulla fiducia e sulla sicurezza nelle relazioni.",
+                            "Tratta il trauma in generale, non convalida il fawning come risposta specifica e non permette di inferire una storia traumatica da un sì o da un comportamento accomodante. Non sostituisce una valutazione professionale.",
+                            "https://www.amazon.it/-/en/accusa-cervello-nellelaborazione-memorie-traumatiche/dp/8860307589?dib=eyJ2IjoiMSJ9.PREneTqS-iK_FleR5EN8Gg.YcTxNrhIA34URwKdX-GZuslqY-qUTTXe88lOGuIO6-Q&dib_tag=se&keywords=9788860307583&qid=1795615389&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=e4bd6e05ab9e5bf6cfce74ad1b3e5520&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Manuale di assertività. Teoria e pratica delle abilità relazionali: alla scoperta di sè e degli altri",
+                            "Roberto Anchisi e Mia Gambotto Dessy",
+                            "Presenta i principi dell'assertività, l'espressione di bisogni e opinioni e le abilità per comunicare limiti in modo rispettoso.",
+                            "Non studia il fawning né dimostra che dire no sia sempre possibile o sicuro. Le tecniche comunicative non vanno usate come prova di forza in situazioni di intimidazione, controllo o ritorsione.",
+                            "https://www.amazon.it/-/en/Manuale-assertivit%C3%A0-pratica-abilit%C3%A0-relazionali/dp/8820414295?dib=eyJ2IjoiMSJ9.RqrSkEC_CKmKX4ORiK7h_A.-PdBQ8mWXkS4P4q4APw794jGMqp4zuYsRhpF8BAvmGw&dib_tag=se&keywords=9788820414290&qid=1795615432&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=159b2b1ee0efe3e8f055a8fff96997f7&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",
