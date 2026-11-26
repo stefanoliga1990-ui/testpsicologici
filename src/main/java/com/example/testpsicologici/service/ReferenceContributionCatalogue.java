@@ -13,6 +13,14 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.1007/s12671-013-0270-2",
+                    "Adattamento italiano MAAS: documenta l'attenzione quotidiana, non la struttura o le soglie del questionario originale."),
+            entry("https://doi.org/10.1007/s10862-013-9403-0",
+                    "Studio italiano FFMQ: mostra una concettualizzazione multifattoriale distinta dalle tre aree editoriali dell'app."),
+            entry("https://doi.org/10.1177/10731911211018855",
+                    "Analisi Rasch spagnola MAAS: illustra il ruolo di lingua e campione nella validità, senza trasferire proprietà all'app."),
+            entry("https://doi.org/10.1016/j.cpr.2026.102719",
+                    "Revisione sistematica delle misure self-report di mindfulness: sostiene la cautela su validità di contenuto e interpretazione."),
             entry("https://doi.org/10.1371/journal.pone.0182201",
                     "Validazione italiana della DFS-2 in persone di attività diverse: documenta il costrutto, non valida gli item originali o le soglie dell'app."),
             entry("https://doi.org/10.1371/journal.pone.0335907",

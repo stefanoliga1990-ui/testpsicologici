@@ -97,6 +97,7 @@ public class TopicClusterCatalogue {
                             "significato-vita",
                             "curiosita-esplorazione",
                             "esperienze-flow",
+                            "presenza-mentale",
                             "soddisfazione-vita",
                             "empatia-percepita"
                     )),
@@ -180,6 +181,10 @@ public class TopicClusterCatalogue {
         }
         if ("esperienze-flow".equals(testId)) {
             return List.of("assaporare-momenti-positivi", "curiosita-esplorazione", "significato-vita")
+                    .stream().limit(maximum).toList();
+        }
+        if ("presenza-mentale".equals(testId)) {
+            return List.of("intelligenza-intrapersonale", "esperienze-flow", "autocompassione")
                     .stream().limit(maximum).toList();
         }
         return findByTestId(testId)

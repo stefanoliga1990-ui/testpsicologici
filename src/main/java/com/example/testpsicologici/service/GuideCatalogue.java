@@ -6066,6 +6066,41 @@ public class GuideCatalogue {
                             new GuideReference("The flow experience: Polish adaptation and validation of the psychological flow scale — Wojtasiński e colleghi", "https://doi.org/10.1371/journal.pone.0335907", "Adattamento polacco PFS del 2025 con misure ripetute; riguarda uno strumento e un contesto diversi, non norme italiane."),
                             new GuideReference("Why isn't flow flowing? Metatheoretical issues in explanations of flow — Farrokh e colleghi", "https://doi.org/10.1177/09593543241237492", "Analisi teorica del 2024 sui limiti delle spiegazioni causali del flow; non è una validazione di item o profili."),
                             new GuideReference("Psychological Flow Scale: Development and Preliminary Validation — Norsworthy e colleghi", "https://doi.org/10.1007/s41042-023-00092-8", "Sviluppo preliminare PFS del 2023 su 936 partecipanti; tre temi esperienziali, senza trasferire fattori o punteggi all'app."))
+            ),
+            new InformationGuide(
+                    "presenza-mentale", "presenza-mentale",
+                    "Presenza mentale",
+                    "Presenza mentale: attenzione ed esperienza quotidiana",
+                    "Presenza mentale quotidiana: guida | Spazio Test",
+                    "Una guida all'attenzione nel momento presente, alle ricerche italiane ed europee e ai limiti di un questionario descrittivo.",
+                    "Notare ciò che si sta facendo o vivendo può assumere forme diverse. Il questionario riguarda occasioni riferite nella vita quotidiana, senza valutare la qualità della persona.",
+                    List.of(
+                            new GuideSection("In breve", "Che cosa si intende per presenza mentale", List.of(
+                                    "Qui presenza mentale indica attenzione alle azioni e osservazione di sensazioni, pensieri ed emozioni mentre si presentano. Il termine è vicino a una parte della mindfulness, ma non ne comprende tutte le componenti, come il modo in cui ci si rapporta all'esperienza.",
+                                    "L'attenzione cambia normalmente nel corso della giornata. La frequenza di alcuni momenti riferiti non dimostra una capacità costante o un tratto stabile."), List.of()),
+                            new GuideSection("Modelli e misure", "Perché non esiste una sola misura", List.of(
+                                    "La MAAS studia attenzione e consapevolezza nella vita quotidiana; la FFMQ propone più facce, comprese modalità di risposta all'esperienza. Sono strumenti diversi per struttura e item.",
+                                    "Il nostro questionario usa dodici frasi originali e tre aree editoriali. Non è una versione breve di MAAS o FFMQ e non ne eredita validità, punteggi o soglie."), List.of()),
+                            new GuideSection("Ricerca italiana ed europea", "Che cosa sostengono gli studi", List.of(
+                                    "Sono disponibili adattamenti italiani di MAAS e FFMQ. La FFMQ italiana è stata esaminata in 559 volontari e poi in 43 studenti per il test–retest; quei campioni non rappresentano ogni utente italiano.",
+                                    "Uno studio spagnolo ha esaminato la MAAS con un modello Rasch in 812 persone. Strumento, lingua e campione differenti non autorizzano conclusioni psicometriche sul questionario dell'app."), List.of()),
+                            new GuideSection("Distinzioni", "Attenzione, meditazione e contesto", List.of(
+                                    "Notare una sensazione non indica automaticamente che la si interpreti correttamente. Essere presenti durante un'attività non equivale a meditare, a lavorare meglio o a non avere pensieri distraenti.",
+                                    "Dolore, stanchezza, neurodivergenza, carichi di cura, sicurezza e possibilità di pause possono influire sulle opportunità di notare ciò che accade. Il test non misura salute mentale, flessibilità psicologica o intelligenza intrapersonale."), List.of()),
+                            new GuideSection("Leggere i risultati", "Tre aree descrittive", List.of(
+                                    "Le risposte riguardano gli ultimi tre mesi. Le tre aree sono attenzione alle azioni, osservazione corporea e osservazione di pensieri ed emozioni; sono mostrate nell'ordine teorico senza un totale interpretabile.",
+                                    "Barre e soglie sono editoriali, non percentili o abilità certificate. Una revisione sistematica recente delle scale self-report di mindfulness rileva limiti concettuali e psicometrici anche negli strumenti studiati: la cautela è ancora più necessaria per questo questionario originale."), List.of()),
+                            new GuideSection("Supporto", "Quando parlarne con qualcuno", List.of(
+                                    "Non occorre essere sempre attenti al presente per stare bene. Se un disagio persistente interferisce con la vita quotidiana, puoi parlarne con un professionista indipendentemente dal profilo.",
+                                    "Il questionario non valuta urgenze; in caso di pericolo immediato in Italia chiama il 112."), List.of())
+                    ),
+                    "Questionario originale e non validato sulla frequenza riferita di esperienze quotidiane; non misura la mindfulness complessiva.",
+                    "Questa guida distingue attenzione, osservazione e altre componenti della mindfulness e documenta la non trasferibilità dei risultati di scale diverse.",
+                    List.of(
+                            new GuideReference("The Italian Adaptation of the Mindful Awareness Attention Scale and its Relation with Individual Differences and Quality of Life Indexes — Veneziani e Voci", "https://doi.org/10.1007/s12671-013-0270-2", "Adattamento italiano MAAS pubblicato nel 2015; riguarda una scala prevalentemente unidimensionale diversa dal questionario dell'app."),
+                            new GuideReference("The Italian Five Facet Mindfulness Questionnaire: A Contribution to its Validity and Reliability — Giovannini e colleghi", "https://doi.org/10.1007/s10862-013-9403-0", "Studio italiano del 2014 su 559 volontari e 43 studenti per test–retest; cinque facce non trasferibili alle tre aree editoriali."),
+                            new GuideReference("Validity Evidence of the Spanish Version of the Mindful Attention Awareness Scale Using the Rasch Measurement Model — Buz e colleghi", "https://doi.org/10.1177/10731911211018855", "Studio spagnolo pubblicato nel 2022 su 812 persone ispanofone; non prova invarianza italiana né validità degli item originali."),
+                            new GuideReference("Measuring mindfulness: A systematic review and evaluation of self-report mindfulness scales — Chems-Maarif e colleghi", "https://doi.org/10.1016/j.cpr.2026.102719", "Revisione del 2026 di 21 scale inglesi per adulti: segnala limiti concettuali e psicometrici, senza valutare l'app."))
             )
     );
 

@@ -75,7 +75,8 @@ class PsychometricStructureTest {
             Map.entry("assaporare-momenti-positivi", "savoring"),
             Map.entry("significato-vita", "significato"),
             Map.entry("curiosita-esplorazione", "esplorazione"),
-            Map.entry("esperienze-flow", "flow"));
+            Map.entry("esperienze-flow", "flow"),
+            Map.entry("presenza-mentale", "presenza mentale"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -85,7 +86,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(57).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(58).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ACE_EXPOSURE".equals(test.scoringModel())) {
@@ -122,6 +123,15 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(4));
+            } else if ("presenza-mentale".equals(test.id())) {
+                assertThat(test.version()).isEqualTo("1.0");
+                assertThat(test.questions()).hasSize(12);
+                assertThat(test.responseInstruction()).contains("ultimi tre mesi", "quanto spesso");
+                assertThat(test.answerScale()).isEqualTo("FREQUENCY");
+                assertThat(test.areas()).extracting(area -> area.code())
+                        .containsExactly("azioni", "corpo", "mente");
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code())).hasSize(4));
             } else if ("esperienze-flow".equals(test.id())) {
                 assertThat(test.version()).isEqualTo("1.0");
                 assertThat(test.questions()).hasSize(12);
@@ -454,6 +464,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("una o due aree");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
+            } else if ("presenza-mentale".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("presenza mentale poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("presenza mentale variabili");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("presenza mentale emerge");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("presenza mentale emergono");
             } else if ("esperienze-flow".equals(test.id())) {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("flow poco");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("flow variabili");

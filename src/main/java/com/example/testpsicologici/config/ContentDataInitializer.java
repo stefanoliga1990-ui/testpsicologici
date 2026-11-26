@@ -103,6 +103,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedMeaningInLifeInformationTest();
         seedCuriosityExplorationInformationTest();
         seedFlowExperiencesInformationTest();
+        seedEverydayAwarenessInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -5256,7 +5257,79 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Hai riferito frequente gratificazione durante l'attività; non misura la soddisfazione di vita generale.");
     }
 
+    private void seedEverydayAwarenessInformationTest() {
+        String id = "presenza-mentale";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Presenza mentale: come noto ciò che vivo ogni giorno?",
+                "Auto-osservazione informativa",
+                "Esplora l'attenzione riferita alle azioni e l'osservazione di sensazioni, pensieri ed emozioni negli ultimi tre mesi.",
+                "5 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti. Pensa alle attività e ai momenti ordinari degli ultimi tre mesi: considera ciò che ti è capitato, senza valutare come avresti dovuto comportarti. Le risposte descrivono esperienze riferite e non misurano una capacità, la qualità della meditazione o la mindfulness nel suo insieme.",
+                version, false,
+                "Esperienze riferite negli ultimi tre mesi",
+                "Esperienze riferite nell'area",
+                true, 58)
+                .withSeo("Presenza mentale quotidiana: test informativo | Spazio Test",
+                        "12 domande originali sull'attenzione alle azioni e sull'osservazione di esperienze corporee e mentali; risultati descrittivi non validati.")
+                .withResponseInstruction("Negli ultimi tre mesi, quanto spesso ti è capitato quanto descritto?")
+                .withAnswerScale("FREQUENCY"));
+
+        saveArea(id, "azioni", "Attenzione alle azioni", 1);
+        saveArea(id, "corpo", "Osservazione corporea", 2);
+        saveArea(id, "mente", "Osservazione di pensieri ed emozioni", 3);
+        saveQuestions(id, List.of(
+                q("azioni", "Ho prestato attenzione a ciò che stavo facendo."),
+                q("corpo", "Ho notato sensazioni del corpo durante un'attività quotidiana."),
+                q("mente", "Ho notato un pensiero mentre svolgevo un'attività."),
+                q("azioni", "Ho notato i passaggi dell'attività che stavo svolgendo."),
+                q("corpo", "Ho percepito il ritmo del respiro in un momento di pausa."),
+                q("mente", "Ho riconosciuto un'emozione mentre la provavo."),
+                q("azioni", "Ho riconosciuto quando la mia attenzione cambiava oggetto."),
+                q("corpo", "Ho notato la posizione del corpo durante un'attività."),
+                q("mente", "Ho prestato attenzione al tono dei miei pensieri in un momento della giornata."),
+                q("azioni", "Ho riportato l'attenzione all'attività in corso."),
+                q("corpo", "Ho colto un cambiamento nelle sensazioni corporee durante la giornata."),
+                q("mente", "Ho notato un cambiamento nel mio stato emotivo durante la giornata.")));
+
+        String limits = "Il questionario è originale e non validato: aree, barre e soglie sono editoriali, non misure di abilità o norme. "
+                + "Le risposte non certificano mindfulness, accuratezza emotiva o salute mentale; salute, interruzioni e contesto possono influenzarle. "
+                + "Se un disagio persistente interferisce con la vita quotidiana puoi parlarne con un professionista; in caso di pericolo immediato in Italia chiama il 112.";
+        saveGlobal(id, "LOW", "Occasioni di presenza mentale poco riferite nelle attività quotidiane",
+                "Negli ultimi tre mesi hai riferito poche occasioni di attenzione alle azioni e osservazione di esperienze corporee e mentali. Questo non esclude momenti circoscritti di presenza o esperienze non rappresentate dalle domande.",
+                "Il carico quotidiano, le interruzioni o le condizioni di salute possono incidere sulle opportunità di osservare ciò che accade. Considera le situazioni in cui ti è stato più facile avere attenzione per il momento in corso. Un profilo contenuto non indica un deficit stabile. " + limits);
+        saveGlobal(id, "MIXED", "Occasioni di presenza mentale variabili tra le aree quotidiane",
+                "Almeno un'area è nella fascia editoriale intermedia e nessuna in quella più alta. La frequenza riferita dell'attenzione alle azioni può differire da quella dell'osservazione corporea o mentale.",
+                "Guarda le tre aree nell'ordine proposto, senza leggere piccole differenze come una classifica. Le situazioni e le occasioni di pausa possono cambiare da un giorno all'altro. Osserva quali momenti concreti riconosci nelle risposte. " + limits);
+        saveGlobal(id, "FOCUSED", "Un aspetto della presenza mentale emerge nelle attività quotidiane",
+                "Una sola area raccoglie risposte più frequenti; le altre due sono più contenute. Questo descrive un aspetto riferito e non generalizza la presenza mentale a tutta la giornata.",
+                "Potresti notare più facilmente le azioni che le sensazioni, oppure riconoscere vissuti interni in alcune situazioni. Considera l'area emersa e le condizioni in cui queste occasioni si presentano. Una frequenza alta in un'area non certifica una capacità. " + limits);
+        saveGlobal(id, "BROAD", "Più aspetti della presenza mentale emergono nelle attività quotidiane",
+                "Almeno due delle tre aree raccolgono risposte più frequenti negli ultimi tre mesi. L'ampiezza riguarda occasioni riferite in diversi ambiti dell'esperienza, non una presenza costante.",
+                "Osserva anche l'area meno rappresentata e i momenti in cui l'attenzione cambia. Le risposte possono variare con il contesto e non indicano un livello superiore di persona o di meditazione. Questo profilo non predice benessere futuro. " + limits);
+        saveAreaInsights(id, "azioni",
+                "Hai riferito poche occasioni di attenzione alle azioni; interruzioni e richieste possono incidere.",
+                "Hai riferito alcune occasioni di attenzione all'attività in corso.",
+                "Hai riferito frequenti occasioni di attenzione alle azioni; non misura la qualità della prestazione.");
+        saveAreaInsights(id, "corpo",
+                "Hai riferito poche occasioni di osservazione corporea; condizioni fisiche e opportunità di pausa possono incidere.",
+                "Hai riferito alcune occasioni in cui hai notato sensazioni corporee.",
+                "Hai riferito frequenti occasioni di osservazione corporea; non indica accuratezza o salute fisica.");
+        saveAreaInsights(id, "mente",
+                "Hai riferito poche occasioni in cui hai notato pensieri o emozioni; non indica assenza di vissuti.",
+                "Hai riferito alcune occasioni in cui hai notato pensieri o emozioni.",
+                "Hai riferito frequenti occasioni di osservazione mentale; non misura comprensione o regolazione emotiva.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("presenza-mentale", List.of(
+                ref("Italian MAAS adaptation — Veneziani e Voci", "https://doi.org/10.1007/s12671-013-0270-2"),
+                ref("Italian FFMQ validation — Giovannini e colleghi", "https://doi.org/10.1007/s10862-013-9403-0"),
+                ref("Spanish MAAS Rasch validity — Buz e colleghi", "https://doi.org/10.1177/10731911211018855"),
+                ref("Mindfulness self-report systematic review — Chems-Maarif e colleghi", "https://doi.org/10.1016/j.cpr.2026.102719")));
         syncReferences("esperienze-flow", List.of(
                 ref("Italian DFS-2 validation — Riva e colleghi", "https://doi.org/10.1371/journal.pone.0182201"),
                 ref("Polish PFS adaptation — Wojtasiński e colleghi", "https://doi.org/10.1371/journal.pone.0335907"),
