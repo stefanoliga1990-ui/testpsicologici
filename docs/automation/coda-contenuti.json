@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-11-25",
+  "updatedAt": "2026-11-26",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -697,25 +697,25 @@
     {
       "order": 50,
       "slug": "presenza-mentale",
-      "workingTitle": "Presenza mentale — Quanto sono presente nelle mie giornate?",
+      "workingTitle": "Presenza mentale: come noto ciò che vivo ogni giorno?",
       "sourceTopic": "Presenza mentale e mindfulness",
       "sourceDescription": "Attenzione all'esperienza attuale e consapevolezza delle azioni quotidiane.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 3,
+        "itemCount": 12,
+        "answerScale": "FREQUENCY",
+        "resultModel": "AREA_PROFILE",
         "notes": "Delimitare rispetto a intelligenza intrapersonale e flessibilità psicologica; non inferire esperienza meditativa, accuratezza o salute mentale."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-26T13:11:37+01:00",
+        "completedAt": "2026-11-26T13:11:37+01:00",
+        "commitHash": "44f36d9b1384e79b2ab25a2cfee3abe0e6892f45",
         "blockReason": null
       }
     },
