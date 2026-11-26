@@ -3306,7 +3306,60 @@
         }
       ]
     },
-    { "topicId": "emotional-dumping", "testId": null, "guideSlug": "emotional-dumping", "title": "Emotional dumping: condividere emozioni e rispettare la disponibilità all'ascolto", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "emotional-dumping",
+      "testId": null,
+      "guideSlug": "emotional-dumping",
+      "title": "Emotional dumping: condividere emozioni e rispettare la disponibilità all'ascolto",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["empatia e ascolto nelle relazioni", "assertività ed espressione dei propri limiti"],
+      "fallbackRationale": "Emotional dumping è un'etichetta colloquiale e non una diagnosi o un costrutto misurabile con un solo criterio. Boella esamina l'attenzione alla prospettiva altrui, utile a riflettere sull'ascolto reciproco; il volume curato da Baggio tratta l'espressione rispettosa di bisogni e sentimenti, utile a comunicare disponibilità e limiti. Nessuno dei due libri definisce o identifica l'emotional dumping, né autorizza a giudicare eccessiva una richiesta di aiuto.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Sentire l'altro",
+          "subtitle": "Conoscere e praticare l'empatia",
+          "placeholderCover": true,
+          "authors": ["Laura Boella"],
+          "publisher": "Raffaello Cortina Editore",
+          "isbn13": "9788860300164",
+          "publicationYear": 2006,
+          "format": "brossura",
+          "editorialRole": "Saggio filosofico sull'empatia e sulla prospettiva dell'altra persona",
+          "audience": "Lettori interessati alla filosofia morale e alle relazioni",
+          "description": "Esplora l'empatia come attenzione all'esperienza e alla prospettiva dell'altra persona.",
+          "limit": "Non studia l'emotional dumping né stabilisce quanto una persona debba ascoltare. L'empatia non richiede disponibilità illimitata o rinuncia ai propri confini.",
+          "primarySources": [{"label": "Scheda editore dell'edizione cartacea", "url": "https://www.raffaellocortina.it/scheda-libro/laura-boella/sentire-laltro-9788860300164-67.html"}],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8860300169", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Sentire-laltro-Conoscere-praticare-lempatia/dp/8860300169?th=1&linkCode=ll2&tag=spaziotest-21&linkId=e5c0482e72b973f254bb50a5e1666bcc&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Assertività e training assertivo",
+          "subtitle": "Teoria e pratica per migliorare le capacità relazionali dei pazienti",
+          "placeholderCover": true,
+          "authors": ["Francesca Baggio (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788820411923",
+          "publicationYear": 2013,
+          "format": "brossura",
+          "editorialRole": "Manuale teorico e pratico di training assertivo per professionisti delle relazioni",
+          "audience": "Psicologi, psicoterapeuti, educatori e altri professionisti delle relazioni",
+          "description": "Esamina modi di esprimere bisogni e sentimenti rispettando sé e gli altri; prima edizione 2013, ristampa cartacea 2018.",
+          "limit": "È destinato soprattutto a professionisti e tratta il training assertivo, non l'emotional dumping. Le tecniche non sono regole per giudicare chi chiede sostegno né garantiscono una conversazione sicura in ogni contesto.",
+          "primarySources": [{"label": "Scheda editore dell'edizione a stampa", "url": "https://www.francoangeli.it/libro/?Id=20622"}],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "882041192X", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Assertivit%C3%A0-training-assertivo-migliorare-relazionali/dp/882041192X?dib=eyJ2IjoiMSJ9.yeH5CR5vBk5nqupKb0c4oA.d4fyralcgzeTJTVSct4jRJTqnEZDUSBtsRUbRE3EF2I&dib_tag=se&keywords=9788820411923&qid=1795701430&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=cb1e9e9a1486b67d719549f075e1ce0b&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "main-character-syndrome", "testId": null, "guideSlug": "main-character-syndrome", "title": "Main character syndrome: cosa descrive davvero questa espressione social?", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "pick-me-behaviour", "testId": null, "guideSlug": "pick-me-behaviour", "title": "Pick-me behaviour: approvazione, confronto e svalutazione del gruppo", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "weaponized-incompetence", "testId": null, "guideSlug": "weaponized-incompetence", "title": "Weaponized incompetence: significato e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

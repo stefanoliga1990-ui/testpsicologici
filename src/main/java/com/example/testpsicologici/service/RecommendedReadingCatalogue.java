@@ -946,6 +946,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("emotional-dumping", List.of(
+                    new RecommendedReading(
+                            "Sentire l'altro. Conoscere e praticare l'empatia",
+                            "Laura Boella",
+                            "Un saggio filosofico che esplora l'empatia come attenzione all'esperienza e alla prospettiva dell'altra persona.",
+                            "Non studia l'emotional dumping né stabilisce quanto una persona debba ascoltare. L'empatia non richiede disponibilità illimitata o rinuncia ai propri confini.",
+                            "https://www.amazon.it/-/en/Sentire-laltro-Conoscere-praticare-lempatia/dp/8860300169?th=1&linkCode=ll2&tag=spaziotest-21&linkId=e5c0482e72b973f254bb50a5e1666bcc&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Assertività e training assertivo. Teoria e pratica per migliorare le capacità relazionali dei pazienti",
+                            "Francesca Baggio (a cura di)",
+                            "Un manuale per professionisti sulle modalità di esprimere bisogni e sentimenti rispettando sé e gli altri.",
+                            "È destinato soprattutto a professionisti e tratta il training assertivo, non l'emotional dumping. Le tecniche non sono regole per giudicare chi chiede sostegno né garantiscono una conversazione sicura in ogni contesto.",
+                            "https://www.amazon.it/-/en/Assertivit%C3%A0-training-assertivo-migliorare-relazionali/dp/882041192X?dib=eyJ2IjoiMSJ9.yeH5CR5vBk5nqupKb0c4oA.d4fyralcgzeTJTVSct4jRJTqnEZDUSBtsRUbRE3EF2I&dib_tag=se&keywords=9788820411923&qid=1795701430&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=cb1e9e9a1486b67d719549f075e1ce0b&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",
