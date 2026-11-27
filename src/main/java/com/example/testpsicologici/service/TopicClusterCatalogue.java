@@ -98,6 +98,7 @@ public class TopicClusterCatalogue {
                             "curiosita-esplorazione",
                             "esperienze-flow",
                             "presenza-mentale",
+                            "flessibilita-psicologica",
                             "soddisfazione-vita",
                             "empatia-percepita"
                     )),
@@ -185,6 +186,10 @@ public class TopicClusterCatalogue {
         }
         if ("presenza-mentale".equals(testId)) {
             return List.of("intelligenza-intrapersonale", "esperienze-flow", "autocompassione")
+                    .stream().limit(maximum).toList();
+        }
+        if ("flessibilita-psicologica".equals(testId)) {
+            return List.of("resilienza-psicologica", "presenza-mentale", "autocompassione")
                     .stream().limit(maximum).toList();
         }
         return findByTestId(testId)

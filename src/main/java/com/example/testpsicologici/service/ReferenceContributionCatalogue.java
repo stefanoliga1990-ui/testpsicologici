@@ -13,6 +13,14 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.1016/j.jcbs.2021.05.007",
+                    "Validazione italiana MPFI: informa la pluralità dei processi, non valida item, aree o soglie del questionario originale."),
+            entry("https://doi.org/10.3390/bs16040510",
+                    "Validazione italiana MPFI-24 con replica indipendente: mostra proprietà di un'altra scala e non delle tre aree editoriali."),
+            entry("https://doi.org/10.1016/j.jcbs.2020.06.004",
+                    "Versioni inglese e francese MPFI-24: documentano la necessità di verificare struttura e lingua, senza norme per l'app."),
+            entry("https://doi.org/10.1016/j.jcbs.2020.08.007",
+                    "Confronto di misure di inflessibilità: sostiene la cautela sul confondere i processi con il disagio generale."),
             entry("https://doi.org/10.1007/s12671-013-0270-2",
                     "Adattamento italiano MAAS: documenta l'attenzione quotidiana, non la struttura o le soglie del questionario originale."),
             entry("https://doi.org/10.1007/s10862-013-9403-0",

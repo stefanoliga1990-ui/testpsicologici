@@ -104,6 +104,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedCuriosityExplorationInformationTest();
         seedFlowExperiencesInformationTest();
         seedEverydayAwarenessInformationTest();
+        seedPsychologicalFlexibilityInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -5324,7 +5325,79 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Hai riferito frequenti occasioni di osservazione mentale; non misura comprensione o regolazione emotiva.");
     }
 
+    private void seedPsychologicalFlexibilityInformationTest() {
+        String id = "flessibilita-psicologica";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Flessibilità psicologica: come rispondo ai vissuti difficili?",
+                "Auto-osservazione informativa",
+                "Esplora episodi riferiti di apertura ai vissuti, prospettiva sui pensieri e azioni verso obiettivi importanti negli ultimi tre mesi.",
+                "5 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti. Pensa agli ultimi tre mesi e a occasioni concrete in cui hai vissuto pensieri, emozioni o sensazioni difficili. Se non ricordi occasioni adatte, il questionario potrebbe non essere pertinente: non usare il risultato per decidere se restare in una situazione non sicura.",
+                version, false,
+                "Episodi riferiti negli ultimi tre mesi",
+                "Episodi riferiti nell'area",
+                true, 59)
+                .withSeo("Flessibilità psicologica: test informativo | Spazio Test",
+                        "12 domande originali su esperienze interne, prospettiva sui pensieri e azioni importanti; risultati descrittivi non validati.")
+                .withResponseInstruction("Negli ultimi tre mesi, quanto spesso ti è capitato quanto descritto?")
+                .withAnswerScale("FREQUENCY"));
+
+        saveArea(id, "apertura", "Spazio all'esperienza interna", 1);
+        saveArea(id, "prospettiva", "Prospettiva sui pensieri", 2);
+        saveArea(id, "azione", "Azione verso ciò che conta", 3);
+        saveQuestions(id, List.of(
+                q("apertura", "Ho dato spazio a un'emozione spiacevole per qualche momento."),
+                q("prospettiva", "Ho riconosciuto un pensiero difficile come una possibile interpretazione."),
+                q("azione", "Ho iniziato un'attività importante per me mentre provavo disagio."),
+                q("apertura", "Ho lasciato che una sensazione sgradevole fosse presente per un momento."),
+                q("prospettiva", "Ho osservato un pensiero difficile prima di decidere come agire."),
+                q("azione", "Ho continuato un'attività importante per me mentre avevo pensieri difficili."),
+                q("apertura", "Ho permesso a un pensiero difficile di restare presente per qualche momento."),
+                q("prospettiva", "Ho considerato un altro modo di guardare un pensiero difficile."),
+                q("azione", "Ho ripreso un obiettivo importante dopo un momento emotivamente difficile."),
+                q("apertura", "Ho dedicato un momento a sentire un'emozione difficile."),
+                q("prospettiva", "Ho preso distanza per un momento da un pensiero insistente."),
+                q("azione", "Ho chiesto aiuto per portare avanti un obiettivo importante mentre provavo disagio.")));
+
+        String limits = "Il questionario è originale e non validato: aree, barre e soglie sono editoriali, non norme o misure di abilità. "
+                + "Poche occasioni di disagio rendono le risposte difficili da interpretare; fare spazio ai vissuti non significa tollerare abuso, pericolo o condizioni dannose. "
+                + "Se un disagio persistente interferisce con la vita quotidiana puoi parlarne con un professionista; in caso di pericolo immediato in Italia chiama il 112.";
+        saveGlobal(id, "LOW", "Episodi di flessibilità psicologica poco riferiti nelle tre aree",
+                "Negli ultimi tre mesi hai riferito poche occasioni nei tre aspetti esplorati. Questo non esclude risposte utili in situazioni specifiche né indica una difficoltà personale stabile.",
+                "Le occasioni reali di vivere disagio e gli spazi di scelta possono variare. Considera se le domande erano applicabili e quali vincoli erano presenti. Anche interrompere un'attività o cercare protezione può essere appropriato. " + limits);
+        saveGlobal(id, "MIXED", "Episodi di flessibilità psicologica variabili tra le aree",
+                "Almeno un'area è nella fascia editoriale intermedia e nessuna in quella più alta. Apertura ai vissuti, prospettiva sui pensieri e azione verso obiettivi importanti possono avere frequenze diverse.",
+                "Guarda le tre aree nell'ordine proposto, senza trattare piccole differenze come una classifica. Le occasioni, il supporto e la sicurezza cambiano fra contesti. Osserva in quali episodi hai potuto scegliere come agire. " + limits);
+        saveGlobal(id, "FOCUSED", "Un aspetto della flessibilità psicologica emerge nelle risposte",
+                "Una sola area raccoglie episodi più frequenti, mentre le altre due risultano più contenute. Il profilo orienta a quell'aspetto e non generalizza a tutte le situazioni.",
+                "Può risultare più frequente stare con un'emozione che agire verso un obiettivo, oppure il contrario. Considera l'area emersa insieme alle opportunità reali e ai limiti del contesto. Una frequenza alta non certifica una capacità. " + limits);
+        saveGlobal(id, "BROAD", "Più aspetti della flessibilità psicologica emergono nelle risposte",
+                "Almeno due delle tre aree raccolgono episodi più frequenti negli ultimi tre mesi. L'ampiezza riguarda i vissuti e le azioni riferiti, senza indicare flessibilità costante o superiore.",
+                "Osserva anche l'area meno rappresentata e le situazioni in cui le scelte erano limitate. La presenza di più aspetti non prova che una decisione sia stata sicura o utile. Il profilo non predice salute o benessere futuro. " + limits);
+        saveAreaInsights(id, "apertura",
+                "Hai riferito poche occasioni di spazio ai vissuti interni; considera quante occasioni adatte c'erano.",
+                "Hai riferito alcune occasioni in cui hai dato spazio a un vissuto difficile.",
+                "Hai riferito frequenti occasioni di spazio ai vissuti; questo non richiede di restare in situazioni dannose.");
+        saveAreaInsights(id, "prospettiva",
+                "Hai riferito poche occasioni di prospettiva sui pensieri; non indica che i tuoi pensieri siano errati.",
+                "Hai riferito alcune occasioni in cui hai osservato un pensiero da una certa distanza.",
+                "Hai riferito frequenti occasioni di prospettiva sui pensieri; non dimostra che le minacce percepite siano infondate.");
+        saveAreaInsights(id, "azione",
+                "Hai riferito poche azioni verso obiettivi importanti durante il disagio; vincoli e sicurezza contano.",
+                "Hai riferito alcune azioni verso obiettivi importanti in presenza di vissuti difficili.",
+                "Hai riferito frequenti azioni verso obiettivi importanti; la frequenza non valuta la qualità delle decisioni.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("flessibilita-psicologica", List.of(
+                ref("Italian MPFI validation — Landi e colleghi", "https://doi.org/10.1016/j.jcbs.2021.05.007"),
+                ref("Italian MPFI-24 validation — Landi e colleghi", "https://doi.org/10.3390/bs16040510"),
+                ref("French and English MPFI-24 validation — Grégoire e colleghi", "https://doi.org/10.1016/j.jcbs.2020.06.004"),
+                ref("Psychological inflexibility measure comparison — Ong e colleghi", "https://doi.org/10.1016/j.jcbs.2020.08.007")));
         syncReferences("presenza-mentale", List.of(
                 ref("Italian MAAS adaptation — Veneziani e Voci", "https://doi.org/10.1007/s12671-013-0270-2"),
                 ref("Italian FFMQ validation — Giovannini e colleghi", "https://doi.org/10.1007/s10862-013-9403-0"),

@@ -6101,6 +6101,41 @@ public class GuideCatalogue {
                             new GuideReference("The Italian Five Facet Mindfulness Questionnaire: A Contribution to its Validity and Reliability — Giovannini e colleghi", "https://doi.org/10.1007/s10862-013-9403-0", "Studio italiano del 2014 su 559 volontari e 43 studenti per test–retest; cinque facce non trasferibili alle tre aree editoriali."),
                             new GuideReference("Validity Evidence of the Spanish Version of the Mindful Attention Awareness Scale Using the Rasch Measurement Model — Buz e colleghi", "https://doi.org/10.1177/10731911211018855", "Studio spagnolo pubblicato nel 2022 su 812 persone ispanofone; non prova invarianza italiana né validità degli item originali."),
                             new GuideReference("Measuring mindfulness: A systematic review and evaluation of self-report mindfulness scales — Chems-Maarif e colleghi", "https://doi.org/10.1016/j.cpr.2026.102719", "Revisione del 2026 di 21 scale inglesi per adulti: segnala limiti concettuali e psicometrici, senza valutare l'app."))
+            ),
+            new InformationGuide(
+                    "flessibilita-psicologica", "flessibilita-psicologica",
+                    "Flessibilità psicologica",
+                    "Flessibilità psicologica: vissuti difficili e azioni importanti",
+                    "Flessibilità psicologica: guida | Spazio Test",
+                    "Una guida ai processi di flessibilità psicologica, alle ricerche italiane ed europee e ai limiti del questionario informativo.",
+                    "La flessibilità psicologica riguarda il rapporto con l'esperienza interna e le scelte nel contesto. Non equivale a sopportare situazioni dannose o a sentirsi sempre bene.",
+                    List.of(
+                            new GuideSection("In breve", "Che cosa si intende per flessibilità psicologica", List.of(
+                                    "Nel modello ACT la flessibilità psicologica riguarda la possibilità di restare in contatto con l'esperienza presente e orientare le azioni verso ciò che conta, anche in presenza di pensieri o emozioni difficili. È un processo contestuale, non un tratto morale o una capacità certificata online.",
+                                    "Le occasioni di scelta dipendono da sicurezza, salute, tempo, risorse e relazioni. Una risposta diversa da quelle suggerite dal modello può essere adeguata alla situazione concreta."), List.of()),
+                            new GuideSection("Modelli e misure", "Più processi, non un solo punteggio", List.of(
+                                    "Il MPFI distingue diversi processi di flessibilità e inflessibilità; una forma breve italiana continua a esaminare molte componenti. Il nostro questionario sceglie soltanto tre temi editoriali: spazio ai vissuti, prospettiva sui pensieri e azioni importanti.",
+                                    "Non è una versione breve del MPFI o del CompACT. Le dodici frasi originali non ereditano fattori, affidabilità, norme o interpretazioni cliniche dalle scale studiate."), List.of()),
+                            new GuideSection("Ricerca italiana ed europea", "Che cosa mostrano le validazioni", List.of(
+                                    "Una validazione italiana del MPFI ha coinvolto 1542 adulti in una rilevazione online; circa sette su dieci erano donne. Un successivo studio italiano del MPFI-24 ha utilizzato due campioni analitici, il secondo indipendente, per esaminare struttura e relazioni con altre misure.",
+                                    "La forma breve è stata studiata anche in inglese e francese. Questi risultati riguardano questionari specifici e non dimostrano che tre aree editoriali siano fattori nella popolazione italiana."), List.of()),
+                            new GuideSection("Distinzioni", "Apertura non significa sopportare un danno", List.of(
+                                    "Dare spazio a un'emozione non significa accettare abuso, violenza, discriminazione o condizioni di lavoro non sicure. Allontanarsi, porre limiti, cambiare obiettivo o chiedere aiuto possono essere scelte coerenti con ciò che conta.",
+                                    "Il test non misura mindfulness, resilienza, forza di volontà, qualità delle decisioni o salute mentale. Studi sulle misure di inflessibilità mostrano che alcuni punteggi possono sovrapporsi al disagio generale: le nostre risposte non vanno lette come una diagnosi."), List.of()),
+                            new GuideSection("Leggere i risultati", "Tre aree descrittive", List.of(
+                                    "Pensa a occasioni concrete negli ultimi tre mesi in cui erano presenti vissuti difficili. Se non ne ricordi, il questionario potrebbe non essere pertinente e una risposta «Mai» non indica minore flessibilità.",
+                                    "Le tre aree restano separate; soglie e barre sono editoriali, senza un totale interpretabile. Un profilo ampio descrive più episodi riferiti, non una capacità superiore né la necessità di perseverare in ogni situazione."), List.of()),
+                            new GuideSection("Supporto", "Quando cercare confronto", List.of(
+                                    "Se il disagio persiste o limita la vita quotidiana, puoi parlare con un professionista indipendentemente dal profilo. Se una situazione è dannosa, considera il supporto e la sicurezza prima del questionario.",
+                                    "Il test non valuta urgenze; in caso di pericolo immediato in Italia chiama il 112."), List.of())
+                    ),
+                    "Questionario originale e non validato su tre aspetti riferiti della flessibilità psicologica; nessuna diagnosi o misura generale.",
+                    "La guida chiarisce il modello, le evidenze italiane ed europee e la differenza tra apertura ai vissuti e tolleranza di condizioni dannose.",
+                    List.of(
+                            new GuideReference("Italian validation of the Italian multidimensional psychological flexibility inventory — Landi e colleghi", "https://doi.org/10.1016/j.jcbs.2021.05.007", "Validazione italiana MPFI del 2021 su 1542 adulti online, circa 71% donne; modello e punteggi non trasferibili all'app."),
+                            new GuideReference("Validation of the Italian Multidimensional Psychological Flexibility Inventory Short Form (MPFI-24) — Landi e colleghi", "https://doi.org/10.3390/bs16040510", "Validazione italiana del 2026 con campioni analitici di 1542 e 728 adulti; forma breve diversa dalle tre aree editoriali."),
+                            new GuideReference("Validation of the English and French Versions of the Multidimensional Psychological Flexibility Inventory Short Form (MPFI-24) — Grégoire e colleghi", "https://doi.org/10.1016/j.jcbs.2020.06.004", "Studio del 2020 sulle versioni inglese e francese del MPFI-24; nessuna norma o proprietà trasferita al questionario italiano originale."),
+                            new GuideReference("A psychometric comparison of psychological inflexibility measures: Discriminant validity and item performance — Ong e colleghi", "https://doi.org/10.1016/j.jcbs.2020.08.007", "Confronto psicometrico del 2020 fra quattro misure di inflessibilità, utile per distinguere i limiti discriminanti e il disagio generale; non valida l'app."))
             )
     );
 
