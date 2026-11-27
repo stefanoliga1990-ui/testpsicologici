@@ -3360,7 +3360,60 @@
         }
       ]
     },
-    { "topicId": "main-character-syndrome", "testId": null, "guideSlug": "main-character-syndrome", "title": "Main character syndrome: cosa descrive davvero questa espressione social?", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "main-character-syndrome",
+      "testId": null,
+      "guideSlug": "main-character-syndrome",
+      "title": "Main character syndrome: cosa descrive davvero questa espressione social?",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": ["identità e relazioni nei social media", "narrazioni di sé online"],
+      "fallbackRationale": "Main character syndrome è un'espressione social e non una categoria clinica. Riva esamina il rapporto fra identità, relazioni e piattaforme digitali; i saggi curati da Salzano analizzano l'autorappresentazione e le narrazioni identitarie online. Questi argomenti permettono di contestualizzare il modo di raccontarsi in rete, senza dedurre narcisismo, intenzioni o tratti di personalità da post e selfie. Nessuno dei due libri valida l'etichetta.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Io, noi, loro",
+          "subtitle": "Le relazioni nell'era dei social e dell'IA",
+          "placeholderCover": true,
+          "authors": ["Giuseppe Riva"],
+          "publisher": "Il Mulino",
+          "isbn13": "9788815391469",
+          "publicationYear": 2025,
+          "format": "brossura",
+          "editorialRole": "Saggio divulgativo di psicologia della comunicazione sulle relazioni e l'identità nei social media",
+          "audience": "Lettori generali, educatori e persone interessate alle relazioni digitali",
+          "description": "Esamina come piattaforme digitali e relazioni partecipino alla costruzione dell'identità, mantenendo al centro il rapporto fra io e noi.",
+          "limit": "Non studia la main character syndrome e non permette di attribuire narcisismo o scarsa empatia a chi racconta la propria vita online. Le conclusioni generali non descrivono una singola persona.",
+          "primarySources": [{"label": "Scheda editore dell'edizione cartacea", "url": "https://www.mulino.it/isbn/9788815391469"}],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8815391460", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/loro-relazioni-nellera-social-dellIA/dp/8815391460?dib=eyJ2IjoiMSJ9.S-pOhR2MqrDc_5VW6ebEHQ.TgZyazr2cu6AmfWhA460Lk9uYg9qFS_v7fEmdVW3zA0&dib_tag=se&keywords=9788815391469&qid=1795787764&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=b0b5fd9c3842694dba8ae5c29c74b27c&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Turning around the self",
+          "subtitle": "Narrazioni identitarie nel social web",
+          "placeholderCover": true,
+          "authors": ["Diana Salzano (a cura di)"],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788891714466",
+          "publicationYear": 2015,
+          "format": "brossura",
+          "editorialRole": "Raccolta accademica di studi italiani sull'identità e l'autorappresentazione online",
+          "audience": "Studenti e professionisti della comunicazione e lettori interessati alla ricerca sui social media",
+          "description": "Raccoglie studi italiani sui modi in cui persone e gruppi si autorappresentano e costruiscono narrazioni identitarie tra online e offline.",
+          "limit": "È un volume accademico del 2015, legato alle piattaforme e ai dibattiti di allora. Non misura la main character syndrome e non consente di interpretare un post come tratto di personalità.",
+          "primarySources": [{"label": "Scheda editore dell'edizione a stampa", "url": "https://www.francoangeli.it/Libro/Turning-around-the-Self.-Narrazioni-identitarie-nel-social-web?Id=22837"}],
+          "amazon": {
+            "marketplace": "amazon.it", "asin": "8891714461", "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/Turning-around-Narrazioni-identitarie-social/dp/8891714461?dib=eyJ2IjoiMSJ9.7pP32vmKzr8sKQ_0dvojsw.fqEWRJLAziHIvq28R9bxd3UaQXCmAf9BgxB1cnC922o&dib_tag=se&keywords=9788891714466&qid=1795787800&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=0ad4e9ea9fc0b8346ca5289ea9108822&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21", "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "pick-me-behaviour", "testId": null, "guideSlug": "pick-me-behaviour", "title": "Pick-me behaviour: approvazione, confronto e svalutazione del gruppo", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "weaponized-incompetence", "testId": null, "guideSlug": "weaponized-incompetence", "title": "Weaponized incompetence: significato e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "lavoro-emotivo", "testId": null, "guideSlug": "lavoro-emotivo", "title": "Lavoro emotivo: significato e contesti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },

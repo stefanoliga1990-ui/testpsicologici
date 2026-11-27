@@ -964,6 +964,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("main-character-syndrome", List.of(
+                    new RecommendedReading(
+                            "Io, noi, loro. Le relazioni nell'era dei social e dell'IA",
+                            "Giuseppe Riva",
+                            "Esamina come piattaforme digitali e relazioni partecipino alla costruzione dell'identità, mantenendo al centro il rapporto fra io e noi.",
+                            "Non studia la main character syndrome e non permette di attribuire narcisismo o scarsa empatia a chi racconta la propria vita online. Le conclusioni generali non descrivono una singola persona.",
+                            "https://www.amazon.it/-/en/loro-relazioni-nellera-social-dellIA/dp/8815391460?dib=eyJ2IjoiMSJ9.S-pOhR2MqrDc_5VW6ebEHQ.TgZyazr2cu6AmfWhA460Lk9uYg9qFS_v7fEmdVW3zA0&dib_tag=se&keywords=9788815391469&qid=1795787764&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=b0b5fd9c3842694dba8ae5c29c74b27c&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Turning around the self. Narrazioni identitarie nel social web",
+                            "Diana Salzano (a cura di)",
+                            "Raccoglie studi italiani sui modi in cui persone e gruppi si autorappresentano e costruiscono narrazioni identitarie tra online e offline.",
+                            "È un volume accademico del 2015, legato alle piattaforme e ai dibattiti di allora. Non misura la main character syndrome e non consente di interpretare un post come tratto di personalità.",
+                            "https://www.amazon.it/-/en/Turning-around-Narrazioni-identitarie-social/dp/8891714461?dib=eyJ2IjoiMSJ9.7pP32vmKzr8sKQ_0dvojsw.fqEWRJLAziHIvq28R9bxd3UaQXCmAf9BgxB1cnC922o&dib_tag=se&keywords=9788891714466&qid=1795787800&sr=8-1&linkCode=ll2&tag=spaziotest-21&linkId=0ad4e9ea9fc0b8346ca5289ea9108822&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",
