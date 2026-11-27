@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-11-26",
+  "updatedAt": "2026-11-27",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -722,25 +722,25 @@
     {
       "order": 51,
       "slug": "flessibilita-psicologica",
-      "workingTitle": "Flessibilità psicologica — Riesco ad agire anche con pensieri ed emozioni difficili?",
+      "workingTitle": "Flessibilità psicologica: come rispondo ai vissuti difficili?",
       "sourceTopic": "Flessibilità psicologica",
       "sourceDescription": "Disponibilità a fare spazio alle esperienze interne e scegliere azioni significative.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Emozioni, risorse e benessere",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 3,
+        "itemCount": 12,
+        "answerScale": "FREQUENCY",
+        "resultModel": "AREA_PROFILE",
         "notes": "Verificare autonomia rispetto a resilienza, mindfulness e autosabotaggio; non confondere accettazione di vissuti interni con tolleranza di abuso o condizioni dannose."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-27T13:08:10+01:00",
+        "completedAt": "2026-11-27T13:08:10+01:00",
+        "commitHash": "bd5681fd40becd00c927a04f443ccf297a9332d8",
         "blockReason": null
       }
     },
