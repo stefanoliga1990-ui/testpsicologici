@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "queueId": "spazio-test-daily-content",
-  "updatedAt": "2026-11-27",
+  "updatedAt": "2026-11-28",
   "timezone": "Europe/Rome",
   "scheduledLocalTime": "22:15",
   "scheduledLocalDays": ["FRIDAY", "SATURDAY"],
@@ -747,25 +747,25 @@
     {
       "order": 52,
       "slug": "supporto-sociale-percepito",
-      "workingTitle": "Supporto sociale — Quanto sento di poter contare sugli altri?",
+      "workingTitle": "Supporto sociale percepito: su quale aiuto sento di poter contare?",
       "sourceTopic": "Supporto sociale percepito",
       "sourceDescription": "Disponibilità percepita di ascolto, vicinanza e aiuto nelle diverse relazioni.",
       "contentMode": "TEST_AND_GUIDE",
       "categoryHint": "Relazioni e attaccamento",
       "questionnaire": {
         "enabled": true,
-        "areaCount": null,
-        "itemCount": null,
-        "answerScale": null,
-        "resultModel": null,
+        "areaCount": 3,
+        "itemCount": 12,
+        "answerScale": "AGREEMENT",
+        "resultModel": "AREA_PROFILE",
         "notes": "Distinguere risorse percepite, aiuto effettivamente ricevuto e numero di contatti; considerare reti diverse senza presupporre partner o famiglia disponibili."
       },
       "workflow": {
-        "status": "PENDING",
-        "attempts": 0,
-        "lastAttemptAt": null,
-        "completedAt": null,
-        "commitHash": null,
+        "status": "COMPLETED",
+        "attempts": 1,
+        "lastAttemptAt": "2026-11-28T13:17:29+01:00",
+        "completedAt": "2026-11-28T13:17:29+01:00",
+        "commitHash": "76157cd3e589d39787b3246f611f4d58a881bf47",
         "blockReason": null
       }
     },
