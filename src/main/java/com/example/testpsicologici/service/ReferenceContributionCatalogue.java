@@ -13,6 +13,16 @@ public class ReferenceContributionCatalogue {
             "Fonte consultata per definire i temi esplorati e mantenere un linguaggio informativo e prudente.";
 
     private static final Map<String, String> CONTRIBUTIONS = Map.ofEntries(
+            entry("https://doi.org/10.1482/38446",
+                    "Validazione italiana ISEL su adulti: informa il costrutto di disponibilità percepita, senza validare le aree dell'app."),
+            entry("https://doi.org/10.4415/ANN_18_04_07",
+                    "Studio italiano MSPSS in pazienti cronici: documenta fattori per fonte e i limiti di trasferimento al questionario originale."),
+            entry("https://doi.org/10.1186/s12955-018-0912-0",
+                    "Revisione degli adattamenti MSPSS: documenta limiti metodologici e variabilità culturale, non l'invarianza dell'app."),
+            entry("https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/09/measuring-social-connectedness-in-oecd-countries_02a04f4b/f758bd20-en.pdf",
+                    "Rassegna OECD: distingue disponibilità percepita, aiuto ricevuto e funzioni emotive, informative e pratiche."),
+            entry("https://doi.org/10.1007/s10464-007-9100-9",
+                    "Meta-analisi: sostiene la distinzione tra supporto percepito e ricevuto senza predire il singolo caso."),
             entry("https://doi.org/10.1016/j.jcbs.2021.05.007",
                     "Validazione italiana MPFI: informa la pluralità dei processi, non valida item, aree o soglie del questionario originale."),
             entry("https://doi.org/10.3390/bs16040510",

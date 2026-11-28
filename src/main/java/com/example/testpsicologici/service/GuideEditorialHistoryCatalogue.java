@@ -90,7 +90,8 @@ public class GuideEditorialHistoryCatalogue {
             entry("curiosita-esplorazione", history("2026-11-24", "2026-11-24")),
             entry("esperienze-flow", history("2026-11-25", "2026-11-25")),
             entry("presenza-mentale", history("2026-11-26", "2026-11-26")),
-            entry("flessibilita-psicologica", history("2026-11-27", "2026-11-27"))
+            entry("flessibilita-psicologica", history("2026-11-27", "2026-11-27")),
+            entry("supporto-sociale-percepito", history("2026-11-28", "2026-11-28"))
     );
 
     public GuideEditorialHistory forSlug(String slug) {

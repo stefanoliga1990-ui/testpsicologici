@@ -6136,6 +6136,42 @@ public class GuideCatalogue {
                             new GuideReference("Validation of the Italian Multidimensional Psychological Flexibility Inventory Short Form (MPFI-24) — Landi e colleghi", "https://doi.org/10.3390/bs16040510", "Validazione italiana del 2026 con campioni analitici di 1542 e 728 adulti; forma breve diversa dalle tre aree editoriali."),
                             new GuideReference("Validation of the English and French Versions of the Multidimensional Psychological Flexibility Inventory Short Form (MPFI-24) — Grégoire e colleghi", "https://doi.org/10.1016/j.jcbs.2020.06.004", "Studio del 2020 sulle versioni inglese e francese del MPFI-24; nessuna norma o proprietà trasferita al questionario italiano originale."),
                             new GuideReference("A psychometric comparison of psychological inflexibility measures: Discriminant validity and item performance — Ong e colleghi", "https://doi.org/10.1016/j.jcbs.2020.08.007", "Confronto psicometrico del 2020 fra quattro misure di inflessibilità, utile per distinguere i limiti discriminanti e il disagio generale; non valida l'app."))
+            ),
+            new InformationGuide(
+                    "supporto-sociale-percepito", "supporto-sociale-percepito",
+                    "Supporto sociale percepito",
+                    "Supporto sociale percepito: ascolto, confronto e aiuto pratico",
+                    "Supporto sociale percepito: guida | Spazio Test",
+                    "Che cosa significa sentire di poter contare su qualcuno, quali forme può assumere il sostegno e come leggere un questionario informativo.",
+                    "Il supporto sociale percepito riguarda l'aiuto che crediamo accessibile se ne avessimo bisogno. Non coincide con il numero di persone conosciute o con l'aiuto già ricevuto.",
+                    List.of(
+                            new GuideSection("In breve", "Che cosa significa supporto percepito", List.of(
+                                    "Riguarda la percezione che un sostegno possa essere disponibile quando serve. Può provenire da persone diverse e riguardare ascolto, informazioni o aiuto concreto.",
+                                    "Una persona può avere molti contatti e sentirsi poco sostenuta, oppure pochi legami e sentirsi aiutata. La percezione non garantisce che ogni persona sarà disponibile in una situazione futura."), List.of()),
+                            new GuideSection("Forme di sostegno", "Ascolto, orientamento e aiuto pratico", List.of(
+                                    "L'ascolto emotivo offre uno spazio per parlare; il confronto informativo aiuta a valutare dubbi e scelte; l'aiuto pratico riguarda compiti concreti. Le tre funzioni sono temi editoriali ispirati alla distinzione usata nelle indagini sociali.",
+                                    "Non sono i fattori empirici della MSPSS o dell'ISEL. Una relazione può offrire alcune forme di sostegno e non altre; la qualità dell'aiuto dipende dal bisogno e dal contesto."), List.of()),
+                            new GuideSection("Evidenze italiane ed europee", "Che cosa mostrano gli studi", List.of(
+                                    "Uno studio italiano dell'ISEL ha coinvolto 308 adulti; uno studio italiano della MSPSS ha esaminato 236 persone con malattie croniche. Questi lavori riguardano strumenti specifici e campioni diversi dalla popolazione generale dell'app.",
+                                    "Una revisione degli adattamenti della MSPSS, inclusi studi europei, ha rilevato qualità metodologica variabile e risultati non uniformi tra lingue. Non si possono importare fattori, soglie o proprietà psicometriche nel nostro questionario originale."), List.of()),
+                            new GuideSection("Distinzioni", "Percepito non significa ricevuto", List.of(
+                                    "Una meta-analisi ha trovato un'associazione tra sostegno percepito e aiuto ricevuto, senza identificarli come la stessa cosa. Le indagini istituzionali distinguono anche disponibilità ipotetica, esperienza concreta e dimensione della rete.",
+                                    "Non chiedere aiuto può dipendere da sicurezza, accessibilità, risorse e precedenti esperienze, senza implicare una mancanza personale. Il test non valuta intenzioni altrui, reciprocità, solitudine o salute mentale."), List.of()),
+                            new GuideSection("Leggere i risultati", "Tre aree, nessuna garanzia", List.of(
+                                    "Rispondi pensando alla rete attuale e a chiunque consideri accessibile, senza presumere famiglia o partner. Le risposte descrivono quanto le frasi sembrano vere per te in questo periodo, non eventi di aiuto già accaduti.",
+                                    "Le aree restano separate e le soglie delle barre sono editoriali. Un profilo ampio non prova che la rete sia sicura; un profilo basso non esclude risorse concrete o servizi esterni."), List.of()),
+                            new GuideSection("Supporto", "Quando cercare altre risorse", List.of(
+                                    "Se ti manca un aiuto necessario, puoi considerare persone fidate, servizi territoriali o un professionista indipendentemente dal profilo. Se una relazione è dannosa, protezione e confini contano più di una barra.",
+                                    "Il questionario non valuta urgenze; in caso di pericolo immediato in Italia chiama il 112."), List.of())
+                    ),
+                    "Questionario originale e non validato su tre forme di disponibilità percepita; nessuna misura della rete reale o della salute mentale.",
+                    "La guida distingue sostegno percepito e ricevuto, documenta studi italiani ed europei e spiega i limiti delle aree editoriali.",
+                    List.of(
+                            new GuideReference("Interpersonal Support Evaluation List (ISEL): validation and application in an Italian sample — Moretti e colleghi", "https://doi.org/10.1482/38446", "Studio italiano del 2012 su 308 adulti; proprietà dell'ISEL, non delle tre aree originali dell'app."),
+                            new GuideReference("Psychometric evaluation of the Multidimensional Scale of Perceived Social Support (MSPSS) in people with chronic diseases — De Maria e colleghi", "https://doi.org/10.4415/ANN_18_04_07", "Studio italiano del 2018 su 236 pazienti con malattie croniche; fattori per fonte e campione clinico non trasferibili."),
+                            new GuideReference("A systematic review of the psychometric properties of the cross-cultural translations and adaptations of the MSPSS — Dambi e colleghi", "https://doi.org/10.1186/s12955-018-0912-0", "Revisione del 2018 di adattamenti linguistici, inclusi quelli europei; evidenza non uniforme e relativa alla MSPSS."),
+                            new GuideReference("Measuring social connectedness in OECD countries — OECD", "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/09/measuring-social-connectedness-in-oecd-countries_02a04f4b/f758bd20-en.pdf", "Scoping review istituzionale del 2024 che distingue forme e indicatori del sostegno, senza validare le aree dell'app."),
+                            new GuideReference("The relationship between self-reported received and perceived social support: A meta-analytic review — Haber e colleghi", "https://doi.org/10.1007/s10464-007-9100-9", "Meta-analisi del 2007 di 23 studi: sostiene la distinzione fra percezione e aiuto ricevuto, non una previsione individuale."))
             )
     );
 

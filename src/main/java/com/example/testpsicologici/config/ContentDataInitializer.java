@@ -105,6 +105,7 @@ public class ContentDataInitializer implements ApplicationRunner {
         seedFlowExperiencesInformationTest();
         seedEverydayAwarenessInformationTest();
         seedPsychologicalFlexibilityInformationTest();
+        seedPerceivedSocialSupportInformationTest();
         synchronizeEvidenceReferences();
     }
 
@@ -5392,7 +5393,80 @@ public class ContentDataInitializer implements ApplicationRunner {
                 "Hai riferito frequenti azioni verso obiettivi importanti; la frequenza non valuta la qualità delle decisioni.");
     }
 
+    private void seedPerceivedSocialSupportInformationTest() {
+        String id = "supporto-sociale-percepito";
+        String version = "1.0";
+        if (!requiresSeed(id, version)) return;
+        removeTest(id);
+
+        saveTest(new TestDefinitionEntity(id,
+                "Supporto sociale percepito: su quale aiuto sento di poter contare?",
+                "Auto-osservazione informativa",
+                "Esplora la disponibilità percepita di ascolto, confronto e aiuto pratico nella rete attuale, senza contare i contatti.",
+                "5 min · 12 domande",
+                "Questionario originale, informativo e non validato per adulti. Pensa alle persone della tua rete attuale, senza limitarti a famiglia o partner, e rispondi in base all'aiuto che credi accessibile in questo periodo. Le risposte non garantiscono che l'aiuto sarà disponibile in una situazione concreta.",
+                version, false,
+                "Disponibilità percepita in questo periodo",
+                "Disponibilità percepita nell'area",
+                true, 60)
+                .withSeo("Supporto sociale percepito: test informativo | Spazio Test",
+                        "12 domande originali su ascolto, confronto e aiuto pratico percepiti; risultati descrittivi non validati.")
+                .withResponseInstruction("In questo periodo, quanto è vera per te questa frase?")
+                .withAnswerScale("AGREEMENT"));
+
+        saveArea(id, "ascolto", "Ascolto e vicinanza", 1);
+        saveArea(id, "orientamento", "Orientamento e confronto", 2);
+        saveArea(id, "pratico", "Aiuto pratico", 3);
+        saveQuestions(id, List.of(
+                q("ascolto", "Penso di avere qualcuno disposto ad ascoltarmi quando sono preoccupato/a."),
+                q("orientamento", "Penso di avere qualcuno con cui chiarire un dubbio importante."),
+                q("pratico", "Penso di poter chiedere a qualcuno aiuto per una commissione necessaria."),
+                q("ascolto", "Sento di poter parlare di un problema personale con qualcuno."),
+                q("orientamento", "Sento di poter chiedere un parere su una decisione personale."),
+                q("pratico", "Sento di poter chiedere aiuto per raggiungere un luogo importante."),
+                q("ascolto", "Penso di avere qualcuno con cui condividere come mi sento."),
+                q("orientamento", "Penso di avere qualcuno con cui valutare alternative davanti a un problema."),
+                q("pratico", "Penso di poter chiedere aiuto per gestire un imprevisto pratico."),
+                q("ascolto", "Sento di poter cercare conforto presso qualcuno."),
+                q("orientamento", "Sento di poter chiedere a qualcuno informazioni utili per una scelta."),
+                q("pratico", "Sento di poter chiedere aiuto per un compito quotidiano difficile da svolgere da solo/a.")));
+
+        String limits = "Il questionario è originale e non validato: aree, barre e soglie sono editoriali, non norme o garanzie di aiuto. "
+                + "La disponibilità percepita non coincide con l'aiuto ricevuto e può cambiare con contesto, accessibilità e sicurezza; poche risorse riferite non sono una colpa personale. "
+                + "Se hai bisogno di sostegno puoi rivolgerti a persone fidate o a servizi professionali indipendentemente dal profilo; in caso di pericolo immediato in Italia chiama il 112.";
+        saveGlobal(id, "LOW", "Supporto sociale percepito poco accessibile nelle tre aree",
+                "Nelle risposte ascolto, confronto e aiuto pratico sembrano poco accessibili in questo periodo. Questo non esclude risorse specifiche o sostegno disponibile fuori dalla rete a cui hai pensato.",
+                "La percezione può dipendere da esperienze precedenti, distanza e condizioni attuali. Considera se le situazioni descritte erano pertinenti e quali forme di aiuto ti servirebbero davvero. Una rete piccola può offrire sostegno, e una rete grande può non farlo. " + limits);
+        saveGlobal(id, "MIXED", "Supporto sociale percepito variabile tra le aree",
+                "Almeno una forma di sostegno risulta parzialmente accessibile e nessuna raggiunge la fascia editoriale più alta. Ascolto, orientamento e aiuto pratico possono essere percepiti in modi diversi.",
+                "Guarda le tre aree senza trasformare piccole differenze in una classifica delle relazioni. Le persone disponibili per un confronto potrebbero non poter offrire un aiuto materiale, o viceversa. Osserva quali bisogni sono attuali e quali risorse restano da verificare nella realtà. " + limits);
+        saveGlobal(id, "FOCUSED", "Una forma di supporto sociale percepito emerge nelle risposte",
+                "Una sola delle tre forme di sostegno appare più accessibile nelle risposte. Le altre risultano più contenute, senza che questo descriva tutta la rete o ogni situazione futura.",
+                "L'area emersa suggerisce una possibile risorsa percepita, non una promessa di disponibilità. Considera se le altre forme di sostegno ti servono e quali vincoli incontrano le persone della tua rete. Anche servizi e comunità possono essere risorse da esplorare. " + limits);
+        saveGlobal(id, "BROAD", "Più forme di supporto sociale percepito emergono nelle risposte",
+                "Almeno due forme di sostegno sembrano accessibili nella rete a cui hai pensato. Il profilo descrive disponibilità percepita in questo periodo, non quantità di contatti o aiuto già ricevuto.",
+                "Puoi osservare anche l'area meno rappresentata e distinguere i bisogni concreti dalle possibilità immaginate. Una percezione favorevole non garantisce che ogni persona possa aiutare in ogni momento. La sicurezza e la qualità delle relazioni non sono misurate da queste barre. " + limits);
+        saveAreaInsights(id, "ascolto",
+                "L'ascolto sembra poco accessibile nelle risposte; questo non descrive il tuo valore o la tua capacità di parlare.",
+                "L'ascolto sembra parzialmente accessibile nella rete considerata.",
+                "L'ascolto sembra più accessibile; la risposta di una persona in una situazione concreta resta da verificare.");
+        saveAreaInsights(id, "orientamento",
+                "Il confronto su dubbi e scelte sembra poco accessibile; il risultato non valuta la qualità delle tue decisioni.",
+                "Il confronto su dubbi e scelte sembra parzialmente accessibile.",
+                "Il confronto su dubbi e scelte sembra più accessibile; i pareri ricevuti non sono necessariamente corretti.");
+        saveAreaInsights(id, "pratico",
+                "L'aiuto pratico sembra poco accessibile; territorio e condizioni materiali possono incidere.",
+                "L'aiuto pratico sembra parzialmente accessibile nelle situazioni proposte.",
+                "L'aiuto pratico sembra più accessibile; non equivale ad assistenza effettivamente ricevuta.");
+    }
+
     private void synchronizeEvidenceReferences() {
+        syncReferences("supporto-sociale-percepito", List.of(
+                ref("Italian ISEL validation — Moretti e colleghi", "https://doi.org/10.1482/38446"),
+                ref("Italian MSPSS in chronic disease — De Maria e colleghi", "https://doi.org/10.4415/ANN_18_04_07"),
+                ref("MSPSS cross-cultural systematic review — Dambi e colleghi", "https://doi.org/10.1186/s12955-018-0912-0"),
+                ref("OECD social connectedness measurement — OECD", "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/09/measuring-social-connectedness-in-oecd-countries_02a04f4b/f758bd20-en.pdf"),
+                ref("Perceived and received support meta-analysis — Haber e colleghi", "https://doi.org/10.1007/s10464-007-9100-9")));
         syncReferences("flessibilita-psicologica", List.of(
                 ref("Italian MPFI validation — Landi e colleghi", "https://doi.org/10.1016/j.jcbs.2021.05.007"),
                 ref("Italian MPFI-24 validation — Landi e colleghi", "https://doi.org/10.3390/bs16040510"),

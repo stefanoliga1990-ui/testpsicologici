@@ -28,7 +28,7 @@ class GuideOriginalContributionTest {
             "umore-depresso", "ptsd-adulti", "esperienze-avverse-infanzia", "disturbo-borderline-personalita",
             "disturbo-evitante-personalita", "adhd-adulti", "autismo-adulti",
             "intelligenza-linguistica", "burnout-lavorativo", "introversione-estroversione", "autocompassione",
-            "ruminazione-mentale", "dismorfofobia", "bisogno-controllo", "camaleonte-sociale", "autoefficacia-percepita", "speranza-obiettivi", "ottimismo", "gratitudine", "assaporare-momenti-positivi", "significato-vita", "curiosita-esplorazione", "esperienze-flow", "presenza-mentale", "flessibilita-psicologica");
+            "ruminazione-mentale", "dismorfofobia", "bisogno-controllo", "camaleonte-sociale", "autoefficacia-percepita", "speranza-obiettivi", "ottimismo", "gratitudine", "assaporare-momenti-positivi", "significato-vita", "curiosita-esplorazione", "esperienze-flow", "presenza-mentale", "flessibilita-psicologica", "supporto-sociale-percepito");
 
     private static final List<String> RELATIONSHIP_SLUGS = List.of(
             "stili-attaccamento", "disponibilita-emotiva", "parentificazione",
@@ -170,7 +170,7 @@ class GuideOriginalContributionTest {
                 .map(InformationGuide::slug)
                 .collect(Collectors.toSet());
 
-        assertThat(snapshotSlugs).hasSize(79).doesNotHaveDuplicates();
+        assertThat(snapshotSlugs).hasSize(80).doesNotHaveDuplicates();
         assertThat(catalogueSlugs).containsExactlyInAnyOrderElementsOf(snapshotSlugs);
 
         List<String> contributions = guides.findAll().stream()

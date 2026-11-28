@@ -23,7 +23,7 @@
     <p class="detail" th:text="${result.detail}">Approfondimento generale.</p>
 </div>
 
-<div class="overall-block" th:unless="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' or test.id == 'ruminazione-mentale' or test.id == 'dismorfofobia' or test.id == 'bisogno-controllo' or test.id == 'camaleonte-sociale'}">
+<div class="overall-block" th:unless="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' or test.id == 'ruminazione-mentale' or test.id == 'dismorfofobia' or test.id == 'bisogno-controllo' or test.id == 'camaleonte-sociale' or test.id == 'supporto-sociale-percepito'}">
     <p class="bar-label" th:text="${test.overallMetricLabel}">Presenza complessiva del tratto</p>
     <div class="bar-track overall-track">
         <span th:style="|width: ${percentage}%|"></span>
@@ -34,7 +34,7 @@
 <div class="areas-heading">
     <p class="eyebrow" th:text="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' ? 'Le due dimensioni' : 'Le aree esplorate'}">Le aree esplorate</p>
     <h2 th:text="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' ? 'Come si distribuiscono le risposte' : 'Una lettura più completa'}">Una lettura più completa</h2>
-    <p th:text="${test.scoringModel == 'ATTACHMENT_DIMENSIONAL' ? 'Le barre sintetizzano quanto le affermazioni di ansia relazionale e di evitamento descrivono la relazione scelta. Non sono percentili o confronti con altre persone.' : 'Le barre rappresentano quanto spesso hai riconosciuto le esperienze esplorate in ciascuna area.'}">Lettura delle aree.</p>
+    <p th:text="${test.id == 'supporto-sociale-percepito' ? 'Le barre descrivono quanto le affermazioni sulle tre forme di sostegno sembrano vere per te. Sono rappresentazioni editoriali, non garanzie di aiuto o confronti con altre persone.' : (test.scoringModel == 'ATTACHMENT_DIMENSIONAL' ? 'Le barre sintetizzano quanto le affermazioni di ansia relazionale e di evitamento descrivono la relazione scelta. Non sono percentili o confronti con altre persone.' : 'Le barre rappresentano quanto spesso hai riconosciuto le esperienze esplorate in ciascuna area.')}">Lettura delle aree.</p>
 </div>
 
 <div class="area-card" th:each="area : ${areaResults}">

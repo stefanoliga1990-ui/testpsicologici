@@ -77,7 +77,8 @@ class PsychometricStructureTest {
             Map.entry("curiosita-esplorazione", "esplorazione"),
             Map.entry("esperienze-flow", "flow"),
             Map.entry("presenza-mentale", "presenza mentale"),
-            Map.entry("flessibilita-psicologica", "flessibilità psicologica"));
+            Map.entry("flessibilita-psicologica", "flessibilità psicologica"),
+            Map.entry("supporto-sociale-percepito", "supporto sociale percepito"));
 
     @Autowired
     private TestCatalogue catalogue;
@@ -87,7 +88,7 @@ class PsychometricStructureTest {
 
     @Test
     void everyQuestionnaireHasACompleteBalancedAndInterleavedBlueprint() {
-        assertThat(catalogue.findAll()).hasSize(59).allSatisfy(test -> {
+        assertThat(catalogue.findAll()).hasSize(60).allSatisfy(test -> {
             assertThat(new HashSet<>(test.questions())).hasSize(test.questions().size());
 
             if ("ACE_EXPOSURE".equals(test.scoringModel())) {
@@ -124,6 +125,15 @@ class PsychometricStructureTest {
                 test.areas().forEach(area -> assertThat(test.questions())
                         .filteredOn(question -> question.areaCode().equals(area.code()))
                         .hasSize(4));
+            } else if ("supporto-sociale-percepito".equals(test.id())) {
+                assertThat(test.version()).isEqualTo("1.0");
+                assertThat(test.questions()).hasSize(12);
+                assertThat(test.responseInstruction()).contains("questo periodo", "quanto è vera");
+                assertThat(test.answerScale()).isEqualTo("AGREEMENT");
+                assertThat(test.areas()).extracting(area -> area.code())
+                        .containsExactly("ascolto", "orientamento", "pratico");
+                test.areas().forEach(area -> assertThat(test.questions())
+                        .filteredOn(question -> question.areaCode().equals(area.code())).hasSize(4));
             } else if ("flessibilita-psicologica".equals(test.id())) {
                 assertThat(test.version()).isEqualTo("1.0");
                 assertThat(test.questions()).hasSize(12);
@@ -474,6 +484,11 @@ class PsychometricStructureTest {
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("variano");
                 assertThat(profiles.get(2).general().title()).containsIgnoringCase("una o due aree");
                 assertThat(profiles.get(3).general().title()).containsIgnoringCase("più aree");
+            } else if ("supporto-sociale-percepito".equals(test.id())) {
+                assertThat(profiles.get(0).general().title()).containsIgnoringCase("supporto sociale percepito poco");
+                assertThat(profiles.get(1).general().title()).containsIgnoringCase("supporto sociale percepito variabile");
+                assertThat(profiles.get(2).general().title()).containsIgnoringCase("supporto sociale percepito emerge");
+                assertThat(profiles.get(3).general().title()).containsIgnoringCase("supporto sociale percepito emergono");
             } else if ("flessibilita-psicologica".equals(test.id())) {
                 assertThat(profiles.get(0).general().title()).containsIgnoringCase("flessibilità psicologica poco");
                 assertThat(profiles.get(1).general().title()).containsIgnoringCase("flessibilità psicologica variabili");

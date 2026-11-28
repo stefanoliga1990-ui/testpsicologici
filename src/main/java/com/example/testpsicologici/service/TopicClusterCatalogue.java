@@ -40,7 +40,8 @@ public class TopicClusterCatalogue {
                             "gelosia-partner",
                             "dinamiche-narcisistiche-partner",
                             "situationship",
-                            "codipendenza-relazionale"
+                            "codipendenza-relazionale",
+                            "supporto-sociale-percepito"
                     )),
             new TopicCluster(
                     "personalita-e-tratti",
@@ -190,6 +191,10 @@ public class TopicClusterCatalogue {
         }
         if ("flessibilita-psicologica".equals(testId)) {
             return List.of("resilienza-psicologica", "presenza-mentale", "autocompassione")
+                    .stream().limit(maximum).toList();
+        }
+        if ("supporto-sociale-percepito".equals(testId)) {
+            return List.of("stili-attaccamento", "disponibilita-emotiva", "paura-abbandono")
                     .stream().limit(maximum).toList();
         }
         return findByTestId(testId)

@@ -17,6 +17,7 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
   const isOccurrenceScale = test.answerScale === 'OCCURRENCE';
   const isSatisfactionScale = test.answerScale === 'SATISFACTION';
   const isAgreementScale = test.answerScale === 'AGREEMENT';
+  const isPerceivedSocialSupport = test.id === 'supporto-sociale-percepito';
   const attachmentStyles = [
     'Orientamento sicuro',
     'Orientamento ansioso-preoccupato',
@@ -55,7 +56,9 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
         <div className="editorial-heading">
           <p className="eyebrow">Prima di rispondere</p>
           <h2>Che cosa esplora questo questionario</h2>
-          <p>{isAceExposure
+          <p>{isPerceivedSocialSupport
+            ? 'Le tre aree descrivono quanto ascolto, confronto e aiuto pratico sembrano accessibili nella rete attuale. Non valutano il numero o la qualità delle relazioni.'
+            : isAceExposure
             ? 'Le domande riguardano esperienze e condizioni riferite al periodo prima dei 18 anni. Gli ambiti servono a organizzare la lettura, non sono sottoscale cliniche o una misura della gravità.'
             : isAttachmentStyles
             ? 'Le affermazioni esplorano ansia relazionale ed evitamento della vicinanza. La loro combinazione permette una lettura orientativa dei quattro stili descritti qui sotto, senza assegnare diagnosi o identità definitive.'
@@ -81,7 +84,9 @@ export default function IntroductionPage({ guide, relatedTests, test, topicClust
               : isOccurrenceScale
               ? 'Per ogni affermazione indicherai quante volte è accaduta, da “Mai” a “Molte volte”, nel periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'
               : 'Per ogni affermazione indicherai una frequenza da “Mai” a “Quasi sempre”, riferita al periodo indicato. Puoi tornare alla domanda precedente e completare il percorso in pochi minuti, senza creare un account.'}</p></Card>
-          <Card className="editorial-card"><p className="eyebrow">Il risultato</p><h2>Una lettura orientativa</h2><p>{isAceExposure
+          <Card className="editorial-card"><p className="eyebrow">Il risultato</p><h2>Una lettura orientativa</h2><p>{isPerceivedSocialSupport
+            ? 'Il risultato descrive tre forme di supporto percepito, senza un totale interpretabile. Le barre sono editoriali: non garantiscono aiuto futuro e non misurano solitudine o salute mentale.'
+            : isAceExposure
             ? 'Il risultato descrive soltanto gli ambiti riferiti e segnala le risposte mancanti. Non presenta un punteggio ACE, percentuali, fasce o previsioni sulla salute individuale.'
             : isAttachmentStyles
             ? 'Il risultato mostra le due dimensioni esplorate e ordina i quattro orientamenti per vicinanza al profilo delle risposte. Se due orientamenti risultano vicini, la restituzione parla di caratteristiche intermedie; non sono percentuali, categorie cliniche o etichette stabili.'
