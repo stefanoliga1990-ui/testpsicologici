@@ -982,6 +982,24 @@ public class RecommendedReadingCatalogue {
                             true
                     )
             )),
+            Map.entry("pick-me-behaviour", List.of(
+                    new RecommendedReading(
+                            "Il coraggio di non piacere. Liberati dal giudizio degli altri e trova l'autentica felicità",
+                            "Ichiro Kishimi e Fumitake Koga",
+                            "Un dialogo divulgativo che invita a riflettere sul bisogno di approvazione e sul confronto con gli altri.",
+                            "Propone una lettura filosofica ispirata ad Adler: non studia il pick-me behaviour, non dimostra che basti ignorare il giudizio altrui e non permette di dedurre le intenzioni di una persona.",
+                            "https://www.amazon.it/-/en/coraggio-piacere-Liberati-giudizio-lautentica/dp/8851169918?dib=eyJ2IjoiMSJ9.R2pHAU9MmM8O44lt-6FFFg.XvU2bSomWh1c8I7reO6pciHAdzlg32e-UbTYvtRGU4I&dib_tag=se&keywords=9788851169916&qid=1795874675&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=5cbf8a0c1eb7e4d6164690cca6c83423&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    ),
+                    new RecommendedReading(
+                            "Sapersi perdonare. Imparare ad accettarsi e a superare la vergogna con la mindfulness e la self compassion",
+                            "Grant Dewar",
+                            "Un quaderno di esercizi per esplorare autocritica, vergogna, accettazione di sé e scelte coerenti con i propri valori.",
+                            "Non tratta direttamente il confronto o la svalutazione del gruppo e non definisce il pick-me behaviour. Gli esercizi non sostituiscono un percorso professionale quando la sofferenza è intensa.",
+                            "https://www.amazon.it/-/en/perdonare-Imparare-accettarsi-mindfulness-compassion/dp/8835174260?dib=eyJ2IjoiMSJ9.L8liz9IEMAG_zpyt8-Hjpg.WeydPmnusZ8R8_trTZCe-l1YQTHuOslxzsAOCInXyRg&dib_tag=se&keywords=9788835174264&qid=1795874717&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=922599a3c4f8e84d4cc85ffd384e9f8b&gaOptInStatus=true&ref_=as_li_ss_tl",
+                            true
+                    )
+            )),
             Map.entry("stonewalling", List.of(
                     new RecommendedReading(
                             "D'amore e non d'accordo. Quando litigare rafforza la coppia",

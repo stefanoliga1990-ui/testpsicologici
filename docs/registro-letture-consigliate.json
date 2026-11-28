@@ -3414,7 +3414,84 @@
         }
       ]
     },
-    { "topicId": "pick-me-behaviour", "testId": null, "guideSlug": "pick-me-behaviour", "title": "Pick-me behaviour: approvazione, confronto e svalutazione del gruppo", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
+    {
+      "topicId": "pick-me-behaviour",
+      "testId": null,
+      "guideSlug": "pick-me-behaviour",
+      "title": "Pick-me behaviour: approvazione, confronto e svalutazione del gruppo",
+      "contentMode": "GUIDE_ONLY",
+      "fallbackTopics": [
+        "bisogno di approvazione e confronto sociale",
+        "autocritica e accettazione di sé"
+      ],
+      "fallbackRationale": "Pick-me behaviour è un'etichetta colloquiale che può descrivere comportamenti diversi e non costituisce una diagnosi. Kishimi e Koga offrono una riflessione sul giudizio altrui e sulla competizione; Dewar propone esercizi per osservare autocritica e vergogna. I libri aiutano a contestualizzare alcune possibili spinte alla ricerca di approvazione, ma non spiegano le intenzioni di chi svaluta un gruppo né validano l'etichetta.",
+      "researchStatus": "PUBLISHED",
+      "books": [
+        {
+          "title": "Il coraggio di non piacere",
+          "subtitle": "Liberati dal giudizio degli altri e trova l’autentica felicità",
+          "placeholderCover": true,
+          "authors": [
+            "Ichiro Kishimi",
+            "Fumitake Koga"
+          ],
+          "publisher": "De Agostini",
+          "isbn13": "9788851169916",
+          "publicationYear": 2019,
+          "format": "brossura con alette",
+          "editorialRole": "Dialogo divulgativo ispirato alla psicologia individuale di Adler sul giudizio degli altri e la competizione",
+          "audience": "Lettori generali interessati al bisogno di approvazione e alle relazioni",
+          "description": "Un dialogo divulgativo che invita a riflettere sul bisogno di approvazione e sul confronto con gli altri.",
+          "limit": "Propone una lettura filosofica ispirata ad Adler: non studia il pick-me behaviour, non dimostra che basti ignorare il giudizio altrui e non permette di dedurre le intenzioni di una persona.",
+          "primarySources": [
+            {
+              "label": "Scheda editore dell'edizione cartacea",
+              "url": "https://www.deaplanetalibri.it/libri/il-coraggio-di-non-piacere"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8851169918",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/coraggio-piacere-Liberati-giudizio-lautentica/dp/8851169918?dib=eyJ2IjoiMSJ9.R2pHAU9MmM8O44lt-6FFFg.XvU2bSomWh1c8I7reO6pciHAdzlg32e-UbTYvtRGU4I&dib_tag=se&keywords=9788851169916&qid=1795874675&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=5cbf8a0c1eb7e4d6164690cca6c83423&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        },
+        {
+          "title": "Sapersi perdonare",
+          "subtitle": "Imparare ad accettarsi e a superare la vergogna con la mindfulness e la self compassion",
+          "placeholderCover": true,
+          "authors": [
+            "Grant Dewar"
+          ],
+          "publisher": "FrancoAngeli",
+          "isbn13": "9788835174264",
+          "publicationYear": 2025,
+          "format": "brossura",
+          "editorialRole": "Quaderno divulgativo con esercizi di accettazione di sé e self compassion basati su ACT e CFT",
+          "audience": "Lettori generali interessati ad autocritica, vergogna e accettazione di sé",
+          "description": "Un quaderno di esercizi per esplorare autocritica, vergogna, accettazione di sé e scelte coerenti con i propri valori.",
+          "limit": "Non tratta direttamente il confronto o la svalutazione del gruppo e non definisce il pick-me behaviour. Gli esercizi non sostituiscono un percorso professionale quando la sofferenza è intensa.",
+          "primarySources": [
+            {
+              "label": "Scheda editore dell'edizione a stampa",
+              "url": "https://www.francoangeli.it/Libro/Sapersi-perdonare?Id=30069"
+            }
+          ],
+          "amazon": {
+            "marketplace": "amazon.it",
+            "asin": "8835174260",
+            "formatVerified": "Paperback (cartaceo)",
+            "affiliateUrl": "https://www.amazon.it/-/en/perdonare-Imparare-accettarsi-mindfulness-compassion/dp/8835174260?dib=eyJ2IjoiMSJ9.L8liz9IEMAG_zpyt8-Hjpg.WeydPmnusZ8R8_trTZCe-l1YQTHuOslxzsAOCInXyRg&dib_tag=se&keywords=9788835174264&qid=1795874717&sr=8-1&th=1&linkCode=ll2&tag=spaziotest-21&linkId=922599a3c4f8e84d4cc85ffd384e9f8b&gaOptInStatus=true&ref_=as_li_ss_tl",
+            "trackingId": "spaziotest-21",
+            "verificationStatus": "VERIFIED"
+          },
+          "publicationStatus": "PUBLISHED"
+        }
+      ]
+    },
     { "topicId": "weaponized-incompetence", "testId": null, "guideSlug": "weaponized-incompetence", "title": "Weaponized incompetence: significato e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "lavoro-emotivo", "testId": null, "guideSlug": "lavoro-emotivo", "title": "Lavoro emotivo: significato e contesti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
     { "topicId": "red-green-beige-flags", "testId": null, "guideSlug": "red-green-beige-flags", "title": "Red, green e beige flags: significato e limiti", "contentMode": "GUIDE_ONLY", "fallbackTopics": [], "fallbackRationale": null, "researchStatus": "PENDING_RESEARCH", "books": [] },
